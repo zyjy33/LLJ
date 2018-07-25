@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/list_diver"
+         />
+
+    <RadioGroup
+        android:id="@+id/main_bottom_rtns"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main_fragment_bottom_bg"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/main_bottom_rtn0"
+            style="@style/main_bottom_btn"
+            android:drawableTop="@drawable/main_bottom_llj_btn0"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/main_bottom_rtn1"
+            style="@style/main_bottom_btn"
+            android:drawableTop="@drawable/main_bottom_llj_btn1"
+            android:text="商家服务" />
+<RadioButton
+            android:id="@+id/main_bottom_rtn11"
+            style="@style/main_bottom_btn"
+            android:drawableTop="@drawable/main_bottom_llj_btn11"
+            android:text="活动" />
+        <RadioButton
+            android:id="@+id/main_bottom_rtn2"
+            style="@style/main_bottom_btn"
+            android:drawableTop="@drawable/main_bottom_llj_btn2"
+            android:text="购物车" />
+
+        <RadioButton
+            android:id="@+id/main_bottom_rtn3"
+            style="@style/main_bottom_btn"
+            android:drawableTop="@drawable/main_bottom_llj_btn3"
+            android:text="我的" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lv_system_msg"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/baihuise"
+    android:orientation="vertical" >
+    <LinearLayout
+            android:id="@+id/no_data_no"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dip"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <include layout="@layout/no_data" />
+        </LinearLayout>
+        
+<!--  
+<include layout="@layout/no_data" />
+    <com.carhairhair.view.PullToRefreshViews
+        android:id="@+id/main_pull_refresh_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+-->
+
+        <ListView
+            android:id="@+id/my_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+                    android:background="@color/baihuise"
+            android:divider="@null"
+            android:scrollbars="none" />
+        
+  <!--   </com.carhairhair.view.PullToRefreshViews> --> 
+
+</LinearLayout>

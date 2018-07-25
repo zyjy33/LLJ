@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ban_louming"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="42" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="624"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="194" />
+            <!-- android:background="@drawable/lglottery_pop_bg" -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="868" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="14dp"
+                    android:background="@drawable/lglottery_pop_bg" >
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="34" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="460"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:gravity="center"
+                                    android:text="规则说明"
+                                    android:textColor="@color/person_btn_text"
+                                    android:textSize="26sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="25dp"
+                                    android:text="参与方式：单次刮卡需100聚币，单个用户刮卡次数不设上限；"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/person_btn_text" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="奖项设置：聚币红包和聚币，其中聚币红包仅限在商城上购物使用，聚币红包不能提现；单个聚币红包最高为1000元，单个聚币最高为1000个聚币；"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/person_btn_text" />
+                            	  <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="注意事项："
+                                    android:textSize="14sp"
+                                    android:textColor="@color/person_btn_text" />
+                            	    <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="1.	活动期间，如遭遇自然灾害，网络攻击或系统故障等不可抗拒因素导致活动暂停举办，公司无须承担责任或进行补偿；"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/person_btn_text" />
+                            	      <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="2.	公司根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动或调整，相关变动或调整将公布在活动规则页面上；"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/person_btn_text" />
+                            	        <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="3.	凡以不正当手段（包括但不限于作弊，扰乱系统，实施网络攻击等）参与本次活动的用户，公司有权终止其参与活动，取消获奖资格，如奖品已发放，公司有权追回；"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/person_btn_text" />
+                            	          <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="4.	账户必须通过实名认证且设置支付密码，才能成功领取红包。"
+                                    android:textSize="14sp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="@color/person_btn_text" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="34" />
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   	android:layout_marginTop="15dp"
+                   	android:layout_marginRight="15dp"
+                    android:gravity="top|right" >
+
+                    <Button
+                        android:id="@+id/lglottery_pop_closed"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/lglottery_pop_closed" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="194" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="42" />
+    </LinearLayout>
+
+</LinearLayout>
