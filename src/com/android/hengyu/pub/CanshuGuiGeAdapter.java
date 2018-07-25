@@ -73,7 +73,7 @@ public class CanshuGuiGeAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// *******************************************************************************
-		// µ⁄“ª÷÷∑Ω∑®
+		// Á¨¨‰∏ÄÁßçÊñπÊ≥ï
 		View inflate = inflater.inflate(R.layout.guige_item, null);//guige_item
 //		ListView listView = (ListView) inflate.findViewById(R.id.expandedListView1);
 		GridView gridview = (GridView) inflate.findViewById(R.id.gridView);
@@ -86,7 +86,7 @@ public class CanshuGuiGeAdapter extends BaseAdapter {
 				tv_name.setText(lists.get(position).title);
 //				loader.displayImage(RealmName.REALM_NAME_HTTP+ lists.get(position).img_url, img_ware);
 				System.out
-				.println("=====================Œª÷√1" + position);
+				.println("=====================‰ΩçÁΩÆ1" + position);
 
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -96,7 +96,7 @@ public class CanshuGuiGeAdapter extends BaseAdapter {
 
 			
 //			if (lists_lb.get(position).title.equals("")) {
-			System.out.println("=====================Œª÷√11" + lists_lb.size());
+			System.out.println("=====================‰ΩçÁΩÆ11" + lists_lb.size());
 //			gridview.setAdapter(new BaseAdapter() {
 //
 //				@Override
@@ -110,7 +110,7 @@ public class CanshuGuiGeAdapter extends BaseAdapter {
 //
 //						tv_name.setText(lists_lb.get(position).title);
 //						
-//						System.out.println("=====================Œª÷√2" + position);
+//						System.out.println("=====================‰ΩçÁΩÆ2" + position);
 //
 ////						 ImageLoader imageLoader=ImageLoader.getInstance();
 ////					        imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ lists_ll.get(position).img_url,iv);

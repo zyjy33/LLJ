@@ -97,11 +97,11 @@ public class MainFragment extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_fragment_activity);
 //		Thread.setDefaultUncaughtExceptionHandler(this);
-		//À´µç¼àÌı£¬»ñÈ¡ÏµÍ³·şÎñ¡°TELEPHONY_SERVICE
+		//æ¥ç”µç›‘å¬ï¼Œè·å–ç³»ç»ŸæœåŠ¡â€œTELEPHONY_SERVICE
 	    /*TelephonyManager telM = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);  
 		telM.listen(new TelListener(this), PhoneStateListener.LISTEN_CALL_STATE);*/
 		{
-			//Æô¶¯¹ã¸æ
+			//å¯åŠ¨å¹¿å‘Š
 //			Intent intent = new Intent(this,S.class);
 //			intent.putExtra("start", 0);
 //			startService(intent);
@@ -157,7 +157,7 @@ public class MainFragment extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
 	}
-	// »ñÈ¡µ±Ç°³ÌĞòµÄ°æ±¾ĞÅÏ¢
+	// è·å–å½“å‰ç¨‹åºçš„ç‰ˆæœ¬ä¿¡æ¯
 	public static String getAppVersionName(Context context) {
 		String versionName = "";
 		try {
@@ -191,17 +191,17 @@ public class MainFragment extends BaseActivity {
 		
 //		if (!nickname.equals("")) {
 			try {
-//			Toast.makeText(MainFragment.this, "²»ĞèÒªµÇÂ¼", 200).show();
+//			Toast.makeText(MainFragment.this, "ä¸éœ€è¦ç™»å½•", 200).show();
 			wareDao = new WareDao(getApplicationContext());
 			UserRegisterData registerData = wareDao.findIsLoginHengyuCode();
 			yth = registerData.getHengyuCode();
 			key = registerData.getUserkey();
 			wareDao = new WareDao(getApplicationContext());
-			wareDao.deleteAllShopCart(); // Çå¿Õ¹ºÎï³µÀïÃæµÄĞÅÏ¢
+			wareDao.deleteAllShopCart(); // æ¸…ç©ºè´­ç‰©è½¦é‡Œé¢çš„ä¿¡æ¯
 			c_version = getAppVersionName(this).trim();
 			
 			if (zhuangtai == false) {
-				handler.sendEmptyMessage(-2);//°æ±¾¸üĞÂ
+				handler.sendEmptyMessage(-2);//ç‰ˆæœ¬æ›´æ–°
 			}
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -217,10 +217,10 @@ public class MainFragment extends BaseActivity {
 //						yth = registerData.getHengyuCode();
 //						key = registerData.getUserkey();
 //						wareDao = new WareDao(getApplicationContext());
-//						wareDao.deleteAllShopCart(); // Çå¿Õ¹ºÎï³µÀïÃæµÄĞÅÏ¢
+//						wareDao.deleteAllShopCart(); // æ¸…ç©ºè´­ç‰©è½¦é‡Œé¢çš„ä¿¡æ¯
 //						c_version = getAppVersionName(this).trim();
 //						if (zhuangtai == false) {
-//							handler.sendEmptyMessage(-2);//°æ±¾¸üĞÂ
+//							handler.sendEmptyMessage(-2);//ç‰ˆæœ¬æ›´æ–°
 //						}
 //						} catch (Exception e) {
 //							// TODO: handle exception
@@ -245,13 +245,13 @@ public class MainFragment extends BaseActivity {
 	 
 	public static File getFileFromServer(String path, ProgressDialog pd)
 			throws Exception {
-		// Èç¹ûÏàµÈµÄ»°±íÊ¾µ±Ç°µÄsdcard¹ÒÔØÔÚÊÖ»úÉÏ²¢ÇÒÊÇ¿ÉÓÃµÄ
+		// å¦‚æœç›¸ç­‰çš„è¯è¡¨ç¤ºå½“å‰çš„sdcardæŒ‚è½½åœ¨æ‰‹æœºä¸Šå¹¶ä¸”æ˜¯å¯ç”¨çš„
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
 			URL url = new URL(path);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setConnectTimeout(5000);
-			// »ñÈ¡µ½ÎÄ¼şµÄ´óĞ¡
+			// è·å–åˆ°æ–‡ä»¶çš„å¤§å°
 			pd.setMax(conn.getContentLength());
 			InputStream is = conn.getInputStream();
 			File file = new File(Environment.getExternalStorageDirectory(),
@@ -264,7 +264,7 @@ public class MainFragment extends BaseActivity {
 			while ((len = bis.read(buffer)) != -1) {
 				fos.write(buffer, 0, len);
 				total += len;
-				// »ñÈ¡µ±Ç°ÏÂÔØÁ¿
+				// è·å–å½“å‰ä¸‹è½½é‡
 				pd.setProgress(total);
 			}
 			fos.close();
@@ -277,13 +277,13 @@ public class MainFragment extends BaseActivity {
 	}
 
 	/*
-	 * ´Ó·şÎñÆ÷ÖĞÏÂÔØAPK
+	 * ä»æœåŠ¡å™¨ä¸­ä¸‹è½½APK
 	 */
 	protected void downLoadApk() {
-		final ProgressDialog pd; // ½ø¶ÈÌõ¶Ô»°¿ò
+		final ProgressDialog pd; // è¿›åº¦æ¡å¯¹è¯æ¡†
 		pd = new ProgressDialog(this);
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		pd.setMessage("ÕıÔÚÏÂÔØ¸üĞÂ");
+		pd.setMessage("æ­£åœ¨ä¸‹è½½æ›´æ–°");
 		pd.setCanceledOnTouchOutside(false);
 		zhuangtai = true;
 		pd.show();
@@ -294,7 +294,7 @@ public class MainFragment extends BaseActivity {
 					File file = getFileFromServer(URL, pd);
 					sleep(3000);
 					installApk(file);
-					pd.dismiss(); // ½áÊøµô½ø¶ÈÌõ¶Ô»°¿ò
+					pd.dismiss(); // ç»“æŸæ‰è¿›åº¦æ¡å¯¹è¯æ¡†
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -302,36 +302,36 @@ public class MainFragment extends BaseActivity {
 		}.start();
 	}
 
-	// °²×°apk
+	// å®‰è£…apk
 	protected void installApk(File file) {
 		Intent intent = new Intent();
-		// Ö´ĞĞ¶¯×÷
+		// æ‰§è¡ŒåŠ¨ä½œ
 		intent.setAction(Intent.ACTION_VIEW);
-		// Ö´ĞĞµÄÊı¾İÀàĞÍ
+		// æ‰§è¡Œçš„æ•°æ®ç±»å‹
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");// ´Ë´¦AndroidÓ¦Îªandroid£¬·ñÔòÔì³É°²×°²»ÁË
+		intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");// æ­¤å¤„Androidåº”ä¸ºandroidï¼Œå¦åˆ™é€ æˆå®‰è£…ä¸äº†
 		startActivity(intent);
 	}
 
-	// ³ÌĞò°æ±¾¸üĞÂ
+	// ç¨‹åºç‰ˆæœ¬æ›´æ–°
 	private void dialog() {
-		System.out.println("Ê×Ò³°æ±¾==============");
+		System.out.println("é¦–é¡µç‰ˆæœ¬==============");
 		AlertDialog.Builder builder = new Builder(this);
 //		builder.setMessage(updatainfo);
-		builder.setMessage("ÊÇ·ñ¸üĞÂ×îĞÂ°æ±¾£¡");
-		builder.setTitle("ÌáÊ¾:ĞÂ°æ±¾");
-		builder.setPositiveButton("¸üĞÂ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ˜¯å¦æ›´æ–°æœ€æ–°ç‰ˆæœ¬ï¼");
+		builder.setTitle("æç¤º:æ–°ç‰ˆæœ¬");
+		builder.setPositiveButton("æ›´æ–°", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 //				spPreferences.edit().clear().commit(); 
 //				String user_id = spPreferences.getString("user_id", "");
-//				System.out.println("user_idÊÇ·ñÎª¿Õ======"+user_id);
+//				System.out.println("user_idæ˜¯å¦ä¸ºç©º======"+user_id);
 //				 Toast.makeText(MainFragment.this, user_id, 200).show();
 				downLoadApk();
 			}
 		});
-		builder.setNegativeButton("ÒÔºóÔÙËµ",
+		builder.setNegativeButton("ä»¥åå†è¯´",
 				new DialogInterface.OnClickListener() {
 
 					@Override
@@ -366,7 +366,7 @@ public class MainFragment extends BaseActivity {
 					}
 				});*/
 //				/**
-//				 * °æ±¾
+//				 * ç‰ˆæœ¬
 //				 */
 				try {
 //				AsyncHttp.get(strUrl2, new AsyncHttpResponseHandler() {
@@ -374,13 +374,13 @@ public class MainFragment extends BaseActivity {
 //					public void onSuccess(int arg0, String arg1) {
 //						
 //						super.onSuccess(arg0, arg1);
-//						System.out.println("Ê×Ò³°æ±¾1=============="+arg1);
+//						System.out.println("é¦–é¡µç‰ˆæœ¬1=============="+arg1);
 //						xmlparse(arg1);
 //						
 //						String c_version = getAppVersionName(getApplicationContext()).trim().replaceAll("\\.", "");
 //						float server_version = Float.parseFloat(version.replaceAll("\\.", ""));
 //						float client_version = Float.parseFloat(c_version);
-//						System.out.println("µ±Ç°:" + client_version + "·şÎñÆ÷:"+ server_version);
+//						System.out.println("å½“å‰:" + client_version + "æœåŠ¡å™¨:"+ server_version);
 ////						if (server_version > client_version) {
 //////						if (client_version > server_version) {
 ////							Message message = new Message();
@@ -395,14 +395,14 @@ public class MainFragment extends BaseActivity {
 				
 				try {
 					/**
-					 * °æ±¾2
+					 * ç‰ˆæœ¬2
 					 */
 					AsyncHttp.get(strUr2, new AsyncHttpResponseHandler() {
 						@Override
 						public void onSuccess(int arg0, String arg1) {
 							
 							super.onSuccess(arg0, arg1);
-							System.out.println("Ê×Ò³°æ±¾=============="+arg1);
+							System.out.println("é¦–é¡µç‰ˆæœ¬=============="+arg1);
 							try{
 							JSONObject jsonObject = new JSONObject(arg1);
 							JSONObject jsob = jsonObject.getJSONObject("data");
@@ -413,12 +413,12 @@ public class MainFragment extends BaseActivity {
 							URL = RealmName.REALM_NAME_HTTP + file_path;
 //							URL = "http://183.62.138.31:1010/tools/downapk.ashx?id="+id+"";
 							//http://www.ju918.com/apkdown/YSJ_apk/YunSJ.apk
-							System.out.println("Ê×Ò³°æ±¾URL=============="+URL);
+							System.out.println("é¦–é¡µç‰ˆæœ¬URL=============="+URL);
 							String c_version = getAppVersionName(getApplicationContext()).trim().replaceAll("\\.", "");
-							float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//·şÎñÆ÷
-							float client_version = Float.parseFloat(c_version);//µ±Ç°
+							float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//æœåŠ¡å™¨
+							float client_version = Float.parseFloat(c_version);//å½“å‰
 							
-							System.out.println("1µ±Ç°:" + client_version + "1·şÎñÆ÷:"+ server_version);
+							System.out.println("1å½“å‰:" + client_version + "1æœåŠ¡å™¨:"+ server_version);
 							if (server_version > client_version) {
 								Message message = new Message();
 								message.what = 0;
@@ -470,7 +470,7 @@ public class MainFragment extends BaseActivity {
 		};
 	};
 	
-	// ½âÎö·şÎñÆ÷¶ËµÄ°æ±¾ĞÅÏ¢
+	// è§£ææœåŠ¡å™¨ç«¯çš„ç‰ˆæœ¬ä¿¡æ¯
 		public void xmlparse(String st) {
 			try {
 				DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -548,7 +548,7 @@ public class MainFragment extends BaseActivity {
 //			break;
 		case R.id.main_bottom_rtn3:
 			
-		case 3://¹ºÎï³µ
+		case 3://è´­ç‰©è½¦
 			try {
 			isEdit = true;
 			main_bottom_rtns.setVisibility(View.VISIBLE);
@@ -580,7 +580,7 @@ public class MainFragment extends BaseActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
 		super.onActivityResult(requestCode, resultCode, data);
-		System.out.println("·µ»ØÖµ:"+requestCode);
+		System.out.println("è¿”å›å€¼:"+requestCode);
 		switch (requestCode) {
 		case 0:
 			main_bottom_rtns.check(0);
@@ -600,10 +600,10 @@ public class MainFragment extends BaseActivity {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if (isEdit) {
 				AlertDialog isExit = new AlertDialog.Builder(this).create();
-				isExit.setTitle("ÏµÍ³ÌáÊ¾");
-				isExit.setMessage("È·¶¨ÍË³öÔÆÉÌ¾Û£¿");
-				isExit.setButton("È·¶¨", listener2);
-				isExit.setButton2("È¡Ïû", listener2);
+				isExit.setTitle("ç³»ç»Ÿæç¤º");
+				isExit.setMessage("ç¡®å®šé€€å‡ºäº‘å•†èšï¼Ÿ");
+				isExit.setButton("ç¡®å®š", listener2);
+				isExit.setButton2("å–æ¶ˆ", listener2);
 				isExit.show();
 			}else {
 				main_bottom_rtns.check(0);
@@ -613,16 +613,16 @@ public class MainFragment extends BaseActivity {
 		return true;
 	}
 
-	/** ¼àÌı¶Ô»°¿òÀïÃæµÄbuttonµã»÷ÊÂ¼ş */
+	/** ç›‘å¬å¯¹è¯æ¡†é‡Œé¢çš„buttonç‚¹å‡»äº‹ä»¶ */
 	DialogInterface.OnClickListener listener2 = new DialogInterface.OnClickListener() {
 		public void onClick(DialogInterface dialog, int which) {
 			switch (which) {
-			case AlertDialog.BUTTON_POSITIVE:// "È·ÈÏ"°´Å¥ÍË³ö³ÌĞò
+			case AlertDialog.BUTTON_POSITIVE:// "ç¡®è®¤"æŒ‰é’®é€€å‡ºç¨‹åº
 				wareDao.deleteAllShopCart();
 //				AppManager.getAppManager().finishAllActivity();
 				android.os.Process.killProcess(android.os.Process.myPid());
 				break;
-			case AlertDialog.BUTTON_NEGATIVE:// "È¡Ïû"µÚ¶ş¸ö°´Å¥È¡Ïû¶Ô»°¿ò
+			case AlertDialog.BUTTON_NEGATIVE:// "å–æ¶ˆ"ç¬¬äºŒä¸ªæŒ‰é’®å–æ¶ˆå¯¹è¯æ¡†
 				break;
 			default:
 				break;
@@ -634,34 +634,34 @@ public class MainFragment extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 	
 //	 public void uncaughtException(Thread arg0, Throwable arg1) {
 //			// TODO Auto-generated method stub
-//			 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//			 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //	        Log.i("AAA", "uncaughtException   " + arg1);
 //		}
 
 	/**
-	 * ¸´ÖÆÊı¾İ¿âÎÄ¼ş
+	 * å¤åˆ¶æ•°æ®åº“æ–‡ä»¶
 	 * 
 	 * @param dbFile
 	 */
 	public void copyHczDB(String dbFile) {
 		// new File(dbFile).delete();
 		System.out.println(dbFile);
-		if (!new File(dbFile).exists()) {// ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+		if (!new File(dbFile).exists()) {// åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 			InputStream is = getApplicationContext().getResources()
-					.openRawResource(R.raw.hcz); // Óûµ¼ÈëµÄÊı¾İ¿â
+					.openRawResource(R.raw.hcz); // æ¬²å¯¼å…¥çš„æ•°æ®åº“
 			try {
 				FileOutputStream fos = new FileOutputStream(dbFile);
 				byte[] buffer = new byte[40000];
@@ -683,9 +683,9 @@ public class MainFragment extends BaseActivity {
 	public void copyCityDB(String dbFile) {
 		// new File(dbFile).delete();
 		System.out.println(dbFile);
-		if (!new File(dbFile).exists()) {// ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+		if (!new File(dbFile).exists()) {// åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 			InputStream is = getApplicationContext().getResources()
-					.openRawResource(R.raw.city); // Óûµ¼ÈëµÄÊı¾İ¿â
+					.openRawResource(R.raw.city); // æ¬²å¯¼å…¥çš„æ•°æ®åº“
 			try {
 				FileOutputStream fos = new FileOutputStream(dbFile);
 				byte[] buffer = new byte[40000];
@@ -707,16 +707,16 @@ public class MainFragment extends BaseActivity {
 	}
 
 	/**
-	 * ¸´ÖÆÊı¾İ¿âÎÄ¼ş
+	 * å¤åˆ¶æ•°æ®åº“æ–‡ä»¶
 	 * 
 	 * @param dbFile
 	 */
 	public void copyTuanDB(String dbFile) {
 		// new File(dbFile).delete();
 		System.out.println(dbFile);
-		if (!new File(dbFile).exists()) {// ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+		if (!new File(dbFile).exists()) {// åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 			InputStream is = getApplicationContext().getResources()
-					.openRawResource(R.raw.tuangou); // Óûµ¼ÈëµÄÊı¾İ¿â
+					.openRawResource(R.raw.tuangou); // æ¬²å¯¼å…¥çš„æ•°æ®åº“
 			try {
 				FileOutputStream fos = new FileOutputStream(dbFile);
 				byte[] buffer = new byte[40000];
@@ -738,16 +738,16 @@ public class MainFragment extends BaseActivity {
 	}
 	
 	/**
-	 * ¸´ÖÆÊı¾İ¿âÎÄ¼ş
+	 * å¤åˆ¶æ•°æ®åº“æ–‡ä»¶
 	 * 
 	 * @param dbFile
 	 */
 	public void copyJDB(String dbFile) {
 		// new File(dbFile).delete();
 		System.out.println(dbFile);
-		if (!new File(dbFile).exists()) {// ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+		if (!new File(dbFile).exists()) {// åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 			InputStream is = getApplicationContext().getResources()
-					.openRawResource(R.raw.jdpiao); // Óûµ¼ÈëµÄÊı¾İ¿â
+					.openRawResource(R.raw.jdpiao); // æ¬²å¯¼å…¥çš„æ•°æ®åº“
 			try {
 				FileOutputStream fos = new FileOutputStream(dbFile);
 				byte[] buffer = new byte[40000];
@@ -770,9 +770,9 @@ public class MainFragment extends BaseActivity {
 
 	public void copyWorkDB(String dbFile) {
 		// new File(dbFile).delete();
-		if (!new File(dbFile).exists()) {// ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+		if (!new File(dbFile).exists()) {// åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 			InputStream is = getApplicationContext().getResources()
-					.openRawResource(R.raw.work); // Óûµ¼ÈëµÄÊı¾İ¿â
+					.openRawResource(R.raw.work); // æ¬²å¯¼å…¥çš„æ•°æ®åº“
 			try {
 				FileOutputStream fos = new FileOutputStream(dbFile);
 				byte[] buffer = new byte[40000];
@@ -795,7 +795,7 @@ public class MainFragment extends BaseActivity {
 		UserRegisterData registerData = wareDao.findIsLoginHengyuCode();
 		String yth = registerData.getHengyuCode();
 		if(yth.length()==0){
-			NewDataToast.makeText(getApplicationContext(), "ÇëÏÈµÇÂ¼",false, 0).show();
+			NewDataToast.makeText(getApplicationContext(), "è¯·å…ˆç™»å½•",false, 0).show();
 		}else {
 			Map<String, String> param0 = new HashMap<String, String>();
 			param0.put("act", "GetDownloadAPK_URL");

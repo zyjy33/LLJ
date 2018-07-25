@@ -37,7 +37,7 @@ public class AsyncHttp {
 	}
 
 	/**
-	 * post Ìá½»µÄÊı¾İ
+	 * post æäº¤çš„æ•°æ®
 	 * 
 	 * @param url
 	 * @param params
@@ -82,7 +82,7 @@ public class AsyncHttp {
 		};
 	};
 	/**
-	 * ´¦ÀíÇëÇó²ÎÊı(·â×°ÁË²ÎÊıµÄ¼ÓÃÜ´¦Àí)
+	 * å¤„ç†è¯·æ±‚å‚æ•°(å°è£…äº†å‚æ•°çš„åŠ å¯†å¤„ç†)
 	 * 
 	 * @param params
 	 * @return
@@ -103,7 +103,7 @@ public class AsyncHttp {
 		while (keyIterable.hasNext()) {
 			keys.add(keyIterable.next());
 		}
-		Collections.sort(keys);// ·ÃÎÊ²ÎÊıÉıĞòÅÅÁĞ
+		Collections.sort(keys);// è®¿é—®å‚æ•°å‡åºæ’åˆ—
 		StringBuilder builder = new StringBuilder();
 		builder.append(APPKEY);
 		for (int i = 0; i < params.size(); i++) {
@@ -113,14 +113,14 @@ public class AsyncHttp {
 			builder.append(childKey + childValue);
 		}
 		builder.append(URL_SECRET);
-		System.out.println("¼ÓÃÜÇ°:" + builder.toString());
+		System.out.println("åŠ å¯†å‰:" + builder.toString());
 
 		String sign = SHA1.getDigestOfString(builder.toString()).toUpperCase();
 		System.out.println("sign:" + sign);
 		request.put("sign", sign);
 		request.put("appkey", APPKEY);
 		/**
-		 * µØÖ·Æ´½Ó
+		 * åœ°å€æ‹¼æ¥
 		 */
 		params.put("sign", sign);
 		params.put("appkey", APPKEY);
@@ -130,7 +130,7 @@ public class AsyncHttp {
 		while (keyIterable1.hasNext()) {
 			keys1.add(keyIterable1.next());
 		}
-		Collections.sort(keys1);// ·ÃÎÊ²ÎÊıÉıĞòÅÅÁĞ
+		Collections.sort(keys1);// è®¿é—®å‚æ•°å‡åºæ’åˆ—
 		StringBuilder temp = new StringBuilder();
 		for (int i = 0; i < params.size(); i++) {
 			String childKey = keys1.get(i);
@@ -143,14 +143,14 @@ public class AsyncHttp {
 			}
 
 		}
-		System.out.println("µØÖ·" + url + temp.toString());
+		System.out.println("åœ°å€" + url + temp.toString());
 		return url + temp.toString();
 		// return request;
 	}
 
 	@SuppressWarnings("unused")
 	private void debug() {
-		// µØÖ·Æ´½Ó
+		// åœ°å€æ‹¼æ¥
 
 	}
 

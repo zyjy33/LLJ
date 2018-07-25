@@ -40,7 +40,7 @@ import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 /**
- * Ãæ¶ÔÃæÉ¨Ò»É¨
+ * é¢å¯¹é¢æ‰«ä¸€æ‰«
  * 
  * @author Administrator
  * 

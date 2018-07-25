@@ -7,9 +7,9 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 public class ChildViewPager extends ViewPager {
-	/** ´¥ÃşÊ±°´ÏÂµÄµã **/
+	/** è§¦æ‘¸æ—¶æŒ‰ä¸‹çš„ç‚¹ **/
 	PointF downP = new PointF();
-	/** ´¥ÃşÊ±µ±Ç°µÄµã **/
+	/** è§¦æ‘¸æ—¶å½“å‰çš„ç‚¹ **/
 	PointF curP = new PointF();
 	OnSingleTouchListener onSingleTouchListener;
 
@@ -26,35 +26,35 @@ public class ChildViewPager extends ViewPager {
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent arg0) {
 		// TODO Auto-generated method stub
-		// µ±À¹½Ø´¥ÃşÊÂ¼şµ½´ï´ËÎ»ÖÃµÄÊ±ºò£¬·µ»Øtrue£¬
-		// ËµÃ÷½«onTouchÀ¹½ØÔÚ´Ë¿Ø¼ş£¬½ø¶øÖ´ĞĞ´Ë¿Ø¼şµÄonTouchEvent
+		// å½“æ‹¦æˆªè§¦æ‘¸äº‹ä»¶åˆ°è¾¾æ­¤ä½ç½®çš„æ—¶å€™ï¼Œè¿”å›trueï¼Œ
+		// è¯´æ˜å°†onTouchæ‹¦æˆªåœ¨æ­¤æ§ä»¶ï¼Œè¿›è€Œæ‰§è¡Œæ­¤æ§ä»¶çš„onTouchEvent
 		return true;
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent arg0) {
 		// TODO Auto-generated method stub
-		// Ã¿´Î½øĞĞonTouchÊÂ¼ş¶¼¼ÇÂ¼µ±Ç°µÄ°´ÏÂµÄ×ø±ê
+		// æ¯æ¬¡è¿›è¡ŒonTouchäº‹ä»¶éƒ½è®°å½•å½“å‰çš„æŒ‰ä¸‹çš„åæ ‡
 		curP.x = arg0.getX();
 		curP.y = arg0.getY();
 
 		if (arg0.getAction() == MotionEvent.ACTION_DOWN) {
-			// ¼ÇÂ¼°´ÏÂÊ±ºòµÄ×ø±ê
-			// ÇĞ¼Ç²»¿ÉÓÃ downP = curP £¬ÕâÑùÔÚ¸Ä±äcurPµÄÊ±ºò£¬downPÒ²»á¸Ä±ä
+			// è®°å½•æŒ‰ä¸‹æ—¶å€™çš„åæ ‡
+			// åˆ‡è®°ä¸å¯ç”¨ downP = curP ï¼Œè¿™æ ·åœ¨æ”¹å˜curPçš„æ—¶å€™ï¼ŒdownPä¹Ÿä¼šæ”¹å˜
 			downP.x = arg0.getX();
 			downP.y = arg0.getY();
-			// ´Ë¾ä´úÂëÊÇÎªÁËÍ¨ÖªËûµÄ¸¸ViewPagerÏÖÔÚ½øĞĞµÄÊÇ±¾¿Ø¼şµÄ²Ù×÷£¬²»Òª¶ÔÎÒµÄ²Ù×÷½øĞĞ¸ÉÈÅ
+			// æ­¤å¥ä»£ç æ˜¯ä¸ºäº†é€šçŸ¥ä»–çš„çˆ¶ViewPagerç°åœ¨è¿›è¡Œçš„æ˜¯æœ¬æ§ä»¶çš„æ“ä½œï¼Œä¸è¦å¯¹æˆ‘çš„æ“ä½œè¿›è¡Œå¹²æ‰°
 			getParent().requestDisallowInterceptTouchEvent(true);
 		}
 
 		if (arg0.getAction() == MotionEvent.ACTION_MOVE) {
-			// ´Ë¾ä´úÂëÊÇÎªÁËÍ¨ÖªËûµÄ¸¸ViewPagerÏÖÔÚ½øĞĞµÄÊÇ±¾¿Ø¼şµÄ²Ù×÷£¬²»Òª¶ÔÎÒµÄ²Ù×÷½øĞĞ¸ÉÈÅ
+			// æ­¤å¥ä»£ç æ˜¯ä¸ºäº†é€šçŸ¥ä»–çš„çˆ¶ViewPagerç°åœ¨è¿›è¡Œçš„æ˜¯æœ¬æ§ä»¶çš„æ“ä½œï¼Œä¸è¦å¯¹æˆ‘çš„æ“ä½œè¿›è¡Œå¹²æ‰°
 			getParent().requestDisallowInterceptTouchEvent(true);
 		}
 
 		if (arg0.getAction() == MotionEvent.ACTION_UP) {
-			// ÔÚupÊ±ÅĞ¶ÏÊÇ·ñ°´ÏÂºÍËÉÊÖµÄ×ø±êÎªÒ»¸öµã
-			// Èç¹ûÊÇÒ»¸öµã£¬½«Ö´ĞĞµã»÷ÊÂ¼ş£¬ÕâÊÇÎÒ×Ô¼ºĞ´µÄµã»÷ÊÂ¼ş£¬¶ø²»ÊÇonclick
+			// åœ¨upæ—¶åˆ¤æ–­æ˜¯å¦æŒ‰ä¸‹å’Œæ¾æ‰‹çš„åæ ‡ä¸ºä¸€ä¸ªç‚¹
+			// å¦‚æœæ˜¯ä¸€ä¸ªç‚¹ï¼Œå°†æ‰§è¡Œç‚¹å‡»äº‹ä»¶ï¼Œè¿™æ˜¯æˆ‘è‡ªå·±å†™çš„ç‚¹å‡»äº‹ä»¶ï¼Œè€Œä¸æ˜¯onclick
 			if (downP.x == curP.x && downP.y == curP.y) {
 				onSingleTouch();
 				return true;
@@ -65,7 +65,7 @@ public class ChildViewPager extends ViewPager {
 	}
 
 	/**
-	 * µ¥»÷
+	 * å•å‡»
 	 */
 	public void onSingleTouch() {
 		if (onSingleTouchListener != null) {
@@ -75,7 +75,7 @@ public class ChildViewPager extends ViewPager {
 	}
 
 	/**
-	 * ´´½¨µã»÷ÊÂ¼ş½Ó¿Ú
+	 * åˆ›å»ºç‚¹å‡»äº‹ä»¶æ¥å£
 	 * 
 	 * @author wanpg
 	 * 

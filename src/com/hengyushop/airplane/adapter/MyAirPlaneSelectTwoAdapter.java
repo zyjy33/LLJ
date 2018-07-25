@@ -141,7 +141,7 @@ public class MyAirPlaneSelectTwoAdapter extends BaseExpandableListAdapter {
 		}
 		mDatas = moneyDatas.get(groupPosition).get(childPosition);
 		childHolder.nameTextView.setText(mDatas.name);
-		childHolder.rmdBtn.setTag(groupPosition + "," + childPosition); // ÉèÖÃ±êÇ©
+		childHolder.rmdBtn.setTag(groupPosition + "," + childPosition); // è®¾ç½®æ ‡ç­¾
 		tempView.setTag(childHolder);
 		return tempView;
 	}

@@ -75,7 +75,7 @@ public class YsjGoodsListAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// *******************************************************************************
 
-		// µ⁄“ª÷÷∑Ω∑®
+		// Á¨¨‰∏ÄÁßçÊñπÊ≥ï
 //		View inflate = inflater.inflate(R.layout.goods_list_item, null);//
 		View inflate = inflater.inflate(R.layout.tuijian_yunshangju_time, null);//
 //		ListView listView = (ListView) inflate.findViewById(R.id.expandedListView1);
@@ -130,7 +130,7 @@ public class YsjGoodsListAdapter extends BaseAdapter {
 ////						tv_name.setText(lists_ll.get(position).title);
 //						
 //						System.out
-//								.println("=====================Œª÷√" + position);
+//								.println("=====================‰ΩçÁΩÆ" + position);
 //
 ////						loader.displayImage(
 ////								RealmName.REALM_NAME_HTTP
@@ -239,7 +239,7 @@ public class YsjGoodsListAdapter extends BaseAdapter {
 //
 //						tv_name.setText(lists_ll.get(position).title);
 //						System.out
-//								.println("=====================Œª÷√" + position);
+//								.println("=====================‰ΩçÁΩÆ" + position);
 //
 //						loader.displayImage(
 //								RealmName.REALM_NAME_HTTP

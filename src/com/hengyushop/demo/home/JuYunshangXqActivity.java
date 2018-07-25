@@ -128,7 +128,7 @@ public class JuYunshangXqActivity extends BaseActivity implements OnClickListene
 			case 0:
 				try {
 //				jysadapter.putData(lists);
-					System.out.println("=====================ÕâÀï"+list_ll.size());
+					System.out.println("=====================è¿™é‡Œ"+list_ll.size());
 				jysadapter = new JuYunShangAdaper(list_ll, getApplicationContext());
 				myGridView.setAdapter(jysadapter);
 				
@@ -137,7 +137,7 @@ public class JuYunshangXqActivity extends BaseActivity implements OnClickListene
 
 		            @Override
 		            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		            	System.out.println("=====================ÕâÀï"+list_ll.size());
+		            	System.out.println("=====================è¿™é‡Œ"+list_ll.size());
 						Intent intent = new Intent(JuYunshangXqActivity.this,WareInformationActivity.class);
 						intent.putExtra("id", list_ll.get(arg2).id);
 						startActivity(intent);
@@ -209,10 +209,10 @@ public class JuYunshangXqActivity extends BaseActivity implements OnClickListene
 		}
 	}
 	
-	//ÉÌÆ·ÁĞ±í
+	//å•†å“åˆ—è¡¨
 		private void loadCate(int user_id){
 			list_ll = new ArrayList<shangpingListData>();
-				System.out.println("×ßµ½ÉÌÆ·ÁĞ±íÁË=========="+user_id);
+				System.out.println("èµ°åˆ°å•†å“åˆ—è¡¨äº†=========="+user_id);
 			AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_article_top_list?" +
 	                "channel_name=goods&top=20&strwhere=user_id="+user_id+"", new AsyncHttpResponseHandler(){
 				@Override
@@ -220,7 +220,7 @@ public class JuYunshangXqActivity extends BaseActivity implements OnClickListene
 					// TODO Auto-generated method stub
 					super.onSuccess(arg0, arg1);
 					try {
-						System.out.println("£¨ÉÌÆ·ÁĞ±í£©=========="+arg1);
+						System.out.println("ï¼ˆå•†å“åˆ—è¡¨ï¼‰=========="+arg1);
 						JSONObject jsonObject = new JSONObject(arg1);
 						String status = jsonObject.getString("status");
 						String info = jsonObject.getString("info");
@@ -256,7 +256,7 @@ public class JuYunshangXqActivity extends BaseActivity implements OnClickListene
 	
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -274,7 +274,7 @@ public class JuYunshangXqActivity extends BaseActivity implements OnClickListene
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 

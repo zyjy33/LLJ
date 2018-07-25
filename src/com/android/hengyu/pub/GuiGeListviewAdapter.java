@@ -84,7 +84,7 @@ public class GuiGeListviewAdapter extends BaseAdapter{
 		return 0;
 	}
 	
-	// ÿ��convert view������ô˷�������õ�ǰ����Ҫ��view��ʽ  
+	// 每个convert view都会调用此方法，获得当前所需要的view样式  
     @Override  
     public int getItemViewType(int position) {
         int p = position;  
@@ -130,7 +130,7 @@ public class GuiGeListviewAdapter extends BaseAdapter{
 	        
         if (convertView == null) {  
         	 inflater = LayoutInflater.from(context);  
-            // ����ǰ�������ʽ��ȷ��new�Ĳ���  
+            // 按当前所需的样式，确定new的布局  
             switch (type) {  
             case TYPE_1:  
                 convertView = inflater.inflate(R.layout.guige_item,   parent, false);  
@@ -187,7 +187,7 @@ public class GuiGeListviewAdapter extends BaseAdapter{
             }  
         }
         
-        // ������Դ  
+        // 设置资源  
         switch (type) {
         case TYPE_1:  
         	holder1.tv_yhwenzi.setText(list.get(position).getTitle());

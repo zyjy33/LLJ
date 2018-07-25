@@ -24,20 +24,20 @@ public class Circleview extends ImageView {
 	Matrix matx = new Matrix();
 	private Handler handler;
 	/**
-	 * ÖĞ½±¸÷ÖÖ¼ÆËã²ÎÊı maxAngel=×ª¶¯µ½ÖĞ½±µÄ½Ç¶È
+	 * ä¸­å¥–å„ç§è®¡ç®—å‚æ•° maxAngel=è½¬åŠ¨åˆ°ä¸­å¥–çš„è§’åº¦
 	 */
 	float maxAngel = 0.0f;
 
 	/**
-	 * ÆÁÄ»µÄ¿í¶È
+	 * å±å¹•çš„å®½åº¦
 	 */
 	int screnWidth = 0;
 
 	/**
-	 * ³õÊ¼³é½±»¬¶¯×é¼ş
+	 * åˆå§‹æŠ½å¥–æ»‘åŠ¨ç»„ä»¶
 	 * @param context
 	 * @param width
-	 * ÆÁÄ»¿í¶È
+	 * å±å¹•å®½åº¦
 	 */
 	private float x,y;
 	public Circleview(Context context, int width,float x,float y,Handler handler) {
@@ -119,11 +119,11 @@ public class Circleview extends ImageView {
 			return;
 		}
 		Paint localPaint = new Paint();
-		// ÉèÖÃÈ¡Ïû¾â³İĞ§¹û
+		// è®¾ç½®å–æ¶ˆé”¯é½¿æ•ˆæœ
 		localPaint.setAntiAlias(true);
 		localPaint.setFilterBitmap(true);
 		/**
-		 * ³õÊ¼ÖĞ¼äÖ¸Õë
+		 * åˆå§‹ä¸­é—´æŒ‡é’ˆ
 		 */
 //		matx.setTranslate(DensityUtil.dip2px(getContext(), 300) / 2,
 //				DensityUtil.dip2px(getContext(), 300) / 4);
@@ -133,7 +133,7 @@ public class Circleview extends ImageView {
 		// DensityUtil.dip2px(getContext(),
 		// 300)/2-mHourBitmap.getHeight()+DensityUtil.dip2px(getContext(), 20));
 		/**
-		 * ÉèÖÃÈÆµãĞı×ª
+		 * è®¾ç½®ç»•ç‚¹æ—‹è½¬
 		 */
 		// matx.preRotate(Angel, mHourBitmap.getWidth() /
 		// 2,mHourBitmap.getHeight() * 4 / 5);
@@ -144,10 +144,10 @@ public class Circleview extends ImageView {
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°µÄ½Ç¶È£¬²¢ÉèÖÃÍ£Ö¹½Ç¶È
+	 * è·å–å½“å‰çš„è§’åº¦ï¼Œå¹¶è®¾ç½®åœæ­¢è§’åº¦
 	 * 
 	 * @param palce
-	 *            Î»ÖÃ
+	 *            ä½ç½®
 	 * @return
 	 */
 	public void setReset(int place) {
@@ -159,7 +159,7 @@ public class Circleview extends ImageView {
 	}
 
 	/**
-	 * Ë³Ê±ÕëĞı×ª 1 = 330-30 2 = 30-90 3 = 90-150 4 = 150-210 5 = 210-270 6 = 270-330
+	 * é¡ºæ—¶é’ˆæ—‹è½¬ 1 = 330-30 2 = 30-90 3 = 90-150 4 = 150-210 5 = 210-270 6 = 270-330
 	 * 
 	 * @param place
 	 * @return
@@ -168,14 +168,14 @@ public class Circleview extends ImageView {
 		float roter = getRoteCenter(place);
 		float currentRoter = getCurrentRoter();
 
-		// Èç¹ûµ±Ç°µÄ½Ç¶ÈĞ¡ÓÚÎ»ÖÃµÄ½Ç¶È£¬Ôò±íÊ¾ĞèÒª¶à×ª¶àÉÙ½Ç¶È
+		// å¦‚æœå½“å‰çš„è§’åº¦å°äºä½ç½®çš„è§’åº¦ï¼Œåˆ™è¡¨ç¤ºéœ€è¦å¤šè½¬å¤šå°‘è§’åº¦
 		float difRoter = currentRoter - roter;
-		// ¹Ì¶¨ÈıÈ¦360*3£¬ºóÔÚ¼ÓÉÏµ±Ç°µÄ½Ç¶È²î
+		// å›ºå®šä¸‰åœˆ360*3ï¼Œååœ¨åŠ ä¸Šå½“å‰çš„è§’åº¦å·®
 		maxAngel = Angel + 360 * 3 + 360 - difRoter;
 	}
 
 	/**
-	 * µÃµ½½±ÏîÎ»ÖÃµÄ½Ç¶È -×ªÅÌ360¶È ¸ù¾İ½±ÏîÈ¡¸÷¸ö½±ÏîµÄÆ½¾ùÖµ£¬ÔÚÉèÖÃÖ¸¶¨¸÷¸ö½±ÏîµÄÖĞ¼äµã
+	 * å¾—åˆ°å¥–é¡¹ä½ç½®çš„è§’åº¦ -è½¬ç›˜360åº¦ æ ¹æ®å¥–é¡¹å–å„ä¸ªå¥–é¡¹çš„å¹³å‡å€¼ï¼Œåœ¨è®¾ç½®æŒ‡å®šå„ä¸ªå¥–é¡¹çš„ä¸­é—´ç‚¹
 	 * 
 	 * @param place
 	 * @return
@@ -221,7 +221,7 @@ public class Circleview extends ImageView {
 	}
 
 	/**
-	 * µÃµ½×ª¶¯µÄÊµ¼Ê½Ç¶È--»»Ëã½Ç¶ÈÖµ
+	 * å¾—åˆ°è½¬åŠ¨çš„å®é™…è§’åº¦--æ¢ç®—è§’åº¦å€¼
 	 * 
 	 * @return
 	 */

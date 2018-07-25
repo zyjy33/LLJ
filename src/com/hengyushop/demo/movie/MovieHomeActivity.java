@@ -47,7 +47,7 @@ public class MovieHomeActivity extends Activity {
 	}
 
 	private void listData() {
-		String[] type = new String[] { "ÈçºÎ×¢²á", "ÈçºÎ³äÖµ", "ÈçºÎÌáÏÖ", "Íø¹º°²È«", "¹ØÓÚÎÒÃÇ" };
+		String[] type = new String[] { "å¦‚ä½•æ³¨å†Œ", "å¦‚ä½•å……å€¼", "å¦‚ä½•æç°", "ç½‘è´­å®‰å…¨", "å…³äºæˆ‘ä»¬" };
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		Map<String, String> lines = null;
 		for (int i = 0; i < type.length; i++) {

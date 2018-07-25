@@ -72,7 +72,7 @@ public class GuaGuaActivity extends BaseActivity{
 			gua.setOnWipeListener(new onWipeListener() {
 				@Override
 				public void onWipe(int percent) {
-					//-1´ú±íÍê³ÉÁË³é½±¶¯×÷  
+					//-1ä»£è¡¨å®Œæˆäº†æŠ½å¥–åŠ¨ä½œ  
 					if(percent==-1){
 						handler.sendEmptyMessage(0);
 					}else {
@@ -111,7 +111,7 @@ public class GuaGuaActivity extends BaseActivity{
 				break;
 			case 0:
 				 if(until!=-1){
-					 start.setText("ÔÙ¹ÎÒ»´Î");
+					 start.setText("å†åˆ®ä¸€æ¬¡");
 				 }
 				start_layout.setVisibility(View.VISIBLE);
 				break;
@@ -182,7 +182,7 @@ public class GuaGuaActivity extends BaseActivity{
 			yth = registerData.getHengyuCode().toString();
 		} catch (NullPointerException e) {
 			// TODO: handle exception
-			NewDataToast.makeText(getApplicationContext(), "Î´µÇÂ¼", false,0).show();
+			NewDataToast.makeText(getApplicationContext(), "æœªç™»å½•", false,0).show();
 			AppManager.getAppManager().finishActivity();
 			
 		}
@@ -194,7 +194,7 @@ public class GuaGuaActivity extends BaseActivity{
 		if(yth.length()!=0){
 			Map<String, String> params = new HashMap<String, String>();
 			params.put("yth", yth);
-			params.put("luckDrawSetName", "¹Î°¡¹Î");
+			params.put("luckDrawSetName", "åˆ®å•Šåˆ®");
 			params.put("act", "GetLuckDrawResult");
 			AsyncHttp.post_1(RealmName.REALM_NAME+"/mi/getData.ashx", params, new AsyncHttpResponseHandler(){
 				public void onSuccess(int arg0, String arg1) {
@@ -203,8 +203,8 @@ public class GuaGuaActivity extends BaseActivity{
 						JSONObject jsonObject = new JSONObject(arg1);
 						String status = jsonObject.getString("status");
 						if(status.equals("1")){
-							//ÕıÈ·£¬¿ªÊ¼´¦Àí
-						String PrizeTypeID = 	jsonObject.getString("PrizeTypeID");//1.ÉÌÆ·£¬2.±íÊ¾»ı·Ö
+							//æ­£ç¡®ï¼Œå¼€å§‹å¤„ç†
+						String PrizeTypeID = 	jsonObject.getString("PrizeTypeID");//1.å•†å“ï¼Œ2.è¡¨ç¤ºç§¯åˆ†
 						CircleBean bean = new CircleBean();
 						bean.setLuckDrawSerialNumber(jsonObject.getString("LuckDrawSerialNumber"));
 						bean.setMsg(jsonObject.getString("msg"));
@@ -239,13 +239,13 @@ public class GuaGuaActivity extends BaseActivity{
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -269,8 +269,8 @@ public class GuaGuaActivity extends BaseActivity{
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
