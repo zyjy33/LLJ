@@ -122,7 +122,7 @@ public class UserRegisterActivity extends BaseActivity implements
 				NewDataToast.makeText(getApplicationContext(), strmsg,false, 0).show();
 				break;
 			case 2:
-				NewDataToast.makeText(getApplicationContext(), "ÑéÖ¤ÂëÒÑ·¢ËÍ",false, 0).show();
+				NewDataToast.makeText(getApplicationContext(), "éªŒè¯ç å·²å‘é€",false, 0).show();
 				new Thread() {
 					public void run() {
 						for (int i = 120; i >= 0; i--) {
@@ -148,11 +148,11 @@ public class UserRegisterActivity extends BaseActivity implements
 				break;
 			case 3:
 				
-				NewDataToast.makeText(getApplicationContext(), "ÑéÖ¤ÂëÒÑÏÂ·¢",false, 0).show();
+				NewDataToast.makeText(getApplicationContext(), "éªŒè¯ç å·²ä¸‹å‘",false, 0).show();
 				break;
 			case 4:
 				get_yz.setEnabled(true);
-				get_yz.setText("»ñÈ¡ÑéÖ¤Âë");
+				get_yz.setText("è·å–éªŒè¯ç ");
 				break;
 			case 5:
 				get_yz.setEnabled(false);
@@ -177,13 +177,13 @@ public class UserRegisterActivity extends BaseActivity implements
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -214,15 +214,15 @@ public class UserRegisterActivity extends BaseActivity implements
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAsDropDown(lay) ;
 		}
 	}
 	
-	public  float[] bubbleSort(float[] args){//Ã°ÅİÅÅĞòËã·¨
+	public  float[] bubbleSort(float[] args){//å†’æ³¡æ’åºç®—æ³•
         for(int i=0;i<args.length-1;i++){
                 for(int j=i+1;j<args.length;j++){
                         if (args[i]<args[j]){
@@ -253,7 +253,7 @@ public class UserRegisterActivity extends BaseActivity implements
 //		img_title_login.setOnClickListener(this);
 		btn_register.setOnClickListener(this);
 		get_yz.setOnClickListener(this);
-//		regise_tip.setText(Html.fromHtml(" <u>ÓÃ»§Ğ­Òé</u> "));
+//		regise_tip.setText(Html.fromHtml(" <u>ç”¨æˆ·åè®®</u> "));
 		regise_tip.setOnClickListener(this);
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -278,16 +278,16 @@ public class UserRegisterActivity extends BaseActivity implements
 		case R.id.get_yz:
 			phone = userphone.getText().toString().trim();
 			if (phone.equals("")) {
-				Toast.makeText(UserRegisterActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 200).show();
 //			}else if (phone.length() < 11 ) {
-//				Toast.makeText(UserRegisterActivity.this, "ÊÖ»úºÅÂëÉÙÓÚ11Î»", 200).show();
+//				Toast.makeText(UserRegisterActivity.this, "æ‰‹æœºå·ç å°‘äº11ä½", 200).show();
 			}else {
 			if(Validator.isMobile(phone)){
-//				showToast("ÑéÖ¤ÊÖ»úºÅ³É¹¦!");
+//				showToast("éªŒè¯æ‰‹æœºå·æˆåŠŸ!");
 				phone = userphone.getText().toString().trim();//user_verify_smscode
 //				if (phone != null && phone.length() == 11) {
 					strUrl = RealmName.REALM_NAME_LL+"/user_verify_smscode?mobile="+phone+"";
-//					AsyncHttp.get( "http://www.hengyushop.com/mi/SmsAndMms.ashx?companyName=ÔÆÉÌ¾Û&mobile=" + phone+"&RequesDomain=ehaoyy",
+//					AsyncHttp.get( "http://www.hengyushop.com/mi/SmsAndMms.ashx?companyName=äº‘å•†èš&mobile=" + phone+"&RequesDomain=ehaoyy",
 							
 					AsyncHttp.get(strUrl,
 							new AsyncHttpResponseHandler() {
@@ -314,11 +314,11 @@ public class UserRegisterActivity extends BaseActivity implements
 								}
 							}, getApplicationContext());
 //				} else {
-////					NewDataToast.makeText(getApplicationContext(), "ÇëÊäÈëÊÖ»úºÅÂë",false,0).show();
-//					Toast.makeText(UserRegisterActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 200).show();
+////					NewDataToast.makeText(getApplicationContext(), "è¯·è¾“å…¥æ‰‹æœºå·ç ",false,0).show();
+//					Toast.makeText(UserRegisterActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 200).show();
 //				}
 			}else{
-				showToast("ÑéÖ¤ÊÖ»úºÅÊ§°Ü!");
+				showToast("éªŒè¯æ‰‹æœºå·å¤±è´¥!");
 			}
 		    }
 			break;
@@ -338,32 +338,32 @@ public class UserRegisterActivity extends BaseActivity implements
 			pwd = userpwd.getText().toString().trim();
 //			pwdagain = userpwdagain.getText().toString().trim();
 			// SimpleDateFormat formatter = new SimpleDateFormat(
-			// "yyyyÄêMMÔÂddÈÕ   HH:mm:ss");
-			// Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+			// "yyyyå¹´MMæœˆddæ—¥   HH:mm:ss");
+			// Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 			// insertdata = formatter.format(curDate);
 
 			System.out.println("1=================="+yz);
 			System.out.println("2=================="+yanzhengma);
 			if (phone.equals("")) {
-				Toast.makeText(UserRegisterActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}else if (phone.length() < 11 ) {
-				Toast.makeText(UserRegisterActivity.this, "ÊÖ»úºÅÂëÉÙÓÚ11Î»", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "æ‰‹æœºå·ç å°‘äº11ä½", 200).show();
 			}
 			else if (yz.equals("")) {
-				Toast.makeText(UserRegisterActivity.this, "ÑéÖ¤Âë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "éªŒè¯ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}
 //			else if (!yz.equals(yanzhengma)) {
-//				Toast.makeText(UserRegisterActivity.this, "ÑéÖ¤Âë²»ÕıÈ·", 200).show();
+//				Toast.makeText(UserRegisterActivity.this, "éªŒè¯ç ä¸æ­£ç¡®", 200).show();
 //			}
 //			else if (yz.length() < 6 ) {
-//				Toast.makeText(UserRegisterActivity.this, "ÑéÖ¤ÂëÉÙÓÚÁùÎ»", 200).show();
+//				Toast.makeText(UserRegisterActivity.this, "éªŒè¯ç å°‘äºå…­ä½", 200).show();
 //			}
 			else if (pwd.equals("")) {
-				Toast.makeText(UserRegisterActivity.this, "ÃÜÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "å¯†ç ä¸èƒ½ä¸ºç©º", 200).show();
 			} else if (pwd.length()<8) {
-				Toast.makeText(UserRegisterActivity.this, "ÃÜÂë²»µÃĞ¡ÓÚ8Î»", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "å¯†ç ä¸å¾—å°äº8ä½", 200).show();
 			} else if (!(userpwd.getText().toString().length()<20&&userpwd.getText().toString().length()>=8)) {
-				Toast.makeText(UserRegisterActivity.this, "ÃÜÂëÔÚ8-20Î»Ö®¼ä", 200).show();
+				Toast.makeText(UserRegisterActivity.this, "å¯†ç åœ¨8-20ä½ä¹‹é—´", 200).show();
 			}else {
 				try {
 					progress = new DialogProgress(UserRegisterActivity.this);
@@ -378,7 +378,7 @@ public class UserRegisterActivity extends BaseActivity implements
 								
 								strUrl = RealmName.REALM_NAME_LL+"/user_register?site=mobile&code="+yz+"&username="+phone+
 										 "&password="+pwd+"&mobile="+phone+"";
-								System.out.println("×¢²á" + strUrl);
+								System.out.println("æ³¨å†Œ" + strUrl);
 								
 								AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 									@Override

@@ -50,7 +50,7 @@ public class WideMarketActivity extends BaseActivity {
 			case 1:
 				TextView view = (TextView) msg.obj;
 				String id = (String) view.getTag();
-				System.out.println("»ñÈ¡µÄID" + id);
+				System.out.println("è·å–çš„ID" + id);
 				Intent intent = new Intent(WideMarketActivity.this,
 						WideThreeActivity.class);
 				Bundle bundle = new Bundle();
@@ -75,7 +75,7 @@ public class WideMarketActivity extends BaseActivity {
 	private void loadData() {
 		advert_order_city = (Spinner) findViewById(R.id.advert_order_city);
 	/*	advert_order_province = (Spinner) findViewById(R.id.advert_order_province);
-		//ÁÙÊ±
+		//ä¸´æ—¶
 		advert_order_province.setVisibility(View.INVISIBLE);
 		
 		
@@ -88,21 +88,21 @@ public class WideMarketActivity extends BaseActivity {
 		provinceAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		advert_order_province.setAdapter(provinceAdapter);*/
-		// ³ÇÊĞ
+		// åŸå¸‚
 
 //		city = new CityDB(getApplicationContext())
 //				.getProvince("select name from city where provinceId =(select code from province where name='"
 //						+ province.get(0) + "')");
-		//ÁÙÊ±
+		//ä¸´æ—¶
 		city = new ArrayList<String>();
 		
-		city.add("ÄÏ¾©ÊĞ");
-		city.add("ÉÏº£ÊĞ");
-		city.add("ËÕÖİÊĞ");
-		city.add("ÖØÇìÊĞ");
-		city.add("ÉîÛÚÊĞ");
+		city.add("å—äº¬å¸‚");
+		city.add("ä¸Šæµ·å¸‚");
+		city.add("è‹å·å¸‚");
+		city.add("é‡åº†å¸‚");
+		city.add("æ·±åœ³å¸‚");
 		
-		PRO_NAME = "ÄÏ¾©ÊĞ";
+		PRO_NAME = "å—äº¬å¸‚";
 		/*
 		 * city = new CityDB(getApplicationContext()).getProvinceW(
 		 * "select name from city where provinceid = '" + provinceValue + "'",
@@ -151,7 +151,7 @@ public class WideMarketActivity extends BaseActivity {
 						CITY_CODE = new CityDB(getApplicationContext())
 								.getName("select code from city where name='"
 										+ city.get(arg2) + "'");
-						System.out.println("³ÇÊĞ"+CITY_CODE);
+						System.out.println("åŸå¸‚"+CITY_CODE);
 					}
 
 					@Override
@@ -194,7 +194,7 @@ public class WideMarketActivity extends BaseActivity {
 		}
 	}
 
-	// ½âÎöÍøÂçÊı¾İ ²¢²åÈëµ½SqliteÊı¾İ¿âÖĞ
+	// è§£æç½‘ç»œæ•°æ® å¹¶æ’å…¥åˆ°Sqliteæ•°æ®åº“ä¸­
 	public void parse(String st) {
 		try {
 			// List<WareData> allids = waredao.finAddID();

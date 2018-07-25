@@ -51,7 +51,7 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.lelinju.www.R;
 
 /**
- * Ãæ¶ÔÃæº£±¨·ÖÏí
+ * é¢å¯¹é¢æµ·æŠ¥åˆ†äº«
  * 
  * @author Administrator
  * 
@@ -94,7 +94,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 				case 0:
 	            break;
 				case 1:
-//					bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ 
+//					bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜ 
 					finish();
 		            break;
 				case 2:
@@ -219,7 +219,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	}
 	
 	/**
-	 * Î¢ĞÅ·ÖÏíÍ¼Æ¬
+	 * å¾®ä¿¡åˆ†äº«å›¾ç‰‡
 	 * 
 	 * @param text
 	 */
@@ -227,29 +227,29 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
          try {
 //        	 if (bitMap_tx != null) {
         	 
-        	  // Í¼Æ¬ºÏ³É-»­²¼ ÏÈÈ¥»­A ÔÙÈ¥»­B
+        	  // å›¾ç‰‡åˆæˆ-ç”»å¸ƒ å…ˆå»ç”»A å†å»ç”»B
  			String zhuti_tp = getIntent().getStringExtra("num");
  			System.out.println("zhuti_tp========"+zhuti_tp);
  			System.out.println("bitmap_fx0=============="+bitmap_fx);
  			if (zhuti_tp != null) {
-// 				bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  	
+// 				bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  	
  				if (zhuti_tp.equals("1")) {
 // 					String fx_tp2 = spPreferences.getString("fx_tp2", "");
 // 					bitmap_fx = BitUtil.stringtoBitmap(fx_tp2);
-// 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
+// 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
  				   InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao1); 
 				     BitmapFactory.Options options=new BitmapFactory.Options(); 
 				     options.inJustDecodeBounds = false; 
-				     options.inSampleSize = 1;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+				     options.inSampleSize = 1;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 				     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
 				     zhou();
  				}else if (zhuti_tp.equals("2")){
  					try {
-// 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao2); // bitmapÎªÖ»¶ÁµÄ
+// 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao2); // bitmapä¸ºåªè¯»çš„
  						 InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao2); 
  					     BitmapFactory.Options options=new BitmapFactory.Options(); 
  					     options.inJustDecodeBounds = false; 
- 					     options.inSampleSize = 2;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+ 					     options.inSampleSize = 2;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
  					     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
  					     zhoull();	
  					} catch (Exception e) {
@@ -258,46 +258,46 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 					}
  				}
  			} else {
-// 				bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
+// 				bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
 // 				yuanban();
  				     InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao1); 
 				     BitmapFactory.Options options=new BitmapFactory.Options(); 
 				     options.inJustDecodeBounds = false; 
-				     options.inSampleSize = 1;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+				     options.inSampleSize = 1;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 				     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
 				     zhou();
  			}
  			
 // 			  System.out.println("zhuangtai=============="+zhuangtai);
 // 			  if (zhuangtai == true){
-//				  bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
+//				  bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
 //				  yuanban();
 //			  }else if (MianDuiMianGhztActivity.shuzi.equals("1")) {
 //				     InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao1); 
 //				     BitmapFactory.Options options=new BitmapFactory.Options(); 
 //				     options.inJustDecodeBounds = false; 
-//				     options.inSampleSize = 1;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+//				     options.inSampleSize = 1;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 //				     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
-//// 				     bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
+//// 				     bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
 //				     MianDuiMianGhztActivity.shuzi = "0";
 //				     zhou();
 //			  }else if (MianDuiMianGhztActivity.shuzi.equals("2")) {
 //				     InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao2); 
 //				     BitmapFactory.Options options=new BitmapFactory.Options(); 
 //				     options.inJustDecodeBounds = false; 
-//				     options.inSampleSize = 2;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+//				     options.inSampleSize = 2;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 //				     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
 //				     MianDuiMianGhztActivity.shuzi = "0";
 //				     zhoull();
-////				     bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_hb2); // bitmapÎªÖ»¶ÁµÄ
+////				     bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_hb2); // bitmapä¸ºåªè¯»çš„
 //			  }
  			  
-//				bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
-// 				bitmap_fx.recycle();   //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  	
+//				bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
+// 				bitmap_fx.recycle();   //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  	
  				
 // 		    int w = bitmap_fx.getWidth();
 // 		    int h = bitmap_fx.getHeight();
-// 		    Bitmap alterBitmap = Bitmap.createBitmap( w, h, Config.ARGB_8888 );//´´½¨Ò»¸öĞÂµÄºÍSRC³¤¶È¿í¶ÈÒ»ÑùµÄÎ»Í¼
+// 		    Bitmap alterBitmap = Bitmap.createBitmap( w, h, Config.ARGB_8888 );//åˆ›å»ºä¸€ä¸ªæ–°çš„å’ŒSRCé•¿åº¦å®½åº¦ä¸€æ ·çš„ä½å›¾
  	        System.out.println("bitmap_fx1=============="+bitmap_fx);
  	        
          } catch (Exception e) {
@@ -321,9 +321,9 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	        paint.setColor(Color.BLACK);
 	        canvas.drawBitmap(bitmap_fx, new Matrix(), paint);
 	        System.out.println("bitmap_fx2=============="+bitmap_fx);
-	        bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  
+	        bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  
 	       
-	       //Í·Ïñ
+	       //å¤´åƒ
 //	       String touxiang = getIntent().getStringExtra("touxiang");
 //	       System.out.println("touxiang=============="+touxiang);
 	       if (bitMap_tx == null) {
@@ -341,16 +341,16 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 //	        bitMap2 = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_tx);
 	        int width2 = bitMap2.getWidth();
 	        int height2 = bitMap2.getHeight();
-	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+	        // è®¾ç½®æƒ³è¦çš„å¤§å°
 	        int newWidth2= 180;
 	        int newHeight2 = 180;
-	        // ¼ÆËãËõ·Å±ÈÀı
+	        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 	        float scaleWidth2 = ((float) newWidth2) / width2;
 	        float scaleHeight2 = ((float) newHeight2) / height2;
-	        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+	        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 	        Matrix matrix2 = new Matrix();
 	        matrix2.postScale(scaleWidth2, scaleHeight2);
-	        // µÃµ½ĞÂµÄÍ¼Æ¬
+	        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 	        bitMap2 = Bitmap.createBitmap(bitMap2, 0, 0, width2, height2, matrix2, true);
 	        canvas.drawBitmap(bitMap2, 290, 180, null);
 	    	  } catch (Exception e) {
@@ -361,21 +361,21 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 			
 		   }
 	        
-	        //¶şÎ¬Âë
+	        //äºŒç»´ç 
 	        erweima = getIntent().getStringExtra("erweima");
 			Bitmap bitMap = BitUtil.stringtoBitmap(erweima);
 	        int width = bitMap.getWidth();
 	        int height = bitMap.getHeight();
-// 	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+// 	        // è®¾ç½®æƒ³è¦çš„å¤§å°
  	        int newWidth = 270;
  	        int newHeight = 270;
-	        // ¼ÆËãËõ·Å±ÈÀı
+	        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 	        float scaleWidth = ((float) newWidth) / width;
 	        float scaleHeight = ((float) newHeight) / height;
-	        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+	        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 	        Matrix matrix = new Matrix();
 	        matrix.postScale(scaleWidth, scaleHeight);
-	        // µÃµ½ĞÂµÄÍ¼Æ¬
+	        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 	        bitMap = Bitmap.createBitmap(bitMap, 0, 0, width, height, matrix, true);
 	        canvas.drawBitmap(bitMap, 240, 935, null);
 	        
@@ -396,7 +396,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 			
 			Bitmap thumbBmp = Bitmap.createScaledBitmap(alterBitmap, THUMB_SIZE, THUMB_SIZE, true);
 			alterBitmap.recycle();
-			msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // ÉèÖÃËõÂÔÍ¼
+			msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // è®¾ç½®ç¼©ç•¥å›¾
 			
 			SendMessageToWX.Req req = new SendMessageToWX.Req();
 			req.transaction = buildTransaction("webpage");
@@ -404,7 +404,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 			req.scene = SendMessageToWX.Req.WXSceneSession;
 			boolean flag = api.sendReq(req);
 
-			System.out.println("Î¢ĞÅ×¢²á" + flag);
+			System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 			
 			
 	}
@@ -419,9 +419,9 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	        paint.setColor(Color.BLACK);
 	        canvas.drawBitmap(bitmap_fx, new Matrix(), paint);
 	        System.out.println("bitmap_fx2=============="+bitmap_fx);
-	        bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  
+	        bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  
 	       
-	       //Í·Ïñ
+	       //å¤´åƒ
 	       if (bitMap_tx == null) {
 	    	     bitMap2 = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_logn);
 	       }else {
@@ -432,16 +432,16 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	    	   try {
 	        int width2 = bitMap2.getWidth();
 	        int height2 = bitMap2.getHeight();
-	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+	        // è®¾ç½®æƒ³è¦çš„å¤§å°
 	        int newWidth2= 140;
 	        int newHeight2 = 140;
-	        // ¼ÆËãËõ·Å±ÈÀı
+	        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 	        float scaleWidth2 = ((float) newWidth2) / width2;
 	        float scaleHeight2 = ((float) newHeight2) / height2;
-	        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+	        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 	        Matrix matrix2 = new Matrix();
 	        matrix2.postScale(scaleWidth2, scaleHeight2);
-	        // µÃµ½ĞÂµÄÍ¼Æ¬
+	        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 	        bitMap2 = Bitmap.createBitmap(bitMap2, 0, 0, width2, height2, matrix2, true);
 	        canvas.drawBitmap(bitMap2, 200, 120, null);
 	    	  } catch (Exception e) {
@@ -452,21 +452,21 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 			
 		   }
 	        
-	        //¶şÎ¬Âë
+	        //äºŒç»´ç 
 	        erweima = getIntent().getStringExtra("erweima");
 			Bitmap bitMap = BitUtil.stringtoBitmap(erweima);
 	        int width = bitMap.getWidth();
 	        int height = bitMap.getHeight();
-// 	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+// 	        // è®¾ç½®æƒ³è¦çš„å¤§å°
  	        int newWidth = 200;
  	        int newHeight = 200;
-	        // ¼ÆËãËõ·Å±ÈÀı
+	        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 	        float scaleWidth = ((float) newWidth) / width;
 	        float scaleHeight = ((float) newHeight) / height;
-	        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+	        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 	        Matrix matrix = new Matrix();
 	        matrix.postScale(scaleWidth, scaleHeight);
-	        // µÃµ½ĞÂµÄÍ¼Æ¬
+	        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 	        bitMap = Bitmap.createBitmap(bitMap, 0, 0, width, height, matrix, true);
 	        canvas.drawBitmap(bitMap, 170, 670, null);
 	        
@@ -487,7 +487,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 			//import com.lglottery.www.http.Util;
 			Bitmap thumbBmp = Bitmap.createScaledBitmap(alterBitmap, THUMB_SIZE, THUMB_SIZE, true);
 			alterBitmap.recycle();
-			msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // ÉèÖÃËõÂÔÍ¼
+			msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // è®¾ç½®ç¼©ç•¥å›¾
 			
 			SendMessageToWX.Req req = new SendMessageToWX.Req();
 			req.transaction = buildTransaction("webpage");
@@ -495,7 +495,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 			req.scene = SendMessageToWX.Req.WXSceneSession;
 			boolean flag = api.sendReq(req);
 
-			System.out.println("Î¢ĞÅ×¢²á" + flag);
+			System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 	}
 	
 	private void fenxianglogin() {
@@ -508,7 +508,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 //		
 //		Bitmap thumbBmp = Bitmap.createScaledBitmap(alterBitmap, THUMB_SIZE, THUMB_SIZE, true);
 //		alterBitmap.recycle();
-//		msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // ÉèÖÃËõÂÔÍ¼
+//		msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // è®¾ç½®ç¼©ç•¥å›¾
 //		
 //		SendMessageToWX.Req req = new SendMessageToWX.Req();
 //		req.transaction = buildTransaction("webpage");
@@ -516,7 +516,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 //		req.scene = SendMessageToWX.Req.WXSceneSession;
 //		boolean flag = api.sendReq(req);
 //        
-//		System.out.println("Î¢ĞÅ×¢²á" + flag);
+//		System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 		
 //		Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ysj_haibao1);
 
@@ -550,23 +550,23 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	        paint.setColor(Color.BLACK);
 	        canvas.drawBitmap(bitmap_fx, new Matrix(), paint);
 	        System.out.println("bitmap_fx2=============="+bitmap_fx);
-	        bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  
+	        bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  
 	       
-	        //¶şÎ¬Âë
+	        //äºŒç»´ç 
 	        erweima = getIntent().getStringExtra("erweima");
 			Bitmap bitMap = BitUtil.stringtoBitmap(erweima);
 	        int width = bitMap.getWidth();
 	        int height = bitMap.getHeight();
-	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+	        // è®¾ç½®æƒ³è¦çš„å¤§å°
 	        int newWidth = 610;
 	        int newHeight = 610;
-	        // ¼ÆËãËõ·Å±ÈÀı
+	        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 	        float scaleWidth = ((float) newWidth) / width;
 	        float scaleHeight = ((float) newHeight) / height;
-	        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+	        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 	        Matrix matrix = new Matrix();
 	        matrix.postScale(scaleWidth, scaleHeight);
-	        // µÃµ½ĞÂµÄÍ¼Æ¬
+	        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 	        bitMap = Bitmap.createBitmap(bitMap, 0, 0, width, height, matrix, true);
 	        canvas.drawBitmap(bitMap, 440, 1830, null);
 	        
@@ -575,14 +575,14 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	       
 	       
 //	        System.out.println("bitMap2=============="+bitMap2);
-	       //Í·Ïñ
+	       //å¤´åƒ
 	       String touxiang = getIntent().getStringExtra("touxiang");
 	       System.out.println("touxiang=============="+touxiang);
 	       if (touxiang == null) {
 //	    	     InputStream is = this.getResources().openRawResource(R.drawable.ysj_logn); 
 //		     BitmapFactory.Options options=new BitmapFactory.Options(); 
 //		     options.inJustDecodeBounds = false; 
-//		     options.inSampleSize = 10;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+//		     options.inSampleSize = 10;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 //		     bitMap2 =BitmapFactory.decodeStream(is,null,options); 
 	    	     bitMap2 = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_logn);
 	       }else {
@@ -595,16 +595,16 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 //	        bitMap2 = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_tx);
 	        int width2 = bitMap2.getWidth();
 	        int height2 = bitMap2.getHeight();
-	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+	        // è®¾ç½®æƒ³è¦çš„å¤§å°
 	        int newWidth2= 400;
 	        int newHeight2 = 400;
-	        // ¼ÆËãËõ·Å±ÈÀı
+	        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 	        float scaleWidth2 = ((float) newWidth2) / width2;
 	        float scaleHeight2 = ((float) newHeight2) / height2;
-	        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+	        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 	        Matrix matrix2 = new Matrix();
 	        matrix2.postScale(scaleWidth2, scaleHeight2);
-	        // µÃµ½ĞÂµÄÍ¼Æ¬
+	        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 	        bitMap2 = Bitmap.createBitmap(bitMap2, 0, 0, width2, height2, matrix2, true);
 	        canvas.drawBitmap(bitMap2, 540, 350, null);
 	    	  } catch (Exception e) {
@@ -627,9 +627,9 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 //					String img_url2 = "http://183.62.138.31:1010/upload/phone/113875199/20170217164544307.jpg";
 					String img_url2 = RealmName.REALM_NAME_HTTP +avatar;
 					System.out.println("img_url2=============="+img_url2);
-					Bitmap bmp = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
+					Bitmap bmp = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
 					bitMap_ewm_tx = bmp;
-					bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 					System.out.println("bitMap1=============="+bitMap_tx);
 				} catch (Exception e) {
 					Log.i("ggggg", e.getMessage());
@@ -638,13 +638,13 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 		};
 		
 	/**
-	 * ³õÊ¼»¯Í¼Æ¬ÏÂÔØÆ÷£¬Í¼Æ¬»º´æµØÖ·<i>("/Android/data/[app_package_name]/cache/dirName")</i>
+	 * åˆå§‹åŒ–å›¾ç‰‡ä¸‹è½½å™¨ï¼Œå›¾ç‰‡ç¼“å­˜åœ°å€<i>("/Android/data/[app_package_name]/cache/dirName")</i>
 	 */
 	public ImageLoader initImageLoader(Context context,
 			ImageLoader imageLoader, String dirName) {
 		imageLoader = ImageLoader.getInstance();
 		if (imageLoader.isInited()) {
-			// ÖØĞÂ³õÊ¼»¯ImageLoaderÊ±,ĞèÒªÊÍ·Å×ÊÔ´.
+			// é‡æ–°åˆå§‹åŒ–ImageLoaderæ—¶,éœ€è¦é‡Šæ”¾èµ„æº.
 			imageLoader.destroy();
 		}
 		imageLoader.init(initImageLoaderConfig(context, dirName));
@@ -652,10 +652,10 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 	}
 	
 	/**
-	 * ÅäÖÃÍ¼Æ¬ÏÂÔØÆ÷
+	 * é…ç½®å›¾ç‰‡ä¸‹è½½å™¨
 	 * 
 	 * @param dirName
-	 *            ÎÄ¼şÃû
+	 *            æ–‡ä»¶å
 	 */
 	private ImageLoaderConfiguration initImageLoaderConfig(
 			Context context, String dirName) {
@@ -682,7 +682,7 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 		}
 		return memoryCacheSize;
 	}
-     //¶şÎ¬ÂëÖĞµÄÍ¼Æ¬
+     //äºŒç»´ç ä¸­çš„å›¾ç‰‡
 //     if (avatar.equals("")) {
 //  	  bitMap1 = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_logn);
 //     }else {
@@ -692,16 +692,16 @@ public class MianDuiMianFxhbActivity extends BaseActivity implements OnClickList
 //  	   try {
 //      int width1 = bitMap1.getWidth();
 //      int height1 = bitMap1.getHeight();
-//      // ÉèÖÃÏëÒªµÄ´óĞ¡
+//      // è®¾ç½®æƒ³è¦çš„å¤§å°
 //      int newWidth1 = 120;
 //      int newHeight1 = 120;
-//      // ¼ÆËãËõ·Å±ÈÀı
+//      // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 //      float scaleWidth1 = ((float) newWidth1) / width1;
 //      float scaleHeight1 = ((float) newHeight1) / height1;
-//      // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+//      // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 //      Matrix matrix1 = new Matrix();
 //      matrix1.postScale(scaleWidth1, scaleHeight1);
-//      // µÃµ½ĞÂµÄÍ¼Æ¬
+//      // å¾—åˆ°æ–°çš„å›¾ç‰‡
 //      bitMap1 = Bitmap.createBitmap(bitMap1, 0, 0, width1, height1, matrix1, true);
 //      canvas.drawBitmap(bitMap1, 685, 2080, null);
 //  	  } catch (Exception e) {

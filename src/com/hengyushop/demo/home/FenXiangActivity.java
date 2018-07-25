@@ -56,7 +56,7 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 /**
- * ·ÖÏí
+ * åˆ†äº«
  * 
  * @author Administrator
  * 
@@ -86,9 +86,9 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 	String img_url = "";
 	String mdm_sys = "";
 	String erweima = "";
-	Bitmap bitmap;// ¶şÎ¬ÂëÖĞ¼äÍ¼Æ¬
-	private int iv_halfWidth = 20;// ÏÔÊ¾ÖĞ¼äÍ¼Æ¬µÄ¿í¶ÈµÄÒ»°ë
-	Bitmap mBitmap;// ¶şÎ¬ÂëÍ¼Æ¬;
+	Bitmap bitmap;// äºŒç»´ç ä¸­é—´å›¾ç‰‡
+	private int iv_halfWidth = 20;// æ˜¾ç¤ºä¸­é—´å›¾ç‰‡çš„å®½åº¦çš„ä¸€åŠ
+	Bitmap mBitmap;// äºŒç»´ç å›¾ç‰‡;
 	Bitmap bitmap_tx,bitmap_touxiang;
 	String avatar = "";
 	String touxiang = "";
@@ -259,7 +259,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 	}
 
 	/**
-	 * ·ÖÏí
+	 * åˆ†äº«
 	 * 
 	 * @param view2
 	 * @param context
@@ -274,7 +274,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 			pop.setBackgroundDrawable(new BitmapDrawable());
 			pop.setOutsideTouchable(true);
 			// pop.setFocusable(true);
-			// pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+			// pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 			//
 			if (!pop.isShowing()) {
 				pop.showAtLocation(view2, Gravity.BOTTOM, 0, 0);
@@ -299,7 +299,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 			e.printStackTrace();
 		}
 
-		// ĞÂÀË
+		// æ–°æµª
 		img_btn_tencent.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -309,7 +309,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 			}
 		});
 
-		// Î¢ĞÅ
+		// å¾®ä¿¡
 		btn_wechat.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -318,7 +318,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 				con(16, 1);
 			}
 		});
-		// ÅóÓÑÈ¦
+		// æœ‹å‹åœˆ
 		btn_wx_friend.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -329,7 +329,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 			}
 		});
 		
-		// ¶ÌĞÅ
+		// çŸ­ä¿¡
 		btn_sms.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -421,7 +421,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 	}
 
 	/**
-	 * Î¢ĞÅ·ÖÏí
+	 * å¾®ä¿¡åˆ†äº«
 	 * 
 	 * @param text
 	 */
@@ -434,13 +434,13 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 		webpage.webpageUrl = "http" + temp[1];
 		// webpage.webpageUrl = temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-		// msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+		// msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.title = title;
 		msg.description = temp[0];
 		
 		if (img_url.equals("")) {
 			Bitmap thumb = BitmapFactory.decodeResource(FenXiangActivity.this.getResources(),R.drawable.llj_app);
-//			msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+//			msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 			msg.thumbData = bitmap2Bytes(thumb,32);
 		}else {
 			msg.thumbData = bitmap2Bytes(thumb,32);
@@ -453,14 +453,14 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 		req.message = msg;
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
-//		Toast.makeText(FenXiangActivity.this, "×´Ì¬", 200).show();
+//		Toast.makeText(FenXiangActivity.this, "çŠ¶æ€", 200).show();
 		String zhuangtai = String.valueOf(flag);
 //		Toast.makeText(FenXiangActivity.this, zhuangtai, 200).show();
-		System.out.println("Î¢ĞÅ×¢²á" + flag);
+		System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 	}
 	
 	/**
-	 * Î¢ĞÅ·ÖÏíÅóÓÑÈ¦
+	 * å¾®ä¿¡åˆ†äº«æœ‹å‹åœˆ
 	 * 
 	 * @param text
 	 */
@@ -472,14 +472,14 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 		webpage.webpageUrl = "http" + temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
 		msg.title = title;
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
-		// msg.title = "ni"+"ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
+		// msg.title = "ni"+"æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.description = temp[0];
 		if (img_url.equals("")) {
 //			Bitmap thumb = BitmapFactory.decodeResource(getResources(),R.drawable.llj_fx);
 //			msg.thumbData = Util.bmpToByteArray(thumb, true);
 			Bitmap thumb = BitmapFactory.decodeResource(FenXiangActivity.this.getResources(),R.drawable.llj_app);
-//			msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+//			msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 			msg.thumbData = bitmap2Bytes(thumb,32);
 		}else {
 			msg.thumbData = bitmap2Bytes(thumb,32);
@@ -501,7 +501,7 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	 /**
-     * Bitmap×ª»»³Ébyte[]²¢ÇÒ½øĞĞÑ¹Ëõ,Ñ¹Ëõµ½²»´óÓÚmaxkb
+     * Bitmapè½¬æ¢æˆbyte[]å¹¶ä¸”è¿›è¡Œå‹ç¼©,å‹ç¼©åˆ°ä¸å¤§äºmaxkb
      * @param bitmap
      * @param IMAGE_SIZE
      * @return
@@ -511,8 +511,8 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
         int options = 100;
         while (output.toByteArray().length > maxkb&& options != 10) {
-            output.reset(); //Çå¿Õoutput
-            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//ÕâÀïÑ¹Ëõoptions%£¬°ÑÑ¹ËõºóµÄÊı¾İ´æ·Åµ½outputÖĞ
+            output.reset(); //æ¸…ç©ºoutput
+            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//è¿™é‡Œå‹ç¼©options%ï¼ŒæŠŠå‹ç¼©åçš„æ•°æ®å­˜æ”¾åˆ°outputä¸­
             options -= 10;
         }
         return output.toByteArray();
@@ -542,23 +542,23 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 			System.out.println("bitmap_tx============="+bitmap_tx);
 			LogoConfig logoConfig = new LogoConfig();
 			bitmap = logoConfig.modifyLogo(BitmapFactory.decodeResource(getResources(),R.drawable.white_bg),bitmap_tx);
-			// Ëõ·ÅÍ¼Æ¬£¬ÓÃµ½¾ØÕóÈ¥×ö
+			// ç¼©æ”¾å›¾ç‰‡ï¼Œç”¨åˆ°çŸ©é˜µå»åš
 			Matrix matrix = new Matrix();
 			float sx = (float) 2 * iv_halfWidth / bitmap.getWidth();
 			float sy = (float) 2 * iv_halfWidth / bitmap.getHeight();
 			matrix.setScale(sx, sy);
 			System.out.println("bitmap============="+bitmap);
-			// Éú³ÉËõ·ÅºóµÄÍ¼Æ¬
+			// ç”Ÿæˆç¼©æ”¾åçš„å›¾ç‰‡
 			bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
 					bitmap.getHeight(), matrix, false);
 
 			String content = link_url;
-			System.out.println("content======·ÖÏíµØÖ·======="+content);
+			System.out.println("content======åˆ†äº«åœ°å€======="+content);
 			try {
 				mBitmap = createBitmap(new String(content.getBytes(), "ISO-8859-1"));
 				erweima = BitUtil.bitmaptoString(mBitmap);
 				System.out.println("mBitmap============="+mBitmap);
-				System.out.println("erweima======·ÖÏí======="+erweima);
+				System.out.println("erweima======åˆ†äº«======="+erweima);
 				
 				Intent intent1 = new Intent(FenXiangActivity.this,MainDuiMianPromoteActivity.class);
 				intent1.putExtra("mdm_sys", mdm_sys);
@@ -597,8 +597,8 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 //					System.out.println("img_url==========" + img_url);
 					String img_url2 = RealmName.REALM_NAME_HTTP + img_url;
 					System.out.println("img_url2=============="+img_url2);
-					thumb = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//					Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					thumb = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//					Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //					System.out.println("bitMap_tx=============="+bitMap_tx);
 					System.out.println("bmp=============="+thumb);
 				} catch (Exception e) {
@@ -613,8 +613,8 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 					try {
 						String img_url2 = RealmName.REALM_NAME_HTTP +avatar;
 						System.out.println("img_url2=============="+img_url2);
-						bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//						Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+						bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//						Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //						touxiang = BitUtil.bitmaptoString(bitMap_tx);
 						System.out.println("bitmap_touxiang=============="+bitmap_touxiang);
 					} catch (Exception e) {
@@ -624,43 +624,43 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 			};
 			
 			/**
-			 * ¸ù¾İ×Ö·û´®Éú³É¶şÎ¬Âë
+			 * æ ¹æ®å­—ç¬¦ä¸²ç”ŸæˆäºŒç»´ç 
 			 * 
 			 * @param s
 			 * @return
 			 * @throws WriterException
 			 */
 			private Bitmap createBitmap(String str) throws WriterException {
-				// Éú³É¶øÎª¾ØÕó£¬±àÂëÊÇÖ¸¶¨´óĞ¡£¬²»ÒªÉú³ÉÁËÍ¼Æ¬ÔÚ½øĞĞËõ·Å£¬ÕâÑù»áµ¼ÖÂÄ£ºıÊ¶±ğÊ§°Ü£¬¾ÍÊÇÉ¨ÃèÊ§°ÜÁË¡£
+				// ç”Ÿæˆè€Œä¸ºçŸ©é˜µï¼Œç¼–ç æ˜¯æŒ‡å®šå¤§å°ï¼Œä¸è¦ç”Ÿæˆäº†å›¾ç‰‡åœ¨è¿›è¡Œç¼©æ”¾ï¼Œè¿™æ ·ä¼šå¯¼è‡´æ¨¡ç³Šè¯†åˆ«å¤±è´¥ï¼Œå°±æ˜¯æ‰«æå¤±è´¥äº†ã€‚
 				BitMatrix mBitMatrix = new MultiFormatWriter().encode(str,
-						BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-±àÂë¸ñÊ½
-				// ¶şÎ¬¾ØÕóµÄ¿í¸ß
+						BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-ç¼–ç æ ¼å¼
+				// äºŒç»´çŸ©é˜µçš„å®½é«˜
 				int w = mBitMatrix.getWidth();
 				int h = mBitMatrix.getHeight();
 
-				// Í·ÏñµÄ¿í¶È
+				// å¤´åƒçš„å®½åº¦
 				int halfw = w / 2;
 				int halfh = h / 2;
-				// ×¼±¸»­¶şÎ¬Âë£¬°Ñ¶şÎ¬¾ØÕó×ª»»ÎªÒ»Î¬Êı×é£¬Ò»Ö±ºá×Å»­
-				int[] pixels = new int[w * h];// Êı×é³¤¶È¾ÍÊÇ¾ØÕóµÄÃæ»ıÖµ
+				// å‡†å¤‡ç”»äºŒç»´ç ï¼ŒæŠŠäºŒç»´çŸ©é˜µè½¬æ¢ä¸ºä¸€ç»´æ•°ç»„ï¼Œä¸€ç›´æ¨ªç€ç”»
+				int[] pixels = new int[w * h];// æ•°ç»„é•¿åº¦å°±æ˜¯çŸ©é˜µçš„é¢ç§¯å€¼
 				for (int y = 0; y < h; y++) {
 					int outputOffset = y * w;
 					for (int x = 0; x < w; x++) {
-						// »­Ò»¸öÆÕÍ¨µÄ¶şÎ¬Âë
-						// if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+						// ç”»ä¸€ä¸ªæ™®é€šçš„äºŒç»´ç 
+						// if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 						// pixels[outputOffset + x] = 0xff000000;
 						// } else {
 						// pixels[outputOffset + x] = 0xffffffff;
 						// }
 
-						// »­Ò»¸öÓĞÍ¼Æ¬µÄ¶şÎ¬ÂëÍ¼Æ¬
+						// ç”»ä¸€ä¸ªæœ‰å›¾ç‰‡çš„äºŒç»´ç å›¾ç‰‡
 						if (x > (halfw - iv_halfWidth) && x < (halfw + iv_halfWidth)
 								&& y > (halfh - iv_halfWidth)
-								&& y < (halfh + iv_halfWidth)) {// ÖĞ¼äÍ¼Æ¬µÄÇøÓò
+								&& y < (halfh + iv_halfWidth)) {// ä¸­é—´å›¾ç‰‡çš„åŒºåŸŸ
 							pixels[outputOffset + x] = bitmap.getPixel(x - halfw
-									+ iv_halfWidth, y - halfh + iv_halfWidth);// ÕâÀï»­Í¼Ö®ºó»áºÜÃ÷ÏÔµÄÏÔÊ¾³öÀ´
+									+ iv_halfWidth, y - halfh + iv_halfWidth);// è¿™é‡Œç”»å›¾ä¹‹åä¼šå¾ˆæ˜æ˜¾çš„æ˜¾ç¤ºå‡ºæ¥
 						} else {
-							if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+							if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 								pixels[outputOffset + x] = 0xff000000;
 							} else {
 								pixels[outputOffset + x] = 0xffffffff;
@@ -668,8 +668,8 @@ public class FenXiangActivity extends BaseActivity implements OnClickListener {
 						}
 					}
 				}
-				Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// ´´½¨Ò»¸ö300*300bitmap
-				bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// ÏñËØµã¡¢ÆğÊ¼µã¡¢¿í¶È¡¢ÆäÆğÊ¼ÏñËØ¡¢¿í¡¢¸ß
+				Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// åˆ›å»ºä¸€ä¸ª300*300bitmap
+				bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// åƒç´ ç‚¹ã€èµ·å§‹ç‚¹ã€å®½åº¦ã€å…¶èµ·å§‹åƒç´ ã€å®½ã€é«˜
 				return bitmap;
 
 			}

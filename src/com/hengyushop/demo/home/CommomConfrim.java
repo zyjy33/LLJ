@@ -33,7 +33,7 @@ public class CommomConfrim extends Activity{
 	}
 	
 	/**
-	 * ¶ş¼¶Àà±ğ
+	 * äºŒçº§ç±»åˆ«
 	 */
 	private CommomConfrim() {
 		final Dialog dlg; 
@@ -76,7 +76,7 @@ public class CommomConfrim extends Activity{
 //						data_id2= new ArrayList();
 //						listll = new ArrayList<WareDatall>();
 //						try {
-//							System.out.println("=====µÚ¶ş²ãÊı¾İ====================="+arg1);
+//							System.out.println("=====ç¬¬äºŒå±‚æ•°æ®====================="+arg1);
 //							JSONObject object = new JSONObject(arg1);
 //							String status = object.getString("status");
 //							if (status.equals("y")) {
@@ -94,7 +94,7 @@ public class CommomConfrim extends Activity{
 //							data2.add(title);
 //							listll.add(dm);
 //							
-//							System.out.println("=====Ñ­»·µÄid====================="+data2);
+//							System.out.println("=====å¾ªç¯çš„id====================="+data2);
 ////							load_list(INDX, true);
 //				    		}
 //				    		
@@ -111,18 +111,18 @@ public class CommomConfrim extends Activity{
 //					            	 arrayadapter.setSeclection(arg2);
 //					            	 arrayadapter.notifyDataSetChanged();
 ////					            	 String id = listll.get(arg2).getId();
-////					            	 System.out.println("=====µÚ¶ş²ãÊı¾İ11====================="+id);
+////					            	 System.out.println("=====ç¬¬äºŒå±‚æ•°æ®11====================="+id);
 ////					            	 INDX =  Integer.parseInt(id);
 ////					            	 load_list(INDX, true);
 ////					            	 String id = String.valueOf(arg2);
-//					            	 System.out.println("=====µÚÈı²ãÊı¾İid11====================="+arg2);
+//					            	 System.out.println("=====ç¬¬ä¸‰å±‚æ•°æ®id11====================="+arg2);
 ////					            	 Intent intent = new Intent(context,NewWare.class);
 ////									 intent.putExtra("id", id);
 //					               	 String list_id = listll.get(arg2).getId();
 ////					            	 String list = String.valueOf(id);
-//					            	 System.out.println("=====µÚÈı²ãÊı¾İid11====================="+list_id);
+//					            	 System.out.println("=====ç¬¬ä¸‰å±‚æ•°æ®id11====================="+list_id);
 //					            	 sp_id = list_id;
-//					            	 System.out.println("=====µÚÈı²ãÊı¾İid22====================="+sp_id);
+//					            	 System.out.println("=====ç¬¬ä¸‰å±‚æ•°æ®id22====================="+sp_id);
 ////									 context.startActivity(intent);
 //									 dlg.dismiss();
 //					            }
@@ -130,7 +130,7 @@ public class CommomConfrim extends Activity{
 //					        
 //				            }else {
 //				            	gridView.setVisibility(View.GONE);
-//				            	System.out.println("=====µÚ¶ş²ãÊı¾İ2====================="+INDX);
+//				            	System.out.println("=====ç¬¬äºŒå±‚æ•°æ®2====================="+INDX);
 ////				            	load_list(INDX, true);
 //							}
 //							 

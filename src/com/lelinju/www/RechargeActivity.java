@@ -25,7 +25,7 @@ public class RechargeActivity extends TabActivity implements
 	private static final int FLEEP_DISTANCE = 120;
 	private DBRecharge dbRecharge;
 
-	/** ¼ÇÂ¼µ±Ç°·ÖÒ³ID */
+	/** è®°å½•å½“å‰åˆ†é¡µID */
 	private int currentTabID = 0;
 
 	@Override
@@ -60,7 +60,7 @@ public class RechargeActivity extends TabActivity implements
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("ÊÖ»ú»°·Ñ");
+		localTextView.setText("æ‰‹æœºè¯è´¹");
 		Intent localIntent = new Intent(this, RechargeMobileActivity.class);
 		localTabSpec.setIndicator(localView).setContent(localIntent);
 		this.tabHost.addTab(localTabSpec);
@@ -71,7 +71,7 @@ public class RechargeActivity extends TabActivity implements
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("QQ³äÖµ");
+		localTextView.setText("QQå……å€¼");
 		TabHost.TabSpec localTabSpec2 = localTabSpec1.setIndicator(localView);
 		Intent localIntent = new Intent(this, RechargeQQActivity.class);
 		localTabSpec2.setContent(localIntent);
@@ -84,7 +84,7 @@ public class RechargeActivity extends TabActivity implements
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("ÓÎÏ·µã¿¨");
+		localTextView.setText("æ¸¸æˆç‚¹å¡");
 		TabHost.TabSpec localTabSpec2 = localTabSpec1.setIndicator(localView);
 		Intent localIntent = new Intent(this, RechargeGameActivity.class);
 		localTabSpec2.setContent(localIntent);
@@ -93,7 +93,7 @@ public class RechargeActivity extends TabActivity implements
 
 	@Override
 	public void onTabChanged(String tabId) {
-		// tabIdÖµÎªÒªÇĞ»»µ½µÄtabÒ³µÄË÷ÒıÎ»ÖÃ
+		// tabIdå€¼ä¸ºè¦åˆ‡æ¢åˆ°çš„tabé¡µçš„ç´¢å¼•ä½ç½®
 		int tabID = Integer.valueOf(tabId);
 		for (int i = 0; i < tabWidget.getChildCount(); i++) {
 			if (i == tabID) {
@@ -120,12 +120,12 @@ public class RechargeActivity extends TabActivity implements
 	@Override
 	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
 			float velocityY) {
-		if (e1.getX() - e2.getX() <= (-FLEEP_DISTANCE)) {// ´Ó×óÏòÓÒ»¬¶¯
+		if (e1.getX() - e2.getX() <= (-FLEEP_DISTANCE)) {// ä»å·¦å‘å³æ»‘åŠ¨
 			currentTabID = tabHost.getCurrentTab() - 1;
 			if (currentTabID < 0) {
 				currentTabID = tabHost.getTabCount() - 1;
 			}
-		} else if (e1.getX() - e2.getX() >= FLEEP_DISTANCE) {// ´ÓÓÒÏò×ó»¬¶¯
+		} else if (e1.getX() - e2.getX() >= FLEEP_DISTANCE) {// ä»å³å‘å·¦æ»‘åŠ¨
 			currentTabID = tabHost.getCurrentTab() + 1;
 			if (currentTabID >= tabHost.getTabCount()) {
 				currentTabID = 0;

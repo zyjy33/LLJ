@@ -70,7 +70,7 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.lelinju.www.UserLoginActivity;
 import com.lelinju.www.R;
 /**
- * ´´¿Í
+ * åˆ›å®¢
  * @author Administrator
  *
  */
@@ -90,9 +90,9 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 	String reserves1;
 	RelativeLayout rl_tupian;
 	String erweima = "";
-	Bitmap bitmap;// ¶şÎ¬ÂëÖĞ¼äÍ¼Æ¬
-	private int iv_halfWidth = 20;// ÏÔÊ¾ÖĞ¼äÍ¼Æ¬µÄ¿í¶ÈµÄÒ»°ë
-	Bitmap mBitmap;// ¶şÎ¬ÂëÍ¼Æ¬;
+	Bitmap bitmap;// äºŒç»´ç ä¸­é—´å›¾ç‰‡
+	private int iv_halfWidth = 20;// æ˜¾ç¤ºä¸­é—´å›¾ç‰‡çš„å®½åº¦çš„ä¸€åŠ
+	Bitmap mBitmap;// äºŒç»´ç å›¾ç‰‡;
 	Bitmap bitmap_tx,bitmap_touxiang;
 	String avatar = "";
 	String touxiang = "";
@@ -124,8 +124,8 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 				try {
 					String img_url2 = RealmName.REALM_NAME_HTTP +avatar;
 					System.out.println("img_url2=============="+img_url2);
-					bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//					Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//					Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //					touxiang = BitUtil.bitmaptoString(bitMap_tx);
 //					System.out.println("touxiang=============="+touxiang);
 					System.out.println("bitmap_touxiang=============="+bitmap_touxiang);
@@ -144,12 +144,12 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 						System.out.println("bitmap_tx============="+bitmap_tx);
 						LogoConfig logoConfig = new LogoConfig();
 						bitmap = logoConfig.modifyLogo(BitmapFactory.decodeResource(getResources(),R.drawable.white_bg),bitmap_tx);
-						// Ëõ·ÅÍ¼Æ¬£¬ÓÃµ½¾ØÕóÈ¥×ö
+						// ç¼©æ”¾å›¾ç‰‡ï¼Œç”¨åˆ°çŸ©é˜µå»åš
 						Matrix matrix = new Matrix();
 						float sx = (float) 2 * iv_halfWidth / bitmap.getWidth();
 						float sy = (float) 2 * iv_halfWidth / bitmap.getHeight();
 						matrix.setScale(sx, sy);
-						// Éú³ÉËõ·ÅºóµÄÍ¼Æ¬
+						// ç”Ÿæˆç¼©æ”¾åçš„å›¾ç‰‡
 						bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
 								bitmap.getHeight(), matrix, false);
 
@@ -181,7 +181,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 		};
 	
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 		try {
@@ -333,7 +333,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======66Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+						System.out.println("======66è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						JSONObject obj = object.getJSONObject("data");
@@ -358,7 +358,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 //							reserves1 = decimalFormat.format(reserves);
 							String monney = String.valueOf(reserveb);
 							System.out.println("reserveb----------"+reserveb);
-							tv_beihuojin.setText(monney+"Ôª");
+							tv_beihuojin.setText(monney+"å…ƒ");
 							panduan();
 						}else{
 							
@@ -395,7 +395,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
 							String pensions = obj.getString("pensions");
-							tv_shouyi1.setText(pensions+"Ôª");
+							tv_shouyi1.setText(pensions+"å…ƒ");
 							getmonney2();
 						}else{
 							
@@ -428,7 +428,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
 							String pensions = obj.getString("pensions");
-							tv_shouyi2.setText(pensions+"Ôª");
+							tv_shouyi2.setText(pensions+"å…ƒ");
 							getmonney3();
 						}else{
 							
@@ -461,7 +461,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
 							String pensions = obj.getString("pensions");
-							tv_shouyi3.setText(pensions+"Ôª");
+							tv_shouyi3.setText(pensions+"å…ƒ");
 						}else{
 							
 						}
@@ -487,10 +487,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney1.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi1.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 3000){
 			int zdj_monney = 3000;
 			int monney = zdj_monney - reserves;
@@ -498,10 +498,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney2.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi2.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 5000){
 			int zdj_monney = 5000;
 			int monney = zdj_monney - reserves;
@@ -509,10 +509,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney3.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi3.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 10000){
 			int zdj_monney = 10000;
 			int monney = zdj_monney - reserves;
@@ -520,10 +520,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney4.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi4.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 20000){
 			int zdj_monney = 20000;
 			int monney = zdj_monney - reserves;
@@ -531,10 +531,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney5.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi5.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 30000){
 			int zdj_monney = 30000;
 			int monney = zdj_monney - reserves;
@@ -542,10 +542,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney6.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi6.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 40000){
 			int zdj_monney = 40000;
 			int monney = zdj_monney - reserves;
@@ -553,10 +553,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney7.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi7.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 50000){
 			int zdj_monney = 50000;
 			int monney = zdj_monney - reserves;
@@ -564,10 +564,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney8.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi8.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 60000){
 			int zdj_monney = 60000;
 			int monney = zdj_monney - reserves;
@@ -575,10 +575,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney9.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi9.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else if (reserves < 70000){
 			int zdj_monney = 70000;
 			int monney = zdj_monney - reserves;
@@ -586,10 +586,10 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			tv_monney10.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi10.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserveb);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}
 		
 		} catch (Exception e) {
@@ -649,11 +649,11 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 //			Intent intent = new Intent(ChuangKeActivity.this,ShengJiCkActivity.class);
 			String chongzhi = et_chongzhi.getText().toString().trim();
 			if (chongzhi.equals("")) {
-				Toast.makeText(ChuangKeUserActivity.this, "³äÖµ²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(ChuangKeUserActivity.this, "å……å€¼ä¸èƒ½ä¸ºç©º", 200).show();
 			} else {
 				int cz = Integer.parseInt(chongzhi);
 				if (cz < 100) {
-					Toast.makeText(ChuangKeUserActivity.this, "³äÖµ²»ÄÜĞ¡ÓÚ100", 200).show();
+					Toast.makeText(ChuangKeUserActivity.this, "å……å€¼ä¸èƒ½å°äº100", 200).show();
 				} else {
 				Intent intent0 = new Intent(ChuangKeUserActivity.this,ChongZhiActivity.class);
 				intent0.putExtra("chongzhi", chongzhi);
@@ -685,12 +685,12 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * »ñÈ¡¹ã¸æÍ¼Æ¬
+	 * è·å–å¹¿å‘Šå›¾ç‰‡
 	 */
 	private void loadguanggao() {
 		try {
 			
-		//¹ã¸æ¹ö¶¯	
+		//å¹¿å‘Šæ»šåŠ¨	
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_adbanner_list?advert_id=13",
 				new AsyncHttpResponseHandler() {
@@ -708,7 +708,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 								ada.setId(json.getString("id"));
 								ada.setAd_url(json.getString("ad_url"));
 								String ad_url = ada.getAd_url();
-								System.out.println("Í¼Æ¬ÖµÊÇ================"+ad_url);
+								System.out.println("å›¾ç‰‡å€¼æ˜¯================"+ad_url);
 								
 							    ImageLoader imageLoader=ImageLoader.getInstance();
 							    imageLoader.displayImage(RealmName.REALM_NAME_HTTP + ad_url, img_menu);
@@ -729,43 +729,43 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * ¸ù¾İ×Ö·û´®Éú³É¶şÎ¬Âë
+	 * æ ¹æ®å­—ç¬¦ä¸²ç”ŸæˆäºŒç»´ç 
 	 * 
 	 * @param s
 	 * @return
 	 * @throws WriterException
 	 */
 	private Bitmap createBitmap(String str) throws WriterException {
-		// Éú³É¶øÎª¾ØÕó£¬±àÂëÊÇÖ¸¶¨´óĞ¡£¬²»ÒªÉú³ÉÁËÍ¼Æ¬ÔÚ½øĞĞËõ·Å£¬ÕâÑù»áµ¼ÖÂÄ£ºıÊ¶±ğÊ§°Ü£¬¾ÍÊÇÉ¨ÃèÊ§°ÜÁË¡£
+		// ç”Ÿæˆè€Œä¸ºçŸ©é˜µï¼Œç¼–ç æ˜¯æŒ‡å®šå¤§å°ï¼Œä¸è¦ç”Ÿæˆäº†å›¾ç‰‡åœ¨è¿›è¡Œç¼©æ”¾ï¼Œè¿™æ ·ä¼šå¯¼è‡´æ¨¡ç³Šè¯†åˆ«å¤±è´¥ï¼Œå°±æ˜¯æ‰«æå¤±è´¥äº†ã€‚
 		BitMatrix mBitMatrix = new MultiFormatWriter().encode(str,
-				BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-±àÂë¸ñÊ½
-		// ¶şÎ¬¾ØÕóµÄ¿í¸ß
+				BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-ç¼–ç æ ¼å¼
+		// äºŒç»´çŸ©é˜µçš„å®½é«˜
 		int w = mBitMatrix.getWidth();
 		int h = mBitMatrix.getHeight();
 
-		// Í·ÏñµÄ¿í¶È
+		// å¤´åƒçš„å®½åº¦
 		int halfw = w / 2;
 		int halfh = h / 2;
-		// ×¼±¸»­¶şÎ¬Âë£¬°Ñ¶şÎ¬¾ØÕó×ª»»ÎªÒ»Î¬Êı×é£¬Ò»Ö±ºá×Å»­
-		int[] pixels = new int[w * h];// Êı×é³¤¶È¾ÍÊÇ¾ØÕóµÄÃæ»ıÖµ
+		// å‡†å¤‡ç”»äºŒç»´ç ï¼ŒæŠŠäºŒç»´çŸ©é˜µè½¬æ¢ä¸ºä¸€ç»´æ•°ç»„ï¼Œä¸€ç›´æ¨ªç€ç”»
+		int[] pixels = new int[w * h];// æ•°ç»„é•¿åº¦å°±æ˜¯çŸ©é˜µçš„é¢ç§¯å€¼
 		for (int y = 0; y < h; y++) {
 			int outputOffset = y * w;
 			for (int x = 0; x < w; x++) {
-				// »­Ò»¸öÆÕÍ¨µÄ¶şÎ¬Âë
-				// if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+				// ç”»ä¸€ä¸ªæ™®é€šçš„äºŒç»´ç 
+				// if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 				// pixels[outputOffset + x] = 0xff000000;
 				// } else {
 				// pixels[outputOffset + x] = 0xffffffff;
 				// }
 
-				// »­Ò»¸öÓĞÍ¼Æ¬µÄ¶şÎ¬ÂëÍ¼Æ¬
+				// ç”»ä¸€ä¸ªæœ‰å›¾ç‰‡çš„äºŒç»´ç å›¾ç‰‡
 				if (x > (halfw - iv_halfWidth) && x < (halfw + iv_halfWidth)
 						&& y > (halfh - iv_halfWidth)
-						&& y < (halfh + iv_halfWidth)) {// ÖĞ¼äÍ¼Æ¬µÄÇøÓò
+						&& y < (halfh + iv_halfWidth)) {// ä¸­é—´å›¾ç‰‡çš„åŒºåŸŸ
 					pixels[outputOffset + x] = bitmap.getPixel(x - halfw
-							+ iv_halfWidth, y - halfh + iv_halfWidth);// ÕâÀï»­Í¼Ö®ºó»áºÜÃ÷ÏÔµÄÏÔÊ¾³öÀ´
+							+ iv_halfWidth, y - halfh + iv_halfWidth);// è¿™é‡Œç”»å›¾ä¹‹åä¼šå¾ˆæ˜æ˜¾çš„æ˜¾ç¤ºå‡ºæ¥
 				} else {
-					if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+					if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 						pixels[outputOffset + x] = 0xff000000;
 					} else {
 						pixels[outputOffset + x] = 0xffffffff;
@@ -773,13 +773,13 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 				}
 			}
 		}
-		Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// ´´½¨Ò»¸ö300*300bitmap
-		bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// ÏñËØµã¡¢ÆğÊ¼µã¡¢¿í¶È¡¢ÆäÆğÊ¼ÏñËØ¡¢¿í¡¢¸ß
+		Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// åˆ›å»ºä¸€ä¸ª300*300bitmap
+		bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// åƒç´ ç‚¹ã€èµ·å§‹ç‚¹ã€å®½åº¦ã€å…¶èµ·å§‹åƒç´ ã€å®½ã€é«˜
 		return bitmap;
 
 	}
 	/**
-	 * ·ÖÏí
+	 * åˆ†äº«
 	 * 
 	 * @param view2
 	 * @param context
@@ -807,7 +807,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			pop.setBackgroundDrawable(new BitmapDrawable());
 			pop.setOutsideTouchable(true);
 			// pop.setFocusable(true);
-			// pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+			// pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 			//
 			if (!pop.isShowing()) {
 				pop.showAtLocation(view2, Gravity.BOTTOM, 0, 0);
@@ -832,7 +832,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			e.printStackTrace();
 		}
 
-		// ĞÂÀË
+		// æ–°æµª
 		img_btn_tencent.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -842,7 +842,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			}
 		});
 
-		// Î¢ĞÅ
+		// å¾®ä¿¡
 		btn_wechat.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -851,7 +851,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 				con(16, 1);
 			}
 		});
-		// ÅóÓÑÈ¦
+		// æœ‹å‹åœˆ
 		btn_wx_friend.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -862,7 +862,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			}
 		});
 		
-		// ¶ÌĞÅ
+		// çŸ­ä¿¡
 		btn_sms.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -895,7 +895,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 				try {
 					String img_url2 = RealmName.REALM_NAME_HTTP + img_url;
 					System.out.println("img_url2=============="+img_url2);
-					thumb = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
+					thumb = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
 					System.out.println("bmp=============="+thumb);
 				} catch (Exception e) {
 					Log.i("ggggg", e.getMessage());
@@ -903,7 +903,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 			}
 		};
 	/**
-	 * Î¢ĞÅ·ÖÏí
+	 * å¾®ä¿¡åˆ†äº«
 	 * 
 	 * @param text
 	 */
@@ -917,14 +917,14 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 		webpage.webpageUrl = "http" + temp[1];
 		// webpage.webpageUrl = temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-		// msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+		// msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.title = title;
 		msg.description = temp[0];
 		System.out.println("img_url==========" + img_url);
 		System.out.println("thumb==========" + thumb);
 		if (img_url.equals("")) {
 			Bitmap thumb = BitmapFactory.decodeResource(ChuangKeUserActivity.this.getResources(),R.drawable.llj_app);
-//			msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+//			msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 			msg.thumbData = bitmap2Bytes(thumb,32);
 		}else {
 			msg.thumbData = bitmap2Bytes(thumb,32);
@@ -934,7 +934,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 		req.message = msg;
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
-		System.out.println("Î¢ĞÅ×¢²á" + flag);
+		System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -942,7 +942,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * Î¢ĞÅ·ÖÏíÅóÓÑÈ¦
+	 * å¾®ä¿¡åˆ†äº«æœ‹å‹åœˆ
 	 * 
 	 * @param text
 	 */
@@ -955,7 +955,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 		webpage.webpageUrl = "http" + temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
 		msg.title = title;
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.description = temp[0];
 		System.out.println("img_url==========" + img_url);
 		System.out.println("thumb==========" + thumb);
@@ -963,7 +963,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 //			Bitmap thumb = BitmapFactory.decodeResource(getResources(),R.drawable.llj_fx);
 //			msg.thumbData = Util.bmpToByteArray(thumb, true);
 			Bitmap thumb = BitmapFactory.decodeResource(ChuangKeUserActivity.this.getResources(),R.drawable.llj_app);
-//			msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+//			msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 			msg.thumbData = bitmap2Bytes(thumb,32);
 		}else {
 			msg.thumbData = bitmap2Bytes(thumb,32);
@@ -985,7 +985,7 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
 	}
 	
 	 /**
-     * Bitmap×ª»»³Ébyte[]²¢ÇÒ½øĞĞÑ¹Ëõ,Ñ¹Ëõµ½²»´óÓÚmaxkb
+     * Bitmapè½¬æ¢æˆbyte[]å¹¶ä¸”è¿›è¡Œå‹ç¼©,å‹ç¼©åˆ°ä¸å¤§äºmaxkb
      * @param bitmap
      * @param IMAGE_SIZE
      * @return
@@ -995,8 +995,8 @@ public class ChuangKeUserActivity extends BaseActivity implements OnClickListene
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
         int options = 100;
         while (output.toByteArray().length > maxkb&& options != 10) {
-            output.reset(); //Çå¿Õoutput
-            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//ÕâÀïÑ¹Ëõoptions%£¬°ÑÑ¹ËõºóµÄÊı¾İ´æ·Åµ½outputÖĞ
+            output.reset(); //æ¸…ç©ºoutput
+            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//è¿™é‡Œå‹ç¼©options%ï¼ŒæŠŠå‹ç¼©åçš„æ•°æ®å­˜æ”¾åˆ°outputä¸­
             options -= 10;
         }
         return output.toByteArray();

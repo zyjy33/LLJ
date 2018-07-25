@@ -118,7 +118,7 @@ public class TuiGuang2Activity extends BaseActivity {
 
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		screenWidth = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		screenWidth = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		set(item0, 180, 307);
 		set1(item1, 80, 307);
 		set1(item2, 80, 307);
@@ -215,7 +215,7 @@ public class TuiGuang2Activity extends BaseActivity {
 		};
 	};
 	
-	//ÉÌÆ·ÁĞ±í
+	//å•†å“åˆ—è¡¨
 	private void loadCate(){
 		AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_test_lesson_model?" +
                 "lesson_id=23", new AsyncHttpResponseHandler(){
@@ -253,7 +253,7 @@ public class TuiGuang2Activity extends BaseActivity {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
 				try {
-					System.out.println("£¨ÉÌÆ·ÁĞ±í£©=========="+arg1);
+					System.out.println("ï¼ˆå•†å“åˆ—è¡¨ï¼‰=========="+arg1);
 					lists = new ArrayList<TuiGuangBean>();
 					JSONObject jsonObject = new JSONObject(arg1);
 					String status = jsonObject.getString("status");
@@ -327,7 +327,7 @@ public class TuiGuang2Activity extends BaseActivity {
     }
 	
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -335,24 +335,24 @@ public class TuiGuang2Activity extends BaseActivity {
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     }   
 	
 //	 public void uncaughtException(Thread arg0, Throwable arg1) {
 //	 // TODO Auto-generated method stub
-//	 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//	 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //	 Log.i("AAA", "uncaughtException   " + arg1);
 //	 }
 //	private void load() {
@@ -415,7 +415,7 @@ public class TuiGuang2Activity extends BaseActivity {
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû¡¢»ñÈ¡ÓÃ»§»ı·Ö
+	 * è·å–ç™»å½•ç­¾åã€è·å–ç”¨æˆ·ç§¯åˆ†
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -423,7 +423,7 @@ public class TuiGuang2Activity extends BaseActivity {
 			SharedPreferences spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 			String user_name = spPreferences.getString("user", "");
 			String strUrlone = RealmName.REALM_NAME_LL + "/get_user_model?username="+user_name+"";
-			System.out.println("======»ñÈ¡ÓÃ»§»ı·Ö============="+strUrlone);
+			System.out.println("======è·å–ç”¨æˆ·ç§¯åˆ†============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
@@ -453,7 +453,7 @@ public class TuiGuang2Activity extends BaseActivity {
 		}
 	}
 	/**
-	 * Êä³ö¹ÎÒ»¹Î½±
+	 * è¾“å‡ºåˆ®ä¸€åˆ®å¥–
 	 * @param login_sign 
 	 */
 	private void getjiangxiang(String login_sign) {
@@ -463,11 +463,11 @@ public class TuiGuang2Activity extends BaseActivity {
 //			String login_sign = spPreferences.getString("login_sign", "");
 //			String login_sign = getIntent().getStringExtra("login_sign");
 			String strUrlone = RealmName.REALM_NAME_LL + "/get_lottery_award?user_id="+user_id+"&user_name="+user_name+"&lottery_id=16&sign="+login_sign+"";
-			System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+strUrlone);
+			System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -480,7 +480,7 @@ public class TuiGuang2Activity extends BaseActivity {
 						}else{
 							Toast.makeText(TuiGuang2Activity.this, info, 200).show();
 						}
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî=======id======"+id);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹=======id======"+id);
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -491,24 +491,24 @@ public class TuiGuang2Activity extends BaseActivity {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, TuiGuang2Activity.this);
 			
 	}
 	
 	/**
-	 * Êä³ö¹ÎÒ»¹Î½±ÏêÇé
+	 * è¾“å‡ºåˆ®ä¸€åˆ®å¥–è¯¦æƒ…
 	 */
 	private void getjiangxiangxq() {
 		list = new ArrayList<XsgyListData>();
 			String strUrlone = RealmName.REALM_NAME_LL + "/get_lottery_model?lottery_id=16";
-//			System.out.println("======Êä³ö³é½±ÏêÇé============="+strUrlone);
+//			System.out.println("======è¾“å‡ºæŠ½å¥–è¯¦æƒ…============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ÏêÇé============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–è¯¦æƒ…============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -541,8 +541,8 @@ public class TuiGuang2Activity extends BaseActivity {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, TuiGuang2Activity.this);
 			

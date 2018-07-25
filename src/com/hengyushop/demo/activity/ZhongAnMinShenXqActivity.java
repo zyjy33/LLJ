@@ -49,7 +49,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.UserLoginActivity;
 import com.lglottery.www.widget.NewDataToast;
 /**
- * ÑøÀÏÒøĞĞ
+ * å…»è€é“¶è¡Œ
  * @author Administrator
  *
  */
@@ -170,18 +170,18 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 			switch (msg.what) {
 			case 2:
 				try {
-					System.out.println("=========Êı¾İxqdata.img_ur============"+xqdata.img_url);
-					System.out.println("=========Êı¾İxqdata.title============"+xqdata.title);
+					System.out.println("=========æ•°æ®xqdata.img_ur============"+xqdata.img_url);
+					System.out.println("=========æ•°æ®xqdata.title============"+xqdata.title);
 				 mAq.id(ling_tip).image(RealmName.REALM_NAME_HTTP+xqdata.img_url);
 				 mAq.id(ling_tip1).image(RealmName.REALM_NAME_HTTP+xqdata.img_url);
 				 tv_ware_name.setText(xqdata.title);
-				 System.out.println("=========Êı¾İxqdata.sell_price============"+xqdata.sell_price);
+				 System.out.println("=========æ•°æ®xqdata.sell_price============"+xqdata.sell_price);
 				 if (xqdata.sell_price.equals("0.0")) {
 					 type = 1;
-					 tv_jiaguo.setText("Ãâ·Ñ");
+					 tv_jiaguo.setText("å…è´¹");
 				 }else {
 					 type = 2;
-					 tv_jiaguo.setText("£¤"+ xqdata.sell_price);	
+					 tv_jiaguo.setText("ï¿¥"+ xqdata.sell_price);	
 				 }
 				 tv_zhuti.setText(category_title);
 				 webview.loadUrl(RealmName.REALM_NAME_HTTP+ "/goods/conent-"+article_id+".html");
@@ -204,7 +204,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 	};
 	private AlertDialog mTiShiDialog;
 	/**
-	 * »ñÈ¡ÉÌÆ·ÏêÇé
+	 * è·å–å•†å“è¯¦æƒ…
 	 */
 	private void loadWeather() {
 		String id = getIntent().getStringExtra("id");
@@ -214,7 +214,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=========½âÎöÊı¾İ============"+arg1);
+								System.out.println("=========è§£ææ•°æ®============"+arg1);
 								formatWeather(arg1);
 							}
 						}, null);
@@ -223,7 +223,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 	private void formatWeather(String result) {
 		 lists = new ArrayList<XiangqingData>();
 		try {
-			System.out.println("=======ÏêÇéÊı¾İ=="+result);
+			System.out.println("=======è¯¦æƒ…æ•°æ®=="+result);
 			JSONObject object = new JSONObject(result);
 			String status = object.getString("status");
 			String info = object.getString("info");
@@ -265,7 +265,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 //			goods_id = xqdata.getGoods_id();
 			article_id = xqdata.getArticle_id();
 //			spec_text =xqdata.getSpec_text();
-			System.out.println("=========Êı¾İarticle_id============"+article_id);
+			System.out.println("=========æ•°æ®article_id============"+article_id);
 		    }
     		try {
 				
@@ -321,7 +321,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					Toast.makeText(ZhongAnMinShenXqActivity.this, "Á¬½Ó³¬Ê±", 0).show();
+					Toast.makeText(ZhongAnMinShenXqActivity.this, "è¿æ¥è¶…æ—¶", 0).show();
 				}
 			}, this);
 	
@@ -347,7 +347,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 			super.onSuccess(arg0, arg1);
 			try {
 				JSONObject jsonObject = new JSONObject(arg1);
-				System.out.println("ÊÕ²Ø================"+arg1);
+				System.out.println("æ”¶è—================"+arg1);
 //				progress.CloseProgress();
 				String info = jsonObject.getString("info");
 				Toast.makeText(getApplicationContext(), info, 200).show();
@@ -363,9 +363,9 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 			if(TextUtils.isEmpty(mGroupId)){
 				getGroupId(true);
 			}else{
-				if(!"13".equals(mGroupId)){//ÊÇ´´¿Í
+				if(!"13".equals(mGroupId)){//æ˜¯åˆ›å®¢
 					toBaoMing();
-				}else{ //È¥Éı¼¶´´¿Í
+				}else{ //å»å‡çº§åˆ›å®¢
 					showTiShiDialog();
 			
 				}
@@ -387,19 +387,19 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 		
 	}
 	/**
-	 * ÌáÊ¾ÓÃ»§ÉêÇë´´¿Í
+	 * æç¤ºç”¨æˆ·ç”³è¯·åˆ›å®¢
 	 */
 	private  void  showTiShiDialog(){
 		if(mTiShiDialog ==null){
-		mTiShiDialog = new AlertDialog.Builder(this).setTitle("ÌáÊ¾")
-				  .setMessage("Äú»¹²»ÊÇ´´¿Í£¬ÇëÏÈÉêÇë´´¿Í")
-				  .setNegativeButton("È¡Ïû",  new DialogInterface.OnClickListener() {
+		mTiShiDialog = new AlertDialog.Builder(this).setTitle("æç¤º")
+				  .setMessage("æ‚¨è¿˜ä¸æ˜¯åˆ›å®¢ï¼Œè¯·å…ˆç”³è¯·åˆ›å®¢")
+				  .setNegativeButton("å–æ¶ˆ",  new DialogInterface.OnClickListener() {
 	                    @Override
 	                    public void onClick(DialogInterface dialog, int which) {
 	                  dialog.dismiss();
 	                    }
 	                })
-				  .setPositiveButton("È¥ÉêÇë", new DialogInterface.OnClickListener() {
+				  .setPositiveButton("å»ç”³è¯·", new DialogInterface.OnClickListener() {
 	                    @Override
 	                    public void onClick(DialogInterface dialog, int which) {
 	                		Intent intent = new Intent(ZhongAnMinShenXqActivity.this,ChuangKeActivity.class);
@@ -415,20 +415,20 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 		
 	};
 	/**
-	 * È¥±¨Ãû
+	 * å»æŠ¥å
 	 */
 	private void toBaoMing() {
 		
 		try {
-//			System.out.println("user_accept_name==========================£¡"+user_accept_name);
+//			System.out.println("user_accept_name==========================ï¼"+user_accept_name);
 //			  if (user_accept_name == null) {
 //				 progress.CloseProgress();
-//				 Toast.makeText(ZhongAnMinShenXqActivity.this, "Î´Ìí¼ÓÊÕ»õµØÖ·", 200).show();
+//				 Toast.makeText(ZhongAnMinShenXqActivity.this, "æœªæ·»åŠ æ”¶è´§åœ°å€", 200).show();
 //			  }else {
 			progress.CreateProgress();	
-			System.out.println("real_name==========================£¡"+real_name);
+			System.out.println("real_name==========================ï¼"+real_name);
 			if (real_name.equals("")) {
-				real_name = "¿Õ";
+				real_name = "ç©º";
 			}
 			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_signup_buy?sale_id="+user_id+"&usale_name="+user_name+"&user_id="+user_id+"" +
 					"&user_name="+user_name+"&user_sign="+login_sign+"&signup_mobile="+mobile+"&signup_name="+real_name+"&article_id="+xqdata.article_id+"" +
@@ -445,7 +445,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 						try {
 							JSONObject jsonObject = new JSONObject(arg1);
 							String status = jsonObject.getString("status");
-							System.out.println("¹ºÎïÇåµ¥================"+arg1);
+							System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 							String info = jsonObject.getString("info");
 							if (status.equals("y")) {
 								progress.CloseProgress();
@@ -484,10 +484,10 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						progress.CloseProgress();
-						System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+						System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 						System.out.println("========================="+arg0);
 						System.out.println("=========================="+arg1);
-						Toast.makeText(ZhongAnMinShenXqActivity.this, "Òì³£", 200).show();
+						Toast.makeText(ZhongAnMinShenXqActivity.this, "å¼‚å¸¸", 200).show();
 						super.onFailure(arg0, arg1);
 					}
 					
@@ -500,7 +500,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 		}
 	}
 	/**
-	 * Ìá½»ÓÃ»§¶©µ¥  
+	 * æäº¤ç”¨æˆ·è®¢å•  
 	 * @param payment_id 
 	 * @param kou_hongbao 
 	 */
@@ -509,7 +509,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 //			progress.CreateProgress();	
 //		 	String shopping_ids = getIntent().getStringExtra("shopping_ids");
 			System.out.println("buy_no=====================" + buy_no);
-//			String zhi = "¿Õ";
+//			String zhi = "ç©º";
 //			String url = RealmName.REALM_NAME_LL+ "/order_activity_signup?user_id="+user_id+"&user_name="+user_name+"&is_cashing_packet=0" +
 //			"&is_cashing_point=0&shopping_ids="+shopping_ids+"&payment_id=2&shopping_address_id="+sp_id+"" +
 //			"&express_id=3&is_invoice=0&accept_name="+zhi+"&province="+zhi+"&city="+zhi+"&area="+zhi+"" +
@@ -523,7 +523,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("Ìá½»ÓÃ»§¶©µ¥ ================================="+arg1);
+							System.out.println("æäº¤ç”¨æˆ·è®¢å• ================================="+arg1);
 							try {
 								
 							  String status = object.getString("status");
@@ -552,7 +552,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 										  startActivity(intent);
 //										  finish();
 									}else {
-//									  huodong_zf_type = "1";// »î¶¯Ö§¸¶³É¹¦²»ÏÔÊ¾ÏêÇé
+//									  huodong_zf_type = "1";// æ´»åŠ¨æ”¯ä»˜æˆåŠŸä¸æ˜¾ç¤ºè¯¦æƒ…
 									  Intent intent = new Intent(ZhongAnMinShenXqActivity.this, MyOrderZFActivity.class);
 									  intent.putExtra("activity_hd","activity_hd");
 									  intent.putExtra("order_no",trade_no);
@@ -602,7 +602,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 //										  intent.putExtra("type",type);
 //										  startActivity(intent);
 //									  }else {
-//										  huodong_zf_type = "1";// »î¶¯Ö§¸¶³É¹¦²»ÏÔÊ¾ÏêÇé
+//										  huodong_zf_type = "1";// æ´»åŠ¨æ”¯ä»˜æˆåŠŸä¸æ˜¾ç¤ºè¯¦æƒ…
 ////									  Intent intent = new Intent(ZhongAnMinShenXqActivity.this, MyOrderZFActivity.class);
 ////									  intent.putExtra("order_no",trade_no);
 ////									  intent.putExtra("total_c",total_amount);
@@ -651,7 +651,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 	
 	
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 //	private void getuseraddress() {
 //		user_name = spPreferences.getString("user", "");
@@ -665,7 +665,7 @@ public class ZhongAnMinShenXqActivity extends BaseActivity implements OnClickLis
 //				super.onSuccess(arg0, arg1);
 //				try {
 //					JSONObject jsonObject = new JSONObject(arg1);
-//					System.out.println("Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·================" + arg1);
+//					System.out.println("è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€================" + arg1);
 //					String status = jsonObject.getString("status");
 //					if (status.equals("y")) {
 //						JSONObject jsot = jsonObject.getJSONObject("data");

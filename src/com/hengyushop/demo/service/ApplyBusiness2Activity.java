@@ -43,7 +43,7 @@ import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 /**
- * ÉêÇëÉÌ¼Ò2
+ * ç”³è¯·å•†å®¶2
  * 
  * @author Administrator
  * 
@@ -158,35 +158,35 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 			String tjr_haoma = edt_sj_tjr.getText().toString().trim();
 			
 			if (leibie.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÌîÐ´ÉÌ¼ÒÀà±ð", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·å¡«å†™å•†å®¶ç±»åˆ«", 100).show();
 			} else if (sj_jianjie.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÌîÐ´ÉÌ¼Ò¼ò½é", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·å¡«å†™å•†å®¶ç®€ä»‹", 100).show();
 			} else if (sj_jianjie.length() > 500) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÄÚÈÝ²»ÄÜ´óÓÚ500×Ö", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "å†…å®¹ä¸èƒ½å¤§äºŽ500å­—", 100).show();
 			} else if (ts_youshi.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÌîÐ´ÌØÉ«ÓÅÊÆ", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·å¡«å†™ç‰¹è‰²ä¼˜åŠ¿", 100).show();
 			} else if (ts_youshi.length() > 500) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÄÚÈÝ²»ÄÜ´óÓÚ500×Ö", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "å†…å®¹ä¸èƒ½å¤§äºŽ500å­—", 100).show();
 			} else if (fwgh.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÌîÐ´·þÎñ¹¤ºÅ", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·å¡«å†™æœåŠ¡å·¥å·", 100).show();
 			} else if (tupian1.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÉÏ´«ÉÌ¼ÒLogo", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·ä¸Šä¼ å•†å®¶Logo", 100).show();
 			} else if (tupian2.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÉÏ´«ÉÌ¼Ò×ÊÖÊ", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·ä¸Šä¼ å•†å®¶èµ„è´¨", 100).show();
 			} else if (zhucehao.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÌîÐ´ÓªÒµÖ´ÕÕ×¢²áºÅ", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·å¡«å†™è¥ä¸šæ‰§ç…§æ³¨å†Œå·", 100).show();
 			} else if (tupian3.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÉÏ´«Ë°ÎñµÇ¼ÇÖ¤", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·ä¸Šä¼ ç¨ŽåŠ¡ç™»è®°è¯", 100).show();
 			} else if (tupian4.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÉÏ´«×éÖ¯»ú¹¹´úÂëÖ¤", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·ä¸Šä¼ ç»„ç»‡æœºæž„ä»£ç è¯", 100).show();
 			} else if (tjr_haoma.equals("")) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÇëÌîÐ´ÄúµÄÍÆ¼öÈËºÅÂë", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "è¯·å¡«å†™æ‚¨çš„æŽ¨èäººå·ç ", 100).show();
 			} else if (tjr_haoma.length() > 11 || tjr_haoma.length() < 11) {
-				Toast.makeText(ApplyBusiness2Activity.this, "ÊÖ»úºÅÂë²»¶Ô", 100).show();
+				Toast.makeText(ApplyBusiness2Activity.this, "æ‰‹æœºå·ç ä¸å¯¹", 100).show();
 			} else{
 				progress.CreateProgress();	
-				String address = dizhi +"¡¢"+xq_dizhi;
-//				Toast.makeText(ApplyBusiness2Activity.this, "Éý¼¶³É¹¦", 100).show();
+				String address = dizhi +"ã€"+xq_dizhi;
+//				Toast.makeText(ApplyBusiness2Activity.this, "å‡çº§æˆåŠŸ", 100).show();
 				//sj_name,sj_bq,haoma,dizhi,xq_dizhi;
 				try {
 					
@@ -251,28 +251,28 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 	}
 	
 	/**
-	 * ÏÔÊ¾ÐÞ¸ÄÍ·ÏñµÄ¶Ô»°¿ò
+	 * æ˜¾ç¤ºä¿®æ”¹å¤´åƒçš„å¯¹è¯æ¡†
 	 */
 	protected void showChoosePicDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("ÉèÖÃÍ·Ïñ");
-		String[] items = { "Ñ¡Ôñ±¾µØÕÕÆ¬", "ÅÄÕÕ" };
-		builder.setNegativeButton("È¡Ïû", null);
+		builder.setTitle("è®¾ç½®å¤´åƒ");
+		String[] items = { "é€‰æ‹©æœ¬åœ°ç…§ç‰‡", "æ‹ç…§" };
+		builder.setNegativeButton("å–æ¶ˆ", null);
 		builder.setItems(items, new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				switch (which) {
-				case CHOOSE_PICTURE: // Ñ¡Ôñ±¾µØÕÕÆ¬
+				case CHOOSE_PICTURE: // é€‰æ‹©æœ¬åœ°ç…§ç‰‡
 					Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
 					openAlbumIntent.setType("image/*");
 					startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
 					break;
-				case TAKE_PICTURE: // ÅÄÕÕ
+				case TAKE_PICTURE: // æ‹ç…§
 					Intent openCameraIntent = new Intent(
 							MediaStore.ACTION_IMAGE_CAPTURE);
 					tempUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "image.jpg"));
-					// Ö¸¶¨ÕÕÆ¬±£´æÂ·¾¶£¨SD¿¨£©£¬image.jpgÎªÒ»¸öÁÙÊ±ÎÄ¼þ£¬Ã¿´ÎÅÄÕÕºóÕâ¸öÍ¼Æ¬¶¼»á±»Ìæ»»
+					// æŒ‡å®šç…§ç‰‡ä¿å­˜è·¯å¾„ï¼ˆSDå¡ï¼‰ï¼Œimage.jpgä¸ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶ï¼Œæ¯æ¬¡æ‹ç…§åŽè¿™ä¸ªå›¾ç‰‡éƒ½ä¼šè¢«æ›¿æ¢
 					openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
 					startActivityForResult(openCameraIntent, TAKE_PICTURE);
 					
@@ -287,17 +287,17 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (resultCode == RESULT_OK) { // Èç¹û·µ»ØÂëÊÇ¿ÉÒÔÓÃµÄ
+		if (resultCode == RESULT_OK) { // å¦‚æžœè¿”å›žç æ˜¯å¯ä»¥ç”¨çš„
 			switch (requestCode) {
 			case TAKE_PICTURE:
-				startPhotoZoom(tempUri); // ¿ªÊ¼¶ÔÍ¼Æ¬½øÐÐ²Ã¼ô´¦Àí
+				startPhotoZoom(tempUri); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 				break;
 			case CHOOSE_PICTURE:
-				startPhotoZoom(data.getData()); // ¿ªÊ¼¶ÔÍ¼Æ¬½øÐÐ²Ã¼ô´¦Àí
+				startPhotoZoom(data.getData()); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 				break;
 			case CROP_SMALL_PICTURE:
 				if (data != null) {
-					setImageToView(data); // ÈÃ¸Õ²ÅÑ¡Ôñ²Ã¼ôµÃµ½µÄÍ¼Æ¬ÏÔÊ¾ÔÚ½çÃæÉÏ
+					setImageToView(data); // è®©åˆšæ‰é€‰æ‹©è£å‰ªå¾—åˆ°çš„å›¾ç‰‡æ˜¾ç¤ºåœ¨ç•Œé¢ä¸Š
 				}
 				break;
 			}
@@ -305,7 +305,7 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 	}
 
 	/**
-	 * ²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ
+	 * è£å‰ªå›¾ç‰‡æ–¹æ³•å®žçŽ°
 	 * 
 	 * @param uri
 	 */
@@ -316,12 +316,12 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 		tempUri = uri;
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(uri, "image/*");
-		// ÉèÖÃ²Ã¼ô
+		// è®¾ç½®è£å‰ª
 		intent.putExtra("crop", "true");
-		// aspectX aspectY ÊÇ¿í¸ßµÄ±ÈÀý
+		// aspectX aspectY æ˜¯å®½é«˜çš„æ¯”ä¾‹
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// outputX outputY ÊÇ²Ã¼ôÍ¼Æ¬¿í¸ß
+		// outputX outputY æ˜¯è£å‰ªå›¾ç‰‡å®½é«˜
 		intent.putExtra("outputX", 150);
 		intent.putExtra("outputY", 150);
 		intent.putExtra("return-data", true);
@@ -329,7 +329,7 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 	}
 
 	/**
-	 * ±£´æ²Ã¼ôÖ®ºóµÄÍ¼Æ¬Êý¾Ý
+	 * ä¿å­˜è£å‰ªä¹‹åŽçš„å›¾ç‰‡æ•°æ®
 	 * 
 	 * @param
 	 * 
@@ -339,12 +339,12 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 		Bundle extras = data.getExtras();
 		if (extras != null) {
 			Bitmap photo = extras.getParcelable("data");
-//			photo = Utils.toRoundBitmap(photo, tempUri); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ÐÎµÄÁË
-			System.out.println("Í¼Æ¬µÄÖµ1================="+photo);
-			System.out.println("Í¼Æ¬µÄÖµ2================="+tempUri);
+//			photo = Utils.toRoundBitmap(photo, tempUri); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
+			System.out.println("å›¾ç‰‡çš„å€¼1================="+photo);
+			System.out.println("å›¾ç‰‡çš„å€¼2================="+tempUri);
 			if (!photo.equals("")) {
 			if (zhaopian == 1) {
-				System.out.println("Í¼Æ¬µÄÖµ1=================");
+				System.out.println("å›¾ç‰‡çš„å€¼1=================");
 				iv_personal_icon.setImageBitmap(photo);
 			}else if (zhaopian == 2){
 			iv_personal_icon1.setImageBitmap(photo);
@@ -360,10 +360,10 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 	}
 
 	private void uploadPic(Bitmap bitmap) {
-		// ÉÏ´«ÖÁ·þÎñÆ÷
-		// ... ¿ÉÒÔÔÚÕâÀï°ÑBitmap×ª»»³Éfile£¬È»ºóµÃµ½fileµÄurl£¬×öÎÄ¼þÉÏ´«²Ù×÷
-		// ×¢ÒâÕâÀïµÃµ½µÄÍ¼Æ¬ÒÑ¾­ÊÇÔ²ÐÎÍ¼Æ¬ÁË
-		// bitmapÊÇÃ»ÓÐ×ö¸öÔ²ÐÎ´¦ÀíµÄ£¬µ«ÒÑ¾­±»²Ã¼ôÁË
+		// ä¸Šä¼ è‡³æœåŠ¡å™¨
+		// ... å¯ä»¥åœ¨è¿™é‡ŒæŠŠBitmapè½¬æ¢æˆfileï¼Œç„¶åŽå¾—åˆ°fileçš„urlï¼Œåšæ–‡ä»¶ä¸Šä¼ æ“ä½œ
+		// æ³¨æ„è¿™é‡Œå¾—åˆ°çš„å›¾ç‰‡å·²ç»æ˜¯åœ†å½¢å›¾ç‰‡äº†
+		// bitmapæ˜¯æ²¡æœ‰åšä¸ªåœ†å½¢å¤„ç†çš„ï¼Œä½†å·²ç»è¢«è£å‰ªäº†
 
 		imagePath = Utils.savePhoto(bitmap, Environment
 				.getExternalStorageDirectory().getAbsolutePath(), String
@@ -379,7 +379,7 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 //		}
 		Log.e("imagePath", imagePath+"");
 		if(imagePath != null){
-			// ÄÃ×ÅimagePathÉÏ´«ÁË
+			// æ‹¿ç€imagePathä¸Šä¼ äº†
 			try {
 				
 				System.out.println("imagePath======================="+imagePath);
@@ -393,11 +393,11 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 							SimpleDateFormat f = new SimpleDateFormat("yyyyMMddHHmmssSSS");  
 			                time = f.format(new Date());  
 			                yth = MainFragmentContent4.yth;
-			                String remotePathTmp = "phone/" + "" + yth +"";//Â·¾¶
+			                String remotePathTmp = "phone/" + "" + yth +"";//è·¯å¾„
 							System.out.println("========================"+remotePathTmp);
 							
 							try {
-								client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+								client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 							} catch (Exception e) {
 					                e.printStackTrace();
 							} finally {
@@ -433,12 +433,12 @@ public class ApplyBusiness2Activity extends BaseActivity implements OnClickListe
 							System.out.println("tupian4--------------------------"+tupian4);
 
 						} catch (IllegalStateException e) {
-							e.printStackTrace();//·Ç·¨×´Ì¬Òì³£
+							e.printStackTrace();//éžæ³•çŠ¶æ€å¼‚å¸¸
 						}
 						catch (FTPIllegalReplyException e) {
-							e.printStackTrace();//·Ç·¨»Ø¸´Òì³£
+							e.printStackTrace();//éžæ³•å›žå¤å¼‚å¸¸
 						} catch (FTPException e) {
-							e.printStackTrace();//Òì³£
+							e.printStackTrace();//å¼‚å¸¸
 						} catch (IOException e) {
 							e.printStackTrace();
 						}

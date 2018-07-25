@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 /**
- * ÕÒ»ØÃÜÂë
+ * æ‰¾å›å¯†ç 
  * @author Administrator
  *
  */
@@ -31,7 +31,7 @@ public class FindPasswordOneActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE); // È¥µô±êÌâÀ¸
+		requestWindowFeature(Window.FEATURE_NO_TITLE); // å»æ‰æ ‡é¢˜æ 
 		setContentView(R.layout.find_password);
 		init();
 	}
@@ -49,7 +49,7 @@ public class FindPasswordOneActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				String phone = et_user_phone.getText().toString();
-					AsyncHttp.get("http://www.hengyushop.com/mi/SmsAndMms.ashx?mobile="+phone+"&companyName=ÔÆÉÌ¾Û&frontContents=ÄúÕıÔÚÖØÖÃÃÜÂë£¬ÇëÔÚ15·ÖÖÓÄÚ°´Ò³ÃæÌáÊ¾Ìá½»ÑéÖ¤Âë£¬ÇĞÎğ½«ÑéÖ¤ÂëĞ¹Â¶ÓÚËûÈË¡£&RequestType=", new AsyncHttpResponseHandler(){
+					AsyncHttp.get("http://www.hengyushop.com/mi/SmsAndMms.ashx?mobile="+phone+"&companyName=äº‘å•†èš&frontContents=æ‚¨æ­£åœ¨é‡ç½®å¯†ç ï¼Œè¯·åœ¨15åˆ†é’Ÿå†…æŒ‰é¡µé¢æç¤ºæäº¤éªŒè¯ç ï¼Œåˆ‡å‹¿å°†éªŒè¯ç æ³„éœ²äºä»–äººã€‚&RequestType=", new AsyncHttpResponseHandler(){
 				
 				@Override
 						public void onSuccess(int arg0, String arg1) {
@@ -90,8 +90,8 @@ public class FindPasswordOneActivity extends BaseActivity {
 //								}
 //							}, getApplicationContext());
 //				} else {
-////					NewDataToast.makeText(getApplicationContext(), "ÇëÊäÈëÊÖ»úºÅÂë",false,0).show();
-//					Toast.makeText(FindPasswordOneActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 200).show();
+////					NewDataToast.makeText(getApplicationContext(), "è¯·è¾“å…¥æ‰‹æœºå·ç ",false,0).show();
+//					Toast.makeText(FindPasswordOneActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 200).show();
 //				}
 			}
 		});
@@ -103,14 +103,14 @@ public class FindPasswordOneActivity extends BaseActivity {
 				String phone = et_user_phone.getText().toString();
 				String yz = et_user_yz.getText().toString();
 				// TODO Auto-generated method stub
-				String pass1 = et_user_pwd.getText().toString();//ÊäÈëĞÂÃÜÂë
-				String ys_pass = et_useryanshi_pwd.getText().toString();//ÊäÈëÔ­Ê¼ÃÜÂë
+				String pass1 = et_user_pwd.getText().toString();//è¾“å…¥æ–°å¯†ç 
+				String ys_pass = et_useryanshi_pwd.getText().toString();//è¾“å…¥åŸå§‹å¯†ç 
 				if(pass1.equals("")){
-					Toast.makeText(getApplicationContext(), "ÃÜÂëÎª¿Õ", 200).show();
+					Toast.makeText(getApplicationContext(), "å¯†ç ä¸ºç©º", 200).show();
 				}else if(phone.equals("")){
-					Toast.makeText(getApplicationContext(), "ÊÖ»úºÅÂëÎª¿Õ", 200).show();
+					Toast.makeText(getApplicationContext(), "æ‰‹æœºå·ç ä¸ºç©º", 200).show();
 				}else if(ys_pass.equals("")){
-					Toast.makeText(getApplicationContext(), "Ô­Ê¼ÃÜÂëÎª¿Õ", 200).show();
+					Toast.makeText(getApplicationContext(), "åŸå§‹å¯†ç ä¸ºç©º", 200).show();
 				}else{
 					Map<String, String> params= new HashMap<String, String>();
 					params.put("username", phone);
@@ -125,7 +125,7 @@ public class FindPasswordOneActivity extends BaseActivity {
 							try {
 								JSONObject jsonObject  = new JSONObject(arg1);
 								String info = jsonObject.getString("info");
-//								Toast.makeText(getApplicationContext(), "ĞŞ¸Ä³É¹¦", 200).show();
+//								Toast.makeText(getApplicationContext(), "ä¿®æ”¹æˆåŠŸ", 200).show();
 								Toast.makeText(getApplicationContext(), info, 200).show();
 //								if(jsonObject.getInt("status")==1){
 //									AppManager.getAppManager().finishActivity();
@@ -141,7 +141,7 @@ public class FindPasswordOneActivity extends BaseActivity {
 			}
 		});
 		
-//		mi/SmsAndMms.ashx?mobile=15889698754&companyName=Î¢ĞĞÕÆ&frontContents=Ç°×ºÄÚÈİ&RequestType=1
+//		mi/SmsAndMms.ashx?mobile=15889698754&companyName=å¾®è¡ŒæŒ&frontContents=å‰ç¼€å†…å®¹&RequestType=1
 	
 	
 	}

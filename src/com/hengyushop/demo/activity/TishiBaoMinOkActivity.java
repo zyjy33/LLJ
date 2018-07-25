@@ -25,7 +25,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.UserLoginActivity;
 import com.lelinju.www.UserLoginWayActivity;
 /**
- * ÌáÊ¾°ó¶¨ÊÖ»úºÅ
+ * æç¤ºç»‘å®šæ‰‹æœºå·
  * @author 
  *
  */
@@ -71,7 +71,7 @@ public class TishiBaoMinOkActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -79,7 +79,7 @@ public class TishiBaoMinOkActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.btnConfirm://È¡Ïû
+		case R.id.btnConfirm://å–æ¶ˆ
 			finish();
 			break;
 		case R.id.btnCancle://

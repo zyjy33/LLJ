@@ -84,7 +84,7 @@ public class One_Person_Bean implements Serializable{
 	 * "LuckDrawBatchOrderNumber": "1",
 			"CurrentGameDone": "0",
 			"ProductItemId": "7692",
-			"proName": "TO COOL FOR SCHOOL¼¦µ°Ä½Ë¹ÃæÄ¤",
+
 			"proFaceImg": "uploadFiles/2015-02-03/201523163026756778.jpg",
 			"NeedGameUserNum": "38",
 			"HasJoinedNum": "7",

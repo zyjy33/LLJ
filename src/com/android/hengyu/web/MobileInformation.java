@@ -8,43 +8,43 @@ import org.ksoap2.transport.HttpTransportSE;
 public class MobileInformation {
 
 	public String getRemoteInfo(String phoneSec) {
-		// ÃüÃû¿Õ¼ä
+		// å‘½åç©ºé—´
 		String nameSpace = "http://WebXml.com.cn/";
-		// µ÷ÓÃµÄ·½·¨Ãû³Æ
+		// è°ƒç”¨çš„æ–¹æ³•åç§°
 		String methodName = "getMobileCodeInfo";
 		// EndPoint
 		String endPoint = "http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx";
 		// SOAP Action
 		String soapAction = "http://WebXml.com.cn/getMobileCodeInfo";
 
-		// Ö¸¶¨WebServiceµÄÃüÃû¿Õ¼äºÍµ÷ÓÃµÄ·½·¨Ãû
+		// æŒ‡å®šWebServiceçš„å‘½åç©ºé—´å’Œè°ƒç”¨çš„æ–¹æ³•å
 		SoapObject rpc = new SoapObject(nameSpace, methodName);
 
-		// ÉèÖÃĞèµ÷ÓÃWebService½Ó¿ÚĞèÒª´«ÈëµÄÁ½¸ö²ÎÊımobileCode¡¢userId
+		// è®¾ç½®éœ€è°ƒç”¨WebServiceæ¥å£éœ€è¦ä¼ å…¥çš„ä¸¤ä¸ªå‚æ•°mobileCodeã€userId
 		rpc.addProperty("mobileCode", phoneSec);
 		rpc.addProperty("userId", "");
 
-		// Éú³Éµ÷ÓÃWebService·½·¨µÄSOAPÇëÇóĞÅÏ¢,²¢Ö¸¶¨SOAPµÄ°æ±¾
+		// ç”Ÿæˆè°ƒç”¨WebServiceæ–¹æ³•çš„SOAPè¯·æ±‚ä¿¡æ¯,å¹¶æŒ‡å®šSOAPçš„ç‰ˆæœ¬
 		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
 				SoapEnvelope.VER10);
 
 		envelope.bodyOut = rpc;
-		// ÉèÖÃÊÇ·ñµ÷ÓÃµÄÊÇdotNet¿ª·¢µÄWebService
+		// è®¾ç½®æ˜¯å¦è°ƒç”¨çš„æ˜¯dotNetå¼€å‘çš„WebService
 		envelope.dotNet = true;
-		// µÈ¼ÛÓÚenvelope.bodyOut = rpc;
+		// ç­‰ä»·äºenvelope.bodyOut = rpc;
 		envelope.setOutputSoapObject(rpc);
 
 		HttpTransportSE transport = new HttpTransportSE(endPoint);
 		try {
-			// µ÷ÓÃWebService
+			// è°ƒç”¨WebService
 			transport.call(soapAction, envelope);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		// »ñÈ¡·µ»ØµÄÊı¾İ
+		// è·å–è¿”å›çš„æ•°æ®
 		SoapObject object = (SoapObject) envelope.bodyIn;
-		// »ñÈ¡·µ»ØµÄ½á¹û
+		// è·å–è¿”å›çš„ç»“æœ
 		String result = object.getProperty(0).toString();
 
 		return result;

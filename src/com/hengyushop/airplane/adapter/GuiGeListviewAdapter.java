@@ -81,7 +81,7 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
 		return 0;
 	}
 	
-	// Ã¿¸öconvert view¶¼»áµ÷ÓÃ´Ë·½·¨£¬»ñµÃµ±Ç°ËùĞèÒªµÄviewÑùÊ½  
+	// æ¯ä¸ªconvert viewéƒ½ä¼šè°ƒç”¨æ­¤æ–¹æ³•ï¼Œè·å¾—å½“å‰æ‰€éœ€è¦çš„viewæ ·å¼  
     @Override  
     public int getItemViewType(int position) {
         int p = position;  
@@ -124,7 +124,7 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
 	        
         if (convertView == null) {  
             inflater = LayoutInflater.from(context);  
-            // °´µ±Ç°ËùĞèµÄÑùÊ½£¬È·¶¨newµÄ²¼¾Ö  
+            // æŒ‰å½“å‰æ‰€éœ€çš„æ ·å¼ï¼Œç¡®å®šnewçš„å¸ƒå±€  
             switch (type) {  
             case TYPE_1:  
                 convertView = inflater.inflate(R.layout.guige_item,   parent, false);  
@@ -170,7 +170,7 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
             }  
         }
         
-        // ÉèÖÃ×ÊÔ´  
+        // è®¾ç½®èµ„æº  
         switch (type) {
         case TYPE_1:  
         	holder1.tv_yhwenzi.setText(list.get(position).getTitle());
@@ -184,7 +184,7 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
 	            	MyAdapter.setSeclection(arg2);
 	            	MyAdapter.notifyDataSetChanged();
 	            	id = (String)data_id.get(arg2);
-	            	System.out.println("idÖµÊÇ====="+id);
+	            	System.out.println("idå€¼æ˜¯====="+id);
 	            	System.out.println("id====="+data_id1.size());
 	            }
 	        });
@@ -204,7 +204,7 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
 	            	MyAdapter1.setSeclection(arg2);
 	            	MyAdapter1.notifyDataSetChanged();
 	            	id1 = (String)data_id1.get(arg2);
-	            	System.out.println("idÖµÊÇ1====="+id1);
+	            	System.out.println("idå€¼æ˜¯1====="+id1);
 	            	System.out.println("id====="+data_id1.size());
 	              	} catch (Exception e) {
 	    				// TODO: handle exception
@@ -230,9 +230,9 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
 	            	MyAdapter2.setSeclection(arg2);
 	            	MyAdapter2.notifyDataSetChanged();
 	            	id2 = (String)data_id2.get(arg2);
-	            	System.out.println("idÖµÊÇ2====="+id2);
+	            	System.out.println("idå€¼æ˜¯2====="+id2);
 	            	String sell_price  = ","+id+","+id1+","+id2+",";
-	                System.out.println("Æ´½ÓµÄÖµ========="+sell_price);
+	                System.out.println("æ‹¼æ¥çš„å€¼========="+sell_price);
 	                if (sell_price == data_shuzu.get(arg2)) {
 						
 					}
@@ -242,7 +242,7 @@ public class GuiGeListviewAdapter  extends BaseAdapter {
        
         }
 //        String zhouString  = id+","+id1+","+id2;
-//        System.out.println("Æ´½ÓµÄÖµ1========="+zhouString);
+//        System.out.println("æ‹¼æ¥çš„å€¼1========="+zhouString);
         
 		} catch (Exception e) {
 			// TODO: handle exception

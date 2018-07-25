@@ -16,15 +16,15 @@ import com.example.taobaohead.inteface.OnAdapterClickListener;
 import com.lelinju.www.R;
 
 /*
- * ÀàËÆÌÔ±¦ ¡¢Í·Ìõ
+ * ç±»ä¼¼æ·˜å® ã€å¤´æ¡
  * 
  */
 public class ScrollTopView extends LinearLayout {
 
-	private Scroller mScroller;  //¹ö¶¯ÊµÀı
+	private Scroller mScroller;  //æ»šåŠ¨å®ä¾‹
 
-	private List<BeanVo> articleList;  //´æ·ÅÊı¾İ¼¯ºÏ
-	private final int DURING_TIME = 3000;  //¹ö¶¯ÑÓ³Ù
+	private List<BeanVo> articleList;  //å­˜æ”¾æ•°æ®é›†åˆ
+	private final int DURING_TIME = 3000;  //æ»šåŠ¨å»¶è¿Ÿ
 	private OnAdapterClickListener<BeanVo> click;  
 
 	public ScrollTopView(Context context) {
@@ -42,7 +42,7 @@ public class ScrollTopView extends LinearLayout {
 	}
 
 	/**
-	 * ÉèÖÃÊı¾İ
+	 * è®¾ç½®æ•°æ®
 	 * @param articleList
 	 */
 	public void setData(List<BeanVo> articleList) {
@@ -55,8 +55,8 @@ public class ScrollTopView extends LinearLayout {
 				addContentView(i);
 			}
 			if (articleList.size() >= 1) {
-				getLayoutParams().height = Utils.dip2px(20);  //µ÷½Ú¹ö¶¯Êı¾İµÄ¸ß¶È
-				// ¹ö¶¯
+				getLayoutParams().height = Utils.dip2px(20);  //è°ƒèŠ‚æ»šåŠ¨æ•°æ®çš„é«˜åº¦
+				// æ»šåŠ¨
 				cancelAuto();
 				mHandler.sendEmptyMessageDelayed(0, DURING_TIME);
 				smoothScrollBy(0, Utils.dip2px(50));
@@ -65,7 +65,7 @@ public class ScrollTopView extends LinearLayout {
 	}
 
 	/**
-	 * ÉèÖÃÁĞ±íµã»÷ÊÂ¼ş
+	 * è®¾ç½®åˆ—è¡¨ç‚¹å‡»äº‹ä»¶
 	 * 
 	 * @param click
 	 */
@@ -74,7 +74,7 @@ public class ScrollTopView extends LinearLayout {
 	}
 
 	/**
-	 * ÖØÖÃÊı¾İ
+	 * é‡ç½®æ•°æ®
 	 */
 	private void resetView() {
 		BeanVo article = articleList.get(0);
@@ -87,7 +87,7 @@ public class ScrollTopView extends LinearLayout {
 	}
 
 	/**
-	 * È¡Ïû¹ö¶¯
+	 * å–æ¶ˆæ»šåŠ¨
 	 */
 	public void cancelAuto() {
 		mHandler.removeMessages(0);
@@ -137,22 +137,22 @@ public class ScrollTopView extends LinearLayout {
 		};
 	};
 
-	// µ÷ÓÃ´Ë·½·¨ÉèÖÃ¹ö¶¯µÄÏà¶ÔÆ«ÒÆ
+	// è°ƒç”¨æ­¤æ–¹æ³•è®¾ç½®æ»šåŠ¨çš„ç›¸å¯¹åç§»
 	public void smoothScrollBy(int dx, int dy) {
-		// ÉèÖÃmScrollerµÄ¹ö¶¯Æ«ÒÆÁ¿
+		// è®¾ç½®mScrollerçš„æ»šåŠ¨åç§»é‡
 		mScroller.startScroll(mScroller.getFinalX(), 0, dx, dy, DURING_TIME);
-		invalidate();// ÕâÀï±ØĞëµ÷ÓÃinvalidate()²ÅÄÜ±£Ö¤computeScroll()»á±»µ÷ÓÃ£¬·ñÔò²»Ò»¶¨»áË¢ĞÂ½çÃæ£¬¿´²»µ½¹ö¶¯Ğ§¹û
+		invalidate();// è¿™é‡Œå¿…é¡»è°ƒç”¨invalidate()æ‰èƒ½ä¿è¯computeScroll()ä¼šè¢«è°ƒç”¨ï¼Œå¦åˆ™ä¸ä¸€å®šä¼šåˆ·æ–°ç•Œé¢ï¼Œçœ‹ä¸åˆ°æ»šåŠ¨æ•ˆæœ
 	}
 
 	@Override
 	public void computeScroll() {
 
-		// ÏÈÅĞ¶ÏmScroller¹ö¶¯ÊÇ·ñÍê³É
+		// å…ˆåˆ¤æ–­mScrolleræ»šåŠ¨æ˜¯å¦å®Œæˆ
 		if (mScroller.computeScrollOffset()) {
 
-			// ÕâÀïµ÷ÓÃViewµÄscrollTo()Íê³ÉÊµ¼ÊµÄ¹ö¶¯
+			// è¿™é‡Œè°ƒç”¨Viewçš„scrollTo()å®Œæˆå®é™…çš„æ»šåŠ¨
 			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
-			// ±ØĞëµ÷ÓÃ¸Ã·½·¨£¬·ñÔò²»Ò»¶¨ÄÜ¿´µ½¹ö¶¯Ğ§¹û
+			// å¿…é¡»è°ƒç”¨è¯¥æ–¹æ³•ï¼Œå¦åˆ™ä¸ä¸€å®šèƒ½çœ‹åˆ°æ»šåŠ¨æ•ˆæœ
 			postInvalidate();
 
 		}

@@ -25,27 +25,27 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MyAdapter extends BaseAdapter {
-	// Ìî³äÊı¾İµÄlist
+	// å¡«å……æ•°æ®çš„list
 	private ArrayList<ShopCartData> list;
-	// ÓÃÀ´¿ØÖÆCheckBoxµÄÑ¡ÖĞ×´¿ö
+	// ç”¨æ¥æ§åˆ¶CheckBoxçš„é€‰ä¸­çŠ¶å†µ
 	private static HashMap<Integer, Boolean> isSelected;
-	// ÉÏÏÂÎÄ
+	// ä¸Šä¸‹æ–‡
 	private Context context;
-	// ÓÃÀ´µ¼Èë²¼¾Ö
+	// ç”¨æ¥å¯¼å…¥å¸ƒå±€
 	private LayoutInflater inflater = null;
 	public static List list_id = new ArrayList();
 	private Handler handler;
-	// ¹¹ÔìÆ÷
+	// æ„é€ å™¨
 	public MyAdapter(ArrayList<ShopCartData> list, Context context) {
 		this.context = context;
 		this.list = list;
 		inflater = LayoutInflater.from(context);
 		isSelected = new HashMap<Integer, Boolean>();
-		// ³õÊ¼»¯Êı¾İ
+		// åˆå§‹åŒ–æ•°æ®
 		initDate();
 	}
 
-	// ³õÊ¼»¯isSelectedµÄÊı¾İ
+	// åˆå§‹åŒ–isSelectedçš„æ•°æ®
 	private void initDate() {
 		for (int i = 0; i < list.size(); i++) {
 			getIsSelected().put(i, false);
@@ -71,9 +71,9 @@ public class MyAdapter extends BaseAdapter {
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
 		if (convertView == null) {
-			// »ñµÃViewHolder¶ÔÏó
+			// è·å¾—ViewHolderå¯¹è±¡
 			holder = new ViewHolder();
-			// µ¼Èë²¼¾Ö²¢¸³Öµ¸øconvertview
+			// å¯¼å…¥å¸ƒå±€å¹¶èµ‹å€¼ç»™convertview
 //			convertView = inflater.inflate(R.layout.listitem_shopping_cart, null);//listviewitem
 			convertView = inflater.inflate(R.layout.listviewitem, null);
 			holder.cb = (CheckBox) convertView.findViewById(R.id.item_cb);
@@ -82,34 +82,34 @@ public class MyAdapter extends BaseAdapter {
 			holder.tv_size = (TextView) convertView.findViewById(R.id.tv_money);
 			holder.tv_money = (TextView) convertView.findViewById(R.id.tv_money2);
 			
-			// ¹ØÓÚÊıÁ¿
-			holder.market_information_seps_add = (TextView) convertView.findViewById(R.id.market_information_seps_add);//Ôö¼Ó
-			holder.market_information_seps_del = (TextView) convertView.findViewById(R.id.market_information_seps_del);//¼õÉÙ
-			holder.market_information_seps_num = (TextView) convertView.findViewById(R.id.market_information_seps_num);//¸öÊı
-			// ÎªviewÉèÖÃ±êÇ©
+			// å…³äºæ•°é‡
+			holder.market_information_seps_add = (TextView) convertView.findViewById(R.id.market_information_seps_add);//å¢åŠ 
+			holder.market_information_seps_del = (TextView) convertView.findViewById(R.id.market_information_seps_del);//å‡å°‘
+			holder.market_information_seps_num = (TextView) convertView.findViewById(R.id.market_information_seps_num);//ä¸ªæ•°
+			// ä¸ºviewè®¾ç½®æ ‡ç­¾
 			convertView.setTag(holder);
 		} else {
-			// È¡³öholder
+			// å–å‡ºholder
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
 		holder.tv_warename.setText(list.get(position).getTitle());
-		holder.tv_size.setText("£¤" + list.get(position).getSell_price());
-		holder.tv_money.setText("£¤" + list.get(position).getMarket_price());
+		holder.tv_size.setText("ï¿¥" + list.get(position).getSell_price());
+		holder.tv_money.setText("ï¿¥" + list.get(position).getMarket_price());
 		holder.market_information_seps_num.setText(list.get(position).getQuantity()+ "");
 		ImageLoader imageLoaderll=ImageLoader.getInstance();
 		imageLoaderll.displayImage(RealmName.REALM_NAME_HTTP + list.get(position).getImg_url(),holder.img_ware);
 		holder.tv_size.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
 		
-		// ¸ù¾İisSelectedÀ´ÉèÖÃcheckboxµÄÑ¡ÖĞ×´¿ö
+		// æ ¹æ®isSelectedæ¥è®¾ç½®checkboxçš„é€‰ä¸­çŠ¶å†µ
 		holder.cb.setChecked(getIsSelected().get(position));
 		
 		
-		// ÉèÖÃlistÖĞTextViewµÄÏÔÊ¾
+		// è®¾ç½®listä¸­TextViewçš„æ˜¾ç¤º
 //		holder.tv.setText(list.get(position).getTitle());
-		// ¸ù¾İisSelectedÀ´ÉèÖÃcheckboxµÄÑ¡ÖĞ×´¿ö
+		// æ ¹æ®isSelectedæ¥è®¾ç½®checkboxçš„é€‰ä¸­çŠ¶å†µ
 		
-	    // ¼àÌıcheckBox²¢¸ù¾İÔ­À´µÄ×´Ì¬À´ÉèÖÃĞÂµÄ×´Ì¬  
+	    // ç›‘å¬checkBoxå¹¶æ ¹æ®åŸæ¥çš„çŠ¶æ€æ¥è®¾ç½®æ–°çš„çŠ¶æ€  
         holder.cb.setOnClickListener(new View.OnClickListener() {  
   
             public void onClick(View v) {  
@@ -128,7 +128,7 @@ public class MyAdapter extends BaseAdapter {
                     System.out.println("2222================");
                 }  
                 for(int i=0;i<list_id.size();i++){
-					 System.out.println("=====²âÊÔ´ğ°¸1======================="+list_id.get(i));
+					 System.out.println("=====æµ‹è¯•ç­”æ¡ˆ1======================="+list_id.get(i));
 			     } 
 //				Message message2 = new Message();
 //				message2.what = 400;

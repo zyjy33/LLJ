@@ -69,9 +69,9 @@ public class ShouYiAdapter extends BaseAdapter {
 		}
 		
 		if(type.equals("1")){
-			holder.tag.setText("收益");
+			holder.tag.setText("鏀剁泭");
 		}else if (type.equals("2")) {
-			holder.tag.setText("积分");
+			holder.tag.setText("绉垎");
 		}
 		imageLoader.displayImage(RealmName.REALM_NAME+lists.get(position).getAsString("url"),holder.img);
 		 

@@ -10,11 +10,11 @@ public class Myapplication extends Application{
 
 	private static Myapplication instance;
 
-	/** ÆÁÄ»¿í¶È */
+	/** å±å¹•å®½åº¦ */
 	public static int screenWidth;
-	/** ÆÁÄ»¸ß¶È */
+	/** å±å¹•é«˜åº¦ */
 	public static int screenHeight;
-	/** »º´æÂ·¾¶ */
+	/** ç¼“å­˜è·¯å¾„ */
 	public static String cachePath;
 
 
@@ -28,9 +28,9 @@ public class Myapplication extends Application{
 		instance = this;
 
 		getScreenSize();
-		// ³õÊ¼»¯Í¼Æ¬¼ÓÔØ
-		// Êı¾İ¿â²Ù×÷¶ÔÏó
-		// Òì³£´¦Àí
+		// åˆå§‹åŒ–å›¾ç‰‡åŠ è½½
+		// æ•°æ®åº“æ“ä½œå¯¹è±¡
+		// å¼‚å¸¸å¤„ç†
 
 		sp = getSharedPreferences("meiya", 0);
 		
@@ -41,13 +41,13 @@ public class Myapplication extends Application{
 	}
 
 	/**
-	 * SD¿¨Â·¾¶
+	 * SDå¡è·¯å¾„
 	 * 
 	 * @return String
 	 */
 
 	/**
-	 * »ñÈ¡»º´æÂ·¾¶
+	 * è·å–ç¼“å­˜è·¯å¾„
 	 * 
 	 * @return String
 	 */
@@ -56,7 +56,7 @@ public class Myapplication extends Application{
 	}
 
 	/**
-	 * »ñÈ¡ÆÁÄ»¿í¸ß
+	 * è·å–å±å¹•å®½é«˜
 	 * void
 	 */
 	private void getScreenSize() {
@@ -69,6 +69,6 @@ public class Myapplication extends Application{
 		float densityDpi = dm.densityDpi; // 160.0
 	}
 	/**
-	 * Í¼Æ¬ÏÂÔØÆ÷
+	 * å›¾ç‰‡ä¸‹è½½å™¨
 	 */
 }

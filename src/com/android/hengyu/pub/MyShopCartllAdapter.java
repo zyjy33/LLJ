@@ -170,11 +170,11 @@ public class MyShopCartllAdapter extends BaseAdapter {
 			// holder.tv_2.setText(list.get(position).stylenametwo);
 			// holder.tv_color.setText(list.get(position).stylenatureone);
 			// holder.tv_size.setText(list.get(position).stylenaturetwo);
-			viewHolder.shopcart_item_market.setText("£¤"
+			viewHolder.shopcart_item_market.setText("ï¿¥"
 					+ datas.get(index).marketprice);
-			viewHolder.shopcart_item_price.setText("£¤"
+			viewHolder.shopcart_item_price.setText("ï¿¥"
 					+ datas.get(index).retailprice);
-			// holder.jifen.setText("¾Ûºì°ü:"+list.get(position).jf);
+			// holder.jifen.setText("èšçº¢åŒ…:"+list.get(position).jf);
 			viewHolder.shopcart_item_num_tip.setText("X"+datas.get(index).number + "");
 			loader.displayImage(
 					RealmName.REALM_NAME + "/admin/" + datas.get(index).imgurl,
@@ -200,12 +200,12 @@ public class MyShopCartllAdapter extends BaseAdapter {
 					viewHolder.shopcart_item_check.setVisibility(View.VISIBLE);
 					viewHolder.shop_check_layout.setVisibility(View.GONE);
 					viewHolder.shopcart_item_status.setVisibility(View.VISIBLE);
-					viewHolder.shopcart_item_status.setText("ÒÑÏÂ¼Ü");
+					viewHolder.shopcart_item_status.setText("å·²ä¸‹æ¶");
 					if(datas.get(index).IsDeleted){
 //						viewHolder.shopcart_item_check.setVisibility(View.VISIBLE);
 //						viewHolder.shop_check_layout.setVisibility(View.GONE);
 //						viewHolder.shopcart_item_status.setVisibility(View.VISIBLE);
-						viewHolder.shopcart_item_status.setText("ÒÑÊ§Ğ§");
+						viewHolder.shopcart_item_status.setText("å·²å¤±æ•ˆ");
 					}
 				}
 				
@@ -245,7 +245,7 @@ public class MyShopCartllAdapter extends BaseAdapter {
 						public void onClick(View v) {
 							changeAdd(datas, position);
 
-							// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+							// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 							cartData = wareDao.findResult();
 							Message message2 = new Message();
 							message2.what = 200;
@@ -261,7 +261,7 @@ public class MyShopCartllAdapter extends BaseAdapter {
 						public void onClick(View v) {
 							changeReduce(datas, position);
 
-							// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+							// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 							cartData = wareDao.findResult();
 							Message message2 = new Message();
 							message2.what = 200;
@@ -338,7 +338,7 @@ public class MyShopCartllAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ÔöÒæ
+	 * å¢ç›Š
 	 * 
 	 * @param index
 	 */

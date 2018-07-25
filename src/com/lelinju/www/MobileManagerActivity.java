@@ -100,14 +100,14 @@ public class MobileManagerActivity extends BaseActivity {
 				data.time = object.getString("rechargeTime");
 				data.expenses = object.getString("rechargePrice");
 				data.income = object.getString("rechargeObject");
-				// 0ÊÇÊ§°Ü¶©µ¥£¬1ÊÇ³É¹¦¶©µ¥£¬2ÊÇÕıÔÚ³äÖµ×´Ì¬
+				// 0æ˜¯å¤±è´¥è®¢å•ï¼Œ1æ˜¯æˆåŠŸè®¢å•ï¼Œ2æ˜¯æ­£åœ¨å……å€¼çŠ¶æ€
 				String status = object.getString("orderStatus");
 				if (status.equals("1")) {
-					data.balance = "³äÖµ³É¹¦";
+					data.balance = "å……å€¼æˆåŠŸ";
 				} else if (status.equals("0")) {
-					data.balance = "³äÖµÊ§°Ü";
+					data.balance = "å……å€¼å¤±è´¥";
 				} else if (status.equals("2")) {
-					data.balance = "µÈ´ı³äÖµ";
+					data.balance = "ç­‰å¾…å……å€¼";
 				}
 				list.add(data);
 			}
@@ -131,14 +131,14 @@ public class MobileManagerActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

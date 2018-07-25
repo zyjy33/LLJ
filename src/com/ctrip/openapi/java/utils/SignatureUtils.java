@@ -5,12 +5,12 @@ import java.security.NoSuchAlgorithmException;
 
 
 public class SignatureUtils {
-	// »ñµÃÊ±¼ä´Á
+	// è·å¾—æ—¶é—´æˆ³
 	public static long GetTimeStamp() {
 		return System.currentTimeMillis()/1000;
 	}
 
-	// »ñµÃÇ©Ãû
+	// è·å¾—ç­¾å
 	public static String CalculationSignature(String timeStamp,
 			String allianceID, String secretKey, String sid, String requestType)
 			throws NoSuchAlgorithmException, Exception {
@@ -47,7 +47,7 @@ public class SignatureUtils {
 		return signature;
 	}
 
-	// MD5¼ÓÃÜ
+	// MD5åŠ å¯†
 	private static String MD5Encoding(String source)
 			throws NoSuchAlgorithmException {
 		MessageDigest mdInst = MessageDigest.getInstance("MD5");

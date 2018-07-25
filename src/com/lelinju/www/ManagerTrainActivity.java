@@ -59,7 +59,7 @@ public class ManagerTrainActivity extends BaseActivity {
 						}
 					}, getApplicationContext());
 		} else {
-			Toast.makeText(getApplicationContext(), "Î´µÇÂ¼!", 200).show();
+			Toast.makeText(getApplicationContext(), "æœªç™»å½•!", 200).show();
 		}
 	}
 
@@ -113,7 +113,7 @@ public class ManagerTrainActivity extends BaseActivity {
 				item.setLastId("-1");
 				item.setType("-1");
 				banks.add(item);
-				bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+				bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 			}
 			Message msg = new Message();
 			msg.what = 0;
@@ -141,8 +141,8 @@ public class ManagerTrainActivity extends BaseActivity {
 				String trade_no = (String) msg.obj;
 				System.out.println(trade_no);
 				if (banks != null && banks.size() != 0) {
-					// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-					System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+					// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+					System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 					// initPopupWindow1();
 					// showPopupWindow1(btn_OK);
 					Intent intent = new Intent(ManagerTrainActivity.this,
@@ -155,7 +155,7 @@ public class ManagerTrainActivity extends BaseActivity {
 					intent.putExtras(bundle);
 					startActivity(intent);
 				} else {
-					// ±íÊ¾Ê×´ÎÖ§¸¶
+					// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 					Intent intent = new Intent(ManagerTrainActivity.this,
 							PayActivity.class);
 					Bundle bundle = new Bundle();

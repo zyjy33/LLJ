@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 /**
- * Ó¦ÓÃ³ÌĞòActivity¹ÜÀíÀà£ºÓÃÓÚActivity¹ÜÀíºÍÓ¦ÓÃ³ÌĞòÍË³ö
+ * åº”ç”¨ç¨‹åºActivityç®¡ç†ç±»ï¼šç”¨äºActivityç®¡ç†å’Œåº”ç”¨ç¨‹åºé€€å‡º
  * @author 
  * @version 1.0
  * @created 2012-6-21 
@@ -14,7 +14,7 @@ public class AppManager {
 	private static AppManager instance;
 	private AppManager(){}
 	/**
-	 * µ¥Ò»ÊµÀı
+	 * å•ä¸€å®ä¾‹
 	 */
 	public static AppManager getAppManager(){
 		if(instance==null){
@@ -23,7 +23,7 @@ public class AppManager {
 		return instance;
 	}
 	/**
-	 * Ìí¼ÓActivityµ½¶ÑÕ»9920000723913
+	 * æ·»åŠ Activityåˆ°å †æ ˆ9920000723913
 	 */
 	public void addActivity(Activity activity){
 		if(activityStack==null){
@@ -32,21 +32,21 @@ public class AppManager {
 		activityStack.add(activity);
 	}
 	/**
-	 * »ñÈ¡µ±Ç°Activity£¨¶ÑÕ»ÖĞ×îºóÒ»¸öÑ¹ÈëµÄ£©
+	 * è·å–å½“å‰Activityï¼ˆå †æ ˆä¸­æœ€åä¸€ä¸ªå‹å…¥çš„ï¼‰
 	 */
 	public Activity currentActivity(){
 		Activity activity=activityStack.lastElement();
 		return activity;
 	}
 	/**
-	 * ½áÊøµ±Ç°Activity£¨¶ÑÕ»ÖĞ×îºóÒ»¸öÑ¹ÈëµÄ£©
+	 * ç»“æŸå½“å‰Activityï¼ˆå †æ ˆä¸­æœ€åä¸€ä¸ªå‹å…¥çš„ï¼‰
 	 */
 	public void finishActivity(){
 		Activity activity=activityStack.lastElement();
 		finishActivity(activity);
 	}
 	/**
-	 * ½áÊøÖ¸¶¨µÄActivity
+	 * ç»“æŸæŒ‡å®šçš„Activity
 	 */
 	public void finishActivity(Activity activity){
 		if(activity!=null){
@@ -56,7 +56,7 @@ public class AppManager {
 		}
 	}
 	/**
-	 * ½áÊøÖ¸¶¨ÀàÃûµÄActivity
+	 * ç»“æŸæŒ‡å®šç±»åçš„Activity
 	 */
 	public void finishActivity(Class<?> cls){
 		for (Activity activity : activityStack) {
@@ -66,7 +66,7 @@ public class AppManager {
 		}
 	}
 	/**
-	 * ½áÊøËùÓĞActivity
+	 * ç»“æŸæ‰€æœ‰Activity
 	 */
 	public void finishAllActivity(){
 		for (int i = 0, size = activityStack.size(); i < size; i++){
@@ -77,7 +77,7 @@ public class AppManager {
 		activityStack.clear();
 	}
 	/**
-	 * ÍË³öÓ¦ÓÃ³ÌĞò
+	 * é€€å‡ºåº”ç”¨ç¨‹åº
 	 */
 	@SuppressWarnings("deprecation")
 	public void AppExit(Context context) {

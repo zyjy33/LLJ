@@ -77,10 +77,10 @@ public class LingjiaActivity extends BaseActivity {
 						tvs[i].setOnClickListener(new OnClickListener() {
 							@Override
 							public void onClick(View arg0) {
-								System.out.println("IDºÅÂëÊÇ:" + id);
+								System.out.println("IDå·ç æ˜¯:" + id);
 								load(id);
 								int width = hor_scrollview.getWidth();
-								System.out.println("¸¸ÀàµÄ³¤¶È:" + width);
+								System.out.println("çˆ¶ç±»çš„é•¿åº¦:" + width);
 								int childIndex = Integer.parseInt(cindex);
 								if (childIndex != 0
 										|| childIndex != tvs.length) {
@@ -206,7 +206,7 @@ public class LingjiaActivity extends BaseActivity {
 				super.onSuccess(arg0, arg1);
 
 				 
-				System.out.println("½á¹û"+arg1);
+				System.out.println("ç»“æœ"+arg1);
 				try {
 					JSONObject jsonObject = new JSONObject(arg1);
 					JSONArray jsonArray = jsonObject

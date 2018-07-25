@@ -47,7 +47,7 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.lelinju.www.R;
 /**
  * 
- * Óà¶î³äÖµ
+ * ä½™é¢å……å€¼
  * @author Administrator
  *
  */
@@ -116,7 +116,7 @@ public class MyQianBaoActivity extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 */
 	private void userloginqm() {
 		try{

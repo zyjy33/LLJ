@@ -21,7 +21,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.WareInformationActivity;
 
 /**
- * @Description:gridviewµÄAdapter
+ * @Description:gridviewçš„Adapter
  * @author http://blog.csdn.net/finddreams
  */
 public class GouwucheAdapter extends BaseAdapter {

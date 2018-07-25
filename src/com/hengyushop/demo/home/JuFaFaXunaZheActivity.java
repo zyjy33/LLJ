@@ -71,8 +71,8 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	StringBuffer str;
 //	private ListView listview;
 	private MyAdapter myAdapter;
-	private ArrayList<Boolean> checkList = new ArrayList<Boolean>(); // ÅĞ¶Ïlistviewµ¥Ñ¡Î»ÖÃ
-//	private ArrayList<String> list1 = new ArrayList<String>() { // listViewµÄÄÚÈİ
+	private ArrayList<Boolean> checkList = new ArrayList<Boolean>(); // åˆ¤æ–­listviewå•é€‰ä½ç½®
+//	private ArrayList<String> list1 = new ArrayList<String>() { // listViewçš„å†…å®¹
 //		{
 //			add("item1");
 //			add("item2");
@@ -108,12 +108,12 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * µ¥Ñ¡
+	 * å•é€‰
 	 */
-	//ÉèÖÃÑ¡ÖĞµÄÎ»ÖÃ£¬½«ÆäËûÎ»ÖÃÉèÖÃÎªÎ´Ñ¡
+	//è®¾ç½®é€‰ä¸­çš„ä½ç½®ï¼Œå°†å…¶ä»–ä½ç½®è®¾ç½®ä¸ºæœªé€‰
 		public void checkPosition(int position) {
 			for (int i = 0; i < checkList.size(); i++) {
-				if (position == i) {// ÉèÖÃÒÑÑ¡Î»ÖÃ
+				if (position == i) {// è®¾ç½®å·²é€‰ä½ç½®
 					checkList.set(i, true);
 					String str = list.get(i).title;
 //					System.out.println("---"+str.replaceAll(" ",""));
@@ -133,7 +133,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 		public void init() {
 			listView = (ListView) findViewById(R.id.new_list);
 			for (int i = 0; i < list.size(); i++) {
-				checkList.add(false); // ¾ùÎªÎ´Ñ¡
+				checkList.add(false); // å‡ä¸ºæœªé€‰
 			}
 			myAdapter = new MyAdapter(JuFaFaXunaZheActivity.this, list);
 			listView.setAdapter(myAdapter);
@@ -141,7 +141,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 		
 	private void initdata() {
 		tv_timu = (TextView) findViewById(R.id.textView1);
-//		tv_timu.setText("ÍÆ¹ã´«²¥");
+//		tv_timu.setText("æ¨å¹¿ä¼ æ’­");
 		listView = (ListView) findViewById(R.id.new_list);
 		tv_shangyiti = (TextView) findViewById(R.id.tv_shangyiti);
 		tv_shangyitill = (TextView) findViewById(R.id.tv_shangyitill);
@@ -166,7 +166,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 		});
 	}
 	
-	//ÉÌÆ·ÁĞ±í
+	//å•†å“åˆ—è¡¨
 		private void loadCate(String exam_id2){
 			
 			AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_test_exam_model?" +
@@ -236,7 +236,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 					}
 						
 				for (int i = 0; i < list.size(); i++) {
-					checkList.add(false); // ¾ùÎªÎ´Ñ¡
+					checkList.add(false); // å‡ä¸ºæœªé€‰
 				}
 				
 				myAdapter = new MyAdapter(JuFaFaXunaZheActivity.this, list);
@@ -256,7 +256,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list(String exam_id) {
 		System.out.println("==len==================="+len);
@@ -267,7 +267,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+//								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -314,8 +314,8 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 									}
 									
 									tv_ware_name.setText(title+"("+datatype+")");
-									tv_timu.setText("¹²"+list_id.size()+"Ìâ"+"/"+"µÚ"+len+"Ìâ");
-									if (datatype.contains("¶àÑ¡Ìâ")) {
+									tv_timu.setText("å…±"+list_id.size()+"é¢˜"+"/"+"ç¬¬"+len+"é¢˜");
+									if (datatype.contains("å¤šé€‰é¢˜")) {
 										handler.sendEmptyMessage(0);
 									}else {
 										handler.sendEmptyMessage(1);
@@ -332,9 +332,9 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.tv_shangyiti:
-//			if (datatype.contains("¶àÑ¡Ìâ")) {
+//			if (datatype.contains("å¤šé€‰é¢˜")) {
 //				
-//			System.out.println("=====================¶ş¼¶Öµ=="+len);
+//			System.out.println("=====================äºŒçº§å€¼=="+len);
 //			System.out.println("=====================list_id.size()=="+list_id.size());
 //			HashMap<Integer, Boolean> map1 = MyListViewAdapter.getIsSelected();
 //			System.out.println("=====map.size()================"+map1.size());
@@ -358,7 +358,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 ////				str1 +=	danxuanti;
 //				String fegefu = danxuanti.length()>0?",":"";
 //				str1 +=	fegefu+danxuanti;
-//				Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 //				list_name.add(str1);
 ////				for (int i = 0; i < checkList.size(); i++) {
 ////						checkList.set(i, true);
@@ -373,7 +373,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 //			}
 			break;
 		case R.id.tv_xiayiti_ll:
-			if (datatype.contains("¶àÑ¡Ìâ")) {
+			if (datatype.contains("å¤šé€‰é¢˜")) {
 			HashMap<Integer, Boolean> map = MyListViewAdapter.getIsSelected();
 			str1="";
 			for (int i = 0; i < map.size(); i++) {
@@ -384,10 +384,10 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 				}
 			}
 			if (str1.equals("")) {
-				Toast.makeText(getApplicationContext(),"ÇëÑ¡ÔñÑ¡Ïî", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),"è¯·é€‰æ‹©é€‰é¡¹", Toast.LENGTH_SHORT).show();
 			}else {
 			MyListViewAdapter.getIsSelected().get("");
-//			Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 			list_name.add(str1);
 			
 			if (list_id.size() > len) {
@@ -400,12 +400,12 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 			
 			}else {
 				if (danxuanti.equals("")) {
-					Toast.makeText(getApplicationContext(),"ÇëÑ¡ÔñÑ¡Ïî", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(),"è¯·é€‰æ‹©é€‰é¡¹", Toast.LENGTH_SHORT).show();
 				}else {
 //				String fegefu = danxuanti.length()>0?",":"";
 //				str1 +=	danxuanti+fegefu+danxuanti;
 //				str1 +=	danxuanti;
-//				Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + danxuanti + "", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + danxuanti + "", Toast.LENGTH_SHORT).show();
 				list_name.add(danxuanti);
 				for (int i = 0; i < checkList.size(); i++) {
 						checkList.set(i, false);
@@ -430,10 +430,10 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * Ìá½»
+	 * æäº¤
 	 * */
 	public void myPrice() {
-		if (datatype.contains("¶àÑ¡Ìâ")) {
+		if (datatype.contains("å¤šé€‰é¢˜")) {
 		HashMap<Integer, Boolean> map = MyListViewAdapter.getIsSelected();
 		str1="";
 		for (int i = 0; i < map.size(); i++) {
@@ -445,10 +445,10 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 		}
 		
 		if (str1.equals("")) {
-			Toast.makeText(getApplicationContext(),"Äú»¹Î´Ñ¡Ôñ´ğ°¸", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(),"æ‚¨è¿˜æœªé€‰æ‹©ç­”æ¡ˆ", Toast.LENGTH_SHORT).show();
 		}else {
 		MyListViewAdapter.getIsSelected().get("");
-//		Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+//		Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 		Toast.makeText(getApplicationContext(), str1, 200).show();
 		
 		list_name.add(str1);
@@ -459,7 +459,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
         }
         str.delete(str.lastIndexOf(","),str.length()); 
 //        Toast.makeText(getApplicationContext(), str, 500).show();
-        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
+        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
         
         loadtijiao();
 		}
@@ -467,12 +467,12 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 		}else {
 			try {
 			if (danxuanti.equals("")) {
-				Toast.makeText(getApplicationContext(),"ÇëÑ¡ÔñÑ¡Ïî", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),"è¯·é€‰æ‹©é€‰é¡¹", Toast.LENGTH_SHORT).show();
 			}else {
 //			MyListViewAdapter.getIsSelected().get("");
 //			String fegefu = danxuanti.length()>0?",":"";
 //			str1 +=	fegefu+danxuanti;
-//			Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 				System.out.println("list_name---------------"+list_name.size());
 			list_name.add(danxuanti);
 			str = new StringBuffer();
@@ -480,7 +480,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	        	str.append(s+",");
 	        }
 	        str.delete(str.lastIndexOf(","),str.length()); 
-	        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
+	        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
 //	        Toast.makeText(getApplicationContext(), str, 500).show();
 	        loadtijiao();
 			}
@@ -493,7 +493,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * Ìá½»ÔÚÏß¶¨ÖÆÌâÄ¿
+	 * æäº¤åœ¨çº¿å®šåˆ¶é¢˜ç›®
 	 * @param exam_id2
 	 */
 	public void loadtijiao(){
@@ -530,13 +530,13 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
     }
 	
 	/**
-	 * ÌáÊ¾ÊÇ·ñÈ¡Ïû
+	 * æç¤ºæ˜¯å¦å–æ¶ˆ
 	 */
 	protected void dialoglogin() {
 		AlertDialog.Builder builder = new Builder(JuFaFaXunaZheActivity.this);
-		builder.setMessage("ÊÇ·ñÈ·ÈÏÈ¡Ïû?");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ˜¯å¦ç¡®è®¤å–æ¶ˆ?");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -544,7 +544,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -556,21 +556,21 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * listviewµÄitemµÄÑ¡ÔñµÄ·½·¨
+	 * listviewçš„itemçš„é€‰æ‹©çš„æ–¹æ³•
 	 * */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		// È¡µÃViewHolder¶ÔÏó£¬ÕâÑù¾ÍÊ¡È¥ÁËÍ¨¹ı²ã²ãµÄfindViewByIdÈ¥ÊµÀı»¯ÎÒÃÇĞèÒªµÄcbÊµÀıµÄ²½Öè
+		// å–å¾—ViewHolderå¯¹è±¡ï¼Œè¿™æ ·å°±çœå»äº†é€šè¿‡å±‚å±‚çš„findViewByIdå»å®ä¾‹åŒ–æˆ‘ä»¬éœ€è¦çš„cbå®ä¾‹çš„æ­¥éª¤
 		ViewHolder holder = (ViewHolder) view.getTag();
-		// ¸Ä±äCheckBoxµÄ×´Ì¬
+		// æ”¹å˜CheckBoxçš„çŠ¶æ€
 		holder.cb.toggle();
-		// ½«CheckBoxµÄÑ¡ÖĞ×´¿ö¼ÇÂ¼ÏÂÀ´
+		// å°†CheckBoxçš„é€‰ä¸­çŠ¶å†µè®°å½•ä¸‹æ¥
 		MyListViewAdapter.getIsSelected().put(position, holder.cb.isChecked());
 	}
 	
 	
-	//×Ô¶¨Òåadapter
+	//è‡ªå®šä¹‰adapter
 		private class MyAdapter extends BaseAdapter {
 			private LayoutInflater inflater;
 			ArrayList<TuiGuangBean> myList;
@@ -617,7 +617,7 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 				holder.txt.setText(myList.get(position).title);
 				holder.checkBox.setChecked(checkList.get(position));
 				holder.checkBox
-						.setOnCheckedChangeListener(new OnCheckedChangeListener() {//µ¥»÷checkboxÊµÏÖµ¥Ñ¡£¬¸ù¾İ×´Ì¬±ä»»½øĞĞµ¥Ñ¡ÉèÖÃ
+						.setOnCheckedChangeListener(new OnCheckedChangeListener() {//å•å‡»checkboxå®ç°å•é€‰ï¼Œæ ¹æ®çŠ¶æ€å˜æ¢è¿›è¡Œå•é€‰è®¾ç½®
 
 							@Override
 							public void onCheckedChanged(CompoundButton buttonView,
@@ -626,11 +626,11 @@ public class JuFaFaXunaZheActivity extends BaseActivity implements OnClickListen
 								if (isChecked) {
 									checkPosition(position);
 								} else {
-									checkList.set(position, false);//½«ÒÑÑ¡ÔñµÄÎ»ÖÃÉèÎªÑ¡Ôñ
+									checkList.set(position, false);//å°†å·²é€‰æ‹©çš„ä½ç½®è®¾ä¸ºé€‰æ‹©
 								}
 							}
 						});
-				convertView.setOnClickListener(new OnClickListener() {//itemµ¥»÷½øĞĞµ¥Ñ¡ÉèÖÃ
+				convertView.setOnClickListener(new OnClickListener() {//itemå•å‡»è¿›è¡Œå•é€‰è®¾ç½®
 
 					@Override
 					public void onClick(View v) {

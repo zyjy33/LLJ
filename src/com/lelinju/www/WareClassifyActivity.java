@@ -91,7 +91,7 @@ public class WareClassifyActivity extends BaseActivity implements OnClickListene
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.menu_ware_classify);
-		// ´´½¨ºÍ´ò¿ªÊı¾İ¿â
+		// åˆ›å»ºå’Œæ‰“å¼€æ•°æ®åº“
 		new Thread(){
 			public void run() {
 				
@@ -128,7 +128,7 @@ public class WareClassifyActivity extends BaseActivity implements OnClickListene
 
 	}
 
-	// ½âÎöÍøÂçÊı¾İ ²¢²åÈëµ½SqliteÊı¾İ¿âÖĞ
+	// è§£æç½‘ç»œæ•°æ® å¹¶æ’å…¥åˆ°Sqliteæ•°æ®åº“ä¸­
 	public void parse(String st) {
 		try {
 			// List<WareData> allids = waredao.finAddID();
@@ -208,7 +208,7 @@ public class WareClassifyActivity extends BaseActivity implements OnClickListene
 
 	}
 
-	// ²éÑ¯±àºÅÎª1µÄÉÌÆ·Ãû³Æ £¨ÉÌÆ··ÖÀàµÚÒ»¼¶ĞÅÏ¢£©
+	// æŸ¥è¯¢ç¼–å·ä¸º1çš„å•†å“åç§° ï¼ˆå•†å“åˆ†ç±»ç¬¬ä¸€çº§ä¿¡æ¯ï¼‰
 	private void selectwarename() {
 		new Thread() {
 			public void run() {
@@ -247,14 +247,14 @@ public class WareClassifyActivity extends BaseActivity implements OnClickListene
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

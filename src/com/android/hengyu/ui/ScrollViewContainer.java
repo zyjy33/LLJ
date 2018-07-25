@@ -14,8 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 /**
- * °üº¬Á½¸öScrollViewµÄÈİÆ÷
- * ¸ü¶àÏê½â¼û²©¿Íhttp://dwtedx.com
+ * åŒ…å«ä¸¤ä¸ªScrollViewçš„å®¹å™¨
+ * æ›´å¤šè¯¦è§£è§åšå®¢http://dwtedx.com
  * 
  * @author chenjing
  * 
@@ -23,26 +23,26 @@ import android.widget.ScrollView;
 public class ScrollViewContainer extends RelativeLayout {
 
 	/**
-	 * ×Ô¶¯ÉÏ»¬
+	 * è‡ªåŠ¨ä¸Šæ»‘
 	 */
 	public static final int AUTO_UP = 0;
 	/**
-	 * ×Ô¶¯ÏÂ»¬
+	 * è‡ªåŠ¨ä¸‹æ»‘
 	 */
 	public static final int AUTO_DOWN = 1;
 	/**
-	 * ¶¯»­Íê³É
+	 * åŠ¨ç”»å®Œæˆ
 	 */
 	public static final int DONE = 2;
 	/**
-	 * ¶¯»­ËÙ¶È
+	 * åŠ¨ç”»é€Ÿåº¦
 	 */
 	public static final float SPEED = 6.5f;
 
 	private boolean isMeasured = false;
 
 	/**
-	 * ÓÃÓÚ¼ÆËãÊÖ»¬¶¯µÄËÙ¶È
+	 * ç”¨äºè®¡ç®—æ‰‹æ»‘åŠ¨çš„é€Ÿåº¦
 	 */
 	private VelocityTracker vt;
 
@@ -57,18 +57,18 @@ public class ScrollViewContainer extends RelativeLayout {
 	private int state = DONE;
 
 	/**
-	 * ¼ÇÂ¼µ±Ç°Õ¹Ê¾µÄÊÇÄÄ¸öview£¬0ÊÇtopView£¬1ÊÇbottomView
+	 * è®°å½•å½“å‰å±•ç¤ºçš„æ˜¯å“ªä¸ªviewï¼Œ0æ˜¯topViewï¼Œ1æ˜¯bottomView
 	 */
 	private int mCurrentViewIndex = 0;
 	/**
-	 * ÊÖ»¬¶¯¾àÀë£¬Õâ¸öÊÇ¿ØÖÆ²¼¾ÖµÄÖ÷Òª±äÁ¿
+	 * æ‰‹æ»‘åŠ¨è·ç¦»ï¼Œè¿™ä¸ªæ˜¯æ§åˆ¶å¸ƒå±€çš„ä¸»è¦å˜é‡
 	 */
 	private float mMoveLen;
 	private MyTimer mTimer;
 	private float mLastY;
 	/**
-	 * ÓÃÓÚ¿ØÖÆÊÇ·ñ±ä¶¯²¼¾ÖµÄÁíÒ»¸öÌõ¼ş£¬mEvents==0Ê±²¼¾Ö¿ÉÒÔÍÏ×§ÁË£¬mEvents==-1Ê±¿ÉÒÔÉáÆú½«Òªµ½À´µÄµÚÒ»¸ömoveÊÂ¼ş£¬
-	 * ÕâµãÊÇÈ¥³ı¶àµãÍÏ¶¯¾ç±äµÄ¹Ø¼ü
+	 * ç”¨äºæ§åˆ¶æ˜¯å¦å˜åŠ¨å¸ƒå±€çš„å¦ä¸€ä¸ªæ¡ä»¶ï¼ŒmEvents==0æ—¶å¸ƒå±€å¯ä»¥æ‹–æ‹½äº†ï¼ŒmEvents==-1æ—¶å¯ä»¥èˆå¼ƒå°†è¦åˆ°æ¥çš„ç¬¬ä¸€ä¸ªmoveäº‹ä»¶ï¼Œ
+	 * è¿™ç‚¹æ˜¯å»é™¤å¤šç‚¹æ‹–åŠ¨å‰§å˜çš„å…³é”®
 	 */
 	private int mEvents;
 
@@ -133,14 +133,14 @@ public class ScrollViewContainer extends RelativeLayout {
 			break;
 		case MotionEvent.ACTION_POINTER_DOWN:
 		case MotionEvent.ACTION_POINTER_UP:
-			// ¶àÒ»Ö»ÊÖÖ¸°´ÏÂ»òÌ§ÆğÊ±ÉáÆú½«Òªµ½À´µÄµÚÒ»¸öÊÂ¼şmove£¬·ÀÖ¹¶àµãÍÏ×§µÄbug
+			// å¤šä¸€åªæ‰‹æŒ‡æŒ‰ä¸‹æˆ–æŠ¬èµ·æ—¶èˆå¼ƒå°†è¦åˆ°æ¥çš„ç¬¬ä¸€ä¸ªäº‹ä»¶moveï¼Œé˜²æ­¢å¤šç‚¹æ‹–æ‹½çš„bug
 			mEvents = -1;
 			break;
 		case MotionEvent.ACTION_MOVE:
 			vt.addMovement(ev);
 			if (canPullUp && mCurrentViewIndex == 0 && mEvents == 0) {
 				mMoveLen += (ev.getY() - mLastY);
-				// ·ÀÖ¹ÉÏÏÂÔ½½ç
+				// é˜²æ­¢ä¸Šä¸‹è¶Šç•Œ
 				if (mMoveLen > 0) {
 					mMoveLen = 0;
 					mCurrentViewIndex = 0;
@@ -150,12 +150,12 @@ public class ScrollViewContainer extends RelativeLayout {
 
 				}
 				if (mMoveLen < -8) {
-					// ·ÀÖ¹ÊÂ¼ş³åÍ»
+					// é˜²æ­¢äº‹ä»¶å†²çª
 					ev.setAction(MotionEvent.ACTION_CANCEL);
 				}
 			} else if (canPullDown && mCurrentViewIndex == 1 && mEvents == 0) {
 				mMoveLen += (ev.getY() - mLastY);
-				// ·ÀÖ¹ÉÏÏÂÔ½½ç
+				// é˜²æ­¢ä¸Šä¸‹è¶Šç•Œ
 				if (mMoveLen < -mViewHeight) {
 					mMoveLen = -mViewHeight;
 					mCurrentViewIndex = 1;
@@ -164,7 +164,7 @@ public class ScrollViewContainer extends RelativeLayout {
 					mCurrentViewIndex = 0;
 				}
 				if (mMoveLen > 8 - mViewHeight) {
-					// ·ÀÖ¹ÊÂ¼ş³åÍ»
+					// é˜²æ­¢äº‹ä»¶å†²çª
 					ev.setAction(MotionEvent.ACTION_CANCEL);
 				}
 			} else
@@ -176,19 +176,19 @@ public class ScrollViewContainer extends RelativeLayout {
 			mLastY = ev.getY();
 			vt.addMovement(ev);
 			vt.computeCurrentVelocity(700);
-			// »ñÈ¡Y·½ÏòµÄËÙ¶È
+			// è·å–Yæ–¹å‘çš„é€Ÿåº¦
 			float mYV = vt.getYVelocity();
 			if (mMoveLen == 0 || mMoveLen == -mViewHeight)
 				break;
 			if (Math.abs(mYV) < 500) {
-				// ËÙ¶ÈĞ¡ÓÚÒ»¶¨ÖµµÄÊ±ºòµ±×÷¾²Ö¹ÊÍ·Å£¬ÕâÊ±ºòÁ½¸öViewÍùÄÄÒÆ¶¯È¡¾öÓÚ»¬¶¯µÄ¾àÀë
+				// é€Ÿåº¦å°äºä¸€å®šå€¼çš„æ—¶å€™å½“ä½œé™æ­¢é‡Šæ”¾ï¼Œè¿™æ—¶å€™ä¸¤ä¸ªViewå¾€å“ªç§»åŠ¨å–å†³äºæ»‘åŠ¨çš„è·ç¦»
 				if (mMoveLen <= -mViewHeight / 2) {
 					state = AUTO_UP;
 				} else if (mMoveLen > -mViewHeight / 2) {
 					state = AUTO_DOWN;
 				}
 			} else {
-				// Ì§ÆğÊÖÖ¸Ê±ËÙ¶È·½Ïò¾ö¶¨Á½¸öViewÍùÄÄÒÆ¶¯
+				// æŠ¬èµ·æ‰‹æŒ‡æ—¶é€Ÿåº¦æ–¹å‘å†³å®šä¸¤ä¸ªViewå¾€å“ªç§»åŠ¨
 				if (mYV < 0)
 					state = AUTO_UP;
 				else

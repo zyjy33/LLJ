@@ -98,10 +98,10 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	private TextView tv_name,tv_shenfenzheng,tv_jxdizhi,tv_xqdizhi,tv_banbenhao,tv_city;
 	private String strUr2 = RealmName.REALM_NAME_LL + "/get_apk_version?browser=android";
 	private String URL;
-	private Activity context; // ÉÏÏÂÎÄ
+	private Activity context; // ä¸Šä¸‹æ–‡
 	private String content;
 	private LinearLayout ll_gender,ll_diqu;
-	String dizhi = "Ñ¡ÔñµØÇø";
+	String dizhi = "é€‰æ‹©åœ°åŒº";
 	private String cityTxt,cityTxt1,cityTxt2,cityTxt3;
 	String login_sign,amount,sex,nick_name,mobile;
 	String user_name, user_id,nichen,order_no;
@@ -195,7 +195,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 //				Intent intent = new Intent(PersonCenterActivity.this,AddressManagerActivity.class);
 //				startActivity(intent);
 				Intent intent = new Intent(PersonCenterActivity.this,AddressManagerGlActivity.class);
-				intent.putExtra("order_confrim", "order_confrim");// ±êÊ¾
+				intent.putExtra("order_confrim", "order_confrim");// æ ‡ç¤º
 				startActivity(intent);
 			}
 		});
@@ -218,7 +218,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * »ñÈ¡ÓÃ»§×ÊÁÏ
+	 * è·å–ç”¨æˆ·èµ„æ–™
 	 */
 	private void userloginqm(){
 		try {
@@ -261,12 +261,12 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 						try {
 						tv_nicheng.setText(nick_name);
 						tv_nick_name.setText(sex);
-						v2.setText(data.user_code);//¾Û¿¨
-//						v3.setText(data.amount);//ÕË»§Óà¶î
-//						v4.setText(data.point);//¾Û±Ò
-						v7.setText(data.mobile);//ÊÖ»úºÅ
-//						v8.setText(data.pension);//ÑøÀÏ½ğ
-//						v9.setText(data.packet);//ºì°ü
+						v2.setText(data.user_code);//èšå¡
+//						v3.setText(data.amount);//è´¦æˆ·ä½™é¢
+//						v4.setText(data.point);//èšå¸
+						v7.setText(data.mobile);//æ‰‹æœºå·
+//						v8.setText(data.pension);//å…»è€é‡‘
+//						v9.setText(data.packet);//çº¢åŒ…
 //						v10.setText(data.exp);
 						
 						Editor editor = spPreferences.edit();
@@ -339,7 +339,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 				dialog();
 				break;
 			case 1:
-				Toast.makeText(PersonCenterActivity.this, "µ±Ç°°æ±¾ÊÇ×îĞÂ°æ±¾", 200).show();
+				Toast.makeText(PersonCenterActivity.this, "å½“å‰ç‰ˆæœ¬æ˜¯æœ€æ–°ç‰ˆæœ¬", 200).show();
 				break;
 			case 2:
 				break;
@@ -362,28 +362,28 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 					// TODO Auto-generated method stub
 					super.run();
 						/**
-						 * °æ±¾2
+						 * ç‰ˆæœ¬2
 						 */
 						AsyncHttp.get(strUr2, new AsyncHttpResponseHandler() {
 							@Override
 							public void onSuccess(int arg0, String arg1) {
 								
 								super.onSuccess(arg0, arg1);
-								System.out.println("Ê×Ò³°æ±¾=============="+arg1);
+								System.out.println("é¦–é¡µç‰ˆæœ¬=============="+arg1);
 								try{
 								JSONObject jsonObject = new JSONObject(arg1);
 								JSONObject jsob = jsonObject.getJSONObject("data");
 								String file_version = jsob.getString("file_version");
 								String file_path = jsob.getString("file_path");
 								URL = RealmName.REALM_NAME_HTTP + file_path;
-								System.out.println("Ê×Ò³°æ±¾URL=============="+context);
+								System.out.println("é¦–é¡µç‰ˆæœ¬URL=============="+context);
 								String version = getAppVersionName(PersonCenterActivity.this);
 								String c_version = getAppVersionName(PersonCenterActivity.this).trim().replaceAll("\\.", "");
-								float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//·şÎñÆ÷
-								float client_version = Float.parseFloat(c_version);//µ±Ç°
-								content = "ÓĞ×îĞÂ°æ±¾ÁË£¬·şÎñÆ÷"+file_version+"ÊÇ·ñÌæ»»µ±Ç°°æ±¾"+version;
+								float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//æœåŠ¡å™¨
+								float client_version = Float.parseFloat(c_version);//å½“å‰
+								content = "æœ‰æœ€æ–°ç‰ˆæœ¬äº†ï¼ŒæœåŠ¡å™¨"+file_version+"æ˜¯å¦æ›¿æ¢å½“å‰ç‰ˆæœ¬"+version;
 								System.out.println("content=============="+content);
-								System.out.println("·şÎñÆ÷:"+ server_version+"/µ±Ç°:" + client_version);
+								System.out.println("æœåŠ¡å™¨:"+ server_version+"/å½“å‰:" + client_version);
 								if (server_version > client_version) {
 									Message message = new Message();
 									message.what = 0;
@@ -421,13 +421,13 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 			final MyAlertDialog dialog1 = new MyAlertDialog(
 					PersonCenterActivity.this).builder()
 					.setTitle(dizhi.toString()).setView(view)
-					.setNegativeButton("È¡Ïû", new OnClickListener() {
+					.setNegativeButton("å–æ¶ˆ", new OnClickListener() {
 						@Override
 						public void onClick(View v) {
 
 						}
 					});
-			dialog1.setPositiveButton("È·¶¨", new OnClickListener() {
+			dialog1.setPositiveButton("ç¡®å®š", new OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					loadusersex();
@@ -444,29 +444,29 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * ÏÔÊ¾ĞŞ¸ÄÍ·ÏñµÄ¶Ô»°¿ò
+	 * æ˜¾ç¤ºä¿®æ”¹å¤´åƒçš„å¯¹è¯æ¡†
 	 */
 	protected void showChoosePicDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("ÉèÖÃÍ·Ïñ");
-		String[] items = { "Ñ¡Ôñ±¾µØÕÕÆ¬", "ÅÄÕÕ" };
-		builder.setNegativeButton("È¡Ïû", null);
+		builder.setTitle("è®¾ç½®å¤´åƒ");
+		String[] items = { "é€‰æ‹©æœ¬åœ°ç…§ç‰‡", "æ‹ç…§" };
+		builder.setNegativeButton("å–æ¶ˆ", null);
 		builder.setItems(items, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				switch (which) {
-				case CHOOSE_PICTURE: // Ñ¡Ôñ±¾µØÕÕÆ¬
+				case CHOOSE_PICTURE: // é€‰æ‹©æœ¬åœ°ç…§ç‰‡
 					Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
-					System.out.println("±¾µØÕÕÆ¬-----------------"+openAlbumIntent);
+					System.out.println("æœ¬åœ°ç…§ç‰‡-----------------"+openAlbumIntent);
 					openAlbumIntent.setType("image/*");
 					startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
 					break;
-				case TAKE_PICTURE: // ÅÄÕÕ
+				case TAKE_PICTURE: // æ‹ç…§
 					Intent openCameraIntent = new Intent(
 							MediaStore.ACTION_IMAGE_CAPTURE);
 					tempUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "image.jpg"));
-					System.out.println("ÅÄÕÕ================"+tempUri);
-					// Ö¸¶¨ÕÕÆ¬±£´æÂ·¾¶£¨SD¿¨£©£¬image.jpgÎªÒ»¸öÁÙÊ±ÎÄ¼ş£¬Ã¿´ÎÅÄÕÕºóÕâ¸öÍ¼Æ¬¶¼»á±»Ìæ»»
+					System.out.println("æ‹ç…§================"+tempUri);
+					// æŒ‡å®šç…§ç‰‡ä¿å­˜è·¯å¾„ï¼ˆSDå¡ï¼‰ï¼Œimage.jpgä¸ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶ï¼Œæ¯æ¬¡æ‹ç…§åè¿™ä¸ªå›¾ç‰‡éƒ½ä¼šè¢«æ›¿æ¢
 					openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
 					startActivityForResult(openCameraIntent, TAKE_PICTURE);
 					
@@ -481,19 +481,19 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (resultCode == RESULT_OK) { // Èç¹û·µ»ØÂëÊÇ¿ÉÒÔÓÃµÄ
+		if (resultCode == RESULT_OK) { // å¦‚æœè¿”å›ç æ˜¯å¯ä»¥ç”¨çš„
 			switch (requestCode) {
-			//ÅÄÕÕ
+			//æ‹ç…§
 			case TAKE_PICTURE:
-				startPhotoZoom(tempUri); // ¿ªÊ¼¶ÔÍ¼Æ¬½øĞĞ²Ã¼ô´¦Àí
+				startPhotoZoom(tempUri); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 				break;
-			//ÉÏ´«Í¼Æ¬	
+			//ä¸Šä¼ å›¾ç‰‡	
 			case CHOOSE_PICTURE:
-				startPhotoZoom(data.getData()); // ¿ªÊ¼¶ÔÍ¼Æ¬½øĞĞ²Ã¼ô´¦Àí
+				startPhotoZoom(data.getData()); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 				break;
 			case CROP_SMALL_PICTURE:
 				if (data != null) {
-					setImageToView(data); // ÈÃ¸Õ²ÅÑ¡Ôñ²Ã¼ôµÃµ½µÄÍ¼Æ¬ÏÔÊ¾ÔÚ½çÃæÉÏ
+					setImageToView(data); // è®©åˆšæ‰é€‰æ‹©è£å‰ªå¾—åˆ°çš„å›¾ç‰‡æ˜¾ç¤ºåœ¨ç•Œé¢ä¸Š
 				}
 				break;
 			}
@@ -501,7 +501,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 
 	/**
-	 * ²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ
+	 * è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°
 	 * 
 	 * @param uri
 	 */
@@ -510,15 +510,15 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 			Log.i("tag", "The uri is not exist.");
 		}
 		tempUri = uri;
-//		System.out.println("²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ================"+tempUri);
+//		System.out.println("è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°================"+tempUri);
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(uri, "image/*");
-		// ÉèÖÃ²Ã¼ô
+		// è®¾ç½®è£å‰ª
 		intent.putExtra("crop", "true");
-		// aspectX aspectY ÊÇ¿í¸ßµÄ±ÈÀı
+		// aspectX aspectY æ˜¯å®½é«˜çš„æ¯”ä¾‹
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// outputX outputY ÊÇ²Ã¼ôÍ¼Æ¬¿í¸ß
+		// outputX outputY æ˜¯è£å‰ªå›¾ç‰‡å®½é«˜
 		intent.putExtra("outputX", 300);
 		intent.putExtra("outputY", 300);
 		intent.putExtra("return-data", true);
@@ -526,7 +526,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 	
 	public void saveBitmapFile(Bitmap bitmap){
-        File file=new File("/mnt/sdcard/pic/01.jpg");//½«Òª±£´æÍ¼Æ¬µÄÂ·¾¶
+        File file=new File("/mnt/sdcard/pic/01.jpg");//å°†è¦ä¿å­˜å›¾ç‰‡çš„è·¯å¾„
         try {
                 BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
@@ -539,7 +539,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 }
 	
 	/**
-	 * ±£´æ²Ã¼ôÖ®ºóµÄÍ¼Æ¬Êı¾İ
+	 * ä¿å­˜è£å‰ªä¹‹åçš„å›¾ç‰‡æ•°æ®
 	 * 
 	 * @param
 	 * 
@@ -549,9 +549,9 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		Bundle extras = data.getExtras();
 		Bitmap photo = extras.getParcelable("data");
 		if (extras != null) {
-//			photo = Utils.toRoundBitmap(photo, tempUri); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
-			System.out.println("Í¼Æ¬µÄÖµ1================="+photo);
-			System.out.println("Í¼Æ¬µÄÖµ2================="+tempUri);
+//			photo = Utils.toRoundBitmap(photo, tempUri); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
+			System.out.println("å›¾ç‰‡çš„å€¼1================="+photo);
+			System.out.println("å›¾ç‰‡çš„å€¼2================="+tempUri);
 			networkImage.setImageBitmap(photo);
 			try {
 				imagePath = Utils.savePhoto(photo, Environment.getExternalStorageDirectory().getAbsolutePath(), 
@@ -567,11 +567,11 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 							SimpleDateFormat f = new SimpleDateFormat("yyyyMMddHHmmssSSS");  
 			                time = f.format(new Date());  
 			                yth = MainFragmentContent4.yth;
-			                String remotePathTmp = "phone/" + "" + yth +"";//Â·¾¶
+			                String remotePathTmp = "phone/" + "" + yth +"";//è·¯å¾„
 							System.out.println("========================"+remotePathTmp);
 							
 							try {
-								client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+								client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 							} catch (Exception e) {
 					                e.printStackTrace();
 							} finally {
@@ -596,12 +596,12 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 							System.out.println("tupian1--------------------------"+tupian);
 
 						} catch (IllegalStateException e) {
-							e.printStackTrace();//·Ç·¨×´Ì¬Òì³£
+							e.printStackTrace();//éæ³•çŠ¶æ€å¼‚å¸¸
 						}
 						catch (FTPIllegalReplyException e) {
-							e.printStackTrace();//·Ç·¨»Ø¸´Òì³£
+							e.printStackTrace();//éæ³•å›å¤å¼‚å¸¸
 						} catch (FTPException e) {
-							e.printStackTrace();//Òì³£
+							e.printStackTrace();//å¼‚å¸¸
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -635,11 +635,11 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 //					onResume();
 					if (status.equals("y")) {
 //						Toast.makeText(context, info, 200).show();
-						Toast.makeText(context, "ÉÏ´«³É¹¦", 200).show();
-						System.out.println("ÉÏ´«³É¹¦--------------------------");
+						Toast.makeText(context, "ä¸Šä¼ æˆåŠŸ", 200).show();
+						System.out.println("ä¸Šä¼ æˆåŠŸ--------------------------");
 					}else{
 //						Toast.makeText(context, info, 200).show();
-						Toast.makeText(context, "ÉÏ´«Ê§°Ü", 200).show();
+						Toast.makeText(context, "ä¸Šä¼ å¤±è´¥", 200).show();
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
@@ -650,7 +650,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * Ñ¡Ôñ³ÇÊĞ
+	 * é€‰æ‹©åŸå¸‚
 	 * @return
 	 */
 	private View dialogm() {
@@ -667,19 +667,19 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 				.findViewById(R.id.wheelcity_city);
 		city.setVisibleItems(0);
 
-		// µØÇøÑ¡Ôñ
+		// åœ°åŒºé€‰æ‹©
 		final WheelView ccity = (WheelView) contentView
 				.findViewById(R.id.wheelcity_ccity);
-		ccity.setVisibleItems(0);// ²»ÏŞ³ÇÊĞ
+		ccity.setVisibleItems(0);// ä¸é™åŸå¸‚
 
 		country.addChangingListener(new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				updateCities(city, cities, newValue);
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt1 = AddressData.PROVINCES[country.getCurrentItem()];
@@ -691,10 +691,10 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 				updatecCities(ccity, ccities, country.getCurrentItem(),
 						newValue);
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt2 = AddressData.CITIES[country.getCurrentItem()][city
@@ -705,10 +705,10 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		ccity.addChangingListener(new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt3 = AddressData.COUNTIES[country.getCurrentItem()][city
@@ -716,7 +716,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 			}
 		});
 
-		country.setCurrentItem(1);// ÉèÖÃ±±¾©
+		country.setCurrentItem(1);// è®¾ç½®åŒ—äº¬
 		city.setCurrentItem(1);
 		ccity.setCurrentItem(1);
 		return contentView;
@@ -778,7 +778,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 	
 	
-	// »ñÈ¡µ±Ç°³ÌĞòµÄ°æ±¾ĞÅÏ¢
+	// è·å–å½“å‰ç¨‹åºçš„ç‰ˆæœ¬ä¿¡æ¯
 		public static String getAppVersionName(Context context) {
 			String versionName = "";
 			try {
@@ -797,13 +797,13 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		}
 	
 	/**
-	 * ³õÊ¼»¯Í¼Æ¬ÏÂÔØÆ÷£¬Í¼Æ¬»º´æµØÖ·<i>("/Android/data/[app_package_name]/cache/dirName")</i>
+	 * åˆå§‹åŒ–å›¾ç‰‡ä¸‹è½½å™¨ï¼Œå›¾ç‰‡ç¼“å­˜åœ°å€<i>("/Android/data/[app_package_name]/cache/dirName")</i>
 	 */
 	public ImageLoader initImageLoader(Context context,
 			ImageLoader imageLoader, String dirName) {
 		imageLoader = ImageLoader.getInstance();
 		if (imageLoader.isInited()) {
-			// ÖØĞÂ³õÊ¼»¯ImageLoaderÊ±,ĞèÒªÊÍ·Å×ÊÔ´.
+			// é‡æ–°åˆå§‹åŒ–ImageLoaderæ—¶,éœ€è¦é‡Šæ”¾èµ„æº.
 			imageLoader.destroy();
 		}
 		imageLoader.init(initImageLoaderConfig(context, dirName));
@@ -811,10 +811,10 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	}
 
 	/**
-	 * ÅäÖÃÍ¼Æ¬ÏÂÔØÆ÷
+	 * é…ç½®å›¾ç‰‡ä¸‹è½½å™¨
 	 * 
 	 * @param dirName
-	 *            ÎÄ¼şÃû
+	 *            æ–‡ä»¶å
 	 */
 	private ImageLoaderConfiguration initImageLoaderConfig(
 			Context context, String dirName) {
@@ -853,13 +853,13 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.grey));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -868,8 +868,8 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		Button cancle = (Button) popView.findViewById(R.id.cancle);
 		Button sure = (Button) popView.findViewById(R.id.sure);
 		String[] name = new String[2];
-		name[0] = "µÇÂ¼ÃÜÂë";
-		name[1] = "Ö§¸¶ÃÜÂë";
+		name[0] = "ç™»å½•å¯†ç ";
+		name[1] = "æ”¯ä»˜å¯†ç ";
 		ArrayWheelAdapterll<String> bankAdapter = new ArrayWheelAdapterll<String>(
 				name);
 		bank_item.setAdapter(bankAdapter);
@@ -902,8 +902,8 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
@@ -916,28 +916,28 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		}
 	}
 	
-	// ³ÌĞò°æ±¾¸üĞÂ
+	// ç¨‹åºç‰ˆæœ¬æ›´æ–°
 		private void dialog() {
 
 			AlertDialog.Builder builder = new Builder(PersonCenterActivity.this);
 			builder.setMessage(content);
 			System.out.println("content=============="+content);
-//			builder.setMessage("¼ì²éµ½×îĞÂ°æ±¾£¬ÊÇ·ñÒª¸üĞÂ£¡");
-			builder.setTitle("ÌáÊ¾:ĞÂ°æ±¾");
-			builder.setPositiveButton("¸üĞÂ", new DialogInterface.OnClickListener() {
+//			builder.setMessage("æ£€æŸ¥åˆ°æœ€æ–°ç‰ˆæœ¬ï¼Œæ˜¯å¦è¦æ›´æ–°ï¼");
+			builder.setTitle("æç¤º:æ–°ç‰ˆæœ¬");
+			builder.setPositiveButton("æ›´æ–°", new DialogInterface.OnClickListener() {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					System.out.println("MainFragmentActivity.zhuangtai------------------"+MainFragmentActivity.zhuangtai);
 					System.out.println("UserLoginActivity.zhuangtai------------------"+UserLoginActivity.zhuangtai);
 					if (MainFragmentActivity.zhuangtai == true) {
-						Toast.makeText(PersonCenterActivity.this, "ÕıÔÚÏÂÔØ...", 200).show();
+						Toast.makeText(PersonCenterActivity.this, "æ­£åœ¨ä¸‹è½½...", 200).show();
 						dialog.dismiss();
 					}else if (UserLoginActivity.zhuangtai == true) {
-						Toast.makeText(PersonCenterActivity.this, "ÕıÔÚÏÂÔØ...", 200).show();
+						Toast.makeText(PersonCenterActivity.this, "æ­£åœ¨ä¸‹è½½...", 200).show();
 						dialog.dismiss();
 					}else if (PersonCenterActivity.zhuangtai == true) {
-						Toast.makeText(PersonCenterActivity.this, "ÕıÔÚÏÂÔØ...", 200).show();
+						Toast.makeText(PersonCenterActivity.this, "æ­£åœ¨ä¸‹è½½...", 200).show();
 						dialog.dismiss();
 					}else {
 						final String filePath = Environment.getExternalStorageDirectory() + "/ss";
@@ -946,7 +946,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 					}
 				}
 			});
-			builder.setNegativeButton("ÒÔºóÔÙËµ",
+			builder.setNegativeButton("ä»¥åå†è¯´",
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -958,13 +958,13 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 
 		public static File getFileFromServer(String path, ProgressDialog pd)
 				throws Exception {
-			// Èç¹ûÏàµÈµÄ»°±íÊ¾µ±Ç°µÄsdcard¹ÒÔØÔÚÊÖ»úÉÏ²¢ÇÒÊÇ¿ÉÓÃµÄ
+			// å¦‚æœç›¸ç­‰çš„è¯è¡¨ç¤ºå½“å‰çš„sdcardæŒ‚è½½åœ¨æ‰‹æœºä¸Šå¹¶ä¸”æ˜¯å¯ç”¨çš„
 			if (Environment.getExternalStorageState().equals(
 					Environment.MEDIA_MOUNTED)) {
 				URL url = new URL(path);
 				HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 				conn.setConnectTimeout(5000);
-				// »ñÈ¡µ½ÎÄ¼şµÄ´óĞ¡
+				// è·å–åˆ°æ–‡ä»¶çš„å¤§å°
 				pd.setMax(conn.getContentLength());
 				InputStream is = conn.getInputStream();
 				File file = new File(Environment.getExternalStorageDirectory(),
@@ -977,7 +977,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 				while ((len = bis.read(buffer)) != -1) {
 					fos.write(buffer, 0, len);
 					total += len;
-					// »ñÈ¡µ±Ç°ÏÂÔØÁ¿
+					// è·å–å½“å‰ä¸‹è½½é‡
 					pd.setProgress(total);
 				}
 				fos.close();
@@ -990,13 +990,13 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 		}
 
 		/*
-		 * ´Ó·şÎñÆ÷ÖĞÏÂÔØAPK
+		 * ä»æœåŠ¡å™¨ä¸­ä¸‹è½½APK
 		 */
 		protected void downLoadApk() {
-			final ProgressDialog pd; // ½ø¶ÈÌõ¶Ô»°¿ò
+			final ProgressDialog pd; // è¿›åº¦æ¡å¯¹è¯æ¡†
 			pd = new ProgressDialog(PersonCenterActivity.this);
 			pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-			pd.setMessage("ÕıÔÚÏÂÔØ¸üĞÂ");
+			pd.setMessage("æ­£åœ¨ä¸‹è½½æ›´æ–°");
 			pd.setCanceledOnTouchOutside(true);
 			pd.setProgressNumberFormat(null);
 			zhuangtai = true;
@@ -1008,7 +1008,7 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 						File file = getFileFromServer(URL, pd);
 						sleep(3000);
 						installApk(file);
-						pd.dismiss(); // ½áÊøµô½ø¶ÈÌõ¶Ô»°¿ò
+						pd.dismiss(); // ç»“æŸæ‰è¿›åº¦æ¡å¯¹è¯æ¡†
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -1016,23 +1016,23 @@ public class PersonCenterActivity extends BaseActivity implements OnClickListene
 			}.start();
 		}
 
-		// °²×°apk
+		// å®‰è£…apk
 		protected void installApk(File file) {
 			MainFragmentActivity.zhuangtai = false;
 			UserLoginActivity.zhuangtai = false;
 			PersonCenterActivity.zhuangtai = false;
 			Intent intent = new Intent();
-			// Ö´ĞĞ¶¯×÷
+			// æ‰§è¡ŒåŠ¨ä½œ
 			intent.setAction(Intent.ACTION_VIEW);
-			// Ö´ĞĞµÄÊı¾İÀàĞÍ
+			// æ‰§è¡Œçš„æ•°æ®ç±»å‹
 			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			intent.setDataAndType(Uri.fromFile(file),
-					"application/vnd.android.package-archive");// ±àÕß°´£º´Ë´¦AndroidÓ¦Îªandroid£¬·ñÔòÔì³É°²×°²»ÁË
+					"application/vnd.android.package-archive");// ç¼–è€…æŒ‰ï¼šæ­¤å¤„Androidåº”ä¸ºandroidï¼Œå¦åˆ™é€ æˆå®‰è£…ä¸äº†
 			PersonCenterActivity.this.startActivity(intent);
 		}
 
 		/**
-		 * ĞŞ¸ÄµØÇø
+		 * ä¿®æ”¹åœ°åŒº
 		 * @param login_sign 
 		 * @param payment_id 
 		 */

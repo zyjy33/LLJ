@@ -47,7 +47,7 @@ public class G  extends BroadcastReceiver{
 	            params.width = WindowManager.LayoutParams.WRAP_CONTENT;    
 	            params.height = WindowManager.LayoutParams.WRAP_CONTENT;    
 	            tv = new TextView(context);   
-	            tv.setText("这是悬浮窗口，来电号码：" + incomingNumber);  
+	            tv.setText("杩欐槸鎮诞绐楀彛锛屾潵鐢靛彿鐮侊細" + incomingNumber);  
 	            wm.addView(tv, params);  
 	                      
 	        }else if(state == TelephonyManager.CALL_STATE_IDLE){  

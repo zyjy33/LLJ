@@ -71,7 +71,7 @@ public class JulsActivity extends BaseActivity {
 	}
 
 	/**
-	 * Á´½Ó
+	 * é“¾æŽ¥
 	 */
 	private void connect() {
 		sharedUtils = new SharedUtils(getApplicationContext(),

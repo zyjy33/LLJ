@@ -22,16 +22,16 @@ public class UpdateApkThread extends Thread {
     private File saveFile;
     private String fileName;
     private Context context;
-    private NotificationManager notificationManager;// ×´Ì¬À¸Í¨Öª¹ÜÀíÀà
-    private Notification notification;// ×´Ì¬À¸Í¨Öª
-    private RemoteViews notificationViews;// ×´Ì¬À¸Í¨ÖªÏÔÊ¾µÄview
-    private Timer timer;// ¶¨Ê±Æ÷£¬ÓÃÓÚ¸üĞÂÏÂÔØ½ø¶È
-    private TimerTask task;// ¶¨Ê±Æ÷Ö´ĞĞµÄÈÎÎñ
+    private NotificationManager notificationManager;// çŠ¶æ€æ é€šçŸ¥ç®¡ç†ç±»
+    private Notification notification;// çŠ¶æ€æ é€šçŸ¥
+    private RemoteViews notificationViews;// çŠ¶æ€æ é€šçŸ¥æ˜¾ç¤ºçš„view
+    private Timer timer;// å®šæ—¶å™¨ï¼Œç”¨äºæ›´æ–°ä¸‹è½½è¿›åº¦
+    private TimerTask task;// å®šæ—¶å™¨æ‰§è¡Œçš„ä»»åŠ¡
 
-    private final int notificationID = 1;// Í¨ÖªµÄid
-    private final int updateProgress = 1;// ¸üĞÂ×´Ì¬À¸µÄÏÂÔØ½ø¶È
-    private final int downloadSuccess = 2;// ÏÂÔØ³É¹¦
-    private final int downloadError = 3;// ÏÂÔØÊ§°Ü
+    private final int notificationID = 1;// é€šçŸ¥çš„id
+    private final int updateProgress = 1;// æ›´æ–°çŠ¶æ€æ çš„ä¸‹è½½è¿›åº¦
+    private final int downloadSuccess = 2;// ä¸‹è½½æˆåŠŸ
+    private final int downloadError = 3;// ä¸‹è½½å¤±è´¥
     private DownLoadUtil downLoadUtil;
 
     public UpdateApkThread(String downloadUrl, String fileLocation, String fileName, Context context) {
@@ -60,13 +60,13 @@ public class UpdateApkThread extends Thread {
     /**
      * 
      * @author wangqian@iliveasia.com
-     * @Description: ³õÊ¼»¯Í¨ÖªÀ¸
+     * @Description: åˆå§‹åŒ–é€šçŸ¥æ 
      */
     private void initNofication() {
         notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notification = new Notification();
-        notification.icon = R.drawable.llj_app;// ÉèÖÃÍ¨ÖªÏûÏ¢µÄÍ¼±ê
-        notification.tickerText = "ÕıÔÚÏÂÔØ...";// ÉèÖÃÍ¨ÖªÏûÏ¢µÄ±êÌâ
+        notification.icon = R.drawable.llj_app;// è®¾ç½®é€šçŸ¥æ¶ˆæ¯çš„å›¾æ ‡
+        notification.tickerText = "æ­£åœ¨ä¸‹è½½...";// è®¾ç½®é€šçŸ¥æ¶ˆæ¯çš„æ ‡é¢˜
         notificationViews = new RemoteViews(context.getPackageName(), R.layout.down_notification);
         notificationViews.setImageViewResource(R.id.download_icon, R.drawable.llj_app);
     }
@@ -74,7 +74,7 @@ public class UpdateApkThread extends Thread {
     /**
      * 
      * @author wangqian@iliveasia.com
-     * @Description: ¶¨Ê±Í¨ÖªhandlerÈ¥ÏÔÊ¾ÏÂÔØ°Ù·Ö±È
+     * @Description: å®šæ—¶é€šçŸ¥handlerå»æ˜¾ç¤ºä¸‹è½½ç™¾åˆ†æ¯”
      */
     private void handlerTask() {
         timer = new Timer();
@@ -92,23 +92,23 @@ public class UpdateApkThread extends Thread {
 
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what == updateProgress) {// ¸üĞÂÏÂÔØ½ø¶È
+            if (msg.what == updateProgress) {// æ›´æ–°ä¸‹è½½è¿›åº¦
                 int fileSize = downLoadUtil.getRealSize();
                 int totalReadSize = downLoadUtil.getTotalSize();
                 if (totalReadSize > 0) {
                     float size = (float) totalReadSize * 100 / (float) fileSize;
                     DecimalFormat format = new DecimalFormat("0.00");
                     String progress = format.format(size);
-                    notificationViews.setTextViewText(R.id.progressTv, "ÒÑÏÂÔØ" + progress + "%");
+                    notificationViews.setTextViewText(R.id.progressTv, "å·²ä¸‹è½½" + progress + "%");
                     notificationViews.setProgressBar(R.id.progressBar, 100, (int) size, false);
                     notification.contentView = notificationViews;
                     notificationManager.notify(notificationID, notification);
                 }
-            } else if (msg.what == downloadSuccess) {// ÏÂÔØÍê³É
-                notificationViews.setTextViewText(R.id.progressTv, "ÏÂÔØÍê³É");
+            } else if (msg.what == downloadSuccess) {// ä¸‹è½½å®Œæˆ
+                notificationViews.setTextViewText(R.id.progressTv, "ä¸‹è½½å®Œæˆ");
                 notificationViews.setProgressBar(R.id.progressBar, 100, 100, false);
                 notification.contentView = notificationViews;
-                notification.tickerText = "ÏÂÔØÍê³É";
+                notification.tickerText = "ä¸‹è½½å®Œæˆ";
                 notificationManager.notify(notificationID, notification);
                 if (timer != null && task != null) {
                     timer.cancel();
@@ -116,18 +116,18 @@ public class UpdateApkThread extends Thread {
                     timer = null;
                     task = null;
                 }
-                // °²×°apk
+                // å®‰è£…apk
                 Uri uri = Uri.fromFile(new File(saveFile + "/LeLinJu.apk"));
                 Intent installIntent = new Intent(Intent.ACTION_VIEW);
                 installIntent.setDataAndType(uri, "application/vnd.android.package-archive");
-                // PendingIntent Í¨ÖªÀ¸Ìø×ª
+                // PendingIntent é€šçŸ¥æ è·³è½¬
                 PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, installIntent, 0);
                 notification.flags |= Notification.FLAG_AUTO_CANCEL;
                 notification.contentIntent = pendingIntent;
-                notification.contentView.setTextViewText(R.id.progressTv, "ÏÂÔØÍê³É£¬µã»÷°²×°");
+                notification.contentView.setTextViewText(R.id.progressTv, "ä¸‹è½½å®Œæˆï¼Œç‚¹å‡»å®‰è£…");
                 notificationManager.notify(notificationID, notification);
 
-            } else if (msg.what == downloadError) {// ÏÂÔØÊ§°Ü
+            } else if (msg.what == downloadError) {// ä¸‹è½½å¤±è´¥
                 if (timer != null && task != null) {
                     timer.cancel();
                     task.cancel();
@@ -141,7 +141,7 @@ public class UpdateApkThread extends Thread {
 
     };
     /**
-     * ÏÂÔØ»Øµ÷
+     * ä¸‹è½½å›è°ƒ
      */
     DownloadFileCallback callback = new DownloadFileCallback() {
 

@@ -100,13 +100,13 @@ public class RechargePayMobileActivity extends BaseActivity {
 		spmoney = (String) bundle.get("spmoney");
 		PassTicket = bundle.getString("PassTicket");
 	
-		// »ñÈ¡¶©µ¥ºÅ
+		// è·å–è®¢å•å·
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		orderid = formatter.format(curDate);
 		Log.v("data2", orderid);
 
-		// »ñÈ¡ÓÃ»§ĞÅÏ¢
+		// è·å–ç”¨æˆ·ä¿¡æ¯
 		List<UserRegisterData> list = wareDao.findisLogin();
 		if (list.size() != 0) {
 			UserRegisterData data = wareDao.findIsLoginHengyuCode();
@@ -114,7 +114,7 @@ public class RechargePayMobileActivity extends BaseActivity {
 			pwd = data.getPassword();
 			rnd = data.getUserrnd();
 			Log.v("data2", yth + "  " + pwd + "   " + rnd);
-			// ÃÜÂë¼ÓÃÜ
+			// å¯†ç åŠ å¯†
 			RechargePayMobileActivity md5 = new RechargePayMobileActivity();
 			md5.setInStr(pwd);
 			md5.init();
@@ -126,8 +126,8 @@ public class RechargePayMobileActivity extends BaseActivity {
 			System.out.println(mipwd);
 		}
 
-		tv_order.setText("³äÖµĞÅÏ¢:" + infromation + "\n³äÖµ½ğ¶î:" + spmoney
-				+ "\nËùĞè¸¶¿î:" + money + "\n\nËùÊ£ÏÖ½ğÈ¯:" + PassTicket);
+		tv_order.setText("å……å€¼ä¿¡æ¯:" + infromation + "\nå……å€¼é‡‘é¢:" + spmoney
+				+ "\næ‰€éœ€ä»˜æ¬¾:" + money + "\n\næ‰€å‰©ç°é‡‘åˆ¸:" + PassTicket);
 	}
 
 	
@@ -144,7 +144,7 @@ public class RechargePayMobileActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				paypwd = et_paypwd.getText().toString();
-				// Ö§¸¶ÃÜÂë¼ÓÃÜ
+				// æ”¯ä»˜å¯†ç åŠ å¯†
 				RechargePayMobileActivity md5s = new RechargePayMobileActivity();
 				md5s.setInStr(paypwd);
 				md5s.init();
@@ -250,14 +250,14 @@ public class RechargePayMobileActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

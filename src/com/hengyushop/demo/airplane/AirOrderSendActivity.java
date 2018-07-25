@@ -49,7 +49,7 @@ public class AirOrderSendActivity extends BaseActivity {
 			fly_detiail_card_mob;
 	private TextView fly_pop_1, fly_pop_2, fly_pop_3, fly_pop_4, fly_pop_5,
 			fly_pop_6, fly_pop_2_p, fly_pop_1_p, fly_detail_cangname;
-	// ³Ë»úÈËµÄÁĞ±í¼¯ºÏ
+	// ä¹˜æœºäººçš„åˆ—è¡¨é›†åˆ
 	private ListView fly_detail_list;
 	private Spinner advert_order_province, advert_order_city,
 			advert_order_area;
@@ -83,7 +83,7 @@ public class AirOrderSendActivity extends BaseActivity {
 	}
 
 	/**
-	 * ¹¹ÔìÆ±ÎñĞÅÏ¢
+	 * æ„é€ ç¥¨åŠ¡ä¿¡æ¯
 	 * 
 	 * @param params
 	 */
@@ -91,7 +91,7 @@ public class AirOrderSendActivity extends BaseActivity {
 		String names = "";
 		String types = "";
 		String identityType = "";
-		String identityNo = "";// Éí·İÖ¤
+		String identityNo = "";// èº«ä»½è¯
 		for (int i = 0; i < detailPops.size(); i++) {
 			if (i == detailPops.size() - 1) {
 				types += detailPops.get(i).getTagL();
@@ -121,13 +121,13 @@ public class AirOrderSendActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.white));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -175,13 +175,13 @@ public class AirOrderSendActivity extends BaseActivity {
 	}
 
 	/**
-	 * ·¢ËÍÏûÏ¢
+	 * å‘é€æ¶ˆæ¯
 	 * 
 	 * @param userName
 	 * @param password
 	 */
 	private void send(String userName, String password) {
-		// Éú³É¶©µ¥ĞÅÏ¢£¬·¢ËÍµ½·şÎñÆ÷
+		// ç”Ÿæˆè®¢å•ä¿¡æ¯ï¼Œå‘é€åˆ°æœåŠ¡å™¨
 		final String linkMan = fly_detail_name.getText().toString();
 		final String linkPhone = fly_detail_bil.getText().toString();
 		params = new RequestParams();
@@ -193,7 +193,7 @@ public class AirOrderSendActivity extends BaseActivity {
 		WareDao dao = new WareDao(getApplicationContext());
 
 		String bossUid = dao.getBossUid();
-		// ´ı¶¨
+		// å¾…å®š
 		if (bossUid.length() != 0 || detailPops.size() == 0) {
 			params.put("bossUid", bossUid);
 			params.put("buyUserName", userName);
@@ -230,7 +230,7 @@ public class AirOrderSendActivity extends BaseActivity {
 			params.put("arrTime", flyResult.getEndTime().replace(":", ""));
 			params.put("planeModel", flyResult.getPlaneType());
 			params.put("Discount", flyResult.getDiscount());
-			// »¹È±ÉÙ³Ë»úÈËµÄÊı¾İ¹¹Ôì
+			// è¿˜ç¼ºå°‘ä¹˜æœºäººçš„æ•°æ®æ„é€ 
 			proceeList(params);
 			params.put("IsNeedVouchers", String.valueOf(IsNeedVouchers));
 			if (IsNeedVouchers == 1) {
@@ -285,7 +285,7 @@ public class AirOrderSendActivity extends BaseActivity {
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
 								if (jsonObject.getString("status").equals("1")) {
-									// ÏÂµ¥³É¹¦
+									// ä¸‹å•æˆåŠŸ
 									FlyOrderBean order = new FlyOrderBean();
 									order.setLoginSession(login_account
 											.getText().toString());
@@ -352,7 +352,7 @@ public class AirOrderSendActivity extends BaseActivity {
 										item.setLastId("-1");
 										item.setType("-1");
 										banks.add(item);
-										bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+										bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 										order.setBankNames(bankNames);
 										order.setBanks(banks);
 									}
@@ -363,7 +363,7 @@ public class AirOrderSendActivity extends BaseActivity {
 									handler.sendMessage(msg);
 								} else {
 									Toast.makeText(getApplicationContext(),
-											"ÏÂµ¥Ê§°Ü£¬Çë¼ì²é¶©µ¥±í", 0).show();
+											"ä¸‹å•å¤±è´¥ï¼Œè¯·æ£€æŸ¥è®¢å•è¡¨", 0).show();
 								}
 							} catch (JSONException e) {
 								e.printStackTrace();
@@ -371,7 +371,7 @@ public class AirOrderSendActivity extends BaseActivity {
 						};
 					}, getApplicationContext());
 		} else {
-			Toast.makeText(getApplicationContext(), "Éè±¸Î´¼¤»î", 0).show();
+			Toast.makeText(getApplicationContext(), "è®¾å¤‡æœªæ¿€æ´»", 0).show();
 
 		}
 	}
@@ -381,7 +381,7 @@ public class AirOrderSendActivity extends BaseActivity {
 			switch (msg.what) {
 
 			case 1:
-				// ½øÈëÁíÒ»¸öÒ³Ãæ
+				// è¿›å…¥å¦ä¸€ä¸ªé¡µé¢
 				Intent intent = new Intent(AirOrderSendActivity.this,
 						FlyDetailOrderActivity.class);
 				Bundle bundle = new Bundle();
@@ -407,13 +407,13 @@ public class AirOrderSendActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, view.getWidth(),
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.blue));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -451,13 +451,13 @@ public class AirOrderSendActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, view.getWidth(),
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.blue));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -487,8 +487,8 @@ public class AirOrderSendActivity extends BaseActivity {
 	private void showPopupWindowPay(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -496,7 +496,7 @@ public class AirOrderSendActivity extends BaseActivity {
 	}
 
 	/**
-	 * µã»÷ÊÂ¼ş
+	 * ç‚¹å‡»äº‹ä»¶
 	 */
 	private OnClickListener clickListener = new OnClickListener() {
 
@@ -580,7 +580,7 @@ public class AirOrderSendActivity extends BaseActivity {
 				String len3 = fly_detiail_card_mob.getText().toString();
 				String type1 = fly_detiail_card_l.getTag().toString();
 				String type2 = fly_detiail_card_c.getTag().toString();
-				// ²Å»á³öÏÖÒ»¸öĞÂµÄ³Ë»úÈË
+				// æ‰ä¼šå‡ºç°ä¸€ä¸ªæ–°çš„ä¹˜æœºäºº
 				FlyDetailPop pop = new FlyDetailPop();
 				pop.setTagL(type1);
 				pop.setTagC(type2);
@@ -598,15 +598,15 @@ public class AirOrderSendActivity extends BaseActivity {
 	};
 
 	/**
-	 * µ¯³öpopWindow
+	 * å¼¹å‡ºpopWindow
 	 * 
 	 * @param view
 	 */
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.NO_GRAVITY, location[0],
@@ -615,7 +615,7 @@ public class AirOrderSendActivity extends BaseActivity {
 	}
 
 	/**
-	 * Éú³É×é¼ş¶ÔÏó
+	 * ç”Ÿæˆç»„ä»¶å¯¹è±¡
 	 */
 	private void init(FlyResult bean) {
 		fly_detail_name = (EditText) findViewById(R.id.fly_detail_name);
@@ -651,7 +651,7 @@ public class AirOrderSendActivity extends BaseActivity {
 		provinceAdapter
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		advert_order_province.setAdapter(provinceAdapter);
-		// ³ÇÊĞ
+		// åŸå¸‚
 		city = new CityDB(getApplicationContext())
 				.getProvince("select name from city where provinceId =(select code from province where name='"
 						+ province.get(0) + "')");
@@ -660,7 +660,7 @@ public class AirOrderSendActivity extends BaseActivity {
 		cityAdapter
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		advert_order_city.setAdapter(cityAdapter);
-		// µØÇø
+		// åœ°åŒº
 		area = new CityDB(getApplicationContext())
 				.getProvince("select name from area where cityId =(select code from city where name='"
 						+ city.get(0) + "')");
@@ -669,7 +669,7 @@ public class AirOrderSendActivity extends BaseActivity {
 		areaAdapter
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		advert_order_area.setAdapter(areaAdapter);
-		// ÊÂ¼ş
+		// äº‹ä»¶
 		advert_order_province
 				.setOnItemSelectedListener(new OnItemSelectedListener() {
 					public void onItemSelected(AdapterView<?> arg0, View arg1,

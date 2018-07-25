@@ -141,8 +141,8 @@ public class TuiGuangAdapter extends BaseExpandableListAdapter {
 				Message msg = handler.obtainMessage();
 				msg.what = 0;
 				msg.obj = lists.get(groupPosition);
-				// 此处替换成详细信息的内容数据
-				System.out.println("点击");
+				// 姝ゅ鏇挎崲鎴愯缁嗕俊鎭殑鍐呭鏁版嵁
+				System.out.println("鐐瑰嚮");
 				handler.sendMessage(msg);
 			}
 		});

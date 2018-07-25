@@ -30,7 +30,7 @@ import com.hengyushop.entity.OrderBean;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.lelinju.www.R;
 /**
- * 全部
+ * 鍏ㄩ儴
  * @author Administrator
  *
  */
@@ -86,7 +86,7 @@ public class AllorderFragment extends Fragment implements OnClickListener{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=========解析数据============");
+								System.out.println("=========瑙ｆ瀽鏁版嵁============");
 								try {
 									
 								JSONObject object = new JSONObject(arg1);

@@ -85,7 +85,7 @@ public class JuYouFangActivity extends BaseActivity{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.juyoufang_home);
-		 //ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+		 //åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //        Thread.setDefaultUncaughtExceptionHandler(this);
 		progress = new DialogProgress(this);
 		Initialize();
@@ -97,7 +97,7 @@ public class JuYouFangActivity extends BaseActivity{
 	
 //	public void uncaughtException(Thread arg0, Throwable arg1) {
 //		// TODO Auto-generated method stub
-//		 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//		 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //        Log.i("AAA", "uncaughtException   " + arg1);
 //	}
 	
@@ -119,7 +119,7 @@ public class JuYouFangActivity extends BaseActivity{
 		});
 		
 	}
-	//ÉÌ¼ÒÁĞ±í
+	//å•†å®¶åˆ—è¡¨
 		private void loadCate(){
 			progress.CreateProgress();
 			AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_trade_list?" +
@@ -135,7 +135,7 @@ public class JuYouFangActivity extends BaseActivity{
 		
 		public void parse(String st) {
 			try {
-				System.out.println("Àà±ğÁĞ±í=========="+st);
+				System.out.println("ç±»åˆ«åˆ—è¡¨=========="+st);
 				list = new ArrayList<EnterpriseData>();
 				JSONObject jsonObject = new JSONObject(st);
 				JSONArray jsonArray = jsonObject.getJSONArray("data");
@@ -166,7 +166,7 @@ public class JuYouFangActivity extends BaseActivity{
 			switch (msg.what) {
 			case 0:
 				myadapter.putData(lists);
-				System.out.println("=====================ÕâÀï"+lists.size());
+				System.out.println("=====================è¿™é‡Œ"+lists.size());
 				
 	            new_list.setOnItemClickListener(new OnItemClickListener() {
 	                
@@ -191,7 +191,7 @@ public class JuYouFangActivity extends BaseActivity{
 //				myadapter.notifyDataSetChanged();
 				break;
 			case 1:
-				System.out.println("¸öÊıÊÇ¶àÉÙ===================="+list.size());
+				System.out.println("ä¸ªæ•°æ˜¯å¤šå°‘===================="+list.size());
 				adapter = new MyAdapter(getApplicationContext(),list);
 				myGridView.setAdapter(adapter);
 				
@@ -215,7 +215,7 @@ public class JuYouFangActivity extends BaseActivity{
 		            	try {	 	
 //		            		 INDX =  list.get(arg2).getId();
 		            		 INDX =  arg2;
-			            	 System.out.println("=====µÚ¶ş²ãdeÊı¾İ====================="+INDX);
+			            	 System.out.println("=====ç¬¬äºŒå±‚deæ•°æ®====================="+INDX);
 			            	 load_list(INDX, true);
 		            	 adapter.setSeclection(arg2);
 		            	 adapter.notifyDataSetChanged();
@@ -240,7 +240,7 @@ public class JuYouFangActivity extends BaseActivity{
 	
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -248,7 +248,7 @@ public class JuYouFangActivity extends BaseActivity{
 	private void load_list(final int INDX,boolean flag) {
 		RUN_METHOD = 1;
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			lists = new ArrayList<GoodsListData>();
 		}
@@ -260,7 +260,7 @@ public class JuYouFangActivity extends BaseActivity{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("ÉÌ¼ÒÁĞ±í=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("å•†å®¶åˆ—è¡¨=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject object = new JSONObject(arg1);
 									String status = object.getString("status");
@@ -310,7 +310,7 @@ public class JuYouFangActivity extends BaseActivity{
 	
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -328,7 +328,7 @@ public class JuYouFangActivity extends BaseActivity{
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -355,21 +355,21 @@ public class JuYouFangActivity extends BaseActivity{
 	
 	private void inter(){
 		
-		int size = list.size();//Êı¾İ×Ü³¤¶È
+		int size = list.size();//æ•°æ®æ€»é•¿åº¦
 
-		//»ñµÃÆÁÄ»¿í¶È
+		//è·å¾—å±å¹•å®½åº¦
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		int windowWidth = metrics.widthPixels;
 		int itemWidth = windowWidth/5;
 
-		//»ñµÃÆÁÄ»¿í¶ÈÒ²¿ÉÒÔÕâÑùĞ´
-		//int itemWidth = getWindowManager().getDefaultDisplay().getWidth() / 5;//ÆÁÄ»ÏÔÊ¾Ä¬ÈÏÊıÁ¿
+		//è·å¾—å±å¹•å®½åº¦ä¹Ÿå¯ä»¥è¿™æ ·å†™
+		//int itemWidth = getWindowManager().getDefaultDisplay().getWidth() / 5;//å±å¹•æ˜¾ç¤ºé»˜è®¤æ•°é‡
 
-		int gridViewWidth = (int)(size * itemWidth);//linearLayoutµÄ×Ü¿í¶È
+		int gridViewWidth = (int)(size * itemWidth);//linearLayoutçš„æ€»å®½åº¦
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(gridViewWidth,LinearLayout.LayoutParams.MATCH_PARENT);
-		myGridView.setLayoutParams(params);//ÉèÖÃGridView²¼¾Ö²ÎÊı
-		myGridView.setNumColumns(size);//¶¯Ì¬ÉèÖÃGridViewÁĞÊı
+		myGridView.setLayoutParams(params);//è®¾ç½®GridViewå¸ƒå±€å‚æ•°
+		myGridView.setNumColumns(size);//åŠ¨æ€è®¾ç½®GridViewåˆ—æ•°
 	}
 	
 

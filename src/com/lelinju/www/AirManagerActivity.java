@@ -26,7 +26,7 @@ import com.loopj.android.http.RequestParams;
 import com.lelinju.www.R;
 
 public class AirManagerActivity extends BaseActivity {
-	// mi/FlightTicket.ashx?yth=ºãÓşºÅ&act=GetFlightOrderInfo
+	// mi/FlightTicket.ashx?yth=æ’èª‰å·&act=GetFlightOrderInfo
 	private ListView air_manager;
 	private WareDao wareDao;
 	private String yth;
@@ -110,7 +110,7 @@ public class AirManagerActivity extends BaseActivity {
 				item.setType("-1");
 				banks.add(item);
 				System.out.println("changdu "+len);
-				bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+				bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 			}
 			Message msg = new Message();
 			msg.what = 0;
@@ -136,8 +136,8 @@ public class AirManagerActivity extends BaseActivity {
 				String trade_no = (String) msg.obj;
 				System.out.println(trade_no);
 				if (banks != null && banks.size() != 0) {
-					// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-					System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+					// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+					System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 					// initPopupWindow1();
 					// showPopupWindow1(btn_OK);
 					Intent intent = new Intent(AirManagerActivity.this,
@@ -150,7 +150,7 @@ public class AirManagerActivity extends BaseActivity {
 					intent.putExtras(bundle);
 					startActivity(intent);
 				} else {
-					// ±íÊ¾Ê×´ÎÖ§¸¶
+					// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 					Intent intent = new Intent(AirManagerActivity.this,
 							PayActivity.class);
 					Bundle bundle = new Bundle();

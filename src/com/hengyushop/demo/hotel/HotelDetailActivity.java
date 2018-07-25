@@ -67,7 +67,7 @@ public class HotelDetailActivity extends BaseActivity {
 				}
 				break;
 			case 1:
-				// ¼ÓÔØ¼Û¸ñĞÅÏ¢
+				// åŠ è½½ä»·æ ¼ä¿¡æ¯
 
 				try {
 					String priceResult = (String) msg.obj;
@@ -105,7 +105,7 @@ public class HotelDetailActivity extends BaseActivity {
 				}
 				break;
 			case 2:
-				// µã»÷Ô¤¶¨°´Å¥Ö®ºó´¥·¢µÄÊÂ¼ş
+				// ç‚¹å‡»é¢„å®šæŒ‰é’®ä¹‹åè§¦å‘çš„äº‹ä»¶
 				String plamId = (String) msg.obj;
 				loadCheckPlam(plamId);
 				break;
@@ -116,7 +116,7 @@ public class HotelDetailActivity extends BaseActivity {
 	};
 
 	/**
-	 * ¼ì²é·¿¼äÊÇ·ñ¿ÉÔ¤¶¨
+	 * æ£€æŸ¥æˆ¿é—´æ˜¯å¦å¯é¢„å®š
 	 */
 	private void loadCheckPlam(final String planId) {
 		new Thread() {
@@ -135,7 +135,7 @@ public class HotelDetailActivity extends BaseActivity {
 				Message msg = new Message();
 				msg.what = 3;
 				msg.obj = response;
-				System.out.println("¼ì²é·¿¼ä:" + response);
+				System.out.println("æ£€æŸ¥æˆ¿é—´:" + response);
 				handler.sendMessage(msg);
 
 			};
@@ -172,7 +172,7 @@ public class HotelDetailActivity extends BaseActivity {
 		hor_images = (Gallery) findViewById(R.id.hor_images);
 		hotel_detail_name = (TextView) findViewById(R.id.hotel_detail_name);
 		hotel_detail_price = (ListView) findViewById(R.id.hotel_detail_price);
-		hotel_detail_start.setText(bundle.getString("start") + "ĞÇ¼¶");
+		hotel_detail_start.setText(bundle.getString("start") + "æ˜Ÿçº§");
 		hotel_detail_add.setText(bundle.getString("add"));
 	}
 
@@ -189,7 +189,7 @@ public class HotelDetailActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½âÎöÊı¾İ
+	 * è§£ææ•°æ®
 	 */
 	private HotelDetailDo parseDetailHotel(InputStreamReader in) {
 		XmlPullParser parser = Xml.newPullParser();
@@ -217,7 +217,7 @@ public class HotelDetailActivity extends BaseActivity {
 
 						if ("ImageItem".equals(parser.getName())) {
 
-							// ±ê¼Ç¿ªÊ¼´´½¨¶ÔÏó
+							// æ ‡è®°å¼€å§‹åˆ›å»ºå¯¹è±¡
 							imageDo = new HotelImageDo();
 
 						}
@@ -261,7 +261,7 @@ public class HotelDetailActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½âÎö¼Û¸ñÊı¾İ
+	 * è§£æä»·æ ¼æ•°æ®
 	 */
 	private ArrayList<HotelDetialPriceDo> parseDetailPrice(InputStreamReader in) {
 		XmlPullParser parser = Xml.newPullParser();
@@ -278,13 +278,13 @@ public class HotelDetailActivity extends BaseActivity {
 					break;
 				case XmlPullParser.START_TAG:
 					if ("RatePlan".equals(parser.getName())) {
-						// Õâ¸ö±êÇ©¿ªÊ¼´ú±íÒ»¸ö¶ÔÏóµÄÉú³É
+						// è¿™ä¸ªæ ‡ç­¾å¼€å§‹ä»£è¡¨ä¸€ä¸ªå¯¹è±¡çš„ç”Ÿæˆ
 						priceDo = new HotelDetialPriceDo();
 						priceDo.setId(parser.getAttributeValue(null,
 								"RatePlanCode"));
 					}
 					if (tag == 0) {
-						// ±íÊ¾ÊÇ½âÎö½ôÁÚSellableProductsºóÃæµÄ±êÇ©
+						// è¡¨ç¤ºæ˜¯è§£æç´§é‚»SellableProductsåé¢çš„æ ‡ç­¾
 						if ("Description".equals(parser.getName())) {
 							priceDo.setRoomName(parser.getAttributeValue(null,
 									"Name"));
@@ -304,7 +304,7 @@ public class HotelDetailActivity extends BaseActivity {
 						tag = -1;
 					}
 					if ("RatePlan".equals(parser.getName())) {
-						// Èç¹ûÊÇÕâ¸öµÄ½áÊø
+						// å¦‚æœæ˜¯è¿™ä¸ªçš„ç»“æŸ
 						lists.add(priceDo);
 					}
 					break;
@@ -324,7 +324,7 @@ public class HotelDetailActivity extends BaseActivity {
 	}
 
 	/**
-	 * ¼ÓÔØÊı¾İ
+	 * åŠ è½½æ•°æ®
 	 */
 	private void loadHotelDetail() {
 		new Thread(new Runnable() {
@@ -360,13 +360,13 @@ public class HotelDetailActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -379,37 +379,37 @@ public class HotelDetailActivity extends BaseActivity {
 		TextView v4 = (TextView) popView.findViewById(R.id.v4);
 		TextView v5 = (TextView) popView.findViewById(R.id.v5);
 		TextView v = (TextView) popView.findViewById(R.id.v);
-		v1.setText(doPrice.getQuantity() + "¼ä");
+		v1.setText(doPrice.getQuantity() + "é—´");
 		v2.setText(doPrice.getFloor());
 		v3.setText(doPrice.getBedType() + " (" + doPrice.getSize() + ")");
 		v4.setText(doPrice.getDescribe());
 		v5.setText(price);
-		v0.setText(doPrice.getStandardOccupancy() + "ÈË");
+		v0.setText(doPrice.getStandardOccupancy() + "äºº");
 		v.setText(doPrice.getRoomName());
 
 	}
 
 	/*
-	 * 1 Ë«´² 2 Futon 3 ´ó´² 4 Murphy bed 5 Queen 6 Sofa bed 7 Tatami mats 8 2ÕÅµ¥ÈË´² 9
-	 * µ¥ÈË´² 10 Full 11 Run of the house 12 Dorm bed 501 ´ó´²»òË«´² 502 ´ó´²»òµ¥´² 502 µ¥´²»òË«´²
+	 * 1 åŒåºŠ 2 Futon 3 å¤§åºŠ 4 Murphy bed 5 Queen 6 Sofa bed 7 Tatami mats 8 2å¼ å•äººåºŠ 9
+	 * å•äººåºŠ 10 Full 11 Run of the house 12 Dorm bed 501 å¤§åºŠæˆ–åŒåºŠ 502 å¤§åºŠæˆ–å•åºŠ 502 å•åºŠæˆ–åŒåºŠ
 	 */
 	private void initBedType() {
 		typeMap = new HashMap<String, String>();
-		typeMap.put("1", "Ë«´²");
+		typeMap.put("1", "åŒåºŠ");
 		typeMap.put("2", "Futon");
-		typeMap.put("3", "´ó´²");
+		typeMap.put("3", "å¤§åºŠ");
 		typeMap.put("4", "Murphy bed");
 		typeMap.put("5", "Queen");
 		typeMap.put("6", "Sofa bed");
 		typeMap.put("7", "Tatami mats");
-		typeMap.put("8", "2ÕÅµ¥ÈË´²");
-		typeMap.put("9", "µ¥ÈË´²");
+		typeMap.put("8", "2å¼ å•äººåºŠ");
+		typeMap.put("9", "å•äººåºŠ");
 		typeMap.put("10", "Full");
 		typeMap.put("11", "Run of the house");
 		typeMap.put("12", "Dorm bed");
-		typeMap.put("501", "´ó´²»òË«´²");
-		typeMap.put("502", "´ó´²»òµ¥´²");
-		typeMap.put("503", "µ¥´²»òË«´²");
+		typeMap.put("501", "å¤§åºŠæˆ–åŒåºŠ");
+		typeMap.put("502", "å¤§åºŠæˆ–å•åºŠ");
+		typeMap.put("503", "å•åºŠæˆ–åŒåºŠ");
 
 	}
 
@@ -479,8 +479,8 @@ public class HotelDetailActivity extends BaseActivity {
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);

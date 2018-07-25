@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: F:\\shanghuatuo-dizhi\\ÀÖÁÚ¾Û\\LeLinJu\\src\\com\\android\\internal\\telephony\\ITelephony.aidl
+ * Original file: F:\\shanghuatuo-dizhi\\ä¹é‚»èš\\LeLinJu\\src\\com\\android\\internal\\telephony\\ITelephony.aidl
  */
 package com.android.internal.telephony;
 /**

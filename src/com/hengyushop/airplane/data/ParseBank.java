@@ -37,9 +37,9 @@ public class ParseBank {
 
 	public static String paseName(String name) {
 		if (name.equals("CREDITCARD")) {
-			return "ĞÅÓÃ¿¨";
+			return "ä¿¡ç”¨å¡";
 		} else if (name.equals("DEBITCARD")) {
-			return "½è¼Ç¿¨";
+			return "å€Ÿè®°å¡";
 		}
 		return null;
 	}

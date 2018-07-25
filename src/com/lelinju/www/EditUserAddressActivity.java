@@ -79,7 +79,7 @@ public class EditUserAddressActivity extends BaseActivity {
 	private RelativeLayout rl_xzdz;
 	private TextView tv_city;
 	private String cityTxt,cityTxt1,cityTxt2,cityTxt3;
-	String dizhi = "Ñ¡ÔñµØÇø";
+	String dizhi = "é€‰æ‹©åœ°åŒº";
 	SlipButton sb;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -101,8 +101,8 @@ public class EditUserAddressActivity extends BaseActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// ÔÚÕâÀï½øĞĞ²éÑ¯µØÖ·µÄ²Ù×÷
-		// Toast.makeText(getApplicationContext(), "²éÑ¯µØÖ·ÁªÍø²Ù×÷",200).show();
+		// åœ¨è¿™é‡Œè¿›è¡ŒæŸ¥è¯¢åœ°å€çš„æ“ä½œ
+		// Toast.makeText(getApplicationContext(), "æŸ¥è¯¢åœ°å€è”ç½‘æ“ä½œ",200).show();
 		// handler.sendEmptyMessage(4);
 		if (resultCode == 100) {
 
@@ -117,7 +117,7 @@ public class EditUserAddressActivity extends BaseActivity {
 			// et_username = (EditText) findViewById(R.id.et_user_name);
 			// et_userphone = (EditText) findViewById(R.id.et_user_phone);
 			// et_address = (EditText) findViewById(R.id.et_user_address);
-			et_username.setText("ÊÕ»õÈË:" + name);
+			et_username.setText("æ”¶è´§äºº:" + name);
 			et_userphone.setText(user_area + " " + user_address);
 			et_userphone.setText(user_mobile);
 		}
@@ -179,7 +179,7 @@ public class EditUserAddressActivity extends BaseActivity {
 		et_username.setText(bean.user_accept_name);	
 		et_userphone.setText(bean.user_mobile);
 //		et_user_dizhi.setText(bean.province);
-		tv_city.setText(bean.province+"¡¢"+bean.city+"¡¢"+bean.user_area);
+		tv_city.setText(bean.province+"ã€"+bean.city+"ã€"+bean.user_area);
 		et_address.setText(bean.user_address);
 		user_address_id = bean.id;
 
@@ -196,13 +196,13 @@ public class EditUserAddressActivity extends BaseActivity {
 				final MyAlertDialog dialog1 = new MyAlertDialog(
 						EditUserAddressActivity.this).builder()
 						.setTitle(dizhi.toString()).setView(view)
-						.setNegativeButton("È¡Ïû", new OnClickListener() {
+						.setNegativeButton("å–æ¶ˆ", new OnClickListener() {
 							@Override
 							public void onClick(View v) {
 
 							}
 						});
-				dialog1.setPositiveButton("È·¶¨", new OnClickListener() {
+				dialog1.setPositiveButton("ç¡®å®š", new OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						tv_city.setText(cityTxt);
@@ -224,7 +224,7 @@ public class EditUserAddressActivity extends BaseActivity {
 		
 		
 		 /**
-		  * ÅĞ¶ÏÊÇ·ñÊ¹ÓÃºì°ü
+		  * åˆ¤æ–­æ˜¯å¦ä½¿ç”¨çº¢åŒ…
 		  */
 		 sb.SetOnChangedListener(new OnChangedListener()
 	        {
@@ -240,10 +240,10 @@ public class EditUserAddressActivity extends BaseActivity {
 	            			e.printStackTrace();
 						}
 	            		is_default = 1;
-//	            		hongbao_tety =  isCheck;//Ñ¡Ôñºì°ü×´Ì¬ÏÂ
+//	            		hongbao_tety =  isCheck;//é€‰æ‹©çº¢åŒ…çŠ¶æ€ä¸‹
 				  }else if (isCheck == false){
 //						 sb.setCheck(true);
-//						hongbao_tety =  isCheck;//²»Ñ¡Ôñºì°ü×´Ì¬ÏÂ
+//						hongbao_tety =  isCheck;//ä¸é€‰æ‹©çº¢åŒ…çŠ¶æ€ä¸‹
 						is_default = 0;
 					}
 	            }
@@ -263,24 +263,24 @@ public class EditUserAddressActivity extends BaseActivity {
 				address = et_address.getText().toString();
 
 				if (name.equals("")) {
-					Toast.makeText(getApplicationContext(), "ÇëÌîĞ´ÓÃ»§Ãû", 200).show();
+					Toast.makeText(getApplicationContext(), "è¯·å¡«å†™ç”¨æˆ·å", 200).show();
 				} else if (phone.equals("")) {
-					Toast.makeText(getApplicationContext(), "ÇëÌîĞ´ÁªÏµµç»°", 200).show();
+					Toast.makeText(getApplicationContext(), "è¯·å¡«å†™è”ç³»ç”µè¯", 200).show();
 				}  else if (phone.length() < 11) {
-					Toast.makeText(getApplicationContext(), "ÊÖ»úºÅÂëÉÙÓÚ11Î»", 200).show();
+					Toast.makeText(getApplicationContext(), "æ‰‹æœºå·ç å°‘äº11ä½", 200).show();
 				} 
 				else if (dizhi.equals("")) {
-					Toast.makeText(getApplicationContext(), "ÇëÌîĞ´ÊÕ»õµØÖ·", 200).show();
+					Toast.makeText(getApplicationContext(), "è¯·å¡«å†™æ”¶è´§åœ°å€", 200).show();
 		    	} 
 				else if (address.equals("")) {
-					Toast.makeText(getApplicationContext(), "ÇëÌîĞ´ÏêÏ¸ÊÕ»õµØÖ·", 200).show();
+					Toast.makeText(getApplicationContext(), "è¯·å¡«å†™è¯¦ç»†æ”¶è´§åœ°å€", 200).show();
 				} else {
 					progress.CreateProgress();
 
 					String id = spPreferences.getString("user_id", "");
 					String user_name = spPreferences.getString("user", "");
 
-//					 String pingjiedizhi = sheng + "¡¢" + shi + "¡¢" + xian;
+//					 String pingjiedizhi = sheng + "ã€" + shi + "ã€" + xian;
 					 strUrl = RealmName.REALM_NAME_LL
 					 + "/edit_user_shopping_address?user_address_id="+user_address_id+"&user_id=" + id
 					 + "&user_name=" + user_name + ""
@@ -348,7 +348,7 @@ public class EditUserAddressActivity extends BaseActivity {
 	}
 	
 	/**
-	 * Ñ¡Ôñ³ÇÊĞ
+	 * é€‰æ‹©åŸå¸‚
 	 * @return
 	 */
 	private View dialogm() {
@@ -365,19 +365,19 @@ public class EditUserAddressActivity extends BaseActivity {
 				.findViewById(R.id.wheelcity_city);
 		city.setVisibleItems(0);
 
-		// µØÇøÑ¡Ôñ
+		// åœ°åŒºé€‰æ‹©
 		final WheelView ccity = (WheelView) contentView
 				.findViewById(R.id.wheelcity_ccity);
-		ccity.setVisibleItems(0);// ²»ÏŞ³ÇÊĞ
+		ccity.setVisibleItems(0);// ä¸é™åŸå¸‚
 
 		country.addChangingListener(new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				updateCities(city, cities, newValue);
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt1 = AddressData.PROVINCES[country.getCurrentItem()];
@@ -389,10 +389,10 @@ public class EditUserAddressActivity extends BaseActivity {
 				updatecCities(ccity, ccities, country.getCurrentItem(),
 						newValue);
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt2 = AddressData.CITIES[country.getCurrentItem()][city
@@ -403,10 +403,10 @@ public class EditUserAddressActivity extends BaseActivity {
 		ccity.addChangingListener(new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt3 = AddressData.COUNTIES[country.getCurrentItem()][city
@@ -414,7 +414,7 @@ public class EditUserAddressActivity extends BaseActivity {
 			}
 		});
 
-		country.setCurrentItem(1);// ÉèÖÃ±±¾©
+		country.setCurrentItem(1);// è®¾ç½®åŒ—äº¬
 		city.setCurrentItem(1);
 		ccity.setCurrentItem(1);
 		return contentView;
@@ -495,14 +495,14 @@ public class EditUserAddressActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

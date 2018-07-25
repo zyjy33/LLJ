@@ -19,7 +19,7 @@ public class FindPasswordTwoActivity extends BaseActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE); // È¥µô±êÌâÀ¸
+		requestWindowFeature(Window.FEATURE_NO_TITLE); // å»æ‰æ ‡é¢˜æ 
 
 		setContentView(R.layout.find_password2);
 		initdata();

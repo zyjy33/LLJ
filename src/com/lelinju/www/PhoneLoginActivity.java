@@ -111,8 +111,8 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 	public static QQAuth mQQAuth;
 	private UserInfo mInfo;
 	private Tencent mTencent;
-//	private final String APP_ID = "1105810330";// ²âÊÔÊ±Ê¹ÓÃ£¬ÕæÕı·¢²¼µÄÊ±ºòÒª»»³É×Ô¼ºµÄAPP_ID
-//	private final String APP_ID = "222222";// ²âÊÔÊ±Ê¹ÓÃ£¬ÕæÕı·¢²¼µÄÊ±ºòÒª»»³É×Ô¼ºµÄAPP_ID
+//	private final String APP_ID = "1105810330";// æµ‹è¯•æ—¶ä½¿ç”¨ï¼ŒçœŸæ­£å‘å¸ƒçš„æ—¶å€™è¦æ¢æˆè‡ªå·±çš„APP_ID
+//	private final String APP_ID = "222222";// æµ‹è¯•æ—¶ä½¿ç”¨ï¼ŒçœŸæ­£å‘å¸ƒçš„æ—¶å€™è¦æ¢æˆè‡ªå·±çš„APP_ID
 	public static Bitmap bitmap;
 	public static String oauth_name = "";
 	public static boolean panduan = false;
@@ -201,7 +201,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 				AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 					public void onSuccess(int arg0, String arg1) {
 						try {
-							System.out.println("======66Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+							System.out.println("======66è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 							JSONObject object = new JSONObject(arg1);
 							status = object.getString("status");
 							JSONObject obj = object.getJSONObject("data");
@@ -247,7 +247,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						NewDataToast.makeText(PhoneLoginActivity.this, "Á¬½Ó³¬Ê±", false, 0).show();
+						NewDataToast.makeText(PhoneLoginActivity.this, "è¿æ¥è¶…æ—¶", false, 0).show();
 					}
 				}, PhoneLoginActivity.this);
 				
@@ -264,13 +264,13 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 				Toast.makeText(PhoneLoginActivity.this, str, 200).show();
 				break;
 			case 2:
-				NewDataToast.makeText(PhoneLoginActivity.this, "ÓÃ»§Ãû´íÎó", false,0).show();
+				NewDataToast.makeText(PhoneLoginActivity.this, "ç”¨æˆ·åé”™è¯¯", false,0).show();
 				break;
 			case 3:
 				dialog();
 				break;
 			case 4:
-//				Toast.makeText(WeiXinLoginActivity.this, "µ±Ç°°æ±¾ÊÇ×îĞÂ°æ±¾", 200).show();
+//				Toast.makeText(WeiXinLoginActivity.this, "å½“å‰ç‰ˆæœ¬æ˜¯æœ€æ–°ç‰ˆæœ¬", 200).show();
 				break;
 			case 5:
 				try {
@@ -313,7 +313,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						NewDataToast.makeText(PhoneLoginActivity.this, "Á¬½Ó³¬Ê±", false, 0).show();
+						NewDataToast.makeText(PhoneLoginActivity.this, "è¿æ¥è¶…æ—¶", false, 0).show();
 					}
 				}, PhoneLoginActivity.this);
 
@@ -330,7 +330,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 	};
 	
 
-	// »ñÈ¡µ±Ç°³ÌĞòµÄ°æ±¾ĞÅÏ¢
+	// è·å–å½“å‰ç¨‹åºçš„ç‰ˆæœ¬ä¿¡æ¯
 	public static String getAppVersionName(Context context) {
 		String versionName = "";
 		try {
@@ -352,7 +352,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 //	private String strUrl = RealmName.REALM_NAME_LL;
 	private String url, version, updatainfo;
 
-	// ½âÎö·şÎñÆ÷¶ËµÄ°æ±¾ĞÅÏ¢
+	// è§£ææœåŠ¡å™¨ç«¯çš„ç‰ˆæœ¬ä¿¡æ¯
 	public void xmlparse(String st) {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory
@@ -374,14 +374,14 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 	private void updata() {
 		try {
 			/**
-			 * °æ±¾2
+			 * ç‰ˆæœ¬2
 			 */
 			AsyncHttp.get(strUr2, new AsyncHttpResponseHandler() {
 				@Override
 				public void onSuccess(int arg0, String arg1) {
 					
 					super.onSuccess(arg0, arg1);
-					System.out.println("Ê×Ò³°æ±¾=============="+arg1);
+					System.out.println("é¦–é¡µç‰ˆæœ¬=============="+arg1);
 					try{
 					JSONObject jsonObject = new JSONObject(arg1);
 					JSONObject jsob = jsonObject.getJSONObject("data");
@@ -390,19 +390,19 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 					String file_path = jsob.getString("file_path");
 					String id = jsob.getString("id");
 					URL = RealmName.REALM_NAME_HTTP + file_path;
-					System.out.println("Ê×Ò³°æ±¾URL=============="+URL);
+					System.out.println("é¦–é¡µç‰ˆæœ¬URL=============="+URL);
 					String c_version = getAppVersionName(getApplicationContext()).trim().replaceAll("\\.", "");
-					float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//·şÎñÆ÷
-					float client_version = Float.parseFloat(c_version);//µ±Ç°
+					float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//æœåŠ¡å™¨
+					float client_version = Float.parseFloat(c_version);//å½“å‰
 					
-					System.out.println("·şÎñÆ÷:"+ server_version+"/µ±Ç°:" + client_version);
+					System.out.println("æœåŠ¡å™¨:"+ server_version+"/å½“å‰:" + client_version);
 					if (server_version > client_version) {
-//						Toast.makeText(MainFragment.this, "ÌáÊ¾¸üĞÂ", 200).show();
+//						Toast.makeText(MainFragment.this, "æç¤ºæ›´æ–°", 200).show();
 						Message message = new Message();
 						message.what = 0;
 						handler.sendMessage(message);
 					}
-//					Toast.makeText(MainFragment.this, "Ã»ÓĞÌáÊ¾¸üĞÂ", 200).show();
+//					Toast.makeText(MainFragment.this, "æ²¡æœ‰æç¤ºæ›´æ–°", 200).show();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -418,13 +418,13 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 
 	public static File getFileFromServer(String path, ProgressDialog pd)
 			throws Exception {
-		// Èç¹ûÏàµÈµÄ»°±íÊ¾µ±Ç°µÄsdcard¹ÒÔØÔÚÊÖ»úÉÏ²¢ÇÒÊÇ¿ÉÓÃµÄ
+		// å¦‚æœç›¸ç­‰çš„è¯è¡¨ç¤ºå½“å‰çš„sdcardæŒ‚è½½åœ¨æ‰‹æœºä¸Šå¹¶ä¸”æ˜¯å¯ç”¨çš„
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
 			URL url = new URL(path);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setConnectTimeout(5000);
-			// »ñÈ¡µ½ÎÄ¼şµÄ´óĞ¡
+			// è·å–åˆ°æ–‡ä»¶çš„å¤§å°
 			pd.setMax(conn.getContentLength());
 			InputStream is = conn.getInputStream();
 			File file = new File(Environment.getExternalStorageDirectory(),
@@ -437,7 +437,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 			while ((len = bis.read(buffer)) != -1) {
 				fos.write(buffer, 0, len);
 				total += len;
-				// »ñÈ¡µ±Ç°ÏÂÔØÁ¿
+				// è·å–å½“å‰ä¸‹è½½é‡
 				pd.setProgress(total);
 			}
 			fos.close();
@@ -450,10 +450,10 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 	}
 
 	protected void downLoadApk() {
-		final ProgressDialog pd; // ½ø¶ÈÌõ¶Ô»°¿ò
+		final ProgressDialog pd; // è¿›åº¦æ¡å¯¹è¯æ¡†
 		pd = new ProgressDialog(PhoneLoginActivity.this);
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		pd.setMessage("ÕıÔÚÏÂÔØ¸üĞÂ");
+		pd.setMessage("æ­£åœ¨ä¸‹è½½æ›´æ–°");
 		pd.setCanceledOnTouchOutside(false);
 		zhuangtai = true;
 		pd.show();
@@ -464,7 +464,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 					File file = getFileFromServer(URL, pd);
 					sleep(3000);
 					installApk(file);
-					pd.dismiss(); // ½áÊøµô½ø¶ÈÌõ¶Ô»°¿ò
+					pd.dismiss(); // ç»“æŸæ‰è¿›åº¦æ¡å¯¹è¯æ¡†
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -479,32 +479,32 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 		return true;
 	
 	}*/
-	// °²×°apk
+	// å®‰è£…apk
 	protected void installApk(File file) {
 		Intent intent = new Intent();
-		// Ö´ĞĞ¶¯×÷
+		// æ‰§è¡ŒåŠ¨ä½œ
 		intent.setAction(Intent.ACTION_VIEW);
-		// Ö´ĞĞµÄÊı¾İÀàĞÍ
+		// æ‰§è¡Œçš„æ•°æ®ç±»å‹
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");// ±àÕß°´£º´Ë´¦AndroidÓ¦Îªandroid£¬·ñÔòÔì³É°²×°²»ÁË
+		intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");// ç¼–è€…æŒ‰ï¼šæ­¤å¤„Androidåº”ä¸ºandroidï¼Œå¦åˆ™é€ æˆå®‰è£…ä¸äº†
 		PhoneLoginActivity.this.startActivity(intent);
 	}
 
-	// ³ÌĞò°æ±¾¸üĞÂ
+	// ç¨‹åºç‰ˆæœ¬æ›´æ–°
 	private void dialog() {
 
 		AlertDialog.Builder builder = new Builder(PhoneLoginActivity.this);
 //		builder.setMessage(updatainfo);
-		builder.setMessage("¼ì²éµ½×îĞÂ°æ±¾£¬ÊÇ·ñÒª¸üĞÂ£¡");
-		builder.setTitle("ÌáÊ¾:ĞÂ°æ±¾");
-		builder.setPositiveButton("¸üĞÂ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ£€æŸ¥åˆ°æœ€æ–°ç‰ˆæœ¬ï¼Œæ˜¯å¦è¦æ›´æ–°ï¼");
+		builder.setTitle("æç¤º:æ–°ç‰ˆæœ¬");
+		builder.setPositiveButton("æ›´æ–°", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				downLoadApk();
 			}
 		});
-		builder.setNegativeButton("ÒÔºóÔÙËµ",
+		builder.setNegativeButton("ä»¥åå†è¯´",
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -542,7 +542,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 		});
 	}
 
-	// ×Ö·û´®ÉÏ´«·şÎñÆ÷ ÂÒÂë ÎÊÌâµÄ½â¾ö·½·¨
+	// å­—ç¬¦ä¸²ä¸Šä¼ æœåŠ¡å™¨ ä¹±ç  é—®é¢˜çš„è§£å†³æ–¹æ³•
 	private String processParam(String temp)
 			throws UnsupportedEncodingException {
 		return URLEncoder.encode(temp, "UTF-8");
@@ -552,7 +552,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.img_weixin_login://Î¢ĞÅµÇÂ¼
+		case R.id.img_weixin_login://å¾®ä¿¡ç™»å½•
 //			Intent intent = new Intent(WeiXinLoginActivity.this,MainWeiXinLoginActivity.class);
 //			startActivity(intent);
 			isWXLogin = true;
@@ -561,7 +561,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 			req.state = "wechat_sdk_demo";
 			mWxApi.sendReq(req);
 			break;
-		case R.id.img_qq_login://QQµÇÂ¼
+		case R.id.img_qq_login://QQç™»å½•
 			try {
 //		    onClickLogin();	
 //			Intent intent = new Intent(WeiXinLoginActivity.this,QQLoginActivity.class);
@@ -572,13 +572,13 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 				e.printStackTrace();
 			}
 			break;
-		case R.id.wenhao://ÕÒ»ØÃÜÂë
+		case R.id.wenhao://æ‰¾å›å¯†ç 
 //			Intent intent2 = new Intent(WeiXinLoginActivity.this,FindPasswordOneActivity.class);
 			Intent intent2 = new Intent(PhoneLoginActivity.this,UserForgotPasswordActivity.class);
 			intent2.putExtra("type", "1");
 			startActivity(intent2);
 			break;
-		case R.id.img_title_registre://×¢²áÕË»§
+		case R.id.img_title_registre://æ³¨å†Œè´¦æˆ·
 			Intent intent3 = new Intent(PhoneLoginActivity.this,UserRegisterActivity.class);
 			startActivity(intent3);
 			break;
@@ -587,9 +587,9 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 			password = et_pwd.getText().toString().trim();
 			System.out.println("=================01==" );
 			if (name.equals("")) {
-				Toast.makeText(PhoneLoginActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 100).show();
+				Toast.makeText(PhoneLoginActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 100).show();
 			} else if (password.equals("")) {
-				Toast.makeText(PhoneLoginActivity.this, "ÃÜÂë²»ÄÜÎª¿Õ", 100).show();
+				Toast.makeText(PhoneLoginActivity.this, "å¯†ç ä¸èƒ½ä¸ºç©º", 100).show();
 			}else {
 				
 				
@@ -762,7 +762,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-////			Util.showResultDialog(WeiXinLoginActivity.this, response.toString(),"µÇÂ¼³É¹¦");
+////			Util.showResultDialog(WeiXinLoginActivity.this, response.toString(),"ç™»å½•æˆåŠŸ");
 ////			
 //			doComplete((JSONObject) response);
 //		}
@@ -779,7 +779,7 @@ public class PhoneLoginActivity extends BaseActivity implements OnClickListener 
 //
 //		@Override
 //		public void onCancel() {
-////			Util.toastMessage(WeiXinLoginActivity.this, "ÓÃ»§È¡Ïû");//onCancel: 
+////			Util.toastMessage(WeiXinLoginActivity.this, "ç”¨æˆ·å–æ¶ˆ");//onCancel: 
 //			Util.dismissDialog();
 //		}
 //	}

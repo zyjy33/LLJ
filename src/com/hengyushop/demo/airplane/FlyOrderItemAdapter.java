@@ -68,10 +68,10 @@ public class FlyOrderItemAdapter extends BaseAdapter {
 		}
 		String tag = "";
 		if (detailPops.get(index).getTagL().equals("1")) {
-			tag = "¶ùÍ¯";
+			tag = "å„¿ç«¥";
 
 		} else if (detailPops.get(index).getTagL().equals("2")) {
-			tag = "³ÉÈË";
+			tag = "æˆäºº";
 		}
 		holder.name.setText(detailPops.get(index).getName() + tag);
 		holder.mob.setText(detailPops.get(index).getMob());

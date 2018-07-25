@@ -23,8 +23,8 @@ import com.hengyushop.entity.UserRegisterllData;
 import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 /**
- * Óà¶îÖ§¸¶
- * ÊäÈëÃÜÂë
+ * ä½™é¢æ”¯ä»˜
+ * è¾“å…¥å¯†ç 
  * @author 
  *
  */
@@ -68,7 +68,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 		btnCancle =(TextView) findViewById(R.id.btnCancle);// 
 //		tv_yue =(TextView) findViewById(R.id.tv_yue);
 //		System.out.println("amount-------------"+amount);
-//		tv_yue.setText("ÄãÊ£ÓàµÄÓà¶îÎª£¤"+amount);
+//		tv_yue.setText("ä½ å‰©ä½™çš„ä½™é¢ä¸ºï¿¥"+amount);
 		
 		btnCancle.setOnClickListener(this);//
 		
@@ -84,7 +84,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -92,7 +92,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.btnConfirm://È¡Ïû
+		case R.id.btnConfirm://å–æ¶ˆ
 //			String yue_fanhui = getIntent().getStringExtra("yue");
 			finish();
 			yue_zhuangtai = "1";
@@ -101,7 +101,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 			pwd = zhidupess.getText().toString().trim();
 			System.out.println("pwd-------------"+pwd);
 			if (pwd.equals("")) {
-				Toast.makeText(TishiCarArchivesActivity.this, "ÇëÊäÈëÃÜÂë", 200).show();
+				Toast.makeText(TishiCarArchivesActivity.this, "è¯·è¾“å…¥å¯†ç ", 200).show();
 			}else{
 				String yue = getIntent().getStringExtra("yue");
 				String jubi = getIntent().getStringExtra("jubi");
@@ -125,7 +125,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 	}
 	
 	/**
-	 * ÅĞ¶Ïµ±Ç°¾Û±ÒÓëÓà¶îµÄÖµ
+	 * åˆ¤æ–­å½“å‰èšå¸ä¸ä½™é¢çš„å€¼
 	 * @param order_no 
 	 */
 	private void useryue() {
@@ -145,17 +145,17 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 //							if (!jubi.equals("")) {
 							if (jubi != null) {
 								if (jubi.equals("1")) {
-									tv_yue.setText("ÄãÊ£ÓàµÄÀÖ¶¹Îª£¤"+point);
+									tv_yue.setText("ä½ å‰©ä½™çš„ä¹è±†ä¸ºï¿¥"+point);
 								}else {
-									tv_yue.setText("ÄãÊ£ÓàµÄÓà¶îÎª£¤"+amount);
+									tv_yue.setText("ä½ å‰©ä½™çš„ä½™é¢ä¸ºï¿¥"+amount);
 								}
 							}else {
 								String shouhuo = getIntent().getStringExtra("shouhuo");
 								System.out.println("shouhuo-------------"+shouhuo);
 								if (shouhuo != null) {
-									 tv_yue.setText("ÌáÊ¾");
+									 tv_yue.setText("æç¤º");
 								}else {
-								tv_yue.setText("ÄãÊ£ÓàµÄÓà¶îÎª£¤"+amount);
+								tv_yue.setText("ä½ å‰©ä½™çš„ä½™é¢ä¸ºï¿¥"+amount);
 								System.out.println("amount-------------"+amount);
 								}
 							}
@@ -171,7 +171,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -210,7 +210,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 	}
 	
 	/**
-	 * Óà¶îÖ§¸¶
+	 * ä½™é¢æ”¯ä»˜
 	 * @param login_sign 
 	 * @param payment_id 
 	 */
@@ -227,7 +227,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 					public void onSuccess(int arg0, String arg1) {
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("Óà¶îÖ§¸¶================================="+arg1);
+							System.out.println("ä½™é¢æ”¯ä»˜================================="+arg1);
 							  String status = object.getString("status");
 							    String info = object.getString("info");
 							    if (status.equals("y")) {
@@ -281,11 +281,11 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 //									}
 									
 							    	 System.out.println("activity_hd================================="+getIntent().getStringExtra("activity_hd"));
-									//»î¶¯Ö§¸¶³É¹¦²»ÏÔÊ¾ÏêÇé
+									//æ´»åŠ¨æ”¯ä»˜æˆåŠŸä¸æ˜¾ç¤ºè¯¦æƒ…
 //									 if (ZhongAnMinShenXqActivity.huodong_zf_type.equals("1")) {
 									  if (getIntent().getStringExtra("activity_hd") != null) {
 //										 ZhongAnMinShenXqActivity.huodong_zf_type = "0";
-//										 huodong_type = "1";//»î¶¯Ö§¸¶³É¹¦Ö®ºóÉèÖÃ²»ÄÜ¼ÌĞø±¨Ãû
+//										 huodong_type = "1";//æ´»åŠ¨æ”¯ä»˜æˆåŠŸä¹‹åè®¾ç½®ä¸èƒ½ç»§ç»­æŠ¥å
 										  Intent intent = new Intent(TishiCarArchivesActivity.this,BaoMinOKActivity.class);
 										  intent.putExtra("img_url",getIntent().getStringExtra("img_url"));
 										  intent.putExtra("hd_title",getIntent().getStringExtra("hd_title"));
@@ -320,7 +320,7 @@ public class TishiCarArchivesActivity extends Activity implements OnClickListene
 		}
 	}
 	/**
-	 * È·ÈÏÊÕ»õ
+	 * ç¡®è®¤æ”¶è´§
 	 * @param order_no 
 	 * @param payment_id 
 	 */

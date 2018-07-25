@@ -48,8 +48,8 @@ public class UserLoginWayActivity extends BaseActivity implements OnClickListene
 	public static QQAuth mQQAuth;
 	private UserInfo mInfo;
 	private Tencent mTencent;
-	private final String APP_ID = "1105810330";// 测试时使用，真正发布的时候要换成自己的APP_ID
-//	private final String APP_ID = "222222";// 测试时使用，真正发布的时候要换成自己的APP_ID
+	private final String APP_ID = "1105810330";// 娴嬭瘯鏃朵娇鐢紝鐪熸鍙戝竷鐨勬椂鍊欒鎹㈡垚鑷繁鐨凙PP_ID
+//	private final String APP_ID = "222222";// 娴嬭瘯鏃朵娇鐢紝鐪熸鍙戝竷鐨勬椂鍊欒鎹㈡垚鑷繁鐨凙PP_ID
 	public static Bitmap bitmap;
 	public static String oauth_name = "";
 	public static boolean panduan = false;
@@ -68,7 +68,7 @@ public class UserLoginWayActivity extends BaseActivity implements OnClickListene
 		spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 		spPreferences_login = getSharedPreferences("longuserset_login", MODE_PRIVATE);
 		try {
-			jiemian = true;//判断界面是否打开
+			jiemian = true;//鍒ゆ柇鐣岄潰鏄惁鎵撳紑
 			
 			progress = new DialogProgress(UserLoginWayActivity.this);
 			
@@ -251,7 +251,7 @@ public class UserLoginWayActivity extends BaseActivity implements OnClickListene
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//			Util.showResultDialog(UserLoginActivity.this, response.toString(),"登录成功");
+//			Util.showResultDialog(UserLoginActivity.this, response.toString(),"鐧诲綍鎴愬姛");
 //			
 			doComplete((JSONObject) response);
 		}
@@ -268,7 +268,7 @@ public class UserLoginWayActivity extends BaseActivity implements OnClickListene
 
 		@Override
 		public void onCancel() {
-//			Util.toastMessage(UserLoginActivity.this, "用户取消");//onCancel: 
+//			Util.toastMessage(UserLoginActivity.this, "鐢ㄦ埛鍙栨秷");//onCancel: 
 			Util.dismissDialog();
 		}
 	}

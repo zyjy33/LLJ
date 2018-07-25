@@ -22,7 +22,7 @@ public class BitmapUtils {
 	                 drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888
 	                         : Bitmap.Config.RGB_565;
 	         bitmap = Bitmap.createBitmap(w,h,config);
-	         //×¢Òâ£¬ÏÂÃæÈıĞĞ´úÂëÒªÓÃµ½£¬·ñÔÚÔÚView»òÕßsurfaceviewÀïµÄcanvas.drawBitmap»á¿´²»µ½Í¼
+	         //æ³¨æ„ï¼Œä¸‹é¢ä¸‰è¡Œä»£ç è¦ç”¨åˆ°ï¼Œå¦åœ¨åœ¨Viewæˆ–è€…surfaceviewé‡Œçš„canvas.drawBitmapä¼šçœ‹ä¸åˆ°å›¾
 	         Canvas canvas = new Canvas(bitmap);   
 	         drawable.setBounds(0, 0, w, h);   
 	         drawable.draw(canvas);

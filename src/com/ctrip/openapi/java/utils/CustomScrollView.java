@@ -7,7 +7,7 @@ import android.widget.ScrollView;
 
 public class CustomScrollView extends ScrollView {
 	
-	 // 滑动距离及坐�?  
+	 // 滑动距离及坐?
     private float xDistance, yDistance, xLast, yLast;  
     
     public CustomScrollView(Context context) {  
@@ -35,7 +35,7 @@ public class CustomScrollView extends ScrollView {
     protected void onScrollChanged(int x, int y, int oldx, int oldy) {  
         super.onScrollChanged(x, y, oldx, oldy);  
         if (mOnScrollChangedListener != null) {  
-        	//使用公共接口触发滚动信息的onScrollChanged方法，将滚动位置信息暴露给外�?
+        	//使用公共接口触发滚动信息的onScrollChanged方法，将滚动位置信息暴露给外?
             mOnScrollChangedListener.onScrollChanged(this, x, y, oldx, oldy);  
         }  
     }  
@@ -68,7 +68,7 @@ public class CustomScrollView extends ScrollView {
     
     
     /**
-     * 暴露给外部的方法：设置滚动监�?
+     * 暴露给外部的方法：设置滚动监?
      * @param listener
      */
     public void setOnScrollChangedListener(OnScrollChangedListener listener) {  

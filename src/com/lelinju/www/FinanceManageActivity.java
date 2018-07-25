@@ -56,7 +56,7 @@ public class FinanceManageActivity extends BaseActivity implements OnClickListen
 			startActivity(intent1);
 			break;
 		case R.id.cash_recharge:
-			Toast.makeText(getApplicationContext(), "´Ë¹¦ÄÜÉĞ´ıÍêÉÆ", 200).show();
+			Toast.makeText(getApplicationContext(), "æ­¤åŠŸèƒ½å°šå¾…å®Œå–„", 200).show();
 			break;
 		case R.id.cash_cession:
 			Intent intent3 = new Intent(FinanceManageActivity.this,
@@ -64,7 +64,7 @@ public class FinanceManageActivity extends BaseActivity implements OnClickListen
 			startActivity(intent3);
 			break;
 		case R.id.cash_withdraw:
-			Toast.makeText(getApplicationContext(), "´Ë¹¦ÄÜÉĞ´ıÍêÉÆ", 200).show();
+			Toast.makeText(getApplicationContext(), "æ­¤åŠŸèƒ½å°šå¾…å®Œå–„", 200).show();
 			break;
 		case R.id.coin_info:
 			Intent intent5 = new Intent(FinanceManageActivity.this,
@@ -89,13 +89,13 @@ public class FinanceManageActivity extends BaseActivity implements OnClickListen
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 }

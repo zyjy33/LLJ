@@ -58,7 +58,7 @@ import com.lelinju.www.R.id;
 import com.lelinju.www.R.layout;
 
 /**
- * ÎÒµÄ¶©µ¥
+ * æˆ‘çš„è®¢å•
  * 
  * @author Administrator
  * 
@@ -142,7 +142,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		TextView tv_zhuangtai;//
 		TextView jijian;//
 		TextView tv_heji,tv_yunfei;//
-		TextView shanchu;//É¾³ı
+		TextView shanchu;//åˆ é™¤
 		TextView tv_zongjia;
 		TextView tv_queren_fukuan;
 		TextView tv_pingjia,tv_company_name,tv_hongbao;
@@ -184,7 +184,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		TextView tv_yanhuoma = (TextView) convertView.findViewById(R.id.tv_yanhuoma);//
 //		BigDecimal c = new BigDecimal(Double.parseDouble(list.get(position).getPayable_amount())+Double.parseDouble(list.get(position).getExpress_fee()));
 //		String total_cll = Double.toString(c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue());
-		tv_heji.setText("£¤"+list.get(position).getPayable_amount()); 
+		tv_heji.setText("ï¿¥"+list.get(position).getPayable_amount()); 
 		
         tv_company_name.setText(list.get(position).getCompany_name());
 		payment_status = list.get(position).getPayment_status();
@@ -201,7 +201,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		if (yunfei.equals("0.0")) {
 			tv_yunfei.setVisibility(View.GONE);
 		}else {
-		tv_yunfei.setText("(º¬ÔË·Ñ£¤"+list.get(position).getExpress_fee()+")");
+		tv_yunfei.setText("(å«è¿è´¹ï¿¥"+list.get(position).getExpress_fee()+")");
 		}
 		
 //		String kedi_honbao = list.get(position).getCashing_packet();
@@ -209,74 +209,74 @@ public class MyOrderllAdapter extends BaseAdapter {
 //		if (kedi_honbao.equals("0.0")) {
 //			ll_hongbao.setVisibility(View.GONE);
 //		}else {
-//		tv_hongbao.setText("¿ÉµÖºì°ü:-£¤"+kedi_honbao);
+//		tv_hongbao.setText("å¯æŠµçº¢åŒ…:-ï¿¥"+kedi_honbao);
 //		}
 		
 		
 		if (payment_status.equals("1")){
-			System.out.println("´ı¸¶¿î=============");
-			tv_zhuangtai.setText("µÈ´ıÂò¼Ò¸¶¿î");
+			System.out.println("å¾…ä»˜æ¬¾=============");
+			tv_zhuangtai.setText("ç­‰å¾…ä¹°å®¶ä»˜æ¬¾");
 			ll_anliu.setVisibility(View.VISIBLE);
-			tv_kukuang.setVisibility(View.VISIBLE);//È·ÈÏ¸¶¿î
-			tv_pingjia.setVisibility(View.GONE);//ÆÀ¼Û
-			tv_queren_shouhuo.setVisibility(View.GONE);//È·ÈÏÊÕ»õ
-			shanchu.setVisibility(View.VISIBLE);//É¾³ı
-			tv_tuikuan.setVisibility(View.GONE);//ÍË¿î
-			tv_kukuang.setText("È·ÈÏ¸¶¿î");
+			tv_kukuang.setVisibility(View.VISIBLE);//ç¡®è®¤ä»˜æ¬¾
+			tv_pingjia.setVisibility(View.GONE);//è¯„ä»·
+			tv_queren_shouhuo.setVisibility(View.GONE);//ç¡®è®¤æ”¶è´§
+			shanchu.setVisibility(View.VISIBLE);//åˆ é™¤
+			tv_tuikuan.setVisibility(View.GONE);//é€€æ¬¾
+			tv_kukuang.setText("ç¡®è®¤ä»˜æ¬¾");
 			zhuangtai = 2;
 		}else if (status.equals("4")){
-			tv_zhuangtai.setText("ÒÑÍË¿î");
+			tv_zhuangtai.setText("å·²é€€æ¬¾");
 			ll_anliu.setVisibility(View.VISIBLE);
-			tv_kukuang.setVisibility(View.GONE);//È·ÈÏ¸¶¿î
-			tv_pingjia.setVisibility(View.GONE);//ÆÀ¼Û
-			tv_queren_shouhuo.setVisibility(View.GONE);//È·ÈÏÊÕ»õ
-			shanchu.setVisibility(View.GONE);//É¾³ı
-			tv_tuikuan.setVisibility(View.GONE);//ÍË¿î
+			tv_kukuang.setVisibility(View.GONE);//ç¡®è®¤ä»˜æ¬¾
+			tv_pingjia.setVisibility(View.GONE);//è¯„ä»·
+			tv_queren_shouhuo.setVisibility(View.GONE);//ç¡®è®¤æ”¶è´§
+			shanchu.setVisibility(View.GONE);//åˆ é™¤
+			tv_tuikuan.setVisibility(View.GONE);//é€€æ¬¾
 		}else if (payment_status.equals("2") && express_status.equals("1") && status.equals("2")){
-			System.out.println("´ı·¢»õ=============");
-			tv_zhuangtai.setText("Âò¼ÒÒÑ¸¶¿î");
+			System.out.println("å¾…å‘è´§=============");
+			tv_zhuangtai.setText("ä¹°å®¶å·²ä»˜æ¬¾");
 			ll_anliu.setVisibility(View.VISIBLE);
 			tv_queren_shouhuo.setVisibility(View.GONE);
-			shanchu.setVisibility(View.GONE);//É¾³ı
-			tv_kukuang.setVisibility(View.GONE);//È·ÈÏ¸¶¿î
-			tv_pingjia.setVisibility(View.GONE);//ÆÀ¼Û
-			tv_queren_shouhuo.setVisibility(View.GONE);//È·ÈÏÊÕ»õ
-			tv_tuikuan.setVisibility(View.VISIBLE);//ÍË¿î
+			shanchu.setVisibility(View.GONE);//åˆ é™¤
+			tv_kukuang.setVisibility(View.GONE);//ç¡®è®¤ä»˜æ¬¾
+			tv_pingjia.setVisibility(View.GONE);//è¯„ä»·
+			tv_queren_shouhuo.setVisibility(View.GONE);//ç¡®è®¤æ”¶è´§
+			tv_tuikuan.setVisibility(View.VISIBLE);//é€€æ¬¾
 			
 			zhuangtai = 3;
 		}else 
 			if (payment_status.equals("2") && express_status.equals("2") && status.equals("2")){
-				System.out.println("´ıÊÕ»õ=============");
-			tv_zhuangtai.setText("Âô¼ÒÒÑ·¢»õ");
+				System.out.println("å¾…æ”¶è´§=============");
+			tv_zhuangtai.setText("å–å®¶å·²å‘è´§");
 			ll_anliu.setVisibility(View.VISIBLE);
-			shanchu.setVisibility(View.GONE);//É¾³ı
-			tv_kukuang.setVisibility(View.GONE);//È·ÈÏ¸¶¿î
-			tv_pingjia.setVisibility(View.GONE);//ÆÀ¼Û
-			tv_queren_shouhuo.setVisibility(View.VISIBLE);//È·ÈÏÊÕ»õ
-			tv_tuikuan.setVisibility(View.GONE);//ÍË¿î
-			tv_queren_shouhuo.setText("È·ÈÏÊÕ»õ");
+			shanchu.setVisibility(View.GONE);//åˆ é™¤
+			tv_kukuang.setVisibility(View.GONE);//ç¡®è®¤ä»˜æ¬¾
+			tv_pingjia.setVisibility(View.GONE);//è¯„ä»·
+			tv_queren_shouhuo.setVisibility(View.VISIBLE);//ç¡®è®¤æ”¶è´§
+			tv_tuikuan.setVisibility(View.GONE);//é€€æ¬¾
+			tv_queren_shouhuo.setText("ç¡®è®¤æ”¶è´§");
 			zhuangtai = 4;
 			if (!list.get(position).getAccept_no().equals("")) {
-				tv_yanhuoma.setText("È¡»õÂë:"+list.get(position).getAccept_no());
+				tv_yanhuoma.setText("å–è´§ç :"+list.get(position).getAccept_no());
 			}else {
-				System.out.println("´ı·¢»õÈ¡»õÂëÎª¿Õ=============");
+				System.out.println("å¾…å‘è´§å–è´§ç ä¸ºç©º=============");
 			}
 		}else if (payment_status.equals("2") && express_status.equals("2") && status.equals("3")){
-			System.out.println("ÒÑÍê³É=============");
-			tv_zhuangtai.setText("½»Ò×Íê³É");
+			System.out.println("å·²å®Œæˆ=============");
+			tv_zhuangtai.setText("äº¤æ˜“å®Œæˆ");
 			ll_anliu.setVisibility(View.VISIBLE);
-			tv_queren_shouhuo.setVisibility(View.GONE);//È·ÈÏÊÕ»õ
-			tv_kukuang.setVisibility(View.GONE);//È·ÈÏ¸¶¿î
-			shanchu.setVisibility(View.VISIBLE);//É¾³ı
-			tv_pingjia.setVisibility(View.VISIBLE);//ÆÀ¼Û
-			tv_tuikuan.setVisibility(View.GONE);//ÍË¿î
-			tv_pingjia.setText("ÆÀ¼Û");
+			tv_queren_shouhuo.setVisibility(View.GONE);//ç¡®è®¤æ”¶è´§
+			tv_kukuang.setVisibility(View.GONE);//ç¡®è®¤ä»˜æ¬¾
+			shanchu.setVisibility(View.VISIBLE);//åˆ é™¤
+			tv_pingjia.setVisibility(View.VISIBLE);//è¯„ä»·
+			tv_tuikuan.setVisibility(View.GONE);//é€€æ¬¾
+			tv_pingjia.setText("è¯„ä»·");
 			zhuangtai = 5;
 		}
 		
 		
 		/**
-		 * È·ÈÏ¸¶¿î
+		 * ç¡®è®¤ä»˜æ¬¾
 		 */
 		tv_kukuang.setOnClickListener(new OnClickListener() {
 
@@ -314,7 +314,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		});
 		
 		/**
-		 * È·ÈÏÊÕ»õ
+		 * ç¡®è®¤æ”¶è´§
 		 */
 		tv_queren_shouhuo.setOnClickListener(new OnClickListener() {
 
@@ -334,7 +334,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		});
 		
 		/**
-		 * È¡Ïû¶©µ¥
+		 * å–æ¶ˆè®¢å•
 		 */
 		tv_quxiao.setOnClickListener(new OnClickListener() {
 
@@ -355,7 +355,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		});
 		
 		/**
-		 * ÉêÇëÍË¿î
+		 * ç”³è¯·é€€æ¬¾
 		 */
 		tv_tuikuan.setOnClickListener(new OnClickListener() {
 
@@ -377,7 +377,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		
 		
 		/**
-		 * É¾³ı
+		 * åˆ é™¤
 		 */
 		shanchu.setOnClickListener(new OnClickListener() {
 
@@ -411,19 +411,19 @@ public class MyOrderllAdapter extends BaseAdapter {
 			LinearLayout lv_dingdanxq = (LinearLayout) vi.findViewById(R.id.lv_dingdanxq);
 			
 //			tv_goods_title.setText(list.get(position).getList().get(i).getGoods_title());
-			tv_market_price.setText("£¤"+list.get(position).getList().get(i).getMarket_price());
-//			holder.sell_price.setText("£¤"+list.get(position).getList().get(i).getSell_price());
+			tv_market_price.setText("ï¿¥"+list.get(position).getList().get(i).getMarket_price());
+//			holder.sell_price.setText("ï¿¥"+list.get(position).getList().get(i).getSell_price());
 			quantity.setText("x"+list.get(position).getList().get(i).getQuantity());
-			tv_market_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
+			tv_market_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 //			ImageLoader imageLoader=ImageLoader.getInstance();
 //			imageLoader.displayImage(RealmName.REALM_NAME_HTTP + list.get(position).getList().get(i).getImg_url(), holder.tupian);
 			 mAq.id(tupian).image(RealmName.REALM_NAME_HTTP+list.get(position).getList().get(i).getImg_url());
 			int number = list.get(position).getList().get(i).getQuantity();
 			BigDecimal   c   =   new   BigDecimal(Double.parseDouble(list.get(position).getList().get(i).getSell_price())/number);
-//			//±£Áô2Î»Ğ¡Êı
+//			//ä¿ç•™2ä½å°æ•°
 			double   sell_price_zhi   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 			
-			sell_price.setText("£¤"+sell_price_zhi);//¼Û¸ñ
+			sell_price.setText("ï¿¥"+sell_price_zhi);//ä»·æ ¼
 			
 			
 			
@@ -434,7 +434,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 			
 			
 			/**
-			 * ¶©µ¥ÏêÇé
+			 * è®¢å•è¯¦æƒ…
 			 */
 			lv_dingdanxq.setOnClickListener(new OnClickListener() {
 
@@ -463,7 +463,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 		
 		
 		/**
-		 * ÆÀ¼Û
+		 * è¯„ä»·
 		 */
 //		TextView tv_pingjia = (TextView) convertView.findViewById(R.id.tv_pingjia);//
 		tv_pingjia.setOnClickListener(new OnClickListener() {
@@ -495,7 +495,7 @@ public class MyOrderllAdapter extends BaseAdapter {
 	}
 	
 	/**
-	 * ÑéÖ¤Æ´ÍÅÊÇ·ñÂúÔ±
+	 * éªŒè¯æ‹¼å›¢æ˜¯å¦æ»¡å‘˜
 	 * @param groupon_no 
 	 */
 	private void get_game_groupon(String order_no) {

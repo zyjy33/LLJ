@@ -23,7 +23,7 @@ import com.hengyushop.demo.at.BaseActivity;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 public class GuideActivity extends BaseActivity {
 	/**
-	 * ¹ØÓÚÒıµ¼Ò³µÄ½çÃæ
+	 * å…³äºå¼•å¯¼é¡µçš„ç•Œé¢
 	 */
     private ViewPager viewPager;  
     private ArrayList<View> pageViews;  
@@ -36,7 +36,7 @@ public class GuideActivity extends BaseActivity {
 			switch (msg.what) {
 			case 0:
 				preferences = getSharedPreferences("guide", Activity.MODE_PRIVATE);
-			      //Èç¹û³ÌĞòÒÑ¾­½øÈë
+			      //å¦‚æœç¨‹åºå·²ç»è¿›å…¥
 			    	  if(preferences.getString("flow", "").equals("yes")){
 			    		  getgaoguan();
 //			    		  Intent intent = new Intent(GuideActivity.this,SecondActivity.class);
@@ -61,7 +61,7 @@ public class GuideActivity extends BaseActivity {
 	};
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÓĞ¹ã¸æ
+	 * åˆ¤æ–­æ˜¯å¦æœ‰å¹¿å‘Š
 	 */
 	private void getgaoguan() {
 		// TODO Auto-generated method stub
@@ -91,7 +91,7 @@ public class GuideActivity extends BaseActivity {
 					public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("Òì³£-----------------" + arg1);
+					System.out.println("å¼‚å¸¸-----------------" + arg1);
 					Intent intent = new Intent(GuideActivity.this,MainFragmentActivity.class);
 					startActivity(intent);
 					AppManager.getAppManager().finishActivity();
@@ -131,7 +131,7 @@ public class GuideActivity extends BaseActivity {
 //    protected void onStart() {
 //    	// TODO Auto-generated method stub
 //    	super.onStart();
-//    	//»ñµÃµÃµ½Ò³ÃæµÄÒıÓÃ¶ÔÏó
+//    	//è·å¾—å¾—åˆ°é¡µé¢çš„å¼•ç”¨å¯¹è±¡
 //        LayoutInflater inflater = getLayoutInflater();
 //        pageViews = new ArrayList<View>();  
 //        pageViews.add(inflater.inflate(R.layout.item2, null));  
@@ -139,13 +139,13 @@ public class GuideActivity extends BaseActivity {
 //        pageViews.add(inflater.inflate(R.layout.item4, null));  
 //        pageViews.add(inflater.inflate(R.layout.item5, null));  
 ////        pageViews.add(inflater.inflate(R.layout.item6, null));  
-//        // groupÊÇR.layou.mainÖĞµÄ¸ºÔğ°ü¹üĞ¡Ô²µãµÄLinearLayout.  
+//        // groupæ˜¯R.layou.mainä¸­çš„è´Ÿè´£åŒ…è£¹å°åœ†ç‚¹çš„LinearLayout.  
 //        viewPager = (ViewPager)findViewById(R.id.i1);  
 //        viewPager.setAdapter(new GuidePageAdapter());  
 //        viewPager.setOnPageChangeListener(new GuidePageChangeListener());  
 //    }
 //    
-//    /** Ö¸ÒıÒ³ÃæAdapter */
+//    /** æŒ‡å¼•é¡µé¢Adapter */
 //    class GuidePageAdapter extends PagerAdapter {  
 //        @Override  
 //        public int getCount() {  
@@ -203,7 +203,7 @@ public class GuideActivity extends BaseActivity {
 //            // TODO Auto-generated method stub  
 //        }  
 //    } 
-//    /** Ö¸ÒıÒ³Ãæ¸Ä¼àÌıÆ÷ */
+//    /** æŒ‡å¼•é¡µé¢æ”¹ç›‘å¬å™¨ */
 //    class GuidePageChangeListener implements OnPageChangeListener {  
 //        public void onPageScrollStateChanged(int arg0) {  
 //            // TODO Auto-generated method stub  

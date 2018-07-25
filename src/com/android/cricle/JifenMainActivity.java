@@ -44,7 +44,7 @@ public class JifenMainActivity extends BaseActivity {
 	
 	private ArrayList<JifenPop> pops ;
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 */
 	private WareDao wareDao;
 	private String yth;
@@ -179,19 +179,19 @@ public class JifenMainActivity extends BaseActivity {
 	}
 	private String dp(String temp){
 		  if (temp.equals("Monday")) {
-			  temp = "ĞÇÆÚÒ»";
+			  temp = "æ˜ŸæœŸä¸€";
 		}else if (temp.equals("Tuesday")) {
-			  temp = "ĞÇÆÚ¶ş";
+			  temp = "æ˜ŸæœŸäºŒ";
 		}else if (temp.equals("Wednesday")) {
-			  temp = "ĞÇÆÚÈı";
+			  temp = "æ˜ŸæœŸä¸‰";
 		}else if (temp.equals("Thursday")) {
-			  temp = "ĞÇÆÚËÄ";
+			  temp = "æ˜ŸæœŸå››";
 		}else if (temp.equals("Friday")) {
-			  temp = "ĞÇÆÚÎå";
+			  temp = "æ˜ŸæœŸäº”";
 		}else if (temp.equals("Saturday")) {
-			  temp = "ĞÇÆÚÁù";
+			  temp = "æ˜ŸæœŸå…­";
 		}else if (temp.equals("Sunday")) {
-			  temp = "ĞÇÆÚÈÕ";
+			  temp = "æ˜ŸæœŸæ—¥";
 		}
 		return temp;
 	}
@@ -201,13 +201,13 @@ public class JifenMainActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -243,7 +243,7 @@ public class JifenMainActivity extends BaseActivity {
 			}else {
 				item4.setVisibility(View.VISIBLE);
 				item2.setVisibility(View.GONE);
-				item4.setText("Î´ÁìÈ¡");
+				item4.setText("æœªé¢†å–");
 			}
 			item3.setText(pops.get(i).getCanGetNum());
 			View v = new View(getApplicationContext());
@@ -263,8 +263,8 @@ public class JifenMainActivity extends BaseActivity {
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);

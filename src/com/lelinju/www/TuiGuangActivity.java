@@ -114,7 +114,7 @@ public class TuiGuangActivity extends BaseActivity {
 		req.message = msg;
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
-		System.out.println("Î¢ĞÅÔ]ƒÔ" + flag + "-->" + msg.thumbData);
+		System.out.println("å¾®ä¿¡è¨»å†Š" + flag + "-->" + msg.thumbData);
 	}
 
 	private void softshareWxFriend(TuiGuangBean bean) {
@@ -181,7 +181,7 @@ public class TuiGuangActivity extends BaseActivity {
 						return false;
 					}
 				});
-				// ÕâÀïÊÇ¿ØÖÆÖ»ÓĞÒ»¸ögroupÕ¹¿ªµÄĞ§¹û
+				// è¿™é‡Œæ˜¯æ§åˆ¶åªæœ‰ä¸€ä¸ªgroupå±•å¼€çš„æ•ˆæœ
 				listview.setOnGroupExpandListener(new OnGroupExpandListener() {
 					@Override
 					public void onGroupExpand(int groupPosition) {

@@ -82,10 +82,10 @@ public class GoodsMyGridViewAdaper extends BaseAdapter {
 		}
 		System.out.println("list.get(position).getTitle()--------------------------"+list.get(position).getTitle());
 		holder.tv_biaoti.setText(list.get(position).getTitle());
-		holder.tv_hengyu_money.setText("£¤"+list.get(position).getSell_price());
-		holder.tv_shichangjia.setText("£¤"+list.get(position).getMarket_price());
+		holder.tv_hengyu_money.setText("ï¿¥"+list.get(position).getSell_price());
+		holder.tv_shichangjia.setText("ï¿¥"+list.get(position).getMarket_price());
 		holder.tv_hongbao.setText(list.get(position).getCashing_packet());
-		holder.tv_shichangjia.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+		holder.tv_shichangjia.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
         mAq.id(holder.img).image(RealmName.REALM_NAME_HTTP+list.get(position).getImg_url());
 		
 //        mAq.clear();

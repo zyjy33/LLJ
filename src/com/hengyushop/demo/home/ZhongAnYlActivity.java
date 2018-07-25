@@ -43,7 +43,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.WareInformationActivity;
 
 /**
- * ÖĞ°²ÑøÀÏ
+ * ä¸­å®‰å…»è€
  * 
  * @author Administrator
  * 
@@ -108,7 +108,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 				
 				try {
 					
-				System.out.println("list¸öÊıÊÇ¶àÉÙ===================="+list.size());
+				System.out.println("listä¸ªæ•°æ˜¯å¤šå°‘===================="+list.size());
 				ZhongAnYlAdapter adapter = new ZhongAnYlAdapter(list,getApplicationContext());
 				listview_01.setAdapter(adapter);
 				
@@ -156,7 +156,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("=======ÁĞ±íÊı¾İ================================"+arg1);
+				System.out.println("=======åˆ—è¡¨æ•°æ®================================"+arg1);
 				try {
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
@@ -171,7 +171,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 							data.setId(object1.getString("id"));
 							data.setTitle(object1.getString("title"));
 							String zhou1= data.getTitle();
-							System.out.println("=====±êÌâ====================="+zhou1);
+							System.out.println("=====æ ‡é¢˜====================="+zhou1);
 							String article = object1.getString("article");
 							data.setList(new ArrayList<ZhongAnYlBean>());
 							JSONArray ja = new JSONArray(article);
@@ -185,7 +185,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 						bean.setSell_price(obt.getString("sell_price"));
 						bean.setMarket_price(obt.getString("market_price"));
 						String zhou = bean.getTitle();
-						System.out.println("=====ÄÚÈİ====================="+zhou);
+						System.out.println("=====å†…å®¹====================="+zhou);
 						
 						data.getList().add(bean);
 //						} catch (Exception e) {
@@ -217,7 +217,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 		}, null);
 	}
 	
-	//ÉÌ¼ÒÁĞ±í
+	//å•†å®¶åˆ—è¡¨
 		private void loadCate(){
 			progress.CreateProgress();
 			AsyncHttp.get(RealmName.REALM_NAME_LL + "/get_category_child_list?channel_name=innovate&parent_id=0"
@@ -234,7 +234,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 		public void parse(String st) {
 			try {
 				list = new ArrayList<ZhongAnYlData>();
-				System.out.println("Àà±ğ=======================");
+				System.out.println("ç±»åˆ«=======================");
 				JSONObject jsonObject = new JSONObject(st);
 				String status = jsonObject.getString("status");
 				String info = jsonObject.getString("info");
@@ -246,14 +246,14 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 					JSONObject object = jsonArray.getJSONObject(i);
 					data.id = object.getString("id");
 					data.title = object.getString("title");
-					System.out.println("±êÌâ======================="+data.title);
+					System.out.println("æ ‡é¢˜======================="+data.title);
 					String id = data.id;
 					int category_id =  Integer.parseInt(id);
 					loadWeather(category_id);
 					list.add(data);
 				}
 //				String items =  list.get(0).getList().get(0).getTitle();
-//				System.out.println("=====2Öµ====================="+items);
+//				System.out.println("=====2å€¼====================="+items);
 				
 //				for (int i = 0; i < list.size(); i++) {
 //					String id = list.get(i).id;
@@ -291,8 +291,8 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 				public void onSuccess(int arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onSuccess(arg0, arg1);
-//					System.out.println("=======ÏêÇéÊı¾İ=="+arg1);
-					System.out.println("=======ÁĞ±íÊı¾İ================================");
+//					System.out.println("=======è¯¦æƒ…æ•°æ®=="+arg1);
+					System.out.println("=======åˆ—è¡¨æ•°æ®================================");
 					try {
 						progress.CloseProgress();
 						JSONObject object = new JSONObject(arg1);
@@ -314,7 +314,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 							list_ll.add(bean);
 							try {
 							String zhou = bean.getTitle();
-							System.out.println("=====ÄÚÈİ====================="+zhou);
+							System.out.println("=====å†…å®¹====================="+zhou);
 							data.getList().add(bean);
 //							String items = data.getList().get(0).getTitle();
 							progress.CloseProgress();
@@ -341,7 +341,7 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
 		}
 		
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -349,18 +349,18 @@ public class ZhongAnYlActivity extends BaseActivity implements OnClickListener{
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     }   
 

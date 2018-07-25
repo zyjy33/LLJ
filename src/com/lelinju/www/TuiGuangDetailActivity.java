@@ -68,9 +68,9 @@ public class TuiGuangDetailActivity extends BaseActivity {
 
 		bean = (TuiGuangBean) getIntent().getSerializableExtra("content");
 
-	/*	String release = android.os.Build.VERSION.RELEASE; // androidÏµÍ³°æ±¾ºÅ
+	/*	String release = android.os.Build.VERSION.RELEASE; // androidç³»ç»Ÿç‰ˆæœ¬å·
 		release = release.substring(0, 3);
-		// Android 4.4Í¼Æ¬ÏÔÊ¾²»È«
+		// Android 4.4å›¾ç‰‡æ˜¾ç¤ºä¸å…¨
 		if ("4.4".equals(release)) {
 			// toastinfo("4.4");
 			System.out.println("4.4");
@@ -78,7 +78,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 
 		} else {
 			WebSettings webSettings = webview.getSettings(); // webView:
-																// ÀàWebViewµÄÊµÀı
+																// ç±»WebViewçš„å®ä¾‹
 			webSettings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
 		}
 */
@@ -95,7 +95,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 //			webview.loadDataWithBaseURL("", newHtmlContent, "text/html", "UTF-8",
 //					null);
 //		}else{
-//			System.out.println("µØÖ·"+bean.getHttp());
+//			System.out.println("åœ°å€"+bean.getHttp());
 //			webview.getSettings().setJavaScriptEnabled(true);
 //			webview.setWebChromeClient(new WebChromeClient());
 //			webview.loadUrl(bean.getHttp());
@@ -104,7 +104,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 ////				@Override
 ////				   public boolean shouldOverrideUrlLoading(WebView view, String url) {
 ////				
-////					webview.loadUrl(bean.getHttp());   //ÔÚ2.3ÉÏÃæ²»¼ÓÕâ¾ä»°£¬¿ÉÒÔ¼ÓÔØ³öÒ³Ãæ£¬ÔÚ4.0ÉÏÃæ±ØĞëÒª¼ÓÈë£¬²»È»³öÏÖ°×ÆÁ
+////					webview.loadUrl(bean.getHttp());   //åœ¨2.3ä¸Šé¢ä¸åŠ è¿™å¥è¯ï¼Œå¯ä»¥åŠ è½½å‡ºé¡µé¢ï¼Œåœ¨4.0ä¸Šé¢å¿…é¡»è¦åŠ å…¥ï¼Œä¸ç„¶å‡ºç°ç™½å±
 ////				    return true;
 ////				   }
 ////			 
@@ -133,7 +133,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 
-			// //»ñÈ¡¿í¸ß
+			// //è·å–å®½é«˜
 			// DisplayMetrics dm = new DisplayMetrics();
 			// getWindowManager().getDefaultDisplay().getMetrics(dm);
 			// int imgwidth = dm.widthPixels - 30;
@@ -146,7 +146,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 					+ "var objs = document.getElementsByTagName(\"img\"); "
 					+ "for(var i=0;i<objs.length;i++) {" + "if("
 					+ VERSION.SDK_INT + ">=19){"
-					+ // //webviewÍ¼Æ¬×ÔÊÊÓ¦£¬android4.4Ö®Ç°¶¼ÓĞÓÃ£¬4.4Ö®ºógoogleÓÅ»¯ºó£¬ÎŞ·¨Ö§³Ö£¬ĞèÒª×Ô¼ºÊÖ¶¯Ëõ·Å
+					+ // //webviewå›¾ç‰‡è‡ªé€‚åº”ï¼Œandroid4.4ä¹‹å‰éƒ½æœ‰ç”¨ï¼Œ4.4ä¹‹ågoogleä¼˜åŒ–åï¼Œæ— æ³•æ”¯æŒï¼Œéœ€è¦è‡ªå·±æ‰‹åŠ¨ç¼©æ”¾
 					"AutoResizeImage(" + imgwidth + ",0,objs[i]);" + "}" + "}"
 					+ "})()");
 			super.onPageFinished(view, url);
@@ -163,7 +163,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 		pop.setBackgroundDrawable(new BitmapDrawable());
 		pop.setOutsideTouchable(true);
 		// pop.setFocusable(true);
-		// pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+		// pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 		//
 		if (!pop.isShowing()) {
 			pop.showAtLocation(webview, Gravity.TOP, 0, 50);
@@ -221,7 +221,7 @@ public class TuiGuangDetailActivity extends BaseActivity {
 //		req.message = msg;
 //		req.scene = SendMessageToWX.Req.WXSceneSession;
 //		boolean flag = api.sendReq(req);
-//		System.out.println("Î¢ĞÅÔ]ƒÔ" + flag + "-->" + msg.thumbData);
+//		System.out.println("å¾®ä¿¡è¨»å†Š" + flag + "-->" + msg.thumbData);
 //	}
 
 //	private void softshareWxFriend(TuiGuangBean bean) {

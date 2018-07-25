@@ -5,9 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Time¹¤¾ßÀà
+ * Timeå·¥å…·ç±»
  * @author SHI
- * 2016Äê3ÔÂ16ÈÕ 19:07:06
+ * 2016å¹´3æœˆ16æ—¥ 19:07:06
  */
 public class TimeUtils {
 
@@ -19,8 +19,8 @@ public class TimeUtils {
     }
     
     /**
-     * °ÑtimeInMillis×ª»¯³É"yyyy-MM-dd HH:mm:ss"¸ñÊ½µÄÊ±¼ä×Ö·û´®·µ»Ø
-     * @param timeInMillis  ºÁÃë¼¶Ê±¼ä
+     * æŠŠtimeInMillisè½¬åŒ–æˆ"yyyy-MM-dd HH:mm:ss"æ ¼å¼çš„æ—¶é—´å­—ç¬¦ä¸²è¿”å›
+     * @param timeInMillis  æ¯«ç§’çº§æ—¶é—´
      * @return
      */
     public static String getTimeString(long timeInMillis) {
@@ -28,8 +28,8 @@ public class TimeUtils {
     }
 
     /**
-     * °ÑtimeInMillis×ª»¯³ÉdateFormat¸ñÊ½µÄÊ±¼ä×Ö·û´®·µ»Ø
-     * @param timeInMillis  ºÁÃë¼¶Ê±¼ä
+     * æŠŠtimeInMillisè½¬åŒ–æˆdateFormatæ ¼å¼çš„æ—¶é—´å­—ç¬¦ä¸²è¿”å›
+     * @param timeInMillis  æ¯«ç§’çº§æ—¶é—´
      * @param dateFormat    
      * @return
      */
@@ -38,8 +38,8 @@ public class TimeUtils {
     }
     
     /**
-     * °Ñ×Ö·û´®°´ÕÕ"yyyy-MM-dd HH:mm:ss"¸ñÊ½ ×ª»¯³ÉÊ±¼äDate¶ÔÏó·µ»Ø
-     * @param time  Ê±¼ä×Ö·û´®
+     * æŠŠå­—ç¬¦ä¸²æŒ‰ç…§"yyyy-MM-dd HH:mm:ss"æ ¼å¼ è½¬åŒ–æˆæ—¶é—´Dateå¯¹è±¡è¿”å›
+     * @param time  æ—¶é—´å­—ç¬¦ä¸²
      * @return
      */
     public static Date getTimeDate(String time){
@@ -53,9 +53,9 @@ public class TimeUtils {
     }
     
     /****
-     * °Ñ×Ö·û´®°´ÕÕÖ¸¶¨¸ñÊ½ ×ª»¯³ÉÊ±¼äDate¶ÔÏó·µ»Ø
-     * @param time  Ê±¼ä×Ö·û´®
-     * @param dateFormat  Ê±¼ä¸ñÊ½¶ÔÏó
+     * æŠŠå­—ç¬¦ä¸²æŒ‰ç…§æŒ‡å®šæ ¼å¼ è½¬åŒ–æˆæ—¶é—´Dateå¯¹è±¡è¿”å›
+     * @param time  æ—¶é—´å­—ç¬¦ä¸²
+     * @param dateFormat  æ—¶é—´æ ¼å¼å¯¹è±¡
      * @return
      */
     public static Date getTimeDate(String time, SimpleDateFormat dateFormat){

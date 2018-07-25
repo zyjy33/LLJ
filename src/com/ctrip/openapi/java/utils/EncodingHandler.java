@@ -18,17 +18,17 @@ public final class EncodingHandler {
 			throws WriterException {
 
 		Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
-		// ÉèÖÃ¶şÎ¬Âë±àÂë¸ñÊ½
+		// è®¾ç½®äºŒç»´ç ç¼–ç æ ¼å¼
 		hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
 
 		BitMatrix marBitMatrix = new MultiFormatWriter().encode(str,
 				BarcodeFormat.QR_CODE, widthHeight, widthHeight);
 		int _width = marBitMatrix.getWidth();
 		int _height = marBitMatrix.getHeight();
-		// ¸ù¾İ¿í¶ÈºÍ¸ß¶È¼ÆËãÏñËØ´óĞ¡£»
+		// æ ¹æ®å®½åº¦å’Œé«˜åº¦è®¡ç®—åƒç´ å¤§å°ï¼›
 		int[] pixels = new int[_height * _width];
 
-		// Ãèµã
+		// æç‚¹
 		for (int y = 0; y < _height; y++) {
 			for (int x = 0; x < _width; x++) {
 				if (marBitMatrix.get(x, y)) {
@@ -37,7 +37,7 @@ public final class EncodingHandler {
 			}
 		}
 		
-		// Éú³ÉÎ»Í¼
+		// ç”Ÿæˆä½å›¾
 		Bitmap mBitmap = Bitmap.createBitmap(_width, _height,Bitmap.Config.ARGB_8888);
 		mBitmap.setPixels(pixels, 0, _width, 0, 0, _width, _height);
 

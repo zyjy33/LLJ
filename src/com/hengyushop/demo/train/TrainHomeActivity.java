@@ -70,7 +70,7 @@ public class TrainHomeActivity extends BaseActivity {
 				startStation.setAdapter(adapter);
 				// startStation.setDropDownHeight(50);
 				startStation.setThreshold(1);
-				startStation.setCompletionHint("¹ØÓÚ'" + temp + "'¹Ø¼ü×ÖµÄÕ¾Ãû");
+				startStation.setCompletionHint("å…³äº'" + temp + "'å…³é”®å­—çš„ç«™å");
 
 			}
 		});
@@ -98,7 +98,7 @@ public class TrainHomeActivity extends BaseActivity {
 								.getZ(temp));
 				arrvieStation.setAdapter(adapter);
 				arrvieStation.setThreshold(1);
-				arrvieStation.setCompletionHint("¹ØÓÚ'" + temp + "'¹Ø¼ü×ÖµÄÕ¾Ãû");
+				arrvieStation.setCompletionHint("å…³äº'" + temp + "'å…³é”®å­—çš„ç«™å");
 
 			}
 		});
@@ -129,7 +129,7 @@ public class TrainHomeActivity extends BaseActivity {
 						.withSelectedDate(new Date());
 				theDialog = new AlertDialog.Builder(TrainHomeActivity.this)
 						.setView(dialogView)
-						.setNeutralButton("Ñ¡ÖĞ",
+						.setNeutralButton("é€‰ä¸­",
 								new DialogInterface.OnClickListener() {
 									@Override
 									public void onClick(
@@ -164,10 +164,10 @@ public class TrainHomeActivity extends BaseActivity {
 				HczDB db2 = new HczDB(getApplicationContext());
 				String param2 = db2.getCode(a);
 				if (param1.length() == 0) {
-					Toast.makeText(getApplicationContext(), "¼üÈëÊ¼·¢µØ", 200)
+					Toast.makeText(getApplicationContext(), "é”®å…¥å§‹å‘åœ°", 200)
 							.show();
 				} else if (param2.length() == 0) {
-					Toast.makeText(getApplicationContext(), "¼üÈëÄ¿µÄµØ", 200)
+					Toast.makeText(getApplicationContext(), "é”®å…¥ç›®çš„åœ°", 200)
 							.show();
 				} else {
 					bule.putString("startStation", param1);

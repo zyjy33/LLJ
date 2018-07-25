@@ -36,8 +36,8 @@ public class YihuaConActivity extends Activity {
     private MyLetterListView letterListView;
     private AsyncQueryHandler asyncQuery;  
     private static final String NAME = "name", NUMBER = "number", SORT_KEY = "sort_key";
-    private HashMap<String, Integer> alphaIndexer;//´æ·Å´æÔÚµÄººÓïÆ´ÒôÊ××ÖÄ¸ºÍÓëÖ®¶ÔÓ¦µÄÁĞ±íÎ»ÖÃ
-    private String[] sections;//´æ·Å´æÔÚµÄººÓïÆ´ÒôÊ××ÖÄ¸
+    private HashMap<String, Integer> alphaIndexer;//å­˜æ”¾å­˜åœ¨çš„æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯å’Œä¸ä¹‹å¯¹åº”çš„åˆ—è¡¨ä½ç½®
+    private String[] sections;//å­˜æ”¾å­˜åœ¨çš„æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
     private Handler handler;
     private OverlayThread overlayThread;
   
@@ -66,7 +66,7 @@ public class YihuaConActivity extends Activity {
                 "sort_key COLLATE LOCALIZED asc");
     }  
   
-    //²éÑ¯ÁªÏµÈË
+    //æŸ¥è¯¢è”ç³»äºº
     private class MyAsyncQueryHandler extends AsyncQueryHandler {  
   
         public MyAsyncQueryHandler(ContentResolver cr) {  
@@ -87,7 +87,7 @@ public class YihuaConActivity extends Activity {
                     String sortKey = cursor.getString(3);
                     if (number.startsWith("+86")) {  
                         cv.put(NAME, name);  
-                        cv.put(NUMBER, number.substring(3));  //È¥µô+86
+                        cv.put(NUMBER, number.substring(3));  //å»æ‰+86
                         cv.put(SORT_KEY, sortKey);  
                     } else {  
                         cv.put(NAME, name);  
@@ -121,9 +121,9 @@ public class YihuaConActivity extends Activity {
     		sections = new String[list.size()];
     		
     		for (int i = 0; i < list.size(); i++) {
-    			//µ±Ç°ººÓïÆ´ÒôÊ××ÖÄ¸
+    			//å½“å‰æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
     			String currentStr = getAlpha(list.get(i).getAsString(SORT_KEY));
-    			//ÉÏÒ»¸öººÓïÆ´ÒôÊ××ÖÄ¸£¬Èç¹û²»´æÔÚÎª¡° ¡±
+    			//ä¸Šä¸€ä¸ªæ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯ï¼Œå¦‚æœä¸å­˜åœ¨ä¸ºâ€œ â€
                 String previewStr = (i - 1) >= 0 ? getAlpha(list.get(i - 1).getAsString(SORT_KEY)) : " ";
                 if (!previewStr.equals(currentStr)) {
                 	String name = getAlpha(list.get(i).getAsString(SORT_KEY));
@@ -183,7 +183,7 @@ public class YihuaConActivity extends Activity {
     	
     }
     
-    //³õÊ¼»¯ººÓïÆ´ÒôÊ××ÖÄ¸µ¯³öÌáÊ¾¿ò
+    //åˆå§‹åŒ–æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯å¼¹å‡ºæç¤ºæ¡†
     private void initOverlay() {
     	LayoutInflater inflater = LayoutInflater.from(this);
     	overlay = (TextView) inflater.inflate(R.layout.yihua_con_overlay, null);
@@ -208,14 +208,14 @@ public class YihuaConActivity extends Activity {
 				overlay.setText(sections[position]);
 				overlay.setVisibility(View.VISIBLE);
 				handler.removeCallbacks(overlayThread);
-				//ÑÓ³ÙÒ»ÃëºóÖ´ĞĞ£¬ÈÃoverlayÎª²»¿É¼û
+				//å»¶è¿Ÿä¸€ç§’åæ‰§è¡Œï¼Œè®©overlayä¸ºä¸å¯è§
 				handler.postDelayed(overlayThread, 1500);
 			} 
 		}
     	
     }
     
-    //ÉèÖÃoverlay²»¿É¼û
+    //è®¾ç½®overlayä¸å¯è§
     private class OverlayThread implements Runnable {
 
 		@Override
@@ -226,7 +226,7 @@ public class YihuaConActivity extends Activity {
     }
     
     
-	//»ñµÃººÓïÆ´ÒôÊ××ÖÄ¸
+	//è·å¾—æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
     private String getAlpha(String str) {  
         if (str == null) {  
             return "#";  
@@ -237,7 +237,7 @@ public class YihuaConActivity extends Activity {
         }  
   
         char c = str.trim().substring(0, 1).charAt(0);  
-        // ÕıÔò±í´ïÊ½£¬ÅĞ¶ÏÊ××ÖÄ¸ÊÇ·ñÊÇÓ¢ÎÄ×ÖÄ¸  
+        // æ­£åˆ™è¡¨è¾¾å¼ï¼Œåˆ¤æ–­é¦–å­—æ¯æ˜¯å¦æ˜¯è‹±æ–‡å­—æ¯  
         Pattern pattern = Pattern.compile("^[A-Za-z]+$");  
         if (pattern.matcher(c + "").matches()) {  
             return (c + "").toUpperCase();  

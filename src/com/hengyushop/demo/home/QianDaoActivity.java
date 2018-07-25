@@ -21,7 +21,7 @@ import com.hengyushop.entity.UserRegisterllData;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.lelinju.www.R;
 /**
- * Ç©µ½
+ * ç­¾åˆ°
  * @author Administrator
  *
  */
@@ -67,7 +67,7 @@ public class QianDaoActivity extends BaseActivity{
 	}
 	
 	/**
-	 * Êä³öÕ¾µãÅäÖÃ
+	 * è¾“å‡ºç«™ç‚¹é…ç½®
 	 */
 	private void userqiandao() {
 		try{
@@ -103,7 +103,7 @@ public class QianDaoActivity extends BaseActivity{
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					Toast.makeText(QianDaoActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					Toast.makeText(QianDaoActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, QianDaoActivity.this);
 			
@@ -114,7 +114,7 @@ public class QianDaoActivity extends BaseActivity{
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -150,7 +150,7 @@ public class QianDaoActivity extends BaseActivity{
 	}
 	
 	/**
-	 * ³õÊ¼»¯
+	 * åˆå§‹åŒ–
 	 */
 
 	private Handler handler = new Handler() {
@@ -190,19 +190,19 @@ public class QianDaoActivity extends BaseActivity{
 	};
 //	private String dp(String temp){
 //		  if (temp.equals("Monday")) {
-//			  temp = "ĞÇÆÚÒ»";
+//			  temp = "æ˜ŸæœŸä¸€";
 //		}else if (temp.equals("Tuesday")) {
-//			  temp = "ĞÇÆÚ¶ş";
+//			  temp = "æ˜ŸæœŸäºŒ";
 //		}else if (temp.equals("Wednesday")) {
-//			  temp = "ĞÇÆÚÈı";
+//			  temp = "æ˜ŸæœŸä¸‰";
 //		}else if (temp.equals("Thursday")) {
-//			  temp = "ĞÇÆÚËÄ";
+//			  temp = "æ˜ŸæœŸå››";
 //		}else if (temp.equals("Friday")) {
-//			  temp = "ĞÇÆÚÎå";
+//			  temp = "æ˜ŸæœŸäº”";
 //		}else if (temp.equals("Saturday")) {
-//			  temp = "ĞÇÆÚÁù";
+//			  temp = "æ˜ŸæœŸå…­";
 //		}else if (temp.equals("Sunday")) {
-//			  temp = "ĞÇÆÚÈÕ";
+//			  temp = "æ˜ŸæœŸæ—¥";
 //		}
 //		return temp;
 //	}

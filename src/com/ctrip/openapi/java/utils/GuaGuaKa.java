@@ -28,31 +28,31 @@ public class GuaGuaKa extends View
 {
 
 	/**
-	 * »æÖÆÏßÌõµÄPaint,¼´ÓÃ»§ÊÖÖ¸»æÖÆPath
+	 * ç»˜åˆ¶çº¿æ¡çš„Paint,å³ç”¨æˆ·æ‰‹æŒ‡ç»˜åˆ¶Path
 	 */
 	private Paint mOutterPaint = new Paint();
 	/**
-	 * ¼ÇÂ¼ÓÃ»§»æÖÆµÄPath
+	 * è®°å½•ç”¨æˆ·ç»˜åˆ¶çš„Path
 	 */
 	private Path mPath = new Path();
 	/**
-	 * ÄÚ´æÖĞ´´½¨µÄCanvas
+	 * å†…å­˜ä¸­åˆ›å»ºçš„Canvas
 	 */
 	private Canvas mCanvas;
 	/**
-	 * mCanvas»æÖÆÄÚÈİÔÚÆäÉÏ
+	 * mCanvasç»˜åˆ¶å†…å®¹åœ¨å…¶ä¸Š
 	 */
 	private Bitmap mBitmap;
 
 	/**
-	 * ------------------------ÒÔÏÂÊÇ½±ÇøµÄÒ»Ğ©±äÁ¿
+	 * ------------------------ä»¥ä¸‹æ˜¯å¥–åŒºçš„ä¸€äº›å˜é‡
 	 */
 	// private Bitmap mBackBitmap;
 	private boolean isComplete;
 
 	private Paint mBackPint = new Paint();
 	private Rect mTextBound = new Rect();
-//	private String mText = "£¤500,0000";
+//	private String mText = "ï¿¥500,0000";
 //	private String mText = GuaYiGuaActivity.drawn;
 	private String mText = GuaYiGuaActivity.drawn;
 	private int mLastX;
@@ -85,7 +85,7 @@ public class GuaGuaKa extends View
 	}
 
 	/**
-	 * ³õÊ¼»¯canvasµÄ»æÖÆÓÃµÄ»­±Ê
+	 * åˆå§‹åŒ–canvasçš„ç»˜åˆ¶ç”¨çš„ç”»ç¬”
 	 */
 	private void setUpBackPaint()
 	{
@@ -106,7 +106,7 @@ public class GuaGuaKa extends View
 	{
 		try {
 		// canvas.drawBitmap(mBackBitmap, 0, 0, null);
-		// »æÖÆ½±Ïî
+		// ç»˜åˆ¶å¥–é¡¹
 		canvas.drawText(mText, getWidth() / 2 - mTextBound.width() / 2,
 				getHeight() / 2 + mTextBound.height() / 2, mBackPint);
 		if (!isComplete)
@@ -128,11 +128,11 @@ public class GuaGuaKa extends View
 
 		int width = getMeasuredWidth();
 		int height = getMeasuredHeight();
-		// ³õÊ¼»¯bitmap
+		// åˆå§‹åŒ–bitmap
 		mBitmap = Bitmap.createBitmap(width, height, Config.ARGB_8888);
 		mCanvas = new Canvas(mBitmap);
 
-		// »æÖÆÕÚ¸Ç²ã
+		// ç»˜åˆ¶é®ç›–å±‚
 		// mCanvas.drawColor(Color.parseColor("#c0c0c0"));
 		mOutterPaint.setStyle(Paint.Style.FILL);
 		mCanvas.drawRoundRect(new RectF(0, 0, width, height), 30, 30,
@@ -142,24 +142,24 @@ public class GuaGuaKa extends View
 	}
 
 	/**
-	 * ÉèÖÃ»­±ÊµÄÒ»Ğ©²ÎÊı
+	 * è®¾ç½®ç”»ç¬”çš„ä¸€äº›å‚æ•°
 	 */
 	private void setUpOutPaint()
 	{
-		// ÉèÖÃ»­±Ê
+		// è®¾ç½®ç”»ç¬”
 		// mOutterPaint.setAlpha(0);
 		mOutterPaint.setColor(Color.parseColor("#c0c0c0"));
 		mOutterPaint.setAntiAlias(true);
 		mOutterPaint.setDither(true);
 		mOutterPaint.setStyle(Paint.Style.STROKE);
-		mOutterPaint.setStrokeJoin(Paint.Join.ROUND); // Ô²½Ç
-		mOutterPaint.setStrokeCap(Paint.Cap.ROUND); // Ô²½Ç
-		// ÉèÖÃ»­±Ê¿í¶È
+		mOutterPaint.setStrokeJoin(Paint.Join.ROUND); // åœ†è§’
+		mOutterPaint.setStrokeCap(Paint.Cap.ROUND); // åœ†è§’
+		// è®¾ç½®ç”»ç¬”å®½åº¦
 		mOutterPaint.setStrokeWidth(40);
 	}
 
 	/**
-	 * »æÖÆÏßÌõ
+	 * ç»˜åˆ¶çº¿æ¡
 	 */
 	private void drawPath()
 	{
@@ -203,7 +203,7 @@ public class GuaGuaKa extends View
 	}
 
 	/**
-	 * Í³¼Æ²Á³ıÇøÓòÈÎÎñ
+	 * ç»Ÿè®¡æ“¦é™¤åŒºåŸŸä»»åŠ¡
 	 */
 	private Runnable mRunnable = new Runnable()
 	{
@@ -224,12 +224,12 @@ public class GuaGuaKa extends View
 			mPixels = new int[w * h];
 
 			/**
-			 * ÄÃµ½ËùÓĞµÄÏñËØĞÅÏ¢
+			 * æ‹¿åˆ°æ‰€æœ‰çš„åƒç´ ä¿¡æ¯
 			 */
 			bitmap.getPixels(mPixels, 0, w, 0, 0, w, h);
 
 			/**
-			 * ±éÀúÍ³¼Æ²Á³ıµÄÇøÓò
+			 * éå†ç»Ÿè®¡æ“¦é™¤çš„åŒºåŸŸ
 			 */
 			for (int i = 0; i < w; i++)
 			{
@@ -244,7 +244,7 @@ public class GuaGuaKa extends View
 			}
 
 			/**
-			 * ¸ù¾İËùÕ¼°Ù·Ö±È£¬½øĞĞÒ»Ğ©²Ù×÷
+			 * æ ¹æ®æ‰€å ç™¾åˆ†æ¯”ï¼Œè¿›è¡Œä¸€äº›æ“ä½œ
 			 */
 			if (wipeArea > 0 && totalArea > 0)
 			{
@@ -253,7 +253,7 @@ public class GuaGuaKa extends View
 
 				if (percent > 20)
 				{
-					Log.e("TAG", "Çå³ıÇøÓò´ïµ½70%£¬ÏÂÃæ×Ô¶¯Çå³ı");
+					Log.e("TAG", "æ¸…é™¤åŒºåŸŸè¾¾åˆ°70%ï¼Œä¸‹é¢è‡ªåŠ¨æ¸…é™¤");
 					isComplete = true;
 					postInvalidate();
 					GuaYiGuaActivity.handlerll.sendEmptyMessage(2);

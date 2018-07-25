@@ -24,8 +24,8 @@ public class AirPlaneBargainActivity extends BaseActivity {
 	}
 
 	private void listdata() {
-		String[] type = new String[] { "北京-上海", "北京-长沙", "北京-杭州", "长沙-上海",
-				"深圳-上海", "海南-上海", "三亚-上海", "海南-北京", "北京-上海", "北京-长沙", "北京-杭州" };
+		String[] type = new String[] { "鍖椾含-涓婃捣", "鍖椾含-闀挎矙", "鍖椾含-鏉窞", "闀挎矙-涓婃捣",
+				"娣卞湷-涓婃捣", "娴峰崡-涓婃捣", "涓変簹-涓婃捣", "娴峰崡-鍖椾含", "鍖椾含-涓婃捣", "鍖椾含-闀挎矙", "鍖椾含-鏉窞" };
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		Map<String, String> lines = null;
 		for (int i = 0; i < type.length; i++) {

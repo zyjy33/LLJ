@@ -69,7 +69,7 @@ public class VIPActivity extends BaseActivity{
 		setContentView(R.layout.shengji_ju);
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		screenWidth = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		screenWidth = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		test = (LinearLayout) findViewById(R.id.test);
 		vip_list =(ListView) findViewById(R.id.vip_list);
 		double scale_1 = (double)169/426;

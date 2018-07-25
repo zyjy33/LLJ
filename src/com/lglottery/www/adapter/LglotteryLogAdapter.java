@@ -78,13 +78,13 @@ public class LglotteryLogAdapter extends BaseAdapter {
 		String status = lists.get(position).getStatus();
 		switch (Integer.parseInt(status)) {
 		case 0:
-			holder.lglottery_class.setText("Î´½áÊø");
+			holder.lglottery_class.setText("æœªç»“æŸ");
 			break;
 		case 1:
 			holder.lglottery_name.setText(lists.get(position).getName());
 			imageLoader.displayImage(U.IP + lists.get(position).getImg(),
 					holder.lglottery_img);
-			holder.lglottery_class.setText("ÒÑ½áÊø");
+			holder.lglottery_class.setText("å·²ç»“æŸ");
 			break;
 		default:
 			break;

@@ -207,7 +207,7 @@ public class PostQiuListActivity extends BaseActivity {
 
 		System.out.println(JobCategoryId + "-" + salaryValue + "--"
 				+ provinceValue + "---" + cityValue + "----");
-		// mi/getData.ashx?act=UserResumeList&yth=ÈÎÒâÖµ&JobCategoryId=Ö°Î»Àà±ğID&jobProvinceCode=Ê¡µÄcode&jobCityCode=ÊĞµÄcode&MonthlySalary=ÏØµÄcode
+		// mi/getData.ashx?act=UserResumeList&yth=ä»»æ„å€¼&JobCategoryId=èŒä½ç±»åˆ«ID&jobProvinceCode=çœçš„code&jobCityCode=å¸‚çš„code&MonthlySalary=å¿çš„code
 		
 		params.put("act", "UserResumeList");
 		AsyncHttp.post_1(RealmName.REALM_NAME
@@ -262,13 +262,13 @@ public class PostQiuListActivity extends BaseActivity {
 						+ JobCategoryId);
 		work_price = (Spinner) findViewById(R.id.work_price);
 		price = new ArrayList<String>();
-		price.add("²»ÏŞ");
-		price.add("ÃæÒé");
-		price.add("2000ÔªÒÔÏÂ");
+		price.add("ä¸é™");
+		price.add("é¢è®®");
+		price.add("2000å…ƒä»¥ä¸‹");
 		price.add("2000-5000");
 		price.add("5000-7000");
 		price.add("7000-10000");
-		price.add("100000ÒÔÉÏ");
+		price.add("100000ä»¥ä¸Š");
 		priceValue = new ArrayList<String>();
 		priceValue.add("");
 		priceValue.add("0");
@@ -298,7 +298,7 @@ public class PostQiuListActivity extends BaseActivity {
 		provinceAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		// advert_order_province.setAdapter(provinceAdapter);
-		// ³ÇÊĞ
+		// åŸå¸‚
 		/*
 		 * city = new CityDB(getApplicationContext()) .getProvince(
 		 * "select name from city where provinceId =(select code from province where name='"
@@ -314,7 +314,7 @@ public class PostQiuListActivity extends BaseActivity {
 		cityAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		advert_order_city.setAdapter(cityAdapter);
-		// µØÇø
+		// åœ°åŒº
 
 	}
 }

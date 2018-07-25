@@ -128,7 +128,7 @@ public class PayActivity extends BaseActivity {
 			firstPay(bundle);
 			break;
 		case 1:
-			// ±íÊ¾µÚ¶ş´ÎÖ§¸¶
+			// è¡¨ç¤ºç¬¬äºŒæ¬¡æ”¯ä»˜
 			layout1.setVisibility(View.VISIBLE);
 			layout2.setVisibility(View.INVISIBLE);
 			bankLayout = (LinearLayout) findViewById(R.id.change_bank);
@@ -168,9 +168,9 @@ public class PayActivity extends BaseActivity {
 			String status = jsonObject.getString("status");
 			if (status.equals("1")) {
 				AppManager.getAppManager().finishActivity();
-				Toast.makeText(getApplicationContext(), "Ö§¸¶³É¹¦", 200).show();
+				Toast.makeText(getApplicationContext(), "æ”¯ä»˜æˆåŠŸ", 200).show();
 			} else {
-				Toast.makeText(getApplicationContext(), "Ö§¸¶Ê§°Ü", 200).show();
+				Toast.makeText(getApplicationContext(), "æ”¯ä»˜å¤±è´¥", 200).show();
 			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -179,7 +179,7 @@ public class PayActivity extends BaseActivity {
 	}
 
 	/*
-	 * È¡Öµ·¶Î§£º CREDITCARD£¨ĞÅÓÃ¿¨£© DEBITCARD(½è¼Ç¿¨)
+	 * å–å€¼èŒƒå›´ï¼š CREDITCARDï¼ˆä¿¡ç”¨å¡ï¼‰ DEBITCARD(å€Ÿè®°å¡)
 	 */
 	private void initLayout1(final String trade_no) {
 
@@ -264,10 +264,10 @@ public class PayActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				showDialog(0);
-				int SDKVersion = PayActivity.this.getSDKVersionNumber();// »ñÈ¡ÏµÍ³°æ±¾
+				int SDKVersion = PayActivity.this.getSDKVersionNumber();// è·å–ç³»ç»Ÿç‰ˆæœ¬
 				System.out.println("SDKVersion = " + SDKVersion);
 				DatePicker dp = findDatePicker((ViewGroup) mdialog.getWindow()
-						.getDecorView());// ÉèÖÃµ¯³öÄêÔÂÈÕ
+						.getDecorView());// è®¾ç½®å¼¹å‡ºå¹´æœˆæ—¥
 				if (dp != null) {
 					if (SDKVersion < 11) {
 						((ViewGroup) dp.getChildAt(0)).getChildAt(1)
@@ -294,7 +294,7 @@ public class PayActivity extends BaseActivity {
 	private Calendar calendar = null;
 
 	@Override
-	protected Dialog onCreateDialog(int id) { // ¶ÔÓ¦ÉÏÃæµÄshowDialog(0);//ÈÕÆÚµ¯³ö¿ò
+	protected Dialog onCreateDialog(int id) { // å¯¹åº”ä¸Šé¢çš„showDialog(0);//æ—¥æœŸå¼¹å‡ºæ¡†
 		mdialog = null;
 		switch (id) {
 		case 0:
@@ -349,7 +349,7 @@ public class PayActivity extends BaseActivity {
 	}
 
 	/**
-	 * ´Óµ±Ç°DialogÖĞ²éÕÒDatePicker×Ó¿Ø¼ş
+	 * ä»å½“å‰Dialogä¸­æŸ¥æ‰¾DatePickerå­æ§ä»¶
 	 * 
 	 * @param group
 	 * @return
@@ -371,7 +371,7 @@ public class PayActivity extends BaseActivity {
 	}
 
 	/**
-	 * »ñÈ¡ÏµÍ³SDK°æ±¾
+	 * è·å–ç³»ç»ŸSDKç‰ˆæœ¬
 	 * 
 	 * @return
 	 */
@@ -396,13 +396,13 @@ public class PayActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.grey));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -447,8 +447,8 @@ public class PayActivity extends BaseActivity {
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);

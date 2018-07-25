@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 /**
- * ¹ØÓÚviewpagerµÄ½çÃæ¼ÓÔØ
+ * å…³äºviewpagerçš„ç•Œé¢åŠ è½½
  * @author 
  */
 public class PageItemAdapter extends PagerAdapter{

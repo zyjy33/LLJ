@@ -17,15 +17,15 @@ import com.hengyushop.demo.home.JuTuanGou2Activity;
 import com.lelinju.www.R;
 
 /*
- * ÀàËÆÌÔ±¦ ¡¢Í·Ìõ
+ * ç±»ä¼¼æ·˜å® ã€å¤´æ¡
  * 
  */
 public class ScrollTopView_xyz extends LinearLayout {
 
-	private Scroller mScroller;  //¹ö¶¯ÊµÀı
+	private Scroller mScroller;  //æ»šåŠ¨å®ä¾‹
 
-	private List<BeanVo> articleList;  //´æ·ÅÊı¾İ¼¯ºÏ
-	private final int DURING_TIME = 3000;  //¹ö¶¯ÑÓ³Ù
+	private List<BeanVo> articleList;  //å­˜æ”¾æ•°æ®é›†åˆ
+	private final int DURING_TIME = 3000;  //æ»šåŠ¨å»¶è¿Ÿ
 	private OnAdapterClickListener<BeanVo> click;  
 
 	public ScrollTopView_xyz(Context context) {
@@ -43,7 +43,7 @@ public class ScrollTopView_xyz extends LinearLayout {
 	}
 
 	/**
-	 * ÉèÖÃÊı¾İ
+	 * è®¾ç½®æ•°æ®
 	 * @param articleList
 	 */
 	public void setData(List<BeanVo> articleList) {
@@ -56,8 +56,8 @@ public class ScrollTopView_xyz extends LinearLayout {
 				addContentView(i);
 			}
 			if (articleList.size() > 2) {
-				getLayoutParams().height = Utils.dip2px(20);  //µ÷½Ú¹ö¶¯Êı¾İµÄ¸ß¶È
-				// ¹ö¶¯
+				getLayoutParams().height = Utils.dip2px(20);  //è°ƒèŠ‚æ»šåŠ¨æ•°æ®çš„é«˜åº¦
+				// æ»šåŠ¨
 				cancelAuto();
 				mHandler.sendEmptyMessageDelayed(0, DURING_TIME);
 				smoothScrollBy(0, Utils.dip2px(50));
@@ -66,7 +66,7 @@ public class ScrollTopView_xyz extends LinearLayout {
 	}
 
 	/**
-	 * ÉèÖÃÁĞ±íµã»÷ÊÂ¼ş
+	 * è®¾ç½®åˆ—è¡¨ç‚¹å‡»äº‹ä»¶
 	 * 
 	 * @param click
 	 */
@@ -75,7 +75,7 @@ public class ScrollTopView_xyz extends LinearLayout {
 	}
 
 	/**
-	 * ÖØÖÃÊı¾İ
+	 * é‡ç½®æ•°æ®
 	 */
 	private void resetView() {
 		BeanVo article = articleList.get(0);
@@ -88,7 +88,7 @@ public class ScrollTopView_xyz extends LinearLayout {
 	}
 
 	/**
-	 * È¡Ïû¹ö¶¯
+	 * å–æ¶ˆæ»šåŠ¨
 	 */
 	public void cancelAuto() {
 		mHandler.removeMessages(0);
@@ -111,17 +111,17 @@ public class ScrollTopView_xyz extends LinearLayout {
 //		System.out.println("JuTuanGou2Activity.type--------1---------"+JuTuanGou2Activity.type);
 //		if (JuTuanGou2Activity.type == true) {
 //			System.out.println("article.groupon_title-----------------"+article.groupon_title);
-			//"¹§Ï²¡°ÖÜĞÇĞÇ¡± ÇÀµ½ÖĞ¹úÒÆ¶¯»°·Ñ100Ôª³äÖµ¾í "
+			//"æ­å–œâ€œå‘¨æ˜Ÿæ˜Ÿâ€ æŠ¢åˆ°ä¸­å›½ç§»åŠ¨è¯è´¹100å…ƒå……å€¼å· "
 		String haoma_ll = article.mobile;
 		String haoma = haoma_ll.substring(0, 3) + "****" + haoma_ll.substring(7, 11);
-			mHolder.nameTv.setText("¹§Ï²"+"¡°"+haoma+"¡±ÓÃ»§,ÇÀµ½"+article.lottery_title);
+			mHolder.nameTv.setText("æ­å–œ"+"â€œ"+haoma+"â€ç”¨æˆ·,æŠ¢åˆ°"+article.lottery_title);
 //		}else {
 //			System.out.println("article.title-----------------"+article.title);
 //			mHolder.nameTv.setText(article.title);
 //		}
 //		System.out.println("JuTuanGou2Activity.type--------2---------"+JuTuanGou2Activity.type);
 		
-//		String zhou = "¹§Ï²ÇÀµ½ÖĞ½±";
+//		String zhou = "æ­å–œæŠ¢åˆ°ä¸­å¥–";
 //		System.out.println("zhou-----------------"+zhou);
 //		mHolder.nameTv.setText(zhou);
 		
@@ -156,22 +156,22 @@ public class ScrollTopView_xyz extends LinearLayout {
 		};
 	};
 
-	// µ÷ÓÃ´Ë·½·¨ÉèÖÃ¹ö¶¯µÄÏà¶ÔÆ«ÒÆ
+	// è°ƒç”¨æ­¤æ–¹æ³•è®¾ç½®æ»šåŠ¨çš„ç›¸å¯¹åç§»
 	public void smoothScrollBy(int dx, int dy) {
-		// ÉèÖÃmScrollerµÄ¹ö¶¯Æ«ÒÆÁ¿
+		// è®¾ç½®mScrollerçš„æ»šåŠ¨åç§»é‡
 		mScroller.startScroll(mScroller.getFinalX(), 0, dx, dy, DURING_TIME);
-		invalidate();// ÕâÀï±ØĞëµ÷ÓÃinvalidate()²ÅÄÜ±£Ö¤computeScroll()»á±»µ÷ÓÃ£¬·ñÔò²»Ò»¶¨»áË¢ĞÂ½çÃæ£¬¿´²»µ½¹ö¶¯Ğ§¹û
+		invalidate();// è¿™é‡Œå¿…é¡»è°ƒç”¨invalidate()æ‰èƒ½ä¿è¯computeScroll()ä¼šè¢«è°ƒç”¨ï¼Œå¦åˆ™ä¸ä¸€å®šä¼šåˆ·æ–°ç•Œé¢ï¼Œçœ‹ä¸åˆ°æ»šåŠ¨æ•ˆæœ
 	}
 
 	@Override
 	public void computeScroll() {
 
-		// ÏÈÅĞ¶ÏmScroller¹ö¶¯ÊÇ·ñÍê³É
+		// å…ˆåˆ¤æ–­mScrolleræ»šåŠ¨æ˜¯å¦å®Œæˆ
 		if (mScroller.computeScrollOffset()) {
 
-			// ÕâÀïµ÷ÓÃViewµÄscrollTo()Íê³ÉÊµ¼ÊµÄ¹ö¶¯
+			// è¿™é‡Œè°ƒç”¨Viewçš„scrollTo()å®Œæˆå®é™…çš„æ»šåŠ¨
 			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
-			// ±ØĞëµ÷ÓÃ¸Ã·½·¨£¬·ñÔò²»Ò»¶¨ÄÜ¿´µ½¹ö¶¯Ğ§¹û
+			// å¿…é¡»è°ƒç”¨è¯¥æ–¹æ³•ï¼Œå¦åˆ™ä¸ä¸€å®šèƒ½çœ‹åˆ°æ»šåŠ¨æ•ˆæœ
 			postInvalidate();
 
 		}

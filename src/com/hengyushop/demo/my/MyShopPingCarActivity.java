@@ -53,34 +53,34 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 
 	private static final int INITIALIZE = 0;
 	private SharedPreferences spPreferences;
-	private ListView mListView;// ÁĞ±í
+	private ListView mListView;// åˆ—è¡¨
 	public static String user_id;
 	private ListAdapter mListAdapter;// adapter
 	private LinearLayout adv_pager;
 	private LinearLayout list_shops, list_none,ll_xianshi;
-	private List<DataBean> mListData = new ArrayList<DataBean>();// Êı¾İ
+	private List<DataBean> mListData = new ArrayList<DataBean>();// æ•°æ®
 
-	private boolean isBatchModel;// ÊÇ·ñ¿ÉÉ¾³ıÄ£Ê½
+	private boolean isBatchModel;// æ˜¯å¦å¯åˆ é™¤æ¨¡å¼
 
 	private RelativeLayout mBottonLayout;
-	private CheckBox mCheckAll; // È«Ñ¡ È«²»Ñ¡
-	private TextView mEdit; // ÇĞ»»µ½É¾³ıÄ£Ê½
+	private CheckBox mCheckAll; // å…¨é€‰ å…¨ä¸é€‰
+	private TextView mEdit; // åˆ‡æ¢åˆ°åˆ é™¤æ¨¡å¼
 
-	private TextView mPriceAll; // ÉÌÆ·×Ü¼Û
+	private TextView mPriceAll; // å•†å“æ€»ä»·
 
-	private TextView mSelectNum; // Ñ¡ÖĞÊıÁ¿
+	private TextView mSelectNum; // é€‰ä¸­æ•°é‡
 
-	private TextView mFavorite; // ÒÆµ½ÊÕ²Ø¼Ğ,·ÖÏí
+	private TextView mFavorite; // ç§»åˆ°æ”¶è—å¤¹,åˆ†äº«
 
-	private TextView mDelete; // É¾³ı ½áËã
+	private TextView mDelete; // åˆ é™¤ ç»“ç®—
 	
 	private TextView subtitle;
 
-	private double totalPrice = 0; // ÉÌÆ·×Ü¼Û
-	/** ÅúÁ¿Ä£Ê½ÏÂ£¬ÓÃÀ´¼ÇÂ¼µ±Ç°Ñ¡ÖĞ×´Ì¬ */
+	private double totalPrice = 0; // å•†å“æ€»ä»·
+	/** æ‰¹é‡æ¨¡å¼ä¸‹ï¼Œç”¨æ¥è®°å½•å½“å‰é€‰ä¸­çŠ¶æ€ */
 	private SparseArray<Boolean> mSelectState = new SparseArray<Boolean>();
 	private ImageView back;
-	private boolean flag = true; // È«Ñ¡»òÈ«È¡Ïû
+	private boolean flag = true; // å…¨é€‰æˆ–å…¨å–æ¶ˆ
 	List<DataBean> result;
 	private DialogProgress progress;
 	private AQuery query;
@@ -133,7 +133,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 		
 		System.out.println("nickname================="+nickname);
 		if (!nickname.equals("")) {
-			getjianche();//ºóÌ¨¼ì²âÊÇ·ñ°ó¶¨ÊÖ»ú
+			getjianche();//åå°æ£€æµ‹æ˜¯å¦ç»‘å®šæ‰‹æœº
 		}else {
 		    getuserxinxi();
 		}
@@ -155,12 +155,12 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 		}
 		
 	
-		//¼ÆËãÉÌÆ·Ìá½»IDÇå¿Õ
+		//è®¡ç®—å•†å“æäº¤IDæ¸…ç©º
 		if (list_id.size() > 0) {
 			list_id.clear();
 			
 		}
-		//¼ÆËã¸öÊıÇå¿Õ
+		//è®¡ç®—ä¸ªæ•°æ¸…ç©º
 		if (list_size.size() > 0) {
 			list_size.clear();
 			mDelete.setText(getResources().getString(R.string.menu_sett)+"(" + list_size.size() + ")");
@@ -226,10 +226,10 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 					"&province=&city=&country=&oauth_name="+oauth_name+"&oauth_unionid="+unionid+"" +
 							"&oauth_openid="+oauth_openid+"";
 			
-			System.out.println("ÎÒµÄ======11======1======="+strUrlone);
+			System.out.println("æˆ‘çš„======11======1======="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
-					System.out.println("ÎÒµÄ======Êä³ö=====1========"+arg1);
+					System.out.println("æˆ‘çš„======è¾“å‡º=====1========"+arg1);
 					try {
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
@@ -289,9 +289,9 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 //								editor.putString("user_id", data.id);
 //								editor.commit();
 								
-								if (data.user_name.equals("ÄäÃû")) {
+								if (data.user_name.equals("åŒ¿å")) {
 //									if (data.id.equals("0")) {
-										System.out.println("---Î¢ĞÅ»¹Î´°ó¶¨-------------------");
+										System.out.println("---å¾®ä¿¡è¿˜æœªç»‘å®š-------------------");
 										Intent intent1 = new Intent(getActivity(), TishiWxBangDingActivity.class);
 									    startActivity(intent1);
 									}else {
@@ -382,7 +382,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 								adv_pager.setVisibility(View.VISIBLE);
 								subtitle.setVisibility(View.GONE);
 								mListView.setVisibility(View.GONE);
-//								mPriceAll.setText("£¤"+0.00);
+//								mPriceAll.setText("ï¿¥"+0.00);
 								ll_xianshi.setVisibility(View.GONE);
 							}
 							
@@ -409,7 +409,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 //		}
 		
 		totalPrice = 0;
-		mPriceAll.setText("£¤"+totalPrice);
+		mPriceAll.setText("ï¿¥"+totalPrice);
 		mCheckAll.setChecked(false);
 		System.out.println("result22-------------"+result.size());
 		loadData();
@@ -432,7 +432,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 		
         btn_register = (Button) layout.findViewById(R.id.btn_register);
 		
-		//¹ºÎï³µÎŞÉÌÆ·È¥¹ä¹ä
+		//è´­ç‰©è½¦æ— å•†å“å»é€›é€›
 				btn_register.setOnClickListener(new OnClickListener() {
 					
 					@Override
@@ -507,7 +507,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			Params p = params[0];
 			Result result = new Result();
 			result.op = p.op;
-			try {// Ä£ÄâºÄÊ±
+			try {// æ¨¡æ‹Ÿè€—æ—¶
 				Thread.sleep(500L);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -525,7 +525,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			} else {
 				System.out.println("result3-------------");
 				mListData.addAll(result.list);
-				Toast.makeText(getActivity(), "Ìí¼Ó³É¹¦£¡",Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity(), "æ·»åŠ æˆåŠŸï¼",Toast.LENGTH_SHORT).show();
 			}
 
 			refreshListView();
@@ -536,7 +536,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 	boolean isSelect = false;
 
 	/**
-	 * ÉÌÆ·ÁĞ±í
+	 * å•†å“åˆ—è¡¨
 	 * @author Administrator
 	 *
 	 */
@@ -594,19 +594,19 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			
 //			mListData.get(position).setChoose(true);
 			if (data != null) {
-				// ÅĞ¶ÏÊÇ·ñÑ¡Ôñ
+				// åˆ¤æ–­æ˜¯å¦é€‰æ‹©
 				if (data.isChoose()) {
 					holder.checkBox.setChecked(true);
 				} else {
 					holder.checkBox.setChecked(false);
 				}
 
-				// Ñ¡ÖĞ²Ù×÷
+				// é€‰ä¸­æ“ä½œ
 //				holder.checkBox.setOnClickListener(new CheckBoxOnClick(data));
-				// ¼õÉÙ²Ù×÷
+				// å‡å°‘æ“ä½œ
 				holder.red.setOnClickListener(new ReduceOnClick(data,holder.carNum));
 
-				// Ôö¼Ó²Ù×÷
+				// å¢åŠ æ“ä½œ
 				holder.add.setOnClickListener(new AddOnclick(data,holder.carNum));
 
 			}
@@ -667,7 +667,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 					int number = Integer.parseInt(numberStr);
 
 					int currentNum = number + 1;
-					// ÉèÖÃÁĞ±í
+					// è®¾ç½®åˆ—è¡¨
 					shopcartEntity.setQuantity(currentNum);
 					holder.carNum.setText("" + currentNum);
 					int cart_id = shopcartEntity.getId();
@@ -676,7 +676,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 						@Override
 						public void onSuccess(int arg0, String arg1) {
 							// TODO Auto-generated method stub
-							System.out.println("==========================·ÃÎÊ½Ó¿Ú³É¹¦£¡"+arg1);
+							System.out.println("==========================è®¿é—®æ¥å£æˆåŠŸï¼"+arg1);
 							super.onSuccess(arg0, arg1);
 						}
 						
@@ -707,10 +707,10 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 				if (!TextUtils.isEmpty(numberStr)) {
 					int number = Integer.parseInt(numberStr);
 					if (number == 1) {
-						 Toast.makeText(getActivity(), "²»ÄÜÍùÏÂ¼õÉÙÁË", 200).show();
+						 Toast.makeText(getActivity(), "ä¸èƒ½å¾€ä¸‹å‡å°‘äº†", 200).show();
 					} else {
 						int currentNum = number - 1;
-						// ÉèÖÃÁĞ±í
+						// è®¾ç½®åˆ—è¡¨
 						shopcartEntity.setQuantity(currentNum);
 
 						holder.carNum.setText("" + currentNum);
@@ -720,7 +720,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 							@Override
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
-								System.out.println("==========================2·ÃÎÊ½Ó¿Ú³É¹¦£¡"+arg1);
+								System.out.println("==========================2è®¿é—®æ¥å£æˆåŠŸï¼"+arg1);
 								super.onSuccess(arg0, arg1);
 							}
 							
@@ -739,9 +739,9 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 
 			// holder.shopName.setText(data.getShopName());
 			holder.content.setText(data.getTitle());
-			holder.price.setText("£¤" + data.getSell_price());
+			holder.price.setText("ï¿¥" + data.getSell_price());
 			holder.carNum.setText(data.getQuantity() + "");
-			holder.tv_size.setText("£¤"+data.getMarket_price());
+			holder.tv_size.setText("ï¿¥"+data.getMarket_price());
 			holder.tv_size.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
 			
 			query.id(holder.image).image(RealmName.REALM_NAME_HTTP+data.getImg_url());
@@ -763,9 +763,9 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			boolean selected = !mSelectState.get(_id, false);
 			holder.checkBox.toggle();
 
-			// ½«CheckBoxµÄÑ¡ÖĞ×´¿ö¼ÇÂ¼ÏÂÀ´
+			// å°†CheckBoxçš„é€‰ä¸­çŠ¶å†µè®°å½•ä¸‹æ¥
 			mListData.get(position).setChoose(holder.checkBox.isChecked());
-			// µ÷ÕûÑ¡¶¨ÌõÄ¿
+			// è°ƒæ•´é€‰å®šæ¡ç›®
 			if (holder.checkBox.isChecked() == true) {
 //				String num = "1";
 //				totalPrice = 0;
@@ -788,7 +788,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			}
 			BigDecimal   c   =   new   BigDecimal(totalPrice);
 			dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-			mPriceAll.setText("£¤"+dzongjia);
+			mPriceAll.setText("ï¿¥"+dzongjia);
 			if (mSelectState.size() == mListData.size()) {
 				mCheckAll.setChecked(true);
 			} else {
@@ -809,7 +809,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 		TextView price;
 		TextView add;
 		TextView red;
-		Button button; // ÓÃÓÚÖ´ĞĞÉ¾³ıµÄbutton
+		Button button; // ç”¨äºæ‰§è¡Œåˆ é™¤çš„button
 		View frontView;
 		LinearLayout item_right, item_left;
 
@@ -831,7 +831,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 				mFavorite.setVisibility(View.GONE);
 				BigDecimal   c   =   new   BigDecimal(totalPrice);
 				dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-				mPriceAll.setText("£¤" + dzongjia + "");
+				mPriceAll.setText("ï¿¥" + dzongjia + "");
 				System.out.println("totalPrice1-------------"+totalPrice);
 				mDelete.setText(getResources().getString(R.string.menu_del)+"(" + list_size.size() + ")");
 				zhuangtai = false;
@@ -843,7 +843,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 //				totalPrice=0;
 				BigDecimal   c   =   new   BigDecimal(totalPrice);
 				dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-				mPriceAll.setText("£¤" + dzongjia + "");
+				mPriceAll.setText("ï¿¥" + dzongjia + "");
 				System.out.println("totalPrice2-------------"+totalPrice);
 				mDelete.setText(getResources().getString(R.string.menu_sett)+"(" + list_size.size() + ")");
 				zhuangtai = true;
@@ -857,7 +857,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 				list_size.clear();
 				for (int i = 0; i < mListData.size(); i++) {
 					mListData.get(i).setChoose(true);
-					// Èç¹ûÎªÑ¡ÖĞ
+					// å¦‚æœä¸ºé€‰ä¸­
 					if (mListData.get(i).isChoose()) {
 						
 						totalPrice = totalPrice + mListData.get(i).getQuantity()* mListData.get(i).getSell_price();
@@ -870,12 +870,12 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 					}
 				}
 
-				// Ë¢ĞÂ
+				// åˆ·æ–°
 				mListAdapter.notifyDataSetChanged();
-				// ÏÔÊ¾
+				// æ˜¾ç¤º
 				BigDecimal   c   =   new   BigDecimal(totalPrice);
 				dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-				mPriceAll.setText("£¤" + dzongjia + "");
+				mPriceAll.setText("ï¿¥" + dzongjia + "");
 			} else {
 				for (int i = 0; i < mListData.size(); i++) {
 					mListData.get(i).setChoose(false);
@@ -885,12 +885,12 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			}else {
 				mDelete.setText(getResources().getString(R.string.menu_del)+"(" + list_size.size() + ")");
 			}
-					//Ë¢ĞÂ
+					//åˆ·æ–°
 					mListAdapter.notifyDataSetChanged();
 				}
 				BigDecimal   c   =   new   BigDecimal(totalPrice);
 				dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-				mPriceAll.setText("£¤" + dzongjia + "");
+				mPriceAll.setText("ï¿¥" + dzongjia + "");
 			}
 			break;
 
@@ -902,16 +902,16 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			
 //				Iterator it = mListData.iterator();
 //				while (it.hasNext()) {
-//					// µÃµ½¶ÔÓ¦¼¯ºÏÔªËØ
+//					// å¾—åˆ°å¯¹åº”é›†åˆå…ƒç´ 
 //					DataBean g = (DataBean) it.next();
-//					// ÅĞ¶Ï
+//					// åˆ¤æ–­
 //					if (g.isChoose()) {
-//						// ´Ó¼¯ºÏÖĞÉ¾³ıÉÏÒ»´Înext·½·¨·µ»ØµÄÔªËØ
+//						// ä»é›†åˆä¸­åˆ é™¤ä¸Šä¸€æ¬¡nextæ–¹æ³•è¿”å›çš„å…ƒç´ 
 //						it.remove();
 //					}
 //				}
 				if (list_size.size() == 0) {
-					Toast.makeText(getActivity(), "ÇëÑ¡ÔñÒªÉ¾³ıµÄÉÌÆ·", 200).show();
+					Toast.makeText(getActivity(), "è¯·é€‰æ‹©è¦åˆ é™¤çš„å•†å“", 200).show();
 				}else {
 					
 					 String str1="";
@@ -926,7 +926,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 									@Override
 									public void onSuccess(int arg0, String arg1) {
 										// TODO Auto-generated method stub
-										System.out.println("==========================É¾³ı½Ó¿Ú³É¹¦£¡"+arg1);
+										System.out.println("==========================åˆ é™¤æ¥å£æˆåŠŸï¼"+arg1);
 										super.onSuccess(arg0, arg1);
 										try {
 											
@@ -965,7 +965,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 							}
 							
 						}
-						//¼ÆËã¸öÊıÇå¿Õ
+						//è®¡ç®—ä¸ªæ•°æ¸…ç©º
 			    		if (list_size.size() > 0) {
 			    			list_size.clear();
 			    			mDelete.setText(getResources().getString(R.string.menu_sett)+"(" + list_size.size() + ")");
@@ -978,9 +978,9 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 				if (totalPrice != 0) {
 					for(int i=0;i<mListData.size();i++){
 						if (mListData.get(i).isChoose()) {
-//							str1 = "";//ÏÈÇå¿Õ
-//							str2 = "";//ÏÈÇå¿Õ
-//							str3 = "";//ÏÈÇå¿Õ
+//							str1 = "";//å…ˆæ¸…ç©º
+//							str2 = "";//å…ˆæ¸…ç©º
+//							str3 = "";//å…ˆæ¸…ç©º
 							String fegefu = str1.length()>0?",":"";
 							str1 = str1+fegefu+String.valueOf(mListData.get(i).getArticle_id());
 							str2 = str2+fegefu+String.valueOf(mListData.get(i).getGoods_id());
@@ -991,14 +991,14 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 					System.out.println("str1-------------"+str1);
 					String zhou = str1+"/"+str2+"/"+str3;
 					 if (str1.equals("")) {
-						 Toast.makeText(getActivity(), "ÇëÑ¡ÔñÒªÖ§¸¶µÄÉÌÆ·", 200).show();
+						 Toast.makeText(getActivity(), "è¯·é€‰æ‹©è¦æ”¯ä»˜çš„å•†å“", 200).show();
 //							mListAdapter.notifyDataSetChanged();
 					 }else {
 					 loadgouwuche(str1,str2,str3);
 					 }
 				
 				} else {
-					 Toast.makeText(getActivity(), "ÇëÑ¡ÔñÒªÖ§¸¶µÄÉÌÆ·", 200).show();
+					 Toast.makeText(getActivity(), "è¯·é€‰æ‹©è¦æ”¯ä»˜çš„å•†å“", 200).show();
 					mListAdapter.notifyDataSetChanged();
 					return;
 				}
@@ -1014,11 +1014,11 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 	}
 
 	/**
-	 * ¼ÆËã¼Û¸ñ
+	 * è®¡ç®—ä»·æ ¼
 	 */
 	public void count() {
 
-		totalPrice = 0;// ÈËÃñ±Ò
+		totalPrice = 0;// äººæ°‘å¸
 		if (mListData != null && mListData.size() > 0) {
 			for (int i = 0; i < mListData.size(); i++) {
 				if (mListData.get(i).isChoose()) {
@@ -1030,7 +1030,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 			}
 			BigDecimal   c   =   new   BigDecimal(totalPrice);
 			dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-			mPriceAll.setText("£¤" + dzongjia + "");
+			mPriceAll.setText("ï¿¥" + dzongjia + "");
 		}
 		
 		
@@ -1070,7 +1070,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
 								String status = jsonObject.getString("status");
-								System.out.println("¹ºÎïÇåµ¥================"+arg1);
+								System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 								String info = jsonObject.getString("info");
 								if (status.equals("y")) {
 									progress.CloseProgress();
@@ -1091,7 +1091,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 //								        	str.append(s+",");
 //								        }
 //								        str.delete(str.lastIndexOf(","),str.length()); 
-//								        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
+//								        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
 									
 									
 //									Toast.makeText(getActivity(), info, 200).show();
@@ -1111,7 +1111,7 @@ public class MyShopPingCarActivity extends Fragment implements OnClickListener {
 						@Override
 						public void onFailure(Throwable arg0, String arg1) {
 							// TODO Auto-generated method stub
-							System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+							System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 							System.out.println("========================="+arg0);
 							System.out.println("=========================="+arg1);
 							super.onFailure(arg0, arg1);

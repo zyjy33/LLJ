@@ -73,9 +73,9 @@ public class QianMingActivity extends BaseActivity {
 		TextView textView1 = (TextView) findViewById(R.id.textView1);
 		tv_name = getIntent().getStringExtra("tv_name");
 		if (tv_name.equals("1")) {
-			textView1.setText("ÄãÀ´´ğ£¬ÎÒÀ´ËÍ");
+			textView1.setText("ä½ æ¥ç­”ï¼Œæˆ‘æ¥é€");
 		}else {
-		textView1.setText("ÍÆ¹ã´«²¥");
+		textView1.setText("æ¨å¹¿ä¼ æ’­");
 		}
 		
 		initdata();
@@ -204,7 +204,7 @@ public class QianMingActivity extends BaseActivity {
 	}
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -222,7 +222,7 @@ public class QianMingActivity extends BaseActivity {
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -251,7 +251,7 @@ public class QianMingActivity extends BaseActivity {
 	};
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -259,7 +259,7 @@ public class QianMingActivity extends BaseActivity {
 	private void load_list(boolean flag, String id) {
 		RUN_METHOD = 1;
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			list = new ArrayList<TuiGuangBean>();
 		}
@@ -270,9 +270,9 @@ public class QianMingActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
-									System.out.println("£¨ÉÌÆ·ÁĞ±í£©=========="+arg1);
+									System.out.println("ï¼ˆå•†å“åˆ—è¡¨ï¼‰=========="+arg1);
 									list = new ArrayList<TuiGuangBean>();
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -300,12 +300,12 @@ public class QianMingActivity extends BaseActivity {
 	}
 	
 	/**
-	 * µÚ2¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬2ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_listll(boolean flag, String id) {
 		RUN_METHOD = 1;
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			list = new ArrayList<TuiGuangBean>();
 		}
@@ -315,9 +315,9 @@ public class QianMingActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
-									System.out.println("£¨ÉÌÆ·ÁĞ±í£©=========="+arg1);
+									System.out.println("ï¼ˆå•†å“åˆ—è¡¨ï¼‰=========="+arg1);
 									list = new ArrayList<TuiGuangBean>();
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");

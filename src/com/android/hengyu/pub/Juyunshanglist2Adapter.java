@@ -131,11 +131,11 @@ public class Juyunshanglist2Adapter extends BaseAdapter {
 			RelativeLayout rl_list = (RelativeLayout) vi.findViewById(R.id.rl_list);
 			
 			tv_name.setText(list.get(position).getList().get(i).title);
-			tv_rePrice.setText("£¤" + list.get(position).getList().get(i).getSell_price());
+			tv_rePrice.setText("ï¿¥" + list.get(position).getList().get(i).getSell_price());
 //			System.out.println("=====list.get(position).getList().get(i).getMarket_price(================"+list.get(position).getList().get(i).getSell_price());
-			tv_maPrice.setText("£¤" + list.get(position).getList().get(i).getMarket_price());
+			tv_maPrice.setText("ï¿¥" + list.get(position).getList().get(i).getMarket_price());
 			tv_maPrice.getPaint().setFlags(
-					Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+					Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 			System.out.println("--------------"+list.get(position).getList().get(i).getImg_url());
 //			imageLoader.displayImage(RealmName.REALM_NAME_HTTP + list.get(position).getList().get(i).img_url, img_ware2);
 			 mAq.id(img_ware2).image(RealmName.REALM_NAME_HTTP+list.get(position).getList().get(i).img_url);

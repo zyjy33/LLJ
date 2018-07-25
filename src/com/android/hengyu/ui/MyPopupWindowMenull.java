@@ -72,9 +72,9 @@ import com.lelinju.www.UserSettingActivity;
 
 public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		IWXAPIEventHandler {
-	private Activity context; // ÉÏÏÂÎÄ
-	private int titleIndex; // ²Ëµ¥ĞòºÅ
-	public int currentState; // ¶Ô»°¿ò×´Ì¬£º0--ÏÔÊ¾ÖĞ¡¢1--ÒÑÏûÊ§¡¢2--Ê§È¥½¹µã
+	private Activity context; // ä¸Šä¸‹æ–‡
+	private int titleIndex; // èœå•åºå·
+	public int currentState; // å¯¹è¯æ¡†çŠ¶æ€ï¼š0--æ˜¾ç¤ºä¸­ã€1--å·²æ¶ˆå¤±ã€2--å¤±å»ç„¦ç‚¹
 	public View sub_view;
 	private IWXAPI api;
 	private LinearLayout ll_backhome, ll_account, ll_collect, ll_setting,
@@ -97,7 +97,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 				dialog();
 				break;
 			case 1:
-				Toast.makeText(context, "µ±Ç°°æ±¾ÊÇ×îĞÂ°æ±¾", 200).show();
+				Toast.makeText(context, "å½“å‰ç‰ˆæœ¬æ˜¯æœ€æ–°ç‰ˆæœ¬", 200).show();
 				break;
 			case 2:
 				String text1 = (String) msg.obj;
@@ -130,13 +130,13 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		currentState = 1;
 
 		LayoutInflater inflater = LayoutInflater.from(context);
-		// // ÒıÈë´°¿ÚÅäÖÃÎÄ¼ş
+		// // å¼•å…¥çª—å£é…ç½®æ–‡ä»¶
 		sub_view = inflater.inflate(R.layout.menu_popupwindow, null);
-		// Ìí¼Ó²Ëµ¥ÊÓÍ¼
+		// æ·»åŠ èœå•è§†å›¾
 		this.setContentView(sub_view);
 		this.setWidth(LayoutParams.MATCH_PARENT);
 		this.setHeight(LayoutParams.WRAP_CONTENT);
-		this.setFocusable(true);// menu²Ëµ¥»ñµÃ½¹µã Èç¹ûÃ»ÓĞ»ñµÃ½¹µãmenu²Ëµ¥ÖĞµÄ¿Ø¼şÊÂ¼şÎŞ·¨ÏìÓ¦\
+		this.setFocusable(true);// menuèœå•è·å¾—ç„¦ç‚¹ å¦‚æœæ²¡æœ‰è·å¾—ç„¦ç‚¹menuèœå•ä¸­çš„æ§ä»¶äº‹ä»¶æ— æ³•å“åº”\
 		this.setOutsideTouchable(true);
 		this.setBackgroundDrawable(new BitmapDrawable());
 
@@ -164,9 +164,9 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°Ñ¡ÖĞ²Ëµ¥Ïî
+	 * è·å–å½“å‰é€‰ä¸­èœå•é¡¹
 	 * 
-	 * @return ²Ëµ¥ÏîĞòºÅ
+	 * @return èœå•é¡¹åºå·
 	 */
 	public int getTitleIndex() {
 
@@ -226,7 +226,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 						float server_version = Float.parseFloat(version.replaceAll("\\.", ""));
 						float client_version = Float.parseFloat(c_version);
 						Log.v("data1", c_version + "  " + server_version);
-						System.out.println("µ±Ç°:" + client_version + "·şÎñÆ÷:"+ server_version);
+						System.out.println("å½“å‰:" + client_version + "æœåŠ¡å™¨:"+ server_version);
 						if (server_version > client_version) {
 							Message message = new Message();
 							message.what = 0;
@@ -266,7 +266,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		WXWebpageObject webpage = new WXWebpageObject();
 		webpage.webpageUrl = "http"+temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.description = temp[0];
 		Bitmap thumb = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.icon);
@@ -282,7 +282,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 			thumb.recycle();
 			thumb= null;
 		}
-		System.out.println("Î¢ĞÅÔ]ƒÔ" + flag+"-->"+msg.thumbData);
+		System.out.println("å¾®ä¿¡è¨»å†Š" + flag+"-->"+msg.thumbData);
 	}
 
 	private void softshareWxFriend(String text) {
@@ -292,8 +292,8 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		WXWebpageObject webpage = new WXWebpageObject();
 		webpage.webpageUrl = "http"+temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
-//		msg.title = "ni"+"ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
+//		msg.title = "ni"+"æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.description = temp[0];
 		Bitmap thumb = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.icon);
@@ -346,7 +346,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		pop.setBackgroundDrawable(new BitmapDrawable());
 		pop.setOutsideTouchable(true);
 		// pop.setFocusable(true);
-		// pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+		// pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 		//
 		if (!pop.isShowing()) {
 			pop.showAtLocation(view2, Gravity.BOTTOM, 0, 0);
@@ -446,7 +446,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		});
 	}
 
-	// ½âÎö·şÎñÆ÷¶ËµÄ°æ±¾ĞÅÏ¢
+	// è§£ææœåŠ¡å™¨ç«¯çš„ç‰ˆæœ¬ä¿¡æ¯
 	public void xmlparse(String st) {
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory
@@ -465,7 +465,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		}
 	}
 
-	// »ñÈ¡µ±Ç°³ÌĞòµÄ°æ±¾ĞÅÏ¢
+	// è·å–å½“å‰ç¨‹åºçš„ç‰ˆæœ¬ä¿¡æ¯
 	public static String getAppVersionName(Context context) {
 		String versionName = "";
 		try {
@@ -482,20 +482,20 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		return versionName;
 	}
 
-	// ³ÌĞò°æ±¾¸üĞÂ
+	// ç¨‹åºç‰ˆæœ¬æ›´æ–°
 	private void dialog() {
 
 		AlertDialog.Builder builder = new Builder(context);
 		builder.setMessage(updatainfo);
-		builder.setTitle("ÌáÊ¾:ĞÂ°æ±¾");
-		builder.setPositiveButton("¸üĞÂ", new DialogInterface.OnClickListener() {
+		builder.setTitle("æç¤º:æ–°ç‰ˆæœ¬");
+		builder.setPositiveButton("æ›´æ–°", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				downLoadApk();
 			}
 		});
-		builder.setNegativeButton("ÒÔºóÔÙËµ",
+		builder.setNegativeButton("ä»¥åå†è¯´",
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -507,13 +507,13 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 
 	public static File getFileFromServer(String path, ProgressDialog pd)
 			throws Exception {
-		// Èç¹ûÏàµÈµÄ»°±íÊ¾µ±Ç°µÄsdcard¹ÒÔØÔÚÊÖ»úÉÏ²¢ÇÒÊÇ¿ÉÓÃµÄ
+		// å¦‚æœç›¸ç­‰çš„è¯è¡¨ç¤ºå½“å‰çš„sdcardæŒ‚è½½åœ¨æ‰‹æœºä¸Šå¹¶ä¸”æ˜¯å¯ç”¨çš„
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
 			URL url = new URL(path);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setConnectTimeout(5000);
-			// »ñÈ¡µ½ÎÄ¼şµÄ´óĞ¡
+			// è·å–åˆ°æ–‡ä»¶çš„å¤§å°
 			pd.setMax(conn.getContentLength());
 			InputStream is = conn.getInputStream();
 			File file = new File(Environment.getExternalStorageDirectory(),
@@ -526,7 +526,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 			while ((len = bis.read(buffer)) != -1) {
 				fos.write(buffer, 0, len);
 				total += len;
-				// »ñÈ¡µ±Ç°ÏÂÔØÁ¿
+				// è·å–å½“å‰ä¸‹è½½é‡
 				pd.setProgress(total);
 			}
 			fos.close();
@@ -539,13 +539,13 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 	}
 
 	/*
-	 * ´Ó·şÎñÆ÷ÖĞÏÂÔØAPK
+	 * ä»æœåŠ¡å™¨ä¸­ä¸‹è½½APK
 	 */
 	protected void downLoadApk() {
-		final ProgressDialog pd; // ½ø¶ÈÌõ¶Ô»°¿ò
+		final ProgressDialog pd; // è¿›åº¦æ¡å¯¹è¯æ¡†
 		pd = new ProgressDialog(context);
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		pd.setMessage("ÕıÔÚÏÂÔØ¸üĞÂ");
+		pd.setMessage("æ­£åœ¨ä¸‹è½½æ›´æ–°");
 		pd.show();
 		new Thread() {
 			@Override
@@ -554,7 +554,7 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 					File file = getFileFromServer(url, pd);
 					sleep(3000);
 					installApk(file);
-					pd.dismiss(); // ½áÊøµô½ø¶ÈÌõ¶Ô»°¿ò
+					pd.dismiss(); // ç»“æŸæ‰è¿›åº¦æ¡å¯¹è¯æ¡†
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -562,14 +562,14 @@ public class MyPopupWindowMenull extends PopupWindow implements OnClickListener,
 		}.start();
 	}
 
-	// °²×°apk
+	// å®‰è£…apk
 	protected void installApk(File file) {
 		Intent intent = new Intent();
-		// Ö´ĞĞ¶¯×÷
+		// æ‰§è¡ŒåŠ¨ä½œ
 		intent.setAction(Intent.ACTION_VIEW);
-		// Ö´ĞĞµÄÊı¾İÀàĞÍ
+		// æ‰§è¡Œçš„æ•°æ®ç±»å‹
 		intent.setDataAndType(Uri.fromFile(file),
-				"application/vnd.android.package-archive");// ±àÕß°´£º´Ë´¦AndroidÓ¦Îªandroid£¬·ñÔòÔì³É°²×°²»ÁË
+				"application/vnd.android.package-archive");// ç¼–è€…æŒ‰ï¼šæ­¤å¤„Androidåº”ä¸ºandroidï¼Œå¦åˆ™é€ æˆå®‰è£…ä¸äº†
 		context.startActivity(intent);
 	}
 

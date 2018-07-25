@@ -75,9 +75,9 @@ public class MyAdapter extends BaseAdapter {
 		
 		 try {
 			
-		 System.out.println("个数1======================"+position);
+		 System.out.println("涓暟1======================"+position);
 			if (position == 0) {
-				holder.text.setText("全部");
+				holder.text.setText("鍏ㄩ儴");
 				holder.img.setImageResource(R.drawable.quanbu);
 //				image.setImageDrawable(getResources().getDrawable(R.drawable.yourimage);
 			}

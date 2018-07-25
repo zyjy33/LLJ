@@ -45,7 +45,7 @@ public class ShopingCartOrderAdapter extends BaseAdapter {
 	private ShopCartData cartData;
 	private Handler handler;
 	private AQuery query;
-	// ¹¹ÔìÆ÷
+	// æ„é€ å™¨
 	public ShopingCartOrderAdapter(ArrayList<ShopCartData> list, Context context
 			,Handler handler) {
 		this.context = context;
@@ -54,7 +54,7 @@ public class ShopingCartOrderAdapter extends BaseAdapter {
 		this.loader = loader;
 		inflater = LayoutInflater.from(context);
 		query = new AQuery(context);
-		// ³õÊ¼»¯Êı¾İ
+		// åˆå§‹åŒ–æ•°æ®
 	}
 
 	@Override
@@ -124,14 +124,14 @@ public class ShopingCartOrderAdapter extends BaseAdapter {
 			convertView.setTag(holder);
 			
 		} else {
-			// È¡³öholder
+			// å–å‡ºholder
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
 		holder.tv_warename.setText(list.get(position).getTitle());
-		holder.tv_color.setText("£¤" + list.get(position).getSell_price());
-		holder.tv_size.setText("£¤" + list.get(position).getMarket_price());
-		holder.tv_guige.setText("£¤" + list.get(position).spec_text);
+		holder.tv_color.setText("ï¿¥" + list.get(position).getSell_price());
+		holder.tv_size.setText("ï¿¥" + list.get(position).getMarket_price());
+		holder.tv_guige.setText("ï¿¥" + list.get(position).spec_text);
 		int zhoull = list.get(position).getQuantity();
 		System.out.println("=============00="+zhoull);
 		holder.tv_quantity.setText("x"+String.valueOf(list.get(position).getQuantity()));

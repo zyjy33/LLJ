@@ -16,26 +16,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MyListViewAdapter extends BaseAdapter {
-	// Ìî³äÊı¾İµÄlist
+	// å¡«å……æ•°æ®çš„list
 	private ArrayList<TuiGuangBean> foodlist;
-	// ÓÃÀ´¿ØÖÆCheckBoxµÄÑ¡ÖĞ×´¿ö
+	// ç”¨æ¥æ§åˆ¶CheckBoxçš„é€‰ä¸­çŠ¶å†µ
 	private static HashMap<Integer, Boolean> isSelected;
-	// ÉÏÏÂÎÄ
+	// ä¸Šä¸‹æ–‡
 	private Context context;
-	// ÓÃÀ´µ¼Èë²¼¾Ö
+	// ç”¨æ¥å¯¼å…¥å¸ƒå±€
 	private LayoutInflater inflater = null;
 
-	// ¹¹ÔìÆ÷
+	// æ„é€ å™¨
 	public MyListViewAdapter(ArrayList<TuiGuangBean> list, Context context) {
 		this.context = context;
 		this.foodlist = list;
 		inflater = LayoutInflater.from(context);
 		isSelected = new HashMap<Integer, Boolean>();
-		// ³õÊ¼»¯Êı¾İ
+		// åˆå§‹åŒ–æ•°æ®
 		initDate();
 	}
 
-	// ³õÊ¼»¯isSelectedµÄÊı¾İ
+	// åˆå§‹åŒ–isSelectedçš„æ•°æ®
 	private void initDate() {
 		for (int i = 0; i < foodlist.size(); i++) {
 			getIsSelected().put(i, false);
@@ -64,30 +64,30 @@ public class MyListViewAdapter extends BaseAdapter {
 		if (convertView == null) {
 			try {
 				
-			// »ñµÃViewHolder¶ÔÏó
+			// è·å¾—ViewHolderå¯¹è±¡
 			holder = new ViewHolder();
-			// µ¼Èë²¼¾Ö²¢¸³Öµ¸øconvertview
+			// å¯¼å…¥å¸ƒå±€å¹¶èµ‹å€¼ç»™convertview
 			convertView = inflater.inflate(R.layout.ceshi_item, null);
 			holder.txt1 = (TextView) convertView.findViewById(R.id.food_name);
 			holder.cb = (CheckBox) convertView.findViewById(R.id.check_box);
-			// ÎªviewÉèÖÃ±êÇ©
+			// ä¸ºviewè®¾ç½®æ ‡ç­¾
 			convertView.setTag(holder);
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
 		} else {
-			// È¡³öholder
+			// å–å‡ºholder
 			holder = (ViewHolder) convertView.getTag();
 		}
-		// »ñÈ¡Êı¾İ
+		// è·å–æ•°æ®
 		TuiGuangBean food = foodlist.get(position);
 
-		// ½«Êı¾İÌî³äµ½µ±Ç°convertViewµÄ¶ÔÓ¦¿Ø¼şÖĞ
+		// å°†æ•°æ®å¡«å……åˆ°å½“å‰convertViewçš„å¯¹åº”æ§ä»¶ä¸­
 //		holder.imageView.setImageResource(food.food_img);
 		holder.txt1.setText(food.title);
-		// ÉèÖÃlistÖĞTextViewµÄÏÔÊ¾
-		// ¸ù¾İisSelectedÀ´ÉèÖÃcheckboxµÄÑ¡ÖĞ×´¿ö
+		// è®¾ç½®listä¸­TextViewçš„æ˜¾ç¤º
+		// æ ¹æ®isSelectedæ¥è®¾ç½®checkboxçš„é€‰ä¸­çŠ¶å†µ
 		holder.cb.setChecked(getIsSelected().get(position));
 		} catch (Exception e) {
 			// TODO: handle exception

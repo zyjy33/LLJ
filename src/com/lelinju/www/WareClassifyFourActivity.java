@@ -191,7 +191,7 @@ public class WareClassifyFourActivity extends BaseActivity implements
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("¼Û¸ñ");
+		localTextView.setText("ä»·æ ¼");
 		localTabSpec.setIndicator(localView).setContent(R.id.tab1);
 		this.tabHost.addTab(localTabSpec);
 		progress.CreateProgress();
@@ -211,7 +211,7 @@ public class WareClassifyFourActivity extends BaseActivity implements
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("ÏúÁ¿");
+		localTextView.setText("é”€é‡");
 		localTabSpec.setIndicator(localView).setContent(R.id.tab2);
 		this.tabHost.addTab(localTabSpec);
 		
@@ -231,7 +231,7 @@ public class WareClassifyFourActivity extends BaseActivity implements
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("ÉÏ¼ÜÊ±¼ä");
+		localTextView.setText("ä¸Šæ¶æ—¶é—´");
 		localTabSpec.setIndicator(localView).setContent(R.id.tab3);
 		this.tabHost.addTab(localTabSpec);
 		AsyncHttp.post_1(RealmName.REALM_NAME
@@ -382,14 +382,14 @@ public class WareClassifyFourActivity extends BaseActivity implements
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

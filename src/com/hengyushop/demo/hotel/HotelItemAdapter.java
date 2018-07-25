@@ -71,7 +71,7 @@ public class HotelItemAdapter extends BaseAdapter {
 		holder.v2.setText(list.get(index).getAddress());
 		holder.v1.setText(list.get(index).getName());
 		imageLoader.displayImage(list.get(index).getImg(), holder.imageView);
-		holder.start.setText(list.get(index).getStart()+"ÐÇ¼¶");
+		holder.start.setText(list.get(index).getStart()+"æ˜Ÿçº§");
 		return view;
 	}
 

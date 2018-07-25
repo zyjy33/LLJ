@@ -49,9 +49,9 @@ import com.hengyushop.demo.at.BaseActivity;
 import com.lelinju.www.R;
 
 /**
- * Ãæ¶ÔÃæÍÆ¹ã
+ * é¢å¯¹é¢æ¨å¹¿
  * 
- * ÔÆÉÌ¾Û
+ * äº‘å•†èš
  * @author Administrator
  * 
  */
@@ -69,9 +69,9 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 	TestAdapter adapter;
 	RelativeLayout rl_tupian;
 	String erweima = "";
-	Bitmap bitmap;// ¶şÎ¬ÂëÖĞ¼äÍ¼Æ¬
-	private int iv_halfWidth = 20;// ÏÔÊ¾ÖĞ¼äÍ¼Æ¬µÄ¿í¶ÈµÄÒ»°ë
-	Bitmap mBitmap;// ¶şÎ¬ÂëÍ¼Æ¬;
+	Bitmap bitmap;// äºŒç»´ç ä¸­é—´å›¾ç‰‡
+	private int iv_halfWidth = 20;// æ˜¾ç¤ºä¸­é—´å›¾ç‰‡çš„å®½åº¦çš„ä¸€åŠ
+	Bitmap mBitmap;// äºŒç»´ç å›¾ç‰‡;
 	Bitmap bitmap_tx,bitmap_touxiang;
 	String avatar = "";
 	String touxiang = "";
@@ -137,9 +137,9 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 		im_shanchu.setOnClickListener(this);
 		tv_shanchu.setOnClickListener(this);
 		list = new ArrayList<String>();
-//		list.add("ÎÒÊÇĞ¡Ã÷");
-//		list.add("ÎÒÊÇĞ¡ÕÅ");
-//		list.add("ÎÒÊÇĞ¡º£");
+//		list.add("æˆ‘æ˜¯å°æ˜");
+//		list.add("æˆ‘æ˜¯å°å¼ ");
+//		list.add("æˆ‘æ˜¯å°æµ·");
 		lv = (ListView) findViewById(R.id.myList);
 		adapter = new TestAdapter(list, this);
 		lv.setAdapter(adapter);
@@ -154,9 +154,9 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 				//https://www.pgyer.com/ZnX8
 				
 				if (TextUtils.isEmpty(haoma)) {
-					Toast.makeText(MainDuiMianllActivity.this, "ÇëÊäÈëÊÖ»úºÅ", 200).show();
+					Toast.makeText(MainDuiMianllActivity.this, "è¯·è¾“å…¥æ‰‹æœºå·", 200).show();
 				}else if (haoma.length() < 11 ) {
-					Toast.makeText(MainDuiMianllActivity.this, "ÊÖ»úºÅÉÙÓÚ11Î»", 200).show();
+					Toast.makeText(MainDuiMianllActivity.this, "æ‰‹æœºå·å°‘äº11ä½", 200).show();
 				}else {	
 					
 					Bitmap _Bitmap;
@@ -165,8 +165,8 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 						String id = spPreferences.getString("user_id", "");
 						
 						System.out.println("============="+haoma);
-						list.add(haoma); //Ìí¼ÓĞÂÊı¾İ ¸Ä±äList¼¯ºÏ
-						adapter.list = list;  //½«¸Ä±äºóµÄList¼¯ºÏ¸³¸øAdapterÖĞµÄ¼¯ºÏ
+						list.add(haoma); //æ·»åŠ æ–°æ•°æ® æ”¹å˜Listé›†åˆ
+						adapter.list = list;  //å°†æ”¹å˜åçš„Listé›†åˆèµ‹ç»™Adapterä¸­çš„é›†åˆ
 						
 				        StringBuffer str = new StringBuffer();
 				        for(String s:list){
@@ -204,12 +204,12 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 						System.out.println("bitmap_tx============="+bitmap_tx);
 						LogoConfig logoConfig = new LogoConfig();
 						bitmap = logoConfig.modifyLogo(BitmapFactory.decodeResource(getResources(),R.drawable.white_bg),bitmap_tx);
-						// Ëõ·ÅÍ¼Æ¬£¬ÓÃµ½¾ØÕóÈ¥×ö
+						// ç¼©æ”¾å›¾ç‰‡ï¼Œç”¨åˆ°çŸ©é˜µå»åš
 						Matrix matrix = new Matrix();
 						float sx = (float) 2 * iv_halfWidth / bitmap.getWidth();
 						float sy = (float) 2 * iv_halfWidth / bitmap.getHeight();
 						matrix.setScale(sx, sy);
-						// Éú³ÉËõ·ÅºóµÄÍ¼Æ¬
+						// ç”Ÿæˆç¼©æ”¾åçš„å›¾ç‰‡
 						bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
 								bitmap.getHeight(), matrix, false);
 
@@ -235,23 +235,23 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 								int gs = list.size();
 								String geshu = String.valueOf(gs);
 								tv_geshu.setText(geshu);
-//								btn_data.setText("+¼ÌĞøÌí¼Ó");
+//								btn_data.setText("+ç»§ç»­æ·»åŠ ");
 								im_shanchu.setVisibility(View.VISIBLE);
 								tv_shanchu.setVisibility(View.VISIBLE);
 							}
 							
 						mEditText.setText("");
 //						setListViewHeightBasedOnChildren(lv);
-						adapter.notifyDataSetChanged(); //µ÷ÓÃnotifyDataSetChanged·½·¨
+						adapter.notifyDataSetChanged(); //è°ƒç”¨notifyDataSetChangedæ–¹æ³•
 					} catch (Exception e) {
 						// TODO: handle exception
 						e.printStackTrace();
 					}
 						
 //					} catch (WriterException e) {
-////						showToast("Òì³£");
+////						showToast("å¼‚å¸¸");
 //						e.printStackTrace();
-//						Toast.makeText(MainDuiMianActivity.this, "Òì³£", 200).show();
+//						Toast.makeText(MainDuiMianActivity.this, "å¼‚å¸¸", 200).show();
 //					}
 						
 				}
@@ -274,8 +274,8 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 					String img_url2 = RealmName.REALM_NAME_HTTP +avatar;
 					System.out.println("img_url2=============="+img_url2);
 					
-					bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-					Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+					Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 					touxiang = BitUtil.bitmaptoString(bitMap_tx);
 					System.out.println("touxiang=============="+touxiang);
 					System.out.println("bitmap_touxiang=============="+bitmap_touxiang);
@@ -312,7 +312,7 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 			break;
 		case R.id.ll_mdm_sys:
 			if (erweima.equals("")) {
-				Toast.makeText(MainDuiMianllActivity.this, "ÇëÌí¼ÓºÃÓÑÊÖ»úºÅ", 200).show();
+				Toast.makeText(MainDuiMianllActivity.this, "è¯·æ·»åŠ å¥½å‹æ‰‹æœºå·", 200).show();
 			}else {
 			Intent intent = new Intent(MainDuiMianllActivity.this, MianDuiMianSySActivity.class);
 			intent.putExtra("erweima", erweima);
@@ -336,7 +336,7 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 			break;
 		case R.id.ll_fx_zshb:
 			if (erweima.equals("")) {
-				Toast.makeText(MainDuiMianllActivity.this, "ÇëÌí¼ÓºÃÓÑÊÖ»úºÅ", 200).show();
+				Toast.makeText(MainDuiMianllActivity.this, "è¯·æ·»åŠ å¥½å‹æ‰‹æœºå·", 200).show();
 			}else {
 			Intent intent = new Intent(MainDuiMianllActivity.this, MianDuiMianFxhbActivity.class);
 			intent.putExtra("erweima", erweima);
@@ -414,7 +414,7 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 //								mImageView1.setVisibility(View.VISIBLE);
 //								mImageView2.setVisibility(View.VISIBLE);
 //								mImageView.setVisibility(View.GONE);
-//								btn_data.setText("ÇëÌí¼Ó");
+//								btn_data.setText("è¯·æ·»åŠ ");
 							}
 							} catch (Exception e) {
 								// TODO: handle exception
@@ -436,43 +436,43 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * ¸ù¾İ×Ö·û´®Éú³É¶şÎ¬Âë
+	 * æ ¹æ®å­—ç¬¦ä¸²ç”ŸæˆäºŒç»´ç 
 	 * 
 	 * @param s
 	 * @return
 	 * @throws WriterException
 	 */
 	private Bitmap createBitmap(String str) throws WriterException {
-		// Éú³É¶øÎª¾ØÕó£¬±àÂëÊÇÖ¸¶¨´óĞ¡£¬²»ÒªÉú³ÉÁËÍ¼Æ¬ÔÚ½øĞĞËõ·Å£¬ÕâÑù»áµ¼ÖÂÄ£ºıÊ¶±ğÊ§°Ü£¬¾ÍÊÇÉ¨ÃèÊ§°ÜÁË¡£
+		// ç”Ÿæˆè€Œä¸ºçŸ©é˜µï¼Œç¼–ç æ˜¯æŒ‡å®šå¤§å°ï¼Œä¸è¦ç”Ÿæˆäº†å›¾ç‰‡åœ¨è¿›è¡Œç¼©æ”¾ï¼Œè¿™æ ·ä¼šå¯¼è‡´æ¨¡ç³Šè¯†åˆ«å¤±è´¥ï¼Œå°±æ˜¯æ‰«æå¤±è´¥äº†ã€‚
 		BitMatrix mBitMatrix = new MultiFormatWriter().encode(str,
-				BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-±àÂë¸ñÊ½
-		// ¶şÎ¬¾ØÕóµÄ¿í¸ß
+				BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-ç¼–ç æ ¼å¼
+		// äºŒç»´çŸ©é˜µçš„å®½é«˜
 		int w = mBitMatrix.getWidth();
 		int h = mBitMatrix.getHeight();
 
-		// Í·ÏñµÄ¿í¶È
+		// å¤´åƒçš„å®½åº¦
 		int halfw = w / 2;
 		int halfh = h / 2;
-		// ×¼±¸»­¶şÎ¬Âë£¬°Ñ¶şÎ¬¾ØÕó×ª»»ÎªÒ»Î¬Êı×é£¬Ò»Ö±ºá×Å»­
-		int[] pixels = new int[w * h];// Êı×é³¤¶È¾ÍÊÇ¾ØÕóµÄÃæ»ıÖµ
+		// å‡†å¤‡ç”»äºŒç»´ç ï¼ŒæŠŠäºŒç»´çŸ©é˜µè½¬æ¢ä¸ºä¸€ç»´æ•°ç»„ï¼Œä¸€ç›´æ¨ªç€ç”»
+		int[] pixels = new int[w * h];// æ•°ç»„é•¿åº¦å°±æ˜¯çŸ©é˜µçš„é¢ç§¯å€¼
 		for (int y = 0; y < h; y++) {
 			int outputOffset = y * w;
 			for (int x = 0; x < w; x++) {
-				// »­Ò»¸öÆÕÍ¨µÄ¶şÎ¬Âë
-				// if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+				// ç”»ä¸€ä¸ªæ™®é€šçš„äºŒç»´ç 
+				// if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 				// pixels[outputOffset + x] = 0xff000000;
 				// } else {
 				// pixels[outputOffset + x] = 0xffffffff;
 				// }
 
-				// »­Ò»¸öÓĞÍ¼Æ¬µÄ¶şÎ¬ÂëÍ¼Æ¬
+				// ç”»ä¸€ä¸ªæœ‰å›¾ç‰‡çš„äºŒç»´ç å›¾ç‰‡
 				if (x > (halfw - iv_halfWidth) && x < (halfw + iv_halfWidth)
 						&& y > (halfh - iv_halfWidth)
-						&& y < (halfh + iv_halfWidth)) {// ÖĞ¼äÍ¼Æ¬µÄÇøÓò
+						&& y < (halfh + iv_halfWidth)) {// ä¸­é—´å›¾ç‰‡çš„åŒºåŸŸ
 					pixels[outputOffset + x] = bitmap.getPixel(x - halfw
-							+ iv_halfWidth, y - halfh + iv_halfWidth);// ÕâÀï»­Í¼Ö®ºó»áºÜÃ÷ÏÔµÄÏÔÊ¾³öÀ´
+							+ iv_halfWidth, y - halfh + iv_halfWidth);// è¿™é‡Œç”»å›¾ä¹‹åä¼šå¾ˆæ˜æ˜¾çš„æ˜¾ç¤ºå‡ºæ¥
 				} else {
-					if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+					if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 						pixels[outputOffset + x] = 0xff000000;
 					} else {
 						pixels[outputOffset + x] = 0xffffffff;
@@ -480,14 +480,14 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
 				}
 			}
 		}
-		Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// ´´½¨Ò»¸ö300*300bitmap
-		bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// ÏñËØµã¡¢ÆğÊ¼µã¡¢¿í¶È¡¢ÆäÆğÊ¼ÏñËØ¡¢¿í¡¢¸ß
+		Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// åˆ›å»ºä¸€ä¸ª300*300bitmap
+		bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// åƒç´ ç‚¹ã€èµ·å§‹ç‚¹ã€å®½åº¦ã€å…¶èµ·å§‹åƒç´ ã€å®½ã€é«˜
 		return bitmap;
 
 	}
 	
 	public static void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -495,18 +495,18 @@ public class MainDuiMianllActivity extends BaseActivity implements OnClickListen
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     } 
 }

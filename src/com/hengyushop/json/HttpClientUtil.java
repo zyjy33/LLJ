@@ -26,7 +26,7 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 
 public class HttpClientUtil {
-	// ´´½¨HttpClient¶ÔÏó
+	// åˆ›å»ºHttpClientå¯¹è±¡
 	private static int TIME_OUT = 6000;
 	private static HttpClient httpClient;
 
@@ -36,7 +36,7 @@ public class HttpClientUtil {
 	public static synchronized HttpClient getHttpClient() {
 		if (null == httpClient) {
 			HttpParams params = new BasicHttpParams();
-			// ÉèÖÃÒ»Ğ©»ù±¾²ÎÊı
+			// è®¾ç½®ä¸€äº›åŸºæœ¬å‚æ•°
 			HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
 			HttpProtocolParams.setUseExpectContinue(params, true);
 			/*
@@ -46,20 +46,20 @@ public class HttpClientUtil {
 			 * "AppleWebKit/553.1(KHTML,like Gecko) Version/4.0 Mobile Safari/533.1"
 			 * );
 			 */
-			// ³¬Ê±ÉèÖÃ
-			/* ´ÓÁ¬½Ó³ØÖĞÈ¡Á¬½ÓµÄ³¬Ê±Ê±¼ä */
+			// è¶…æ—¶è®¾ç½®
+			/* ä»è¿æ¥æ± ä¸­å–è¿æ¥çš„è¶…æ—¶æ—¶é—´ */
 			ConnManagerParams.setTimeout(params, TIME_OUT);
-			/* Á¬½Ó³¬Ê± */
+			/* è¿æ¥è¶…æ—¶ */
 			HttpConnectionParams.setConnectionTimeout(params, TIME_OUT);
-			/* ÇëÇó³¬Ê± */
+			/* è¯·æ±‚è¶…æ—¶ */
 			HttpConnectionParams.setSoTimeout(params, 60000);
-			// ÉèÖÃÎÒÃÇµÄHttpClientÖ§³ÖHTTPºÍHTTPSÁ½ÖÖÄ£Ê½
+			// è®¾ç½®æˆ‘ä»¬çš„HttpClientæ”¯æŒHTTPå’ŒHTTPSä¸¤ç§æ¨¡å¼
 			SchemeRegistry schReg = new SchemeRegistry();
 			schReg.register(new Scheme("http", PlainSocketFactory
 					.getSocketFactory(), 80));
 			schReg.register(new Scheme("https", SSLSocketFactory
 					.getSocketFactory(), 443));
-			// Ê¹ÓÃÏß³Ì°²È«µÄÁ¬½Ó¹ÜÀíÀ´´´½¨HttpClient
+			// ä½¿ç”¨çº¿ç¨‹å®‰å…¨çš„è¿æ¥ç®¡ç†æ¥åˆ›å»ºHttpClient
 			ClientConnectionManager conMgr = new ThreadSafeClientConnManager(
 					params, schReg);
 			httpClient = new DefaultHttpClient(conMgr, params);
@@ -67,26 +67,26 @@ public class HttpClientUtil {
 		return httpClient;
 	}
 
-	// »ñµÃHttpClient¶ÔÏó
+	// è·å¾—HttpClientå¯¹è±¡
 	// public String BASE_URL =
-	// "http://192.168.2.107:8080/CSdingzuo/android/restaurantList.htm";//·ÃÎÊµÄµØÖ·
-	public String TAG;// ·ÃÎÊ±êÊ¾·û
+	// "http://192.168.2.107:8080/CSdingzuo/android/restaurantList.htm";//è®¿é—®çš„åœ°å€
+	public String TAG;// è®¿é—®æ ‡ç¤ºç¬¦
 
 	/**
 	 * @param url
-	 *            ·¢ËÍÇëÇóµÄURL
-	 * @return ·şÎñÆ÷ÏìÓ¦×Ö·û´®
+	 *            å‘é€è¯·æ±‚çš„URL
+	 * @return æœåŠ¡å™¨å“åº”å­—ç¬¦ä¸²
 	 * @throws Exception
 	 */
 	public static InputStream getRequest(String BASE_URL) throws Exception {
-		// ´´½¨HttpGet¶ÔÏó¡£
+		// åˆ›å»ºHttpGetå¯¹è±¡ã€‚
 		HttpGet get = new HttpGet(BASE_URL);
-		// ·¢ËÍGETÇëÇó
+		// å‘é€GETè¯·æ±‚
 		HttpResponse httpResponse = getHttpClient().execute(get);
 		InputStream in = null;
-		// Èç¹û·şÎñÆ÷³É¹¦µØ·µ»ØÏìÓ¦
+		// å¦‚æœæœåŠ¡å™¨æˆåŠŸåœ°è¿”å›å“åº”
 		if (httpResponse.getStatusLine().getStatusCode() == 200) {
-			// »ñÈ¡·şÎñÆ÷ÏìÓ¦×Ö·û´®
+			// è·å–æœåŠ¡å™¨å“åº”å­—ç¬¦ä¸²
 			in = httpResponse.getEntity().getContent();
 		}
 		return in;
@@ -94,30 +94,30 @@ public class HttpClientUtil {
 
 	/**
 	 * @param url
-	 *            ·¢ËÍÇëÇóµÄURL
+	 *            å‘é€è¯·æ±‚çš„URL
 	 * @param params
-	 *            ÇëÇó²ÎÊı
-	 * @return ·şÎñÆ÷ÏìÓ¦×Ö·û´®
+	 *            è¯·æ±‚å‚æ•°
+	 * @return æœåŠ¡å™¨å“åº”å­—ç¬¦ä¸²
 	 * @throws Exception
 	 */
 	public static InputStream postRequest(String url,
 			Map<String, String> rawParams) throws Exception {
-		// ´´½¨HttpPost¶ÔÏó¡£
+		// åˆ›å»ºHttpPostå¯¹è±¡ã€‚
 		HttpPost post = new HttpPost(url);
-		// Èç¹û´«µİ²ÎÊı¸öÊı±È½Ï¶àµÄ»°¿ÉÒÔ¶Ô´«µİµÄ²ÎÊı½øĞĞ·â×°
+		// å¦‚æœä¼ é€’å‚æ•°ä¸ªæ•°æ¯”è¾ƒå¤šçš„è¯å¯ä»¥å¯¹ä¼ é€’çš„å‚æ•°è¿›è¡Œå°è£…
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		InputStream in = null;
 		for (String key : rawParams.keySet()) {
-			// ·â×°ÇëÇó²ÎÊı
+			// å°è£…è¯·æ±‚å‚æ•°
 			params.add(new BasicNameValuePair(key, rawParams.get(key)));
 		}
-		// ÉèÖÃÇëÇó²ÎÊı
+		// è®¾ç½®è¯·æ±‚å‚æ•°
 		post.setEntity(new UrlEncodedFormEntity(params, "gb2312"));
-		// ·¢ËÍPOSTÇëÇó
+		// å‘é€POSTè¯·æ±‚
 		HttpResponse httpResponse = getHttpClient().execute(post);
-		// Èç¹û·şÎñÆ÷³É¹¦µØ·µ»ØÏìÓ¦
+		// å¦‚æœæœåŠ¡å™¨æˆåŠŸåœ°è¿”å›å“åº”
 		if (httpResponse.getStatusLine().getStatusCode() == 200) {
-			// »ñÈ¡·şÎñÆ÷ÏìÓ¦×Ö·û´®
+			// è·å–æœåŠ¡å™¨å“åº”å­—ç¬¦ä¸²
 			in = httpResponse.getEntity().getContent();
 		}
 		return in;

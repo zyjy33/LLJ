@@ -29,7 +29,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.zijunlin.Zxing.Demo.CaptureActivity;
 /**
- * 创客
+ * 鍒涘
  * @author Administrator
  *
  */
@@ -118,7 +118,7 @@ public class JuJuFaActivity extends BaseActivity implements OnClickListener {
 	private void loadguanggao() {
 		try {
 			
-		//广告滚动	
+		//骞垮憡婊氬姩	
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_adbanner_list?advert_id=13",
 				new AsyncHttpResponseHandler() {

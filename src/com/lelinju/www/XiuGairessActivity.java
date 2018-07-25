@@ -134,7 +134,7 @@ public class XiuGairessActivity extends BaseActivity {
 				et_address.setText("");
 				String strmsgll = (String) msg.obj;
 				progress.CloseProgress();
-				// Toast.makeText(getApplicationContext(), "Ìí¼ÓÊ§°Ü,ÇëÖØĞÂÌí¼Ó¡£",
+				// Toast.makeText(getApplicationContext(), "æ·»åŠ å¤±è´¥,è¯·é‡æ–°æ·»åŠ ã€‚",
 				// 200).show();
 				Toast.makeText(getApplicationContext(), strmsgll, 200).show();
 				break;
@@ -188,20 +188,20 @@ public class XiuGairessActivity extends BaseActivity {
 				address = et_address.getText().toString();
 
 				if (name.equals("")) {
-					et_username.setError("ÇëÌîĞ´ÓÃ»§Ãû");
+					et_username.setError("è¯·å¡«å†™ç”¨æˆ·å");
 				} else if (phone.equals("")) {
-					et_userphone.setError("ÇëÌîĞ´ÁªÏµµç»°");
+					et_userphone.setError("è¯·å¡«å†™è”ç³»ç”µè¯");
 				} /*
 				 * else if (!PhoneAndEmailProving.isMobileNO(phone)) {
-				 * et_userphone.setError("ºÅÂëÊäÈëÓĞÎó"); }
+				 * et_userphone.setError("å·ç è¾“å…¥æœ‰è¯¯"); }
 				 */else if (address.equals("")) {
-					et_address.setError("ÇëÌîĞ´ÏêÏ¸µØÖ·");
+					et_address.setError("è¯·å¡«å†™è¯¦ç»†åœ°å€");
 				} else {
 					progress.CreateProgress();
 					String id = spPreferences.getString("user_id", "");
 					String user_name = spPreferences.getString("user", "");
 
-					String pingjiedizhi = sheng + "¡¢" + shi + "¡¢" + xian;
+					String pingjiedizhi = sheng + "ã€" + shi + "ã€" + xian;
 					strUrl = RealmName.REALM_NAME_LL
 							+ "/add_user_shopping_address?user_id=" + id
 							+ "&user_name=" + user_name + ""
@@ -256,7 +256,7 @@ public class XiuGairessActivity extends BaseActivity {
 		});
 	}
 
-	// ×Ö·û´®ÉÏ´«·şÎñÆ÷ ÂÒÂë ÎÊÌâµÄ½â¾ö·½·¨
+	// å­—ç¬¦ä¸²ä¸Šä¼ æœåŠ¡å™¨ ä¹±ç  é—®é¢˜çš„è§£å†³æ–¹æ³•
 	private String processParam(String temp)
 			throws UnsupportedEncodingException {
 		// return URLEncoder.encode(temp, "UTF-8");
@@ -362,14 +362,14 @@ public class XiuGairessActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 	// new Thread() {
 	// @Override
@@ -379,7 +379,7 @@ public class XiuGairessActivity extends BaseActivity {
 	// try {
 	// // strUrl = RealmName.REALM_NAME+
 	// "/mi/getdata.ashx";//add_user_shopping_address
-	// String pingjiedizhi = sheng_code+"¡¢"+shi_code+"¡¢"+area_code;
+	// String pingjiedizhi = sheng_code+"ã€"+shi_code+"ã€"+area_code;
 	// strUrl = RealmName.REALM_NAME_LL+
 	// "/add_user_shopping_address?user_id=19&user_name=13714758507" +
 	// "&user_accept_name="+name+"&user_area="+pingjiedizhi+"&user_address="+address+"&user_mobile="+phone+"&user_telphone="
@@ -410,7 +410,7 @@ public class XiuGairessActivity extends BaseActivity {
 	// params.put("user_post_code", "");
 	// params.put("is_default", "0");
 	// System.out.println("01================"+name);
-	// System.out.println("02================"+pingjiedizhi);//"¹ã¶«ÉîÛÚÄÏÉ½"
+	// System.out.println("02================"+pingjiedizhi);//"å¹¿ä¸œæ·±åœ³å—å±±"
 	// System.out.println("03================"+address);
 	// System.out.println("04================"+phone);
 	//

@@ -61,14 +61,14 @@ public class SpListDataAdapter extends BaseAdapter {
 //		TextView tv_id = (TextView) convertView.findViewById(R.id.tv_ware_id);
 		
 //		tv_maPrice.getPaint().setFlags(
-//				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+//				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 
 //		tv_name.setText(lists.get(position).getTitle());
 		tv_name.setText(lists.get(position).title);
-//		tv_rePrice.setText("£¤" + lists.get(position).getSell_price());
-//		tv_maPrice.setText("£¤" + lists.get(position).getMarket_price());
-//		tv_rePrice.setText("£¤" + lists.get(position).sell_price);
-//		tv_maPrice.setText("£¤" + lists.get(position).market_price);
+//		tv_rePrice.setText("ï¿¥" + lists.get(position).getSell_price());
+//		tv_maPrice.setText("ï¿¥" + lists.get(position).getMarket_price());
+//		tv_rePrice.setText("ï¿¥" + lists.get(position).sell_price);
+//		tv_maPrice.setText("ï¿¥" + lists.get(position).market_price);
 //		tv_id.setText(list.get(position).id + "");
 
 //		loader.displayImage(RealmName.REALM_NAME_HTTP + lists.get(position).getImg_url(), img_ware);

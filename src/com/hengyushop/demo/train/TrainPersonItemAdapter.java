@@ -82,7 +82,7 @@ public class TrainPersonItemAdapter extends BaseAdapter {
 							msg.what = 0;
 							msg.obj = key;
 							if (arg1) {
-								msg.arg1 = 1;// 代表添加
+								msg.arg1 = 1;// 浠ｈ〃娣诲姞
 								list.get(index).setFlag(true);
 							} else {
 								msg.arg1 = 0;
@@ -94,7 +94,7 @@ public class TrainPersonItemAdapter extends BaseAdapter {
 						}
 					});
 			if (list.get(index).isFlag()) {
-				// 默认是没有点击的
+				// 榛樿鏄病鏈夌偣鍑荤殑
 				holder.checkedMap.setChecked(true);
 			} else {
 				holder.checkedMap.setChecked(false);

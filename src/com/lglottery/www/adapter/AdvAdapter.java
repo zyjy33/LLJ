@@ -72,7 +72,7 @@ public class AdvAdapter extends PagerAdapter {
 			// lists.size()
 			imageLoader.displayImage(temps.get(position % temps.size())
 					.getImage(), imageView,options);
-			System.out.println("λ�ã�" + position % temps.size());
+			System.out.println("位置：" + position % temps.size());
 			/*
 			 * imageLoader.displayImage("file://" + lists.get(position %
 			 * lists.size()).getPath(), imageView, options);

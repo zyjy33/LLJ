@@ -12,7 +12,7 @@ public class LglotteryBean implements Serializable {
 	private int tag;
 	private int balance;
 	private int jinbi;
-	private String id;// ß[‘ò½MĞòÌ–
+	private String id;// éŠæˆ²çµ„åºè™Ÿ
 
 	public int getBalance() {
 		return balance;

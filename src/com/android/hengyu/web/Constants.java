@@ -1,8 +1,8 @@
 package com.android.hengyu.web;
 
 public class Constants {
-	// APP_ID Ìæ»»ÎªÄãµÄÓ¦ÓÃ´Ó¹Ù·½ÍøÕ¾ÉêÇëµ½µÄºÏ·¨appId
-	public static final String MCH_ID = "1482367632";//ÉÌ»§ºÅ
+	// APP_ID æ›¿æ¢ä¸ºä½ çš„åº”ç”¨ä»å®˜æ–¹ç½‘ç«™ç”³è¯·åˆ°çš„åˆæ³•appId
+	public static final String MCH_ID = "1482367632";//å•†æˆ·å·
 	public static final String APP_ID = "wx1f126d9aaf8c3000";
 	public static final String APP_SECRET = "64c0dc9daf55e8d543c396b19fa450fc";
 	public static final String API_KEY = "szyunsencomju918comlingfeima9009";

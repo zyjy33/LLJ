@@ -26,7 +26,7 @@ import com.hengyushop.entity.UserAddressData;
 import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 /**
- * ÌáÊ¾°ó¶¨ÊÖ»úºÅ
+ * æç¤ºç»‘å®šæ‰‹æœºå·
  * @author 
  *
  */
@@ -82,7 +82,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 		if (getIntent().getStringExtra("sell_price").equals("0.0")) {
 			btnConfirm.setVisibility(View.GONE);
 		}else {
-			btnConfirm.setText("ºÏ¼Æ£º£¤"+getIntent().getStringExtra("sell_price"));
+			btnConfirm.setText("åˆè®¡ï¼šï¿¥"+getIntent().getStringExtra("sell_price"));
 		}
 		et_user_name.setText(real_name);
 		et_user_shoujihao.setText(user_name);
@@ -99,7 +99,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -107,13 +107,13 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.iv_guanxi://È¡Ïû
+		case R.id.iv_guanxi://å–æ¶ˆ
 			finish();
 			break;
-		case R.id.iv_fanhui://·µ»Ø
+		case R.id.iv_fanhui://è¿”å›
 			finish();
 			break;
-		case R.id.index_item://Á¢¼´Ìá½»
+		case R.id.index_item://ç«‹å³æäº¤
 			if (real_name.equals("")) {
 				real_name = et_user_name.getText().toString().trim();
 			}else {
@@ -129,9 +129,9 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 			System.out.println("real_name----------------"+real_name);
 			System.out.println("user_name----------------"+user_name);
 			if (real_name.equals("")) {
-				Toast.makeText(BaoMinTiShiActivity.this, "ÇëÊäÈëĞÕÃû", 200).show();
+				Toast.makeText(BaoMinTiShiActivity.this, "è¯·è¾“å…¥å§“å", 200).show();
 			}else if (user_name.equals("")) {
-				Toast.makeText(BaoMinTiShiActivity.this, "ÇëÊäÈëÊÖ»úºÅÂë", 200).show();
+				Toast.makeText(BaoMinTiShiActivity.this, "è¯·è¾“å…¥æ‰‹æœºå·ç ", 200).show();
 			}
 		    else {
 				if(Validator.isMobile(user_name)){
@@ -158,7 +158,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 //						  finish();
 //						}
 //						  if (user_accept_name == null) {
-//								 Toast.makeText(BaoMinTiShiActivity.this, "Î´Ìí¼ÓÊÕ»õµØÖ·", 200).show();
+//								 Toast.makeText(BaoMinTiShiActivity.this, "æœªæ·»åŠ æ”¶è´§åœ°å€", 200).show();
 //							  }else {
 						        loadusertijiao(getIntent().getStringExtra("id"));
 //							  }
@@ -167,7 +167,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 							e.printStackTrace();
 						}
 				}else {
-					Toast.makeText(BaoMinTiShiActivity.this, "ÊÖ»úºÅÂë²»ÕıÈ·", 200).show();
+					Toast.makeText(BaoMinTiShiActivity.this, "æ‰‹æœºå·ç ä¸æ­£ç¡®", 200).show();
 				}
 			}
 			
@@ -179,14 +179,14 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * Ìá½»ÓÃ»§¶©µ¥  
+	 * æäº¤ç”¨æˆ·è®¢å•  
 	 * @param payment_id 
 	 * @param kou_hongbao 
 	 */
 	private void loadusertijiao(String shopping_ids) {
 		try {
 			progress.CreateProgress();	
-			String zhi = "¿Õ";
+			String zhi = "ç©º";
 		 	String shopping_address_id = getIntent().getStringExtra("sp_id");
 			System.out.println("shopping_ids=====================" + shopping_ids);//order_activity_signup  order_save
 			String url = RealmName.REALM_NAME_LL+ "/order_activity_signup?user_id="+user_id+"&user_name="+user_name+"&is_cashing_packet=0" +
@@ -200,7 +200,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("Ìá½»ÓÃ»§¶©µ¥ ================================="+arg1);
+							System.out.println("æäº¤ç”¨æˆ·è®¢å• ================================="+arg1);
 							try {
 								
 							    String code = object.getString("code");
@@ -224,7 +224,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 										  startActivity(intent);
 										  finish();
 									}else {
-										huodong_zf_type = "1";// »î¶¯Ö§¸¶³É¹¦²»ÏÔÊ¾ÏêÇé
+										huodong_zf_type = "1";// æ´»åŠ¨æ”¯ä»˜æˆåŠŸä¸æ˜¾ç¤ºè¯¦æƒ…
 									  Intent intent = new Intent(BaoMinTiShiActivity.this, MyOrderZFActivity.class);
 									  intent.putExtra("order_no",trade_no);
 									  intent.putExtra("total_c",total_amount);
@@ -262,7 +262,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 	private void getuseraddress() {
 		user_name = spPreferences.getString("user", "");
@@ -276,7 +276,7 @@ public class BaoMinTiShiActivity extends Activity implements OnClickListener{
 				super.onSuccess(arg0, arg1);
 				try {
 					JSONObject jsonObject = new JSONObject(arg1);
-					System.out.println("Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·================" + arg1);
+					System.out.println("è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€================" + arg1);
 					String status = jsonObject.getString("status");
 					if (status.equals("y")) {
 						try {

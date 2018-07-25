@@ -22,7 +22,7 @@ import com.hengyushop.entity.UserRegisterllData;
 import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 /**
- * ÊäÈëÃÜÂë
+ * è¾“å…¥å¯†ç 
  * @author 
  *
  */
@@ -65,7 +65,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 		btnCancle =(TextView) findViewById(R.id.btnCancle);// 
 //		tv_yue =(TextView) findViewById(R.id.tv_yue);
 //		System.out.println("amount-------------"+amount);
-//		tv_yue.setText("ÄãÊ£ÓàµÄÓà¶îÎª£¤"+amount);
+//		tv_yue.setText("ä½ å‰©ä½™çš„ä½™é¢ä¸ºï¿¥"+amount);
 		
 		btnCancle.setOnClickListener(this);//
 		
@@ -81,7 +81,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -89,7 +89,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.btnConfirm://È¡Ïû
+		case R.id.btnConfirm://å–æ¶ˆ
 //			String yue_fanhui = getIntent().getStringExtra("yue");
 			finish();
 			yue_zhuangtai = "1";
@@ -98,7 +98,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 			pwd = zhidupess.getText().toString().trim();
 			System.out.println("pwd-------------"+pwd);
 			if (pwd.equals("")) {
-				Toast.makeText(TishiChongZhiActivity.this, "ÇëÊäÈëÃÜÂë", 200).show();
+				Toast.makeText(TishiChongZhiActivity.this, "è¯·è¾“å…¥å¯†ç ", 200).show();
 			}else{
 //				String yue = getIntent().getStringExtra("yue");
 				String chuangke_sj = getIntent().getStringExtra("chuangke_sj");
@@ -124,7 +124,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * ÅĞ¶Ïµ±Ç°¾Û±ÒÓëÓà¶îµÄÖµ
+	 * åˆ¤æ–­å½“å‰èšå¸ä¸ä½™é¢çš„å€¼
 	 * @param order_no 
 	 */
 	private void useryue() {
@@ -141,10 +141,10 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 							String jubi = getIntent().getStringExtra("jubi");
 							tv_yue =(TextView) findViewById(R.id.tv_yue);
 							if (jubi != null) {
-								tv_yue.setText("ÄãÊ£ÓàµÄ¾Û±ÒÎª£¤"+point);
+								tv_yue.setText("ä½ å‰©ä½™çš„èšå¸ä¸ºï¿¥"+point);
 								System.out.println("point-------------"+point);
 							}else {
-								tv_yue.setText("ÄãÊ£ÓàµÄÓà¶îÎª£¤"+amount);
+								tv_yue.setText("ä½ å‰©ä½™çš„ä½™é¢ä¸ºï¿¥"+amount);
 								System.out.println("amount-------------"+amount);
 							}
 						}else{
@@ -159,7 +159,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -198,7 +198,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * Óà¶îÖ§¸¶
+	 * ä½™é¢æ”¯ä»˜
 	 * @param login_sign 
 	 * @param payment_id 
 	 */
@@ -258,7 +258,7 @@ public class TishiChongZhiActivity extends Activity implements OnClickListener{
 						super.onFailure(arg0, arg1);
 						System.out.println("arg0-------------"+arg0);
 						System.out.println("arg1-------------"+arg1);
-						Toast.makeText(TishiChongZhiActivity.this, "Òì³£", 200).show();
+						Toast.makeText(TishiChongZhiActivity.this, "å¼‚å¸¸", 200).show();
 					}
 
 				}, null);

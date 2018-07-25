@@ -31,7 +31,7 @@ public class YihuaCallListAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ×°ÔØÊı¾İ
+	 * è£…è½½æ•°æ®
 	 */
 	public void putLists(ArrayList<YiHuaCall> listDomains) {
 		this.listDomains = listDomains;

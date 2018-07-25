@@ -144,7 +144,7 @@ public class XinshouGyActivity extends BaseActivity {
 	}
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -162,7 +162,7 @@ public class XinshouGyActivity extends BaseActivity {
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -192,7 +192,7 @@ public class XinshouGyActivity extends BaseActivity {
 	};
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -200,7 +200,7 @@ public class XinshouGyActivity extends BaseActivity {
 	private void load_list(boolean flag) {
 		RUN_METHOD = 1;
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			list = new ArrayList<XsgyListData>();
 		}
@@ -211,7 +211,7 @@ public class XinshouGyActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									  String status = jsonObject.getString("status");
@@ -228,7 +228,7 @@ public class XinshouGyActivity extends BaseActivity {
 										spList.add_time = object.getString("add_time");
 										list.add(spList);
 										int user_id = spList.user_id ;//
-										System.out.println("¶ş¼¶Öµ2====================="+user_id);
+										System.out.println("äºŒçº§å€¼2====================="+user_id);
 									 }
 									    }else {
 									    	progress.CloseProgress();
@@ -251,12 +251,12 @@ public class XinshouGyActivity extends BaseActivity {
 						}, null);
 	}
 	/**
-	 * µÚ2¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬2ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list2(boolean flag) {
 		list = new ArrayList<XsgyListData>();
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 0;
 			list = new ArrayList<XsgyListData>();
 		}
@@ -267,7 +267,7 @@ public class XinshouGyActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									  String status = jsonObject.getString("status");

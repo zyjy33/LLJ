@@ -85,7 +85,6 @@ public class GoodsListAdapter extends BaseAdapter {
 			holder = new ViewHolder();
 			View vi = LayoutInflater.from(context).inflate(layout.goods_list, null);
 //			holder.listview = (ListView) vi.findViewById(R.id.listview_01);
-//			holder.tv_item = (TextView) vi.findViewById(R.id.tv_neirong);// ¹ºÂòÊ±¼ä
 //			holder.tv_item.setText((String)data_tm.get(position));
 			
 //			SpListDataAdapter sAdapter = new SpListDataAdapter(lists_ll, context, loader);

@@ -50,7 +50,7 @@ public class OneBuyListActivity extends BaseActivity{
 		});
 	}
 	/*
-	 *获得数据
+	 *鑾峰緱鏁版嵁
 	 */
 	private void onload(){
 		///mi/getdata.ashx?act=LuckYiYuanGameItems&yth=admin

@@ -103,7 +103,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	private UserRegisterData registerData;
 	private MyPopupWindowMenu popupWindowMenu;
 	private final String IMAGE_TYPE = "image/*";
-	private final int IMAGE_CODE = 0; // ÕâÀïµÄIMAGE_CODEÊÇ×Ô¼ºÈÎÒâ¶¨ÒåµÄ
+	private final int IMAGE_CODE = 0; // è¿™é‡Œçš„IMAGE_CODEæ˜¯è‡ªå·±ä»»æ„å®šä¹‰çš„
 	private ImageLoader imageLoader;
 	private Handler handler2;
 	private Context context;
@@ -171,12 +171,12 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //	public void onCreate(Bundle savedInstanceState) {
 //		// TODO Auto-generated method stub
 //		super.onCreate(savedInstanceState);
-//		 //ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+//		 //åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //        Thread.setDefaultUncaughtExceptionHandler(this);
 //	}
 //	public void uncaughtException(Thread arg0, Throwable arg1) {
 //		// TODO Auto-generated method stub
-//		 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//		 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //        Log.i("AAA", "uncaughtException   " + arg1);
 //	}
 	
@@ -193,7 +193,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		
 		System.out.println("nickname================="+nickname);
 		if (!nickname.equals("")) {
-			getjianche();//ºóÌ¨¼ì²âÊÇ·ñ°ó¶¨ÊÖ»ú
+			getjianche();//åå°æ£€æµ‹æ˜¯å¦ç»‘å®šæ‰‹æœº
 		}else {
 			getuserxinxi();
 		}
@@ -225,7 +225,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			
 			System.out.println("nickname-----1-----"+nickname);
-			String nick_name = nickname.replaceAll("\\s*", "");//È¥³ı¿Õ¸ñ
+			String nick_name = nickname.replaceAll("\\s*", "");//å»é™¤ç©ºæ ¼
 			
 			
 			System.out.println("nick_name-----2-----"+nick_name);
@@ -237,10 +237,10 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			String strUrlone = RealmName.REALM_NAME_LL + "/user_oauth_register_0217?nick_name="+nick_name+"&sex="+sex+"&avatar="+headimgurl+"" +
 					"&province="+province+"&city="+city+"&country="+country+"&oauth_name="+oauth_name+"&oauth_unionid="+unionid+"" +
 							"&oauth_openid="+oauth_openid+"";
-			System.out.println("ÎÒµÄ======11======1======="+strUrlone);
+			System.out.println("æˆ‘çš„======11======1======="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
-					System.out.println("ÎÒµÄ======Êä³ö=====1========"+arg1);
+					System.out.println("æˆ‘çš„======è¾“å‡º=====1========"+arg1);
 					try {
 						JSONObject object = new JSONObject(arg1);
 						object.getString("status");
@@ -283,7 +283,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //										     startActivity(intent1);
 //											 UserLoginActivity.panduan_tishi = false;
 //											SharedPreferences spPreferences_tishi_wx = getActivity().getSharedPreferences("longuserset_tishi", Context.MODE_PRIVATE);
-//											spPreferences_tishi_wx.edit().clear().commit();//µÚÈı·½ÊÚÈ¨µÇÂ¼ÌáÊ¾°ó¶¨ÊÖ»úºÅĞÅÏ¢Çå¿Õ
+//											spPreferences_tishi_wx.edit().clear().commit();//ç¬¬ä¸‰æ–¹æˆæƒç™»å½•æç¤ºç»‘å®šæ‰‹æœºå·ä¿¡æ¯æ¸…ç©º
 										}else {
 											 Intent intent1 = new Intent(getActivity(), TishiWxBangDingActivity.class);
 										     startActivity(intent1);
@@ -296,7 +296,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //									        startActivity(intent2);
 //											UserLoginWayActivity.panduan_tishi = false;
 //											SharedPreferences spPreferences_tishi_qq = getActivity().getSharedPreferences("longuserset_tishi", Context.MODE_PRIVATE);
-//											spPreferences_tishi_qq.edit().clear().commit();//µÚÈı·½ÊÚÈ¨µÇÂ¼ÌáÊ¾°ó¶¨ÊÖ»úºÅĞÅÏ¢Çå¿Õ
+//											spPreferences_tishi_qq.edit().clear().commit();//ç¬¬ä¸‰æ–¹æˆæƒç™»å½•æç¤ºç»‘å®šæ‰‹æœºå·ä¿¡æ¯æ¸…ç©º
 										}else {
 											Intent intent2 = new Intent(getActivity(), TishiWxBangDingActivity.class);
 									        startActivity(intent2);
@@ -319,9 +319,9 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 								System.out.println("---data.user_name-------------------"+data.user_name);
 								System.out.println("---user_id-------------------"+user_id);
 								
-								if (data.user_name.equals("ÄäÃû")) {
+								if (data.user_name.equals("åŒ¿å")) {
 //								if (data.id.equals("0")) {
-									System.out.println("---Î¢ĞÅ»¹Î´°ó¶¨-------------------");
+									System.out.println("---å¾®ä¿¡è¿˜æœªç»‘å®š-------------------");
 //								    System.out.println("UserLoginActivity.panduan====1=="+UserLoginActivity.panduan_tishi);
 //									System.out.println("UserLoginWayActivity.panduan====2=="+UserLoginWayActivity.panduan_tishi);
 //									 SharedPreferences spPreferences_tishi = getActivity().getSharedPreferences("longuserset_tishi", Context.MODE_PRIVATE);
@@ -400,7 +400,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				}else {
 					try {
 						System.out.println("==22====");
-						setinten();//Êı¾İÇå¿Õ	
+						setinten();//æ•°æ®æ¸…ç©º	
 						
 					lau0.setVisibility(View.GONE);
 					lau1.setVisibility(View.VISIBLE);
@@ -410,7 +410,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 						tv_weixin_name.setVisibility(View.VISIBLE);
 						Bitmap bitmap = BitUtil.stringtoBitmap(headimgurl2);
 //						Bitmap bitmap = UserLoginActivity.bitmap;
-						bitmap = Utils.toRoundBitmap(bitmap, null); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+						bitmap = Utils.toRoundBitmap(bitmap, null); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 						img_head.setImageBitmap(bitmap);
 						tv_weixin_name.setText(nickname);
 					}else {
@@ -486,17 +486,17 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		}
 	}
 	/**
-	 * ÌáÊ¾ÊÇ·ñ×¢ÏúµÇÂ¼
+	 * æç¤ºæ˜¯å¦æ³¨é”€ç™»å½•
 	 */
 	protected void dialoglogin() {
 		AlertDialog.Builder builder = new Builder(getActivity());
-		builder.setMessage("ÊÇ·ñ×¢ÏúµÇÂ¼?");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ˜¯å¦æ³¨é”€ç™»å½•?");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				//Çå¿ÕSharedPreferences±£´æÊı¾İ
+				//æ¸…ç©ºSharedPreferencesä¿å­˜æ•°æ®
 				System.out.println("UserLoginActivity.panduan====1=="+UserLoginActivity.panduan);
 				System.out.println("UserLoginWayActivity.panduan====2=="+UserLoginWayActivity.panduan);
 				System.out.println("PhoneLoginActivity.panduan====3=="+PhoneLoginActivity.panduan);
@@ -508,7 +508,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				spPreferences.edit().clear().commit();
 					String nickname = spPreferences_login.getString("nickname", "");
 					System.out.println("0======"+nickname);
-//					Toast.makeText(getActivity(), "Î¢ĞÅÃû/"+nickname, 200).show();
+//					Toast.makeText(getActivity(), "å¾®ä¿¡å/"+nickname, 200).show();
 					UserLoginActivity.panduan = false;
 					Intent intent4 = new Intent(getActivity(), UserLoginActivity.class);
 					startActivity(intent4);
@@ -518,7 +518,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 					spPreferences_login.edit().clear().commit();
 					spPreferences.edit().clear().commit();
 					String nickname = spPreferences_login.getString("nickname", "");
-//					Toast.makeText(getActivity(), "QQÃû/"+nickname, 200).show();
+//					Toast.makeText(getActivity(), "QQå/"+nickname, 200).show();
 					System.out.println("1======"+nickname);
 					UserLoginWayActivity.panduan = false;
 					Intent intent4 = new Intent(getActivity(), UserLoginActivity.class);
@@ -530,7 +530,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				spPreferences_login.edit().clear().commit();
 				String user_name = spPreferences.getString("user", "");
 				System.out.println("2======"+user_name);
-//				Toast.makeText(getActivity(), "ÓÃ»§Ãû/"+user_name, 200).show();
+//				Toast.makeText(getActivity(), "ç”¨æˆ·å/"+user_name, 200).show();
 				Intent intent4 = new Intent(getActivity(), UserLoginActivity.class);
 //				intent4.putExtra("login", index);
 				PhoneLoginActivity.panduan = false;
@@ -540,16 +540,16 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 					spPreferences_login.edit().clear().commit();
 //					spPreferences_login.edit().clear().commit();
 //					spPreferences_login.edit().clear().commit();
-//					Toast.makeText(getActivity(), "¿ÕÖµ", 200).show();
+//					Toast.makeText(getActivity(), "ç©ºå€¼", 200).show();
 					Intent intent4 = new Intent(getActivity(), UserLoginActivity.class);
 					startActivity(intent4);
 				}
 			SharedPreferences spPreferences_tishi = getActivity().getSharedPreferences("longuserset_tishi", Context.MODE_PRIVATE);
-			spPreferences_tishi.edit().clear().commit();//µÚÈı·½ÊÚÈ¨µÇÂ¼ÌáÊ¾°ó¶¨ÊÖ»úºÅĞÅÏ¢Çå¿Õ
+			spPreferences_tishi.edit().clear().commit();//ç¬¬ä¸‰æ–¹æˆæƒç™»å½•æç¤ºç»‘å®šæ‰‹æœºå·ä¿¡æ¯æ¸…ç©º
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -560,7 +560,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		builder.create().show();
 	}
 	/**
-	 * Êı¾İÇå¿Õ
+	 * æ•°æ®æ¸…ç©º
 	 */
 	private void setinten() {
 		// TODO Auto-generated method stub
@@ -582,8 +582,8 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				System.out.println("======11============="+strUrlone);
 				AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 					public void onSuccess(int arg0, String arg1) {
-						System.out.println("======Êä³ö============="+arg1);
-//						Toast.makeText(getActivity(), "Êı¾İÎª+"+arg1, 400).show();
+						System.out.println("======è¾“å‡º============="+arg1);
+//						Toast.makeText(getActivity(), "æ•°æ®ä¸º+"+arg1, 400).show();
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");
@@ -591,10 +591,10 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							if (status.equals("y")) {
 								String data = object.getString("data");
 								if (data.equals("null")) {
-//									Toast.makeText(getActivity(), "1Êı¾İÎª¿Õ", 200).show();
+//									Toast.makeText(getActivity(), "1æ•°æ®ä¸ºç©º", 200).show();
 									dialogweixinlogin();
 								}else {
-//									Toast.makeText(getActivity(), "22Êı¾İÎª¿Õ", 200).show();
+//									Toast.makeText(getActivity(), "22æ•°æ®ä¸ºç©º", 200).show();
 //									String id = object.getString("id");
 //									String user_name = object.getString("user_name");
 								}
@@ -617,13 +617,13 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 		}
 		/**
-		 * ÌáÊ¾ÊÇ·ñ×¢ÏúµÇÂ¼
+		 * æç¤ºæ˜¯å¦æ³¨é”€ç™»å½•
 		 */
 		protected void dialogweixinlogin() {
 			AlertDialog.Builder builder = new Builder(getActivity());
-			builder.setMessage("ÄúÄ¿Ç°ÊÇµÚÈı·½ÕËºÅµÇÂ¼£¬ÍêÉÆÊÖ»ú¿É»ñµÃ¸ü¶àÄã¸ĞĞËÈ¤µÄÄÚÈİ£¡");
-			builder.setTitle("°ó¶¨ÔÆÉÌ¾ÛÊÖ»úºÅ");
-			builder.setPositiveButton("È¥°ó¶¨", new DialogInterface.OnClickListener() {
+			builder.setMessage("æ‚¨ç›®å‰æ˜¯ç¬¬ä¸‰æ–¹è´¦å·ç™»å½•ï¼Œå®Œå–„æ‰‹æœºå¯è·å¾—æ›´å¤šä½ æ„Ÿå…´è¶£çš„å†…å®¹ï¼");
+			builder.setTitle("ç»‘å®šäº‘å•†èšæ‰‹æœºå·");
+			builder.setPositiveButton("å»ç»‘å®š", new DialogInterface.OnClickListener() {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -638,7 +638,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				}
 			});
 
-			builder.setNegativeButton("Ìø¹ı", new DialogInterface.OnClickListener() {
+			builder.setNegativeButton("è·³è¿‡", new DialogInterface.OnClickListener() {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -693,7 +693,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+						System.out.println("======è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						if (status.equals("y")) {
@@ -725,16 +725,16 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 						tv_usernum.setText(data.group_name);
 						group_id = data.group_id;
 						tv_name.setText(data.user_name);
-						tv_usertag.setText("¾Û¿¨:"+data.user_code);
+						tv_usertag.setText("èšå¡:"+data.user_code);
 						yth = data.user_code;
 						tv_ticket.setText(data.amount);
 						tv_shop_ticket.setText(data.pension);
 						tv_jifen_ticket.setText(data.packet);
 						tv_djjifen_ticket.setText(data.point);//data.packet point
-						tv_jiazhibi.setText("³É³¤Öµ£º"+data.exp);
+						tv_jiazhibi.setText("æˆé•¿å€¼ï¼š"+data.exp);
 						
 						String group_name = data.group_name;
-						if (group_name.contains("ÎŞ")) {
+						if (group_name.contains("æ— ")) {
 						
 					    lists.add(data);
 						}else {
@@ -769,7 +769,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 										img_head.setVisibility(View.VISIBLE);
 										networkImage.setVisibility(View.GONE);
 										Bitmap bitmap = BitUtil.stringtoBitmap(headimgurl2);
-										bitmap = Utils.toRoundBitmap(bitmap, null); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+										bitmap = Utils.toRoundBitmap(bitmap, null); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 										img_head.setImageBitmap(bitmap);
 									}
 								}
@@ -796,7 +796,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					NewDataToast.makeText(context, "Á¬½Ó³¬Ê±", false, 0).show();
+					NewDataToast.makeText(context, "è¿æ¥è¶…æ—¶", false, 0).show();
 				}
 			}, context);
 			
@@ -823,7 +823,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 					AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 						public void onSuccess(int arg0, String arg1) {
 							try {
-								System.out.println("======Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+								System.out.println("======è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
 								if (status.equals("y")) {
@@ -855,16 +855,16 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 								tv_usernum.setText(data.group_name);
 								group_id = data.group_id;
 								tv_name.setText(data.user_name);
-								tv_usertag.setText("»áÔ±ºÅ:"+data.user_code);
+								tv_usertag.setText("ä¼šå‘˜å·:"+data.user_code);
 								yth = data.user_code;
 								tv_ticket.setText(data.amount);
 								tv_shop_ticket.setText(data.pension);
 								tv_jifen_ticket.setText(data.packet);
 								tv_djjifen_ticket.setText(data.point);//data.packet point
-								tv_jiazhibi.setText("³É³¤Öµ£º"+data.exp);
+								tv_jiazhibi.setText("æˆé•¿å€¼ï¼š"+data.exp);
 								
 								String group_name = data.group_name;
-								if (group_name.contains("ÎŞ")) {
+								if (group_name.contains("æ— ")) {
 								
 							    lists.add(data);
 								}else {
@@ -900,7 +900,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 						public void onFailure(Throwable arg0, String arg1) {
 							// TODO Auto-generated method stub
 							super.onFailure(arg0, arg1);
-							NewDataToast.makeText(context, "Á¬½Ó³¬Ê±", false, 0).show();
+							NewDataToast.makeText(context, "è¿æ¥è¶…æ—¶", false, 0).show();
 						}
 					}, context);
 					
@@ -945,13 +945,13 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	};
 	
 	/**
-	 * ³õÊ¼»¯Í¼Æ¬ÏÂÔØÆ÷£¬Í¼Æ¬»º´æµØÖ·<i>("/Android/data/[app_package_name]/cache/dirName")</i>
+	 * åˆå§‹åŒ–å›¾ç‰‡ä¸‹è½½å™¨ï¼Œå›¾ç‰‡ç¼“å­˜åœ°å€<i>("/Android/data/[app_package_name]/cache/dirName")</i>
 	 */
 	public ImageLoader initImageLoader(Context context,
 			ImageLoader imageLoader, String dirName) {
 		imageLoader = ImageLoader.getInstance();
 		if (imageLoader.isInited()) {
-			// ÖØĞÂ³õÊ¼»¯ImageLoaderÊ±,ĞèÒªÊÍ·Å×ÊÔ´.
+			// é‡æ–°åˆå§‹åŒ–ImageLoaderæ—¶,éœ€è¦é‡Šæ”¾èµ„æº.
 			imageLoader.destroy();
 		}
 		imageLoader.init(initImageLoaderConfig(context, dirName));
@@ -959,10 +959,10 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	}
 
 	/**
-	 * ÅäÖÃÍ¼Æ¬ÏÂÔØÆ÷
+	 * é…ç½®å›¾ç‰‡ä¸‹è½½å™¨
 	 * 
 	 * @param dirName
-	 *            ÎÄ¼şÃû
+	 *            æ–‡ä»¶å
 	 */
 	private ImageLoaderConfiguration initImageLoaderConfig(
 			Context context, String dirName) {
@@ -990,7 +990,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		return memoryCacheSize;
 	}
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÉı¼¶
+	 * åˆ¤æ–­æ˜¯å¦å‡çº§
 	 * @param login_sign 
 	 */
 	public void userpanduan(String login_sign){
@@ -1017,20 +1017,20 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							 System.out.println("======salesgroupid============="+salesgroupid);
 							 System.out.println("======group_id============="+group_id);
 							 if (agencygroupid.contains(group_id)) {
-									tv_chuangke.setText("ÎÒÊÇ´´¿Í");
+									tv_chuangke.setText("æˆ‘æ˜¯åˆ›å®¢");
 								}else if (storegroupid.contains(group_id)){
-									tv_chuangke.setText("ÎÒÊÇ´´¿Í");
+									tv_chuangke.setText("æˆ‘æ˜¯åˆ›å®¢");
 								}else if (shopsgroupid.contains(group_id)){
-									tv_chuangke.setText("ÎÒÊÇ´´¿Í");
+									tv_chuangke.setText("æˆ‘æ˜¯åˆ›å®¢");
 								}else if (salesgroupid.contains(group_id)){
-									tv_chuangke.setText("ÎÒÊÇ´´¿Í");
+									tv_chuangke.setText("æˆ‘æ˜¯åˆ›å®¢");
 								}else {
-									tv_chuangke.setText("ÎÒÒª´´¿Í");
+									tv_chuangke.setText("æˆ‘è¦åˆ›å®¢");
 								}
-//							agencygroupid  ´úÀí
-//							storegroupid   ²Ö³¬
-//							shopsgroupid   ÃÅµê
-//							salesgroupid   ÒµÎñÔ±
+//							agencygroupid  ä»£ç†
+//							storegroupid   ä»“è¶…
+//							shopsgroupid   é—¨åº—
+//							salesgroupid   ä¸šåŠ¡å‘˜
 						}else{
 							
 						}
@@ -1049,7 +1049,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 
 	public void example(View layout) {
 		try {
-			//ban_louming //°ëÍ¸Ã÷ÑÕÉ«
+			//ban_louming //åŠé€æ˜é¢œè‰²
 		fl_buju =  (FrameLayout) layout.findViewById(R.id.fl_buju);
 //		index_item0 = (LinearLayout) layout.findViewById(R.id.index_item0);
 //		index_item1 = (LinearLayout) layout.findViewById(R.id.index_item1);
@@ -1160,7 +1160,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.img_btn_order://¶©µ¥¹ÜÀí
+		case R.id.img_btn_order://è®¢å•ç®¡ç†
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
 					Intent personIntent = new Intent(getActivity(),MyOrderActivity.class);
@@ -1181,10 +1181,10 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.rl_time1://ÎÒµÄÓÅ»İ„»
-			Toast.makeText(getActivity(), "¹¦ÄÜ»¹Î´¿ª·¢£¬¾´ÇëÆÚ´ı", 200).show();
+		case R.id.rl_time1://æˆ‘çš„ä¼˜æƒ åŠµ
+			Toast.makeText(getActivity(), "åŠŸèƒ½è¿˜æœªå¼€å‘ï¼Œæ•¬è¯·æœŸå¾…", 200).show();
 			break;
-		case R.id.rl_time2://ÎÒµÄ¾Û¶Ò»»
+		case R.id.rl_time2://æˆ‘çš„èšå…‘æ¢
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
 					Intent Intent1 = new Intent(getActivity(),MyJuDuiHuanActivity.class);
@@ -1205,7 +1205,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.rl_time3://ÎÒµÄ¾ÛÍÅ
+		case R.id.rl_time3://æˆ‘çš„èšå›¢
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
 					Intent Intent2 = new Intent(getActivity(),MyJuTuanActivity.class);
@@ -1226,10 +1226,10 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.rl_time4://ÎÒµÄ³é½±
-			Toast.makeText(getActivity(), "¹¦ÄÜ»¹Î´¿ª·¢£¬¾´ÇëÆÚ´ı", 200).show();
+		case R.id.rl_time4://æˆ‘çš„æŠ½å¥–
+			Toast.makeText(getActivity(), "åŠŸèƒ½è¿˜æœªå¼€å‘ï¼Œæ•¬è¯·æœŸå¾…", 200).show();
 			break;
-		case R.id.rl_time8://ÎÒµÄÇ®°ü
+		case R.id.rl_time8://æˆ‘çš„é’±åŒ…
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
 					Intent intent = new Intent(getActivity(), MyQianBaoActivity.class);
@@ -1276,7 +1276,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.person_login_un_btn://ÓÃ»§µÇÂ¼
+		case R.id.person_login_un_btn://ç”¨æˆ·ç™»å½•
 //			if (!nickname.equals("")) {
 //				Intent intent = new Intent(getActivity(), TishiWxBangDingActivity.class);
 //				startActivity(intent);
@@ -1286,7 +1286,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			startActivity(intent0);
 //			}
 			break;
-		case R.id.rl_time5:// ÕË»§¹ÜÀí
+		case R.id.rl_time5:// è´¦æˆ·ç®¡ç†
 			try {
 				if (!nickname.equals("")) {
 					if (!user_name_phone.equals("")) {
@@ -1306,7 +1306,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				}
 				}
 			
-//			Toast.makeText(getActivity(), "¹¦ÄÜÕıÔÚÍêÉÆ", 200).show();
+//			Toast.makeText(getActivity(), "åŠŸèƒ½æ­£åœ¨å®Œå–„", 200).show();
 //			user_name = spPreferences.getString("user", "");
 //			if (user_name.equals("")) {
 //				Intent intent9 = new Intent(getActivity(),UserLoginActivity.class);
@@ -1321,7 +1321,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 				e.printStackTrace();
 			}
 			break;
-		case R.id.rl_time9://²ÆÎñ¹ÜÀí
+		case R.id.rl_time9://è´¢åŠ¡ç®¡ç†
 //			Intent intent2 = new Intent(getActivity(),FinanceManageActivity.class);
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
@@ -1341,7 +1341,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.ll_quanbu://´ı¸¶¿î
+		case R.id.ll_quanbu://å¾…ä»˜æ¬¾
 //			int index0 = 0;
 //			Intent intent5 = new Intent(getActivity(),OrderInfromationActivity.class);//MyOrderActivity
 			if (!nickname.equals("")) {
@@ -1366,7 +1366,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.ll_unpay://´ı¸¶¿î
+		case R.id.ll_unpay://å¾…ä»˜æ¬¾
 //			int index0 = 0;
 //			Intent intent5 = new Intent(getActivity(),OrderInfromationActivity.class);//MyOrderActivity
 			if (!nickname.equals("")) {
@@ -1391,7 +1391,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.ll_delivered://ÒÑ¸¶¿î
+		case R.id.ll_delivered://å·²ä»˜æ¬¾
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
 					Intent intent6 = new Intent(getActivity(),MyOrderActivity.class);
@@ -1414,7 +1414,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.ll_received://´ı·¢»õ
+		case R.id.ll_received://å¾…å‘è´§
 //			int index2 = 2;
 //			Intent intent7 = new Intent(getActivity(),OrderInfromationActivity.class);
 //			intent7.putExtra("num", index2);
@@ -1441,7 +1441,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.ll_payed://´ıÊÕ»õ
+		case R.id.ll_payed://å¾…æ”¶è´§
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
 					Intent intent8 = new Intent(getActivity(),MyOrderActivity.class);
@@ -1464,11 +1464,11 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			}
 			}
 			break;
-		case R.id.rl_time6:// ¾Û¾Û·¢
+		case R.id.rl_time6:// èšèšå‘
 			try{
 				if (!nickname.equals("")) {
 //					String user = spPreferences.getString("user", "");
-					System.out.println("ÖµÊÇ================"+group_id);
+					System.out.println("å€¼æ˜¯================"+group_id);
 					if (user_name_phone.equals("")) {
 						Intent intent11 = new Intent(getActivity(), TishiWxBangDingActivity.class);
 						startActivity(intent11);
@@ -1491,7 +1491,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 					    }
 					}
 				}else {
-			System.out.println("ÖµÊÇ================"+group_id);
+			System.out.println("å€¼æ˜¯================"+group_id);
 			if (user_name_phone.equals("")) {
 				Intent intent11 = new Intent(getActivity(), UserLoginActivity.class);
 				startActivity(intent11);
@@ -1522,7 +1522,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		}
 			
 			break;
-		case R.id.rl_time7:// ÎÒµÄÊÕ²Ø
+		case R.id.rl_time7:// æˆ‘çš„æ”¶è—
 			if (!nickname.equals("")) {
 				if (user_name_phone.equals("")) {
 				Intent intent = new Intent(getActivity(), TishiWxBangDingActivity.class);
@@ -1570,28 +1570,28 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	}
 
 	/**
-	 * ÏÔÊ¾ĞŞ¸ÄÍ·ÏñµÄ¶Ô»°¿ò
+	 * æ˜¾ç¤ºä¿®æ”¹å¤´åƒçš„å¯¹è¯æ¡†
 	 */
 	protected void showChoosePicDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-		builder.setTitle("ÉèÖÃÍ·Ïñ");
-		String[] items = { "Ñ¡Ôñ±¾µØÕÕÆ¬", "ÅÄÕÕ" };
-		builder.setNegativeButton("È¡Ïû", null);
+		builder.setTitle("è®¾ç½®å¤´åƒ");
+		String[] items = { "é€‰æ‹©æœ¬åœ°ç…§ç‰‡", "æ‹ç…§" };
+		builder.setNegativeButton("å–æ¶ˆ", null);
 		builder.setItems(items, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				switch (which) {
-				case CHOOSE_PICTURE: // Ñ¡Ôñ±¾µØÕÕÆ¬
+				case CHOOSE_PICTURE: // é€‰æ‹©æœ¬åœ°ç…§ç‰‡
 					Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
-					System.out.println("±¾µØÕÕÆ¬-----------------"+openAlbumIntent);
+					System.out.println("æœ¬åœ°ç…§ç‰‡-----------------"+openAlbumIntent);
 					openAlbumIntent.setType("image/*");
 					startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
 					break;
-				case TAKE_PICTURE: // ÅÄÕÕ
+				case TAKE_PICTURE: // æ‹ç…§
 					Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 					tempUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "image.jpg"));
-					System.out.println("ÅÄÕÕ================"+tempUri);
-					// Ö¸¶¨ÕÕÆ¬±£´æÂ·¾¶£¨SD¿¨£©£¬image.jpgÎªÒ»¸öÁÙÊ±ÎÄ¼ş£¬Ã¿´ÎÅÄÕÕºóÕâ¸öÍ¼Æ¬¶¼»á±»Ìæ»»
+					System.out.println("æ‹ç…§================"+tempUri);
+					// æŒ‡å®šç…§ç‰‡ä¿å­˜è·¯å¾„ï¼ˆSDå¡ï¼‰ï¼Œimage.jpgä¸ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶ï¼Œæ¯æ¬¡æ‹ç…§åè¿™ä¸ªå›¾ç‰‡éƒ½ä¼šè¢«æ›¿æ¢
 					openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
 					startActivityForResult(openCameraIntent, TAKE_PICTURE);
 					
@@ -1606,19 +1606,19 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-//		if (resultCode == RESULT_OK) { // Èç¹û·µ»ØÂëÊÇ¿ÉÒÔÓÃµÄ
+//		if (resultCode == RESULT_OK) { // å¦‚æœè¿”å›ç æ˜¯å¯ä»¥ç”¨çš„
 			switch (requestCode) {
-			//ÅÄÕÕ
+			//æ‹ç…§
 			case TAKE_PICTURE:
-				startPhotoZoom(tempUri); // ¿ªÊ¼¶ÔÍ¼Æ¬½øĞĞ²Ã¼ô´¦Àí
+				startPhotoZoom(tempUri); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 				break;
-			//ÉÏ´«Í¼Æ¬	
+			//ä¸Šä¼ å›¾ç‰‡	
 			case CHOOSE_PICTURE:
-				startPhotoZoom(data.getData()); // ¿ªÊ¼¶ÔÍ¼Æ¬½øĞĞ²Ã¼ô´¦Àí
+				startPhotoZoom(data.getData()); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 				break;
 			case CROP_SMALL_PICTURE:
 				if (data != null) {
-					setImageToView(data); // ÈÃ¸Õ²ÅÑ¡Ôñ²Ã¼ôµÃµ½µÄÍ¼Æ¬ÏÔÊ¾ÔÚ½çÃæÉÏ
+					setImageToView(data); // è®©åˆšæ‰é€‰æ‹©è£å‰ªå¾—åˆ°çš„å›¾ç‰‡æ˜¾ç¤ºåœ¨ç•Œé¢ä¸Š
 				}
 				break;
 			}
@@ -1626,7 +1626,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	}
 	
 	/**
-	 * ²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ
+	 * è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°
 	 * 
 	 * @param uri
 	 */
@@ -1635,15 +1635,15 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 			Log.i("tag", "The uri is not exist.");
 		}
 		tempUri = uri;
-//		System.out.println("²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ================"+tempUri);
+//		System.out.println("è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°================"+tempUri);
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(uri, "image/*");
-		// ÉèÖÃ²Ã¼ô
+		// è®¾ç½®è£å‰ª
 		intent.putExtra("crop", "true");
-		// aspectX aspectY ÊÇ¿í¸ßµÄ±ÈÀı
+		// aspectX aspectY æ˜¯å®½é«˜çš„æ¯”ä¾‹
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// outputX outputY ÊÇ²Ã¼ôÍ¼Æ¬¿í¸ß
+		// outputX outputY æ˜¯è£å‰ªå›¾ç‰‡å®½é«˜
 		intent.putExtra("outputX", 300);
 		intent.putExtra("outputY", 300);
 		intent.putExtra("return-data", true);
@@ -1651,7 +1651,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	}
 	
 	public void saveBitmapFile(Bitmap bitmap){
-        File file=new File("/mnt/sdcard/pic/01.jpg");//½«Òª±£´æÍ¼Æ¬µÄÂ·¾¶
+        File file=new File("/mnt/sdcard/pic/01.jpg");//å°†è¦ä¿å­˜å›¾ç‰‡çš„è·¯å¾„
         try {
                 BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
@@ -1664,7 +1664,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 }
 	
 	/**
-	 * ±£´æ²Ã¼ôÖ®ºóµÄÍ¼Æ¬Êı¾İ
+	 * ä¿å­˜è£å‰ªä¹‹åçš„å›¾ç‰‡æ•°æ®
 	 * 
 	 * @param
 	 * 
@@ -1674,9 +1674,9 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		Bundle extras = data.getExtras();
 		photo = extras.getParcelable("data");
 		if (extras != null) {
-//			photo = Utils.toRoundBitmap(photo, tempUri); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
-			System.out.println("Í¼Æ¬µÄÖµ1================="+photo);
-			System.out.println("Í¼Æ¬µÄÖµ2================="+tempUri);
+//			photo = Utils.toRoundBitmap(photo, tempUri); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
+			System.out.println("å›¾ç‰‡çš„å€¼1================="+photo);
+			System.out.println("å›¾ç‰‡çš„å€¼2================="+tempUri);
 			networkImage.setImageBitmap(photo);
 			try {
 				imagePath = Utils.savePhoto(photo, Environment.getExternalStorageDirectory().getAbsolutePath(), 
@@ -1692,11 +1692,11 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							SimpleDateFormat f = new SimpleDateFormat("yyyyMMddHHmmssSSS");  
 			                time = f.format(new Date());  
 			                yth = MainFragmentContent4.yth;
-			                String remotePathTmp = "phone/" + "" + yth +"";//Â·¾¶
+			                String remotePathTmp = "phone/" + "" + yth +"";//è·¯å¾„
 							System.out.println("========================"+remotePathTmp);
 							
 							try {
-								client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+								client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 							} catch (Exception e) {
 					                e.printStackTrace();
 							} finally {
@@ -1721,12 +1721,12 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							System.out.println("tupian1--------------------------"+tupian);
 
 						} catch (IllegalStateException e) {
-							e.printStackTrace();//·Ç·¨×´Ì¬Òì³£
+							e.printStackTrace();//éæ³•çŠ¶æ€å¼‚å¸¸
 						}
 						catch (FTPIllegalReplyException e) {
-							e.printStackTrace();//·Ç·¨»Ø¸´Òì³£
+							e.printStackTrace();//éæ³•å›å¤å¼‚å¸¸
 						} catch (FTPException e) {
-							e.printStackTrace();//Òì³£
+							e.printStackTrace();//å¼‚å¸¸
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -1744,14 +1744,14 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		}
 	
 	
-	//´´½¨É¾³ı·½·¨£º 
+	//åˆ›å»ºåˆ é™¤æ–¹æ³•ï¼š 
 	public void clearData() { 
 //		spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 		spPreferences.edit().clear().commit(); 
 	   } 
 	
 	/**
-	 * µÚ0¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬0ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list() {
 	   list = new ArrayList<MyOrderData>();
@@ -1762,7 +1762,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=========Êı¾İ½Ó¿Ú============"+arg1);
+//								System.out.println("=========æ•°æ®æ¥å£============"+arg1);
 								try {
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
@@ -1793,7 +1793,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	}
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list1() {
 	   list = new ArrayList<MyOrderData>();
@@ -1804,7 +1804,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=========Êı¾İ½Ó¿Ú============"+arg1);
+//								System.out.println("=========æ•°æ®æ¥å£============"+arg1);
 								try {
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
@@ -1839,7 +1839,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	}
 	//18129864981
 	/**
-	 * µÚ2¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬2ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list2() {
 	   list = new ArrayList<MyOrderData>();
@@ -1850,7 +1850,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=========Êı¾İ½Ó¿Ú============"+arg1);
+//								System.out.println("=========æ•°æ®æ¥å£============"+arg1);
 								try {
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
@@ -1885,7 +1885,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		
 	}
 	/**
-	 * µÚ3¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬3ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list3() {
 	   list = new ArrayList<MyOrderData>();
@@ -1896,7 +1896,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=========Êı¾İ½Ó¿Ú============"+arg1);
+//								System.out.println("=========æ•°æ®æ¥å£============"+arg1);
 								try {
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
@@ -1931,7 +1931,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 		
 	}
 	/**
-	 * µÚ4¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬4ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list4() {
 	   list = new ArrayList<MyOrderData>();
@@ -1942,7 +1942,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=========Êı¾İ½Ó¿Ú============"+arg1);
+//								System.out.println("=========æ•°æ®æ¥å£============"+arg1);
 								try {
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
@@ -1977,13 +1977,13 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 	
 	
 	/**
-	 * ÌáÊ¾ÊÇ·ñĞŞ¸ÄÍ·Ïñ
+	 * æç¤ºæ˜¯å¦ä¿®æ”¹å¤´åƒ
 	 */
 //	protected void dialog() {
 //		AlertDialog.Builder builder = new Builder(getActivity());
-//		builder.setMessage("È·ÈÏÒªĞŞ¸ÄÍ¼Æ¬Âğ?");
-//		builder.setTitle("ÌáÊ¾");
-//		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+//		builder.setMessage("ç¡®è®¤è¦ä¿®æ”¹å›¾ç‰‡å—?");
+//		builder.setTitle("æç¤º");
+//		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 //
 //			@Override
 //			public void onClick(DialogInterface dialog, int which) {
@@ -1991,7 +1991,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //			}
 //		});
 //
-//		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+//		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 //
 //			@Override
 //			public void onClick(DialogInterface dialog, int which) {
@@ -2004,7 +2004,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //
 //	private void setImage() {
 //		// TODO Auto-generated method stub
-//		// Ê¹ÓÃintentµ÷ÓÃÏµÍ³Ìá¹©µÄÏà²á¹¦ÄÜ£¬Ê¹ÓÃstartActivityForResultÊÇÎªÁË»ñÈ¡ÓÃ»§Ñ¡ÔñµÄÍ¼Æ¬
+//		// ä½¿ç”¨intentè°ƒç”¨ç³»ç»Ÿæä¾›çš„ç›¸å†ŒåŠŸèƒ½ï¼Œä½¿ç”¨startActivityForResultæ˜¯ä¸ºäº†è·å–ç”¨æˆ·é€‰æ‹©çš„å›¾ç‰‡
 //		Intent getAlbum = new Intent(Intent.ACTION_GET_CONTENT);
 //		getAlbum.setType(IMAGE_TYPE);
 //		startActivityForResult(getAlbum, IMAGE_CODE);
@@ -2014,31 +2014,31 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 //		try {
 //			
-//		if (resultCode != -1) { // ´Ë´¦µÄ RESULT_OK ÊÇÏµÍ³×Ô¶¨ÒåµÃÒ»¸ö³£Á¿
+//		if (resultCode != -1) { // æ­¤å¤„çš„ RESULT_OK æ˜¯ç³»ç»Ÿè‡ªå®šä¹‰å¾—ä¸€ä¸ªå¸¸é‡
 //			Log.e("TAG->onresult", "ActivityResult resultCode error");
 //			return;
 //		}
 //		Bitmap bm = null;
-//		// Íâ½çµÄ³ÌĞò·ÃÎÊContentProviderËùÌá¹©Êı¾İ ¿ÉÒÔÍ¨¹ıContentResolver½Ó¿Ú
+//		// å¤–ç•Œçš„ç¨‹åºè®¿é—®ContentProvideræ‰€æä¾›æ•°æ® å¯ä»¥é€šè¿‡ContentResolveræ¥å£
 //		ContentResolver resolver = getActivity().getContentResolver();
-//		// ´Ë´¦µÄÓÃÓÚÅĞ¶Ï½ÓÊÕµÄActivityÊÇ²»ÊÇÄãÏëÒªµÄÄÇ¸ö
+//		// æ­¤å¤„çš„ç”¨äºåˆ¤æ–­æ¥æ”¶çš„Activityæ˜¯ä¸æ˜¯ä½ æƒ³è¦çš„é‚£ä¸ª
 //		if (requestCode == IMAGE_CODE) {
 //			try {
-//				Uri originalUri = data.getData(); // »ñµÃÍ¼Æ¬µÄuri
+//				Uri originalUri = data.getData(); // è·å¾—å›¾ç‰‡çš„uri
 //				bm = MediaStore.Images.Media.getBitmap(resolver, originalUri);
-//				// ÏÔµÃµ½bitmapÍ¼Æ¬
+//				// æ˜¾å¾—åˆ°bitmapå›¾ç‰‡
 //				System.out.println("bm-------------------------"+bm);
 ////				img_head.setImageBitmap(bm);
-//				// ÕâÀï¿ªÊ¼µÄµÚ¶ş²¿·Ö£¬»ñÈ¡Í¼Æ¬µÄÂ·¾¶£º
+//				// è¿™é‡Œå¼€å§‹çš„ç¬¬äºŒéƒ¨åˆ†ï¼Œè·å–å›¾ç‰‡çš„è·¯å¾„ï¼š
 //				String[] proj = { MediaStore.Images.Media.DATA };
 //				System.out.println("proj-------------------------"+proj);
-//				// ºÃÏñÊÇandroid¶àÃ½ÌåÊı¾İ¿âµÄ·â×°½Ó¿Ú£¬¾ßÌåµÄ¿´AndroidÎÄµµ
+//				// å¥½åƒæ˜¯androidå¤šåª’ä½“æ•°æ®åº“çš„å°è£…æ¥å£ï¼Œå…·ä½“çš„çœ‹Androidæ–‡æ¡£
 //				Cursor cursor = getActivity().managedQuery(originalUri, proj,null, null, null);
-//				// °´ÎÒ¸öÈËÀí½â Õâ¸öÊÇ»ñµÃÓÃ»§Ñ¡ÔñµÄÍ¼Æ¬µÄË÷ÒıÖµ
+//				// æŒ‰æˆ‘ä¸ªäººç†è§£ è¿™ä¸ªæ˜¯è·å¾—ç”¨æˆ·é€‰æ‹©çš„å›¾ç‰‡çš„ç´¢å¼•å€¼
 //				int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//				// ½«¹â±êÒÆÖÁ¿ªÍ· £¬Õâ¸öºÜÖØÒª£¬²»Ğ¡ĞÄºÜÈİÒ×ÒıÆğÔ½½ç
+//				// å°†å…‰æ ‡ç§»è‡³å¼€å¤´ ï¼Œè¿™ä¸ªå¾ˆé‡è¦ï¼Œä¸å°å¿ƒå¾ˆå®¹æ˜“å¼•èµ·è¶Šç•Œ
 //				cursor.moveToFirst();
-//				// ×îºó¸ù¾İË÷ÒıÖµ»ñÈ¡Í¼Æ¬Â·¾¶
+//				// æœ€åæ ¹æ®ç´¢å¼•å€¼è·å–å›¾ç‰‡è·¯å¾„
 //				path = cursor.getString(column_index);
 ////				bm = Utils.toRoundBitmap(bm,originalUri);
 //				System.out.println("path-------------------------"+path);
@@ -2048,7 +2048,7 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //						try {
 ////						SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 //							/**
-////							 * ²Ù×÷FTPÎÄ¼ş
+////							 * æ“ä½œFTPæ–‡ä»¶
 ////							 */
 ////							String directoryname = "/upload/phone/";
 ////							String fileName = "119265199";
@@ -2065,12 +2065,12 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //			                      
 //			                    String reTransmitFolderName = time + "_Folder";  
 //			                    System.out.println("========================"+reTransmitFolderName);
-////							String remotePathTmp = "phone/" + "" + yth + "/" +time+"";//Â·¾¶
-//			                	String remotePathTmp = "phone/" + "" + yth +"";//Â·¾¶
+////							String remotePathTmp = "phone/" + "" + yth + "/" +time+"";//è·¯å¾„
+//			                	String remotePathTmp = "phone/" + "" + yth +"";//è·¯å¾„
 //							System.out.println("========================"+remotePathTmp);
 //
 //							try {
-//								client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+//								client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 //							} catch (Exception e) {
 //					                e.printStackTrace();
 //							} finally {
@@ -2094,16 +2094,16 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //
 //						//String imgUrl, String directoryname, String filename	
 //						} catch (IllegalStateException e) {
-//							e.printStackTrace();//·Ç·¨×´Ì¬Òì³£
+//							e.printStackTrace();//éæ³•çŠ¶æ€å¼‚å¸¸
 //						}
 //						catch (FTPIllegalReplyException e) {
-//							e.printStackTrace();//·Ç·¨»Ø¸´Òì³£
+//							e.printStackTrace();//éæ³•å›å¤å¼‚å¸¸
 //						} catch (FTPException e) {
-//							e.printStackTrace();//Òì³£
+//							e.printStackTrace();//å¼‚å¸¸
 ////						} catch (FTPDataTransferException e) {
-////							e.printStackTrace();//Êı¾İ×ªÒÆÒì³£
+////							e.printStackTrace();//æ•°æ®è½¬ç§»å¼‚å¸¸
 ////						} catch (FTPAbortedException e) {
-////							e.printStackTrace();//Ê§°ÜÒì³£
+////							e.printStackTrace();//å¤±è´¥å¼‚å¸¸
 //						} catch (IOException e) {
 //							e.printStackTrace();
 //						}
@@ -2145,11 +2145,11 @@ public class MainFragmentContent4 extends Fragment implements OnClickListener {
 //					onResume();
 					if (status.equals("y")) {
 //						Toast.makeText(context, info, 200).show();
-						Toast.makeText(context, "ÉÏ´«³É¹¦", 200).show();
-						System.out.println("ÉÏ´«³É¹¦--------------------------");
+						Toast.makeText(context, "ä¸Šä¼ æˆåŠŸ", 200).show();
+						System.out.println("ä¸Šä¼ æˆåŠŸ--------------------------");
 					}else{
 //						Toast.makeText(context, info, 200).show();
-						Toast.makeText(context, "ÉÏ´«Ê§°Ü", 200).show();
+						Toast.makeText(context, "ä¸Šä¼ å¤±è´¥", 200).show();
 					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block

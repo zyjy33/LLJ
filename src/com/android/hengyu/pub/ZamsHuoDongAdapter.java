@@ -77,21 +77,21 @@ public class ZamsHuoDongAdapter extends BaseAdapter {
 		}
 
 		/**
-		 * Àà±ðÑ¡Ïî
+		 * ç±»åˆ«é€‰é¡¹
 		 */
 		try {
 			// System.out.println("List======================"+List.size());
 
-			System.out.println("¸öÊý1======================" + position);
+			System.out.println("ä¸ªæ•°1======================" + position);
 			holder.tv_titel.setText(List.get(position).getCompany_name());
 			holder.tv_category_title.setText(List.get(position).getTitle());
 			holder.tv_time.setText(List.get(position).getStart_time()+"--"+List.get(position).getEnd_time());
 			holder.tv_dizhi.setText(List.get(position).getCategory_title());
 			if (!List.get(position).getSell_price().equals("0.0")) {
-				holder.tv_groupon_price.setText("£¤"+ List.get(position).getSell_price());
+				holder.tv_groupon_price.setText("ï¿¥"+ List.get(position).getSell_price());
 			}
-//			holder.tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
-//			holder.tv_tuan.setText(List.get(position).getPeople() + "ÈËÍÅ");
+//			holder.tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
+//			holder.tv_tuan.setText(List.get(position).getPeople() + "äººå›¢");
 //			holder.tv_anniu.setOnClickListener(new OnClickListener() {
 //
 //				@Override

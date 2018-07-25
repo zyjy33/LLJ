@@ -74,10 +74,10 @@ public class LingjiaAdapter extends BaseAdapter {
 				RealmName.REALM_NAME + "/" + lists.get(position).getImg(),
 				holder.img);
 		holder.text1.setText(lists.get(position).getName());
-		holder.text2.setText(lists.get(position).getPrice()+"‘™+"+lists.get(position).getJifen()+"æ€±“");
-		holder.text3.setText(0+"»À“—π∫¬Ú");
+		holder.text2.setText(lists.get(position).getPrice()+"ÂÖÉ+"+lists.get(position).getJifen()+"ËÅöÂ∏Å");
+		holder.text3.setText(0+"‰∫∫Â∑≤Ë¥≠‰π∞");
 		holder.text4.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG |Paint.ANTI_ALIAS_FLAG);
-		holder.text4.setText(" –≥°º€:"+lists.get(position).getGoods());
+		holder.text4.setText("Â∏ÇÂú∫‰ª∑:"+lists.get(position).getGoods());
 		return view;
 	}
 

@@ -8,11 +8,11 @@ import android.view.View;
 
 /**
  * @author yangyu
- *	功能描述：ViewPager适配器，用来绑定数据和view
+ *	鍔熻兘鎻忚堪锛歏iewPager閫傞厤鍣紝鐢ㄦ潵缁戝畾鏁版嵁鍜寁iew
  */
 public class ViewPagerAdapter extends PagerAdapter {
 	
-	//界面列表
+	//鐣岄潰鍒楄〃
     private ArrayList<View> views;
     
     public ViewPagerAdapter (ArrayList<View> views){
@@ -20,7 +20,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
        
 	/**
-	 * 获得当前界面�?
+	 * 鑾峰緱褰撳墠鐣岄潰鏁?
 	 */
 	@Override
 	public int getCount() {
@@ -31,7 +31,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 	}
 
 	/**
-	 * 初始化position位置的界�?
+	 * 鍒濆鍖杙osition浣嶇疆鐨勭晫闈?
 	 */
     @Override
     public Object instantiateItem(View view, int position) {
@@ -42,7 +42,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     }
     
     /**
-	 * 判断是否由对象生成界�?
+	 * 鍒ゆ柇鏄惁鐢卞璞＄敓鎴愮晫闈?
 	 */
 	@Override
 	public boolean isViewFromObject(View view, Object arg1) {
@@ -50,7 +50,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 	}
 
 	/**
-	 * �?毁position位置的界�?
+	 * 閿?姣乸osition浣嶇疆鐨勭晫闈?
 	 */
     @Override
     public void destroyItem(View view, int position, Object arg2) {

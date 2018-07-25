@@ -76,7 +76,7 @@ public class ComboListActivity extends BaseActivity implements
 	};
 
 	/**
-	 * ³õÊ¼»¯Êı¾İ
+	 * åˆå§‹åŒ–æ•°æ®
 	 */
 	private void init() {
 		utils = new SharedUtils(getApplicationContext(), "locals");
@@ -95,7 +95,7 @@ public class ComboListActivity extends BaseActivity implements
 			}
 		});
 		/**
-		 * ´´½¨
+		 * åˆ›å»º
 		 */
 		spinner_item1 = (RelativeLayout) findViewById(R.id.spinner_item1);
 		spinner_item2 = (RelativeLayout) findViewById(R.id.spinner_item2);
@@ -139,7 +139,7 @@ public class ComboListActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ¹ØÓÚµ¯³ö´°¿Ú
+	 * å…³äºå¼¹å‡ºçª—å£
 	 */
 	private void initPopupWindow() {
 		mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -147,13 +147,13 @@ public class ComboListActivity extends BaseActivity implements
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.title_tip));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -184,14 +184,14 @@ public class ComboListActivity extends BaseActivity implements
 				}
 			}
 		});
-		// ×ÓÀà
+		// å­ç±»
 	}
 
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAsDropDown(spinner_item1);
@@ -199,7 +199,7 @@ public class ComboListActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ¹ØÓÚµ¯³ö´°¿Ú
+	 * å…³äºå¼¹å‡ºçª—å£
 	 */
 	private void initPopupWindowCity() {
 		mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -207,13 +207,13 @@ public class ComboListActivity extends BaseActivity implements
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.title_tip));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -244,10 +244,10 @@ public class ComboListActivity extends BaseActivity implements
 				}
 			}
 		});
-		// ×ÓÀà
+		// å­ç±»
 	}
 	/**
-	 * Á¬½ÓÍøÂ·¼ÓÔØÊı¾İ
+	 * è¿æ¥ç½‘è·¯åŠ è½½æ•°æ®
 	 */
 	private void loadData() {
 		RequestParams params = new RequestParams();
@@ -260,7 +260,7 @@ public class ComboListActivity extends BaseActivity implements
 		 * &longitude=113.932174
 		 */
 		params.put("category_name", getIntent().getStringExtra("tag"));
-		params.put("city", "·ğÉ½");
+		params.put("city", "ä½›å±±");
 		params.put("StartIndex", String.valueOf(CURRENT_NUM));
 		params.put("Count", String.valueOf(VIEW_NUM));
 		params.put("latitude", utils.getStringValue("lat"));
@@ -276,12 +276,12 @@ public class ComboListActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ½âÎöÁĞ±íÎÄ×ÖÊı¾İ
+	 * è§£æåˆ—è¡¨æ–‡å­—æ•°æ®
 	 * @param result
 	 * @return
 	 */
 	private void parseListData(String result) {
-		// Toast.makeText(getApplicationContext(), "ÇëÇóÍøÂç->¿ªÊ¼Î»ÖÃ:"+CURRENT_NUM,
+		// Toast.makeText(getApplicationContext(), "è¯·æ±‚ç½‘ç»œ->å¼€å§‹ä½ç½®:"+CURRENT_NUM,
 		// 200).show();
 		try {
 			JSONObject jsonObject = new JSONObject(result);
@@ -325,8 +325,8 @@ public class ComboListActivity extends BaseActivity implements
 	private void showPopupWindowCity(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAsDropDown(spinner_item1);
@@ -340,7 +340,7 @@ public class ComboListActivity extends BaseActivity implements
 	private void onLoad() {
 		combo_list_layout.stopRefresh();
 		combo_list_layout.stopLoadMore();
-		combo_list_layout.setRefreshTime("¸Õ¸Õ");
+		combo_list_layout.setRefreshTime("åˆšåˆš");
 	}
 	@Override
 	public void onRefresh() {

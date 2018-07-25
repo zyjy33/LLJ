@@ -14,7 +14,7 @@ import com.hengyushop.demo.wec.MyGridView;
 import com.lelinju.www.R;
 
 /**
- * @Description:gridviewµÄAdapter
+ * @Description:gridviewçš„Adapter
  * @author http://blog.csdn.net/finddreams
  */
 public class GuigeListlAdapter extends BaseAdapter {

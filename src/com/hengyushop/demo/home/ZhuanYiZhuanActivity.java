@@ -45,7 +45,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.lelinju.www.JulsActivity;
 import com.lelinju.www.R;
 /**
- * ×ªÒ»×ª³é½±
+ * è½¬ä¸€è½¬æŠ½å¥–
  * @author Administrator
  *
  */
@@ -132,7 +132,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 //					if (jifen >= 10) {
 //						mLuckyPan.luckyStart(num);
 //						mStartBtn.setImageResource(R.drawable.stop);
-//						System.out.println("¿ªÊ¼-----------------------------------");
+//						System.out.println("å¼€å§‹-----------------------------------");
 						getjiangxiang(login_sign);
 					
 //						Intent intent = new Intent(ZhuanYiZhuanActivity.this,ZyZTiShiActivity.class);
@@ -141,7 +141,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 //	   					startActivity(intent);
 						
 //					}else {
-//						Toast.makeText(ZhuanYiZhuanActivity.this, "Äú»¹²»¹»10¸ö¾Û±Ò", 200).show();
+//						Toast.makeText(ZhuanYiZhuanActivity.this, "æ‚¨è¿˜ä¸å¤Ÿ10ä¸ªèšå¸", 200).show();
 //					}
 				} else {
 					if (!mLuckyPan.isShouldEnd()) {
@@ -150,7 +150,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 						type = true;
 //						userloginqm();
 //						getjiangxiang(login_sign);
-						System.out.println("Í£Ö¹-----------------------------------");
+						System.out.println("åœæ­¢-----------------------------------");
 					}
 				}
 			}
@@ -185,7 +185,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 ////		start.setOnClickListener(clickListener);
 //		screnWidth = getWindowManager().getDefaultDisplay().getWidth();
 //		/**
-//		 * Ìí¼ÓËæ»úÊı£¬ÖÆ¶¨½±ÏîÊıÁ¿ÎªÉÏÏŞ£¬Ò»°ã³é½±ÖĞÊ²Ã´¶¼ÊÇ·şÎñÆ÷·µ»ØµÄ£¬¿ÉÒÔÔÚÇëÇó·şÎñÆ÷½Ó¿Ú³É¹¦ÔÚÖÆ¶¨×ªÅÌ×ªµ½ÄÇ¸ö½±Ïî
+//		 * æ·»åŠ éšæœºæ•°ï¼Œåˆ¶å®šå¥–é¡¹æ•°é‡ä¸ºä¸Šé™ï¼Œä¸€èˆ¬æŠ½å¥–ä¸­ä»€ä¹ˆéƒ½æ˜¯æœåŠ¡å™¨è¿”å›çš„ï¼Œå¯ä»¥åœ¨è¯·æ±‚æœåŠ¡å™¨æ¥å£æˆåŠŸåœ¨åˆ¶å®šè½¬ç›˜è½¬åˆ°é‚£ä¸ªå¥–é¡¹
 //		 */
 //		layout.post(new Runnable() {
 //
@@ -209,12 +209,12 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 //		getLuckydraw();
 	}
 	
-	//Êä³öĞÒÔË½±ĞÒ½±Ïî
+	//è¾“å‡ºå¹¸è¿å¥–å¹¸å¥–é¡¹
 		private void loadjutoutiao(){
 //			progress.CreateProgress();
 //				String strUrl = RealmName.REALM_NAME_LL+ "/get_lottery_lucky?lottery_id=0";
 			String strUrl = RealmName.REALM_NAME_LL+ "/get_order_lucky_list?datatype=8&top=5";
-//				System.out.println("ÖĞ½±"+strUrl);
+//				System.out.println("ä¸­å¥–"+strUrl);
 				AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 					@Override
 					public void onSuccess(int arg0, String arg1) {
@@ -225,13 +225,13 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				}, null);
 			}
 		
-		//Êä³öĞÒÔË½±ĞÒ½±Ïî
+		//è¾“å‡ºå¹¸è¿å¥–å¹¸å¥–é¡¹
 		private void parse1(String st) {
 			try {
 				JSONObject jsonObject = new JSONObject(st);
 				String status = jsonObject.getString("status");
 				if (status.equals("y")) {
-				System.out.println("ÖĞ½±===================="+st);
+				System.out.println("ä¸­å¥–===================="+st);
 				list_ju = new ArrayList<BeanVo>();
 				org.json.JSONArray jsonArray = jsonObject.getJSONArray("data");
 				for (int i = 0; i < jsonArray.length(); i++) {
@@ -274,7 +274,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				NewDataToast.makeText(getApplicationContext(), mss, false, 0).show();
 				break;
 			case 0:
-//				Toast.makeText(getApplicationContext(), "×¼±¸", 200).show();
+//				Toast.makeText(getApplicationContext(), "å‡†å¤‡", 200).show();
 				claert = new Circleview(ZhuanYiZhuanActivity.this, screnWidth, x, y,handler);
 				layout.addView(claert, layoutW, layoutH);
 				System.out.println(layoutW + "~" + layoutH);
@@ -283,7 +283,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 			case 1:
 				claert.setStopRoter(true);
 				thread = null;
-//				Toast.makeText(getApplicationContext(), "¿ª½±", 200).show();
+//				Toast.makeText(getApplicationContext(), "å¼€å¥–", 200).show();
 //				initPopupWindowTip(circleBean);
 				showPopupWindowTip(circle_tip);
 				start.setEnabled(true);
@@ -300,7 +300,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				claert.setStopRoter(false);
 				break;
 			case 5:
-				//³é½±½á¹û
+				//æŠ½å¥–ç»“æœ
 				FINAL_START = (int)(Math.random()*10);
 				thread.start();
 				int place1 =FINAL_START;
@@ -310,10 +310,10 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				
 				circleBean = (CircleBean) msg.obj;
 				if(circleBean.getPrizeTypeID().equals("1")){
-					//ÉÌÆ·
+					//å•†å“
 					
 				}else {
-					//»ı·Ö
+					//ç§¯åˆ†
 					
 				}
 				break;
@@ -336,10 +336,10 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				break;
 			case R.id.begin_btn:
 				try {
-				Toast.makeText(ZhuanYiZhuanActivity.this, "×ªÒ»×ª", 200).show();
+				Toast.makeText(ZhuanYiZhuanActivity.this, "è½¬ä¸€è½¬", 200).show();
 //				System.out.println();
 				start.setEnabled(false);
-				FINAL_START = -1;//ÖØÖÃ
+				FINAL_START = -1;//é‡ç½®
 				
 				FINAL_START = (int)(Math.random()*10);
 				thread.start();
@@ -355,7 +355,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				if(yth.length()!=0){
 				Map<String, String> params = new HashMap<String, String>();
 				params.put("yth", yth);
-				params.put("luckDrawSetName", "×ª°¡×ª");
+				params.put("luckDrawSetName", "è½¬å•Šè½¬");
 				params.put("act", "GetLuckDrawResult");
 				AsyncHttp.post_1(RealmName.REALM_NAME+"/mi/getData.ashx", params, new AsyncHttpResponseHandler(){
 					public void onSuccess(int arg0, String arg1) {
@@ -364,8 +364,8 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 							JSONObject jsonObject = new JSONObject(arg1);
 							String status = jsonObject.getString("status");
 							if(status.equals("1")){
-								//ÕıÈ·£¬¿ªÊ¼´¦Àí
-							String PrizeTypeID = 	jsonObject.getString("PrizeTypeID");//1.ÉÌÆ·£¬2.±íÊ¾»ı·Ö
+								//æ­£ç¡®ï¼Œå¼€å§‹å¤„ç†
+							String PrizeTypeID = 	jsonObject.getString("PrizeTypeID");//1.å•†å“ï¼Œ2.è¡¨ç¤ºç§¯åˆ†
 							CircleBean bean = new CircleBean();
 							bean.setLuckDrawSerialNumber(jsonObject.getString("LuckDrawSerialNumber"));
 							bean.setMsg(jsonObject.getString("msg"));
@@ -397,7 +397,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 	};
 
 	/**
-	 * ³é½±¹æÔò
+	 * æŠ½å¥–è§„åˆ™
 	 */
 	private void initPopupWindow() {
 		mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -405,13 +405,13 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -433,28 +433,28 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 		}
 	}
 	/**
-	 * ÖĞ½±ÄÚÈİ
+	 * ä¸­å¥–å†…å®¹
 	 */
 	private void initPopupWindowTip(String drawn) {
 		mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 		popView = mLayoutInflater.inflate(R.layout.circle_tip_text, null);
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -512,8 +512,8 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 	private void showPopupWindowTip(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -521,7 +521,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -531,7 +531,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-//						System.out.println("µÇÂ¼Ç©Ãû==================="+arg1);
+//						System.out.println("ç™»å½•ç­¾å==================="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						if (status.equals("y")) {
@@ -554,7 +554,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 	}
 	
 	/**
-	 * Êä³ö³é½±ĞÒ½±Ïî-×ªÒ»×ª
+	 * è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹-è½¬ä¸€è½¬
 	 */
 	private void getjiangxiang(String login_sign) {
 			SharedPreferences spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
@@ -566,11 +566,11 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 //					"/get_lottery_award?user_id="+user_id+"&user_name="+user_name+"&lottery_id=15&sign="+login_sign+"";
 			String strUrlone = RealmName.REALM_NAME_LL + 
 					"/get_article_activity_award?user_id="+user_id+"&user_name="+user_name+"&article_id=10496&sign="+login_sign+"";
-			System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+strUrlone);
+			System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -593,13 +593,13 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 								
 								mLuckyPan.luckyStart(num);
 								mStartBtn.setImageResource(R.drawable.stop);
-								System.out.println("¿ªÊ¼-----------------------------------");
+								System.out.println("å¼€å§‹-----------------------------------");
 						}else{
 							Toast.makeText(ZhuanYiZhuanActivity.this, info, 200).show();
 						}
 						
 						
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî=======id======"+id);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹=======id======"+id);
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -610,25 +610,25 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, ZhuanYiZhuanActivity.this);
 			
 	}
 	
 	/**
-	 * Êä³ö³é½±ÁĞ±í
+	 * è¾“å‡ºæŠ½å¥–åˆ—è¡¨
 	 */
 	private void getjiangxiangxq() {
 		list = new ArrayList<XsgyListData>();
 //			String strUrlone = RealmName.REALM_NAME_LL + "/get_lottery_model?lottery_id=15";
 		String strUrlone = RealmName.REALM_NAME_LL + "/get_article_model?id=10496";
-//			System.out.println("======Êä³ö³é½±ÏêÇé============="+strUrlone);
+//			System.out.println("======è¾“å‡ºæŠ½å¥–è¯¦æƒ…============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ÁĞ±í============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–åˆ—è¡¨============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -658,14 +658,14 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, ZhuanYiZhuanActivity.this);
 			
 	}
 	/**
-	 * Êä³öÄÚÈİ
+	 * è¾“å‡ºå†…å®¹
 	 */
 	private void getguizhe() {
 //		list = new ArrayList<XsgyListData>();
@@ -673,7 +673,7 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ÁĞ±í============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–åˆ—è¡¨============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -703,8 +703,8 @@ public class ZhuanYiZhuanActivity extends BaseActivity {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			},getApplicationContext());
 			

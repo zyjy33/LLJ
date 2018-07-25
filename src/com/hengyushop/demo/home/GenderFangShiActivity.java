@@ -52,11 +52,11 @@ public class GenderFangShiActivity extends BaseActivity implements OnClickListen
 		tv_nv = (TextView) findViewById(R.id.tv_nv);
 		type = getIntent().getStringExtra("type");
 		if (type.equals("1")) {
-			tv_nan.setText("ÄĞ");
-			tv_nv.setText("Å®");
+			tv_nan.setText("ç”·");
+			tv_nv.setText("å¥³");
 		}else if (type.equals("2")) {
-			tv_nan.setText("ÓÃ»§ÃÜÂë");
-			tv_nv.setText("Ö§¸¶ÃÜÂë");
+			tv_nan.setText("ç”¨æˆ·å¯†ç ");
+			tv_nv.setText("æ”¯ä»˜å¯†ç ");
 		}
 	}
 	
@@ -74,7 +74,7 @@ public class GenderFangShiActivity extends BaseActivity implements OnClickListen
 			case R.id.rl_nan:
 				
 				if (type.equals("1")) {
-					 value = "ÄĞ";
+					 value = "ç”·";
 					 userloginqm();
 				}else if (type.equals("2")) {
 					try {
@@ -92,7 +92,7 @@ public class GenderFangShiActivity extends BaseActivity implements OnClickListen
 				break;
 			case R.id.rl_nv:
 					if (type.equals("1")) {
-						 value = "Å®";
+						 value = "å¥³";
 						 userloginqm();
 					}else if (type.equals("2")) {
 						try {
@@ -116,7 +116,7 @@ public class GenderFangShiActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -143,7 +143,7 @@ public class GenderFangShiActivity extends BaseActivity implements OnClickListen
 			}, null);
 	}
 	/**
-	 * ĞŞ¸ÄêÇ³Æ
+	 * ä¿®æ”¹æ˜µç§°
 	 * @param login_sign 
 	 * @param payment_id 
 	 */

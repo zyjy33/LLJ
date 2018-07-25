@@ -32,13 +32,13 @@ public class OneResultActivity extends BaseActivity{
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case 1:
-				//¹ØÓÚÊı¾İ·ÃÎÊ³É¹¦Ö®ºó·µ»ØµÄĞÅÏ¢
+				//å…³äºæ•°æ®è®¿é—®æˆåŠŸä¹‹åè¿”å›çš„ä¿¡æ¯
 				  ArrayList<OneResultBean> lists = (ArrayList<OneResultBean>) msg.obj;
 				resultAdapter.putData(lists);
 				//AnnouncedTime
-				jiexiao.setText("½ØÖ¹½ÒÏşÊ±¼ä¡¾"+AnnouncedTime+"¡¿");
+				jiexiao.setText("æˆªæ­¢æ­æ™“æ—¶é—´ã€"+AnnouncedTime+"ã€‘");
 				//
-				jiexiaoj.setText("×îºó"+lists.size()+"ÌõÈ«Õ¾¹ºÂòÊ±¼ä¼ÇÂ¼");
+				jiexiaoj.setText("æœ€å"+lists.size()+"æ¡å…¨ç«™è´­ä¹°æ—¶é—´è®°å½•");
 				break;
 			default:
 				break;
@@ -71,8 +71,8 @@ public class OneResultActivity extends BaseActivity{
 		params.put("productItemId", getIntent().getStringExtra("id"));
 		params.put("luckDrawBatchOrderNumber", "1");
 		*/
-		//mi/getdata.ashx?act=GetLuckReleaseRecords&yth=test»òÎª¿Õ&ProductItemId=1&LuckDrawBatchOrderNumber=ÒÑ½áÊøµÄ³é½±
-		//mi/getdata.ashx?act=GetLuckYiYuanJuGouAnnounceRecords&yth=test»òÎª¿Õ&ProductItemId=1
+		//mi/getdata.ashx?act=GetLuckReleaseRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1&LuckDrawBatchOrderNumber=å·²ç»“æŸçš„æŠ½å¥–
+		//mi/getdata.ashx?act=GetLuckYiYuanJuGouAnnounceRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1
 		AsyncHttp.post_1(RealmName.REALM_NAME+"/mi/getdata.ashx", params, new AsyncHttpResponseHandler(){
 			@Override
 			public void onSuccess(int arg0, String arg1) {
@@ -107,6 +107,6 @@ public class OneResultActivity extends BaseActivity{
 				}
 			}
 		});
-		//mi/getdata.ashx?act=GetLuckReleaseRecords&yth=test»òÎª¿Õ&ProductItemId=1&LuckDrawBatchOrderNumber=ÒÑ½áÊøµÄ³é½±
+		//mi/getdata.ashx?act=GetLuckReleaseRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1&LuckDrawBatchOrderNumber=å·²ç»“æŸçš„æŠ½å¥–
 	}
 }

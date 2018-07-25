@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * ÉÌÆ·ÏêÇé2
+ * å•†å“è¯¦æƒ…2
  * 
  * @author http://yecaoly.taobao.com
  */
@@ -35,7 +35,7 @@ public class Cart_F extends Fragment implements OnClickListener {
 
 	private void initView(View view) {
 		
-//		((TextView) view.findViewById(R.id.tv_top_txtTitle)).setText("ÎÒµÄ¹ºÎï³µ");
+//		((TextView) view.findViewById(R.id.tv_top_txtTitle)).setText("æˆ‘çš„è´­ç‰©è½¦");
 
 		bt_cart_all = (TextView) view.findViewById(R.id.bt_cart_all);
 		bt_cart_low = (TextView) view.findViewById(R.id.bt_cart_low);
@@ -104,20 +104,20 @@ public class Cart_F extends Fragment implements OnClickListener {
 		}
 	}
 
-	/** Ìí¼ÓFragment **/
+	/** æ·»åŠ Fragment **/
 	public void addFragment(Fragment fragment) {
 		FragmentTransaction ft = this.getFragmentManager().beginTransaction();
 		ft.add(R.id.show_cart_view, fragment);
 		ft.commitAllowingStateLoss();
 	}
-	/** É¾³ıFragment **/
+	/** åˆ é™¤Fragment **/
 //	public void removeFragment(Fragment fragment) {
 //		FragmentTransaction ft = this.getFragmentManager().beginTransaction();
 //		ft.remove(fragment);
 //		ft.commitAllowingStateLoss();
 //	}
 
-	/** ÏÔÊ¾Fragment **/
+	/** æ˜¾ç¤ºFragment **/
 	public void showFragment(Fragment fragment) {
 		FragmentTransaction ft = this.getFragmentManager().beginTransaction();
 		if (allBaby_F != null) {

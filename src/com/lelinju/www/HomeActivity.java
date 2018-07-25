@@ -113,7 +113,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.hengyu_home, null);
-		//ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+		//åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //        Thread.setDefaultUncaughtExceptionHandler(this);
 		tv1 = (EditText) layout.findViewById(R.id.tv1);
 //		tv1.getBackground().setAlpha(50);
@@ -144,7 +144,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
                 // TODO Auto-generated method stub  
                 if(arg1 == EditorInfo.IME_ACTION_SEARCH)  
                 {  
-//                    Toast.makeText(getActivity(),"ºÇºÇ",Toast.LENGTH_SHORT).show();  
+//                    Toast.makeText(getActivity(),"å‘µå‘µ",Toast.LENGTH_SHORT).show();  
                     // search pressed and perform your functionality.  
     				Intent intent = new Intent(getActivity(), SouSuoSpActivity.class);
     				String strwhere_zhi = tv1.getText().toString().trim(); 
@@ -164,7 +164,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 		wareDao = new WareDao(getActivity());
 		DisplayMetrics dm = new DisplayMetrics();
 		getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-		screenHeight = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		screenHeight = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		
 		initLayout(layout);
 		loadWeather();
@@ -177,21 +177,21 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 //	public void onCreate(Bundle savedInstanceState) {
 //		// TODO Auto-generated method stub
 //		super.onCreate(savedInstanceState);
-//		 //ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+//		 //åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //        Thread.setDefaultUncaughtExceptionHandler(this);
 //	}
 //	public void uncaughtException(Thread arg0, Throwable arg1) {
 //		// TODO Auto-generated method stub
-//		 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//		 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //        Log.i("AAA", "uncaughtException   " + arg1);
 //	}
 	
 //	 @Override  
 //	 public void uncaughtException(Thread thread, Throwable ex) {  
-//	       // ÊÕ¼¯Òì³£ĞÅÏ¢ ²¢ÇÒ·¢ËÍµ½·şÎñÆ÷  
+//	       // æ”¶é›†å¼‚å¸¸ä¿¡æ¯ å¹¶ä¸”å‘é€åˆ°æœåŠ¡å™¨  
 ////	       sendCrashReport(ex);  
-//	       // µÈ´ı°ëÃë  
-//		//ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//	       // ç­‰å¾…åŠç§’  
+//		//åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //         Log.i("AAA", "uncaughtException   " + ex);
 //	       try {  
 //	  
@@ -202,15 +202,15 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 //	           //  
 //	  
 //	       }  
-//	       // ´¦ÀíÒì³£  
+//	       // å¤„ç†å¼‚å¸¸  
 ////	       handleException();  
 //	    }  
 	
-	//¾ÛÍ·Ìõ
+	//èšå¤´æ¡
 	private void loadWeather() {
 		String strUrl = RealmName.REALM_NAME_LL+ "/get_article_category_id_list?channel_name=news&category_id=3" +
 				"&top=10&strwhere=";
-		System.out.println("¾ÛÓÅ»İ"+strUrl);
+		System.out.println("èšä¼˜æƒ "+strUrl);
 		AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 			@Override
 			public void onSuccess(int arg0, String arg1) {
@@ -221,7 +221,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 		}, null);
 	}
 	
-	//¾ÛÍ·Ìõ
+	//èšå¤´æ¡
 	private void parse1(String st) {
 		try {
 			JSONObject jsonObject = new JSONObject(st);
@@ -268,20 +268,20 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 		
 		System.out.println("nickname================="+nickname);
 		if (!nickname.equals("")) {
-			getjianche();//ºóÌ¨¼ì²âÊÇ·ñ°ó¶¨ÊÖ»ú
+			getjianche();//åå°æ£€æµ‹æ˜¯å¦ç»‘å®šæ‰‹æœº
 		}else {
 		    getuserxinxi();
 		}
 		
-//		getTupian();//¹ã¸æÍ¼Æ¬
+//		getTupian();//å¹¿å‘Šå›¾ç‰‡
 		
 //		mAq = new AQuery(getActivity());
-//		mAq.clear();//Çå³ıÊ×Ò³ÄÚ´æ
+//		mAq.clear();//æ¸…é™¤é¦–é¡µå†…å­˜
 		
-//		loadWeather();//¾ÛÍ·Ìõ
-//		load_list();//¾Û¾«²Ê
+//		loadWeather();//èšå¤´æ¡
+//		load_list();//èšç²¾å½©
 		
-		load_P();//¾ÛÓÅ»İ
+		load_P();//èšä¼˜æƒ 
 	}
 	private void getjianche() {
 		// TODO Auto-generated method stub
@@ -308,10 +308,10 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 			String strUrlone = RealmName.REALM_NAME_LL + "/user_oauth_register_0215?nick_name="+nick_name+"&sex="+sex+"&avatar="+headimgurl+"" +
 			"&province=&city=&country=&oauth_name="+oauth_name+"&oauth_access_token="+access_token+"&oauth_unionid="+unionid+"";
 			
-			System.out.println("ÎÒµÄ======11======1======="+strUrlone);
+			System.out.println("æˆ‘çš„======11======1======="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
-					System.out.println("ÎÒµÄ======Êä³ö=====1========"+arg1);
+					System.out.println("æˆ‘çš„======è¾“å‡º=====1========"+arg1);
 					try {
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
@@ -365,9 +365,9 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 								System.out.println("---data.user_name-------------------"+data.user_name);
 								System.out.println("---user_id-------------------"+user_id);
 								
-								if (data.user_name.equals("Î¢ĞÅ")) {
+								if (data.user_name.equals("å¾®ä¿¡")) {
 //									if (data.id.equals("0")) {
-										System.out.println("---Î¢ĞÅ»¹Î´°ó¶¨-------------------");
+										System.out.println("---å¾®ä¿¡è¿˜æœªç»‘å®š-------------------");
 										
 									}else {
 										SharedPreferences spPreferences = getActivity().getSharedPreferences("longuserset", getActivity().MODE_PRIVATE);
@@ -418,18 +418,18 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		// É¨Ò»É¨
+		// æ‰«ä¸€æ‰«
 		 img_user.setOnClickListener(new OnClickListener() {
 		 @Override
 		 public void onClick(View arg0) {
 			 System.out.println("======nickname============="+nickname);
-			 System.out.println("user_name_phone========É¨Ò»É¨========"+user_name_phone);
+			 System.out.println("user_name_phone========æ‰«ä¸€æ‰«========"+user_name_phone);
 				if (!nickname.equals("")) {
 					if (!user_name_phone.equals("")) {
 						Intent Intent2 = new Intent(getActivity(),CaptureActivity.class);
 						startActivity(Intent2);
 					} else {
-//						getjianche();//ºóÌ¨¼ì²âÊÇ·ñ°ó¶¨ÊÖ»ú
+//						getjianche();//åå°æ£€æµ‹æ˜¯å¦ç»‘å®šæ‰‹æœº
 						Intent intent = new Intent(getActivity(), TishiWxBangDingActivity.class);
 						startActivity(intent);
 					}
@@ -487,13 +487,13 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 		};
 	};
 	/**
-	 * ¹ã¸æÍ¼Æ¬
+	 * å¹¿å‘Šå›¾ç‰‡
 	 */
 	private void getTupian() {
 		// TODO Auto-generated method stub
 		try {
 //			if (guanggao_url.equals("")) {
-			//¹ã¸æ¹ö¶¯	
+			//å¹¿å‘Šæ»šåŠ¨	
 			advPager = (MyPosterView) layout.findViewById(R.id.adv_pagerll);
 			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_adbanner_list?advert_id=11",
 					new AsyncHttpResponseHandler() {
@@ -501,7 +501,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 						public void onSuccess(int arg0, String arg1) {
 							super.onSuccess(arg0, arg1);
 							try {
-								System.out.println("¼ÓÔØ¹ö¶¯¹ã¸æ================="+arg1);
+								System.out.println("åŠ è½½æ»šåŠ¨å¹¿å‘Š================="+arg1);
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");
 								if (status.equals("y")) {
@@ -544,8 +544,8 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 	private void initLayout(View layout) {
 		try {
 //		if (guanggao_url.equals("")) {
-//			System.out.println("¼ÓÔØ¹ö¶¯¹ã¸æ=================");
-		//¹ã¸æ¹ö¶¯	
+//			System.out.println("åŠ è½½æ»šåŠ¨å¹¿å‘Š=================");
+		//å¹¿å‘Šæ»šåŠ¨	
 		advPager = (MyPosterView) layout.findViewById(R.id.adv_pagerll);
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_adbanner_list?advert_id=11",
@@ -554,7 +554,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 					public void onSuccess(int arg0, String arg1) {
 						super.onSuccess(arg0, arg1);
 						try {
-							System.out.println("¼ÓÔØ¹ö¶¯¹ã¸æ================="+arg1);
+							System.out.println("åŠ è½½æ»šåŠ¨å¹¿å‘Š================="+arg1);
 							JSONObject object = new JSONObject(arg1);
 							JSONArray array = object.getJSONArray("data");
 							int len = array.length();
@@ -581,7 +581,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 		
 //		}
 		
-		//¾ÛÍ·Ìõ
+		//èšå¤´æ¡
 		mytaobao = (ScrollTopView) layout.findViewById(R.id.mytaobao);
 		ll_jutoutiao = (LinearLayout) layout.findViewById(R.id.ll_jutoutiao);
 		
@@ -606,7 +606,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 			
 		}
 	});
-		//ĞÂÊÖ×¨ÏíÌØ»İ
+		//æ–°æ‰‹ä¸“äº«ç‰¹æƒ 
 		iv_xsgl = (ImageView) layout.findViewById(R.id.iv_xsgl);//get_article_page_size_list
 		iv_xsgl.setBackgroundResource(R.drawable.xxzxyh);
 		
@@ -780,7 +780,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 				// TODO Auto-generated method stub
 				switch (arg1.getAction()) {
 				case MotionEvent.ACTION_MOVE:
-					System.out.println("»¬¶¯" + arg0.getScrollY());
+					System.out.println("æ»‘åŠ¨" + arg0.getScrollY());
 					 if (arg0.getScrollY() <= 1) {
 						 img_user.setBackgroundResource(R.drawable.saoyisao);
 						 img_shared.setBackgroundResource(R.drawable.home_fx);
@@ -826,7 +826,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 
 		public void dispatchMessage(android.os.Message msg) {
 			switch (msg.what) {
-			case 20://¾ÛÓÅ·»
+			case 20://èšä¼˜åŠ
 				try {
 //				Intent intent20 = new Intent(getActivity(),ComboMainActivity.class);
 				Intent intent20 = new Intent(getActivity(),JuYouFangActivity.class);
@@ -836,7 +836,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 					e.printStackTrace();
 				}
 				break;
-			case 21://¾Û¶Ò»»
+			case 21://èšå…‘æ¢
 //				Intent intent221 = new Intent(getActivity(),LingjiaActivity.class);
 				try {
 //					Intent intent221 = new Intent(getActivity(),JuDuiHuanActivity.class);
@@ -887,15 +887,15 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 			e.printStackTrace();
 		}
 				break;
-			case 111://½¡¿µ¹İ
-//				Toast.makeText(getActivity(), "¹¦ÄÜÕıÔÚÍêÉÆ", 200).show();
+			case 111://å¥åº·é¦†
+//				Toast.makeText(getActivity(), "åŠŸèƒ½æ­£åœ¨å®Œå–„", 200).show();
 //				Intent intent111 = new Intent(getActivity(), OneBuyActivity.class);
 				Intent intent111 = new Intent(getActivity(), HealthGunaActivity.class);
 				startActivity(intent111);
 				break;
-			case 43://×¬¾Û±Ò
+			case 43://èµšèšå¸
 				try {
-//				Toast.makeText(getActivity(), "¹¦ÄÜÕıÔÚÍêÉÆ", 200).show();
+//				Toast.makeText(getActivity(), "åŠŸèƒ½æ­£åœ¨å®Œå–„", 200).show();
 				Intent intent43 = new Intent(getActivity(),TuiGuang2Activity.class);
 				startActivity(intent43);
 				
@@ -904,11 +904,11 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 					e.printStackTrace();
 				}
 				break;
-			case 11://¾ÛÔÆÉÌ
+			case 11://èšäº‘å•†
 				try {
 				Intent intent11 = new Intent(getActivity(),JuYunshangActivity.class);
 				startActivity(intent11);
-//				Toast.makeText(getActivity(), "¹¦ÄÜÕıÔÚÍêÉÆ", 200).show();
+//				Toast.makeText(getActivity(), "åŠŸèƒ½æ­£åœ¨å®Œå–„", 200).show();
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
@@ -993,36 +993,36 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 				int len = datas.size();
 				if (len > 0) {
 					try {
-					System.out.println("µã»÷ÁË=================");
+					System.out.println("ç‚¹å‡»äº†=================");
 //					imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ datas.get(0).img_url, yh0);
 					mAq.id(yh0).image(RealmName.REALM_NAME_HTTP+datas.get(0).img_url);
 					yh1.setText(datas.get(0).title);
-					yh2.setText("£¤" + datas.get(0).sell_price);
+					yh2.setText("ï¿¥" + datas.get(0).sell_price);
 					// ---
 //					imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ datas.get(1).img_url, yh3);
 					mAq.id(yh3).image(RealmName.REALM_NAME_HTTP+datas.get(1).img_url);
 					yh4.setText(datas.get(1).title);
-					yh5.setText("£¤" + datas.get(1).sell_price);
+					yh5.setText("ï¿¥" + datas.get(1).sell_price);
 					// -
 //					imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ datas.get(2).img_url, yh6);
 					mAq.id(yh6).image(RealmName.REALM_NAME_HTTP+datas.get(2).img_url);
 					yh7.setText(datas.get(2).title);
-					yh8.setText("£¤" + datas.get(2).sell_price);
+					yh8.setText("ï¿¥" + datas.get(2).sell_price);
 					
 //					imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ datas.get(3).img_url, yh16);
 					mAq.id(yh16).image(RealmName.REALM_NAME_HTTP+datas.get(3).img_url);
 					yh17.setText(datas.get(3).title);
-					yh18.setText("£¤" + datas.get(3).sell_price);
+					yh18.setText("ï¿¥" + datas.get(3).sell_price);
 					
 //					imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ datas.get(4).img_url, yh10);
 					mAq.id(yh10).image(RealmName.REALM_NAME_HTTP+datas.get(4).img_url);
 					yh11.setText(datas.get(4).title);
-					yh12.setText("£¤" + datas.get(4).sell_price);
+					yh12.setText("ï¿¥" + datas.get(4).sell_price);
 					
 //					imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ datas.get(5).img_url, yh14);
 					mAq.id(yh14).image(RealmName.REALM_NAME_HTTP+datas.get(5).img_url);
 					yh141.setText(datas.get(5).title);
-					yh142.setText("£¤" + datas.get(5).sell_price);
+					yh142.setText("ï¿¥" + datas.get(5).sell_price);
 					
 					
 					yh_0.setOnClickListener(new OnClickListener() {
@@ -1143,7 +1143,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 			case 14:
 				Intent intent4 = new Intent(getActivity(),
 						MenuAdvertActivity.class);
-				intent4.putExtra("name", "ÈÈÂô°ñµ¥");
+				intent4.putExtra("name", "çƒ­å–æ¦œå•");
 				intent4.putExtra("index", 1);
 				startActivity(intent4);
 				break;
@@ -1177,7 +1177,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 						JifenMainActivity.class);
 				startActivity(intent31);
 				break;
-			// Ò»ÏÂÊÇÔÆÉÌ¾ÛµÄhandler
+			// ä¸€ä¸‹æ˜¯äº‘å•†èšçš„handler
 			case 40:
 				System.out.println("40");
 				Intent intent40 = new Intent(getActivity(),
@@ -1213,7 +1213,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 						TrainHomeActivity.class);
 				startActivity(intent47);
 				break;
-			case 48://ÑøÀÏÒøĞĞ
+			case 48://å…»è€é“¶è¡Œ
 //				Intent intent48 = new Intent(getActivity(), VIPActivity.class);
 				
 //				String user = spPreferences.getString("user", "");
@@ -1257,7 +1257,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 	};
 	
 
-	// ½«°²×°µÄÁÄÌìÈí¼ş´æÖÁSD¿¨ÉÏÃæ
+	// å°†å®‰è£…çš„èŠå¤©è½¯ä»¶å­˜è‡³SDå¡ä¸Šé¢
 	public boolean copyApkFromAssets(Context context, String fileName,
 			String path) {
 		boolean copyIsFinish = false;
@@ -1360,14 +1360,14 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 
 
 	private void load_P() {
-		System.out.println("¼ÓÔØ¾ÛÓÅ»İ================================");
+		System.out.println("åŠ è½½èšä¼˜æƒ ================================");
 			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_article_top_list?channel_name=goods&top=6&strwhere=is_top=1"
 					,new AsyncHttpResponseHandler() {
 					@Override
 					public void onSuccess(int arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-//						System.out.println("ÖµÊÇ¶àÉÙ11===================="+arg1);
+//						System.out.println("å€¼æ˜¯å¤šå°‘11===================="+arg1);
 						parse2(arg1);
 					}
 				}, context);
@@ -1375,7 +1375,7 @@ public class HomeActivity extends Fragment {//implements UncaughtExceptionHandle
 
 	private void parse2(String st) {
 		try {
-//			System.out.println("ÖµÊÇ¶àÉÙ===================="+st);
+//			System.out.println("å€¼æ˜¯å¤šå°‘===================="+st);
 			JSONObject jsonObject = new JSONObject(st);
 			JSONArray jsonArray = jsonObject.getJSONArray("data");
 			ArrayList<WareInformationData> datas = new ArrayList<WareInformationData>();

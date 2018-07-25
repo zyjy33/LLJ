@@ -95,7 +95,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //	}
 	
 	/**
-	 * µ¯³ö¿ò
+	 * å¼¹å‡ºæ¡†
 	 */
 //	private CommomConfrim() {
 //		final Dialog dlg; 
@@ -108,7 +108,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_xiaoshou_guige);
 		try {
-		article_id = getIntent().getStringExtra("id");//ÏêÇéµÄarticle_id	
+		article_id = getIntent().getStringExtra("id");//è¯¦æƒ…çš„article_id	
 		listview_01 = (ListView) findViewById(R.id.listview_01);
 		progress = new DialogProgress(XiaoShouShuXingActivity.this);
 		spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
@@ -119,7 +119,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		loadWeatherll();
 		inter();
 		
-			//²úÆ·¼õÉÙ
+			//äº§å“å‡å°‘
 			market_information_seps_del.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -129,12 +129,12 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 					if (num != 1) {
 						market_information_seps_num.setText(String.valueOf(num - 1));
 					} else {
-						Toast.makeText(context, "²»ÄÜÔÙ¼õÁË", 200).show();
+						Toast.makeText(context, "ä¸èƒ½å†å‡äº†", 200).show();
 					}
 				}
 			});
 
-		//È¡Ïû
+		//å–æ¶ˆ
 		market_information_pop_buy.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -148,7 +148,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			}
 		});
 		
-		//¼ÓÈë¹ºÎï³µ
+		//åŠ å…¥è´­ç‰©è½¦
 				market_information_pop_shopcart
 						.setOnClickListener(new OnClickListener() {
 
@@ -166,31 +166,31 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 										System.out.println("gk_id3=============="+gk_id3);
 									if (xz_pyte.equals("0")) {
 									if (gk_id == 0) {
-										Toast.makeText(context, "ÇëÑ¡Ôñ"+list.get(0).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰æ‹©"+list.get(0).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else if (xz_pyte1.equals("1")){
 									if (gk_id1 == 0) {
-										Toast.makeText(context, "ÇëÑ¡Ôñ"+list.get(1).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰æ‹©"+list.get(1).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else if (xz_pyte2.equals("2")){
 									if (gk_id2 == 0) {
-										Toast.makeText(context, "ÇëÑ¡"+list.get(2).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰"+list.get(2).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else if (xz_pyte3.equals("3")){
 									if (gk_id3 == 0) {
-										Toast.makeText(context, "ÇëÑ¡"+list.get(3).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰"+list.get(3).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else if (xz_pyte4.equals("4")){
 									if (gk_id4 == 0) {
-										Toast.makeText(context, "ÇëÑ¡"+list.get(4).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰"+list.get(4).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else if (xz_pyte5.equals("5")){
 									if (gk_id5 == 0) {
-										Toast.makeText(context, "ÇëÑ¡"+list.get(5).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰"+list.get(5).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else if (xz_pyte6.equals("6")){
 									if (gk_id6 == 0) {
-										Toast.makeText(context, "ÇëÑ¡"+list.get(6).getTitle()+"µÄÊôĞÔ", 200).show();
+										Toast.makeText(context, "è¯·é€‰"+list.get(6).getTitle()+"çš„å±æ€§", 200).show();
 									}
 								}else{
 									    
@@ -201,20 +201,20 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 										   System.out.println("type_wx==============");
 											progress.CreateProgress();
 											String geshu = market_information_seps_num.getText().toString().trim();
-											System.out.println("½á¹ûgoods_id===============1================="+goods_id);
+											System.out.println("ç»“æœgoods_id===============1================="+goods_id);
 											if (JuJingCaiXqActivity.type_spec_item == true) {
-											if (goods_id.equals("")) {//Ã»ÓĞÏúÊÛÊôĞÔ
+											if (goods_id.equals("")) {//æ²¡æœ‰é”€å”®å±æ€§
 												goods_id = JuJingCaiXqActivity.goods_id;
 											}
 											}else {
-												if (goods_id.equals("")) {//Ã»ÓĞÏúÊÛÊôĞÔ
+												if (goods_id.equals("")) {//æ²¡æœ‰é”€å”®å±æ€§
 													goods_id = JuTuanGouXqActivity.goods_id;
 												}
 											}
 											/**
-											 * ¾ÛÍÅÉÌÆ·¼ÓÈë¹ºÎïÇåµ¥
+											 * èšå›¢å•†å“åŠ å…¥è´­ç‰©æ¸…å•
 											 */
-											System.out.println("¾ÛÍÅÉÌÆ·¼ÓÈë¹ºÎïÇåµ¥=============="+geshu);
+											System.out.println("èšå›¢å•†å“åŠ å…¥è´­ç‰©æ¸…å•=============="+geshu);
 											
 										    AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_activity_buy?user_id="+user_id+"&user_name="+user_name+"&user_sign="+login_sign+"&" +
 										    		"article_id="+article_id+"&goods_id="+goods_id+"&quantity="+geshu+"&order_id="+0+"&people="+tuanshu+"",
@@ -228,7 +228,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 														try {
 															JSONObject jsonObject = new JSONObject(arg1);
 															String status = jsonObject.getString("status");
-															System.out.println("¹ºÎïÇåµ¥================"+arg1);
+															System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 															String info = jsonObject.getString("info");
 															if (status.equals("y")) {
 																progress.CloseProgress();
@@ -245,14 +245,14 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 																	intent.putExtra("people",tuanshu);
 																	intent.putExtra("type_wx", "type_wx");
 																	intent.putExtra("type_title", "1");
-																	intent.putExtra("jiekou","1");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+																	intent.putExtra("jiekou","1");//èšç²¾å½©æ¥å£çŠ¶æ€
 																	intent.putExtra("stare", "2");
-																	intent.putExtra("type_jutuan","1");//¾Û¾«²Ê×´Ì¬
+																	intent.putExtra("type_jutuan","1");//èšç²¾å½©çŠ¶æ€
 																	startActivity(intent);
 //																	JuJingCaiXqActivity.fangshi = 0;
 																	finish();
-																	goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
-																	ptye_xs = false;//·µ»Ø²»ÄÜÑ¡Ôñ
+																	goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
+																	ptye_xs = false;//è¿”å›ä¸èƒ½é€‰æ‹©
 //																}
 //																else {
 //																	Intent intent=new Intent(context, JuTuanConfrimActivity.class);
@@ -266,19 +266,19 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //																	intent.putExtra("foreman_name",user_name);
 ////																intent.putExtra("groupon_no", groupon_no);
 //																	intent.putExtra("stare", "2");
-//																	intent.putExtra("type","1");//¾Û¾«²Ê×´Ì¬
-//																	intent.putExtra("jiekou","1");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+//																	intent.putExtra("type","1");//èšç²¾å½©çŠ¶æ€
+//																	intent.putExtra("jiekou","1");//èšç²¾å½©æ¥å£çŠ¶æ€
 //																	intent.putExtra("fx_shuzi","groupon");
-//																 	intent.putExtra("type_wx","type_wx");//Ö§¸¶·½Ê½
+//																 	intent.putExtra("type_wx","type_wx");//æ”¯ä»˜æ–¹å¼
 //																	context.startActivity(intent);
 ////																	JuJingCaiXqActivity.fangshi = 0;
 //																	dlg.dismiss();
-//																	goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
+//																	goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
 //																}
 															}else {
 																progress.CloseProgress();
 																Toast.makeText(XiaoShouShuXingActivity.this, info, 200).show();
-																ptye_xs = false;//·µ»Ø²»ÄÜÑ¡Ôñ
+																ptye_xs = false;//è¿”å›ä¸èƒ½é€‰æ‹©
 															}
 														} catch (JSONException e) {
 															// TODO Auto-generated catch block
@@ -290,11 +290,11 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 													public void onFailure(Throwable arg0, String arg1) {
 														// TODO Auto-generated method stub
 														progress.CloseProgress();
-														System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+														System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 														System.out.println("========================="+arg0);
 														System.out.println("=========================="+arg1);
-														Toast.makeText(XiaoShouShuXingActivity.this, "Òì³£", 200).show();
-//														ptye = false;//·µ»Ø²»ÄÜÑ¡Ôñ
+														Toast.makeText(XiaoShouShuXingActivity.this, "å¼‚å¸¸", 200).show();
+//														ptye = false;//è¿”å›ä¸èƒ½é€‰æ‹©
 														super.onFailure(arg0, arg1);
 													}
 													
@@ -302,7 +302,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 												}, null);
 										}else {
 											System.out.println("==goods_id================================"+goods_id);
-											if (goods_id.equals("")) {//Ã»ÓĞÏúÊÛÊôĞÔ
+											if (goods_id.equals("")) {//æ²¡æœ‰é”€å”®å±æ€§
 												if (JuJingCaiXqActivity.type_xq == true) {
 													goods_id = JuJingCaiXqActivity.goods_id;
 												}else if (JuTuanGouXqActivity.type_xq == true) {
@@ -312,12 +312,12 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 												}
 											}
 											if (WareInformationActivity.fangshi == 2) {
-												//¼ÓÈë¹ºÎï³µ
+												//åŠ å…¥è´­ç‰©è½¦
 												progress.CreateProgress();
 												System.out.println("1================"+article_id);
 												System.out.println("2================"+goods_id);
 												String geshu = market_information_seps_num.getText().toString().trim();
-												System.out.println("¼ÓÈë¹ºÎï³µ=============="+geshu);
+												System.out.println("åŠ å…¥è´­ç‰©è½¦=============="+geshu);
 												AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_shopping_cart?user_id="+user_id+"&user_name="+user_name+
 														"&article_id="+article_id+"&goods_id="+goods_id+"&quantity="+geshu+"",new AsyncHttpResponseHandler() {
 															@Override
@@ -334,7 +334,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 																	Toast.makeText(XiaoShouShuXingActivity.this, info, 200).show();
 																	WareInformationActivity.fangshi = 0;
 																	finish();
-																	goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
+																	goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
 																	}else {
 																		progress.CloseProgress();
 																		Toast.makeText(XiaoShouShuXingActivity.this, info, 200).show();
@@ -348,10 +348,10 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 															@Override
 															public void onFailure(Throwable arg0, String arg1) {
 																// TODO Auto-generated method stub
-																System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+																System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 																System.out.println("========================="+arg0);
 																System.out.println("=========================="+arg1);
-																Toast.makeText(XiaoShouShuXingActivity.this, "Òì³£", 200).show();
+																Toast.makeText(XiaoShouShuXingActivity.this, "å¼‚å¸¸", 200).show();
 																super.onFailure(arg0, arg1);
 															}
 
@@ -360,8 +360,8 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 											    progress.CreateProgress();
 											    System.out.println("WareInformationActivity.fangshi================================"+WareInformationActivity.fangshi);
 											    System.out.println("JuJingCaiXqActivity.type_xq===============3================="+JuJingCaiXqActivity.type_xq);
-//												System.out.println("½á¹ûgoods_id=============2==================="+goods_id);
-//												if (goods_id.equals("")) {//Ã»ÓĞÏúÊÛÊôĞÔ
+//												System.out.println("ç»“æœgoods_id=============2==================="+goods_id);
+//												if (goods_id.equals("")) {//æ²¡æœ‰é”€å”®å±æ€§
 //													if (JuJingCaiXqActivity.type_xq == true) {
 //														goods_id = JuJingCaiXqActivity.goods_id;
 //													}else{
@@ -370,9 +370,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //												}
 												try {
 													String geshu = market_information_seps_num.getText().toString().trim();
-													System.out.println("ÉÌÆ·¼ÓÈë¹ºÎïÇåµ¥=============="+geshu);
+													System.out.println("å•†å“åŠ å…¥è´­ç‰©æ¸…å•=============="+geshu);
 													/**
-													 * ÉÌÆ·¼ÓÈë¹ºÎïÇåµ¥
+													 * å•†å“åŠ å…¥è´­ç‰©æ¸…å•
 													 */
 												AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_shopping_buy?user_id="+user_id+"&user_name="+user_name+"" +
 														"&user_sign="+login_sign+"&article_id="+article_id+"&goods_id="+goods_id+"&quantity="+geshu+"",
@@ -384,7 +384,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 																try {
 																	JSONObject jsonObject = new JSONObject(arg1);
 																	String status = jsonObject.getString("status");
-																	System.out.println("¹ºÎïÇåµ¥================"+arg1);
+																	System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 																	String info = jsonObject.getString("info");
 																	if (status.equals("y")) {
 																		progress.CloseProgress();
@@ -393,7 +393,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 																		String count = obj.getString("count");
 																		Toast.makeText(XiaoShouShuXingActivity.this, info, 200).show();
 																		if (WareInformationActivity.fangshi == 1) {
-																			//ÉÌÆ·Á¢¼´¹ºÂò
+																			//å•†å“ç«‹å³è´­ä¹°
 																		    WareInformationActivity.fangshi = 0;
 																			Intent intent=new Intent(context, MyOrderConfrimActivity.class);
 																			intent.putExtra("buy_no",buy_no);
@@ -401,9 +401,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //																			intent.putExtra("spec_text",spec_text);
 																			startActivity(intent);
 																			finish();
-																			goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
+																			goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
 																		}else if (JuJingCaiXqActivity.type_xq == true){
-																			//¾ÛÍÅÁ¢¼´¹ºÂò
+																			//èšå›¢ç«‹å³è´­ä¹°
 //																			JuJingCaiXqActivity.type_xq = false;
 																			Intent intent=new Intent(XiaoShouShuXingActivity.this, JuTuanConfrimActivity.class);
 //																			intent.putExtra("buy_no",buy_no);
@@ -417,18 +417,18 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 																			intent.putExtra("people",tuanshu);
 																			intent.putExtra("type_wx", "type_wx");
 																			intent.putExtra("type_title", "1");
-																			intent.putExtra("jiekou","1");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+																			intent.putExtra("jiekou","1");//èšç²¾å½©æ¥å£çŠ¶æ€
 																			intent.putExtra("stare", "2");
-																			intent.putExtra("type_jutuan","1");//×´Ì¬
+																			intent.putExtra("type_jutuan","1");//çŠ¶æ€
 																			startActivity(intent);
 																			finish();
 																			
 																			
-																			goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
+																			goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
 																		}else if (JuTuanGouXqActivity.type_xq == true){
 																			try {
 																				
-																			//¾ÛÍÅÁ¢¼´¹ºÂò
+																			//èšå›¢ç«‹å³è´­ä¹°
 																			Intent intent=new Intent(XiaoShouShuXingActivity.this, JuTuanConfrimActivity.class);
 //																			intent.putExtra("buy_no",buy_no);
 //																			intent.putExtra("type_title", "1");
@@ -436,9 +436,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //																			intent.putExtra("spec_text",spec_text);
 																			System.out.println("type_xq================"+getIntent().getStringExtra("type_xq"));
 																			if (getIntent().getStringExtra("type_xq").equals("1")) {
-																				intent.putExtra("jiekou","2");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+																				intent.putExtra("jiekou","2");//èšç²¾å½©æ¥å£çŠ¶æ€
 																			}else {
-																				intent.putExtra("jiekou","3");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+																				intent.putExtra("jiekou","3");//èšç²¾å½©æ¥å£çŠ¶æ€
 																			}
 																			intent.putExtra("price",price);
 																			intent.putExtra("spec_text",spec_text);
@@ -446,22 +446,22 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 																			intent.putExtra("people",tuanshu);
 																			intent.putExtra("type_wx", "type_wx");
 																			intent.putExtra("type_title", "1");
-//																			intent.putExtra("jiekou","2");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+//																			intent.putExtra("jiekou","2");//èšç²¾å½©æ¥å£çŠ¶æ€
 																			intent.putExtra("stare", "2");
-																			intent.putExtra("type_jutuan","1");//×´Ì¬
+																			intent.putExtra("type_jutuan","1");//çŠ¶æ€
 																			startActivity(intent);
 																			finish();
-																			goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
+																			goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
 																			} catch (Exception e) {
 																				// TODO: handle exception
 																				e.printStackTrace();
 																			}
 																		}
 //																		else {
-//																			//¼ÓÈë¹ºÎï³µ
+//																			//åŠ å…¥è´­ç‰©è½¦
 //																			WareInformationActivity.fangshi = 0;
 //																			dlg.dismiss();
-//																			goods_id = "";//¹ºÎïÇåµ¥Ö®ºóÎª¿Õ
+//																			goods_id = "";//è´­ç‰©æ¸…å•ä¹‹åä¸ºç©º
 //																		}
 																	}else {
 																		progress.CloseProgress();
@@ -477,10 +477,10 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 															public void onFailure(Throwable arg0, String arg1) {
 																// TODO Auto-generated method stub
 																progress.CloseProgress();
-																System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+																System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 																System.out.println("========================="+arg0);
 																System.out.println("=========================="+arg1);
-																Toast.makeText(XiaoShouShuXingActivity.this, "Òì³£", 200).show();
+																Toast.makeText(XiaoShouShuXingActivity.this, "å¼‚å¸¸", 200).show();
 																super.onFailure(arg0, arg1);
 															}
 															
@@ -516,15 +516,15 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		market_information_pop_shopcart = (Button)findViewById(R.id.market_information_pop_shopcart);
 		market_information_pop_buy = (Button)findViewById(R.id.market_information_pop_buy);
 //		if (WareInformationActivity.fangshi == 1) {
-//			market_information_pop_shopcart.setText("Á¢¼´¹ºÂò");
+//			market_information_pop_shopcart.setText("ç«‹å³è´­ä¹°");
 //		}else if (JuJingCaiXqActivity.type_xq == true) {
-//			market_information_pop_shopcart.setText("Á¢¼´¹ºÂò");
+//			market_information_pop_shopcart.setText("ç«‹å³è´­ä¹°");
 //		}
 		
 //		else if (JuJingCaiXqActivity.fangshi == 4) {
-//			market_information_pop_shopcart.setText("È·ÈÏ");
+//			market_information_pop_shopcart.setText("ç¡®è®¤");
 //		}
-		// ¹ØÓÚÊıÁ¿
+		// å…³äºæ•°é‡
 		TextView market_information_seps_add = (TextView) findViewById(R.id.market_information_seps_add);
 //		TextView market_information_seps_del = (TextView) layout.findViewById(R.id.market_information_seps_del);
 		market_information_seps_num = (TextView) findViewById(R.id.market_information_seps_num);
@@ -534,17 +534,17 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		
 //		Button market_information_pop_sure = (Button)layout.findViewById(R.id.market_information_pop_sure);
 		System.out.println("JuJingCaiXqActivity.type_xq==================================="+JuJingCaiXqActivity.type_xq);
-		//¾ÛÍÅÏêÇé
+		//èšå›¢è¯¦æƒ…
 		if (JuJingCaiXqActivity.type_xq == true) {
 			ImageLoader imageLoader=ImageLoader.getInstance();
 			imageLoader.displayImage(RealmName.REALM_NAME_HTTP + JuJingCaiXqActivity.img_url,market_information_sep_ico);
-			imageLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+			imageLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 			if (JuJingCaiXqActivity.type_spec_item == true) {
 				tv_guige.setVisibility(View.VISIBLE);
 //				ptye = true;
-				market_information_sep_price.setText("£¤" + JuJingCaiXqActivity.tuangoujia);
+				market_information_sep_price.setText("ï¿¥" + JuJingCaiXqActivity.tuangoujia);
 			}else {
-				market_information_sep_price.setText("£¤" + JuJingCaiXqActivity.sell_price);
+				market_information_sep_price.setText("ï¿¥" + JuJingCaiXqActivity.sell_price);
 			}
 			tuanshu = JuJingCaiXqActivity.tuanshu;
 			price = JuJingCaiXqActivity.tuangoujia;
@@ -552,13 +552,13 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		}else if (JuTuanGouXqActivity.type_xq == true) {
 			ImageLoader imageLoader=ImageLoader.getInstance();
 			imageLoader.displayImage(RealmName.REALM_NAME_HTTP + JuTuanGouXqActivity.img_url,market_information_sep_ico);
-			imageLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+			imageLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 			if (JuTuanGouXqActivity.type_spec_item == true) {
 				tv_guige.setVisibility(View.VISIBLE);
 //				ptye = true;
-				market_information_sep_price.setText("£¤" + JuTuanGouXqActivity.price);
+				market_information_sep_price.setText("ï¿¥" + JuTuanGouXqActivity.price);
 			}else {
-				market_information_sep_price.setText("£¤" + JuTuanGouXqActivity.sell_price);
+				market_information_sep_price.setText("ï¿¥" + JuTuanGouXqActivity.sell_price);
 			}
 			tuanshu = JuTuanGouXqActivity.tuanshu;
 			price = JuTuanGouXqActivity.tuangoujia;
@@ -566,10 +566,10 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		}else{
 		ImageLoader imageLoader=ImageLoader.getInstance();
 		imageLoader.displayImage(RealmName.REALM_NAME_HTTP + WareInformationActivity.proFaceImg,market_information_sep_ico);
-		imageLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+		imageLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 		
 //		market_information_sep_name.setText(WareInformationActivity.proName);
-		market_information_sep_price.setText("£¤" + WareInformationActivity.retailPrice);
+		market_information_sep_price.setText("ï¿¥" + WareInformationActivity.retailPrice);
 		}
 		
 		try {
@@ -591,7 +591,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 	
 	
 	/**
-	 * ½âÎö¹æ¸ñÁĞ±íÊı¾İ
+	 * è§£æè§„æ ¼åˆ—è¡¨æ•°æ®
 	 */
 	private static void loadWeatherll() {
 //		progress.CreateProgress();
@@ -609,7 +609,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 					public void onSuccess(int arg0,String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-//						System.out.println("=====¹æ¸ñÊı¾İ====================="+arg1);
+//						System.out.println("=====è§„æ ¼æ•°æ®====================="+arg1);
 						Message msg = new Message();
 						msg.what = 0;
 						msg.obj = arg1;
@@ -632,7 +632,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //				ArrayList data_shuzu = WareInformationActivity.data_shuzu;
 //				ArrayList data_mrz = WareInformationActivity.data_mrz;
 //				ArrayList data_monney = WareInformationActivity.data_monney;
-//				System.out.println("ÖµÊÇ1============="+data_mrz.size());
+//				System.out.println("å€¼æ˜¯1============="+data_mrz.size());
 //				adapter = new GuiGeListviewAdapter(context,list,data,data1,data2,data_id,data_id1,data_id2,data_shuzu,data_mrz,data_monney, data_monney, data_monney, data_monney, data_monney, data_monney, data_monney, data_monney, data_monney);
 ////				adapter = new GuigeListAdapter(SYBActivity.this,list,data,data1,data2);
 //				listview_01.setAdapter(adapter);
@@ -704,7 +704,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		data_id6 = new ArrayList();
 		list = new ArrayList<GuigeData>();
 		try {
-			System.out.println("=====¹æ¸ñÊı¾İ11====================="+result);
+			System.out.println("=====è§„æ ¼æ•°æ®11====================="+result);
 			JSONObject object = new JSONObject(result);
 //			JSONArray jobt = object.getJSONArray("data");
 //			int lenth = jobt.length();
@@ -745,7 +745,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 	    	    title = objc.getString("title");
 	    		id = objc.getString("id");
 	    		data_id.add(id);
-	    		System.out.println("=====Öµ====================="+title);
+	    		System.out.println("=====å€¼====================="+title);
 	    		data.add(title);
 	    		xz_pyte = "0";
 //	    		adapter1 = new GuigeListlAdapter(SYBActivity.this,data,data_tv);
@@ -757,7 +757,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 	    		if (title != null) {
 	    			list.add(md);
 				}
-	    		System.out.println("list==ÖµÊÇ========0====="+list.size());
+	    		System.out.println("list==å€¼æ˜¯========0====="+list.size());
 				if (JuJingCaiXqActivity.type_spec_item == true) {
 					ptye_xs = true;
 				}else if (JuTuanGouXqActivity.type_xq == true) {
@@ -773,7 +773,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
     	    		title1 = objc.getString("title");
     	    		id1 = objc.getString("id");
     	    		data_id1.add(id1);
-    	    		System.out.println("=====Öµ1====================="+title1);
+    	    		System.out.println("=====å€¼1====================="+title1);
     	    		data1.add(title1);
     	    		xz_pyte1 = "1";
     	    		}
@@ -783,7 +783,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
             	if (title1 != null) {
 	    		list.add(md);
             	}
-            	System.out.println("list==ÖµÊÇ========1====="+list.size());
+            	System.out.println("list==å€¼æ˜¯========1====="+list.size());
 //            	}
     			if (JuJingCaiXqActivity.type_spec_item == true) {
 					ptye_xs = true;
@@ -800,7 +800,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
     	    		title2 = objc.getString("title");
     	    		id2 = objc.getString("id");
     	    		data_id2.add(id2);
-    	    		System.out.println("=====Öµ2====================="+title2);
+    	    		System.out.println("=====å€¼2====================="+title2);
     	    		data2.add(title2);
     	    		xz_pyte2 = "2";
             		} catch (Exception e) {
@@ -814,7 +814,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
             	if (title2 != null) {
 	    		list.add(md);
             	}
-            	System.out.println("list==ÖµÊÇ========2====="+list.size());
+            	System.out.println("list==å€¼æ˜¯========2====="+list.size());
     			if (JuJingCaiXqActivity.type_spec_item == true) {
 					ptye_xs = true;
 				}else if (JuTuanGouXqActivity.type_xq == true) {
@@ -830,7 +830,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
     	    		title3 = objc.getString("title");
     	    		id3 = objc.getString("id");
     	    		data_id3.add(id3);
-    	    		System.out.println("=====Öµ3====================="+title3);
+    	    		System.out.println("=====å€¼3====================="+title3);
     	    		data3.add(title3);
     	    		xz_pyte3 = "3";
     	    		list.add(md);
@@ -860,7 +860,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
     	    		title4 = objc.getString("title");
     	    		id4 = objc.getString("id");
     	    		data_id4.add(id4);
-    	    		System.out.println("=====Öµ4====================="+title4);
+    	    		System.out.println("=====å€¼4====================="+title4);
     	    		data4.add(title4);
     	    		xz_pyte4 = "4";
             		} catch (Exception e) {
@@ -888,7 +888,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
     	    		title5 = objc.getString("title");
     	    		id5 = objc.getString("id");
     	    		data_id5.add(id5);
-    	    		System.out.println("=====Öµ5====================="+title5);
+    	    		System.out.println("=====å€¼5====================="+title5);
     	    		data5.add(title5);
     	    		xz_pyte5 = "5";
             		} catch (Exception e) {
@@ -916,7 +916,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
     	    		title6 = objc.getString("title");
     	    		id6 = objc.getString("id");
     	    		data_id6.add(id6);
-    	    		System.out.println("=====Öµ6====================="+title6);
+    	    		System.out.println("=====å€¼6====================="+title6);
     	    		data6.add(title6);
     	    		xz_pyte6 = "6";
             		} catch (Exception e) {
@@ -956,7 +956,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			listview_01.setVisibility(View.VISIBLE);
 //			handler.sendEmptyMessage(5);
 			try {
-			System.out.println("list==ÖµÊÇ==================================="+list.size());
+			System.out.println("list==å€¼æ˜¯==================================="+list.size());
 			System.out.println("JuJingCaiXqActivity.data_shuzu==================================="+JuJingCaiXqActivity.data_shuzu);
 			System.out.println("JuJingCaiXqActivity.data_monney==================================="+JuJingCaiXqActivity.data_monney);
 			System.out.println("JuJingCaiXqActivity.data_market_price==================================="+JuJingCaiXqActivity.data_market_price);
@@ -967,11 +967,11 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			data_people_1 = new ArrayList();
 			data_price = new ArrayList();
 			data_spec_text = new ArrayList();
-			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 			if (JuJingCaiXqActivity.type_xq == true) {
 				try {
-				data_shuzu = JuJingCaiXqActivity.data_shuzu;//ÏúÊÛÊôĞÔidÆ´½Ó×é
-				data_monney = JuJingCaiXqActivity.data_monney;//ÏúÊÛÊôĞÔ¶ÔÓ¦µÄ¼Û¸ñ
+				data_shuzu = JuJingCaiXqActivity.data_shuzu;//é”€å”®å±æ€§idæ‹¼æ¥ç»„
+				data_monney = JuJingCaiXqActivity.data_monney;//é”€å”®å±æ€§å¯¹åº”çš„ä»·æ ¼
 				data_market_price = JuJingCaiXqActivity.data_market_price;
 				data_goods_id = JuJingCaiXqActivity.data_goods_id;
 				data_people = JuJingCaiXqActivity.data_people;
@@ -985,8 +985,8 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 				}
 			}else if (JuTuanGouXqActivity.type_xq == true) {
 				try {
-				data_shuzu = JuTuanGouXqActivity.data_shuzu;//ÏúÊÛÊôĞÔidÆ´½Ó×é
-				data_monney = JuTuanGouXqActivity.data_monney;//ÏúÊÛÊôĞÔ¶ÔÓ¦µÄ¼Û¸ñ
+				data_shuzu = JuTuanGouXqActivity.data_shuzu;//é”€å”®å±æ€§idæ‹¼æ¥ç»„
+				data_monney = JuTuanGouXqActivity.data_monney;//é”€å”®å±æ€§å¯¹åº”çš„ä»·æ ¼
 				data_market_price = JuTuanGouXqActivity.data_market_price;
 				data_goods_id = JuTuanGouXqActivity.data_goods_id;
 				data_people = JuTuanGouXqActivity.data_people;
@@ -999,16 +999,16 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 					e.printStackTrace();
 				}
 			}else{
-			data_shuzu = WareInformationActivity.data_shuzu;//ÏúÊÛÊôĞÔidÆ´½Ó×é
+			data_shuzu = WareInformationActivity.data_shuzu;//é”€å”®å±æ€§idæ‹¼æ¥ç»„
 //			ArrayList data_mrz = WareInformationActivity.data_mrz;//
-			data_monney = WareInformationActivity.data_monney;//ÏúÊÛÊôĞÔ¶ÔÓ¦µÄ¼Û¸ñ
+			data_monney = WareInformationActivity.data_monney;//é”€å”®å±æ€§å¯¹åº”çš„ä»·æ ¼
 			data_market_price = WareInformationActivity.data_market_price;
 			data_goods_id = WareInformationActivity.data_goods_id;
 			
 			}
 			
-//			System.out.println("ÖµÊÇ1============="+data_shuzu.size());
-//			System.out.println("data_tv==ÖµÊÇ============="+data_tv.size());
+//			System.out.println("å€¼æ˜¯1============="+data_shuzu.size());
+//			System.out.println("data_tv==å€¼æ˜¯============="+data_tv.size());
 			adapter = new GuiGeListviewAdapter(context,list,data,data1,data2,data3,data4,data5,data6,data_id,data_id1,data_id2,
 					data_id3,data_id4,data_id5,data_id6,data_tv,data_shuzu,data_monney,data_market_price,data_goods_id,data_people,
 					data_goods_id_1,data_people_1,data_price,data_spec_text);
@@ -1038,11 +1038,11 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //			progress.CloseProgress();
 //			listview_01.setVisibility(View.VISIBLE);
 ////			handler.sendEmptyMessage(5);
-//			System.out.println("list==ÖµÊÇ============="+list.size());
+//			System.out.println("list==å€¼æ˜¯============="+list.size());
 //			ArrayList data_shuzu = WareInformationActivity.data_shuzu;
 //			ArrayList data_mrz = WareInformationActivity.data_mrz;
 //			ArrayList data_monney = WareInformationActivity.data_monney;
-//			System.out.println("ÖµÊÇ1============="+data_mrz.size());
+//			System.out.println("å€¼æ˜¯1============="+data_mrz.size());
 //			adapter = new GuiGeListviewAdapter(context,list,data,data1,data2,data3,data4,data5,data6,data_id,data_id1,data_id2,
 //					data_id3,data_id4,data_id5,data_id6,data_shuzu,data_mrz,data_monney);
 //			listview_01.setAdapter(adapter);
@@ -1056,7 +1056,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 	}
 	
 	public static void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -1064,18 +1064,18 @@ public class XiaoShouShuXingActivity extends BaseActivity{
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     } 
 	
@@ -1168,7 +1168,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			return 0;
 		}
 		
-		// Ã¿¸öconvert view¶¼»áµ÷ÓÃ´Ë·½·¨£¬»ñµÃµ±Ç°ËùĞèÒªµÄviewÑùÊ½  
+		// æ¯ä¸ªconvert viewéƒ½ä¼šè°ƒç”¨æ­¤æ–¹æ³•ï¼Œè·å¾—å½“å‰æ‰€éœ€è¦çš„viewæ ·å¼  
 	    @Override  
 	    public int getItemViewType(int position) {
 	        int p = position;  
@@ -1242,7 +1242,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 	        	try {
 					
 	        	 inflater = LayoutInflater.from(context);  
-	            // °´µ±Ç°ËùĞèµÄÑùÊ½£¬È·¶¨newµÄ²¼¾Ö  
+	            // æŒ‰å½“å‰æ‰€éœ€çš„æ ·å¼ï¼Œç¡®å®šnewçš„å¸ƒå±€  
 	        	 System.out.println("position==================11==============================="+position);
 	        	 System.out.println("list.get(position).getTitle()==11======="+list.get(position).getTitle());
 	            switch (type) {  
@@ -1341,7 +1341,7 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 	            }  
 	        }
 	        
-	        // ÉèÖÃ×ÊÔ´  
+	        // è®¾ç½®èµ„æº  
 	        switch (type) {
 	        
 	        case TYPE_1:  
@@ -1364,13 +1364,13 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	MyAdapter.notifyDataSetChanged();
 		            	id = (String)data_id.get(arg2);
 		            	gk_id = Integer.parseInt(id);
-		            	xz_pyte = "0_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
+		            	xz_pyte = "0_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
 //		            	String zhi = (String)data_mrz.get(arg2);
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ====="+id);
-//		            	System.out.println("Öµ========="+data_shuzu.get(arg2));
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯====="+id);
+//		            	System.out.println("å€¼========="+data_shuzu.get(arg2));
 		            	String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 //		            	if (data.size() > 0) {
 //		            		spec_ids  = ","+id+",";
 //						}else if (data1.size() > 0){
@@ -1403,11 +1403,11 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 							spec_ids  = ","+id+",";
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
-		            	 System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
+		            	 System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
 		            	 System.out.println("data_shuzu.get(arg2)========="+data_shuzu.get(arg2));
 		            	 if (spec_ids.equals(data_shuzu.get(arg2))) {
 		            			System.out.println("JuJingCaiXqActivity.type_spec_item=================1=================="+JuJingCaiXqActivity.type_spec_item);
-		            			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		            			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 				     			if (JuJingCaiXqActivity.type_spec_item == true) {
 				     				System.out.println("arg2====================="+arg2);
 				     				System.out.println("tuanshu====================="+tuanshu);
@@ -1423,28 +1423,28 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 						     				 System.out.println("data_people_1.get(i)========="+data_people_1.get(i));
 						     				goods_id = (String)data_goods_id_1.get(i);
 				     						price = (String)data_price.get(i);
-				     						System.out.println("¼Û¸ñprice====1====="+price);
-					     					market_information_sep_price.setText("£¤" + price);
+				     						System.out.println("ä»·æ ¼price====1====="+price);
+					     					market_information_sep_price.setText("ï¿¥" + price);
 					     					spec_text = (String)data_spec_text.get(arg2);
 					     					System.out.println("spec_text=====1====="+spec_text);
-					     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+					     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 										}
 									}
 //					     				if (data_people.get(arg2).equals(data_people_1.get(arg2))) {
 //						     			if (data_goods_id.get(arg2).equals(data_goods_id_1.get(arg2)) && data_people.get(arg2).equals(data_people_1.get(arg2))) {
 //				     					String price = (String)data_price.get(arg2);
-//				     					System.out.println("¼Û¸ñprice====1====="+price);
+//				     					System.out.println("ä»·æ ¼price====1====="+price);
 //				     					goods_id = (String)data_goods_id_1.get(arg2);
-//				     					market_information_sep_price.setText("£¤" + price);
-//				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+//				     					market_information_sep_price.setText("ï¿¥" + price);
+//				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 //				     					people = (String)data_people_1.get(arg2);
 //				     					System.out.println("people========="+people);
 //									}else {
 //										String price = (String)data_price.get(arg2);
-//				     					System.out.println("¼Û¸ñprice====12====="+price);
+//				     					System.out.println("ä»·æ ¼price====12====="+price);
 //				     					goods_id = (String)data_goods_id.get(arg2);
-//				     					market_information_sep_price.setText("£¤" + price);
-//				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+//				     					market_information_sep_price.setText("ï¿¥" + price);
+//				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 //				     					people = (String)data_people_1.get(arg2);
 //				     					System.out.println("people===2======"+people);
 //									}
@@ -1452,10 +1452,10 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            		 monney_sx_list = (String)data_monney.get(arg2);
 //		            		 market_price = (String)data_market_price.get(arg2);
 		            		 goods_id = (String)data_goods_id.get(arg2);
-								System.out.println("¼Û¸ñ0========="+monney_sx_list);
+								System.out.println("ä»·æ ¼0========="+monney_sx_list);
 //								System.out.println("market_price========="+market_price);
 								System.out.println("goods_id========="+goods_id);
-			            		market_information_sep_price.setText("£¤" + (String)data_monney.get(arg2));
+			            		market_information_sep_price.setText("ï¿¥" + (String)data_monney.get(arg2));
 			            		people = (String)data_people_1.get(arg2);
 		     					System.out.println("people===3======"+people);
 							}
@@ -1495,13 +1495,13 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	MyAdapter1.notifyDataSetChanged();
 		            	id1 = (String)data_id1.get(arg2);
 		            	gk_id1 = Integer.parseInt(id1);
-		            	xz_pyte1 = "1_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
+		            	xz_pyte1 = "1_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
 //		            	String zhi = (String)data_mrz.get(arg2);
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ1====="+id1);
-//		            	System.out.println("Öµ1========="+data_shuzu.get(arg2));
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯1====="+id1);
+//		            	System.out.println("å€¼1========="+data_shuzu.get(arg2));
 		            	String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 						if (data6.size() > 0 && data5.size() > 0 && data4.size() > 0 && data3.size() > 0 && data2.size() > 0
 								&& data1.size() > 0 && data.size() > 0){
 							spec_ids  = ","+id+","+id1+","+id2+","+id3+","+id4+","+id5+","+id6+",";
@@ -1521,11 +1521,11 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 							spec_ids  = ","+id+",";
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
-		            	 System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
+		            	 System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
 		            	 System.out.println("data_shuzu.get(arg2)========="+data_shuzu.get(arg2));
 		            	 if (spec_ids.equals(data_shuzu.get(arg2))) {
 		            		 
-		          			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		          			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 				     			if (JuJingCaiXqActivity.type_spec_item == true) {
 //				     				System.out.println("arg2====================="+arg2);
 				     				System.out.println("JuJingCaiXqActivity.type_spec_item==================2================="+JuJingCaiXqActivity.type_spec_item);
@@ -1542,29 +1542,29 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 						     				 System.out.println("data_people_1.get(i)========="+data_people_1.get(i));
 						     				goods_id = (String)data_goods_id_1.get(i);
 				     						price = (String)data_price.get(i);
-				     						System.out.println("¼Û¸ñprice====1====="+price);
-					     					market_information_sep_price.setText("£¤" + price);
+				     						System.out.println("ä»·æ ¼price====1====="+price);
+					     					market_information_sep_price.setText("ï¿¥" + price);
 					     					spec_text = (String)data_spec_text.get(arg2);
 					     					System.out.println("spec_text=====1====="+spec_text);
-					     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+					     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 										}
 									}
 				     				 
 //				     				if (data_people.get(arg2).equals(data_people_1.get(arg2))) {
 //				     				if (data_goods_id.get(arg2).equals(data_goods_id_1.get(arg2)) && data_people.get(arg2).equals(data_people_1.get(arg2))) {
 //				     					String price = (String)data_price.get(arg2);
-//				     					System.out.println("¼Û¸ñprice=====2===="+price);
+//				     					System.out.println("ä»·æ ¼price=====2===="+price);
 //				     					goods_id = (String)data_goods_id_1.get(arg2);
-//				     					market_information_sep_price.setText("£¤" + price);
-//				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+//				     					market_information_sep_price.setText("ï¿¥" + price);
+//				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 //				     					people = (String)data_people_1.get(arg2);
 //				     					System.out.println("people========="+people);
 //									}else {
 //										String price = (String)data_price.get(arg2);
-//				     					System.out.println("¼Û¸ñprice====12====="+price);
+//				     					System.out.println("ä»·æ ¼price====12====="+price);
 //				     					goods_id = (String)data_goods_id.get(arg2);
-//				     					market_information_sep_price.setText("£¤" + price);
-//				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+//				     					market_information_sep_price.setText("ï¿¥" + price);
+//				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 //				    					people = (String)data_people_1.get(arg2);
 //				     					System.out.println("people===2======"+people);
 //									}
@@ -1573,8 +1573,8 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 //		            			 market_price = (String)data_market_price.get(arg2);
 			            		 goods_id = (String)data_goods_id.get(arg2);
 			            		 System.out.println("goods_id========="+goods_id);
-								System.out.println("¼Û¸ñ1========="+monney_sx_list);
-			            		market_information_sep_price.setText("£¤" + monney_sx_list);
+								System.out.println("ä»·æ ¼1========="+monney_sx_list);
+			            		market_information_sep_price.setText("ï¿¥" + monney_sx_list);
 			            		people = (String)data_people_1.get(arg2);
 		     					System.out.println("people===3======"+people);
 				     			}
@@ -1617,9 +1617,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	id2 = (String)data_id2.get(arg2);
 //		            	String zhi = (String)data_mrz.get(arg2);
 		            	gk_id2 = Integer.parseInt(id2);
-		            	xz_pyte2 = "2_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ2====="+id2);
+		            	xz_pyte2 = "2_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯2====="+id2);
 		            	if (data6.size() > 0 && data5.size() > 0 && data4.size() > 0 && data3.size() > 0 && data2.size() > 0
 								&& data1.size() > 0 && data.size() > 0){
 							spec_ids  = ","+id+","+id1+","+id2+","+id3+","+id4+","+id5+","+id6+",";
@@ -1640,13 +1640,13 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
 		            	
-		                System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
-		                System.out.println("Öµ2========="+data_shuzu.get(arg2));
+		                System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
+		                System.out.println("å€¼2========="+data_shuzu.get(arg2));
 		                String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 						
 		                if (spec_ids.equals(data_shuzu.get(arg2))) {
-		          			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		          			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 			     			if (JuJingCaiXqActivity.type_spec_item == true) {
 			     				System.out.println("JuJingCaiXqActivity.type_spec_item==================2================="+JuJingCaiXqActivity.type_spec_item);
 			     				System.out.println("tuanshu====================="+tuanshu);
@@ -1656,17 +1656,17 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			     					 if (data_goods_id.get(arg2).equals(data_goods_id_1.get(i)) && tuanshu.equals(data_people_1.get(i))) {
 					     				goods_id = (String)data_goods_id_1.get(i);
 			     						price = (String)data_price.get(i);
-				     					market_information_sep_price.setText("£¤" + price);
+				     					market_information_sep_price.setText("ï¿¥" + price);
 				     					spec_text = (String)data_spec_text.get(arg2);
-				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 									}
 								}
 			     			}else {
 		                	monney_sx_list = (String)data_monney.get(arg2);
 //		                 	market_price = (String)data_market_price.get(arg2);
 	            		    goods_id = (String)data_goods_id.get(arg2);
-							System.out.println("¼Û¸ñ2========="+monney_sx_list);
-		            		market_information_sep_price.setText("£¤:" + (String)data_monney.get(arg2));
+							System.out.println("ä»·æ ¼2========="+monney_sx_list);
+		            		market_information_sep_price.setText("ï¿¥:" + (String)data_monney.get(arg2));
 		            		people = (String)data_people_1.get(arg2);
 	     					System.out.println("people===3======"+people);
 			     			}
@@ -1707,9 +1707,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	id2 = (String)data_id2.get(arg2);
 //		            	String zhi = (String)data_mrz.get(arg2);
 		            	gk_id2 = Integer.parseInt(id2);
-		            	xz_pyte3 = "3_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ2====="+id2);
+		            	xz_pyte3 = "3_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯2====="+id2);
 		            	if (data6.size() > 0 && data5.size() > 0 && data4.size() > 0 && data3.size() > 0 && data2.size() > 0
 								&& data1.size() > 0 && data.size() > 0){
 							spec_ids  = ","+id+","+id1+","+id2+","+id3+","+id4+","+id5+","+id6+",";
@@ -1729,14 +1729,14 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 							spec_ids  = ","+id+",";
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
-		                System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
-		                System.out.println("Öµ2========="+data_shuzu.get(arg2));
+		                System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
+		                System.out.println("å€¼2========="+data_shuzu.get(arg2));
 		                String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 						
-//						market_information_sep_price.setText("£¤" + monney1);
+//						market_information_sep_price.setText("ï¿¥" + monney1);
 		                if (spec_ids.equals(data_shuzu.get(arg2))) {
-		          			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		          			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 			     			if (JuJingCaiXqActivity.type_spec_item == true) {
 			     				System.out.println("tuanshu====================="+tuanshu);
 			     				System.out.println("data_goods_id.get(arg2)========="+data_goods_id.get(arg2));
@@ -1745,17 +1745,17 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			     					 if (data_goods_id.get(arg2).equals(data_goods_id_1.get(i)) && tuanshu.equals(data_people_1.get(i))) {
 					     				goods_id = (String)data_goods_id_1.get(i);
 			     						price = (String)data_price.get(i);
-				     					market_information_sep_price.setText("£¤" + price);
+				     					market_information_sep_price.setText("ï¿¥" + price);
 				     					spec_text = (String)data_spec_text.get(arg2);
-				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 									}
 								}
 			     			}else {
 		                	monney_sx_list = (String)data_monney.get(arg2);
 //		               	 market_price = (String)data_market_price.get(arg2);
 	            		 goods_id = (String)data_goods_id.get(arg2);
-							System.out.println("¼Û¸ñ2========="+monney_sx_list);
-		            		market_information_sep_price.setText("£¤:" + (String)data_monney.get(arg2));
+							System.out.println("ä»·æ ¼2========="+monney_sx_list);
+		            		market_information_sep_price.setText("ï¿¥:" + (String)data_monney.get(arg2));
 		            		people = (String)data_people_1.get(arg2);
 	     					System.out.println("people===3======"+people);
 			     			}
@@ -1795,9 +1795,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	id2 = (String)data_id2.get(arg2);
 //		            	String zhi = (String)data_mrz.get(arg2);
 		            	gk_id2 = Integer.parseInt(id2);
-		            	xz_pyte4 = "4_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ2====="+id2);
+		            	xz_pyte4 = "4_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯2====="+id2);
 		            	if (data6.size() > 0 && data5.size() > 0 && data4.size() > 0 && data3.size() > 0 && data2.size() > 0
 								&& data1.size() > 0 && data.size() > 0){
 							spec_ids  = ","+id+","+id1+","+id2+","+id3+","+id4+","+id5+","+id6+",";
@@ -1817,15 +1817,15 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 							spec_ids  = ","+id+",";
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
-		                System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
-		                System.out.println("Öµ2========="+data_shuzu.get(arg2));
+		                System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
+		                System.out.println("å€¼2========="+data_shuzu.get(arg2));
 		                String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 						
-//						market_information_sep_price.setText("£¤" + monney1);
+//						market_information_sep_price.setText("ï¿¥" + monney1);
 						
 		                if (spec_ids.equals(data_shuzu.get(arg2))) {
-		          			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		          			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 			     			if (JuJingCaiXqActivity.type_spec_item == true) {
 			     				System.out.println("tuanshu====================="+tuanshu);
 			     				System.out.println("data_goods_id.get(arg2)========="+data_goods_id.get(arg2));
@@ -1834,17 +1834,17 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			     					 if (data_goods_id.get(arg2).equals(data_goods_id_1.get(i)) && tuanshu.equals(data_people_1.get(i))) {
 					     				goods_id = (String)data_goods_id_1.get(i);
 			     						price = (String)data_price.get(i);
-				     					market_information_sep_price.setText("£¤" + price);
+				     					market_information_sep_price.setText("ï¿¥" + price);
 				     					spec_text = (String)data_spec_text.get(arg2);
-				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 									}
 								}
 			     			}else {
 		                	monney_sx_list = (String)data_monney.get(arg2);
 //		               	 market_price = (String)data_market_price.get(arg2);
 	            		 goods_id = (String)data_goods_id.get(arg2);
-							System.out.println("¼Û¸ñ2========="+monney_sx_list);
-		            		market_information_sep_price.setText("£¤:" + (String)data_monney.get(arg2));
+							System.out.println("ä»·æ ¼2========="+monney_sx_list);
+		            		market_information_sep_price.setText("ï¿¥:" + (String)data_monney.get(arg2));
 		            		people = (String)data_people_1.get(arg2);
 	     					System.out.println("people===3======"+people);
 			     			}
@@ -1884,9 +1884,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	id2 = (String)data_id2.get(arg2);
 //		            	String zhi = (String)data_mrz.get(arg2);
 		            	gk_id2 = Integer.parseInt(id2);
-		            	xz_pyte5 = "5_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ2====="+id2);
+		            	xz_pyte5 = "5_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯2====="+id2);
 		            	if (data6.size() > 0 && data5.size() > 0 && data4.size() > 0 && data3.size() > 0 && data2.size() > 0
 								&& data1.size() > 0 && data.size() > 0){
 							spec_ids  = ","+id+","+id1+","+id2+","+id3+","+id4+","+id5+","+id6+",";
@@ -1906,14 +1906,14 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 							spec_ids  = ","+id+",";
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
-		                System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
-		                System.out.println("Öµ2========="+data_shuzu.get(arg2));
+		                System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
+		                System.out.println("å€¼2========="+data_shuzu.get(arg2));
 		                String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 						
-//						market_information_sep_price.setText("£¤" + monney1);
+//						market_information_sep_price.setText("ï¿¥" + monney1);
 		                if (spec_ids.equals(data_shuzu.get(arg2))) {
-		          			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		          			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 			     			if (JuJingCaiXqActivity.type_spec_item == true) {
 			     				System.out.println("tuanshu====================="+tuanshu);
 			     				System.out.println("data_goods_id.get(arg2)========="+data_goods_id.get(arg2));
@@ -1922,17 +1922,17 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			     					 if (data_goods_id.get(arg2).equals(data_goods_id_1.get(i)) && tuanshu.equals(data_people_1.get(i))) {
 					     				goods_id = (String)data_goods_id_1.get(i);
 			     						price = (String)data_price.get(i);
-				     					market_information_sep_price.setText("£¤" + price);
+				     					market_information_sep_price.setText("ï¿¥" + price);
 				     					spec_text = (String)data_spec_text.get(arg2);
-				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 									}
 								}
 			     			}else {
 		                	monney_sx_list = (String)data_monney.get(arg2);
 //		               	    market_price = (String)data_market_price.get(arg2);
 	            		    goods_id = (String)data_goods_id.get(arg2);
-							System.out.println("¼Û¸ñ2========="+monney_sx_list);
-		            		market_information_sep_price.setText("£¤:" + (String)data_monney.get(arg2));
+							System.out.println("ä»·æ ¼2========="+monney_sx_list);
+		            		market_information_sep_price.setText("ï¿¥:" + (String)data_monney.get(arg2));
 		            		people = (String)data_people_1.get(arg2);
 	     					System.out.println("people===3======"+people);
 			     			}
@@ -1972,9 +1972,9 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 		            	id2 = (String)data_id2.get(arg2);
 //		            	String zhi = (String)data_mrz.get(arg2);
 		            	gk_id2 = Integer.parseInt(id2);
-		            	xz_pyte6 = "6_xz";//ÅĞ¶ÏÊÇ·ñÑ¡ÁË
-//		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-		            	System.out.println("idÖµÊÇ2====="+id2);
+		            	xz_pyte6 = "6_xz";//åˆ¤æ–­æ˜¯å¦é€‰äº†
+//		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+		            	System.out.println("idå€¼æ˜¯2====="+id2);
 		            	if (data6.size() > 0 && data5.size() > 0 && data4.size() > 0 && data3.size() > 0 && data2.size() > 0
 								&& data1.size() > 0 && data.size() > 0){
 							spec_ids  = ","+id+","+id1+","+id2+","+id3+","+id4+","+id5+","+id6+",";
@@ -1994,14 +1994,14 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 							spec_ids  = ","+id+",";
 						}
 //		            	spec_ids  = ","+id+","+id1+","+id2+",";
-		                System.out.println("Æ´½ÓµÄÖµ========="+spec_ids);
-		                System.out.println("Öµ2========="+data_shuzu.get(arg2));
+		                System.out.println("æ‹¼æ¥çš„å€¼========="+spec_ids);
+		                System.out.println("å€¼2========="+data_shuzu.get(arg2));
 		                String monney1 = (String)data_monney.get(arg2);
-						System.out.println("¼Û¸ñ========="+monney1);
+						System.out.println("ä»·æ ¼========="+monney1);
 						
-//						market_information_sep_price.setText("£¤" + monney1);
+//						market_information_sep_price.setText("ï¿¥" + monney1);
 		                if (spec_ids.equals(data_shuzu.get(arg2))) {
-		          			//ÅĞ¶Ï¾ÛÍÅÏêÇé
+		          			//åˆ¤æ–­èšå›¢è¯¦æƒ…
 			     			if (JuJingCaiXqActivity.type_spec_item == true) {
 			     				System.out.println("tuanshu====================="+tuanshu);
 			     				System.out.println("data_goods_id.get(arg2)========="+data_goods_id.get(arg2));
@@ -2010,17 +2010,17 @@ public class XiaoShouShuXingActivity extends BaseActivity{
 			     					 if (data_goods_id.get(arg2).equals(data_goods_id_1.get(i)) && tuanshu.equals(data_people_1.get(i))) {
 					     				goods_id = (String)data_goods_id_1.get(i);
 			     						price = (String)data_price.get(i);
-				     					market_information_sep_price.setText("£¤" + price);
+				     					market_information_sep_price.setText("ï¿¥" + price);
 				     					spec_text = (String)data_spec_text.get(arg2);
-				     					tv_guige.setText("£¤" + (String)data_spec_text.get(arg2));
+				     					tv_guige.setText("ï¿¥" + (String)data_spec_text.get(arg2));
 									}
 								}
 			     			}else {
 		                	monney_sx_list = (String)data_monney.get(arg2);
 //		               	 market_price = (String)data_market_price.get(arg2);
 	            		 goods_id = (String)data_goods_id.get(arg2);
-							System.out.println("¼Û¸ñ2========="+monney_sx_list);
-		            		market_information_sep_price.setText("£¤:" + (String)data_monney.get(arg2));
+							System.out.println("ä»·æ ¼2========="+monney_sx_list);
+		            		market_information_sep_price.setText("ï¿¥:" + (String)data_monney.get(arg2));
 		            		people = (String)data_people_1.get(arg2);
 	     					System.out.println("people===3======"+people);
 			     			}

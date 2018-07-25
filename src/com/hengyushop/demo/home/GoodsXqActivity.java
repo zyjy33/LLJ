@@ -26,7 +26,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 /**
- * ÉÌÆ·ÏêÇé
+ * å•†å“è¯¦æƒ…
  * 
  * @author Administrator
  * 
@@ -69,7 +69,7 @@ public class GoodsXqActivity extends BaseActivity {
 		 data_monney = new ArrayList();
 //		 lists = new ArrayList<XiangqingData>();
 		try {
-			System.out.println("=======ÏêÇéÊı¾İ=="+result);
+			System.out.println("=======è¯¦æƒ…æ•°æ®=="+result);
 			JSONObject object = new JSONObject(result);
 			JSONObject jobt = object.getJSONObject("data");
 //			xqdata = new XiangqingData();
@@ -97,13 +97,13 @@ public class GoodsXqActivity extends BaseActivity {
 //			Atv_integral = xqdata.getRebate_price();
 //			goods_id = xqdata.getGoods_id();
 //			article_id = xqdata.getArticle_id();
-////			System.out.println("=========½âÎöµÄÊı¾İ============"+proTip);
+////			System.out.println("=========è§£æçš„æ•°æ®============"+proTip);
 //			String is_default = objt.getString("is_default");
 //			
 //			data_mrz.add(is_default);
 //			data_shuzu.add(spec_ids);
 //			data_monney.add(retailPrice);
-//			System.out.println("=========Êı¾İ============"+spec_ids);
+//			System.out.println("=========æ•°æ®============"+spec_ids);
 //		    }
 //			JSONArray jsonArray = jobt.getJSONArray("albums");
 //    		for (int i = 0; i < jsonArray.length(); i++) {
@@ -113,7 +113,7 @@ public class GoodsXqActivity extends BaseActivity {
 ////    		proFaceImg = xqdata.getThumb_path();
 ////    		proInverseImg = xqdata.getOriginal_path();
 //    		proFaceImg = obj.getString("thumb_path");
-//			System.out.println("Í¼Æ¬µØÖ·:" + proFaceImg);
+//			System.out.println("å›¾ç‰‡åœ°å€:" + proFaceImg);
 //			proInverseImg = obj.getString("original_path");
 //    		
 //    		}

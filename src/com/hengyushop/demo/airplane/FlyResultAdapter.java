@@ -79,8 +79,8 @@ public class FlyResultAdapter extends BaseAdapter {
 		holder.textView4.setText(results.get(index).getEndTime());
 		holder.textView5.setText(db2.getJicBySam(results.get(index).getDstCity())
 				+ results.get(index).getDstJetquay());
-		holder.textView6.setText("£¤" + results.get(index).getPrice());// ¼Û¸ñ
-		holder.textView7.setText("(" + results.get(index).getDiscount() + "ÕÛ)");// ÕÛ¿Û
+		holder.textView6.setText("ï¿¥" + results.get(index).getPrice());// ä»·æ ¼
+		holder.textView7.setText("(" + results.get(index).getDiscount() + "æŠ˜)");// æŠ˜æ‰£
 		view.setOnClickListener(new OnClickListener() {
 
 			@Override

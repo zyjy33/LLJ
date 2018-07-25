@@ -48,7 +48,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case 0:
-				Toast.makeText(getApplicationContext(), "²éÑ¯Ê§°Ü", 200).show();
+				Toast.makeText(getApplicationContext(), "æŸ¥è¯¢å¤±è´¥", 200).show();
 				break;
 			case 1:
 				lists = (ArrayList<ChePiaoData>) msg.obj;
@@ -70,8 +70,8 @@ public class TrainSelectResultActivity extends BaseActivity implements
 		example();
 		DisplayMetrics metric = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metric);
-		width = metric.widthPixels; // ÆÁÄ»¿í¶È£¨ÏñËØ£©
-		height = metric.heightPixels; // ÆÁÄ»¸ß¶È£¨ÏñËØ£©
+		width = metric.widthPixels; // å±å¹•å®½åº¦ï¼ˆåƒç´ ï¼‰
+		height = metric.heightPixels; // å±å¹•é«˜åº¦ï¼ˆåƒç´ ï¼‰
 		w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
 		h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
 		start = getIntent().getExtras().getString("startStation");
@@ -100,7 +100,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ÖØĞÂ¹¹Ôì»ğ³µÆ±µÄÊı¾İ¸ñÊ½
+	 * é‡æ–°æ„é€ ç«è½¦ç¥¨çš„æ•°æ®æ ¼å¼
 	 * 
 	 * @param result
 	 * @return
@@ -142,7 +142,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 					data.setSoft_sleeper(IsHas(object, "rw_num"));
 					data.setStartStationCode(IsHas(object,
 							"start_station_telecode"));
-					data.setTakeTime(IsHas(object, "lishi").replace(":", "Ê±"));
+					data.setTakeTime(IsHas(object, "lishi").replace(":", "æ—¶"));
 					data.setToStation(IsHas(object, "to_station_name"));
 					data.setToStationCode(IsHas(object, "to_station_telecode"));
 					data.setToTime(IsHas(object, "arrive_time"));
@@ -166,7 +166,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñ´æÔÚÕâÑùµÄÊı¾İ£¬Èç¹û´æÔÚ¾Í½âÎö£¬Èç¹û²»´æÔÚ¾Í·µ»Ø¿ÕÖµ
+	 * åˆ¤æ–­æ˜¯å¦å­˜åœ¨è¿™æ ·çš„æ•°æ®ï¼Œå¦‚æœå­˜åœ¨å°±è§£æï¼Œå¦‚æœä¸å­˜åœ¨å°±è¿”å›ç©ºå€¼
 	 * 
 	 * @param object
 	 * @param param
@@ -192,7 +192,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 		ll_paicha = (LinearLayout) findViewById(R.id.ll_paicha);
 		tv_shuaxuan.setOnClickListener(this);
 		tv_paixu.setOnClickListener(this);
-		tv1.setText(getIntent().getStringExtra("add"));// ±êÌâÀ¸
+		tv1.setText(getIntent().getStringExtra("add"));// æ ‡é¢˜æ 
 		listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
@@ -228,7 +228,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 		pop.setBackgroundDrawable(new BitmapDrawable());
 		pop.setOutsideTouchable(true);
 		pop.setFocusable(true);
-		pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+		pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 		LinearLayout textView = (LinearLayout) view.findViewById(R.id.ll_01);
 		textView.measure(w, h);
 		int fwidth = textView.getMeasuredWidth();
@@ -252,7 +252,7 @@ public class TrainSelectResultActivity extends BaseActivity implements
 		pop.setBackgroundDrawable(new BitmapDrawable());
 		pop.setOutsideTouchable(true);
 		pop.setFocusable(true);
-		pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+		pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 
 		LinearLayout textView = (LinearLayout) view.findViewById(R.id.ll_01);
 		textView.measure(w, h);

@@ -26,7 +26,7 @@ public class SharedUtils {
 	}
 
 	/**
-	 * 设置String类型的sharedpreferences
+	 * 璁剧疆String绫诲瀷鐨剆haredpreferences
 	 * 
 	 * @param key
 	 * @return
@@ -37,7 +37,7 @@ public class SharedUtils {
 	}
 
 	/**
-	 * 获得String类型的sharedpreferences
+	 * 鑾峰緱String绫诲瀷鐨剆haredpreferences
 	 * 
 	 * @param key
 	 * @return
@@ -47,7 +47,7 @@ public class SharedUtils {
 	}
 
 	/**
-	 * 设置boolean类型的sharedpreferences
+	 * 璁剧疆boolean绫诲瀷鐨剆haredpreferences
 	 * 
 	 * @param key
 	 * @return
@@ -75,13 +75,13 @@ public class SharedUtils {
 	}
 
 	/**
-	 * 获得boolean类型的sharedpreferences
+	 * 鑾峰緱boolean绫诲瀷鐨剆haredpreferences
 	 * 
 	 * @param key
 	 * @return
 	 */
 	public Boolean getBooleanValue(String key) {
-		// 默认为false
+		// 榛樿涓篺alse
 		return preferences.getBoolean(key, false);
 	}
 }

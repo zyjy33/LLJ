@@ -64,8 +64,8 @@ public class MyCollectWareAdapter extends BaseAdapter {
 				.findViewById(R.id.tv_ware_total);
 
 //		tv_name.setText(list.get(position).proName);
-//		tv_price.setText("£§" + list.get(position).price);
-//		tv_total.setText(" ’≤ÿ»À∆¯      " + list.get(position).collectTotal);
+//		tv_price.setText("Ôø•" + list.get(position).price);
+//		tv_total.setText("Êî∂Ëóè‰∫∫Ê∞î      " + list.get(position).collectTotal);
 //		loader.displayImage(
 //				RealmName.REALM_NAME + "/admin/"
 //						+ list.get(position).proFaceImg, image);
@@ -75,9 +75,9 @@ public class MyCollectWareAdapter extends BaseAdapter {
 //			tv_price.setTextColor(Color.BLACK);
 		}else {
 		if (list.get(position).price.equals("null")) {
-			tv_price.setText("º€∏Ò£∫£§0.0");
+			tv_price.setText("‰ª∑Ê†ºÔºöÔø•0.0");
 		}else {
-			tv_price.setText("º€∏Ò£∫£§" + list.get(position).price);
+			tv_price.setText("‰ª∑Ê†ºÔºöÔø•" + list.get(position).price);
 		}
 		}
 		

@@ -63,23 +63,23 @@ public class GoodCheckActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.goods_check);
 		init();
-		// addTextView("²âÊÔÊı¾İ");
-		// addRadioButton(new String[] { "²âÊÔ1", "²âÊÔ2", "²âÊÔ3" });
+		// addTextView("æµ‹è¯•æ•°æ®");
+		// addRadioButton(new String[] { "æµ‹è¯•1", "æµ‹è¯•2", "æµ‹è¯•3" });
 		// addRatingBar();
 		loadData();
 	}
 
 	/*
-	 * DataR,DataC,DataT·Ö±ğÊÇµ¥Ñ¡×é£¬¶àÑ¡×é£¬ÎÄ±¾×é
+	 * DataR,DataC,DataTåˆ†åˆ«æ˜¯å•é€‰ç»„ï¼Œå¤šé€‰ç»„ï¼Œæ–‡æœ¬ç»„
 	 */
 	/**
-	 * ¼ÓÔØÊı¾İ
+	 * åŠ è½½æ•°æ®
 	 */
 	private void loadData() {
 		// http://www.wxpalm.com.cn//mi/getData.ashx?act=OneAdvertisingCommentsInfo&yth=admin&AdvertisingSerialNumber=GG2014514105828713
 		Map<String, String> params = new HashMap<String, String>();
 		String seri = getIntent().getStringExtra("seri");
-		// seri = "GG2014515154313902";// Ä£ÄâÊı¾İ
+		// seri = "GG2014515154313902";// æ¨¡æ‹Ÿæ•°æ®
 		System.out.println("seri:" + seri);
 		params.put("advertisingSerialNumber", seri);
 		params.put("act", "OneAdvertisingCommentsInfo");
@@ -98,7 +98,7 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½«½âÎöµÄÊı¾İÓ³Éäµ½UI½çÃæÉÏ
+	 * å°†è§£æçš„æ•°æ®æ˜ å°„åˆ°UIç•Œé¢ä¸Š
 	 */
 	private final String OBJECTR = "1";
 	private final String OBJECTC = "2";
@@ -108,7 +108,7 @@ public class GoodCheckActivity extends BaseActivity {
 		try {
 			JSONObject jsonObject = new JSONObject(result);
 			JSONArray objectR = jsonObject.getJSONArray("DataR");
-			// µ¥Ñ¡ÀàĞÍ
+			// å•é€‰ç±»å‹
 			int lenR = objectR.length();
 			for (int i = 0; i < lenR; i++) {
 				JSONObject oR = objectR.getJSONObject(i);
@@ -116,10 +116,10 @@ public class GoodCheckActivity extends BaseActivity {
 				addTextView(titleR);
 				JSONArray aR = oR.getJSONArray("CommentContents");
 				int lenRA = aR.length();
-				// 0±íÊ¾bool£¬¼´¿ª¹ØÀàĞÍ£¬1±íÊ¾ÆÕÍ¨ÎÄ×ÖÀàĞÍ£¬2±íÊ¾Í¼±êÀàĞÍ¡£
+				// 0è¡¨ç¤ºboolï¼Œå³å¼€å…³ç±»å‹ï¼Œ1è¡¨ç¤ºæ™®é€šæ–‡å­—ç±»å‹ï¼Œ2è¡¨ç¤ºå›¾æ ‡ç±»å‹ã€‚
 				String type = oR.getString("CommentType");
 				if (type.equals("0")) {
-					// ¿ª¹ØÀàĞÍ
+					// å¼€å…³ç±»å‹
 					ArrayList<UvDo> list = new ArrayList<UvDo>();
 					for (int j = 0; j < lenRA; j++) {
 						JSONObject oj = aR.getJSONObject(j);
@@ -131,7 +131,7 @@ public class GoodCheckActivity extends BaseActivity {
 					}
 					addSlipButton(list);
 				} else if (type.equals("1")) {
-					// ÎÄ×ÖÀàĞÍ
+					// æ–‡å­—ç±»å‹
 					ArrayList<UvDo> list = new ArrayList<UvDo>();
 					for (int j = 0; j < lenRA; j++) {
 						JSONObject oj = aR.getJSONObject(j);
@@ -143,7 +143,7 @@ public class GoodCheckActivity extends BaseActivity {
 					}
 					addRadioButton(list);
 				} else if (type.equals("2")) {
-					// Í¼±êÀàĞÍ
+					// å›¾æ ‡ç±»å‹
 
 					ArrayList<UvDo> list = new ArrayList<UvDo>();
 					for (int j = 0; j < lenRA; j++) {
@@ -157,14 +157,14 @@ public class GoodCheckActivity extends BaseActivity {
 					addRatingBar(list);
 				}
 			}
-			// ¶àÑ¡ÊÂ¼ş
+			// å¤šé€‰äº‹ä»¶
 			JSONArray objectC = jsonObject.getJSONArray("DataC");
 			int lenC = objectC.length();
 			for (int i = 0; i < lenC; i++) {
-				// ¹¹Ôì¶àÑ¡°´Å¥
+				// æ„é€ å¤šé€‰æŒ‰é’®
 				JSONObject oC = objectC.getJSONObject(i);
 				String title = oC.getString("CommentTitle");
-				// ÉèÖÃÖ÷Ìâ
+				// è®¾ç½®ä¸»é¢˜
 				addTextView(title);
 				JSONArray joc = oC.getJSONArray("CommentContents");
 				int jocLen = joc.length();
@@ -184,7 +184,7 @@ public class GoodCheckActivity extends BaseActivity {
 				}
 				addCheckBox(list);
 			}
-			// ÊäÈë¿ò½á¹¹
+			// è¾“å…¥æ¡†ç»“æ„
 			JSONArray objectT = jsonObject.getJSONArray("DataT");
 			int lenT = objectT.length();
 			/*
@@ -217,20 +217,20 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * ³õÊ¼»¯×é¼şÊı¾İ
+	 * åˆå§‹åŒ–ç»„ä»¶æ•°æ®
 	 */
 	private void init() {
 		content = (LinearLayout) findViewById(R.id.content);
 	}
 
 	/**
-	 * Éú³ÉÌá½»°´Å¥
+	 * ç”Ÿæˆæäº¤æŒ‰é’®
 	 */
 	private void addSubmit() {
 		LinearLayout submitLayout = new LinearLayout(getApplicationContext());
 		submitLayout.setGravity(Gravity.CENTER);
 		Button submitButton = new Button(getApplicationContext());
-		submitButton.setText("Ìá½»");
+		submitButton.setText("æäº¤");
 		// submitButton.setEms(6);
 		submitButton.setGravity(Gravity.CENTER);
 		submitButton.setTextSize(18);
@@ -247,13 +247,13 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * Ìá½»ĞÅÏ¢µ½·şÎñÆ÷ /mi/getData.ashx?act=SubmitOneAdvertisingComment&yth=0&
-	 * AdvertisingSerialNumber=¹ã¸æÁ÷Ë®ºÅ
+	 * æäº¤ä¿¡æ¯åˆ°æœåŠ¡å™¨ /mi/getData.ashx?act=SubmitOneAdvertisingComment&yth=0&
+	 * AdvertisingSerialNumber=å¹¿å‘Šæµæ°´å·
 	 * &AdvProOrderCommentType=1,2,3&AdvProOrderCommentID
 	 * =1,1,1&CommentContent=test,test,test
-	 * ÆäÖĞAdvProOrderCommentTypeÓÃÀ´±êÊ¾ÊôÓÚÄÄÖÖÀàĞÍ×éµÄĞÅÏ¢
-	 * £¨1±êÊ¾µ¥Ñ¡×é£¬2±êÊ¾¶àÑ¡×é£¬3±êÊ¾ÎÄ±¾×é£©£¬AdvProOrderCommentID±êÊ¾²»Í¬ÀàĞÍ×éµÄIDºÅ
-	 * £¬¶àÌõĞÅÏ¢ÖĞ¼äÓÃ¶ººÅ¸ô¿ª¡£CommentContentÎªÌá½»µÄµãÆÀÄÚÈİ£¬¶à¸öÄÚÈİÖĞ¼äÓÃ¶ººÅ¸ô¿ª¡£
+	 * å…¶ä¸­AdvProOrderCommentTypeç”¨æ¥æ ‡ç¤ºå±äºå“ªç§ç±»å‹ç»„çš„ä¿¡æ¯
+	 * ï¼ˆ1æ ‡ç¤ºå•é€‰ç»„ï¼Œ2æ ‡ç¤ºå¤šé€‰ç»„ï¼Œ3æ ‡ç¤ºæ–‡æœ¬ç»„ï¼‰ï¼ŒAdvProOrderCommentIDæ ‡ç¤ºä¸åŒç±»å‹ç»„çš„IDå·
+	 * ï¼Œå¤šæ¡ä¿¡æ¯ä¸­é—´ç”¨é€—å·éš”å¼€ã€‚CommentContentä¸ºæäº¤çš„ç‚¹è¯„å†…å®¹ï¼Œå¤šä¸ªå†…å®¹ä¸­é—´ç”¨é€—å·éš”å¼€ã€‚
 	 */
 	private void submitData() {
 		ArrayList<String> param1 = new ArrayList<String>();
@@ -263,7 +263,7 @@ public class GoodCheckActivity extends BaseActivity {
 			Object o = arrayList.get(i);
 			UvDo vDo = null;
 			if (o instanceof RadioGroup) {
-				// ÊÇµ¥Ñ¡¿ò
+				// æ˜¯å•é€‰æ¡†
 				vDo = (UvDo) ((RadioGroup) o).getTag();
 
 				System.out.println(vDo.getContent() + "==Radio");
@@ -295,14 +295,14 @@ public class GoodCheckActivity extends BaseActivity {
 		String p2 = param2.toString().replace("[", "").replace("]", "");
 		String p3 = param3.toString().replace("[", "").replace("]", "");
 		/*
-		 * /mi/getData.ashx?act=SubmitOneAdvertisingComment&yth=ºãÓşºÅ
-		 * &AdvertisingSerialNumber=¹ã¸æÁ÷Ë®ºÅ&ClientType=1&
-		 * CurrentAddress=µ±Ç°µÄÎ»ÖÃµØÖ·&AdvProOrderCommentType=1,2,3&
+		 * /mi/getData.ashx?act=SubmitOneAdvertisingComment&yth=æ’èª‰å·
+		 * &AdvertisingSerialNumber=å¹¿å‘Šæµæ°´å·&ClientType=1&
+		 * CurrentAddress=å½“å‰çš„ä½ç½®åœ°å€&AdvProOrderCommentType=1,2,3&
 		 * AdvProOrderCommentID=1,1,1&CommentContent=test,test,test
 		 */
 //		yth = "admin";
 		if (yth == null || yth.length() == 0) {
-			Toast.makeText(getApplicationContext(), "ÓÃ»§Î´µÇÂ¼", 200).show();
+			Toast.makeText(getApplicationContext(), "ç”¨æˆ·æœªç™»å½•", 200).show();
 		} else {
 			Map<String, String> params = new HashMap<String, String>();
 			params.put("AdvProOrderCommentType", p2);
@@ -369,7 +369,7 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * Éú³ÉTextView×é¼ş
+	 * ç”ŸæˆTextViewç»„ä»¶
 	 * 
 	 * @param textValue
 	 */
@@ -385,7 +385,7 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * Éú³Éµ¥Ñ¡°´Å¥×é
+	 * ç”Ÿæˆå•é€‰æŒ‰é’®ç»„
 	 */
 	private void addRadioButton(final ArrayList<UvDo> list) {
 		LinearLayout radioButtonLayout = new LinearLayout(
@@ -398,8 +398,8 @@ public class GoodCheckActivity extends BaseActivity {
 		// LayoutParams.MATCH_PARENT));
 		oneLayout.setOrientation(LinearLayout.VERTICAL);
 		twoLayout.setOrientation(LinearLayout.VERTICAL);
-		int len = list.size();// ´ú±íĞèÒªÉú³Élen¸öRadiobuttonºÍlen¸ötextview×é¼ş
-		// ÏÈ´´½¨len¸öµ¥Ñ¡°´Å¥
+		int len = list.size();// ä»£è¡¨éœ€è¦ç”Ÿæˆlenä¸ªRadiobuttonå’Œlenä¸ªtextviewç»„ä»¶
+		// å…ˆåˆ›å»ºlenä¸ªå•é€‰æŒ‰é’®
 
 		RadioGroup group = new RadioGroup(getApplicationContext());
 		setSubmit(group);
@@ -414,12 +414,12 @@ public class GoodCheckActivity extends BaseActivity {
 			}
 		});
 		for (int i = 0; i < len; i++) {
-			// ´´½¨¸÷¸öradiobutton×é¼ş,²¢×°ÔØÔÚ²¼¾ÖÖĞ
+			// åˆ›å»ºå„ä¸ªradiobuttonç»„ä»¶,å¹¶è£…è½½åœ¨å¸ƒå±€ä¸­
 			RadioButton button = new RadioButton(getApplicationContext());
 
 			group.addView(button);
 			button.setId(i + 1);
-			// Í¬ÊÂ´´½¨¸÷ÖÖtextview×é¼ş·ÅÔÚ²¼¾ÖÖĞ
+			// åŒäº‹åˆ›å»ºå„ç§textviewç»„ä»¶æ”¾åœ¨å¸ƒå±€ä¸­
 			TextView textView = new TextView(getApplicationContext());
 			textView.setText(list.get(i).getContent());
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -443,7 +443,7 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * ´´½¨¶àÑ¡¿ØÖÆÀ¸
+	 * åˆ›å»ºå¤šé€‰æ§åˆ¶æ 
 	 */
 	private void addCheckBox(ArrayList<UvDo> list) {
 		LinearLayout checkBoxLayout = new LinearLayout(getApplicationContext());
@@ -456,12 +456,12 @@ public class GoodCheckActivity extends BaseActivity {
 		// LayoutParams.MATCH_PARENT));
 		oneLayout.setOrientation(LinearLayout.VERTICAL);
 		twoLayout.setOrientation(LinearLayout.VERTICAL);
-		int len = list.size();// ´ú±íĞèÒªÉú³Élen¸öRadiobuttonºÍlen¸ötextview×é¼ş
-		// ÏÈ´´½¨len¸öµ¥Ñ¡°´Å¥
+		int len = list.size();// ä»£è¡¨éœ€è¦ç”Ÿæˆlenä¸ªRadiobuttonå’Œlenä¸ªtextviewç»„ä»¶
+		// å…ˆåˆ›å»ºlenä¸ªå•é€‰æŒ‰é’®
 		for (int i = 0; i < len; i++) {
-			// ´´½¨¸÷¸öradiobutton×é¼ş,²¢×°ÔØÔÚ²¼¾ÖÖĞ
+			// åˆ›å»ºå„ä¸ªradiobuttonç»„ä»¶,å¹¶è£…è½½åœ¨å¸ƒå±€ä¸­
 			final CheckBox button = new CheckBox(getApplicationContext());
-			// Í¬ÊÂ´´½¨¸÷ÖÖtextview×é¼ş·ÅÔÚ²¼¾ÖÖĞ
+			// åŒäº‹åˆ›å»ºå„ç§textviewç»„ä»¶æ”¾åœ¨å¸ƒå±€ä¸­
 			button.setTag(list.get(i));
 			oneLayout.addView(button);
 
@@ -500,7 +500,7 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * ´´½¨ĞÇ¼¶Í¶Æ±±êÇ©
+	 * åˆ›å»ºæ˜Ÿçº§æŠ•ç¥¨æ ‡ç­¾
 	 */
 	private void addRatingBar(final ArrayList<UvDo> list) {
 		LinearLayout ratingBarLayout = new LinearLayout(getApplicationContext());
@@ -509,11 +509,11 @@ public class GoodCheckActivity extends BaseActivity {
 
 		// twoLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
 		// LayoutParams.MATCH_PARENT));
-		int len = list.size();// ´ú±íĞèÒªÉú³Élen¸öRadiobuttonºÍlen¸ötextview×é¼ş
-		// ÏÈ´´½¨len¸öµ¥Ñ¡°´Å¥
-		// ´´½¨¸÷¸öradiobutton×é¼ş,²¢×°ÔØÔÚ²¼¾ÖÖĞ
+		int len = list.size();// ä»£è¡¨éœ€è¦ç”Ÿæˆlenä¸ªRadiobuttonå’Œlenä¸ªtextviewç»„ä»¶
+		// å…ˆåˆ›å»ºlenä¸ªå•é€‰æŒ‰é’®
+		// åˆ›å»ºå„ä¸ªradiobuttonç»„ä»¶,å¹¶è£…è½½åœ¨å¸ƒå±€ä¸­
 		final RatingBar button = new RatingBar(getApplicationContext());
-		// Í¬ÊÂ´´½¨¸÷ÖÖtextview×é¼ş·ÅÔÚ²¼¾ÖÖĞ
+		// åŒäº‹åˆ›å»ºå„ç§textviewç»„ä»¶æ”¾åœ¨å¸ƒå±€ä¸­
 
 		button.setNumStars(len);
 		button.setStepSize(1);
@@ -549,24 +549,24 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * ´´½¨EditView
+	 * åˆ›å»ºEditView
 	 */
 	private CalendarPickerView calendar;
 	private CalendarPickerView dialogView;
 	private AlertDialog theDialog;
 
 	/*
-	 * 0±íÊ¾»Ø´ğµÄÄÚÈİÎªÆÕÍ¨ÎÄ±¾¼´¿É£¬1±íÊ¾»Ø´ğµÄÄÚÈİ±ØĞë·ûºÏÈÕÆÚÀàĞÍµÄ¹æ·¶£¬2±íÊ¾»Ø´ğµÄÄÚÈİ±ØĞë·ûºÏÊÖ»úºÅÂëÀàĞÍ¹æ·¶
+	 * 0è¡¨ç¤ºå›ç­”çš„å†…å®¹ä¸ºæ™®é€šæ–‡æœ¬å³å¯ï¼Œ1è¡¨ç¤ºå›ç­”çš„å†…å®¹å¿…é¡»ç¬¦åˆæ—¥æœŸç±»å‹çš„è§„èŒƒï¼Œ2è¡¨ç¤ºå›ç­”çš„å†…å®¹å¿…é¡»ç¬¦åˆæ‰‹æœºå·ç ç±»å‹è§„èŒƒ
 	 */
 	private void addEditView(final UvDo vDo, int type) {
-		// type 0ÆÕÍ¨ 1Êı×ÖĞÍ 2 ÈÕÆÚĞÍ
+		// type 0æ™®é€š 1æ•°å­—å‹ 2 æ—¥æœŸå‹
 		LinearLayout editViewLayout = new LinearLayout(getApplicationContext());
 		editViewLayout.setPadding(20, 2, 20, 2);
 		if (type == 1) {
 			final TextView editTextData = new TextView(getApplicationContext());
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-			editTextData.setText("¼üÈëÈÕÆÚ");
+			editTextData.setText("é”®å…¥æ—¥æœŸ");
 			editTextData.setLayoutParams(params);
 
 			editTextData.setOnClickListener(new OnClickListener() {
@@ -592,7 +592,7 @@ public class GoodCheckActivity extends BaseActivity {
 					theDialog = new AlertDialog.Builder(GoodCheckActivity.this)
 
 							.setView(dialogView)
-							.setNeutralButton("Ñ¡ÖĞ",
+							.setNeutralButton("é€‰ä¸­",
 									new DialogInterface.OnClickListener() {
 										@Override
 										public void onClick(
@@ -715,7 +715,7 @@ public class GoodCheckActivity extends BaseActivity {
 	}
 
 	/**
-	 * ´´½¨SlipButton
+	 * åˆ›å»ºSlipButton
 	 */
 	private void addSlipButton(ArrayList<UvDo> list) {
 		LinearLayout slipButtonLayout = new LinearLayout(
@@ -741,7 +741,7 @@ public class GoodCheckActivity extends BaseActivity {
 		btn2.setGravity(Gravity.CENTER);
 		btn1.setText(list.get(0).getContent());
 		btn2.setText(list.get(1).getContent());
-		// Ä¬ÈÏÇé¿öÏÂbtn1ÏÔÊ¾
+		// é»˜è®¤æƒ…å†µä¸‹btn1æ˜¾ç¤º
 		btn1.setTag(list.get(0));
 		btn2.setTag(list.get(1));
 		btn1.setVisibility(View.VISIBLE);
@@ -753,7 +753,7 @@ public class GoodCheckActivity extends BaseActivity {
 			@SuppressWarnings("static-access")
 			@Override
 			public void onClick(View v) {
-				System.out.println("µã»÷" + btn1.VISIBLE);
+				System.out.println("ç‚¹å‡»" + btn1.VISIBLE);
 				if (SLIP == 0) {
 					btn1.setVisibility(View.INVISIBLE);
 					btn2.setVisibility(View.VISIBLE);

@@ -16,7 +16,7 @@ public class DialogProgress {
 	public void CreateProgress() {
 		progressDialog = new ProgressDialog(context);
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setMessage("Å¬Á¦¼ÓÔØÖÐ...");
+		progressDialog.setMessage("åŠªåŠ›åŠ è½½ä¸­...");
 		progressDialog.setIndeterminate(false);
 		progressDialog.setCancelable(true);
 		progressDialog.show();

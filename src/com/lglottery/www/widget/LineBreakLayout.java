@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 public class LineBreakLayout extends ViewGroup {
 	/**
-	 * 不规则布局
+	 * 涓嶈鍒欏竷灞�
 	 */
 
 	private final static String TAG = "LineBreakLayout";

@@ -61,7 +61,7 @@ import com.lelinju.www.R;
 
 /**
  *
- * ÎÒµÄ¾Û·Û
+ * æˆ‘çš„èšç²‰
  * @author Administrator
  * 
  */
@@ -139,7 +139,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 //	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 //
@@ -157,7 +157,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 //	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 //	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 //
@@ -192,7 +192,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 				System.out.println("-------------------------"+list.size());
 				if (list.size() > 0) {
 					String num = String.valueOf(list.size());
-					tv_geshu.setText(num+"¸ö");
+					tv_geshu.setText(num+"ä¸ª");
 				}
 				
 //				list = (ArrayList<MyJuFenData>) msg.obj;
@@ -209,7 +209,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 	};
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 //	private int RUN_METHOD = -1;
 //	private int CURRENT_NUM = 1;
@@ -221,7 +221,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 //		RUN_METHOD = 1;
 		list = new ArrayList<MyJuFenData>();
 //		if(flag){
-//			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+//			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 //			CURRENT_NUM = 0;
 //			list = new ArrayList<MyJuFenData>();
 //		}
@@ -233,7 +233,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -250,7 +250,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 										data.real_name = object.getString("real_name");
 										data.nick_name = object.getString("nick_name");
 										String avatar = data.avatar;//
-										System.out.println("¶ş¼¶Öµ2====================="+avatar);
+										System.out.println("äºŒçº§å€¼2====================="+avatar);
 										if (avatar.contains("http")) {
 											System.out.println("================================http");
 											list_avatar1.add(avatar);
@@ -259,7 +259,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 								    	    String img_url = RealmName.REALM_NAME_HTTP + avatar;
 								    	    list_avatar1.add(img_url);
 									   }else {
-										   System.out.println("================================¿ÕÖµ");
+										   System.out.println("================================ç©ºå€¼");
 										   list_avatar1.add(avatar);
 									   }
 										list.add(data);
@@ -286,12 +286,12 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * µÚ2¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬2ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 //	private void load_list2(boolean flag) {
 //		list = new ArrayList<MyJuFenData>();
 //		if(flag){
-//			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+//			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 //			CURRENT_NUM = 0;
 //			list = new ArrayList<MyJuFenData>();
 //		}
@@ -302,7 +302,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 //							public void onSuccess(int arg0, String arg1) {
 //								// TODO Auto-generated method stub
 //								super.onSuccess(arg0, arg1);
-//								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+//								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 //								try {
 //									JSONObject jsonObject = new JSONObject(arg1);
 //									JSONArray jsonArray = jsonObject.getJSONArray("data");
@@ -349,7 +349,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * ·ÖÏí
+	 * åˆ†äº«
 	 * 
 	 * @param view2
 	 * @param context
@@ -364,7 +364,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 			pop.setBackgroundDrawable(new BitmapDrawable());
 			pop.setOutsideTouchable(true);
 			// pop.setFocusable(true);
-			// pop.setTouchable(true); // ÉèÖÃPopupWindow¿É´¥Ãş
+			// pop.setTouchable(true); // è®¾ç½®PopupWindowå¯è§¦æ‘¸
 			//
 			if (!pop.isShowing()) {
 				pop.showAtLocation(view2, Gravity.BOTTOM, 0, 0);
@@ -389,7 +389,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 			e.printStackTrace();
 		}
 
-		// ĞÂÀË
+		// æ–°æµª
 		img_btn_tencent.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -398,7 +398,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 			}
 		});
 
-		// Î¢ĞÅ
+		// å¾®ä¿¡
 		btn_wechat.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -407,7 +407,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 				con(16, 1);
 			}
 		});
-		// ÅóÓÑÈ¦
+		// æœ‹å‹åœˆ
 		btn_wx_friend.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -417,7 +417,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 				con(17, 1);
 			}
 		});
-		// ¶ÌĞÅ
+		// çŸ­ä¿¡
 		btn_sms.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -436,8 +436,8 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 			System.out.println("id==========" + id);
 			// http://183.62.138.31:1010/appshare/133.html
 			String data = "http://183.62.138.31:1010/appshare/" + id + ".html";
-			System.out.println("·ÖÏí11======================" + data);
-			String zhou = "¾ÛÔÆÉÌÏÂÔØµØÖ·,ÏÂÔØºó¿É°ï·ÖÏíµÄºÃÓÑ»ñµÃ»ı·Ö" + data;
+			System.out.println("åˆ†äº«11======================" + data);
+			String zhou = "èšäº‘å•†ä¸‹è½½åœ°å€,ä¸‹è½½åå¯å¸®åˆ†äº«çš„å¥½å‹è·å¾—ç§¯åˆ†" + data;
 			System.out.println("==========" + zhou);
 			softshareWxChat(zhou);
 		} catch (Exception e) {
@@ -447,7 +447,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 	}
 
 	/**
-	 * Î¢ĞÅ·ÖÏí
+	 * å¾®ä¿¡åˆ†äº«
 	 * 
 	 * @param text
 	 */
@@ -461,8 +461,8 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 		webpage.webpageUrl = "http" + temp[1];
 		// webpage.webpageUrl = temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-		// msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";ysj_logn
-		msg.title = "¾ÛÔÆÉÌAPP·ÖÏí";
+		// msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";ysj_logn
+		msg.title = "èšäº‘å•†APPåˆ†äº«";
 		msg.description = temp[0];
 		Bitmap thumb = BitmapFactory.decodeResource(getResources(),
 				R.drawable.icon);
@@ -474,7 +474,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
 
-		System.out.println("Î¢ĞÅ×¢²á" + flag);
+		System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 
 	}
 
@@ -484,7 +484,7 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
 	}
 	
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -492,18 +492,18 @@ public class MyJuFenActivity extends BaseActivity implements OnClickListener{
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     }   
 	

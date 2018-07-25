@@ -3,7 +3,7 @@ package com.lglottery.www.domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 /**
- * ¹ØÓÚÁĞ±íµÄÊµÌå¶ÔÏó
+ * å…³äºåˆ—è¡¨çš„å®ä½“å¯¹è±¡
  * @author cloor
  *
  */

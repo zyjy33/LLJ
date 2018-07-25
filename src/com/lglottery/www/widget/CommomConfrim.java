@@ -19,7 +19,7 @@ public class CommomConfrim {
 		void onClick(int resID);
 	}
 	/**
-	 * Ö§¸¶µ¯³ö¿ò
+	 * æ”¯ä»˜å¼¹å‡ºæ¡†
 	 */
 	private CommomConfrim() {
 	}

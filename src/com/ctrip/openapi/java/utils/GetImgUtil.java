@@ -8,27 +8,27 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 public class GetImgUtil {
-	// »ñÈ¡ÍøÂçÍ¼Æ¬µÄÊı¾İ
+	// è·å–ç½‘ç»œå›¾ç‰‡çš„æ•°æ®
 	public static Bitmap getImage(String picturepath)  {
 		 URL myFileURL;  
 	        Bitmap bitmap=null;  
 	        try{  
 	            myFileURL = new URL(picturepath);  
-	            //»ñµÃÁ¬½Ó  
+	            //è·å¾—è¿æ¥  
 	            HttpURLConnection conn=(HttpURLConnection)myFileURL.openConnection();  
-	            //ÉèÖÃ³¬Ê±Ê±¼äÎª5Ãë£¬conn.setConnectionTiem(0);±íÊ¾Ã»ÓĞÊ±¼äÏŞÖÆ  
+	            //è®¾ç½®è¶…æ—¶æ—¶é—´ä¸º5ç§’ï¼Œconn.setConnectionTiem(0);è¡¨ç¤ºæ²¡æœ‰æ—¶é—´é™åˆ¶  
 	            conn.setConnectTimeout(5*1000);  
-	            //Á¬½ÓÉèÖÃ»ñµÃÊı¾İÁ÷  
+	            //è¿æ¥è®¾ç½®è·å¾—æ•°æ®æµ  
 	            conn.setDoInput(true);  
-	            //²»Ê¹ÓÃ»º´æ  
+	            //ä¸ä½¿ç”¨ç¼“å­˜  
 	            conn.setUseCaches(false);  
-	            //Õâ¾ä¿ÉÓĞ¿ÉÎŞ£¬Ã»ÓĞÓ°Ïì  
+	            //è¿™å¥å¯æœ‰å¯æ— ï¼Œæ²¡æœ‰å½±å“  
 	            //conn.connect();  
-	            //µÃµ½Êı¾İÁ÷  
+	            //å¾—åˆ°æ•°æ®æµ  
 	            InputStream is = conn.getInputStream();  
-	            //½âÎöµÃµ½Í¼Æ¬  
+	            //è§£æå¾—åˆ°å›¾ç‰‡  
 	            bitmap = BitmapFactory.decodeStream(is);  
-	            //¹Ø±ÕÊı¾İÁ÷  
+	            //å…³é—­æ•°æ®æµ  
 	            is.close();  
 	        }catch(Exception e){  
 	            e.printStackTrace();  

@@ -117,8 +117,8 @@ public class OrderDetailActivity extends BaseActivity implements
 		 * String total = list.get(arg2).Price; // String code =
 		 * list.get(arg2).SerialNumber; // String reno = list.get(arg2).trno;
 		 */
-		tv_jf.setText("Ïû·Ñ»ı·Ö:" + data.jf);
-		tv_total.setText("¶©µ¥×Ü¼Û:  £¤" + data.Price);
+		tv_jf.setText("æ¶ˆè´¹ç§¯åˆ†:" + data.jf);
+		tv_total.setText("è®¢å•æ€»ä»·:  ï¿¥" + data.Price);
 		v1.setText(data.Address);
 		v2.setText(data.UserName);
 		v3.setText(data.SerialNumber);
@@ -181,18 +181,18 @@ public class OrderDetailActivity extends BaseActivity implements
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 	/**
-	 * ÔÚÏßÖ§¸¶
+	 * åœ¨çº¿æ”¯ä»˜
 	 */
 	private void onlinePay() {
 
@@ -200,12 +200,12 @@ public class OrderDetailActivity extends BaseActivity implements
 		String[] bankNames = bundle.getStringArray("bank_names");
 		ArrayList<CardItem> banks = (ArrayList<CardItem>) bundle
 				.getSerializable("bank_objs");
-		// Ìæ»»ÎªÖ§¸¶¿Ø¼ş
+		// æ›¿æ¢ä¸ºæ”¯ä»˜æ§ä»¶
 		// initPopupWindow();
 		// showPopupWindow(btn_continue_pay);
 		if (banks != null && banks.size() != 0) {
-			// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-			System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+			// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+			System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 			// initPopupWindow1();
 			// showPopupWindow1(btn_OK);
 			Intent intent = new Intent(OrderDetailActivity.this,
@@ -218,7 +218,7 @@ public class OrderDetailActivity extends BaseActivity implements
 			intent.putExtras(bundle);
 			startActivity(intent);
 		} else {
-			// ±íÊ¾Ê×´ÎÖ§¸¶
+			// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 			Intent intent = new Intent(OrderDetailActivity.this,
 					PayActivity.class);
 			Bundle bundle = new Bundle();
@@ -261,9 +261,9 @@ public class OrderDetailActivity extends BaseActivity implements
 			 * else { String trade_no = data.trno; String[] bankNames =
 			 * bundle.getStringArray("bank_names"); ArrayList<CardItem> banks =
 			 * (ArrayList<CardItem>) bundle .getSerializable("bank_objs"); //
-			 * Ìæ»»ÎªÖ§¸¶¿Ø¼ş // initPopupWindow(); //
+			 * æ›¿æ¢ä¸ºæ”¯ä»˜æ§ä»¶ // initPopupWindow(); //
 			 * showPopupWindow(btn_continue_pay); if (banks != null &&
-			 * banks.size() != 0) { // ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶ System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶"); //
+			 * banks.size() != 0) { // è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜ System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜"); //
 			 * initPopupWindow1(); // showPopupWindow1(btn_OK); Intent intent =
 			 * new Intent(OrderDetailActivity.this, PayActivity.class); Bundle
 			 * bundle = new Bundle(); bundle.putInt("tag", 1);
@@ -271,7 +271,7 @@ public class OrderDetailActivity extends BaseActivity implements
 			 * bundle.putStringArray("bank_names", bankNames);
 			 * bundle.putSerializable("bank_objs", banks);
 			 * intent.putExtras(bundle); startActivity(intent); } else { //
-			 * ±íÊ¾Ê×´ÎÖ§¸¶ Intent intent = new Intent(OrderDetailActivity.this,
+			 * è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜ Intent intent = new Intent(OrderDetailActivity.this,
 			 * PayActivity.class); Bundle bundle = new Bundle();
 			 * bundle.putInt("tag", 0); bundle.putSerializable("trade_no",
 			 * trade_no); intent.putExtras(bundle); startActivity(intent); //
@@ -303,13 +303,13 @@ public class OrderDetailActivity extends BaseActivity implements
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.grey));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -317,7 +317,7 @@ public class OrderDetailActivity extends BaseActivity implements
 		bank_item = (WheelViewll) popView.findViewById(R.id.bank_item);
 		Button cancle = (Button) popView.findViewById(R.id.cancle);
 		Button sure = (Button) popView.findViewById(R.id.sure);
-		String[] names = new String[] { "ÔÚÏßÖ§¸¶", "Í¨È¯Ö§¸¶" };
+		String[] names = new String[] { "åœ¨çº¿æ”¯ä»˜", "é€šåˆ¸æ”¯ä»˜" };
 		ArrayWheelAdapterll<String> bankAdapter = new ArrayWheelAdapterll<String>(
 				names);
 		bank_item.setAdapter(bankAdapter);
@@ -349,8 +349,8 @@ public class OrderDetailActivity extends BaseActivity implements
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
@@ -365,9 +365,9 @@ public class OrderDetailActivity extends BaseActivity implements
 
 	protected void dialog() {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				strUrl2 = RealmName.REALM_NAME
@@ -396,7 +396,7 @@ public class OrderDetailActivity extends BaseActivity implements
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {

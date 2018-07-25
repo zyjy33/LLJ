@@ -61,11 +61,11 @@ public class MyAddressManagerAdapter extends BaseAdapter {
 		TextView tv_user_name = (TextView) convertView.findViewById(R.id.tv_user_name);
 		TextView tv_user_address = (TextView) convertView.findViewById(R.id.tv_user_address);
 		TextView tv_user_phone = (TextView) convertView.findViewById(R.id.tv_user_phone);
-		tv_user_name.setText(" ’ªı»À: "+list.get(position).user_accept_name);
+		tv_user_name.setText("Êî∂Ë¥ß‰∫∫: "+list.get(position).user_accept_name);
 		tv_user_phone.setText(list.get(position).user_mobile);
 		String user_area = list.get(position).user_area;
 		String user_address = list.get(position).user_address;
-		tv_user_address.setText("µÿ÷∑: "+list.get(position).province+"°¢"+list.get(position).city+"°¢"+user_area+"°¢"+user_address);
+		tv_user_address.setText("Âú∞ÂùÄ: "+list.get(position).province+"„ÄÅ"+list.get(position).city+"„ÄÅ"+user_area+"„ÄÅ"+user_address);
 		
 //		tv.setText(list.get(position).consigneeAddressInfo);
 		

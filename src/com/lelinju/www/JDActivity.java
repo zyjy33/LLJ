@@ -39,7 +39,7 @@ public class JDActivity extends BaseActivity {
 			switch (msg.what) {
 			case 1:
 				final ArrayList<JDbean> list = (ArrayList<JDbean>) msg.obj;	
-				//½«»ñµÃµÄÊı¾İ´«µİµ½ÊÊÅäÆ÷µ±ÖĞ
+				//å°†è·å¾—çš„æ•°æ®ä¼ é€’åˆ°é€‚é…å™¨å½“ä¸­
 				SharedUtils utils = new SharedUtils(getApplicationContext(),
 						Common.locationName);
 				double lat = Double.parseDouble(utils.getStringValue("lat"));
@@ -87,7 +87,7 @@ public class JDActivity extends BaseActivity {
 		provinceAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		advert_order_province.setAdapter(provinceAdapter);
-		// ³ÇÊĞ
+		// åŸå¸‚
 		city = new JDB(getApplicationContext())
 				.getProvince("select name from TongChengLY_CityList where provinceId =(select provinceId from TongChengLY_ProvinceList where name='"
 						+ province.get(0) + "')");

@@ -12,8 +12,8 @@ public class SurfaceViewTemplate extends SurfaceView implements Callback, Runnab
 	private SurfaceHolder mHolder;
 	private Canvas mCanvas;
 
-	private Thread t;// ÓÃÓÚ»æÖÆµÄÏß³Ì
-	private boolean isRunning; // Ïß³ÌµÄ¿ØÖÆ¿ª¹Ø
+	private Thread t;// ç”¨äºç»˜åˆ¶çš„çº¿ç¨‹
+	private boolean isRunning; // çº¿ç¨‹çš„æ§åˆ¶å¼€å…³
 
 	public SurfaceViewTemplate(Context context) {
 		this(context, null);
@@ -26,10 +26,10 @@ public class SurfaceViewTemplate extends SurfaceView implements Callback, Runnab
 		mHolder = getHolder();
 		mHolder.addCallback(this);
 
-		// ¿É»ñµÃ½¹µã
+		// å¯è·å¾—ç„¦ç‚¹
 		setFocusable(true);
 		setFocusableInTouchMode(true);
-		// ÉèÖÃ³¤ÁÁ
+		// è®¾ç½®é•¿äº®
 		setKeepScreenOn(true);
 	}
 

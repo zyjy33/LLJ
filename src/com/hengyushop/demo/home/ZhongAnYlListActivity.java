@@ -45,7 +45,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.WareInformationActivity;
 
 /**
- * ÖĞ°²ÑøÀÏ
+ * ä¸­å®‰å…»è€
  * 
  * @author Administrator
  * 
@@ -100,7 +100,7 @@ public class ZhongAnYlListActivity extends BaseActivity implements OnClickListen
 			case 1:
 				
 				try {
-					System.out.println("list¸öÊıÊÇ¶àÉÙ===================="+list.size());
+					System.out.println("listä¸ªæ•°æ˜¯å¤šå°‘===================="+list.size());
 					ZaylListAdapter MyAdapter2 = new ZaylListAdapter(list, getApplicationContext());
 					gridview.setAdapter(MyAdapter2);
 					setListViewHeightBasedOnChildren(gridview);  
@@ -150,7 +150,7 @@ public class ZhongAnYlListActivity extends BaseActivity implements OnClickListen
 				public void onSuccess(int arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onSuccess(arg0, arg1);
-					System.out.println("=======ÁĞ±íÊı¾İ================================");
+					System.out.println("=======åˆ—è¡¨æ•°æ®================================");
 					try {
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
@@ -167,7 +167,7 @@ public class ZhongAnYlListActivity extends BaseActivity implements OnClickListen
 							bean.setSell_price(obt.getString("sell_price"));
 							bean.setMarket_price(obt.getString("market_price"));
 							String zhou = bean.getTitle();
-							System.out.println("=====ÄÚÈİ====================="+zhou);
+							System.out.println("=====å†…å®¹====================="+zhou);
 							list.add(bean);
 						}
 						progress.CloseProgress();
@@ -184,7 +184,7 @@ public class ZhongAnYlListActivity extends BaseActivity implements OnClickListen
 			}, null);
 		}
 		public void setListViewHeightBasedOnChildren(GridView gridview2) {   
-	        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+	        // è·å–ListViewå¯¹åº”çš„Adapter   
 	        ListAdapter listAdapter = gridview2.getAdapter();   
 	        if (listAdapter == null) {   
 	            return;   
@@ -192,18 +192,18 @@ public class ZhongAnYlListActivity extends BaseActivity implements OnClickListen
 	   
 	        int totalHeight = 0;   
 	        for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-	            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+	            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
 	            View listItem = listAdapter.getView(i, null, gridview2);   
-	            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+	            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
 	            listItem.measure(0, 0);    
-	            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+	            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
 	            totalHeight += listItem.getMeasuredHeight();    
 	        }   
 	   
 	        ViewGroup.LayoutParams params = gridview2.getLayoutParams();   
 	        params.height = totalHeight+ (gridview2.getHeight() * (listAdapter.getCount() - 1));   
-	        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-	        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+	        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+	        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
 	        gridview2.setLayoutParams(params);   
 	    }  
 

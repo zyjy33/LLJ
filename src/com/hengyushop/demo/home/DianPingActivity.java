@@ -37,7 +37,7 @@ import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 /**
- * µãÆÀ
+ * ç‚¹è¯„
  * 
  * @author Administrator
  * 
@@ -87,15 +87,15 @@ public class DianPingActivity extends BaseActivity implements OnClickListener{
 				switch (arg1) {
 				case R.id.ra1:
 					check = "0";
-//					ra4.setText("ÎÒÃÇµÄÉÌÆ·Ò»¶¨³¬³öÄúµÄÆÚÍû£¡");
+//					ra4.setText("æˆ‘ä»¬çš„å•†å“ä¸€å®šè¶…å‡ºæ‚¨çš„æœŸæœ›ï¼");
 					break;
 				case R.id.ra2:
 					check = "1";
-//					ra4.setText("Ò»¶¨ÊÇÎÒ²»¹»ÍêÃÀ²ÅÈÃÄãÕâÑùÓÌÔ¥£¬ÎÒÃÇÒ»¶¨»á×öµÃ¸üºÃ£¡");
+//					ra4.setText("ä¸€å®šæ˜¯æˆ‘ä¸å¤Ÿå®Œç¾æ‰è®©ä½ è¿™æ ·çŠ¹è±«ï¼Œæˆ‘ä»¬ä¸€å®šä¼šåšå¾—æ›´å¥½ï¼");
 					break;
 				case R.id.ra3:
 					check = "2";
-//					ra4.setText("Äú±¦¹óµÄ½¨Òé¶ÔÎÒÃÇÓĞºÜ´óµÄ°ïÖú£¡");
+//					ra4.setText("æ‚¨å®è´µçš„å»ºè®®å¯¹æˆ‘ä»¬æœ‰å¾ˆå¤§çš„å¸®åŠ©ï¼");
 					break;
 				default:
 					break;
@@ -121,7 +121,7 @@ public class DianPingActivity extends BaseActivity implements OnClickListener{
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("=======ÏêÇéÊı¾İ=="+arg1);
+				System.out.println("=======è¯¦æƒ…æ•°æ®=="+arg1);
 				try {
 					progress.CloseProgress();
 					JSONObject object = new JSONObject(arg1);

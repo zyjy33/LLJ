@@ -30,7 +30,7 @@ import com.lelinju.www.MyOrderConfrimActivity;
 import com.lelinju.www.PersonCenterActivity;
 import com.lelinju.www.R;
 /**
- * ÌáÊ¾ÑøÀÏ½ğ
+ * æç¤ºå…»è€é‡‘
  * @author 
  *
  */
@@ -129,8 +129,8 @@ public class TishiPensionActivity extends Activity implements OnClickListener{
 		System.out.println("give_pension================================="+getIntent().getStringExtra("give_pension"));
 		System.out.println("article_id================================="+getIntent().getStringExtra("article_id"));
 //		 Toast.makeText(TishiPensionActivity.this, give_pension, 200).show();
-//		textView1.setText("½«½ø"+give_pension+"Ôª");
-		textView1.setText("½«½ø"+getIntent().getStringExtra("give_pension")+"Ôª");
+//		textView1.setText("å°†è¿›"+give_pension+"å…ƒ");
+		textView1.setText("å°†è¿›"+getIntent().getStringExtra("give_pension")+"å…ƒ");
 		
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -140,7 +140,7 @@ public class TishiPensionActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -148,7 +148,7 @@ public class TishiPensionActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.iv_fanhui1://È¡Ïû
+		case R.id.iv_fanhui1://å–æ¶ˆ
 			finish();
 			break;
 		case R.id.iv_fanhui3://

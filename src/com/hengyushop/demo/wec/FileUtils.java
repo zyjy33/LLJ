@@ -15,7 +15,7 @@ public class FileUtils {
 	
 	private static final String TEXT_CACHE_PATH = "/data/data/com.ysj.www/";
 	/**
-	 * Ğ´Èë»º´æÎÄ¼ş
+	 * å†™å…¥ç¼“å­˜æ–‡ä»¶
 	 */
 	public static void saveCache(String text,String name) {
 		File file = new File(TEXT_CACHE_PATH);
@@ -41,7 +41,7 @@ public class FileUtils {
 		}
 	}
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şÄÚÈİ
+	 * è¯»å–æ–‡ä»¶å†…å®¹
 	 * @param name
 	 * @return
 	 */
@@ -57,7 +57,7 @@ public class FileUtils {
 		return utils.convertStreamToString(fs, "utf-8");
 	}
 	/**
-	 * »ñµÃÎÄ¼şµÄ³¤¶È
+	 * è·å¾—æ–‡ä»¶çš„é•¿åº¦
 	 * @param name
 	 * @return
 	 */

@@ -80,10 +80,10 @@ public class JuduihuanAdaper extends BaseAdapter {
 		
 		holder.tv_biaoti.setText(list.get(position).title);
 //		holder.tv_jifengduihuan.setText(list.get(position).cashing_point);
-		holder.tv_jifengduihuan.setText(list.get(position).exchange_point+"ÀÖ¶¹"+"+"+list.get(position).exchange_price+"Ôª");
+		holder.tv_jifengduihuan.setText(list.get(position).exchange_point+"ä¹è±†"+"+"+list.get(position).exchange_price+"å…ƒ");
 		
-		holder.tv_shichangjia.setText("ÊĞ³¡¼Û:£¤"+list.get(position).market_price);
-		holder.tv_shichangjia.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
+		holder.tv_shichangjia.setText("å¸‚åœºä»·:ï¿¥"+list.get(position).market_price);
+		holder.tv_shichangjia.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 //		ImageLoader imageLoader=ImageLoader.getInstance();
 //		loader.displayImage((String) RealmName.REALM_NAME_HTTP+list.get(position).img_url,holder.img);
 		mAq.id(holder.img).image(RealmName.REALM_NAME_HTTP+list.get(position).img_url);
@@ -91,7 +91,7 @@ public class JuduihuanAdaper extends BaseAdapter {
 //        InputStream is = mContext.getResources().openRawResource(R.drawable.pic1); 
 //        BitmapFactory.Options options=new BitmapFactory.Options(); 
 //        options.inJustDecodeBounds = false; 
-//        options.inSampleSize = 10;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ» 
+//        options.inSampleSize = 10;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€ 
 //        Bitmap btp =BitmapFactory.decodeStream(is,null,options); 
          
 		

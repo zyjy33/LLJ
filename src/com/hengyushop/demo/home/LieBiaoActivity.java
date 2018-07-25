@@ -62,7 +62,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 		gridView = (GridView) findViewById(R.id.gridView);
 		String parent_id = getIntent().getStringExtra("id");
 		quanbu = getIntent().getStringExtra("quanbu_id");
-		 System.out.println("=====1µÚ¶ş²ãdeÊı¾İ====================="+parent_id);
+		 System.out.println("=====1ç¬¬äºŒå±‚deæ•°æ®====================="+parent_id);
 //		String parent_id = "609";
 		getleibie(parent_id);
 		
@@ -79,7 +79,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 	
 	private void getleibie(String parent_id) {
 		// TODO Auto-generated method stub
-		 System.out.println("=====1µÚ¶ş²ãdeÊı¾İ====================="+parent_id);
+		 System.out.println("=====1ç¬¬äºŒå±‚deæ•°æ®====================="+parent_id);
 			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_category_child_list?" +
 					"channel_name=goods&parent_id="+parent_id+"",new AsyncHttpResponseHandler() {
 						@Override
@@ -92,7 +92,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * µÚ¶ş¼¶²Ëµ¥
+	 * ç¬¬äºŒçº§èœå•
 	 */
 	private ArrayList data1,data2;
 	private void formatWeatherll(String result) {
@@ -100,7 +100,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 		data2= new ArrayList();
 		listll = new ArrayList<WareDatall>();
 		try {
-			System.out.println("=====µÚ¶ş²ãÊı¾İ====================="+result);
+			System.out.println("=====ç¬¬äºŒå±‚æ•°æ®====================="+result);
 			JSONObject object = new JSONObject(result);
 			String status = object.getString("status");
 			if (status.equals("y")) {
@@ -108,7 +108,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 			
 			listll.add(0, null);
 			data1.add("001");
-			data2.add("È«²¿");
+			data2.add("å…¨éƒ¨");
     		for (int i = 0; i < jsonArray.length(); i++) {
     		JSONObject obj= jsonArray.getJSONObject(i);
     		dm = new WareDatall();
@@ -137,10 +137,10 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 	            	 String  quanbu_id = (String) data1.get(arg2);
             	 if (quanbu_id.equals("001")) {
             		 title_id = quanbu;
-            		 System.out.println("=====1µÚ¶ş²ãtitle_id====================="+title_id);
+            		 System.out.println("=====1ç¬¬äºŒå±‚title_id====================="+title_id);
 				 } else {
 					 title_id = (String) data1.get(arg2);
-					 System.out.println("=====2µÚ¶ş²ãtitle_id====================="+title_id);
+					 System.out.println("=====2ç¬¬äºŒå±‚title_id====================="+title_id);
 				 }
             	 
 	            	 arrayadapter.setSeclection(arg2);
@@ -155,7 +155,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 	        
             }else {
             	gridView.setVisibility(View.GONE);
-            	System.out.println("=====µÚ¶ş²ãÊı¾İ2====================="+INDX);
+            	System.out.println("=====ç¬¬äºŒå±‚æ•°æ®2====================="+INDX);
             	load_list(INDX, true);
 			}
 			 
@@ -167,7 +167,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * 1ÁĞ±íÊı¾İ½âÎö
+	 * 1åˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int CURRENT_NUM = 1;
 	private final int VIEW_NUM = 10;
@@ -184,7 +184,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=====================Èı¼¶Öµ"+arg1);
+//								System.out.println("=====================ä¸‰çº§å€¼"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -209,7 +209,7 @@ public class LieBiaoActivity extends Activity implements OnClickListener{
 									}
 									}else {
 										progress.CloseProgress();
-										Toast.makeText(LieBiaoActivity.this, "Ã»ÓĞÉÌÆ·ÁË", 200).show();
+										Toast.makeText(LieBiaoActivity.this, "æ²¡æœ‰å•†å“äº†", 200).show();
 									}
 									progress.CloseProgress();
 									handler.sendEmptyMessage(0);

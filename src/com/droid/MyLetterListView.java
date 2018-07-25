@@ -11,7 +11,7 @@ import android.view.View;
 public class MyLetterListView extends View {
 
 	OnTouchingLetterChangedListener onTouchingLetterChangedListener;
-	String[] b = {"¶¨Î»", "×î½ü", "ÈÈÃÅ", "È«²¿", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+	String[] b = {"å®šä½", "æœ€è¿‘", "çƒ­é—¨", "å…¨éƒ¨", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
 			"L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
 			"Y", "Z" };
 	int choose = -1;

@@ -46,7 +46,7 @@ import com.lelinju.www.UserLoginActivity;
 
 /**
  * 
- * ÎÒµÄ×Ê²ú
+ * æˆ‘çš„èµ„äº§
  * 
  * @author Administrator
  * 
@@ -89,7 +89,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 	}
 
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 
@@ -190,7 +190,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 	}
 
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -208,7 +208,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 	};
 
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -277,7 +277,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 	};
 
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 //	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -287,7 +287,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 		type = fund_id;
 		RUN_METHOD = 1;
 		if (flag) {
-			// ¼ÆÊıºÍÈİÆ÷ÇåÁã
+			// è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			System.out.println("=====================flag==" + flag);
 			CURRENT_NUM = 1;
 			list = new ArrayList<MyAssetsBean>();
@@ -303,7 +303,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 					public void onSuccess(int arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====================¶ş¼¶Öµ1" + arg1);
+						System.out.println("=====================äºŒçº§å€¼1" + arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");
@@ -326,7 +326,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 							} else {
 								Toast.makeText(MyAssetsActivity.this, info, 200).show();
 							}
-							System.out.println("=====================¶ş¼¶Öµ12");
+							System.out.println("=====================äºŒçº§å€¼12");
 							Message msg = new Message();
 							msg.what = 0;
 							msg.obj = list;
@@ -346,7 +346,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 
 
 	/**
-	 * Öµ
+	 * å€¼
 	 */
 	private void loadguanggao() {
 		try {
@@ -357,7 +357,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 			AsyncHttp.get(strUrl, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³öÓÃ»§×ÊÁÏ=============" + arg1);
+						System.out.println("======è¾“å‡ºç”¨æˆ·èµ„æ–™=============" + arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						if (status.equals("y")) {
@@ -375,10 +375,10 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 							data.agency_name = obj.getString("agency_name");
 							data.group_name = obj.getString("group_name");
 
-							tv_ticket.setText(data.amount + "Ôª");
-							tv_shop_ticket.setText(data.pension + "Ôª");
-							tv_jifen_ticket.setText(data.packet  + "Ôª");
-							tv_djjifen_ticket.setText(data.point + "·Ö");//packet point
+							tv_ticket.setText(data.amount + "å…ƒ");
+							tv_shop_ticket.setText(data.pension + "å…ƒ");
+							tv_jifen_ticket.setText(data.packet  + "å…ƒ");
+							tv_djjifen_ticket.setText(data.point + "åˆ†");//packet point
 
 						} else {
 
@@ -393,7 +393,7 @@ public class MyAssetsActivity extends BaseActivity implements OnClickListener {
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					NewDataToast.makeText(MyAssetsActivity.this, "Á¬½Ó³¬Ê±", false,0).show();
+					NewDataToast.makeText(MyAssetsActivity.this, "è¿æ¥è¶…æ—¶", false,0).show();
 				}
 			}, getApplicationContext());
 

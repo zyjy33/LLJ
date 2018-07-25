@@ -79,7 +79,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 //			int zhuangtai = 0;//
 			String shuzi = String.valueOf(zhuangtai);
 			System.out.println("zhuangtai-----------------/"+zhuangtai);
-			Toast.makeText(WXPayEntryActivity.this, "·µ»Ø×´Ì¬/"+shuzi, 200).show();
+			Toast.makeText(WXPayEntryActivity.this, "è¿”å›çŠ¶æ€/"+shuzi, 200).show();
 			
 			SharedPreferences spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 			user_name = spPreferences.getString("user", "");
@@ -89,9 +89,9 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 				userloginqm();
 //				finish();
 			} else if (zhuangtai == -1){
-				Toast.makeText(WXPayEntryActivity.this, "Ö§¸¶Òì³£", 200).show();
+				Toast.makeText(WXPayEntryActivity.this, "æ”¯ä»˜å¼‚å¸¸", 200).show();
 			} else if (zhuangtai == -2){
-				Toast.makeText(WXPayEntryActivity.this, "Î¢ĞÅÖ§¸¶Ê§°Ü", 200).show();
+				Toast.makeText(WXPayEntryActivity.this, "å¾®ä¿¡æ”¯ä»˜å¤±è´¥", 200).show();
 			}
 		}
 		finish();
@@ -99,7 +99,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 	
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 */
 	private void userloginqm() {
 		try{
@@ -171,7 +171,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 	}
 	
 	/**
-	 * ³äÖµ¸üĞÂ
+	 * å……å€¼æ›´æ–°
 	 * @param login_sign 
 	 * @param recharge_no 
 	 * @param payment_id 
@@ -212,7 +212,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						Toast.makeText(WXPayEntryActivity.this, "Òì³£", 200).show();
+						Toast.makeText(WXPayEntryActivity.this, "å¼‚å¸¸", 200).show();
 						System.out.println("11================================="+arg0);
 						System.out.println("22================================="+arg1);
 					}
@@ -226,7 +226,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 		}
 	}
 	/**
-	 * ¾Û¾Û·¢¸üĞÂ
+	 * èšèšå‘æ›´æ–°
 	 * @param login_sign 
 	 * @param recharge_no 
 	 * @param payment_id 
@@ -245,7 +245,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 					public void onSuccess(int arg0, String arg1) {
 						super.onSuccess(arg0, arg1);
 						try {
-							System.out.println("¾Û¾Û·¢================================="+arg1);
+							System.out.println("èšèšå‘================================="+arg1);
 							JSONObject object = new JSONObject(arg1);
 						    String status = object.getString("status");
 						    String info = object.getString("info");
@@ -263,7 +263,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						Toast.makeText(WXPayEntryActivity.this, "Òì³£", 200).show();
+						Toast.makeText(WXPayEntryActivity.this, "å¼‚å¸¸", 200).show();
 						System.out.println("1================================="+arg0);
 						System.out.println("2================================="+arg1);
 					}
@@ -277,7 +277,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 	}
 	
 	/**
-	 * ÑøÀÏÒøĞĞ¸üĞÂ
+	 * å…»è€é“¶è¡Œæ›´æ–°
 	 * @param login_sign 
 	 * @param recharge_no 
 	 * @param payment_id 
@@ -314,7 +314,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						Toast.makeText(WXPayEntryActivity.this, "Òì³£", 200).show();
+						Toast.makeText(WXPayEntryActivity.this, "å¼‚å¸¸", 200).show();
 					}
 
 				}, null);
@@ -326,7 +326,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 	}
 	
 	/**
-	 * ¶©µ¥¸üĞÂ
+	 * è®¢å•æ›´æ–°
 	 * @param login_sign 
 	 * @param recharge_no 
 	 * @param payment_id 
@@ -385,7 +385,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						Toast.makeText(WXPayEntryActivity.this, "Òì³£", 200).show();
+						Toast.makeText(WXPayEntryActivity.this, "å¼‚å¸¸", 200).show();
 					}
 
 				}, null);
@@ -396,7 +396,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 		}
 	}
 	/**
-	 * È·ÈÏ¸¶¿î
+	 * ç¡®è®¤ä»˜æ¬¾
 	 * @param login_sign 
 	 * @param payment_id 
 	 */
@@ -412,7 +412,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 //						super.onSuccess(arg0, arg1);
 //						try {
 //							JSONObject object = new JSONObject(arg1);
-//							System.out.println("¸üĞÂ¶©µ¥================================="+arg1);
+//							System.out.println("æ›´æ–°è®¢å•================================="+arg1);
 //							  String status = object.getString("status");
 //							    String info = object.getString("info");
 //							    if (status.equals("y")) {
@@ -431,7 +431,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 //						super.onFailure(arg0, arg1);
 //						System.out.println("11================================="+arg0);
 //						System.out.println("22================================="+arg1);
-//						Toast.makeText(MyOrderZFActivity.this, "ÍøÂç³¬Ê±Òì³£", 200).show();
+//						Toast.makeText(MyOrderZFActivity.this, "ç½‘ç»œè¶…æ—¶å¼‚å¸¸", 200).show();
 //					}
 //
 //				}, null);

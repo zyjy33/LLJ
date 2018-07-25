@@ -39,7 +39,7 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 /**
- * ·ÖÏí
+ * åˆ†äº«
  * 
  * @author Administrator
  * 
@@ -59,13 +59,13 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 	private ImageButton img_btn_tencent,btn_wx_friend,btn_sms;
 	String user_id;
 	String unionid,fx_cs;
-	private long hour = 0;//Ê±¼ä±äÁ¿ 
+	private long hour = 0;//æ—¶é—´å˜é‡ 
 	private long minute = 0; 
 	private long second = 0; 
-	private long time = 0;//ºÁÃëÎªµ¥Î»
+	private long time = 0;//æ¯«ç§’ä¸ºå•ä½
 	private long current_time = 0;
-	private long interval = 10*1000;//Ã¿´ÎÔö¼Ó»ò¼õÉÙµÄ¶î¶ÈÎª10Ãë
-	private MyCount count;//¶¨Ê±Àà¶ÔÏó 
+	private long interval = 10*1000;//æ¯æ¬¡å¢åŠ æˆ–å‡å°‘çš„é¢åº¦ä¸º10ç§’
+	private MyCount count;//å®šæ—¶ç±»å¯¹è±¡ 
 	java.util.Date now;
 	java.util.Date date;
 	long hourl,min,s,zongxs;
@@ -110,7 +110,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 			tv_tishi = (TextView) findViewById(R.id.tv_tishi); 
 			
 			
-			// ĞÂÀË
+			// æ–°æµª
 			img_btn_tencent.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -120,7 +120,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 				}
 			});
 
-			// Î¢ĞÅ
+			// å¾®ä¿¡
 			btn_wechat.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -134,7 +134,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 					}
 				}
 			});
-			// ÅóÓÑÈ¦
+			// æœ‹å‹åœˆ
 			btn_wx_friend.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -150,7 +150,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 				}
 			});
 			
-			// ¶ÌĞÅ
+			// çŸ­ä¿¡
 			btn_sms.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -213,9 +213,9 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 					String subtitle = getIntent().getStringExtra("subtitle");
 					
 				String data_ct = subtitle + RealmName.REALM_NAME_HTTP+"/"+fx_cs+"/join-"+ct_id+".html?cid="+company_id+"&unionid="+unionid+"&shareid="+user_id+"&from=android";
-				System.out.println("·ÖÏí22======================" + data_ct);
-//				String zhou = "·ÖÏíÔÆÉÌ¾Û²úÆ·,´ò¿ª¼´¿Éä¯ÀÀÔÆÉÌ¾Û²úÆ·" + data;
-//				title = "ÔÆÉÌ¾ÛÉÌÆ··ÖÏí";
+				System.out.println("åˆ†äº«22======================" + data_ct);
+//				String zhou = "åˆ†äº«äº‘å•†èšäº§å“,æ‰“å¼€å³å¯æµè§ˆäº‘å•†èšäº§å“" + data;
+//				title = "äº‘å•†èšå•†å“åˆ†äº«";
 //				System.out.println("==========" + zhou);
 //				softshareWxChat(data_ct);
 				
@@ -236,7 +236,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 
 	
 	/**
-	 * Î¢ĞÅ·ÖÏí
+	 * å¾®ä¿¡åˆ†äº«
 	 * 
 	 * @param text
 	 */
@@ -249,7 +249,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		webpage.webpageUrl = "http" + temp[1];
 		// webpage.webpageUrl = temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.title = title;
 		msg.description = temp[0];
 //		Bitmap thumb = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_logn);
@@ -259,7 +259,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		System.out.println("img_url==========" + img_url);
 		if (img_url.equals("")) {
 		Bitmap thumb = BitmapFactory.decodeResource(CanTuanFengXiangActivity.this.getResources(),R.drawable.llj_fx);
-		msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+		msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 		}else {
 		msg.thumbData = bitmap2Bytes(thumb,32);
 		}
@@ -270,13 +270,13 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
 
-		System.out.println("Î¢ĞÅ×¢²á" + flag);
+		System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 		
 	}
 	
 	
 	/**
-	 * Î¢ĞÅ·ÖÏíÅóÓÑÈ¦
+	 * å¾®ä¿¡åˆ†äº«æœ‹å‹åœˆ
 	 * 
 	 * @param text
 	 */
@@ -287,7 +287,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		WXWebpageObject webpage = new WXWebpageObject();
 		webpage.webpageUrl = "http" + temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.title = title;
 		msg.description = temp[0];
 //		Bitmap thumb = BitmapFactory.decodeResource(CanTuanFengXiangActivity.this.getResources(),
@@ -298,7 +298,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		System.out.println("img_url==========" + img_url);
 		if (img_url.equals("")) {
 		Bitmap thumb = BitmapFactory.decodeResource(CanTuanFengXiangActivity.this.getResources(),R.drawable.llj_fx);
-		msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+		msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 		}else {
 		msg.thumbData = bitmap2Bytes(thumb,32);
 		}
@@ -318,7 +318,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 	
 	
 	 /**
-     * Bitmap×ª»»³Ébyte[]²¢ÇÒ½øĞĞÑ¹Ëõ,Ñ¹Ëõµ½²»´óÓÚmaxkb
+     * Bitmapè½¬æ¢æˆbyte[]å¹¶ä¸”è¿›è¡Œå‹ç¼©,å‹ç¼©åˆ°ä¸å¤§äºmaxkb
      * @param bitmap
      * @param IMAGE_SIZE
      * @return
@@ -328,8 +328,8 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
         int options = 100;
         while (output.toByteArray().length > maxkb&& options != 10) {
-            output.reset(); //Çå¿Õoutput
-            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//ÕâÀïÑ¹Ëõoptions%£¬°ÑÑ¹ËõºóµÄÊı¾İ´æ·Åµ½outputÖĞ
+            output.reset(); //æ¸…ç©ºoutput
+            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//è¿™é‡Œå‹ç¼©options%ï¼ŒæŠŠå‹ç¼©åçš„æ•°æ®å­˜æ”¾åˆ°outputä¸­
             options -= 10;
         }
         return output.toByteArray();
@@ -346,8 +346,8 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 					System.out.println("img_url==========" + img_url);
 					String img_url2 = RealmName.REALM_NAME_HTTP + img_url;
 					System.out.println("img_url2=============="+img_url2);
-					thumb = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//					Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					thumb = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//					Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //					System.out.println("bitMap_tx=============="+bitMap_tx);
 					System.out.println("bmp=============="+thumb);
 					
@@ -359,13 +359,13 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		
 	
 	/** 
-     * µÃµ½±¾µØ»òÕßÍøÂçÉÏµÄbitmap url - ÍøÂç»òÕß±¾µØÍ¼Æ¬µÄ¾ø¶ÔÂ·¾¶,±ÈÈç: 
+     * å¾—åˆ°æœ¬åœ°æˆ–è€…ç½‘ç»œä¸Šçš„bitmap url - ç½‘ç»œæˆ–è€…æœ¬åœ°å›¾ç‰‡çš„ç»å¯¹è·¯å¾„,æ¯”å¦‚: 
      *  
-     * A.ÍøÂçÂ·¾¶: url=&quot;http://blog.foreverlove.us/girl2.png&quot; ; 
+     * A.ç½‘ç»œè·¯å¾„: url=&quot;http://blog.foreverlove.us/girl2.png&quot; ; 
      *  
-     * B.±¾µØÂ·¾¶:url=&quot;file://mnt/sdcard/photo/image.png&quot;; 
+     * B.æœ¬åœ°è·¯å¾„:url=&quot;file://mnt/sdcard/photo/image.png&quot;; 
      *  
-     * C.Ö§³ÖµÄÍ¼Æ¬¸ñÊ½ ,png, jpg,bmp,gifµÈµÈ 
+     * C.æ”¯æŒçš„å›¾ç‰‡æ ¼å¼ ,png, jpg,bmp,gifç­‰ç­‰ 
      * 
      *  
      * @param url 
@@ -410,7 +410,7 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 		}
 	}
 	
-	//ÊµÏÖ¼ÆÊ±¹¦ÄÜµÄÀà 
+	//å®ç°è®¡æ—¶åŠŸèƒ½çš„ç±» 
 		class MyCount extends MyCountdownTimer { 
 
 			public MyCount(long millisInFuture, long countDownInterval) { 
@@ -418,11 +418,11 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 			} 
 			@Override 
 			public void onFinish() { 
-				//Ã½Ìå¶ÔÏó 
-				txt_time.setText("Ê±¼ä½áÊø"); 
+				//åª’ä½“å¯¹è±¡ 
+				txt_time.setText("æ—¶é—´ç»“æŸ"); 
 			} 
 			
-			//¸üĞÂÊ£ÓàÊ±¼ä 
+			//æ›´æ–°å‰©ä½™æ—¶é—´ 
 			@Override 
 			public void onTick(long millisUntilFinished, int percent) {
 				current_time = millisUntilFinished;
@@ -431,16 +431,16 @@ public class CanTuanFengXiangActivity extends BaseActivity implements OnClickLis
 //				long myhour = (millisUntilFinished / 1000) / 3600; 
 //				long myminute = ((millisUntilFinished / 1000) - myhour * 3600) / 60; 
 //				long mysecond = millisUntilFinished / 1000 - myhour * 3600 - myminute * 60; 
-//				txt_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + myhour + ":" + myminute + ":" + mysecond); 
+//				txt_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + myhour + ":" + myminute + ":" + mysecond); 
 				
 				   long day=current_time/(24*60*60*1000);
 				   long hour=(current_time/(60*60*1000)-day*24);
 				   long min=((current_time/(60*1000))-day*24*60-hour*60);
 				   long s=(current_time/1000-day*24*60*60-hour*60*60-min*60);
 				   
-				   System.out.println(""+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
-//				   txt_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + hour + ":" + min + ":" + s); 
-				   txt_time.setText("Ê£Óà: "+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë"); 
+				   System.out.println(""+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
+//				   txt_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + hour + ":" + min + ":" + s); 
+				   txt_time.setText("å‰©ä½™: "+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’"); 
 				   progress.CloseProgress();
 			} 
 		} 

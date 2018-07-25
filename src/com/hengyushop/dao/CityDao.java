@@ -22,7 +22,7 @@ public class CityDao {
 	}
 
 	/**
-	 * Ğ¯³Ì¾Æµê
+	 * æºç¨‹é…’åº—
 	 * 
 	 * @return
 	 */
@@ -43,7 +43,7 @@ public class CityDao {
 
 	}
 
-	// ²éÑ¯ ËùÓĞ µÄÊ¡·İ
+	// æŸ¥è¯¢ æ‰€æœ‰ çš„çœä»½
 	public ArrayList<CityData> findSheng() {
 		ArrayList<CityData> list = new ArrayList<CityData>();
 		String sql = "select name from province";
@@ -98,7 +98,7 @@ public class CityDao {
 		return code;
 	}
 
-	// ²éÑ¯ Ñ¡ÖĞ Ê¡·İ µÄ code
+	// æŸ¥è¯¢ é€‰ä¸­ çœä»½ çš„ code
 	public CityData findShengCode(String name) {
 		CityData data = new CityData();
 		String sql = "select code from province where name= '" + name + "'";
@@ -113,7 +113,7 @@ public class CityDao {
 
 	}
 
-	// ²éÑ¯ Ñ¡ÖĞ Ê¡·İ ÏÂµÄ ³ÇÊĞ
+	// æŸ¥è¯¢ é€‰ä¸­ çœä»½ ä¸‹çš„ åŸå¸‚
 	public ArrayList<CityData> findCity(int sheng_id) {
 		ArrayList<CityData> list = new ArrayList<CityData>();
 		String sql = "select name from city where provinceId = " + sheng_id;
@@ -129,7 +129,7 @@ public class CityDao {
 		return list;
 	}
 
-	// ²éÑ¯Ñ¡ÖĞ³ÇÊĞµÄ code
+	// æŸ¥è¯¢é€‰ä¸­åŸå¸‚çš„ code
 	public CityData findCityCode(String name) {
 		CityData data = new CityData();
 		String sql = "select code from city where name= '" + name + "'";
@@ -143,7 +143,7 @@ public class CityDao {
 		return data;
 	}
 
-	// ²éÑ¯ Ñ¡ÖĞ ³ÇÊĞµÄ µØÇø
+	// æŸ¥è¯¢ é€‰ä¸­ åŸå¸‚çš„ åœ°åŒº
 	public ArrayList<CityData> findArea(int city_id) {
 		ArrayList<CityData> list = new ArrayList<CityData>();
 		String sql = "select name from area where cityId = " + city_id;
@@ -159,7 +159,7 @@ public class CityDao {
 		return list;
 	}
 
-	// ²éÑ¯Ñ¡ÖĞµØÇøµÄ code
+	// æŸ¥è¯¢é€‰ä¸­åœ°åŒºçš„ code
 	public CityData findAreaCode(String name) {
 		CityData data = new CityData();
 		String sql = "select code from area where name= '" + name + "'";

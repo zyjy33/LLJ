@@ -98,7 +98,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 
 	}
 	/**
-	 * ¼ÆËã»ı·Ö
+	 * è®¡ç®—ç§¯åˆ†
 	 * @param carts
 	 * @return
 	 */
@@ -117,7 +117,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 		return count;
 	}
 	/**
-	 * ¼ÆËãÊıÁ¿
+	 * è®¡ç®—æ•°é‡
 	 * @param carts
 	 * @return
 	 */
@@ -136,7 +136,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 		return  count;
 	}
 	/**
-	 * ¼ÆËã×Ü¼Û
+	 * è®¡ç®—æ€»ä»·
 	 * @param carts
 	 * @return
 	 */
@@ -153,7 +153,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 			}
 		}
 		BigDecimal b = new BigDecimal(count);
-		// ±£Áô2Î»Ğ¡Êı
+		// ä¿ç•™2ä½å°æ•°
 		double targetDouble = b.setScale(2, BigDecimal.ROUND_HALF_UP)
 				.doubleValue();
 		return String.valueOf(targetDouble);
@@ -186,24 +186,24 @@ public class ShoppingCart1Activity extends BaseActivity {
 				if (carts.size() != 0) {
 
 				/*	tv_endnumber.setText(data.getEndnumber() + "");
-					tv_endmarketprice.setText("£¤"
+					tv_endmarketprice.setText("ï¿¥"
 							+ data.getEndmarketprice().toString());
-					tv_preferential.setText("£¤"
+					tv_preferential.setText("ï¿¥"
 							+ data.getPreferential().toString());
-					tv_endmoney.setText("£¤" + data.getEndmoney().toString());
+					tv_endmoney.setText("ï¿¥" + data.getEndmoney().toString());
 */
-					tv_endmoney.setText("£¤" + countTotal(carts));
+					tv_endmoney.setText("ï¿¥" + countTotal(carts));
 					if (in_jf.isChecked()) {
 						in_jf.setChecked(false);
 					}
 					int jf = (int) Double
-							.parseDouble(registerData.getCredits());// ×Ü¾Ûºì°ü
+							.parseDouble(registerData.getCredits());// æ€»èšçº¢åŒ…
 
 					int xf = countJf(carts);
 					if (jf > xf) {
-						tv_amount_jf.setHint("¿ÉÓÃ:" + xf);
+						tv_amount_jf.setHint("å¯ç”¨:" + xf);
 					} else {
-						tv_amount_jf.setHint("¿ÉÓÃ:" + jf);
+						tv_amount_jf.setHint("å¯ç”¨:" + jf);
 					}
 					btn_sittle_account
 							.setOnClickListener(new OnClickListener() {
@@ -216,10 +216,10 @@ public class ShoppingCart1Activity extends BaseActivity {
 									if (countNum(carts)>0) {
 										int jf = (int) Double
 												.parseDouble(registerData
-														.getCredits());// ×Ü¾Ûºì°ü
+														.getCredits());// æ€»èšçº¢åŒ…
 										if (countJf(carts) > jf) {
 											Toast.makeText(ShoppingCart1Activity.this,
-													"¾Ûºì°ü²»×ã", 200).show();
+													"èšçº¢åŒ…ä¸è¶³", 200).show();
 										} else {
 											Intent intent = new Intent(
 													ShoppingCart1Activity.this,
@@ -235,7 +235,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 										
 									} else {
 										Toast.makeText(ShoppingCart1Activity.this,
-												"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+												"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 									}
 
 								}
@@ -248,12 +248,12 @@ public class ShoppingCart1Activity extends BaseActivity {
 						public void onCheckedChanged(CompoundButton arg0,
 								boolean arg1) {
 							int jf = (int) Double.parseDouble(registerData
-									.getCredits());// ×Ü¾Ûºì°ü
-							int xf = countJf(carts);// ¿ÉÏû·Ñ¾Ûºì°ü
+									.getCredits());// æ€»èšçº¢åŒ…
+							int xf = countJf(carts);// å¯æ¶ˆè´¹èšçº¢åŒ…
 							double price = Double.parseDouble(countTotal(carts));
 							if (arg1) {
 								tv_amount_jf.setEnabled(true);
-								// Èç¹ûÊÇµã»÷°´ÏÂ×´Ì¬
+								// å¦‚æœæ˜¯ç‚¹å‡»æŒ‰ä¸‹çŠ¶æ€
 								if (jf - xf > 0) {
 									tv_amount_jf.setText(String.valueOf(xf));
 								} else {
@@ -261,9 +261,9 @@ public class ShoppingCart1Activity extends BaseActivity {
 								}
 							} else {
 								tv_amount_jf.setEnabled(false);
-								// Èç¹ûÊÇµã»÷Î´°´ÏÂ×´Ì¬
+								// å¦‚æœæ˜¯ç‚¹å‡»æœªæŒ‰ä¸‹çŠ¶æ€
 								tv_endmoney.setText(String.valueOf(price));
-								tv_amount_jf.setHint("¿ÉÓÃ:" + countJf(carts));
+								tv_amount_jf.setHint("å¯ç”¨:" + countJf(carts));
 								tv_amount_jf.setText("");
 							}
 						}
@@ -282,7 +282,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 						}
 
 						/**
-						 * ¸ü¸ÄÊäÈë¿ò³öÏÖµÄ¸ü¸ÄÊÂ¼şÏàÓ¦
+						 * æ›´æ”¹è¾“å…¥æ¡†å‡ºç°çš„æ›´æ”¹äº‹ä»¶ç›¸åº”
 						 */
 						@Override
 						public void afterTextChanged(Editable arg0) {
@@ -293,18 +293,18 @@ public class ShoppingCart1Activity extends BaseActivity {
 							if (result.length() != 0) {
 								System.out.println(result);
 								int jf = (int) Double.parseDouble(registerData
-										.getCredits());// ×Ü¾Ûºì°ü
-								int rt = Integer.parseInt(result);// ÊäÈë¾Ûºì°ü
-								int xf = countJf(carts);// ¿ÉÏû·Ñ¾Ûºì°ü
+										.getCredits());// æ€»èšçº¢åŒ…
+								int rt = Integer.parseInt(result);// è¾“å…¥èšçº¢åŒ…
+								int xf = countJf(carts);// å¯æ¶ˆè´¹èšçº¢åŒ…
 								if (jf - xf > 0) {
-									// ×Ü¾Ûºì°ü´óÓÚ¿ÉÏû·Ñ£¬Ö»ÓĞÊäÈë²»´óÓÚ¿ÉÏû·Ñ¼´¿É
+									// æ€»èšçº¢åŒ…å¤§äºå¯æ¶ˆè´¹ï¼Œåªæœ‰è¾“å…¥ä¸å¤§äºå¯æ¶ˆè´¹å³å¯
 									if (rt <= xf) {
 										tv_endmoney.setText(String
 												.valueOf((price - rt < 0) ? 0
 														: (price - rt)));
 									} else {
 										Toast.makeText(ShoppingCart1Activity.this,
-												"ÊäÈë¾Ûºì°ü´óÓÚÏŞ¶î" + xf + "×Ü" + jf,
+												"è¾“å…¥èšçº¢åŒ…å¤§äºé™é¢" + xf + "æ€»" + jf,
 												200).show();
 									}
 								} else if (0 >= (jf - xf)) {
@@ -315,7 +315,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 									} else {
 										Toast.makeText(
 												ShoppingCart1Activity.this,
-												"ÊäÈë¾Ûºì°ü´óÓÚ¸öÈË×Ü¾Ûºì°ü" + xf + "×Ü" + jf,
+												"è¾“å…¥èšçº¢åŒ…å¤§äºä¸ªäººæ€»èšçº¢åŒ…" + xf + "æ€»" + jf,
 												200).show();
 									}
 								}
@@ -325,14 +325,14 @@ public class ShoppingCart1Activity extends BaseActivity {
 							}
 						}
 					});
-					btn_sittle_account.setText("È¥½áËã(" + countNum(carts)+")");
+					btn_sittle_account.setText("å»ç»“ç®—(" + countNum(carts)+")");
 				} else {
 					tv_endnumber.setText("");
 					tv_endmarketprice.setText("");
 					tv_preferential.setText("");
 					tv_endmoney.setText("");
 					tv_amount_jf.setHint("");
-					btn_sittle_account.setText("È¥½áËã");
+					btn_sittle_account.setText("å»ç»“ç®—");
 				}
 				break;
 			case 0:
@@ -344,7 +344,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				jf.setText("µ±Ç°¾Ûºì°ü:" + registerData.getDaijifen() == null ? "0"
+				jf.setText("å½“å‰èšçº¢åŒ…:" + registerData.getDaijifen() == null ? "0"
 						: registerData.getDaijifen());
 				break;
 			 
@@ -358,8 +358,8 @@ public class ShoppingCart1Activity extends BaseActivity {
 				registerData = (UserRegisterData) msg.obj;
 				UserRegisterData is = wareDao.findLoginCheck(yth);
 				if (is.getIsLogin() != 0) {
-					// Î´µÇÂ¼
-					registerData.setIsLogin(1);// ĞŞ¸Ä
+					// æœªç™»å½•
+					registerData.setIsLogin(1);// ä¿®æ”¹
 					wareDao.updateIsLogin(yth, registerData);
 				}
 				break;
@@ -383,18 +383,18 @@ public class ShoppingCart1Activity extends BaseActivity {
 						super.onSuccess(arg0, arg1);
 						try {
 							/*
-							 * 0ÆÕÍ¨ÉÌÆ· 1Îª»°·Ñ³äÖµÀàÉÌÆ·ĞÅÏ¢£¬ 2ÎªQQ³äÖµÀàÉÌÆ·ĞÅÏ¢£¬ 3Îª»úÆ±ÀàÉÌÆ·ĞÅÏ¢¡£
-							 * 4ÎªÁã¼ÛÉÌ³Ç£¨¼´ÔÆÉÌ¾ÛÏµÍ³ÖĞµÄ¾Û±Ò¶Ò»»£©ÀïÃæµÄÉÌÆ·¡£ 5Îª³é½±»î¶¯ÀïÉèÖÃµÄÉÌÆ·£¬
-							 * 6±íÊ¾Ò»Ôª¾Û¹ºµÄÒµÎñÉÌÆ·£¬
-							 * 7±íÊ¾ÓÃ»§Éı¼¶VIPµÄÒµÎñÉÌÆ·£¨ÓÃ»§Éı¼¶ÎªvipÖ®ºó£¬»¹¸øÓÃ»§ËÍÉÌÆ·£©£¬
-							 * 8±íÊ¾ÍÅ¹ºĞÅÏ¢ÀàĞÍµÄÒµÎñÉÌÆ·¡£
+							 * 0æ™®é€šå•†å“ 1ä¸ºè¯è´¹å……å€¼ç±»å•†å“ä¿¡æ¯ï¼Œ 2ä¸ºQQå……å€¼ç±»å•†å“ä¿¡æ¯ï¼Œ 3ä¸ºæœºç¥¨ç±»å•†å“ä¿¡æ¯ã€‚
+							 * 4ä¸ºé›¶ä»·å•†åŸï¼ˆå³äº‘å•†èšç³»ç»Ÿä¸­çš„èšå¸å…‘æ¢ï¼‰é‡Œé¢çš„å•†å“ã€‚ 5ä¸ºæŠ½å¥–æ´»åŠ¨é‡Œè®¾ç½®çš„å•†å“ï¼Œ
+							 * 6è¡¨ç¤ºä¸€å…ƒèšè´­çš„ä¸šåŠ¡å•†å“ï¼Œ
+							 * 7è¡¨ç¤ºç”¨æˆ·å‡çº§VIPçš„ä¸šåŠ¡å•†å“ï¼ˆç”¨æˆ·å‡çº§ä¸ºvipä¹‹åï¼Œè¿˜ç»™ç”¨æˆ·é€å•†å“ï¼‰ï¼Œ
+							 * 8è¡¨ç¤ºå›¢è´­ä¿¡æ¯ç±»å‹çš„ä¸šåŠ¡å•†å“ã€‚
 							 */
 							ArrayList<ShopCarts> lists = new ArrayList<ShopCarts>();
 
 							JSONObject jsonObject = new JSONObject(arg1);
 							String status = jsonObject.getString("status");
 							if (status.equals("1")) {
-								// ¹ØÓÚ0ºÅÆÕÍ¨ÉÌÆ·
+								// å…³äº0å·æ™®é€šå•†å“
 								JSONArray array0 = jsonObject
 										.getJSONArray("productItemType_0_items");
 								int len0 = array0.length();
@@ -406,10 +406,10 @@ public class ShoppingCart1Activity extends BaseActivity {
 									}
 									ShopCarts carts = new ShopCarts();
 									carts.setList(cart_item0);
-									carts.setName("¾ÛÀÖ¹º");
+									carts.setName("èšä¹è´­");
 									lists.add(carts);
 								}
-								// ¹ØÓÚ4ºÅÁã¼ÛÉÌÆ·
+								// å…³äº4å·é›¶ä»·å•†å“
 								JSONArray array4 = jsonObject
 										.getJSONArray("productItemType_4_items");
 								int len4 = array4.length();
@@ -421,10 +421,10 @@ public class ShoppingCart1Activity extends BaseActivity {
 									}
 									ShopCarts carts = new ShopCarts();
 									carts.setList(cart_item0);
-									carts.setName("Áã¼Û");
+									carts.setName("é›¶ä»·");
 									lists.add(carts);
 								}
-								// ¹ØÓÚ5ºÅÆÕÍ¨ÉÌÆ·
+								// å…³äº5å·æ™®é€šå•†å“
 								JSONArray array5 = jsonObject
 										.getJSONArray("productItemType_5_items");
 								int len5 = array5.length();
@@ -436,10 +436,10 @@ public class ShoppingCart1Activity extends BaseActivity {
 									}
 									ShopCarts carts = new ShopCarts();
 									carts.setList(cart_item0);
-									carts.setName("³é½±");
+									carts.setName("æŠ½å¥–");
 									lists.add(carts);
 								}
-								// ¹ØÓÚ6ºÅÒ»ÔªÉÌÆ·
+								// å…³äº6å·ä¸€å…ƒå•†å“
 								JSONArray array6 = jsonObject
 										.getJSONArray("productItemType_6_items");
 								int len6 = array6.length();
@@ -451,11 +451,11 @@ public class ShoppingCart1Activity extends BaseActivity {
 									}
 									ShopCarts carts = new ShopCarts();
 									carts.setList(cart_item0);
-									carts.setName("Ò»Ôª¹º");
+									carts.setName("ä¸€å…ƒè´­");
 									lists.add(carts);
 								}
 							}
-							// ¹ØÓÚ7ºÅVIPÉÌÆ·
+							// å…³äº7å·VIPå•†å“
 							JSONArray array7 = jsonObject
 									.getJSONArray("productItemType_7_items");
 							int len7 = array7.length();
@@ -467,7 +467,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 								}
 								ShopCarts carts = new ShopCarts();
 								carts.setList(cart_item0);
-								carts.setName("VIPÉÌÆ·");
+								carts.setName("VIPå•†å“");
 								lists.add(carts);
 							}
 							Message msg = new Message();
@@ -557,9 +557,9 @@ public class ShoppingCart1Activity extends BaseActivity {
 	 
 	protected void dialog(final int index, final int orderid) {
 		AlertDialog.Builder builder = new Builder(ShoppingCart1Activity.this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				if (adapter != null) {
@@ -571,7 +571,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 				AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(),
 						ShoppingCart1Activity.this);
 
-				// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+				// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 				data = wareDao.findResult();
 				Message message = new Message();
 				message.what = 200;
@@ -580,7 +580,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 				dialog.dismiss();
 			}
 		});
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
@@ -590,7 +590,7 @@ public class ShoppingCart1Activity extends BaseActivity {
 	}
 
 	/**
-	 * ³õÊ¼»¯¿Ø¼şÀà±ğ
+	 * åˆå§‹åŒ–æ§ä»¶ç±»åˆ«
 	 */
 	private void ininate( ) {
 		list_none = (LinearLayout)findViewById(R.id.list_none);
@@ -608,6 +608,6 @@ public class ShoppingCart1Activity extends BaseActivity {
 		adapter = new MyShopCartAdapter(carts, ShoppingCart1Activity.this, handler,
 				imageLoader);
 		list_shop_cart.setAdapter(adapter);
-		// jf.setText("µ±Ç°¾Ûºì°ü:" + registerData.getCredits());
+		// jf.setText("å½“å‰èšçº¢åŒ…:" + registerData.getCredits());
 	}
 }

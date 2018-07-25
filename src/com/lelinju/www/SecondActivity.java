@@ -40,7 +40,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 public class SecondActivity extends BaseActivity {
 	/**
-	 * 关于引导页的界面
+	 * 鍏充簬寮曞椤电殑鐣岄潰
 	 */
     private ViewPager viewPager;  
     private ArrayList<View> pageViews;  
@@ -53,7 +53,7 @@ public class SecondActivity extends BaseActivity {
 		public void dispatchMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case 0:
-//				 Toast.makeText(SecondActivity.this, "自动登录首页", 200).show();
+//				 Toast.makeText(SecondActivity.this, "鑷姩鐧诲綍棣栭〉", 200).show();
 				 Intent intent = new Intent(SecondActivity.this,MainFragmentActivity.class);
 //				 Intent intent = new Intent(SecondActivity.this,MainFragment.class);
 	    		 startActivity(intent);
@@ -83,7 +83,7 @@ public class SecondActivity extends BaseActivity {
         if(u.getStringValue("url").length()!=0){
         	 imageLoader.displayImage(u.getStringValue("url"), i0);
         }
-        Log.i("1", "这里出错了！---");
+        Log.i("1", "杩欓噷鍑洪敊浜嗭紒---");
        
         loadguanggao();
 //       AsyncHttp.get(RealmName.REALM_NAME+"/mi/getdata.ashx?act=GetPhoneGuidePageList&yth=admin", new AsyncHttpResponseHandler(){
@@ -92,7 +92,7 @@ public class SecondActivity extends BaseActivity {
 //        		// TODO Auto-generated method stub
 //        		super.onSuccess(arg0, arg1);
 //        		try {
-//        			Log.i("2", "这里出错了！---");
+//        			Log.i("2", "杩欓噷鍑洪敊浜嗭紒---");
 //					JSONObject j = new JSONObject(arg1);
 //					u.setStringValue("url", RealmName.REALM_NAME+"/"+j.getString("GuidePageUrl1"));
 //					 imageLoader.loadImage(RealmName.REALM_NAME+"/"+j.getString("GuidePageUrl1"), new ImageLoadingListener() {
@@ -144,7 +144,7 @@ public class SecondActivity extends BaseActivity {
 	private void loadguanggao() {
 		try {
 			
-		//广告滚动	
+		//骞垮憡婊氬姩	
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_adbanner_list?advert_id=15",
 				new AsyncHttpResponseHandler() {

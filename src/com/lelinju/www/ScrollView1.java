@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ScrollView;
 
 /**
- * ½â¾öScrollViewÇ¶Ì×ViewPager³öÏÖµÄ»¬¶¯³åÍ»ÎÊÌâ
+ * è§£å†³ScrollViewåµŒå¥—ViewPagerå‡ºç°çš„æ»‘åŠ¨å†²çªé—®é¢˜
  */
 public class ScrollView1 extends ScrollView {
 	private boolean canScroll;

@@ -91,7 +91,7 @@ public class OrderInfromationActivity extends BaseActivity {
 
 		if (index == 0) {
 			tag_flag = true;
-			tv_title.setText("´ı¸¶¿î¶©µ¥ÁĞ±í");
+			tv_title.setText("å¾…ä»˜æ¬¾è®¢å•åˆ—è¡¨");
 			 
 			params = new HashMap<String, String>();
 			params.put("act", "orderunpay");
@@ -100,7 +100,7 @@ public class OrderInfromationActivity extends BaseActivity {
 			
 		} else if (index == 1) {
 			tag_flag = false;
-			tv_title.setText("´ı·¢»õ¶©µ¥ÁĞ±í");
+			tv_title.setText("å¾…å‘è´§è®¢å•åˆ—è¡¨");
 		 
 			params = new HashMap<String, String>();
 			params.put("act", "orderdelivered");
@@ -108,7 +108,7 @@ public class OrderInfromationActivity extends BaseActivity {
 			params.put("yth", yth);
 		} else if (index == 2) {
 			tag_flag = false;
-			tv_title.setText("´ıÊÕ»õ¶©µ¥ÁĞ±í");
+			tv_title.setText("å¾…æ”¶è´§è®¢å•åˆ—è¡¨");
 			 
 			params = new HashMap<String, String>();
 			params.put("act", "orderreceived");
@@ -116,7 +116,7 @@ public class OrderInfromationActivity extends BaseActivity {
 			params.put("yth", yth);
 		} else if (index == 3) {
 			tag_flag = false;
-			tv_title.setText("ÒÑ³É¹¦¶©µ¥ÁĞ±í");
+			tv_title.setText("å·²æˆåŠŸè®¢å•åˆ—è¡¨");
 			 
 			params = new HashMap<String, String>();
 			params.put("act", "orderpayed");
@@ -210,7 +210,7 @@ public class OrderInfromationActivity extends BaseActivity {
 					item.setLastId("-1");
 					item.setType("-1");
 					banks.add(item);
-					bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+					bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 				}
 			}
 			Message msg = new Message();
@@ -233,14 +233,14 @@ public class OrderInfromationActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

@@ -52,7 +52,7 @@ import com.lelinju.www.UserLoginActivity;
 
 /**
  * 
- * ÔÆÉÌ¾Û
+ * äº‘å•†èš
  * @author Administrator
  * 
  */
@@ -97,13 +97,13 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 	private LinearLayout ll_kaituan,ll_qu_kaituan,ll_jutuanjia,ll_jiaguo;
 	public static long day;
 	String stare,orders_no,fx_cs;
-	private long hour = 0;//Ê±¼ä±äÁ¿ 
+	private long hour = 0;//æ—¶é—´å˜é‡ 
 	private long minute = 0; 
 	private long second = 0; 
-	private long time = 0;//ºÁÃëÎªµ¥Î»
+	private long time = 0;//æ¯«ç§’ä¸ºå•ä½
 	private long current_time = 0;
-	private long interval = 10*1000;//Ã¿´ÎÔö¼Ó»ò¼õÉÙµÄ¶î¶ÈÎª10Ãë
-	private MyCount count;//¶¨Ê±Àà¶ÔÏó 
+	private long interval = 10*1000;//æ¯æ¬¡å¢åŠ æˆ–å‡å°‘çš„é¢åº¦ä¸º10ç§’
+	private MyCount count;//å®šæ—¶ç±»å¯¹è±¡ 
 	java.util.Date now;
 	java.util.Date date;
 	long hourl,min,s,zongxs;
@@ -256,7 +256,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	public void intren() {
 		try {
@@ -288,10 +288,10 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				finish();
-		    	String type = getIntent().getStringExtra("type");//¾Û¾«²Ê×´Ì¬
+		    	String type = getIntent().getStringExtra("type");//èšç²¾å½©çŠ¶æ€
 		    	System.out.println("type-------------"+type);
 //				Intent intent = new Intent(JuTuanGouXq2Activity.this,JuTuanGouXqActivity.class);
-//				intent.putExtra("type",type);//¾Û¾«²Ê×´Ì¬
+//				intent.putExtra("type",type);//èšç²¾å½©çŠ¶æ€
 //				startActivity(intent);
 			}
 		});
@@ -327,13 +327,13 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 				tuangoujia = JuTuanAdapter.tuangoujia;
 //				String tuanshu = JuTuanAdapter.tuanshu;
 //				String tuangoujia = (String) msg.obj;
-//				tv_tuangoujia.setText("£¤"+tuangoujia);
-//				tv_tuanshu.setText(tuanshu+"ÈËÍÅÊı");
+//				tv_tuangoujia.setText("ï¿¥"+tuangoujia);
+//				tv_tuanshu.setText(tuanshu+"äººå›¢æ•°");
 				break;
 			case 1:
 				try {
 					
-				System.out.println("list¸öÊıÊÇ¶àÉÙ===================="+list.size());
+				System.out.println("listä¸ªæ•°æ˜¯å¤šå°‘===================="+list.size());
 				arrayadapter = new JuTuanAdapter(list,getApplicationContext(),handler);
 				list_tuanjia.setAdapter(arrayadapter);
 				setListViewHeightBasedOnChildren(list_tuanjia);
@@ -342,7 +342,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 		            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 //		            	 flag = false;
 //		            	 String id = listll.get(arg2).getId();
-//		            	 System.out.println("=====µÚ¶ş²ãÊı¾İ1====================="+INDX);
+//		            	 System.out.println("=====ç¬¬äºŒå±‚æ•°æ®1====================="+INDX);
 		            	 arrayadapter.setSeclection(arg2);
 		            	 arrayadapter.notifyDataSetChanged();
 		            }
@@ -368,7 +368,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 	};
 	
 	/**
-	 * Êä³ö³ÉÔ±¶©µ¥ÁĞ±í
+	 * è¾“å‡ºæˆå‘˜è®¢å•åˆ—è¡¨
 	 * @param groupon_id 
 	 * @param category_id 
 	 */
@@ -382,7 +382,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("Êä³öÄÚÈİÏêÇé========="+arg1);
+				System.out.println("è¾“å‡ºå†…å®¹è¯¦æƒ…========="+arg1);
 				try {
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
@@ -438,7 +438,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 //							groupon_item_people = data.getGroupon_item_people();
 							ct_tuanshu = String.valueOf(data.getActivity_people()- data.getActivity_member());
 							list_ll.add(data);
-//							gettime();//¿ªÍÅ»ñÈ¡µ¹¼ÆÊ±
+//							gettime();//å¼€å›¢è·å–å€’è®¡æ—¶
 							}
 						}
 						
@@ -449,8 +449,8 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 					intrendata();
 //					handler.sendEmptyMessage(1);
 					getkaituan();
-					gettime();//¿ªÍÅ»ñÈ¡µ¹¼ÆÊ±
-					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data.getArticle_id()+".html");//ÉÌÆ·½éÉÜ
+					gettime();//å¼€å›¢è·å–å€’è®¡æ—¶
+					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data.getArticle_id()+".html");//å•†å“ä»‹ç»
 					progress.CloseProgress();
 					
 				} catch (JSONException e) {
@@ -462,7 +462,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 		}, null);
 	}
 	/**
-	 * Êä³öÍÅ³¤¶©µ¥ÁĞ±í(×Ô¼ºµÄÍÅ)¾Û¾«²Ê
+	 * è¾“å‡ºå›¢é•¿è®¢å•åˆ—è¡¨(è‡ªå·±çš„å›¢)èšç²¾å½©
 	 * @param groupon_id 
 	 * @param category_id 
 	 */
@@ -477,7 +477,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("Êä³öÄÚÈİÏêÇé========="+arg1);
+				System.out.println("è¾“å‡ºå†…å®¹è¯¦æƒ…========="+arg1);
 				try {
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
@@ -565,7 +565,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 							ct_id = data.getOrder_id();
 							ct_tuanshu = String.valueOf(data.getActivity_people()- data.getActivity_member());
 //							list_ll.add(data);
-							gettime();//¿ªÍÅ»ñÈ¡µ¹¼ÆÊ±
+							gettime();//å¼€å›¢è·å–å€’è®¡æ—¶
 							}
 						}
 						
@@ -577,8 +577,8 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 					intrendata();
 					handler.sendEmptyMessage(1);
 					getkaituan();
-//					gettime();//¿ªÍÅ»ñÈ¡µ¹¼ÆÊ±
-					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data.getArticle_id()+".html");//ÉÌÆ·½éÉÜ
+//					gettime();//å¼€å›¢è·å–å€’è®¡æ—¶
+					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data.getArticle_id()+".html");//å•†å“ä»‹ç»
 					progress.CloseProgress();
 					
 				} catch (JSONException e) {
@@ -591,7 +591,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 	}
 	
 	/**
-	 * Êä³öÍÅ³¤¶©µ¥ÁĞ±í
+	 * è¾“å‡ºå›¢é•¿è®¢å•åˆ—è¡¨
 	 * @param groupon_id 
 	 * @param category_id 
 	 */
@@ -606,7 +606,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("Êä³öÄÚÈİÏêÇé========="+arg1);
+				System.out.println("è¾“å‡ºå†…å®¹è¯¦æƒ…========="+arg1);
 				try {
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
@@ -695,7 +695,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 							ct_id = data.getOrder_id();
 							ct_tuanshu = String.valueOf(data.getActivity_people()- data.getActivity_member());
 //							list_ll.add(data);
-//							gettime();//¿ªÍÅ»ñÈ¡µ¹¼ÆÊ±
+//							gettime();//å¼€å›¢è·å–å€’è®¡æ—¶
 							}
 						}
 						
@@ -707,8 +707,8 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 					intrendata();
 					handler.sendEmptyMessage(1);
 					getkaituan();
-//					gettime();//¿ªÍÅ»ñÈ¡µ¹¼ÆÊ±
-					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data.getArticle_id()+".html");//ÉÌÆ·½éÉÜ
+//					gettime();//å¼€å›¢è·å–å€’è®¡æ—¶
+					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data.getArticle_id()+".html");//å•†å“ä»‹ç»
 					progress.CloseProgress();
 					
 				} catch (JSONException e) {
@@ -720,21 +720,21 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 		}, null);
 	}
 	/**
-	 * »ñÈ¡Öµµ½¿Ø¼ş
+	 * è·å–å€¼åˆ°æ§ä»¶
 	 */
 	public void intrendata() {
 		try {
         ImageLoader imLoader = ImageLoader.getInstance();
         imLoader.displayImage(RealmName.REALM_NAME_HTTP+data.getImg_url(), iv_img);
-	    imLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+	    imLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 //        mAq.id(iv_img).image(RealmName.REALM_NAME_HTTP+data.getImg_url());
 //        mAq.clear();
 		tv_titel.setText(data.getArticle_title());
-		tv_price.setText("Ô­¼Û£º"+data.getSell_price());
+		tv_price.setText("åŸä»·ï¼š"+data.getSell_price());
 		
-//		tv_tuangoujia.setText("£¤"+list.get(0).getGroupon_price());
-//		tv_tuanshu.setText(list.get(0).getPeople()+"ÈËÍÅÊı");
-		tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
+//		tv_tuangoujia.setText("ï¿¥"+list.get(0).getGroupon_price());
+//		tv_tuanshu.setText(list.get(0).getPeople()+"äººå›¢æ•°");
+		tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 		
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -754,7 +754,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 //		stare = "2";
 		System.out.println("=======ct_tuanshu===========1====================="+ct_tuanshu);
 		if (stare != null) {
-			if (stare.equals("1")) {//²ÎÍÅ
+			if (stare.equals("1")) {//å‚å›¢
 				ll_qu_kaituan.setVisibility(View.GONE);
 				ll_jiaguo.setVisibility(View.VISIBLE);
 				ll_kaituan.setVisibility(View.GONE);
@@ -762,15 +762,15 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 				txt_time.setVisibility(View.VISIBLE);
 				ll_jutuanjia.setVisibility(View.GONE);
 				tv_jutuan_price.setVisibility(View.VISIBLE);
-				tv_jutuan_price.setText("¾ÛÍÅ¼Û£º"+data.getActivity_price());
-			} else if (stare.equals("3")) {//²ÎÍÅ
+				tv_jutuan_price.setText("èšå›¢ä»·ï¼š"+data.getActivity_price());
+			} else if (stare.equals("3")) {//å‚å›¢
 				ll_qu_kaituan.setVisibility(View.GONE);
 				ll_jiaguo.setVisibility(View.GONE);
 				ll_kaituan.setVisibility(View.GONE);
 				tv_anniu1.setVisibility(View.GONE);
 				txt_time.setVisibility(View.VISIBLE);
-				txt_time.setText("ÒÑ²ÎÍÅ");
-			} else {//ÑûÇë
+				txt_time.setText("å·²å‚å›¢");
+			} else {//é‚€è¯·
 				tv_kaituan.setText(datetime);
 				tv_tuan.setText(ct_tuanshu);
 				ll_kaituan.setVisibility(View.VISIBLE);
@@ -795,11 +795,11 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 			System.out.println("getIntent().getStringExtrafx_shuzi======================" + getIntent().getStringExtra("fx_shuzi"));
 			
 			if (stare != null) {
-				//·ÖÏí
+				//åˆ†äº«
 				if (stare.equals("1")) {
 					String fx_yes = getIntent().getStringExtra("fx_yes");
 					System.out.println("=======fx_yes===========1====================="+fx_yes);
-					//Ò»¼ü²ÎÍÅÖ§¸¶ºóÌáÊ¾·ÖÏí
+					//ä¸€é”®å‚å›¢æ”¯ä»˜åæç¤ºåˆ†äº«
 					if (fx_yes == null) {
 						Intent intent = new Intent(JuTuanGouXq2Activity.this,CanTuanFengXiangActivity.class);
 						intent.putExtra("ct_id",ct_id);
@@ -814,7 +814,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 						startActivity(intent);
 					}
 				}else {
-					//¡¢¾Û¾«²Ê¾ÛÍÅ¡¢Ô¤ÊÛÍÅÌáÊ¾·ÖÏí
+					//ã€èšç²¾å½©èšå›¢ã€é¢„å”®å›¢æç¤ºåˆ†äº«
 					Intent intent = new Intent(JuTuanGouXq2Activity.this,CanTuanFengXiangActivity.class);
 					intent.putExtra("ct_id",ct_id);
 					intent.putExtra("ct_tuanshu",ct_tuanshu);
@@ -867,14 +867,14 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
            long xiaoshi = day*24;
 		   zongxs = xiaoshi;
 		   System.out.println("----------"+xiaoshi+"--"+zongxs);
-		   System.out.println(""+day+"Ìì"+hourl+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
+		   System.out.println(""+day+"å¤©"+hourl+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
 		   
 //		    time = (hourl * 3600 + min * 60 + s) * 1000; 
 		    time = (zongxs * 3600 + min * 60 + s) * 1000; 
 			System.out.println("time--------------"+time);
 			count = new MyCount(time, 1000);
 			System.out.println("2-------------"+count);
-			count.start();//¿ªÊ¼¼ÆÊ± 
+			count.start();//å¼€å§‹è®¡æ—¶ 
 	}
 	
 	@Override
@@ -903,8 +903,8 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 ////			intent.putExtra("foreman_id", data.user_id);
 ////			intent.putExtra("foreman_name", data.user_name);
 //			intent.putExtra("stare", "3");
-//			intent.putExtra("type_jutuan","1");//×´Ì¬
-//			intent.putExtra("type_wx",zhifu_wx);//Ö§¸¶·½Ê½
+//			intent.putExtra("type_jutuan","1");//çŠ¶æ€
+//			intent.putExtra("type_wx",zhifu_wx);//æ”¯ä»˜æ–¹å¼
 //			intent.putExtra("jiekou", getIntent().getStringExtra("jiekou"));//jiekou = getIntent().getStringExtra("type_xq");
 //			startActivity(intent);
 //			} else {
@@ -921,7 +921,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 		// TODO Auto-generated method stub
 	try {
 		/**
-		 * ÉÌÆ·¼ÓÈë¹ºÎïÇåµ¥
+		 * å•†å“åŠ å…¥è´­ç‰©æ¸…å•
 		 */
     AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_activity_buy?user_id="+user_id+"&user_name="+user_name+"&user_sign="+login_sign+"&" +
 		    "article_id="+data.article_id+"&goods_id="+data.goods_id+"&quantity="+1+"&order_id="+data.order_id+"&people="+data.activity_people+"",
@@ -933,7 +933,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 					try {
 						JSONObject jsonObject = new JSONObject(arg1);
 						String status = jsonObject.getString("status");
-						System.out.println("¹ºÎïÇåµ¥================"+arg1);
+						System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 						String info = jsonObject.getString("info");
 						if (status.equals("y")) {
 							progress.CloseProgress();
@@ -952,8 +952,8 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 							intent.putExtra("foreman_id",foreman_id);
 							intent.putExtra("foreman_name",foreman_name);
 							intent.putExtra("stare", "3");
-							intent.putExtra("type_jutuan","1");//×´Ì¬
-							intent.putExtra("type_wx",zhifu_wx);//Ö§¸¶·½Ê½
+							intent.putExtra("type_jutuan","1");//çŠ¶æ€
+							intent.putExtra("type_wx",zhifu_wx);//æ”¯ä»˜æ–¹å¼
 							intent.putExtra("jiekou", getIntent().getStringExtra("jiekou"));//jiekou = getIntent().getStringExtra("type_xq");
 							startActivity(intent);
 						}else {
@@ -970,9 +970,9 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					progress.CloseProgress();
-//					System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+//					System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 					System.out.println("=========================="+arg1);
-					Toast.makeText(JuTuanGouXq2Activity.this, "Òì³£", 200).show();
+					Toast.makeText(JuTuanGouXq2Activity.this, "å¼‚å¸¸", 200).show();
 					super.onFailure(arg0, arg1);
 				}
 				
@@ -985,7 +985,7 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 	}
 	
 	
-	//ÊµÏÖ¼ÆÊ±¹¦ÄÜµÄÀà 
+	//å®ç°è®¡æ—¶åŠŸèƒ½çš„ç±» 
 	class MyCount extends MyCountdownTimer { 
 
 		public MyCount(long millisInFuture, long countDownInterval) { 
@@ -993,11 +993,11 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 		} 
 		@Override 
 		public void onFinish() { 
-			//Ã½Ìå¶ÔÏó 
-			txt_time.setText("´ËÍÅÒÑ½áÊø"); 
+			//åª’ä½“å¯¹è±¡ 
+			txt_time.setText("æ­¤å›¢å·²ç»“æŸ"); 
 		} 
 		
-		//¸üĞÂÊ£ÓàÊ±¼ä 
+		//æ›´æ–°å‰©ä½™æ—¶é—´ 
 		@Override 
 		public void onTick(long millisUntilFinished, int percent) {
 			current_time = millisUntilFinished;
@@ -1006,22 +1006,22 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
 //			long myhour = (millisUntilFinished / 1000) / 3600; 
 //			long myminute = ((millisUntilFinished / 1000) - myhour * 3600) / 60; 
 //			long mysecond = millisUntilFinished / 1000 - myhour * 3600 - myminute * 60; 
-//			txt_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + myhour + ":" + myminute + ":" + mysecond); 
+//			txt_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + myhour + ":" + myminute + ":" + mysecond); 
 			
 			   long day=current_time/(24*60*60*1000);
 			   long hour=(current_time/(60*60*1000)-day*24);
 			   long min=((current_time/(60*1000))-day*24*60-hour*60);
 			   long s=(current_time/1000-day*24*60*60-hour*60*60-min*60);
 			   
-//			   System.out.println(""+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
-//			   txt_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + hour + ":" + min + ":" + s); 
-			   txt_time.setText("Ê£ÓàÊ±¼ä: "+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë"); 
+//			   System.out.println(""+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
+//			   txt_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + hour + ":" + min + ":" + s); 
+			   txt_time.setText("å‰©ä½™æ—¶é—´: "+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’"); 
 		} 
 	} 
 	
 	
 	public static void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -1029,18 +1029,18 @@ public class JuTuanGouXq2Activity extends BaseActivity implements OnClickListene
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        listView.getDividerHeight();//»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-//         params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        listView.getDividerHeight();//è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+//         params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     } 
 

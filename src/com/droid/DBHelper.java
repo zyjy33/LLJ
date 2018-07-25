@@ -13,21 +13,21 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * @author Joshua ÓÃ·¨£º DBHelper dbHelper = new DBHelper(this);
+ * @author Joshua ç”¨æ³•ï¼š DBHelper dbHelper = new DBHelper(this);
  *         dbHelper.createDataBase(); SQLiteDatabase db =
  *         dbHelper.getWritableDatabase(); Cursor cursor = db.query()
- *         db.execSQL(sqlString); ×¢Òâ£ºexecSQL²»Ö§³Ö´ø;µÄ¶àÌõSQLÓï¾ä£¬Ö»ÄÜÒ»ÌõÒ»ÌõµÄÖ´ĞĞ£¬ÔÎÁËºÜ¾Ã²ÅÃ÷°×
- *         ¼ûexecSQLµÄÔ´Âë×¢ÊÍ (Multiple statements separated by ;s are not
- *         supported.) ½«°ÑassetsÏÂµÄÊı¾İ¿âÎÄ¼şÖ±½Ó¸´ÖÆµ½DB_PATH£¬µ«Êı¾İ¿âÎÄ¼ş´óĞ¡ÏŞÖÆÔÚ1MÒÔÏÂ
- *         Èç¹ûÓĞ³¬¹ı1MµÄ´óÎÄ¼ş£¬ÔòĞèÒªÏÈ·Ö¸îÎªN¸öĞ¡ÎÄ¼ş£¬È»ºóÊ¹ÓÃcopyBigDatabase()Ìæ»»copyDatabase()
+ *         db.execSQL(sqlString); æ³¨æ„ï¼šexecSQLä¸æ”¯æŒå¸¦;çš„å¤šæ¡SQLè¯­å¥ï¼Œåªèƒ½ä¸€æ¡ä¸€æ¡çš„æ‰§è¡Œï¼Œæ™•äº†å¾ˆä¹…æ‰æ˜ç™½
+ *         è§execSQLçš„æºç æ³¨é‡Š (Multiple statements separated by ;s are not
+ *         supported.) å°†æŠŠassetsä¸‹çš„æ•°æ®åº“æ–‡ä»¶ç›´æ¥å¤åˆ¶åˆ°DB_PATHï¼Œä½†æ•°æ®åº“æ–‡ä»¶å¤§å°é™åˆ¶åœ¨1Mä»¥ä¸‹
+ *         å¦‚æœæœ‰è¶…è¿‡1Mçš„å¤§æ–‡ä»¶ï¼Œåˆ™éœ€è¦å…ˆåˆ†å‰²ä¸ºNä¸ªå°æ–‡ä»¶ï¼Œç„¶åä½¿ç”¨copyBigDatabase()æ›¿æ¢copyDatabase()
  */
 public class DBHelper extends SQLiteOpenHelper {
-	// ÓÃ»§Êı¾İ¿âÎÄ¼şµÄ°æ±¾
+	// ç”¨æˆ·æ•°æ®åº“æ–‡ä»¶çš„ç‰ˆæœ¬
 	private static final int DB_VERSION = 3;
-	// Êı¾İ¿âÎÄ¼şÄ¿±ê´æ·ÅÂ·¾¶ÎªÏµÍ³Ä¬ÈÏÎ»ÖÃ£¬com.droid ÊÇÄãµÄ°üÃû
+	// æ•°æ®åº“æ–‡ä»¶ç›®æ ‡å­˜æ”¾è·¯å¾„ä¸ºç³»ç»Ÿé»˜è®¤ä½ç½®ï¼Œcom.droid æ˜¯ä½ çš„åŒ…å
 	private static String DB_PATH = "/data/data/com.lelinju.www/databases/";
 	/*
-	 * //Èç¹ûÄãÏë°ÑÊı¾İ¿âÎÄ¼ş´æ·ÅÔÚSD¿¨µÄ»° private static String DB_PATH =
+	 * //å¦‚æœä½ æƒ³æŠŠæ•°æ®åº“æ–‡ä»¶å­˜æ”¾åœ¨SDå¡çš„è¯ private static String DB_PATH =
 	 * android.os.Environment.getExternalStorageDirectory().getAbsolutePath() +
 	 * "/arthurcn/drivertest/packfiles/";
 	 */
@@ -39,29 +39,29 @@ public class DBHelper extends SQLiteOpenHelper {
 	private final Context myContext;
 
 	/**
-	 * Èç¹ûÊı¾İ¿âÎÄ¼ş½Ï´ó£¬Ê¹ÓÃFileSplit·Ö¸îÎªĞ¡ÓÚ1MµÄĞ¡ÎÄ¼ş ´ËÀıÖĞ·Ö¸îÎª hello.db.101 hello.db.102
+	 * å¦‚æœæ•°æ®åº“æ–‡ä»¶è¾ƒå¤§ï¼Œä½¿ç”¨FileSplitåˆ†å‰²ä¸ºå°äº1Mçš„å°æ–‡ä»¶ æ­¤ä¾‹ä¸­åˆ†å‰²ä¸º hello.db.101 hello.db.102
 	 * hello.db.103
 	 */
-	// µÚÒ»¸öÎÄ¼şÃûºó×º
+	// ç¬¬ä¸€ä¸ªæ–‡ä»¶ååç¼€
 	private static final int ASSETS_SUFFIX_BEGIN = 101;
-	// ×îºóÒ»¸öÎÄ¼şÃûºó×º
+	// æœ€åä¸€ä¸ªæ–‡ä»¶ååç¼€
 	private static final int ASSETS_SUFFIX_END = 103;
 
 	/**
-	 * ÔÚSQLiteOpenHelperµÄ×ÓÀàµ±ÖĞ£¬±ØĞëÓĞ¸Ã¹¹Ôìº¯Êı
+	 * åœ¨SQLiteOpenHelperçš„å­ç±»å½“ä¸­ï¼Œå¿…é¡»æœ‰è¯¥æ„é€ å‡½æ•°
 	 * 
 	 * @param context
-	 *            ÉÏÏÂÎÄ¶ÔÏó
+	 *            ä¸Šä¸‹æ–‡å¯¹è±¡
 	 * @param name
-	 *            Êı¾İ¿âÃû³Æ
+	 *            æ•°æ®åº“åç§°
 	 * @param factory
-	 *            Ò»°ã¶¼ÊÇnull
+	 *            ä¸€èˆ¬éƒ½æ˜¯null
 	 * @param version
-	 *            µ±Ç°Êı¾İ¿âµÄ°æ±¾£¬Öµ±ØĞëÊÇÕûÊı²¢ÇÒÊÇµİÔöµÄ×´Ì¬
+	 *            å½“å‰æ•°æ®åº“çš„ç‰ˆæœ¬ï¼Œå€¼å¿…é¡»æ˜¯æ•´æ•°å¹¶ä¸”æ˜¯é€’å¢çš„çŠ¶æ€
 	 */
 	public DBHelper(Context context, String name, CursorFactory factory,
 			int version) {
-		// ±ØĞëÍ¨¹ısuperµ÷ÓÃ¸¸Ààµ±ÖĞµÄ¹¹Ôìº¯Êı
+		// å¿…é¡»é€šè¿‡superè°ƒç”¨çˆ¶ç±»å½“ä¸­çš„æ„é€ å‡½æ•°
 		super(context, name, null, version);
 		this.myContext = context;
 	}
@@ -81,9 +81,9 @@ public class DBHelper extends SQLiteOpenHelper {
 	public void createDataBase() throws IOException {
 		boolean dbExist = checkDataBase();
 		if (dbExist) {
-			// Êı¾İ¿âÒÑ´æÔÚ£¬do nothing.
+			// æ•°æ®åº“å·²å­˜åœ¨ï¼Œdo nothing.
 		} else {
-			// ´´½¨Êı¾İ¿â
+			// åˆ›å»ºæ•°æ®åº“
 			try {
 				File dir = new File(DB_PATH);
 				if (!dir.exists()) {
@@ -94,15 +94,15 @@ public class DBHelper extends SQLiteOpenHelper {
 					dbf.delete();
 				}
 				SQLiteDatabase.openOrCreateDatabase(dbf, null);
-				// ¸´ÖÆasseetsÖĞµÄdbÎÄ¼şµ½DB_PATHÏÂ
+				// å¤åˆ¶asseetsä¸­çš„dbæ–‡ä»¶åˆ°DB_PATHä¸‹
 				copyDataBase();
 			} catch (IOException e) {
-				throw new Error("Êı¾İ¿â´´½¨Ê§°Ü");
+				throw new Error("æ•°æ®åº“åˆ›å»ºå¤±è´¥");
 			}
 		}
 	}
 
-	// ¼ì²éÊı¾İ¿âÊÇ·ñÓĞĞ§
+	// æ£€æŸ¥æ•°æ®åº“æ˜¯å¦æœ‰æ•ˆ
 	private boolean checkDataBase() {
 		SQLiteDatabase checkDB = null;
 		String myPath = DB_PATH + DB_NAME;
@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		myInput.close();
 	}
 
-	// ¸´ÖÆassetsÏÂµÄ´óÊı¾İ¿âÎÄ¼şÊ±ÓÃÕâ¸ö
+	// å¤åˆ¶assetsä¸‹çš„å¤§æ•°æ®åº“æ–‡ä»¶æ—¶ç”¨è¿™ä¸ª
 	@SuppressWarnings("unused")
 	private void copyBigDataBase() throws IOException {
 		InputStream myInput;
@@ -170,7 +170,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * ¸Ãº¯ÊıÊÇÔÚµÚÒ»´Î´´½¨µÄÊ±ºòÖ´ĞĞ£¬ Êµ¼ÊÉÏÊÇµÚÒ»´ÎµÃµ½SQLiteDatabase¶ÔÏóµÄÊ±ºò²Å»áµ÷ÓÃÕâ¸ö·½·¨
+	 * è¯¥å‡½æ•°æ˜¯åœ¨ç¬¬ä¸€æ¬¡åˆ›å»ºçš„æ—¶å€™æ‰§è¡Œï¼Œ å®é™…ä¸Šæ˜¯ç¬¬ä¸€æ¬¡å¾—åˆ°SQLiteDatabaseå¯¹è±¡çš„æ—¶å€™æ‰ä¼šè°ƒç”¨è¿™ä¸ªæ–¹æ³•
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
@@ -178,7 +178,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * Êı¾İ¿â±í½á¹¹ÓĞ±ä»¯Ê±²ÉÓÃ
+	 * æ•°æ®åº“è¡¨ç»“æ„æœ‰å˜åŒ–æ—¶é‡‡ç”¨
 	 */
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

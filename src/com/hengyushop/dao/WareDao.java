@@ -26,7 +26,7 @@ public class WareDao {
 
 	static int d = 0;
 
-	// ½«josn½âÎö³öÀ´µÄĞÅÏ¢¼ÓÈë±í¸ñstatusÖĞ
+	// å°†josnè§£æå‡ºæ¥çš„ä¿¡æ¯åŠ å…¥è¡¨æ ¼statusä¸­
 	public boolean insertWare(WareData ware) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -45,7 +45,7 @@ public class WareDao {
 		return isInsert;
 	}
 
-	// ½«josn½âÎö³öÀ´µÄĞÅÏ¢¼ÓÈë±í¸ñstatusÖĞ
+	// å°†josnè§£æå‡ºæ¥çš„ä¿¡æ¯åŠ å…¥è¡¨æ ¼statusä¸­
 	public boolean insertWide(WareData ware) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -63,7 +63,7 @@ public class WareDao {
 		}
 		return isInsert;
 	}
-	// ²éÑ¯ËùÓĞµÄÉÌÆ·ID
+	// æŸ¥è¯¢æ‰€æœ‰çš„å•†å“ID
 		public List<WareData> finWideID() {
 			SQLiteDatabase db = helper.getReadableDatabase();
 			List<WareData> allIds = new ArrayList<WareData>();
@@ -79,7 +79,7 @@ public class WareDao {
 			db.close();
 			return allIds;
 		}
-	// ²éÑ¯ËùÓĞµÄÉÌÆ·ID
+	// æŸ¥è¯¢æ‰€æœ‰çš„å•†å“ID
 	public List<WareData> finAddID() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		List<WareData> allIds = new ArrayList<WareData>();
@@ -96,7 +96,7 @@ public class WareDao {
 		return allIds;
 	}
 
-	// ¸ù¾İparentId²éÕÒËù¶ÔÓ¦µÄproductTypeName£¬openUrl
+	// æ ¹æ®parentIdæŸ¥æ‰¾æ‰€å¯¹åº”çš„productTypeNameï¼ŒopenUrl
 	public ArrayList<WideDo> findAllWide() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 
@@ -134,7 +134,7 @@ public class WareDao {
 		return allwares;
 	}
 
-	// ¸ù¾İparentId²éÕÒËù¶ÔÓ¦µÄproductTypeName£¬openUrl
+	// æ ¹æ®parentIdæŸ¥æ‰¾æ‰€å¯¹åº”çš„productTypeNameï¼ŒopenUrl
 	public List<WareData> findAllWare(int id) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		List<WareData> allwares = new ArrayList<WareData>();
@@ -179,7 +179,7 @@ public class WareDao {
 		db.close();
 		return allwares;
 	}
-	// ²éÑ¯ÉÌÆ·µÄÍÆ¼öĞÅÏ¢
+	// æŸ¥è¯¢å•†å“çš„æ¨èä¿¡æ¯
 	public String[] findnameBySpe(int parentId) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		String sql = "select productTypeName from status where SpecCommend=1 and parentId in "
@@ -197,7 +197,7 @@ public class WareDao {
 		return temp;
 	}
 
-	// ¸ù¾İproductTypeName²éÑ¯ÉÌÆ·_id
+	// æ ¹æ®productTypeNameæŸ¥è¯¢å•†å“_id
 	public WareData findbyTypeName(String typename) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		WareData ware = new WareData();
@@ -266,7 +266,7 @@ public class WareDao {
 		return temp;
 	}
 
-	// ÓÃ»§×¢²á ²åÈë×¢²áĞÅÏ¢
+	// ç”¨æˆ·æ³¨å†Œ æ’å…¥æ³¨å†Œä¿¡æ¯
 	public boolean insertUser(UserRegisterData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -287,7 +287,7 @@ public class WareDao {
 		return isInsert;
 	}
 
-	// ÓÃ»§µÇÂ¼ ĞŞ¸ÄÓÃ»§×´Ì¬
+	// ç”¨æˆ·ç™»å½• ä¿®æ”¹ç”¨æˆ·çŠ¶æ€
 	public boolean updateIsLogin(String username, UserRegisterData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isUpdate = false;
@@ -305,13 +305,13 @@ public class WareDao {
 		int updateCount = db.update("users", cv, "HengYuCode=?",
 				new String[] { username });
 		if (updateCount > 0) {
-			// ĞŞ¸Ä³É¹¦
+			// ä¿®æ”¹æˆåŠŸ
 			isUpdate = true;
 		}
 		return isUpdate;
 	}
 
-	// ÓÃ»§µÇÂ¼Ê± ¼ì²â¸ÃÓÃ»§ÊÇ·ñÒÑ¾­µÇÂ¼
+	// ç”¨æˆ·ç™»å½•æ—¶ æ£€æµ‹è¯¥ç”¨æˆ·æ˜¯å¦å·²ç»ç™»å½•
 	public UserRegisterData findLoginCheck(String username) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		UserRegisterData data = new UserRegisterData();
@@ -326,7 +326,7 @@ public class WareDao {
 		return data;
 	}
 
-	// ²éÑ¯ÊÇ·ñÓĞÓÃ»§µ±Ç°µÄÎªµÇÂ¼×´Ì¬
+	// æŸ¥è¯¢æ˜¯å¦æœ‰ç”¨æˆ·å½“å‰çš„ä¸ºç™»å½•çŠ¶æ€
 	public List<UserRegisterData> findisLogin() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		List<UserRegisterData> allNames = new ArrayList<UserRegisterData>();
@@ -343,7 +343,7 @@ public class WareDao {
 		return allNames;
 	}
 
-	// ÓÃ»§ÍË³ö ĞŞ¸ÄÓÃ»§×´Ì¬Îª0
+	// ç”¨æˆ·é€€å‡º ä¿®æ”¹ç”¨æˆ·çŠ¶æ€ä¸º0
 	public boolean updateQuitIsLogin(UserRegisterData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isUpdate = false;
@@ -351,13 +351,13 @@ public class WareDao {
 		cv.put("isLogin", data.getIsLogin());
 		int updateCount = db.update("users", cv, null, null);
 		if (updateCount > 0) {
-			// ĞŞ¸Ä³É¹¦
+			// ä¿®æ”¹æˆåŠŸ
 			isUpdate = true;
 		}
 		return isUpdate;
 	}
 
-	// ÓÃ»§ÍË³ö Çå¿Õ¹ºÎï³µ±í
+	// ç”¨æˆ·é€€å‡º æ¸…ç©ºè´­ç‰©è½¦è¡¨
 	public boolean deleteAllShopCart() {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isdelete = false;
@@ -369,7 +369,7 @@ public class WareDao {
 		return isdelete;
 	}
 
-	// Èç¹ûµ±Ç°±í¸ñÖĞÃ»ÓĞµ±Ç°µÄÓÃ»§£¬½«¸ÃÓÃ»§µÄĞÅÏ¢²åÈë±í¸ñÀïÃæ
+	// å¦‚æœå½“å‰è¡¨æ ¼ä¸­æ²¡æœ‰å½“å‰çš„ç”¨æˆ·ï¼Œå°†è¯¥ç”¨æˆ·çš„ä¿¡æ¯æ’å…¥è¡¨æ ¼é‡Œé¢
 	public boolean insertLogin(UserRegisterData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		String sql = "select * from users where username='"
@@ -410,7 +410,7 @@ public class WareDao {
 		return isInsert;
 	}
 
-	// ²éÑ¯±í¸ñÀïÃæËùÓĞ´æÔÚµÄ ºãÓşºÅ£¨HengYuCode£©
+	// æŸ¥è¯¢è¡¨æ ¼é‡Œé¢æ‰€æœ‰å­˜åœ¨çš„ æ’èª‰å·ï¼ˆHengYuCodeï¼‰
 	public List<UserRegisterData> findByCode(String hengyucode) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		List<UserRegisterData> allwares = new ArrayList<UserRegisterData>();
@@ -428,7 +428,7 @@ public class WareDao {
 		return allwares;
 	}
 
-	// Çå¿ÕÓÃ»§ĞÅÏ¢
+	// æ¸…ç©ºç”¨æˆ·ä¿¡æ¯
 	public boolean deleteAllUserInformation() {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isdelete = false;
@@ -449,7 +449,7 @@ public class WareDao {
 		return null;
 	}
 
-	// ²éÑ¯µ±Ç°µÇÂ¼µÄÓÃ»§µÄºãÓşºÅºÍkeyÖµ
+	// æŸ¥è¯¢å½“å‰ç™»å½•çš„ç”¨æˆ·çš„æ’èª‰å·å’Œkeyå€¼
 	public UserRegisterData findIsLoginHengyuCode() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		UserRegisterData data = new UserRegisterData();
@@ -476,7 +476,7 @@ public class WareDao {
 		return data;
 	}
 
-	// ²éÑ¯±í¸ñÀïÃæÊÇ·ñÓĞ¸ÃÌõÊı¾İ,²¢·µ»ØËûµÄÉÌÆ·ÊıÄ¿£¨ÉÌÆ·ÓĞÁ½ÌõÊôĞÔÊ±£©
+	// æŸ¥è¯¢è¡¨æ ¼é‡Œé¢æ˜¯å¦æœ‰è¯¥æ¡æ•°æ®,å¹¶è¿”å›ä»–çš„å•†å“æ•°ç›®ï¼ˆå•†å“æœ‰ä¸¤æ¡å±æ€§æ—¶ï¼‰
 	public ShopCartData findTwoStyle(String wareid, String stylename1,
 			String stylenature1, String stylename2, String stylenature2) {
 		SQLiteDatabase db = helper.getReadableDatabase();
@@ -497,7 +497,7 @@ public class WareDao {
 		return data;
 	}
 
-	// ²åÈë¹ºÎï³µ±í Èç¹ûÉÌÆ·ÓĞÁ½ÖÖÊôĞÔ
+	// æ’å…¥è´­ç‰©è½¦è¡¨ å¦‚æœå•†å“æœ‰ä¸¤ç§å±æ€§
 	public boolean insertShopCartTwoStyle(ShopCartData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -523,7 +523,7 @@ public class WareDao {
 		return isInsert;
 	}
 
-	// ²éÑ¯±í¸ñÀïÃæÊÇ·ñÓĞ¸ÃÌõÊı¾İ,²¢·µ»ØËûµÄÉÌÆ·ÊıÄ¿£¨ÉÌÆ·Ã»ÓĞÊôĞÔÊ±£©
+	// æŸ¥è¯¢è¡¨æ ¼é‡Œé¢æ˜¯å¦æœ‰è¯¥æ¡æ•°æ®,å¹¶è¿”å›ä»–çš„å•†å“æ•°ç›®ï¼ˆå•†å“æ²¡æœ‰å±æ€§æ—¶ï¼‰
 	public ShopCartData findNoStyle(String wareid) {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		ShopCartData data = new ShopCartData();
@@ -541,7 +541,7 @@ public class WareDao {
 		return data;
 	}
 
-	// ²åÈë¹ºÎï³µ±í Èç¹ûÉÌÆ·Ã»ÓĞÊôĞÔ
+	// æ’å…¥è´­ç‰©è½¦è¡¨ å¦‚æœå•†å“æ²¡æœ‰å±æ€§
 	public boolean insertShopCartNoStyle(ShopCartData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -563,7 +563,7 @@ public class WareDao {
 		return isInsert;
 	}
 
-	// ²éÑ¯±í¸ñÀïÃæÊÇ·ñÓĞ¸ÃÌõÊı¾İ,²¢·µ»ØËûµÄÉÌÆ·ÊıÄ¿£¨ÉÌÆ·ÓĞÒ»ÌõÊôĞÔÊ±£©
+	// æŸ¥è¯¢è¡¨æ ¼é‡Œé¢æ˜¯å¦æœ‰è¯¥æ¡æ•°æ®,å¹¶è¿”å›ä»–çš„å•†å“æ•°ç›®ï¼ˆå•†å“æœ‰ä¸€æ¡å±æ€§æ—¶ï¼‰
 	public ShopCartData findOneStyle(String wareid, String stylename1,
 			String stylenature1) {
 		SQLiteDatabase db = helper.getReadableDatabase();
@@ -583,7 +583,7 @@ public class WareDao {
 		return data;
 	}
 
-	// ²åÈë¹ºÎï³µ±í Èç¹ûÉÌÆ·ÓĞÒ»ÖÖÊôĞÔ
+	// æ’å…¥è´­ç‰©è½¦è¡¨ å¦‚æœå•†å“æœ‰ä¸€ç§å±æ€§
 	public boolean insertShopCartOneStyle(ShopCartData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -606,7 +606,7 @@ public class WareDao {
 		return isInsert;
 	}
 
-	// ²éÑ¯ÉÌÆ·µÄĞÅÏ¢ ¼ÓÈë¹ºÎï³µ
+	// æŸ¥è¯¢å•†å“çš„ä¿¡æ¯ åŠ å…¥è´­ç‰©è½¦
 	public List<ShopCartData> findShopCart() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		List<ShopCartData> allNames = new ArrayList<ShopCartData>();
@@ -650,7 +650,7 @@ public class WareDao {
 		db.close();
 		return allNames;
 	}
-	// ÓÃ»§µã»÷ É¾³ıÕâÌõĞÅÏ¢
+	// ç”¨æˆ·ç‚¹å‡» åˆ é™¤è¿™æ¡ä¿¡æ¯
 	public boolean deleteByOrderid(String orderid) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isdelete = false;
@@ -662,7 +662,7 @@ public class WareDao {
 		return isdelete;
 	}
 
-	// ĞŞ¸Ä±í¸ñÀïÃæµÄÉÌÆ·ÊıÄ¿ £¨¸ù¾İ¶©µ¥id£©
+	// ä¿®æ”¹è¡¨æ ¼é‡Œé¢çš„å•†å“æ•°ç›® ï¼ˆæ ¹æ®è®¢å•idï¼‰
 	public boolean updateByOrderid(String orderid, ShopCartData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isUpdate = false;
@@ -703,7 +703,7 @@ public class WareDao {
 		return data;
 	}
 
-	// ½øÈëÁÄÌìÒ³Ãæ »ñÈ¡µ±Ç°µÇÂ¼ÓÃ»§µÄ ºãÓşºÅºÍÃÜÂë
+	// è¿›å…¥èŠå¤©é¡µé¢ è·å–å½“å‰ç™»å½•ç”¨æˆ·çš„ æ’èª‰å·å’Œå¯†ç 
 	public UserRegisterData findByChat() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		UserRegisterData data = new UserRegisterData();
@@ -720,7 +720,7 @@ public class WareDao {
 		return data;
 	}
 
-	// Çå¿ÕÉÌÆ··ÖÀàĞÅÏ¢
+	// æ¸…ç©ºå•†å“åˆ†ç±»ä¿¡æ¯
 	public boolean deleteAllWareInformation() {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isdelete = false;
@@ -734,11 +734,11 @@ public class WareDao {
 	/**
 	 * @author Administrator
 	 * 
-	 *         µã²Í±í²Ù×÷
+	 *         ç‚¹é¤è¡¨æ“ä½œ
 	 * 
 	 */
 
-	// ²åÈëµã²Í ²ËÆ··ÖÀà±í
+	// æ’å…¥ç‚¹é¤ èœå“åˆ†ç±»è¡¨
 	public boolean insertFoodClassify(DotClassifyData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -748,12 +748,12 @@ public class WareDao {
 		long recordId = db.insert("foodclassify", "", cv);
 		if (recordId > 0) {
 			isInsert = true;
-			System.out.println("·ÖÀà±í²åÈë³É¹¦");
+			System.out.println("åˆ†ç±»è¡¨æ’å…¥æˆåŠŸ");
 		}
 		return isInsert;
 	}
 
-	// ²åÈëµã²Í ²ËÆ·ÄÚÈİ±í
+	// æ’å…¥ç‚¹é¤ èœå“å†…å®¹è¡¨
 	public boolean insertFoodContent(DotContentData data) {
 		SQLiteDatabase db = helper.getWritableDatabase();
 		boolean isInsert = false;
@@ -769,12 +769,12 @@ public class WareDao {
 		long recordId = db.insert("foodcontent", "", cv);
 		if (recordId > 0) {
 			isInsert = true;
-			System.out.println("ÄÚÈİ±í²åÈë³É¹¦");
+			System.out.println("å†…å®¹è¡¨æ’å…¥æˆåŠŸ");
 		}
 		return isInsert;
 	}
 
-	// ²éÑ¯ËùÓĞµÄ²ËÆ··ÖÀà
+	// æŸ¥è¯¢æ‰€æœ‰çš„èœå“åˆ†ç±»
 	public List<DotClassifyData> findAllClassify() {
 		SQLiteDatabase db = helper.getReadableDatabase();
 		List<DotClassifyData> allwares = new ArrayList<DotClassifyData>();

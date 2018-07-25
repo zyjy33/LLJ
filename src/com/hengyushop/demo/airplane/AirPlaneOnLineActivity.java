@@ -28,7 +28,7 @@ public class AirPlaneOnLineActivity extends BaseActivity {
 	}
 
 	private void listdata() {
-		String[] type = new String[] { "南方航空在线值机", "海南航空在线值机" };
+		String[] type = new String[] { "鍗楁柟鑸┖鍦ㄧ嚎鍊兼満", "娴峰崡鑸┖鍦ㄧ嚎鍊兼満" };
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 		Map<String, String> lines = null;
 		for (int i = 0; i < type.length; i++) {

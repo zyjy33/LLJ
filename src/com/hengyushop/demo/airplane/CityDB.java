@@ -41,7 +41,7 @@ public class CityDB {
 	}
 
 	/**
-	 * ¸ù¾İÈı×ÖÂëÓ³Éä³ÇÊĞÃû×Ö
+	 * æ ¹æ®ä¸‰å­—ç æ˜ å°„åŸå¸‚åå­—
 	 * 
 	 * @param param
 	 * @return
@@ -59,7 +59,7 @@ public class CityDB {
 	}
 
 	/**
-	 * »ñµÃÊ¡·İ
+	 * è·å¾—çœä»½
 	 * 
 	 * @param sql
 	 * @return
@@ -81,7 +81,7 @@ public class CityDB {
 		ArrayList<String> items = new ArrayList<String>();
 		Cursor cursor = db.rawQuery(sql, null);
 		if (flag) {
-			items.add("²»ÏŞ");
+			items.add("ä¸é™");
 		}
 		while (cursor.moveToNext()) {
 			items.add(cursor.getString(0));

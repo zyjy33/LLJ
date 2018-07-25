@@ -22,7 +22,7 @@ public class WorkDB {
 		ArrayList<String> items = new ArrayList<String>();
 		Cursor cursor = db.rawQuery(sql, null);
 
-			items.add("²»ÏŞ");
+			items.add("ä¸é™");
 		
 		while (cursor.moveToNext()) {
 			items.add(cursor.getString(0));
@@ -46,7 +46,7 @@ public class WorkDB {
 	}
 
 	/**
-	 * µÃµ½ËùÓĞÖ°Î»ÁĞ±í
+	 * å¾—åˆ°æ‰€æœ‰èŒä½åˆ—è¡¨
 	 * 
 	 * @return
 	 */

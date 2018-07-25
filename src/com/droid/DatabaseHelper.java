@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-	// ÀàÃ»ÓĞÊµÀı»¯,ÊÇ²»ÄÜÓÃ×÷¸¸Àà¹¹ÔìÆ÷µÄ²ÎÊı,±ØĞëÉùÃ÷Îª¾²Ì¬
-	private static final String name = "city"; // Êı¾İ¿âÃû³Æ
-	private static final int version = 1; // Êı¾İ¿â°æ±¾
+	// ç±»æ²¡æœ‰å®ä¾‹åŒ–,æ˜¯ä¸èƒ½ç”¨ä½œçˆ¶ç±»æ„é€ å™¨çš„å‚æ•°,å¿…é¡»å£°æ˜ä¸ºé™æ€
+	private static final String name = "city"; // æ•°æ®åº“åç§°
+	private static final int version = 1; // æ•°æ®åº“ç‰ˆæœ¬
 
 	public DatabaseHelper(Context context) {
 		super(context, name, null, version);

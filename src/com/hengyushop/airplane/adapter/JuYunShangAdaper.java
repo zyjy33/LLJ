@@ -90,9 +90,9 @@ public class JuYunShangAdaper extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		holder.tv_biaoti.setText(list.get(position).title);
-		holder.tv_jifengduihuan.setText("£¤"+list.get(position).sell_price);
-		holder.tv_shichangjia.setText("ÊÐ³¡¼Û:£¤"+list.get(position).market_price);
-		holder.tv_shichangjia.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+		holder.tv_jifengduihuan.setText("ï¿¥"+list.get(position).sell_price);
+		holder.tv_shichangjia.setText("å¸‚åœºä»·:ï¿¥"+list.get(position).market_price);
+		holder.tv_shichangjia.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 //		ImageLoader imageLoader=ImageLoader.getInstance();
 //        imageLoader.displayImage((String) RealmName.REALM_NAME_HTTP+list.get(position).img_url,holder.img);
 		mAq.id(holder.img).image(RealmName.REALM_NAME_HTTP+list.get(position).img_url);

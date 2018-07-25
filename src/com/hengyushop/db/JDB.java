@@ -16,7 +16,7 @@ public class JDB {
 		ArrayList<String> items = new ArrayList<String>();
 		Cursor cursor = db.rawQuery(sql, null);
 		if (flag) {
-			items.add("²»ÏŞ");
+			items.add("ä¸é™");
 		}
 		while (cursor.moveToNext()) {
 			items.add(cursor.getString(0));

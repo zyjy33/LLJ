@@ -10,7 +10,7 @@ import android.view.Window;
 import android.widget.TabHost;
 import android.widget.TextView;
 /**
- * 机票
+ * 鏈虹エ
  * @author Administrator
  *
  */
@@ -36,7 +36,7 @@ public class AirPlaneHomeActivity extends TabActivity {
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("机票查询");
+		localTextView.setText("鏈虹エ鏌ヨ");
 		Intent localIntent = new Intent(AirPlaneHomeActivity.this,
 				AirPlaneSelectActivity.class);
 		localTabSpec.setIndicator(localView).setContent(localIntent);
@@ -48,7 +48,7 @@ public class AirPlaneHomeActivity extends TabActivity {
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("特价机票");
+		localTextView.setText("鐗逛环鏈虹エ");
 		TabHost.TabSpec localTabSpec2 = localTabSpec1.setIndicator(localView);
 		Intent localIntent = new Intent(AirPlaneHomeActivity.this,
 				AirPlaneBargainActivity.class);
@@ -61,7 +61,7 @@ public class AirPlaneHomeActivity extends TabActivity {
 		View localView = getLayoutInflater().inflate(R.layout.tab_indicator,
 				null);
 		TextView localTextView = (TextView) localView.findViewById(R.id.title);
-		localTextView.setText("在线值机");
+		localTextView.setText("鍦ㄧ嚎鍊兼満");
 		TabHost.TabSpec localTabSpec2 = localTabSpec1.setIndicator(localView);
 		Intent localIntent = new Intent(AirPlaneHomeActivity.this,
 				AirPlaneOnLineActivity.class);

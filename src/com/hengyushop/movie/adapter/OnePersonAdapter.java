@@ -71,7 +71,7 @@ public class OnePersonAdapter extends BaseExpandableListAdapter {
 			TextView item1 = (TextView) child.findViewById(R.id.child1);
 			TextView item2 = (TextView) child.findViewById(R.id.child2);
 			item0.setText(lists.get(groupPosition).getChild().get(i).getTime());
-			item1.setText(lists.get(groupPosition).getChild().get(i).getCount()+"ÈË´Î");
+			item1.setText(lists.get(groupPosition).getChild().get(i).getCount()+"äººæ¬¡");
 			item2.setText(lists.get(groupPosition).getChild().get(i).getNum());
 			layout.addView(child);
 		}
@@ -122,7 +122,7 @@ public class OnePersonAdapter extends BaseExpandableListAdapter {
 			 viewHolder.item5 = (TextView) convertView.findViewById(R.id.item5);
 			 viewHolder.item6 = (TextView) convertView.findViewById(R.id.item6);
 			 viewHolder.item7 = (TextView) convertView.findViewById(R.id.item7);
-			 //Ìí¼Óµ½ĞÂµÄ½çÃæ
+			 //æ·»åŠ åˆ°æ–°çš„ç•Œé¢
 			convertView.setTag(viewHolder);
 
 		} else {
@@ -130,9 +130,9 @@ public class OnePersonAdapter extends BaseExpandableListAdapter {
 		}
 		 imageLoader.displayImage(RealmName.REALM_NAME+"/admin/"+lists.get(groupPosition).getProFaceImg(),  viewHolder.item0);
 		 if(lists.get(groupPosition).getCurrentGameDone().equals("0")){
-			 viewHolder.item1.setText("ÕıÔÚ½øĞĞ..");
+			 viewHolder.item1.setText("æ­£åœ¨è¿›è¡Œ..");
 		 }else {
-			 viewHolder.item1.setText("ÒÑ½ÒÏş");
+			 viewHolder.item1.setText("å·²æ­æ™“");
 		}
 		
 		 viewHolder.item2.setText(lists.get(groupPosition).getProName());

@@ -88,10 +88,10 @@ public class JuyunshangAdapter extends BaseAdapter {
 
 			tv_name.setText(lists.get(position).name);
 			// tv_name.setText(lists.get(position).title);
-			// tv_rePrice.setText("гд" + lists.get(position).getSell_price());
-			// tv_maPrice.setText("гд" + lists.get(position).getMarket_price());
-			// tv_rePrice.setText("гд" + lists.get(position).sell_price);
-			// tv_maPrice.setText("гд" + lists.get(position).market_price);
+			// tv_rePrice.setText("я┐е" + lists.get(position).getSell_price());
+			// tv_maPrice.setText("я┐е" + lists.get(position).getMarket_price());
+			// tv_rePrice.setText("я┐е" + lists.get(position).sell_price);
+			// tv_maPrice.setText("я┐е" + lists.get(position).market_price);
 			// tv_id.setText(list.get(position).id + "");
 
 	  		loader.displayImage(RealmName.REALM_NAME_HTTP+ lists.get(position).img_url, img_ware);

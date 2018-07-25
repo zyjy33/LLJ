@@ -68,11 +68,11 @@ public class MyWareFourAdapter extends BaseAdapter {
 		TextView tv_id = (TextView) convertView.findViewById(R.id.tv_ware_id);
 
 		tv_maPrice.getPaint().setFlags(
-				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 
 		tv_name.setText(list.get(position).proName + "");
-		tv_rePrice.setText("£¤" + list.get(position).retailPrice);
-		tv_maPrice.setText("£¤" + list.get(position).marketPrice);
+		tv_rePrice.setText("ï¿¥" + list.get(position).retailPrice);
+		tv_maPrice.setText("ï¿¥" + list.get(position).marketPrice);
 		tv_id.setText(list.get(position).id + "");
 
 		loader.displayImage(

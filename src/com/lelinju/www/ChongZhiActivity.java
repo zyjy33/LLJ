@@ -74,7 +74,7 @@ findViewById(R.id.chongzhi_t).setOnClickListener(new OnClickListener() {
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		Toast.makeText(getApplicationContext(), "Ôİ²»Ö§³ÖÌáÏÖ", 200).show();
+		Toast.makeText(getApplicationContext(), "æš‚ä¸æ”¯æŒæç°", 200).show();
 	}
 });
 		
@@ -92,13 +92,13 @@ findViewById(R.id.chongzhi_t).setOnClickListener(new OnClickListener() {
 		// TODO Auto-generated method stub
 		super.onResume();
 		loadInfo();
-		yuee.setText("£¤"+in.getStringValue("PassTicketBalance"));
+		yuee.setText("ï¿¥"+in.getStringValue("PassTicketBalance"));
 	}
 	private Handler handler = new Handler(){
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case 1:
-				yuee.setText("£¤"+in.getStringValue("PassTicketBalance"));
+				yuee.setText("ï¿¥"+in.getStringValue("PassTicketBalance"));
 				break;
 
 			default:
@@ -123,7 +123,7 @@ findViewById(R.id.chongzhi_t).setOnClickListener(new OnClickListener() {
 				 * 
 				 */
 				if (object2.getInt("status") == -1) {
-					// ÓÃ»§²»´æÔÚ
+					// ç”¨æˆ·ä¸å­˜åœ¨
 					int isLogin = 0;
 					int index = 0;
 					UserRegisterData data = new UserRegisterData();
@@ -167,7 +167,7 @@ findViewById(R.id.chongzhi_t).setOnClickListener(new OnClickListener() {
 					in.setStringValue("ReserveCredits",
 							object2.getString("ReserveCredits"));
 					in.setStringValue("shopPassTicket",
-							object2.getString("shopPassTicket"));// ´¢¹º±¦Óà¶î
+							object2.getString("shopPassTicket"));// å‚¨è´­å®ä½™é¢
 					in.setStringValue("PassTicketBalance",
 							object2.getString("PassTicketBalance"));
 					in.setStringValue("avatarimageURL",

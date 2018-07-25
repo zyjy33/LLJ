@@ -79,13 +79,13 @@ public class FlyDetailOrderActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, view.getWidth(),
 				android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -111,7 +111,7 @@ public class FlyDetailOrderActivity extends BaseActivity {
 	}
 
 	/**
-	 * ´´½¨Ö§¸¶µÄ´°Ìå
+	 * åˆ›å»ºæ”¯ä»˜çš„çª—ä½“
 	 */
 	private void initPopupWindowPay() {
 		mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -120,13 +120,13 @@ public class FlyDetailOrderActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.blue));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -191,15 +191,15 @@ public class FlyDetailOrderActivity extends BaseActivity {
 	}
 
 	/**
-	 * µ¯³öpopWindow
+	 * å¼¹å‡ºpopWindow
 	 * 
 	 * @param view
 	 */
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, location[0],
@@ -208,15 +208,15 @@ public class FlyDetailOrderActivity extends BaseActivity {
 	}
 
 	/**
-	 * Ö§¸¶µ¯³öµÄ¶Ô»°¿ò
+	 * æ”¯ä»˜å¼¹å‡ºçš„å¯¹è¯æ¡†
 	 * 
 	 * @param view
 	 */
 	private void showPopupWindowPay(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -243,7 +243,7 @@ public class FlyDetailOrderActivity extends BaseActivity {
 	}
 
 	/**
-	 * µã»÷ÊÂ¼ş°´Å¥
+	 * ç‚¹å‡»äº‹ä»¶æŒ‰é’®
 	 */
 	private OnClickListener clickListener = new OnClickListener() {
 		@Override
@@ -296,8 +296,8 @@ public class FlyDetailOrderActivity extends BaseActivity {
 					ArrayList<CardItem> banks = bean.getBanks();
 					String trade_no = bean.getTrade_no();
 					if (banks != null && banks.size() != 0) {
-						// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-						System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+						// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+						System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 						// initPopupWindow1();
 						// showPopupWindow1(btn_OK);
 						Intent intent = new Intent(FlyDetailOrderActivity.this,
@@ -310,7 +310,7 @@ public class FlyDetailOrderActivity extends BaseActivity {
 						intent.putExtras(bundle);
 						startActivity(intent);
 					} else {
-						// ±íÊ¾Ê×´ÎÖ§¸¶
+						// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 						Intent intent = new Intent(FlyDetailOrderActivity.this,
 								PayActivity.class);
 						Bundle bundle = new Bundle();
@@ -322,7 +322,7 @@ public class FlyDetailOrderActivity extends BaseActivity {
 						// showPopupWindow(btn_OK);
 					}
 				} else {
-					Toast.makeText(getApplicationContext(), "ÔİÊ±²»Ö§³Ö", 0).show();
+					Toast.makeText(getApplicationContext(), "æš‚æ—¶ä¸æ”¯æŒ", 0).show();
 				}
 				break;
 

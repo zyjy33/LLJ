@@ -8,10 +8,10 @@ import android.media.ThumbnailUtils;
 /**
  * 
  * 项目名称 : ZXingScanQRCode<br>
- * 创建�? : skycracks<br>
+ * 创建 : skycracks<br>
  * 创建时间 : 2016-4-19下午9:53:29<br>
  * 版本 :	[v1.0]<br>
- * 类描�? : LOGO图片加上白色背景图片<br>
+ * 类描 : LOGO图片加上白色背景图片<br>
  */
 public class LogoConfig {
 	/**
@@ -26,7 +26,7 @@ public class LogoConfig {
 		logoBitmap = ThumbnailUtils.extractThumbnail(logoBitmap,bgWidth*5/6, bgHeigh*5/6, ThumbnailUtils.OPTIONS_RECYCLE_INPUT);
 		Bitmap cvBitmap = Bitmap.createBitmap(bgWidth, bgHeigh, Config.ARGB_8888);
 		Canvas canvas = new Canvas(cvBitmap);
-		// �?始绘制图�?
+		// ?始绘制图?
 		canvas.drawBitmap(bgBitmap, 0, 0, null);
 		canvas.drawBitmap(logoBitmap,(bgWidth - logoBitmap.getWidth()) /2,(bgHeigh - logoBitmap.getHeight()) / 2, null);
 		canvas.save(Canvas.ALL_SAVE_FLAG);// 保存

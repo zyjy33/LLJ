@@ -141,8 +141,8 @@ public class WareInformationActivity extends BaseActivity implements
 	private ImageView ling_tip;
 	String point;
 	public static int fangshi = 0;
-	public static int spec_text_list = 0;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª0
-	public static boolean taocan_type = false;//ÅĞ¶ÏÉÌÆ·Ì×²Í¼Û¸ñ
+	public static int spec_text_list = 0;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º0
+	public static boolean taocan_type = false;//åˆ¤æ–­å•†å“å¥—é¤ä»·æ ¼
 	public AQuery mAq;
 	ArrayList<XiangqingData> list_ggcs;
 	int len;
@@ -151,12 +151,12 @@ public class WareInformationActivity extends BaseActivity implements
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		JuJingCaiXqActivity.type_xq = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-		JuJingCaiXqActivity.type_spec_item = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-		JuTuanGouXqActivity.type_xq = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-		JuTuanGouXqActivity.type_spec_item = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-		JuJingCaiXqActivity.spec_text_list = 0;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª0
-		JuTuanGouXqActivity.spec_text_list = 0;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª0
+		JuJingCaiXqActivity.type_xq = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+		JuJingCaiXqActivity.type_spec_item = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+		JuTuanGouXqActivity.type_xq = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+		JuTuanGouXqActivity.type_spec_item = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+		JuJingCaiXqActivity.spec_text_list = 0;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º0
+		JuTuanGouXqActivity.spec_text_list = 0;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º0
 	}
 	
 	@Override
@@ -169,7 +169,7 @@ public class WareInformationActivity extends BaseActivity implements
 		user_name = spPreferences.getString("user", "");
 		user_id = spPreferences.getString("user_id", "");
 		id = spPreferences.getString("user_id", "");
-		WareInformationActivity.title_jduihuan = null;//ÅĞ¶ÏÎª¾Û¶Ò»»ÏÔÊ¾Êı¾İ
+		WareInformationActivity.title_jduihuan = null;//åˆ¤æ–­ä¸ºèšå…‘æ¢æ˜¾ç¤ºæ•°æ®
 		mAq = new AQuery(this);
 		try {
 //			RelativeLayout rl_title = (RelativeLayout)findViewById(R.id.rl_title);
@@ -184,12 +184,12 @@ public class WareInformationActivity extends BaseActivity implements
 		if (jdh_id != null) {
 			market_information_juduihuan.setVisibility(view.VISIBLE);
 			market_information_bottom.setVisibility(view.GONE);
-//			loadJuDuiHuan(jdh_id);//»ñÈ¡¾Û¶Ò»»ÉÌÆ·ÏêÇé
-			getjutuanxq(jdh_id);//»ñÈ¡¾Û¶Ò»»ÉÌÆ·ÏêÇé
+//			loadJuDuiHuan(jdh_id);//è·å–èšå…‘æ¢å•†å“è¯¦æƒ…
+			getjutuanxq(jdh_id);//è·å–èšå…‘æ¢å•†å“è¯¦æƒ…
 		}else {
 			market_information_juduihuan.setVisibility(view.GONE);
 			market_information_bottom.setVisibility(view.VISIBLE);
-			loadWeather();//»ñÈ¡ÉÌÆ·ÏêÇé
+			loadWeather();//è·å–å•†å“è¯¦æƒ…
 		}
 		
 		} catch (Exception e) {
@@ -200,7 +200,7 @@ public class WareInformationActivity extends BaseActivity implements
 	}
 
 	/**
-	 * »ñÈ¡¾Û¶Ò»»ÉÌÆ·ÏêÇé
+	 * è·å–èšå…‘æ¢å•†å“è¯¦æƒ…
 	 * @param groupon_id 
 	 * @param category_id 
 	 */
@@ -226,7 +226,7 @@ public class WareInformationActivity extends BaseActivity implements
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("Êä³öÄÚÈİÏêÇé========="+arg1);
+				System.out.println("è¾“å‡ºå†…å®¹è¯¦æƒ…========="+arg1);
 				try {
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
@@ -361,8 +361,8 @@ public class WareInformationActivity extends BaseActivity implements
 					}else {
 						Toast.makeText(WareInformationActivity.this, info, 200).show();
 					}
-					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data_xq.getArticle_id()+".html");//ÉÌÆ·½éÉÜ
-					userjubi();//»ñÈ¡¾Û±Ò
+					webview.loadUrl(RealmName.REALM_NAME_HTTP + "/mobile/goods/conent-"+data_xq.getArticle_id()+".html");//å•†å“ä»‹ç»
+					userjubi();//è·å–èšå¸
 					handler.sendEmptyMessage(4);
 					progress.CloseProgress();
 					
@@ -376,7 +376,7 @@ public class WareInformationActivity extends BaseActivity implements
 	}
 	
 //	/**
-//	 * »ñÈ¡¾Û¶Ò»»ÉÌÆ·ÏêÇé
+//	 * è·å–èšå…‘æ¢å•†å“è¯¦æƒ…
 //	 * @param jdh_id 
 //	 */
 //	private void loadJuDuiHuan(String jdh_id) {
@@ -385,7 +385,7 @@ public class WareInformationActivity extends BaseActivity implements
 //							public void onSuccess(int arg0, String arg1) {
 //								// TODO Auto-generated method stub
 //								super.onSuccess(arg0, arg1);
-//								System.out.println("=========½âÎöÊı¾İ============"+arg1);
+//								System.out.println("=========è§£ææ•°æ®============"+arg1);
 //								formaJuDuiHuan(arg1);
 //							}
 //							
@@ -395,7 +395,7 @@ public class WareInformationActivity extends BaseActivity implements
 //	private void formaJuDuiHuan(String result) {
 //		 lists = new ArrayList<XiangqingData>();
 //		try {
-//			System.out.println("=======ÏêÇéÊı¾İ=="+result);
+//			System.out.println("=======è¯¦æƒ…æ•°æ®=="+result);
 //			JSONObject object = new JSONObject(result);
 //			String status = object.getString("status");
 //			String info = object.getString("info");
@@ -419,7 +419,7 @@ public class WareInformationActivity extends BaseActivity implements
 //			
 //			lists.add(xqdata);
 //			handler.sendEmptyMessage(4);
-//			userjubi();//»ñÈ¡¾Û±Ò
+//			userjubi();//è·å–èšå¸
 //    		progress.CloseProgress();
 //    		
 //			}else {
@@ -433,7 +433,7 @@ public class WareInformationActivity extends BaseActivity implements
 //	}
 	
 	/**
-	 * »ñÈ¡ÉÌÆ·ÏêÇé
+	 * è·å–å•†å“è¯¦æƒ…
 	 */
 	private void loadWeather() {
 		String id = getIntent().getStringExtra("id");
@@ -445,7 +445,7 @@ public class WareInformationActivity extends BaseActivity implements
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=========½âÎöÊı¾İ============"+arg1);
+								System.out.println("=========è§£ææ•°æ®============"+arg1);
 //								Message msg = new Message();
 //								msg.what = 007;
 //								msg.obj = arg1;
@@ -469,7 +469,7 @@ public class WareInformationActivity extends BaseActivity implements
 		 data_market_price = new ArrayList();
 		 lists = new ArrayList<XiangqingData>();
 		try {
-			System.out.println("=======ÏêÇéÊı¾İ=="+result);
+			System.out.println("=======è¯¦æƒ…æ•°æ®=="+result);
 			JSONObject object = new JSONObject(result);
 			String status = object.getString("status");
 			String info = object.getString("info");
@@ -523,7 +523,7 @@ public class WareInformationActivity extends BaseActivity implements
 			data_spec_text.add(spec_text);
 			data_market_price.add(marketPrice);
 			data_goods_id.add(xqdata.goods_id);
-			System.out.println("=========Êı¾İ============"+spec_ids);
+			System.out.println("=========æ•°æ®============"+spec_ids);
 		    }
 			JSONArray jsonArray = jobt.getJSONArray("albums");
 			ArrayList<XiangqingData> list_tp = new ArrayList<XiangqingData>();
@@ -543,8 +543,8 @@ public class WareInformationActivity extends BaseActivity implements
 				
         		JSONArray jsonArray1 = jobt.getJSONArray("param");
         		len = jsonArray1.length();
-        		System.out.println("=========Êı¾İlen============"+len);
-        		System.out.println("=========Êı¾İlen============"+jsonArray1);
+        		System.out.println("=========æ•°æ®len============"+len);
+        		System.out.println("=========æ•°æ®len============"+jsonArray1);
         		if (len > 0) {
         			list_ggcs = new ArrayList<XiangqingData>();
             		for (int i = 0; i < jsonArray1.length(); i++) {
@@ -623,8 +623,8 @@ public class WareInformationActivity extends BaseActivity implements
 		WXWebpageObject webpage = new WXWebpageObject();
 		webpage.webpageUrl = "http"+temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
-		msg.title = "ÔÆÉÌ¾ÛµÄ·ÖÏí";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
+		msg.title = "äº‘å•†èšçš„åˆ†äº«";
 		msg.description = temp[0];
 		Bitmap thumb = BitmapFactory.decodeResource(getResources(),
 				R.drawable.icon);
@@ -636,7 +636,7 @@ public class WareInformationActivity extends BaseActivity implements
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
 		
-		System.out.println("Î¢ĞÅÔ]ƒÔ" + flag);
+		System.out.println("å¾®ä¿¡è¨»å†Š" + flag);
 		
 	} catch (Exception e) {
 		// TODO: handle exception
@@ -658,7 +658,7 @@ public class WareInformationActivity extends BaseActivity implements
 				formatWeather((String) msg.obj);
 				break;
 			case 16:
-				System.out.println("µ½ÕâÀïÁË16");
+				System.out.println("åˆ°è¿™é‡Œäº†16");
 				String text1 = (String) msg.obj;
 				softshareWxChat(text1);
 				break;
@@ -668,15 +668,15 @@ public class WareInformationActivity extends BaseActivity implements
 				market_information_title.setText(title);
 				market_information_tip.setText(subtitle);
 //				tv_hengyu_money.setText(point_ll);
-				tv_hengyu_money.setText(data_xq.exchange_point+"ÀÖ¶¹"+"+"+data_xq.exchange_price+"Ôª");//¶Ò»»¼Û
-				tv_ware_market_jifen.setText( "£¤" + goods_price);
+				tv_hengyu_money.setText(data_xq.exchange_point+"ä¹è±†"+"+"+data_xq.exchange_price+"å…ƒ");//å…‘æ¢ä»·
+				tv_ware_market_jifen.setText( "ï¿¥" + goods_price);
 				tv_ware_market_jifen.setTextColor(Color.BLACK);
-				tv_market_money.setText( "£¤" + price);
+				tv_market_money.setText( "ï¿¥" + price);
 				tv_ware_market_jifen.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
 //				price = "100";
 //				if(!price.equals("0")){
-//					tv_market_money.setText( "£¤" + price);
-//					 tv_wenzi3.setText("¼Û¸ñ:");
+//					tv_market_money.setText( "ï¿¥" + price);
+//					 tv_wenzi3.setText("ä»·æ ¼:");
 //				}else {
 //					ll_money_ju.setVisibility(View.GONE);
 //				}
@@ -685,10 +685,10 @@ public class WareInformationActivity extends BaseActivity implements
 				ling_tip.setVisibility(view.VISIBLE);
 			    mAq.id(ling_tip).image(RealmName.REALM_NAME_HTTP+proInverseImg);
 			    
-			    tv_wenzi1.setText("ÀÖ¶¹¶Ò»»:");
-//			    tv_wenzi2.setText("ÊĞ³¡¼Û:");
+			    tv_wenzi1.setText("ä¹è±†å…‘æ¢:");
+//			    tv_wenzi2.setText("å¸‚åœºä»·:");
 			    
-				//Á¢¿Ì¹ºÂò
+				//ç«‹åˆ»è´­ä¹°
 			    market_information_juduihuan.setOnClickListener(new OnClickListener() {
 
 					@Override
@@ -702,14 +702,14 @@ public class WareInformationActivity extends BaseActivity implements
 							System.out.println("jubi=================="+jubi);
 							System.out.println("dq_jubi==================="+dq_jubi);
 							if (point.equals("0")) {
-								Toast.makeText(WareInformationActivity.this, "ÄúµÄÀÖ¶¹Îª0", 200).show();
+								Toast.makeText(WareInformationActivity.this, "æ‚¨çš„ä¹è±†ä¸º0", 200).show();
 							}else if (dq_jubi >= jubi){
 //								type_spec_item = true;
-								fangshi = 3;//ÏúÊÛÊôĞÔÅĞ¶Ï
+								fangshi = 3;//é”€å”®å±æ€§åˆ¤æ–­
 								title_jdh = "2";
-								taocan_type = false;//»ı·Ö¶Ò»»ÅĞ¶ÏÌ×²Í¼Û¸ñÏÔÊ¾
-								spec_text_list = 1;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª1
-								jdh_type = getIntent().getStringExtra("jdh_type");//ÀÖ¶¹¶Ò»»µ÷ÓÃ½Ó¿Ú
+								taocan_type = false;//ç§¯åˆ†å…‘æ¢åˆ¤æ–­å¥—é¤ä»·æ ¼æ˜¾ç¤º
+								spec_text_list = 1;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º1
+								jdh_type = getIntent().getStringExtra("jdh_type");//ä¹è±†å…‘æ¢è°ƒç”¨æ¥å£
 								System.out.println("jdh_type==================="+jdh_type);
 								CommomConfrim.showSheet(WareInformationActivity.this, new onDeleteSelect() {
 									@Override
@@ -728,7 +728,7 @@ public class WareInformationActivity extends BaseActivity implements
 //								intent.putExtra("price",price);
 //								startActivity(intent);
 							} else {
-								Toast.makeText(WareInformationActivity.this, "Äúµ±Ç°µÄÀÖ¶¹»¹²»¹»¶Ò»»", 200).show();
+								Toast.makeText(WareInformationActivity.this, "æ‚¨å½“å‰çš„ä¹è±†è¿˜ä¸å¤Ÿå…‘æ¢", 200).show();
 							}
 							
 							} catch (Exception e) {
@@ -751,29 +751,29 @@ public class WareInformationActivity extends BaseActivity implements
 //					market_information_juduihuan.setVisibility(view.GONE);
 //					market_information_bottom.setVisibility(view.VISIBLE);
 					
-				System.out.println("Öµ==================="+retailPrice);
+				System.out.println("å€¼==================="+retailPrice);
 				String id = getIntent().getStringExtra("id");
-				System.out.println("=========================Öµid==================="+id);
+				System.out.println("=========================å€¼id==================="+id);
 				if(!id.equals("")){
-					webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+id+".html");//ÉÌÆ·½éÉÜ
+					webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+id+".html");//å•†å“ä»‹ç»
 				}else{
 					if (spjs == 1) {
-						webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+article_id+".html");//ÉÌÆ·½éÉÜ
+						webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+article_id+".html");//å•†å“ä»‹ç»
 					}
 				}
-				tv_hengyu_money.setText( "£¤" + retailPrice);
-				tv_market_money.setText( "£¤" + marketPrice);
+				tv_hengyu_money.setText( "ï¿¥" + retailPrice);
+				tv_market_money.setText( "ï¿¥" + marketPrice);
 				market_information_title.setText(proName + "");
 				market_information_tip.setText(subtitle);
 				tv_spec_text.setText(spec_text);
 				if(xqdata.cashing_packet != null){
-					tv_ware_market_jifen.setText( "£¤" + xqdata.cashing_packet);//ºì°ü
+					tv_ware_market_jifen.setText( "ï¿¥" + xqdata.cashing_packet);//çº¢åŒ…
 				}else{
 					ll_buju1.setVisibility(view.GONE);
 				}
 				
 //				if(xqdata.give_pension != null){
-//					tv_integral.setText( "£¤" + xqdata.give_pension);//ÑøÀÏ½ğ
+//					tv_integral.setText( "ï¿¥" + xqdata.give_pension);//å…»è€é‡‘
 //				}else{
 //					ll_buju2.setVisibility(view.GONE);
 //				}
@@ -781,7 +781,7 @@ public class WareInformationActivity extends BaseActivity implements
 //				ArrayList<String> images_ll = getDatall();
 //				imageLoader.clearMemoryCache();
 //				market_information_images.clearMemory();
-//				System.out.println("=========Í¼Æ¬Öµ============"+images_ll.size());
+//				System.out.println("=========å›¾ç‰‡å€¼============"+images_ll.size());
 // 
 				
 //				ArrayList<String> urls = new ArrayList<String>();
@@ -791,7 +791,7 @@ public class WareInformationActivity extends BaseActivity implements
 //				}
 //				System.out.println("=========lists============"+list_tp.size());
 //				System.out.println("=========urls============"+urls.size());
-//				//¶¯Ì¬¹ã¸æ
+//				//åŠ¨æ€å¹¿å‘Š
 //				if(images_ll.size()==1){
 //					market_information_images.setData(images_ll,new MyPosterOnClick() {
 //
@@ -820,10 +820,10 @@ public class WareInformationActivity extends BaseActivity implements
 				}
 				break;
 			case -1:
-				Toast.makeText(getApplicationContext(), "Ìí¼ÓÊ§°Ü", 200).show();
+				Toast.makeText(getApplicationContext(), "æ·»åŠ å¤±è´¥", 200).show();
 				break;
 			case 1:
-				Toast.makeText(getApplicationContext(), "³É¹¦¼ÓÈë¹ºÎï³µ", 200).show();
+				Toast.makeText(getApplicationContext(), "æˆåŠŸåŠ å…¥è´­ç‰©è½¦", 200).show();
 				progress.CloseProgress();
 				try {
 
@@ -880,7 +880,7 @@ public class WareInformationActivity extends BaseActivity implements
 //	}
 	
 	/**
-	 * »ñÈ¡µ±Ç°¾Û±Ò
+	 * è·å–å½“å‰èšå¸
 	 * @param order_no 
 	 */
 	private void userjubi() {
@@ -959,7 +959,7 @@ public class WareInformationActivity extends BaseActivity implements
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
 								String status = jsonObject.getString("status");
-								System.out.println("¹ºÎïÇåµ¥================"+arg1);
+								System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 								String info = jsonObject.getString("info");
 								if (status.equals("y")) {
 									progress.CloseProgress();
@@ -983,7 +983,7 @@ public class WareInformationActivity extends BaseActivity implements
 						@Override
 						public void onFailure(Throwable arg0, String arg1) {
 							// TODO Auto-generated method stub
-							System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+							System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 							System.out.println("========================="+arg0);
 							System.out.println("=========================="+arg1);
 							super.onFailure(arg0, arg1);
@@ -1109,14 +1109,14 @@ public class WareInformationActivity extends BaseActivity implements
 //		if (getIntent().hasExtra("vip")) {
 //			btn_dianping.setVisibility(View.INVISIBLE);
 //			btn_collect.setVisibility(View.INVISIBLE);
-//			btn_add_shop_cart.setText("Éı¼¶VIPÌ×²Í");
+//			btn_add_shop_cart.setText("å‡çº§VIPå¥—é¤");
 //		}
 		
 		market_information_describe = (LinearLayout) findViewById(R.id.market_information_describe);
 		images_layout = (LinearLayout) findViewById(R.id.images_layout);
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		int widthPixels = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		int widthPixels = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		images_layout.setLayoutParams(new LinearLayout.LayoutParams(widthPixels, widthPixels));
 		tv_ware_market_jifen = (TextView) findViewById(R.id.tv_ware_market_jifen);
 		tv_integral = (TextView) findViewById(R.id.tv_integral);
@@ -1129,7 +1129,7 @@ public class WareInformationActivity extends BaseActivity implements
 		tv_wenzi3 = (TextView) findViewById(R.id.tv_wenzi3);
 		tv_spec_text = (TextView) findViewById(R.id.tv_spec_text);
 //		tv_market_money.getPaint().setFlags(
-//				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÎÄ×ÖµÄÖĞ»®Ïß
+//				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®æ–‡å­—çš„ä¸­åˆ’çº¿
 		market_information_images = (MyPosterView) findViewById(R.id.market_information_images);
 		enter_shop = (Button) findViewById(R.id.enter_shop);
 		fanhui = (Button) findViewById(R.id.fanhui);
@@ -1137,7 +1137,7 @@ public class WareInformationActivity extends BaseActivity implements
 		market_information_juduihuan = (LinearLayout) findViewById(R.id.market_information_juduihuan);
 		market_information_bottom = (LinearLayout) findViewById(R.id.market_information_bottom);
 		
-		//·µ»Ø
+		//è¿”å›
 		fanhui.setOnClickListener(new OnClickListener() {
 
 					@Override
@@ -1147,13 +1147,13 @@ public class WareInformationActivity extends BaseActivity implements
 					}
 				});
 				
-		//Ìø×ªµ½¹ºÎï³µ
+		//è·³è½¬åˆ°è´­ç‰©è½¦
 		enter_shop.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				System.out.println("µã»÷");
+				System.out.println("ç‚¹å‡»");
 				if (!nickname.equals("")) {
 					if (!user_name.equals("")) {
 						Intent Intent2 = new Intent(WareInformationActivity.this,MyShopCarActivity.class);
@@ -1178,7 +1178,7 @@ public class WareInformationActivity extends BaseActivity implements
 		});
 		
 		
-		//ÉÌÆ·½éÉÜ
+		//å•†å“ä»‹ç»
 		market_information_describe.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -1198,7 +1198,7 @@ public class WareInformationActivity extends BaseActivity implements
 			}
 		});
 		
-		//¼ÓÈë¹ºÎï³µ
+		//åŠ å…¥è´­ç‰©è½¦
 		btn_add_shop_cart.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -1222,8 +1222,8 @@ public class WareInformationActivity extends BaseActivity implements
 //					}else {
 					if (!user_name.equals("")) {
 						fangshi = 2;
-						taocan_type = true;//ÅĞ¶ÏÉÌÆ·Ì×²Í¼Û¸ñ
-						spec_text_list = 1;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª1
+						taocan_type = true;//åˆ¤æ–­å•†å“å¥—é¤ä»·æ ¼
+						spec_text_list = 1;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º1
 						jdh_type = "";
 						CommomConfrim.showSheet(WareInformationActivity.this, new onDeleteSelect() {
 							@Override
@@ -1246,7 +1246,7 @@ public class WareInformationActivity extends BaseActivity implements
 
 			}
 		});
-		//Ñ¡Ôñ:ÑÕÉ«/·ÖÀà/Ì×²Í
+		//é€‰æ‹©:é¢œè‰²/åˆ†ç±»/å¥—é¤
 		market_information_sep.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -1265,7 +1265,7 @@ public class WareInformationActivity extends BaseActivity implements
 			}
 		});
 		
-		//ÊôĞÔ
+		//å±æ€§
 //		market_information_param.setOnClickListener(new OnClickListener() {
 //			
 //			@Override
@@ -1282,16 +1282,16 @@ public class WareInformationActivity extends BaseActivity implements
 //			}
 //		});
 		
-		//Á¢¿Ì¹ºÂò
+		//ç«‹åˆ»è´­ä¹°
 		order_shop_now.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
 //	if (!nickname.equals("")) {
 //		if (!user_name.equals("")) {
-//			fangshi = 1;//ÏúÊÛÌ×²Í¹ºÂòÅĞ¶ÏÎª1
-//			spec_text_list = 1;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª1
-//			taocan_type = true;//ÅĞ¶ÏÉÌÆ·Ì×²Í¼Û¸ñ
+//			fangshi = 1;//é”€å”®å¥—é¤è´­ä¹°åˆ¤æ–­ä¸º1
+//			spec_text_list = 1;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º1
+//			taocan_type = true;//åˆ¤æ–­å•†å“å¥—é¤ä»·æ ¼
 //			jdh_type = "";
 //			CommomConfrim.showSheet(WareInformationActivity.this, new onDeleteSelect() {
 //				@Override
@@ -1307,10 +1307,10 @@ public class WareInformationActivity extends BaseActivity implements
 //		}
 //	}else {
 				if (!user_name.equals("")) {
-//				loadgouwuche();//Á¢¼´¹ºÂò¼ÓÈë¹ºÎï³µ
-					fangshi = 1;//ÏúÊÛÌ×²Í¹ºÂòÅĞ¶ÏÎª1
-					spec_text_list = 1;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª1
-					taocan_type = true;//ÅĞ¶ÏÉÌÆ·Ì×²Í¼Û¸ñ
+//				loadgouwuche();//ç«‹å³è´­ä¹°åŠ å…¥è´­ç‰©è½¦
+					fangshi = 1;//é”€å”®å¥—é¤è´­ä¹°åˆ¤æ–­ä¸º1
+					spec_text_list = 1;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º1
+					taocan_type = true;//åˆ¤æ–­å•†å“å¥—é¤ä»·æ ¼
 					jdh_type = "";
 					CommomConfrim.showSheet(WareInformationActivity.this, new onDeleteSelect() {
 						@Override
@@ -1350,7 +1350,7 @@ public class WareInformationActivity extends BaseActivity implements
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 
-		//ÉÌÆ·ÏêÇé
+		//å•†å“è¯¦æƒ…
 		case R.id.bt_cart_all:
 			System.out.println("1================");
 			ll_shiyishicai1.setVisibility(View.VISIBLE);
@@ -1364,7 +1364,7 @@ public class WareInformationActivity extends BaseActivity implements
 			spjs = 0;
 //			shangpingjieshan();
 			break;
-			//¹æ¸ñ²ÎÊı
+			//è§„æ ¼å‚æ•°
         case R.id.bt_cart_low:
         	try {
         	System.out.println("len================"+len);
@@ -1382,7 +1382,7 @@ public class WareInformationActivity extends BaseActivity implements
 			    setListViewHeightBasedOnChildren(new_list);  
 			}else {
 //				loadguigecanshu(); 
-//				Toast.makeText(WareInformationActivity.this, "ÎŞ¹æ¸ñ²ÎÊı", 200).show();
+//				Toast.makeText(WareInformationActivity.this, "æ— è§„æ ¼å‚æ•°", 200).show();
 			}
 			
         	} catch (Exception e) {
@@ -1390,7 +1390,7 @@ public class WareInformationActivity extends BaseActivity implements
         		e.printStackTrace();
 			}
 			break;
-		case R.id.btn_collect://ÊÕ²Ø
+		case R.id.btn_collect://æ”¶è—
 			
 			progress.CreateProgress();
 //			String  id = UserLoginActivity.id;
@@ -1408,7 +1408,7 @@ public class WareInformationActivity extends BaseActivity implements
 							super.onSuccess(arg0, arg1);
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
-								System.out.println("ÊÕ²Ø================"+arg1);
+								System.out.println("æ”¶è—================"+arg1);
 								progress.CloseProgress();
 								String info = jsonObject.getString("info");
 								Toast.makeText(getApplicationContext(), info, 200).show();
@@ -1443,7 +1443,7 @@ public class WareInformationActivity extends BaseActivity implements
 					super.onSuccess(arg0, arg1);
 					try {
 						JSONObject jsonObject = new JSONObject(arg1);
-						System.out.println("ÊÕ²Ø================"+arg1);
+						System.out.println("æ”¶è—================"+arg1);
 						progress.CloseProgress();
 						String info = jsonObject.getString("info");
 						Toast.makeText(getApplicationContext(), info, 200).show();
@@ -1458,7 +1458,7 @@ public class WareInformationActivity extends BaseActivity implements
 			}
 			}
 			break;
-		case R.id.btn_dianping://¹ºÎï³µ
+		case R.id.btn_dianping://è´­ç‰©è½¦
 //			progress.CreateProgress();
 			spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 			user_name = spPreferences.getString("user", "");
@@ -1492,13 +1492,13 @@ public class WareInformationActivity extends BaseActivity implements
 		}
 	}
 	
-	//ÉÌÆ·½éÉÜÍøÒ³¶Ë
+	//å•†å“ä»‹ç»ç½‘é¡µç«¯
 	private void shangpingjieshan(){
-		webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+article_id+".html");//ÉÌÆ·½éÉÜ
+		webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+article_id+".html");//å•†å“ä»‹ç»
 	}
 	
 	/**
-	 * ½âÎö¹æ¸ñÁĞ±íÊı¾İ
+	 * è§£æè§„æ ¼åˆ—è¡¨æ•°æ®
 	 */
 	ArrayList data;
 	private void loadguigecanshu() {
@@ -1515,7 +1515,7 @@ public class WareInformationActivity extends BaseActivity implements
 					public void onSuccess(int arg0,String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====¹æ¸ñÊı¾İ====================="+arg1);
+						System.out.println("=====è§„æ ¼æ•°æ®====================="+arg1);
 						
 						try {
 							JSONObject object = new JSONObject(arg1);
@@ -1526,7 +1526,7 @@ public class WareInformationActivity extends BaseActivity implements
 							md.setTitle(obj.getString("title"));
 							String title = md.getTitle();
 							String cars = obj.getString("child");
-							System.out.println("=====1Öµ====================="+title);
+							System.out.println("=====1å€¼====================="+title);
 							JSONArray jaArray = obj.getJSONArray("child");
 							md.setList(new ArrayList<GuigeBean>());
 				    		for (int j = 0; j < jaArray.length(); j++) {
@@ -1534,7 +1534,7 @@ public class WareInformationActivity extends BaseActivity implements
 				    		mb = new GuigeBean();
 				    		mb.setTitle(objc.getString("title"));
 				    		String zhou = mb.getTitle();
-				    		System.out.println("=====2Öµ====================="+zhou);
+				    		System.out.println("=====2å€¼====================="+zhou);
 				    		data.add(zhou);
 				    		
 				    		md.getList().add(mb);
@@ -1545,7 +1545,7 @@ public class WareInformationActivity extends BaseActivity implements
 //							new_list.setAdapter(jysadapter);
 //							shangpingcsAdapter jysadapter = new shangpingcsAdapter(list,data,getApplicationContext());
 //							new_list.setAdapter(jysadapter);
-							System.out.println("=====Öµ1=====================");
+							System.out.println("=====å€¼1=====================");
 							WideMarketAdapter adapter = new WideMarketAdapter(list,getApplicationContext(), handler);
 							new_list.setAdapter(adapter);
 							setListViewHeightBasedOnChildren(new_list);  
@@ -1575,7 +1575,7 @@ public class WareInformationActivity extends BaseActivity implements
 
 
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -1583,32 +1583,32 @@ public class WareInformationActivity extends BaseActivity implements
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     } 
 	
 	
 	/**
-	 * Á¢¼´¹ºÂò
+	 * ç«‹å³è´­ä¹°
 	 */
 //	private void addNow() {
 //		List<UserRegisterData> username = wareDao.findisLogin();
 //		Log.v("number", username.size() + "");
 //		if (username.size() != 0) {
-//			if (style_name.size() >= 2) { // µ±ÉÌÆ·Ö»ÓĞÁ½ÌõÊôĞÔÊ±
+//			if (style_name.size() >= 2) { // å½“å•†å“åªæœ‰ä¸¤æ¡å±æ€§æ—¶
 //				if (propits[0] == null || propits[1] == null) {
-//					Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200)
+//					Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200)
 //							.show();
 //				} else {
 //					stylename1 = style_name.get(0).toString();
@@ -1617,15 +1617,15 @@ public class WareInformationActivity extends BaseActivity implements
 //					stylenature2 = propits[1].toString();
 //					go();
 //				}
-//			} else if (style_name.size() == 0) { // µ±ÉÌÆ·Ã»ÓĞÊôĞÔÊ±
+//			} else if (style_name.size() == 0) { // å½“å•†å“æ²¡æœ‰å±æ€§æ—¶
 //				stylename1 = "";
 //				stylename2 = "";
 //				stylenature1 = "";
 //				stylenature2 = "";
 //				go();
-//			} else if (style_name.size() == 1) { // µ±ÉÌÆ·Ã»ÓĞÊôĞÔÊ±
+//			} else if (style_name.size() == 1) { // å½“å•†å“æ²¡æœ‰å±æ€§æ—¶
 //				if (propits[0] == null  ) {
-//					Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200)
+//					Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200)
 //							.show();}
 //				else {
 //					stylename1 = style_name.get(0).toString();

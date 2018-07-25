@@ -45,7 +45,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.lelinju.www.R;
 //import com.hengyushop.airplane.adapter.MyShopingCartllAdapter.ViewHolder;
 /**
- * ÔÆÉÌ¾Û¹ºÎï³µ
+ * äº‘å•†èšè´­ç‰©è½¦
  * @author Administrator
  *
  */
@@ -74,7 +74,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 	int shopping_id;
 	String id;
 	private int ID;
-	private int checkNum; // ¼ÇÂ¼Ñ¡ÖĞµÄÌõÄ¿ÊıÁ¿
+	private int checkNum; // è®°å½•é€‰ä¸­çš„æ¡ç›®æ•°é‡
 	ArrayList<ShopCartBean> list;
 	private SharedPreferences spPreferences;
 	private static String user_name,user_id;
@@ -139,7 +139,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 	}
 	
 	/**
-	 * ³õÊ¼»¯¿Ø¼şÀà±ğ
+	 * åˆå§‹åŒ–æ§ä»¶ç±»åˆ«
 	 */
 	private void ininate() {
 		ll_xianshi = (LinearLayout)findViewById(R.id.ll_xianshi);
@@ -171,7 +171,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 			}
 		});
 		
-		//¹ºÎï³µÎŞÉÌÆ·È¥¹ä¹ä
+		//è´­ç‰©è½¦æ— å•†å“å»é€›é€›
 		btn_register.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -200,7 +200,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 //				if (list_cart_id.size() > 0) {
 				loadgouwuche();
 //				}else {
-//					Toast.makeText(getActivity(),"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+//					Toast.makeText(getActivity(),"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 //				}
 			}
 		});
@@ -222,9 +222,9 @@ public class MyShoppingCartllActivity extends BaseActivity{
 				adapter.notifyDataSetChanged();
 				list_shop_cart.setChoiceMode(ListView.CHOICE_MODE_SINGLE);  
 				 if (list_ll.size() > 0) {
-						btn_sittle_account.setText("È¥½áËã(" + list_ll.size() + ")");
+						btn_sittle_account.setText("å»ç»“ç®—(" + list_ll.size() + ")");
 					}else {
-						btn_sittle_account.setText("È¥½áËã");
+						btn_sittle_account.setText("å»ç»“ç®—");
 					}
 				 
 				
@@ -236,7 +236,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 			case 200:
 				try {
 				String total_c = MyShopingCartllAdapter.total_c;
-				tv_endmoney.setText("£¤" + total_c);
+				tv_endmoney.setText("ï¿¥" + total_c);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -248,9 +248,9 @@ public class MyShoppingCartllActivity extends BaseActivity{
 					shopping_id = MyShopingCartllAdapter.id;
 					System.out.println("2222================"+shopping_id);
 					if (shopping_id>0) {
-						btn_sittle_account.setText("È¥½áËã(" + shopping_id + ")");
+						btn_sittle_account.setText("å»ç»“ç®—(" + shopping_id + ")");
 					}else {
-						Toast.makeText(MyShoppingCartllActivity.this,"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+						Toast.makeText(MyShoppingCartllActivity.this,"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 					}
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -261,7 +261,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 			case 1:
 				try {
 				total_cll = MyShopingCartllAdapter.total_c;
-				tv_endmoney.setText("£¤" + total_cll);
+				tv_endmoney.setText("ï¿¥" + total_cll);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -270,7 +270,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 			case 3:
 				try {
 //				String[] orderid = (String[]) msg.obj;
-//				System.out.println("Êı×éÖµ11=================="+orderid);
+//				System.out.println("æ•°ç»„å€¼11=================="+orderid);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -290,7 +290,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 	
 	
 	/**
-	 * »ñÈ¡¹ºÎï³µÁĞ±íÊı¾İ
+	 * è·å–è´­ç‰©è½¦åˆ—è¡¨æ•°æ®
 	 */
 	private void loadWeather() {
 		list_ll = new ArrayList<ShopCartData>();
@@ -298,7 +298,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 		String user_id = spPreferences.getString("user_id", "");
 		System.out.println("1==================" + user_id);
 		if (!user_id.equals("")) {
-		System.out.println("½á¹ûÄØ1=============="+id);
+		System.out.println("ç»“æœå‘¢1=============="+id);
 			
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_shopping_cart?pageSize=10&pageIndex=1&user_id="+user_id+""
 				,new AsyncHttpResponseHandler() {
@@ -341,7 +341,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 							handler.sendEmptyMessage(0);
 							adv_pager.setVisibility(View.GONE);
 							ll_xianshi.setVisibility(View.VISIBLE);
-//							Toast.makeText(getActivity(), "¹ºÎï³µÉÌÆ·", 200).show();
+//							Toast.makeText(getActivity(), "è´­ç‰©è½¦å•†å“", 200).show();
 							}else {
 								progress.CloseProgress();
 								adapter = new MyShopingCartllAdapter(list_ll, MyShoppingCartllActivity.this, handler);
@@ -349,7 +349,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 								adapter.notifyDataSetChanged();
 								adv_pager.setVisibility(View.VISIBLE);
 								ll_xianshi.setVisibility(View.VISIBLE);
-//								Toast.makeText(getActivity(), "¹ºÎï³µÔİÎŞÉÌÆ·", 200).show();
+//								Toast.makeText(getActivity(), "è´­ç‰©è½¦æš‚æ— å•†å“", 200).show();
 							}
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block
@@ -363,7 +363,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 		}else {
 			progress.CloseProgress();
 			adv_pager.setVisibility(View.VISIBLE);
-//			Toast.makeText(getActivity(), "ÇëÏÈµÇÂ¼", 200).show();
+//			Toast.makeText(getActivity(), "è¯·å…ˆç™»å½•", 200).show();
 		}
 	}
 
@@ -385,31 +385,31 @@ public class MyShoppingCartllActivity extends BaseActivity{
 	  			list_quantity.add(quantity);
 			}
 			
-			//article_id Æ´½Ó
+			//article_id æ‹¼æ¥
 	        	str1 = new StringBuffer();
 		        for(String s:list_cart_id){
 		        	str1.append(s+",");
 		        }
 		        str1.delete(str1.lastIndexOf(","),str1.length()); 
-		        System.out.println("1Æ´½ÓÖ®ºó---------------"+str1);
+		        System.out.println("1æ‹¼æ¥ä¹‹å---------------"+str1);
 		        
-		        //goods_id Æ´½Ó
+		        //goods_id æ‹¼æ¥
 		        str2 = new StringBuffer();
 		        for(String s:list_goods_id){
 		        	str2.append(s+",");
 		        }
 		        str2.delete(str2.lastIndexOf(","),str2.length()); 
 		        
-		        System.out.println("2Æ´½ÓÖ®ºó---------------"+str2);
+		        System.out.println("2æ‹¼æ¥ä¹‹å---------------"+str2);
 		        
-		      //quantity Æ´½Ó
+		      //quantity æ‹¼æ¥
 		        str3 = new StringBuffer();
 		        for(int s:list_quantity){
 		        	str3.append(s+",");
 		        }
 		        str3.delete(str3.lastIndexOf(","),str3.length()); 
 		        
-		        System.out.println("3Æ´½ÓÖ®ºó---------------"+str3);
+		        System.out.println("3æ‹¼æ¥ä¹‹å---------------"+str3);
 			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_shopping_buys?user_id="+user_id+"&user_name="+user_name+
 					"&article_id="+str1+"&goods_id="+str2+"&quantity="+str3+"",new AsyncHttpResponseHandler() {
 						@Override
@@ -419,7 +419,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
 								String status = jsonObject.getString("status");
-								System.out.println("¹ºÎïÇåµ¥================"+arg1);
+								System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 								String info = jsonObject.getString("info");
 //								 status1 = true;
 								if (status.equals("y")) {
@@ -439,10 +439,10 @@ public class MyShoppingCartllActivity extends BaseActivity{
 								        	str.append(s+",");
 								        }
 								        str.delete(str.lastIndexOf(","),str.length()); 
-								        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
+								        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
 								        
 //									Toast.makeText(getActivity(), info, 200).show();
-								    System.out.println("Æ´½ÓÖ®ºótotal_cll---------------"+total_cll);
+								    System.out.println("æ‹¼æ¥ä¹‹åtotal_cll---------------"+total_cll);
 									Intent intent=new Intent(MyShoppingCartllActivity.this, MyOrderConfrimActivity.class);
 									intent.putExtra("total_cll",total_cll);
 									startActivity(intent);
@@ -460,7 +460,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 						@Override
 						public void onFailure(Throwable arg0, String arg1) {
 							// TODO Auto-generated method stub
-							System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+							System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 							System.out.println("========================="+arg0);
 							System.out.println("=========================="+arg1);
 							super.onFailure(arg0, arg1);
@@ -478,9 +478,9 @@ public class MyShoppingCartllActivity extends BaseActivity{
 
 	protected void dialog(final int index, final int ID) {
 		AlertDialog.Builder builder = new Builder(MyShoppingCartllActivity.this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 //				if (adapter != null) {
@@ -492,13 +492,13 @@ public class MyShoppingCartllActivity extends BaseActivity{
 							+ "&cart_id=" + ID;
 					AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(),MyShoppingCartllActivity.this);
 
-					// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+					// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 //					data = wareDao.findResult();
 //					Message message = new Message();
 //					message.what = 200;
 //					message.obj = data;
 //					handler.sendMessage(message);
-					Toast.makeText(MyShoppingCartllActivity.this, "É¾³ı³É¹¦", 200).show();
+					Toast.makeText(MyShoppingCartllActivity.this, "åˆ é™¤æˆåŠŸ", 200).show();
 //					List<String> list_cart_id = MyShopingCartllAdapter.list_cart_id;
 //					 List<String> list_goods_id = MyShopingCartllAdapter.list_goods_id;
 //					 List<Integer> list_quantity = MyShopingCartllAdapter.list_quantity;
@@ -519,7 +519,7 @@ public class MyShoppingCartllActivity extends BaseActivity{
 //				}
 			}
 		});
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();

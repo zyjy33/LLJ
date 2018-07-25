@@ -40,7 +40,7 @@ import com.hengyushop.entity.UserRegisterData;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.lelinju.www.R;
 /**
- * ÔÆÉÌ¾ÛĞŞ¸ÄµØÖ·
+ * äº‘å•†èšä¿®æ”¹åœ°å€
  * @author Administrator
  *
  */
@@ -126,12 +126,12 @@ public class AddressManagerGlActivity extends BaseActivity {
 	}
 
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 	private void getuseraddress() {
 		progress.CreateProgress();
 		String user_name = spPreferences.getString("user", "");
-		System.out.println("½á¹ûÄØ1==============" + user_name);
+		System.out.println("ç»“æœå‘¢1==============" + user_name);
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_user_shopping_address?user_name=" + user_name + "",
 				new AsyncHttpResponseHandler() {
@@ -205,7 +205,7 @@ public class AddressManagerGlActivity extends BaseActivity {
 							int arg2, long arg3) {
 						// TODO Auto-generated method stub
 						if (getIntent().hasExtra("order_confrim")) {
-							// ±íÊ¾ÊÇÀ´×Ô¶©µ¥È·ÈÏ
+							// è¡¨ç¤ºæ˜¯æ¥è‡ªè®¢å•ç¡®è®¤
 							// Intent intent = new Intent();
 							Intent intent = new Intent(AddressManagerGlActivity.this,EditUserAddressActivity.class);
 							// intent.putExtra("data", list.get(arg2));
@@ -242,9 +242,9 @@ public class AddressManagerGlActivity extends BaseActivity {
 
 	protected void dialog(final int ID) {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -253,7 +253,7 @@ public class AddressManagerGlActivity extends BaseActivity {
 				System.out.println("1111===================="+user_id);
 				String strUrl = RealmName.REALM_NAME_LL
 						+ "/delete_user_shopping_address?user_id="+user_id+"&id=" + ID + "";
-				Log.v("data1", "É¾³ı:" + strUrl);
+				Log.v("data1", "åˆ é™¤:" + strUrl);
 				progress.CreateProgress();
 				AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 					@Override
@@ -280,7 +280,7 @@ public class AddressManagerGlActivity extends BaseActivity {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -302,14 +302,14 @@ public class AddressManagerGlActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

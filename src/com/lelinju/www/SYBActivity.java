@@ -66,7 +66,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout.LayoutParams;
 /**
- * ¹æ¸ñ
+ * è§„æ ¼
  * @author Administrator
  *
  */
@@ -121,7 +121,7 @@ public class SYBActivity extends BaseActivity{
 		Button market_information_pop_buy = (Button) findViewById(R.id.market_information_pop_buy);
 //		LinearLayout pop_bottom1 = (LinearLayout) findViewById(R.id.pop_bottom1);
 //		LinearLayout pop_bottom0 = (LinearLayout) findViewById(R.id.pop_bottom0);
-		// ¹ØÓÚÊıÁ¿
+		// å…³äºæ•°é‡
 		TextView market_information_seps_add = (TextView) findViewById(R.id.market_information_seps_add);
 		TextView market_information_seps_del = (TextView) findViewById(R.id.market_information_seps_del);
 		market_information_seps_num = (TextView) findViewById(R.id.market_information_seps_num);
@@ -134,7 +134,7 @@ public class SYBActivity extends BaseActivity{
 		String proName = getIntent().getStringExtra("proName");
 		market_information_sep_name.setText(proName);
 		retailPrice = getIntent().getStringExtra("retailPrice");
-		market_information_sep_price.setText("£¤" + retailPrice);
+		market_information_sep_price.setText("ï¿¥" + retailPrice);
 		
 		
 		try {
@@ -154,7 +154,7 @@ public class SYBActivity extends BaseActivity{
 		}
 		
 		try {
-		//²úÆ·¼õÉÙ
+		//äº§å“å‡å°‘
 		market_information_seps_del.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -165,7 +165,7 @@ public class SYBActivity extends BaseActivity{
 				if (num != 1) {
 					market_information_seps_num.setText(String.valueOf(num - 1));
 				} else {
-					Toast.makeText(getApplicationContext(), "²»ÄÜÔÙ¼õÁË", 200)
+					Toast.makeText(getApplicationContext(), "ä¸èƒ½å†å‡äº†", 200)
 							.show();
 				}
 			}
@@ -177,7 +177,7 @@ public class SYBActivity extends BaseActivity{
 	}
 		
 		
-		//¼ÓÈë¹ºÎï³µ
+		//åŠ å…¥è´­ç‰©è½¦
 		market_information_pop_shopcart
 				.setOnClickListener(new OnClickListener() {
 
@@ -187,7 +187,7 @@ public class SYBActivity extends BaseActivity{
 						
 						if (id != null) {
 							if (gk_id == 0) {
-								Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200).show();
+								Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200).show();
 							}else {
 								if (!user_name.equals("")) {
 									oadWeather_gouwuche();
@@ -198,7 +198,7 @@ public class SYBActivity extends BaseActivity{
 							}
 						}else if (id1 != null){
 							if (gk_id1 == 0) {
-								Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200).show();
+								Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200).show();
 							}else {
 								if (!user_name.equals("")) {
 									oadWeather_gouwuche();
@@ -209,7 +209,7 @@ public class SYBActivity extends BaseActivity{
 							}
 						}else if (id2 != null){
 							if (gk_id2 == 0) {
-								Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200).show();
+								Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200).show();
 							}else {
 								if (!user_name.equals("")) {
 									oadWeather_gouwuche();
@@ -221,11 +221,11 @@ public class SYBActivity extends BaseActivity{
 						}else {
 						
 //						if (gk_id == 0) {
-//							Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200).show();
+//							Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200).show();
 //						}else if (gk_id1 == 0){
-//							Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÑÕÉ«", 200).show();
+//							Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„é¢œè‰²", 200).show();
 //						}else if (gk_id2 == 0){
-//							Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200).show();
+//							Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200).show();
 //						}else {
 							
 							if (!user_name.equals("")) {
@@ -244,7 +244,7 @@ public class SYBActivity extends BaseActivity{
 					    }
 					}
 				});
-		//È¡Ïû
+		//å–æ¶ˆ
 		market_information_pop_buy.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -256,7 +256,7 @@ public class SYBActivity extends BaseActivity{
 	}
 	
 	/**
-	 * ¼ÓÈë¹ºÎï³µÊı¾İ
+	 * åŠ å…¥è´­ç‰©è½¦æ•°æ®
 	 */
 	private void oadWeather_gouwuche() {
 		progress.CreateProgress();
@@ -267,7 +267,7 @@ public class SYBActivity extends BaseActivity{
 		String goods_id = getIntent().getStringExtra("goods_id");
 		String article_id = getIntent().getStringExtra("article_id");
 		String geshu = market_information_seps_num.getText().toString().trim();
-		System.out.println("½á¹ûÄØ1=============="+geshu);
+		System.out.println("ç»“æœå‘¢1=============="+geshu);
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/add_shopping_cart?user_id="+user_id+"&user_name="+user_name+
 				"&article_id="+article_id+"&goods_id="+goods_id+"&quantity="+geshu+"",new AsyncHttpResponseHandler() {
 					@Override
@@ -290,7 +290,7 @@ public class SYBActivity extends BaseActivity{
 					@Override
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
-						System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+						System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 						System.out.println("========================="+arg0);
 						System.out.println("=========================="+arg1);
 						super.onFailure(arg0, arg1);
@@ -301,7 +301,7 @@ public class SYBActivity extends BaseActivity{
 	}
 	
 	/**
-	 * ½âÎö¹æ¸ñÁĞ±íÊı¾İ
+	 * è§£æè§„æ ¼åˆ—è¡¨æ•°æ®
 	 */
 	private void loadWeatherll() {
 		progress.CreateProgress();
@@ -314,7 +314,7 @@ public class SYBActivity extends BaseActivity{
 					public void onSuccess(int arg0,String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====¹æ¸ñÊı¾İ====================="+arg1);
+						System.out.println("=====è§„æ ¼æ•°æ®====================="+arg1);
 						Message msg = new Message();
 						msg.what = 0;
 						msg.obj = arg1;
@@ -336,7 +336,7 @@ public class SYBActivity extends BaseActivity{
 				ArrayList data_shuzu = WareInformationActivity.data_shuzu;
 				ArrayList data_mrz = WareInformationActivity.data_mrz;
 				ArrayList data_monney = WareInformationActivity.data_monney;
-				System.out.println("ÖµÊÇ1============="+data_mrz.size());
+				System.out.println("å€¼æ˜¯1============="+data_mrz.size());
 //				adapter = new GuiGeListviewAdapter(SYBActivity.this,list,data,data1,data2,data_id,data_id1,data_id2,
 //						data_shuzu,data_mrz,data_monney);
 //				adapter = new GuigeListAdapter(SYBActivity.this,list,data,data1,data2);
@@ -362,7 +362,7 @@ public class SYBActivity extends BaseActivity{
 		data_id2 = new ArrayList();
 //		List<GuigeData> list = new ArrayList<GuigeData>();
 		try {
-			System.out.println("=====¹æ¸ñÊı¾İ11====================="+result);
+			System.out.println("=====è§„æ ¼æ•°æ®11====================="+result);
 			JSONObject object = new JSONObject(result);
 			JSONArray jobt = object.getJSONArray("data");
 			int lenth = jobt.length();
@@ -387,7 +387,7 @@ public class SYBActivity extends BaseActivity{
 	    	    title = objc.getString("title");
 	    		id = objc.getString("id");
 	    		data_id.add(id);
-	    		System.out.println("=====Öµ====================="+title);
+	    		System.out.println("=====å€¼====================="+title);
 	    		data.add(title);
 //	    		adapter1 = new GuigeListlAdapter(SYBActivity.this,data,data_tv);
 //				listview_01.setAdapter(adapter1);
@@ -400,7 +400,7 @@ public class SYBActivity extends BaseActivity{
     	    		title1 = objc.getString("title");
     	    		id1 = objc.getString("id");
     	    		data_id1.add(id1);
-    	    		System.out.println("=====Öµ1====================="+title1);
+    	    		System.out.println("=====å€¼1====================="+title1);
     	    		data1.add(title1);
     	    		}
 				break;
@@ -410,7 +410,7 @@ public class SYBActivity extends BaseActivity{
     	    		title2 = objc.getString("title");
     	    		id2 = objc.getString("id");
     	    		data_id2.add(id2);
-    	    		System.out.println("=====Öµ2====================="+title2);
+    	    		System.out.println("=====å€¼2====================="+title2);
     	    		data2.add(title2);
     	    		}
 				break;
@@ -424,7 +424,7 @@ public class SYBActivity extends BaseActivity{
 //    		mb = new GuigeBean();
 //    		mb.setTitle(objc.getString("title"));
 //    		String title = objc.getString("title");
-//    		System.out.println("=====Öµ====================="+title);
+//    		System.out.println("=====å€¼====================="+title);
 //    		data.add(title);
 //    		md.getList().add(mb);
 //    		}
@@ -458,7 +458,7 @@ public class SYBActivity extends BaseActivity{
 	}
 	
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -466,18 +466,18 @@ public class SYBActivity extends BaseActivity{
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     } 
 	
@@ -545,7 +545,7 @@ public class SYBActivity extends BaseActivity{
 //			return 0;
 //		}
 //		
-//		// Ã¿¸öconvert view¶¼»áµ÷ÓÃ´Ë·½·¨£¬»ñµÃµ±Ç°ËùĞèÒªµÄviewÑùÊ½  
+//		// æ¯ä¸ªconvert viewéƒ½ä¼šè°ƒç”¨æ­¤æ–¹æ³•ï¼Œè·å¾—å½“å‰æ‰€éœ€è¦çš„viewæ ·å¼  
 //	    @Override  
 //	    public int getItemViewType(int position) {
 //	        int p = position;  
@@ -588,7 +588,7 @@ public class SYBActivity extends BaseActivity{
 //		        
 //	        if (convertView == null) {  
 //	            inflater = LayoutInflater.from(context);  
-//	            // °´µ±Ç°ËùĞèµÄÑùÊ½£¬È·¶¨newµÄ²¼¾Ö  
+//	            // æŒ‰å½“å‰æ‰€éœ€çš„æ ·å¼ï¼Œç¡®å®šnewçš„å¸ƒå±€  
 //	            switch (type) {  
 //	            case TYPE_1:  
 //	                convertView = inflater.inflate(R.layout.guige_item,   parent, false);  
@@ -634,7 +634,7 @@ public class SYBActivity extends BaseActivity{
 //	            }  
 //	        }
 //	        
-//	        // ÉèÖÃ×ÊÔ´  
+//	        // è®¾ç½®èµ„æº  
 //	        switch (type) {
 //	        case TYPE_1:  
 //	        	holder1.tv_yhwenzi.setText(list.get(position).getTitle());
@@ -651,17 +651,17 @@ public class SYBActivity extends BaseActivity{
 //		            	id = (String)data_id.get(arg2);
 //		            	gk_id = Integer.parseInt(id);
 ////		            	String zhi = (String)data_mrz.get(arg2);
-////		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-//		            	System.out.println("idÖµÊÇ====="+id);
-//		            	System.out.println("Öµ========="+data_shuzu.get(arg2));
+////		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+//		            	System.out.println("idå€¼æ˜¯====="+id);
+//		            	System.out.println("å€¼========="+data_shuzu.get(arg2));
 //		            	String monney1 = (String)data_monney.get(arg2);
-//						System.out.println("¼Û¸ñ========="+monney1);
+//						System.out.println("ä»·æ ¼========="+monney1);
 //		            	sell_price  = ","+id+","+id1+","+id2+",";
-//		            	 System.out.println("Æ´½ÓµÄÖµ========="+sell_price);
+//		            	 System.out.println("æ‹¼æ¥çš„å€¼========="+sell_price);
 //		            	 if (sell_price.equals(data_shuzu.get(arg2))) {
 //			                	String monney = (String)data_monney.get(arg2);
-//								System.out.println("¼Û¸ñ0========="+monney);
-//			            		market_information_sep_price.setText("£¤" + monney);
+//								System.out.println("ä»·æ ¼0========="+monney);
+//			            		market_information_sep_price.setText("ï¿¥" + monney);
 //							}
 //		            	 System.out.println("11/////////////////////////////////////////////////"); 
 //		            	} catch (Exception e) {
@@ -688,17 +688,17 @@ public class SYBActivity extends BaseActivity{
 //		            	id1 = (String)data_id1.get(arg2);
 //		            	gk_id1 = Integer.parseInt(id1);
 ////		            	String zhi = (String)data_mrz.get(arg2);
-////		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-//		            	System.out.println("idÖµÊÇ1====="+id1);
-//		            	System.out.println("Öµ1========="+data_shuzu.get(arg2));
+////		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+//		            	System.out.println("idå€¼æ˜¯1====="+id1);
+//		            	System.out.println("å€¼1========="+data_shuzu.get(arg2));
 //		            	String monney1 = (String)data_monney.get(arg2);
-//						System.out.println("¼Û¸ñ========="+monney1);
+//						System.out.println("ä»·æ ¼========="+monney1);
 //		            	sell_price  = ","+id+","+id1+","+id2+",";
-//		            	 System.out.println("Æ´½ÓµÄÖµ========="+sell_price);
+//		            	 System.out.println("æ‹¼æ¥çš„å€¼========="+sell_price);
 //		            	 if (sell_price.equals(data_shuzu.get(arg2))) {
 //			                	String monney = (String)data_monney.get(arg2);
-//								System.out.println("¼Û¸ñ1========="+monney);
-//			            		market_information_sep_price.setText("£¤" + monney);
+//								System.out.println("ä»·æ ¼1========="+monney);
+//			            		market_information_sep_price.setText("ï¿¥" + monney);
 //							}
 //		            	 System.out.println("22/////////////////////////////////////////////////");
 //		              	} catch (Exception e) {
@@ -728,26 +728,26 @@ public class SYBActivity extends BaseActivity{
 //		            	id2 = (String)data_id2.get(arg2);
 ////		            	String zhi = (String)data_mrz.get(arg2);
 //		            	gk_id2 = Integer.parseInt(id2);
-////		            	System.out.println("Ä¬ÈÏÖµ====="+zhi);
-//		            	System.out.println("idÖµÊÇ2====="+id2);
+////		            	System.out.println("é»˜è®¤å€¼====="+zhi);
+//		            	System.out.println("idå€¼æ˜¯2====="+id2);
 //		            	sell_price  = ","+id+","+id1+","+id2+",";
-//		                System.out.println("Æ´½ÓµÄÖµ========="+sell_price);
-//		                System.out.println("Öµ2========="+data_shuzu.get(arg2));
+//		                System.out.println("æ‹¼æ¥çš„å€¼========="+sell_price);
+//		                System.out.println("å€¼2========="+data_shuzu.get(arg2));
 //		                String monney1 = (String)data_monney.get(arg2);
-//						System.out.println("¼Û¸ñ========="+monney1);
+//						System.out.println("ä»·æ ¼========="+monney1);
 ////		                if (mrz == 1) {
 ////		                	System.out.println("1=========");
 ////							String monney = (String)data_monney.get(arg2);
-////							 System.out.println("¼Û¸ñ1========="+monney);
-////							 market_information_sep_price.setText("£¤:" + monney);
+////							 System.out.println("ä»·æ ¼1========="+monney);
+////							 market_information_sep_price.setText("ï¿¥:" + monney);
 //////							 notifyDataSetChanged();
 ////						}else {
 //						
-////						market_information_sep_price.setText("£¤" + monney1);
+////						market_information_sep_price.setText("ï¿¥" + monney1);
 //		                if (sell_price.equals(data_shuzu.get(arg2))) {
 //		                	String monney = (String)data_monney.get(arg2);
-//							System.out.println("¼Û¸ñ2========="+monney);
-//		            		market_information_sep_price.setText("£¤:" + (String)data_monney.get(arg2));
+//							System.out.println("ä»·æ ¼2========="+monney);
+//		            		market_information_sep_price.setText("ï¿¥:" + (String)data_monney.get(arg2));
 //						}
 //		                
 ////						}

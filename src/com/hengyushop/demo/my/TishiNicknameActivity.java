@@ -27,7 +27,7 @@ import com.lelinju.www.MyOrderConfrimActivity;
 import com.lelinju.www.PersonCenterActivity;
 import com.lelinju.www.R;
 /**
- * 修改性别
+ * 淇敼鎬у埆
  * @author 
  *
  */
@@ -76,7 +76,7 @@ public class TishiNicknameActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * 点击触发事件
+	 * 鐐瑰嚮瑙﹀彂浜嬩欢
 	 */
 	@Override
 	public void onClick(View v) {
@@ -84,14 +84,14 @@ public class TishiNicknameActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.btnConfirm://取消
+		case R.id.btnConfirm://鍙栨秷
 			finish();
 			break;
 		case R.id.btnCancle://
 			nichen = zhidupess.getText().toString().trim();
 			System.out.println("nichen-------------"+nichen);
 			if (nichen.equals("")) {
-				Toast.makeText(TishiNicknameActivity.this, "请输入修改的昵称", 200).show();
+				Toast.makeText(TishiNicknameActivity.this, "璇疯緭鍏ヤ慨鏀圭殑鏄电О", 200).show();
 			}else{
 				userloginqm();
 			}	
@@ -103,7 +103,7 @@ public class TishiNicknameActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * 获取登录签名
+	 * 鑾峰彇鐧诲綍绛惧悕
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -130,7 +130,7 @@ public class TishiNicknameActivity extends Activity implements OnClickListener{
 			}, null);
 	}
 	/**
-	 * 修改昵称
+	 * 淇敼鏄电О
 	 * @param login_sign 
 	 * @param payment_id 
 	 */

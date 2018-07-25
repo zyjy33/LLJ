@@ -19,7 +19,7 @@ import com.hengyushop.entity.MyAssetsBean;
 import com.lelinju.www.R;
 
 /**
- * @Description:gridviewµÄAdapter
+ * @Description:gridviewçš„Adapter
  * @author http://blog.csdn.net/finddreams
  */
 public class MyGridllAdapter extends BaseAdapter {

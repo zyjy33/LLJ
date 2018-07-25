@@ -30,7 +30,7 @@ public class HotelHomeActivity extends BaseActivity implements OnClickListener {
 	}
 
 	/**
-	 * ³õÊ¼»¯×é¼ş
+	 * åˆå§‹åŒ–ç»„ä»¶
 	 */
 	private void init() {
 		CityDao db = new CityDao(getApplicationContext());

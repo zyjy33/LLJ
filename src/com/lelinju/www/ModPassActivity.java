@@ -24,7 +24,7 @@ import com.hengyushop.demo.at.BaseActivity;
 import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 /**
- * ĞŞ¸ÄÃÜÂë
+ * ä¿®æ”¹å¯†ç 
  * @author cloor
  */
 public class ModPassActivity extends BaseActivity implements OnClickListener{
@@ -95,10 +95,10 @@ public class ModPassActivity extends BaseActivity implements OnClickListener{
 		if (type_num != null) {
 			if (type_num.equals("1")) {
 				type = "password";
-				tv1.setText("ĞŞ¸ÄÓÃ»§ÃÜÂë");
+				tv1.setText("ä¿®æ”¹ç”¨æˆ·å¯†ç ");
 			}else if (type_num.equals("2")){
 				type = "paypassword";
-				tv1.setText("ĞŞ¸ÄÖ§¸¶ÃÜÂë");
+				tv1.setText("ä¿®æ”¹æ”¯ä»˜å¯†ç ");
 			}
 			}else {
 				
@@ -137,12 +137,12 @@ public class ModPassActivity extends BaseActivity implements OnClickListener{
 //		case 0:
 //			type = "password";
 //			type_num = "1";
-//			tv1.setText("ĞŞ¸ÄµÇÂ¼ÃÜÂë");
+//			tv1.setText("ä¿®æ”¹ç™»å½•å¯†ç ");
 //			break;
 //		case 1:
 //			type = "paypassword";
 //			type_num = "2";
-//			tv1.setText("ĞŞ¸ÄÖ§¸¶ÃÜÂë");
+//			tv1.setText("ä¿®æ”¹æ”¯ä»˜å¯†ç ");
 //			break;
 //
 //		default:
@@ -165,14 +165,14 @@ public class ModPassActivity extends BaseActivity implements OnClickListener{
 //					newP1 = v2.getText().toString();
 //					newP2 = v3.getText().toString();
 //					 if (!(v2.getText().toString().length()<20&&v2.getText().toString().length()>=8)) {
-//						 v2.setError("ÃÜÂëÔÚ8-20Î»Ö®¼ä");
+//						 v2.setError("å¯†ç åœ¨8-20ä½ä¹‹é—´");
 //						 v2.requestFocus();
 //					}else if (!(v3.getText().toString().length()<20&&v3.getText().toString().length()>=8)) {
-//						v3.setError("ÃÜÂëÔÚ8-20Î»Ö®¼ä");
+//						v3.setError("å¯†ç åœ¨8-20ä½ä¹‹é—´");
 //						v3.requestFocus();
 //					}else
 //					if (newP1.equals(newP2)) {
-//						// ¿ªÊ¼ÁªÍø²Ù×÷
+//						// å¼€å§‹è”ç½‘æ“ä½œ
 //						/*
 //						 * RealmName.REALM_NAME + "/mi/getRnd.ashx?yth=" +
 //						 * processParam(name) + "&key=jes800";
@@ -214,7 +214,7 @@ public class ModPassActivity extends BaseActivity implements OnClickListener{
 //									}
 //								}, getApplicationContext());
 //					} else {
-//						Toast.makeText(getApplicationContext(), "Á½´ÎÃÜÂë²»ÕıÈ·!", 200)
+//						Toast.makeText(getApplicationContext(), "ä¸¤æ¬¡å¯†ç ä¸æ­£ç¡®!", 200)
 //								.show();
 //					}
 //				}
@@ -229,7 +229,7 @@ public class ModPassActivity extends BaseActivity implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.wenhao://ÕÒ»ØÃÜÂë
+		case R.id.wenhao://æ‰¾å›å¯†ç 
 			System.out.println("=================type_num==" + type_num);
 			Intent intent2 = new Intent(ModPassActivity.this,UserForgotPasswordActivity.class);
 			intent2.putExtra("type", type_num);
@@ -240,13 +240,13 @@ public class ModPassActivity extends BaseActivity implements OnClickListener{
 			newP1 = v2.getText().toString();
 			newP2 = v3.getText().toString();
 			if (oldP.equals("")) {
-				Toast.makeText(ModPassActivity.this, "¾ÉÃÜÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(ModPassActivity.this, "æ—§å¯†ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}else if (!(v2.getText().toString().length()<20&&v2.getText().toString().length()>=8)) {
-				 Toast.makeText(ModPassActivity.this, "ÃÜÂëÔÚ8-20Î»Ö®¼ä", 200).show();
+				 Toast.makeText(ModPassActivity.this, "å¯†ç åœ¨8-20ä½ä¹‹é—´", 200).show();
 			}else if (!(v3.getText().toString().length()<20&&v3.getText().toString().length()>=8)) {
-				Toast.makeText(ModPassActivity.this, "ÃÜÂëÔÚ8-20Î»Ö®¼ä", 200).show();
+				Toast.makeText(ModPassActivity.this, "å¯†ç åœ¨8-20ä½ä¹‹é—´", 200).show();
 			}else if (!newP1.equals(newP2)) {
-				Toast.makeText(ModPassActivity.this, "ĞÂÃÜÂë²»ÏàÍ¬", 200).show();
+				Toast.makeText(ModPassActivity.this, "æ–°å¯†ç ä¸ç›¸åŒ", 200).show();
 			}else
 				{
 				System.out.println("===type=========="+type);

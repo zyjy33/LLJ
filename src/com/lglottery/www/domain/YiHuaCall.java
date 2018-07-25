@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class YiHuaCall implements Serializable{
 	/**
-	 * 益话的通话记录
+	 * 鐩婅瘽鐨勯�氳瘽璁板綍
 	 */
 	private int type;
 	private String time;

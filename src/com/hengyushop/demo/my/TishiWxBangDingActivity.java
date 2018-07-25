@@ -26,7 +26,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.UserLoginActivity;
 import com.lelinju.www.UserLoginWayActivity;
 /**
- * ÌáÊ¾°ó¶¨ÊÖ»úºÅ
+ * æç¤ºç»‘å®šæ‰‹æœºå·
  * @author 
  *
  */
@@ -92,7 +92,7 @@ public class TishiWxBangDingActivity extends Activity implements OnClickListener
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -100,7 +100,7 @@ public class TishiWxBangDingActivity extends Activity implements OnClickListener
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.btnConfirm://È¡Ïû
+		case R.id.btnConfirm://å–æ¶ˆ
 			finish();
 			break;
 		case R.id.btnCancle://
@@ -194,8 +194,8 @@ public class TishiWxBangDingActivity extends Activity implements OnClickListener
 				System.out.println("======11============="+strUrlone);
 				AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 					public void onSuccess(int arg0, String arg1) {
-						System.out.println("======Êä³ö============="+arg1);
-//						Toast.makeText(UserLoginActivity.this, "Êı¾İÎª+"+arg1, 400).show();
+						System.out.println("======è¾“å‡º============="+arg1);
+//						Toast.makeText(UserLoginActivity.this, "æ•°æ®ä¸º+"+arg1, 400).show();
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");

@@ -31,7 +31,7 @@ public class HczDB {
 	}
 
 	/**
-	 * ½âÎöÊı¾İ
+	 * è§£ææ•°æ®
 	 * 
 	 * @param like
 	 * @return

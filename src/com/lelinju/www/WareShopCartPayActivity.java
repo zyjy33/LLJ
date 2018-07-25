@@ -171,12 +171,12 @@ public class WareShopCartPayActivity extends BaseActivity {
 				// TODO Auto-generated method stub
 				paypwd = et_paypwd.getText().toString();
 				if ("".equals(paypwd)) {
-					Toast.makeText(getApplicationContext(), "ÇëÊäÈëÖ§¸¶ÃÜÂë!", 200)
+					Toast.makeText(getApplicationContext(), "è¯·è¾“å…¥æ”¯ä»˜å¯†ç !", 200)
 							.show();
 				} else {
 					if (money > (ticket + shopticket)) {
 						Toast.makeText(getApplicationContext(),
-								"Óà¶î²»×ã!", 200).show();
+								"ä½™é¢ä¸è¶³!", 200).show();
 					} else {
 						strUrl = RealmName.REALM_NAME
 								+ "/mi/receiveOrderInfo_business.ashx?"
@@ -186,7 +186,7 @@ public class WareShopCartPayActivity extends BaseActivity {
 								+ yth + "&buyPwd=" + paypwd
 								+ "&orderSerialNumber=" + orderSerialNumber
 								+ "&sourceType=phone";
-						Log.v("data1", "¸¶¿îµØÖ·:" + strUrl);
+						Log.v("data1", "ä»˜æ¬¾åœ°å€:" + strUrl);
 						progress.CreateProgress();
 						
 						AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
@@ -237,13 +237,13 @@ public class WareShopCartPayActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 }

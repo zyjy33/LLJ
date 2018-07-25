@@ -64,24 +64,24 @@ public class TrainDetailActivity extends BaseActivity {
 
 	private void initMap() {
 		map = new HashMap<String, String>();
-		map.put("P", "ÌØµÈ×ù");
-		map.put("M", "Ò»µÈ×ù");
-		map.put("O", "¶şµÈ×ù");
-		map.put("A1", "Ó²×ù");
-		map.put("A3", "Ó²ÎÔ");
-		map.put("A4", "ÈíÎÔ");
-		map.put("A9", "ÉÌÎñ×ù");
-		map.put("WZ", "ÎŞ×ù");
+		map.put("P", "ç‰¹ç­‰åº§");
+		map.put("M", "ä¸€ç­‰åº§");
+		map.put("O", "äºŒç­‰åº§");
+		map.put("A1", "ç¡¬åº§");
+		map.put("A3", "ç¡¬å§");
+		map.put("A4", "è½¯å§");
+		map.put("A9", "å•†åŠ¡åº§");
+		map.put("WZ", "æ— åº§");
 
 		valueMap = new HashMap<String, String>();
-		valueMap.put("ÌØµÈ×ù", "P");
-		valueMap.put("Ò»µÈ×ù", "M");
-		valueMap.put("¶şµÈ×ù", "O");
-		valueMap.put("Ó²×ù", "A1");
-		valueMap.put("Ó²ÎÔ", "A3");
-		valueMap.put("ÈíÎÔ", "A4");
-		valueMap.put("ÉÌÎñ×ù", "A9");
-		valueMap.put("ÎŞ×ù", "WZ");
+		valueMap.put("ç‰¹ç­‰åº§", "P");
+		valueMap.put("ä¸€ç­‰åº§", "M");
+		valueMap.put("äºŒç­‰åº§", "O");
+		valueMap.put("ç¡¬åº§", "A1");
+		valueMap.put("ç¡¬å§", "A3");
+		valueMap.put("è½¯å§", "A4");
+		valueMap.put("å•†åŠ¡åº§", "A9");
+		valueMap.put("æ— åº§", "WZ");
 	}
 
 	private void init() {
@@ -100,12 +100,12 @@ public class TrainDetailActivity extends BaseActivity {
 			public void onClick(View arg0) {
 				/*
 				 * http://wxpalm.com.cn/mi/TrainHandler.ashx?
-				 * yth=ºãÓşºÅ&act=InsertTrainTicketOrder
-				 * &StationTrainCode=³µ´Î&StartStationTelecode=Ê¼·¢Õ¾´úÂë
-				 * &EndStationTelecode=ÖÕµãÕ¾´úÂë&FromStationTelecode=³ö·¢Õ¾´úÂë
-				 * &ToStationTelecode=µ½´ïÕ¾´úÂë&StartTime=³ö·¢Ê±¼ä
-				 * &ArriveTime=µ½´ïÊ±¼ä&DayDifference=1&LiShi=ĞĞ³ÌÀúÊ±Ê±¼ä
-				 * &TrainUserContactID=1,1,1&SeatCode=×ùÎ»ÀàĞÍ´úÂë,×ùÎ»ÀàĞÍ´úÂë,×ùÎ»ÀàĞÍ´úÂë
+				 * yth=æ’èª‰å·&act=InsertTrainTicketOrder
+				 * &StationTrainCode=è½¦æ¬¡&StartStationTelecode=å§‹å‘ç«™ä»£ç 
+				 * &EndStationTelecode=ç»ˆç‚¹ç«™ä»£ç &FromStationTelecode=å‡ºå‘ç«™ä»£ç 
+				 * &ToStationTelecode=åˆ°è¾¾ç«™ä»£ç &StartTime=å‡ºå‘æ—¶é—´
+				 * &ArriveTime=åˆ°è¾¾æ—¶é—´&DayDifference=1&LiShi=è¡Œç¨‹å†æ—¶æ—¶é—´
+				 * &TrainUserContactID=1,1,1&SeatCode=åº§ä½ç±»å‹ä»£ç ,åº§ä½ç±»å‹ä»£ç ,åº§ä½ç±»å‹ä»£ç 
 				 * &SeatPrice=99,66,59
 				 */
 				RequestParams params = new RequestParams();
@@ -151,7 +151,7 @@ public class TrainDetailActivity extends BaseActivity {
 
 					}
 
-					// TrainUserContactID=1,1,1&SeatCode=×ùÎ»ÀàĞÍ´úÂë,×ùÎ»ÀàĞÍ´úÂë,×ùÎ»ÀàĞÍ´úÂë
+					// TrainUserContactID=1,1,1&SeatCode=åº§ä½ç±»å‹ä»£ç ,åº§ä½ç±»å‹ä»£ç ,åº§ä½ç±»å‹ä»£ç 
 					// * &SeatPrice=99,66,59
 					params.put("TrainUserContactID", tempID.toString());
 					params.put("SeatCode", tempSeat.toString());
@@ -213,7 +213,7 @@ public class TrainDetailActivity extends BaseActivity {
 														item.setLastId("-1");
 														item.setType("-1");
 														banks.add(item);
-														bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+														bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 													}
 
 													handler.sendEmptyMessage(2);
@@ -228,7 +228,7 @@ public class TrainDetailActivity extends BaseActivity {
 										}
 									}, getApplicationContext());
 				} else {
-					Toast.makeText(getApplicationContext(), "Çë¼ì²é³Ë³µĞÅÏ¢", 200)
+					Toast.makeText(getApplicationContext(), "è¯·æ£€æŸ¥ä¹˜è½¦ä¿¡æ¯", 200)
 							.show();
 				}
 
@@ -242,10 +242,10 @@ public class TrainDetailActivity extends BaseActivity {
 				if (paramTemp != null) {
 					Intent intent = new Intent(TrainDetailActivity.this,
 							TrainPersonActivity.class);
-					// 10000´ú±í½øÈëµÄÌí¼Ó³ËÔ±ĞÅÏ¢µÄÇëÇóÂë
+					// 10000ä»£è¡¨è¿›å…¥çš„æ·»åŠ ä¹˜å‘˜ä¿¡æ¯çš„è¯·æ±‚ç 
 					startActivityForResult(intent, 10000);
 				} else {
-					Toast.makeText(getApplicationContext(), "ÇëÏÈÑ¡Ôñ³µÆ±", 200)
+					Toast.makeText(getApplicationContext(), "è¯·å…ˆé€‰æ‹©è½¦ç¥¨", 200)
 							.show();
 				}
 			}
@@ -255,13 +255,13 @@ public class TrainDetailActivity extends BaseActivity {
 	protected void onActivityResult(int requestCode, int resultCode,
 			android.content.Intent data) {
 		if (resultCode == 10001) {
-			// ³£ÓÃÁªÏµÈË·µ»ØµÄ·µ»ØÂë
+			// å¸¸ç”¨è”ç³»äººè¿”å›çš„è¿”å›ç 
 			MapSer ser = (MapSer) data.getSerializableExtra("result");
 			Map<String, TrainPersonItem> map = ser.getMap();
 			Iterator<String> i = map.keySet().iterator();
 			list = new ArrayList<TrainPersonItem>();
 			while (i.hasNext()) {
-				// System.out.println("·µ»ØÂëmapµÄÖµ" + i.next());
+				// System.out.println("è¿”å›ç mapçš„å€¼" + i.next());
 				list.add(map.get(i.next()));
 			}
 			for (int j = 0; j < list.size(); j++) {
@@ -283,11 +283,11 @@ public class TrainDetailActivity extends BaseActivity {
 		public void dispatchMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case 0:
-				Toast.makeText(getApplicationContext(), "²éÑ¯³ö´í!", 200).show();
+				Toast.makeText(getApplicationContext(), "æŸ¥è¯¢å‡ºé”™!", 200).show();
 				break;
 			case 1:
 				/*
-				 * ÌØµÈ×ù:P Ò»µÈ×ù:M ¶şµÈ×ù:WZ Ó²×ù:A1 Ó²ÎÔ:A3 ÈíÎÔ:A4 ÉÌÎñ×ù:A9 ÎŞ×ù:O
+				 * ç‰¹ç­‰åº§:P ä¸€ç­‰åº§:M äºŒç­‰åº§:WZ ç¡¬åº§:A1 ç¡¬å§:A3 è½¯å§:A4 å•†åŠ¡åº§:A9 æ— åº§:O
 				 */
 				int len = priceDos.size();
 				seats = new String[len];
@@ -335,8 +335,8 @@ public class TrainDetailActivity extends BaseActivity {
 				break;
 			case 2:
 				if (banks != null && banks.size() != 0) {
-					// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-					System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+					// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+					System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 					// initPopupWindow1();
 					// showPopupWindow1(btn_OK);
 					Intent intent = new Intent(TrainDetailActivity.this,
@@ -349,7 +349,7 @@ public class TrainDetailActivity extends BaseActivity {
 					intent.putExtras(bundle);
 					startActivity(intent);
 				} else {
-					// ±íÊ¾Ê×´ÎÖ§¸¶
+					// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 					Intent intent = new Intent(TrainDetailActivity.this,
 							PayActivity.class);
 					Bundle bundle = new Bundle();
@@ -360,19 +360,19 @@ public class TrainDetailActivity extends BaseActivity {
 					// initPopupWindow();
 					// showPopupWindow(btn_OK);
 				}
-				Toast.makeText(getApplicationContext(), "ÏÂµ¥³É¹¦!", 200).show();
+				Toast.makeText(getApplicationContext(), "ä¸‹å•æˆåŠŸ!", 200).show();
 				AppManager.getAppManager().finishActivity();
 				break;
 			case 3:
-				Toast.makeText(getApplicationContext(), "ÏÂµ¥Ê§°Ü!", 200).show();
+				Toast.makeText(getApplicationContext(), "ä¸‹å•å¤±è´¥!", 200).show();
 				break;
 			case 4:
-				// list.get(0).setTempPiao("²âÊÔ×ùÎ»");
+				// list.get(0).setTempPiao("æµ‹è¯•åº§ä½");
 				k = msg.arg1;
 				initPopupWindow();
 				showPopupWindow(select_seat);
 				// adapter.notifyDataSetChanged();
-				// Toast.makeText(getApplicationContext(),"ĞŞ¸ÄÜ‡Æ±",200).show();
+				// Toast.makeText(getApplicationContext(),"ä¿®æ”¹è»Šç¥¨",200).show();
 				break;
 			default:
 				break;
@@ -391,13 +391,13 @@ public class TrainDetailActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.grey));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -423,7 +423,7 @@ public class TrainDetailActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				int index = seat_item.getCurrentItem();
-				// kÎªĞèÒªĞŞ¸ÄµÄlistĞòºÅ.indexÊÇ
+				// kä¸ºéœ€è¦ä¿®æ”¹çš„liståºå·.indexæ˜¯
 				list.get(k).setTempPiao(priceDos.get(index).getTag());
 				list.get(k).setTempPrice(priceDos.get(index).getPrice());
 				adapter.notifyDataSetChanged();
@@ -435,8 +435,8 @@ public class TrainDetailActivity extends BaseActivity {
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.BOTTOM, 0, 0);
@@ -501,7 +501,7 @@ public class TrainDetailActivity extends BaseActivity {
 
 	private void IsHas(JSONObject object, String param) {
 		try {
-			// Èç¹û´æÔÚÕâÑùµÄ¼üÖµ
+			// å¦‚æœå­˜åœ¨è¿™æ ·çš„é”®å€¼
 			if (object.has(param)) {
 				TrainPriceDo trainPriceDo = new TrainPriceDo();
 				trainPriceDo.setTag(map.get(param));
@@ -520,7 +520,7 @@ public class TrainDetailActivity extends BaseActivity {
 			JSONObject jsonObject = new JSONObject(result);
 			String status = jsonObject.getString("status");
 			if (status.equals("1")) {
-				// ¿ªÊ¼½âÎö
+				// å¼€å§‹è§£æ
 				String data = jsonObject.getString("msg");
 				JSONObject objectParent = new JSONObject(data);
 				JSONObject object = objectParent.getJSONObject("data");
@@ -539,10 +539,10 @@ public class TrainDetailActivity extends BaseActivity {
 				// IsHas(object, "A1");
 				// }
 
-				// ÌØÊâÇé¿ö£¬¿Õµ÷¿ì³µ²»´æÔÚOÑ¡Ïî£¬Ôò°ÑWZ±ä³ÉÕ¾Æ±
+				// ç‰¹æ®Šæƒ…å†µï¼Œç©ºè°ƒå¿«è½¦ä¸å­˜åœ¨Oé€‰é¡¹ï¼Œåˆ™æŠŠWZå˜æˆç«™ç¥¨
 				// if (!object.has("O")) {
 				// TrainPriceDo trainPriceDo = new TrainPriceDo();
-				// trainPriceDo.setTag("ÎŞ×ù");
+				// trainPriceDo.setTag("æ— åº§");
 				// trainPriceDo.setPrice(object.getString("WZ"));
 				// priceDos.add(trainPriceDo);
 				// }

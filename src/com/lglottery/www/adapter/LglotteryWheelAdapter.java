@@ -21,8 +21,8 @@ public class LglotteryWheelAdapter extends AbstractWheelAdapter {
 	private final int HEIGHT = LglotteryGoActivity.HEIGHT;
 
 	// Slot machine symbols
-	private final String items[] = new String[] { "A1ÀàÉÌÆ·", "B1ÀàÉÌÆ·", "C1ÀàÉÌÆ·",
-			"A2ÀàÉÌÆ·", "B2ÀàÉÌÆ·", "C2ÀàÉÌÆ·" };
+	private final String items[] = new String[] { "A1ç±»å•†å“", "B1ç±»å•†å“", "C1ç±»å•†å“",
+			"A2ç±»å•†å“", "B2ç±»å•†å“", "C2ç±»å•†å“" };
 
 	// Layout inflater
 	private Context context;

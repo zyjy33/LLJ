@@ -52,7 +52,7 @@ public class OneAllActivity extends BaseActivity{
 		Bundle bundle = getIntent().getExtras();
 		if(bundle.containsKey("item_id")){
 			Map<String, String> params = new HashMap<String, String>();
-			//mi/getdata.ashx?act=GetLuckYiYuanJuGouRecords&yth=test»òÎª¿Õ&ProductItemId=1&LuckDrawBatchOrderNumber=1
+			//mi/getdata.ashx?act=GetLuckYiYuanJuGouRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1&LuckDrawBatchOrderNumber=1
 			params.put("act", "GetLuckYiYuanJuGouRecords");
 			params.put("yth", "test");
 			params.put("productItemId", getIntent().getExtras().getString("item_id"));

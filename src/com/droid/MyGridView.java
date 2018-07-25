@@ -9,7 +9,7 @@ public class MyGridView extends GridView {
 	}
 
 	/**
-	 * ÉèÖÃ²»¹ö¶¯
+	 * è®¾ç½®ä¸æ»šåŠ¨
 	 */
 	public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2,

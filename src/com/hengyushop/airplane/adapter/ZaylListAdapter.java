@@ -23,7 +23,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 
 /**
- * @Description:gridviewµÄAdapter
+ * @Description:gridviewçš„Adapter
  * @author http://blog.csdn.net/finddreams
  */
 public class ZaylListAdapter extends BaseAdapter {
@@ -73,9 +73,9 @@ public class ZaylListAdapter extends BaseAdapter {
 		TextView tv_sell_price = BaseViewHolder.get(convertView, R.id.tv_sell_price);
 		ImageView img_ware = BaseViewHolder.get(convertView, R.id.img_ware);;
 		tv.setText(items.get(position).getTitle()); 
-		tv_market_price.setText("£¤"+items.get(position).getMarket_price()); 
-		tv_sell_price.setText("£¤"+items.get(position).getSell_price());
-		tv_market_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+		tv_market_price.setText("ï¿¥"+items.get(position).getMarket_price()); 
+		tv_sell_price.setText("ï¿¥"+items.get(position).getSell_price());
+		tv_market_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 		 ImageLoader imageLoader=ImageLoader.getInstance();
         imageLoader.displayImage(RealmName.REALM_NAME_HTTP+ items.get(position).getImg_url(),img_ware);
 		

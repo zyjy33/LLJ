@@ -22,57 +22,57 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 	private SurfaceHolder mHolder;
 	private Canvas mCanvas;
 
-	private Thread t;// ÓÃÓÚ»æÖÆµÄÏß³Ì
-	private boolean isRunning; // Ïß³ÌµÄ¿ØÖÆ¿ª¹Ø
+	private Thread t;// ç”¨äºç»˜åˆ¶çš„çº¿ç¨‹
+	private boolean isRunning; // çº¿ç¨‹çš„æ§åˆ¶å¼€å…³
 
-	// ÅÌ¿éµÄ½±Ïî
-//	public static String[] mStrs = new String[] { "8¾Û±Ò", "88¾Û±Ò", "888¾Û±Ò", "58¾Û±Ò", "18¾Û±Ò", "588¾Û±Ò", "188¾Û±Ò", "28¾Û±Ò", "388¾Û±Ò", "Ğ»Ğ»²ÎÓë" };
-	public static String[] mStrs = new String[] { "Î´ÖĞ½±", "1µÈ½±", "3µÈ½±", "4µÈ½±", "½±Æ·Ïî4", "½±Æ·Ïî5", "½±Æ·Ïî6", "½±Æ·Ïî7", "½±Æ·Ïî8", "½±Æ·Ïî9" };
+	// ç›˜å—çš„å¥–é¡¹
+//	public static String[] mStrs = new String[] { "8èšå¸", "88èšå¸", "888èšå¸", "58èšå¸", "18èšå¸", "588èšå¸", "188èšå¸", "28èšå¸", "388èšå¸", "è°¢è°¢å‚ä¸" };
+	public static String[] mStrs = new String[] { "æœªä¸­å¥–", "1ç­‰å¥–", "3ç­‰å¥–", "4ç­‰å¥–", "å¥–å“é¡¹4", "å¥–å“é¡¹5", "å¥–å“é¡¹6", "å¥–å“é¡¹7", "å¥–å“é¡¹8", "å¥–å“é¡¹9" };
 
-	// ÅÌ¿éµÄÍ¼Æ¬
+	// ç›˜å—çš„å›¾ç‰‡
 	private int[] mImgs = new int[] { R.drawable.ysj_jubi, R.drawable.ysj_jubi, R.drawable.ysj_jubi, R.drawable.ysj_jubi,
 			R.drawable.ysj_jubi, R.drawable.ysj_jubi , R.drawable.ysj_jubi, R.drawable.ysj_jubi, R.drawable.ysj_jubi, R.drawable.ysj_jubi};
     //R.drawable.danfan, R.drawable.ipad,
-	// ÓëÍ¼Æ¬¶ÔÓ¦µÄBitmapÊı×é
+	// ä¸å›¾ç‰‡å¯¹åº”çš„Bitmapæ•°ç»„
 	
 	private Bitmap[] mImgsBitmap;
 
-	// ÉèÖÃ±³¾°
+	// è®¾ç½®èƒŒæ™¯
 	private Bitmap mBgBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg2);
 
-	// »æÖÆÅÌ¿éµÄ»­±Ê
+	// ç»˜åˆ¶ç›˜å—çš„ç”»ç¬”
 	private Paint mArcPaint;
 
-	// »æÖÆÎÄ±¾µÄ»­±Ê
+	// ç»˜åˆ¶æ–‡æœ¬çš„ç”»ç¬”
 	private Paint mTextPaint;
 
-	// ÅÌ¿éµÄÑÕÉ«
+	// ç›˜å—çš„é¢œè‰²
 	private int[] mColors = new int[] { 0xFFFFC300, 0xFFF17E01, 0xFFFFC300, 0xFFF17E01, 0xFFFFC300, 0xFFF17E01 , 0xFFFFC300, 0xFFF17E01, 0xFFFFC300, 0xFFF17E01};
 
 	private int mItemCount = 10;
 
-	// Õû¸öÅÌ¿éµÄ·¶Î§
+	// æ•´ä¸ªç›˜å—çš„èŒƒå›´
 	private RectF mRange = new RectF();
 
-	// Õû¸öÅÌ¿éµÄÖ±¾¶
+	// æ•´ä¸ªç›˜å—çš„ç›´å¾„
 	private int mDiameter;
 
-	// ×ªÅÌµÄÖĞĞÄÎ»ÖÃ
+	// è½¬ç›˜çš„ä¸­å¿ƒä½ç½®
 	private int mCenter;
 
-	// ÕâÀïÎÒÃÇµÄpaddingÒÔpaddingLeftÎª×¼
+	// è¿™é‡Œæˆ‘ä»¬çš„paddingä»¥paddingLeftä¸ºå‡†
 	private int mPadding;
 
-	// ÅÌ¿é¹ö¶¯µÄËÙ¶È
+	// ç›˜å—æ»šåŠ¨çš„é€Ÿåº¦
 	private double speed = 0;
 
-	// ÆğÊ¼½Ç¶È
-	private volatile float mStartAngle = 0; // volatileÎªÁË±£Ö¤Ïß³Ì¼ä±äÁ¿µÄ¿É¼ûĞÔ
+	// èµ·å§‹è§’åº¦
+	private volatile float mStartAngle = 0; // volatileä¸ºäº†ä¿è¯çº¿ç¨‹é—´å˜é‡çš„å¯è§æ€§
 
-	// ÅĞ¶ÏÊÇ·ñµã»÷ÁËÍ£Ö¹°´Å¥
+	// åˆ¤æ–­æ˜¯å¦ç‚¹å‡»äº†åœæ­¢æŒ‰é’®
 	private boolean isShouldEnd;
 	public static boolean type;
-	// ÉèÖÃÎÄ±¾´óĞ¡
+	// è®¾ç½®æ–‡æœ¬å¤§å°
 	private float mTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 15,
 			getResources().getDisplayMetrics());
 
@@ -87,10 +87,10 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 		mHolder = getHolder();
 		mHolder.addCallback(this);
 
-		// ¿É»ñµÃ½¹µã
+		// å¯è·å¾—ç„¦ç‚¹
 		setFocusable(true);
 		setFocusableInTouchMode(true);
-		// ÉèÖÃ³¤ÁÁ
+		// è®¾ç½®é•¿äº®
 		setKeepScreenOn(true);
 	}
 
@@ -101,9 +101,9 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 
 		int width = Math.min(getMeasuredWidth(), getMeasuredHeight());
 		mPadding = getPaddingLeft();
-		// °ë¾¶
+		// åŠå¾„
 		mDiameter = width - mPadding * 2;
-		// ÖĞĞÄµã
+		// ä¸­å¿ƒç‚¹
 		mCenter = width / 2;
 
 		setMeasuredDimension(width, width);
@@ -111,10 +111,10 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		// ³õÊ¼»¯»æÖÆ»æÖÆÅÌ¿éµÄ»­±Ê
+		// åˆå§‹åŒ–ç»˜åˆ¶ç»˜åˆ¶ç›˜å—çš„ç”»ç¬”
 		mArcPaint = new Paint();
-		mArcPaint.setAntiAlias(true); // ÉèÖÃ¿¹¾â³İ
-		mArcPaint.setDither(true); // ÉèÖÃ¶¶¶¯
+		mArcPaint.setAntiAlias(true); // è®¾ç½®æŠ—é”¯é½¿
+		mArcPaint.setDither(true); // è®¾ç½®æŠ–åŠ¨
 		//
 		mTextPaint = new Paint();
 		mTextPaint.setColor(0xffffffff);
@@ -123,7 +123,7 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 		//
 		mRange = new RectF(mPadding, mPadding, mPadding + mDiameter, mPadding + mDiameter);
 
-		// ³õÊ¼»¯Í¼Æ¬
+		// åˆå§‹åŒ–å›¾ç‰‡
 		mImgsBitmap = new Bitmap[mItemCount];
 		for (int i = 0; i < mItemCount; i++) {
 			mImgsBitmap[i] = BitmapFactory.decodeResource(getResources(), mImgs[i]);
@@ -148,7 +148,7 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 
 	@Override
 	public void run() {
-		// ²»¶ÏµÄ½øĞĞ»æÖÆ
+		// ä¸æ–­çš„è¿›è¡Œç»˜åˆ¶
 		while (isRunning) {
 			long start = System.currentTimeMillis();
 			draw();
@@ -167,23 +167,23 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 		try {
 			mCanvas = mHolder.lockCanvas();
 			if (mCanvas != null) {
-				// »æÖÆ±³¾°
+				// ç»˜åˆ¶èƒŒæ™¯
 				drawBg();
-				// »æÖÆÅÌ¿é
+				// ç»˜åˆ¶ç›˜å—
 				float tmpAngle = mStartAngle;
 				float sweepAngle = 360 / mItemCount;
 				for (int i = 0; i < mItemCount; i++) {
 					mArcPaint.setColor(mColors[i]);
-					// »æÖÆÅÌ¿é
+					// ç»˜åˆ¶ç›˜å—
 					mCanvas.drawArc(mRange, tmpAngle, sweepAngle, true, mArcPaint);
-					// »æÖÆÎÄ±¾
+					// ç»˜åˆ¶æ–‡æœ¬
 					drawText(tmpAngle, sweepAngle, mStrs[i]);
-					// »æÖÆIcon
+					// ç»˜åˆ¶Icon
 					drawIcon(tmpAngle, mImgsBitmap[i]);
 					tmpAngle += sweepAngle;
 				}
 				mStartAngle += speed;
-				// Èç¹ûµã»÷ÁËÍ£Ö¹°´Å¥
+				// å¦‚æœç‚¹å‡»äº†åœæ­¢æŒ‰é’®
 				if (isShouldEnd) {
 					speed -= 1;
 				}
@@ -191,7 +191,7 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 					speed = 0;
 					isShouldEnd = false;
 					type = true;
-//					System.out.println("------------------Íê³É----------------------");
+//					System.out.println("------------------å®Œæˆ----------------------");
 					ZhuanYiZhuanActivity.handlerll.sendEmptyMessage(2);
 				}
 			}
@@ -204,28 +204,28 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 	}
 
 	/**
-	 * µã»÷Æô¶¯Ğı×ª
+	 * ç‚¹å‡»å¯åŠ¨æ—‹è½¬
 	 */
 	public void luckyStart(int index) {
-		// ¼ÆËãÃ¿Ò»ÏîµÄ½Ç¶È
+		// è®¡ç®—æ¯ä¸€é¡¹çš„è§’åº¦
 		float angle = 360 / mItemCount;
-		// ¼ÆËãÃ¿Ò»ÏîÖĞ½±·¶Î§ £¨µ±Ç°index£©
+		// è®¡ç®—æ¯ä¸€é¡¹ä¸­å¥–èŒƒå›´ ï¼ˆå½“å‰indexï¼‰
 
 		float from = 270 - (index + 1) * angle;
 		float end = from + angle;
 
-		// ÉèÖÃÍ£ÏÂÀ´µÄĞèÒªĞı×ªµÄ¾àÀë
+		// è®¾ç½®åœä¸‹æ¥çš„éœ€è¦æ—‹è½¬çš„è·ç¦»
 		float targetFrom = 5 * 360 + from;
 		float targetEnd = 5 * 360 + end;
 
 		/**
 		 * <pre>
 		 * v1 -> 0
-		 * ÇÒÃ¿´Î-1
-		 * ¸ù¾İµÈ²îÊıÁĞÇóºÍ¹«Ê½
-		 * (v1 + 0)* (v1 +1) / 2 = targetFrom  £¨Ê×Ïî+Ä©Ïî£©*ÏîÊı / 2
-		 * »¯¼òÎª£ºv1*v1 + v1 - 2targetFrom = 0
-		 * Ôò   v1 = (-1 + Math.sqrt (1 + 8 * targetFrom) ) / 2
+		 * ä¸”æ¯æ¬¡-1
+		 * æ ¹æ®ç­‰å·®æ•°åˆ—æ±‚å’Œå…¬å¼
+		 * (v1 + 0)* (v1 +1) / 2 = targetFrom  ï¼ˆé¦–é¡¹+æœ«é¡¹ï¼‰*é¡¹æ•° / 2
+		 * åŒ–ç®€ä¸ºï¼šv1*v1 + v1 - 2targetFrom = 0
+		 * åˆ™   v1 = (-1 + Math.sqrt (1 + 8 * targetFrom) ) / 2
 		 * </pre>
 		 */
 		float v1 = (float) ((-1 + Math.sqrt(1 + 8 * targetFrom)) / 2);
@@ -242,7 +242,7 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 	}
 
 	/**
-	 * ×ªÅÌÊÇ·ñÔÚĞı×ª
+	 * è½¬ç›˜æ˜¯å¦åœ¨æ—‹è½¬
 	 * 
 	 * @return
 	 */
@@ -255,28 +255,28 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 	}
 
 	/**
-	 * »æÖÆIcon
+	 * ç»˜åˆ¶Icon
 	 * 
 	 * @param tmpAngle
 	 * @param bitmap
 	 */
 	private void drawIcon(float tmpAngle, Bitmap bitmap) {
-		// ÉèÖÃÍ¼Æ¬¿í¶ÈÎªÖ±¾¶µÄ1/8
+		// è®¾ç½®å›¾ç‰‡å®½åº¦ä¸ºç›´å¾„çš„1/8
 		int imgWidth = mDiameter / 10;
-		// 1¡ã¾ÍÊÇ¦Ğ³ıÒÔ180
-		// ÆğÊ¼½Ç¶È¼ÓÉÏÃ¿¸öÅÌ¿éÒ»°ëµÄ½Ç¶È
+		// 1Â°å°±æ˜¯Ï€é™¤ä»¥180
+		// èµ·å§‹è§’åº¦åŠ ä¸Šæ¯ä¸ªç›˜å—ä¸€åŠçš„è§’åº¦
 		float angle = (float) ((tmpAngle + 360 / mItemCount / 2) * Math.PI / 180);
 
 		int x = (int) (mCenter + mDiameter / 2 / 2 * Math.cos(angle));
 		int y = (int) (mCenter + mDiameter / 2 / 2 * Math.sin(angle));
 
-		// È·¶¨Í¼Æ¬µÄÎ»ÖÃ
+		// ç¡®å®šå›¾ç‰‡çš„ä½ç½®
 		Rect rect = new Rect(x - imgWidth / 2, y - imgWidth / 2, x + imgWidth / 2, y + imgWidth / 2);
 		mCanvas.drawBitmap(bitmap, null, rect, null);
 	}
 
 	/**
-	 * »æÖÆÃ¿¸öÅÌ¿éµÄÎÄ±¾
+	 * ç»˜åˆ¶æ¯ä¸ªç›˜å—çš„æ–‡æœ¬
 	 * 
 	 * @param tmpAngle
 	 * @param sweepAngle
@@ -285,15 +285,15 @@ public class LuckyPan extends SurfaceView implements Callback, Runnable {
 	private void drawText(float tmpAngle, float sweepAngle, String string) {
 		Path path = new Path();
 		path.addArc(mRange, tmpAngle, sweepAngle);
-		// Ë®Æ½Æ«ÒÆÁ¿ÈÃÎÄ×Ö¾ÓÖĞ
-		// Ë®Æ½Æ«ÒÆÁ¿ = »¡³¤/2 - ÎÄ×Ö³¤¶È /2
+		// æ°´å¹³åç§»é‡è®©æ–‡å­—å±…ä¸­
+		// æ°´å¹³åç§»é‡ = å¼§é•¿/2 - æ–‡å­—é•¿åº¦ /2
 		float textWidth = mTextPaint.measureText(string);
 		int hOffset = (int) (mDiameter * Math.PI / mItemCount / 2 - textWidth / 2);
 		int vOffset = mDiameter / 1 / 8;
 		mCanvas.drawTextOnPath(string, path, hOffset, vOffset, mTextPaint);
 	}
 
-	// »æÖÆ±³¾°
+	// ç»˜åˆ¶èƒŒæ™¯
 	private void drawBg() {
 		mCanvas.drawColor(0xFFFFFFFF);
 		mCanvas.drawBitmap(mBgBitmap, 

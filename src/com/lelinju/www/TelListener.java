@@ -37,7 +37,7 @@ public class TelListener extends PhoneStateListener {
            // tv= new TextView(context);
             image = new ImageView(context);   
             image.setBackgroundResource(R.drawable.guanggao);
-            //tv.setText("这是悬浮窗口，来电号码：" + 123456);  
+            //tv.setText("杩欐槸鎮诞绐楀彛锛屾潵鐢靛彿鐮侊細" + 123456);  
             wm.addView(image, params);  
                       
         }else if(state == TelephonyManager.CALL_STATE_IDLE){  

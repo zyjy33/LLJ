@@ -134,9 +134,9 @@ public class JuyouFanglistAdapter extends BaseAdapter {
 			
 			
 //			tv_name.setText(list.get(position).getList().get(i).getTitle());
-//			tv_rePrice.setText("£¤" + list.get(position).getList().get(i).getSell_price());
-//			tv_maPrice.setText("£¤" + list.get(position).getList().get(i).getMarket_price());
-//			tv_maPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊÐ³¡¼ÛÎÄ×ÖµÄÖÐ»®Ïß
+//			tv_rePrice.setText("ï¿¥" + list.get(position).getList().get(i).getSell_price());
+//			tv_maPrice.setText("ï¿¥" + list.get(position).getList().get(i).getMarket_price());
+//			tv_maPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 //			System.out.println("--------------"+list.get(position).getList().get(i).getImg_url());
 //			 mAq.id(img_ware2).image(RealmName.REALM_NAME_HTTP+list.get(position).getList().get(i).img_url);
 			 

@@ -33,7 +33,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 /**
- * ´´¿Í
+ * åˆ›å®¢
  * @author Administrator
  *
  */
@@ -60,7 +60,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 		Button enter_shop = (Button) findViewById(R.id.enter_shop);
 //		enter_shop.getBackground().setAlpha(50);
 		enter_shop.setOnClickListener(this);
-		System.out.println("ÖµÊÇ1================");
+		System.out.println("å€¼æ˜¯1================");
 		 getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 			spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 			user_name = spPreferences.getString("user", "");
@@ -84,7 +84,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 //	}
 	
 	/**
-	 * ±¸»õ½ğÓà¶î
+	 * å¤‡è´§é‡‘ä½™é¢
 	 */
 	public void userxinxi(){
 		try{
@@ -94,7 +94,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======66Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+						System.out.println("======66è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						JSONObject obj = object.getJSONObject("data");
@@ -110,7 +110,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 							System.out.println("reserves----------"+reserves);
 							String monney = String.valueOf(reserveb);
 //							System.out.println("reserveb----------"+reserveb);
-							tv_beihuojin.setText(monney+"Ôª");
+							tv_beihuojin.setText(monney+"å…ƒ");
 							
 							panduan();
 						}else{
@@ -148,7 +148,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
 							String pensions = obj.getString("pensions");
-							tv_shouyi1.setText(pensions+"Ôª");
+							tv_shouyi1.setText(pensions+"å…ƒ");
 							getmonney2();
 						}else{
 							
@@ -181,7 +181,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
 							String pensions = obj.getString("pensions");
-							tv_shouyi2.setText(pensions+"Ôª");
+							tv_shouyi2.setText(pensions+"å…ƒ");
 							getmonney3();
 						}else{
 							
@@ -214,7 +214,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
 							String pensions = obj.getString("pensions");
-							tv_shouyi3.setText(pensions+"Ôª");
+							tv_shouyi3.setText(pensions+"å…ƒ");
 						}else{
 							
 						}
@@ -228,7 +228,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 	}
 	
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 		
@@ -305,8 +305,8 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi1.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserveb+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserveb+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 			
 		}else 
 		if (reserves < 500){
@@ -316,10 +316,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney2.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi2.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 3000){
 			int zdj_monney = 3000;
@@ -328,10 +328,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney3.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi3.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 10000){
 			int zdj_monney = 10000;
@@ -340,10 +340,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney4.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi4.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 20000){
 			int zdj_monney = 20000;
@@ -352,10 +352,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney5.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi5.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 30000){
 			int zdj_monney = 30000;
@@ -364,10 +364,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney6.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi6.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 40000){
 			int zdj_monney = 40000;
@@ -376,10 +376,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney7.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi7.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 50000){
 			int zdj_monney = 50000;
@@ -388,10 +388,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney8.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi8.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 60000){
 			int zdj_monney = 60000;
@@ -400,10 +400,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney9.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi9.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 		}else 
 		if (reserves < 100000){
 			int zdj_monney = 100000;
@@ -412,10 +412,10 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 			tv_monney10.setTextColor(Color.RED);
 //			tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 			im_weizhi10.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
-//			tv_dengji.setText("¾àÀëÏÂÒ»µÈ¼¶ÉÌ£¬»¹Ğè"+monney+"Ôª£¬ÇëÊäÈë³äÖµ½ğ¶î");
+//			tv_dengji.setText("è·ç¦»ä¸‹ä¸€ç­‰çº§å•†ï¼Œè¿˜éœ€"+monney+"å…ƒï¼Œè¯·è¾“å…¥å……å€¼é‡‘é¢");
 			String reserves_ll = String.valueOf(reserves);
-			tv_dengji.setText(reserves_ll+"Ôª");
-			tv_dengji2.setText(monney+"Ôª");
+			tv_dengji.setText(reserves_ll+"å…ƒ");
+			tv_dengji2.setText(monney+"å…ƒ");
 //			Toast.makeText(JuFaFaUserActivity.this, "", 200).show();
 		}else 
 			if (reserves > 100000){
@@ -424,7 +424,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 //				tv_monney1.setBackgroundColor(getResources().getColor(R.color.hongse));
 				im_weizhi10.setBackgroundResource(R.drawable.bg_red_3_5_jiajian_hs);
 				String reserves_ll = String.valueOf(reserves);
-				tv_dengji.setText(reserves_ll+"Ôª");
+				tv_dengji.setText(reserves_ll+"å…ƒ");
 				ll_dengji2.setVisibility(View.GONE);
 			}
 //		else {
@@ -457,14 +457,14 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 //			Intent intent = new Intent(ChuangKeActivity.this,ShengJiCkActivity.class);
 			String chongzhi = et_chongzhi.getText().toString().trim();
 			if (chongzhi.equals("")) {
-				Toast.makeText(JuFaFaUserActivity.this, "³äÖµ²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(JuFaFaUserActivity.this, "å……å€¼ä¸èƒ½ä¸ºç©º", 200).show();
 			} else {
 				int cz = Integer.parseInt(chongzhi);
 //				int cz_monney = reserves+cz;
 				if (reserves > 100000) {
-					Toast.makeText(JuFaFaUserActivity.this, "±¸»õ½ğ´óÓÚ10ÍòÒÔÉÏ,²»ÄÜÔÙ³äÖµÁË", 200).show();
+					Toast.makeText(JuFaFaUserActivity.this, "å¤‡è´§é‡‘å¤§äº10ä¸‡ä»¥ä¸Š,ä¸èƒ½å†å……å€¼äº†", 200).show();
 				} else if (cz < 100) {
-					Toast.makeText(JuFaFaUserActivity.this, "³äÖµ²»ÄÜĞ¡ÓÚ100", 200).show();
+					Toast.makeText(JuFaFaUserActivity.this, "å……å€¼ä¸èƒ½å°äº100", 200).show();
 				} else {
 				Intent intent1 = new Intent(JuFaFaUserActivity.this,UserChongZhiActivity.class);
 				intent1.putExtra("chongzhi", chongzhi);
@@ -508,12 +508,12 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 	}
 	
 	/**
-	 * »ñÈ¡¹ã¸æÍ¼Æ¬
+	 * è·å–å¹¿å‘Šå›¾ç‰‡
 	 */
 	private void loadguanggao() {
 		try {
 			
-		//¹ã¸æ¹ö¶¯	
+		//å¹¿å‘Šæ»šåŠ¨	
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_adbanner_list?advert_id=13",
 				new AsyncHttpResponseHandler() {
@@ -531,7 +531,7 @@ public class JuFaFaUserActivity extends BaseActivity implements OnClickListener 
 								ada.setId(json.getString("id"));
 								ada.setAd_url(json.getString("ad_url"));
 								String ad_url = ada.getAd_url();
-								System.out.println("Í¼Æ¬ÖµÊÇ================"+ad_url);
+								System.out.println("å›¾ç‰‡å€¼æ˜¯================"+ad_url);
 								
 							    ImageLoader imageLoader=ImageLoader.getInstance();
 							    imageLoader.displayImage(RealmName.REALM_NAME_HTTP + ad_url, img_menu);

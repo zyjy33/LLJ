@@ -36,39 +36,39 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
 /**
- * ¹ã¸æÕ¹Ê¾¿Ø¼ş¡¾Í¼Æ¬¹ö¶¯Õ¹Ê¾¡¿
+ * å¹¿å‘Šå±•ç¤ºæ§ä»¶ã€å›¾ç‰‡æ»šåŠ¨å±•ç¤ºã€‘
  * 
- * @author ÕÅÍ³Ç¿
+ * @author å¼ ç»Ÿå¼º
  */
 public class MyPosterView extends FrameLayout{
-	// µã»÷µÄ¼àÌıÊÂ¼ş
+	// ç‚¹å‡»çš„ç›‘å¬äº‹ä»¶
 	private MyPosterOnClick clickListener = null;
 	private Context context;
-	// ¹ö¶¯Õ¹Ê¾µÄ¿Ø¼ş
+	// æ»šåŠ¨å±•ç¤ºçš„æ§ä»¶
 	private ViewPager viewPage = null;
-	// ¹ö¶¯Õ¹Ê¾¿Ø¼şµÄadapter
+	// æ»šåŠ¨å±•ç¤ºæ§ä»¶çš„adapter
 	private PageAdapter adapter = null;
-	// ÒªÕ¹Ê¾µÄ½çÃæ
+	// è¦å±•ç¤ºçš„ç•Œé¢
 	private List<ImageView> views = null;
-	// Õ¹Ê¾Í¼Æ¬µÄÒ³Âë£¨Ò»ÅÅµã±êÖ¾Õ¹Ê¾ÄÄÕÅÍ¼£©
+	// å±•ç¤ºå›¾ç‰‡çš„é¡µç ï¼ˆä¸€æ’ç‚¹æ ‡å¿—å±•ç¤ºå“ªå¼ å›¾ï¼‰
 	private List<ImageView> imgs = null;
-	// ¹ö¶¯Ê±µÄÊÂ¼ş¼àÌı
+	// æ»šåŠ¨æ—¶çš„äº‹ä»¶ç›‘å¬
 	private PageChangeListener listener = null;
-	// ¡°µ±Ç°ÊÇÄÄÒ³¡±µÄ±êÖ¾µã²¼¾Ö
+	// â€œå½“å‰æ˜¯å“ªé¡µâ€çš„æ ‡å¿—ç‚¹å¸ƒå±€
 	private LinearLayout layoutShowPoint = null;
-	// Õâ¸ö¿Ø¼şÄÚµÄÍ¼Æ¬£¨drawable£©¼¯ºÏ
+	// è¿™ä¸ªæ§ä»¶å†…çš„å›¾ç‰‡ï¼ˆdrawableï¼‰é›†åˆ
 	private ArrayList<String> imgDrawable = null;
-	// ÊÇ·ñÏÔÊ¾Ò³Âë±êÖ¾µã
+	// æ˜¯å¦æ˜¾ç¤ºé¡µç æ ‡å¿—ç‚¹
 	private boolean isPointOut = true;
-	// //ÊÇ·ñ²»¶ÏµÄ¹ö¶¯
+	// //æ˜¯å¦ä¸æ–­çš„æ»šåŠ¨
 	// private boolean isScroll=true;
-	// ¹ö¶¯Ïß³ÌĞİÃßÊ±¼ä¡¾Ãë¡¿
+	// æ»šåŠ¨çº¿ç¨‹ä¼‘çœ æ—¶é—´ã€ç§’ã€‘
 	private int sleepTime = 1;
-	private int curPosition = 0;// µ±Ç°Ò³Âë
-	private int maxPage = 0;// ×î´óÒ³Âë
+	private int curPosition = 0;// å½“å‰é¡µç 
+	private int maxPage = 0;// æœ€å¤§é¡µç 
 	public static boolean type = false;
 	public static AQuery mQuery;
-	// ×Ô¶¯¹ö¶¯µÄÏß³Ì
+	// è‡ªåŠ¨æ»šåŠ¨çš„çº¿ç¨‹
 	private ScheduledExecutorService scheduledExecutorService;
 
 	public MyPosterView(Context context, AttributeSet attrs) {
@@ -86,7 +86,7 @@ public class MyPosterView extends FrameLayout{
 		// layoutShowPoint.getLayoutParams())
 		// .setMargins(0,0,0,MyApplication.getAdapH(10));
 
-		// ÊµÏÖÒ»¸öPagerAdapter
+		// å®ç°ä¸€ä¸ªPagerAdapter
 	
 		try {
 			Field mScroller;
@@ -140,7 +140,7 @@ public class MyPosterView extends FrameLayout{
 
 	}
 	/**
-	 * ¹Ø±Õ¹ö¶¯
+	 * å…³é—­æ»šåŠ¨
 	 */
 	public void puseExecutorService() {
 		if (scheduledExecutorService != null) {
@@ -154,7 +154,7 @@ public class MyPosterView extends FrameLayout{
 	.bitmapConfig(Bitmap.Config.RGB_565)
 	.displayer(new SimpleBitmapDisplayer()).build();
 	/**
-	 * ÉèÖÃÊı¾İ
+	 * è®¾ç½®æ•°æ®
 	 */
 	public void setData(ArrayList<String> _imgDrawable, ImageLoader imageLoader) {
 		if (_imgDrawable == null)
@@ -177,13 +177,13 @@ public class MyPosterView extends FrameLayout{
 				imgs.add(img);
 				layoutShowPoint.addView(img);
 			}
-			// ÉèÖÃViewPagerÏÔÊ¾µÄÒ³ÃæÄÚÈİ
+			// è®¾ç½®ViewPageræ˜¾ç¤ºçš„é¡µé¢å†…å®¹
 			ImageView  imgView = new ImageView(context);
 			imgView.setScaleType(ScaleType.FIT_XY);
 			imgView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
 					LayoutParams.MATCH_PARENT));
 			// imgView.setBackgroundDrawable(imgDrawable[i]);
-			System.out.println("¼ÓÔØµÄÍ¼Æ¬À´Ô´:"+_imgDrawable.get(i));
+			System.out.println("åŠ è½½çš„å›¾ç‰‡æ¥æº:"+_imgDrawable.get(i));
 			
 //			imageLoader.displayImage(uri, imageView);
 			
@@ -207,7 +207,7 @@ public class MyPosterView extends FrameLayout{
 	}
 
 	/**
-	 * ÉèÖÃÊı¾İ
+	 * è®¾ç½®æ•°æ®
 	 * 
 	 * @param _imgDrawable
 	 */
@@ -221,7 +221,7 @@ public class MyPosterView extends FrameLayout{
 	}
 
 	/**
-	 * ÉèÖÃÊı¾İ
+	 * è®¾ç½®æ•°æ®
 	 * 
 	 * @param _imgDrawable
 	 */
@@ -237,14 +237,14 @@ public class MyPosterView extends FrameLayout{
 		if (isRun) {
 			scheduledExecutorService = Executors
 					.newSingleThreadScheduledExecutor();
-			// µ±ActivityÏÔÊ¾³öÀ´ºó£¬Ã¿Á½ÃëÖÓÇĞ»»Ò»´ÎÍ¼Æ¬ÏÔÊ¾
+			// å½“Activityæ˜¾ç¤ºå‡ºæ¥åï¼Œæ¯ä¸¤ç§’é’Ÿåˆ‡æ¢ä¸€æ¬¡å›¾ç‰‡æ˜¾ç¤º
 			scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1,
 					4, TimeUnit.SECONDS);
 		}
 	}
 
 	/**
-	 * ÉèÖÃÊı¾İ
+	 * è®¾ç½®æ•°æ®
 	 * 
 	 * @param _imgDrawable
 	 */
@@ -258,14 +258,14 @@ public class MyPosterView extends FrameLayout{
 	}
 
 	/**
-	 * ÉèÖÃµã»÷¼àÌı
+	 * è®¾ç½®ç‚¹å‡»ç›‘å¬
 	 */
 	public void setMyOnClickListener(MyPosterOnClick _Listener) {
 		this.clickListener = _Listener;
 	}
 
 	/**
-	 * Ïò×ó¹ö¶¯
+	 * å‘å·¦æ»šåŠ¨
 	 */
 	public void leftScroll() {
 		if (viewPage != null)
@@ -274,7 +274,7 @@ public class MyPosterView extends FrameLayout{
 	}
 
 	/**
-	 * ÏòÓÒ¹ö¶¯
+	 * å‘å³æ»šåŠ¨
 	 */
 	public void rightScroll() {
 		if (viewPage != null)
@@ -283,7 +283,7 @@ public class MyPosterView extends FrameLayout{
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°Ò³
+	 * è®¾ç½®å½“å‰é¡µ
 	 */
 	public void setCurrentPage(int position) {
 		if (imgDrawable != null)
@@ -300,38 +300,38 @@ public class MyPosterView extends FrameLayout{
 	};
 
 	/**
-	 * Çå¿ÕÊı¾İ£¬ÄÚ´æ»ØÊÕ
+	 * æ¸…ç©ºæ•°æ®ï¼Œå†…å­˜å›æ”¶
 	 */
 	public void clearMemory() {
 		// TODO Auto-generated method stub
 	 
 		clickListener = null;
 		context = null;
-		// ¹ö¶¯Õ¹Ê¾µÄ¿Ø¼ş
+		// æ»šåŠ¨å±•ç¤ºçš„æ§ä»¶
 		viewPage = null;
-		// ¹ö¶¯Õ¹Ê¾¿Ø¼şµÄadapter
+		// æ»šåŠ¨å±•ç¤ºæ§ä»¶çš„adapter
 		adapter = null;
-		// ÒªÕ¹Ê¾µÄ½çÃæ
+		// è¦å±•ç¤ºçš„ç•Œé¢
 		if (views != null) {
 			views.clear();
 			views = null;
 		}
-		// Õ¹Ê¾Í¼Æ¬µÄÒ³Âë£¨Ò»ÅÅµã±êÖ¾Õ¹Ê¾ÄÄÕÅÍ¼£©
+		// å±•ç¤ºå›¾ç‰‡çš„é¡µç ï¼ˆä¸€æ’ç‚¹æ ‡å¿—å±•ç¤ºå“ªå¼ å›¾ï¼‰
 		if (imgs != null) {
 			imgs.clear();
 			imgs = null;
 		}
-		// ¹ö¶¯Ê±µÄÊÂ¼ş¼àÌı
+		// æ»šåŠ¨æ—¶çš„äº‹ä»¶ç›‘å¬
 		
 		listener = null;
-		// ¡°µ±Ç°ÊÇÄÄÒ³¡±µÄ±êÖ¾µã²¼¾Ö
+		// â€œå½“å‰æ˜¯å“ªé¡µâ€çš„æ ‡å¿—ç‚¹å¸ƒå±€
 		layoutShowPoint = null;
-		// Õâ¸ö¿Ø¼şÄÚµÄÍ¼Æ¬£¨drawable£©¼¯ºÏ
+		// è¿™ä¸ªæ§ä»¶å†…çš„å›¾ç‰‡ï¼ˆdrawableï¼‰é›†åˆ
 		imgDrawable = null;
 		handler = null;
 	}
 
-	/** =========================ÄÚ²¿Àà===>Ò³ÃæÇĞ»»¼àÌı================================ */
+	/** =========================å†…éƒ¨ç±»===>é¡µé¢åˆ‡æ¢ç›‘å¬================================ */
 	class PageChangeListener implements OnPageChangeListener {
 		@Override
 		public void onPageScrollStateChanged(int arg0) {
@@ -348,7 +348,7 @@ public class MyPosterView extends FrameLayout{
 			curPosition = position;
 			if (isPointOut && imgs != null) {
 				for (int i = 0; i < imgs.size(); i++) {
-					// ²»ÊÇµ±Ç°Ñ¡ÖĞµÄpage£¬ÆäĞ¡Ô²µãÉèÖÃÎªÎ´Ñ¡ÖĞµÄ×´Ì¬
+					// ä¸æ˜¯å½“å‰é€‰ä¸­çš„pageï¼Œå…¶å°åœ†ç‚¹è®¾ç½®ä¸ºæœªé€‰ä¸­çš„çŠ¶æ€
 					imgs.get(i)
 							.setBackgroundResource(
 									(position % imgs.size() != i) ? R.drawable.common_point_normal
@@ -371,33 +371,33 @@ public class MyPosterView extends FrameLayout{
 		}
 
 		/**
-		 * ÒªÏÔÊ¾µÄÒ³ÃæµÄ¸öÊı
+		 * è¦æ˜¾ç¤ºçš„é¡µé¢çš„ä¸ªæ•°
 		 */
 		@Override
 		public int getCount() {
-			// ÉèÖÃ³É×î´óÖµÒÔ±ãÑ­»·»¬¶¯
+			// è®¾ç½®æˆæœ€å¤§å€¼ä»¥ä¾¿å¾ªç¯æ»‘åŠ¨
 			int cont = ((views == null) ? 0 : Integer.MAX_VALUE);
 			maxPage = cont;
 			return cont;
 		}
 
 		/**
-		 * »ñÈ¡Ò»¸öÖ¸¶¨Ò³ÃæµÄtitleÃèÊö Èç¹û·µ»ØnullÒâÎ¶×ÅÕâ¸öÒ³ÃæÃ»ÓĞ±êÌâ£¬Ä¬ÈÏµÄÊµÏÖ¾ÍÊÇ·µ»Ønull
-		 * Èç¹ûÒªÏÔÊ¾Ò³ÃæÉÏµÄtitleÔò´Ë·½·¨±ØĞëÊµÏÖ
+		 * è·å–ä¸€ä¸ªæŒ‡å®šé¡µé¢çš„titleæè¿° å¦‚æœè¿”å›nullæ„å‘³ç€è¿™ä¸ªé¡µé¢æ²¡æœ‰æ ‡é¢˜ï¼Œé»˜è®¤çš„å®ç°å°±æ˜¯è¿”å›null
+		 * å¦‚æœè¦æ˜¾ç¤ºé¡µé¢ä¸Šçš„titleåˆ™æ­¤æ–¹æ³•å¿…é¡»å®ç°
 		 */
 		@Override
 		public CharSequence getPageTitle(int position) {
-			// System.out.println("==±êÌâ==>"+titles[position]);
+			// System.out.println("==æ ‡é¢˜==>"+titles[position]);
 			// return titles[position];
 			return null;
 		}
 
 		/**
-		 * ´´½¨Ö¸¶¨positionµÄÒ³Ãæ¡£Õâ¸öÊÊÅäÆ÷»á½«Ò³Ãæ¼Óµ½ÈİÆ÷containerÖĞ¡£
+		 * åˆ›å»ºæŒ‡å®špositionçš„é¡µé¢ã€‚è¿™ä¸ªé€‚é…å™¨ä¼šå°†é¡µé¢åŠ åˆ°å®¹å™¨containerä¸­ã€‚
 		 * 
 		 * @param container
-		 *            ´´½¨³öµÄÊµÀı·Åµ½containerÖĞ£¬ÕâÀïµÄcontainer¾ÍÊÇviewPager
-		 * @return ·µ»ØÒ»¸öÄÜ±íÊ¾¸ÃÒ³ÃæµÄ¶ÔÏó£¬²»Ò»¶¨ÒªÊÇview£¬¿ÉÒÔÆäËûÈİÆ÷»òÕßÒ³Ãæ¡£
+		 *            åˆ›å»ºå‡ºçš„å®ä¾‹æ”¾åˆ°containerä¸­ï¼Œè¿™é‡Œçš„containerå°±æ˜¯viewPager
+		 * @return è¿”å›ä¸€ä¸ªèƒ½è¡¨ç¤ºè¯¥é¡µé¢çš„å¯¹è±¡ï¼Œä¸ä¸€å®šè¦æ˜¯viewï¼Œå¯ä»¥å…¶ä»–å®¹å™¨æˆ–è€…é¡µé¢ã€‚
 		 */
 		@Override
 		public Object instantiateItem(ViewGroup container, int position) {
@@ -416,14 +416,14 @@ public class MyPosterView extends FrameLayout{
 		}
 
 		/**
-		 * ´Ë·½·¨»á½«ÈİÆ÷ÖĞÖ¸¶¨Ò³Ãæ¸øÒÆ³ı ¸Ã·½·¨ÖĞµÄ²ÎÊıcontainerºÍposition¸úinstantiateItem·½·¨ÖĞµÄÄÚÈİÒ»ÖÂ
+		 * æ­¤æ–¹æ³•ä¼šå°†å®¹å™¨ä¸­æŒ‡å®šé¡µé¢ç»™ç§»é™¤ è¯¥æ–¹æ³•ä¸­çš„å‚æ•°containerå’Œpositionè·ŸinstantiateItemæ–¹æ³•ä¸­çš„å†…å®¹ä¸€è‡´
 		 * 
 		 * @param object
-		 *            Õâ¸öobject ¾ÍÊÇ instantiateItem·½·¨ÖĞ·µ»ØµÄÄÇ¸öObject
+		 *            è¿™ä¸ªobject å°±æ˜¯ instantiateItemæ–¹æ³•ä¸­è¿”å›çš„é‚£ä¸ªObject
 		 */
 		@Override
 		public void destroyItem(ViewGroup container, int position, Object object) {
-			// ÓÉÓÚĞèÒªËüÑ­»·¹ö¶¯£¬ËùÒÔ²»ÄÜ½«ÆäÇå³ıµô¡£
+			// ç”±äºéœ€è¦å®ƒå¾ªç¯æ»šåŠ¨ï¼Œæ‰€ä»¥ä¸èƒ½å°†å…¶æ¸…é™¤æ‰ã€‚
 			// if(position<views.size())
 			// {
 			// container.removeView(views.get(position));
@@ -431,12 +431,12 @@ public class MyPosterView extends FrameLayout{
 		}
 
 		/**
-		 * Õâ¸ö·½·¨¾ÍÊÇ±È½ÏÒ»ÏÂÈİÆ÷ÖĞÒ³ÃæºÍinstantiateItem·½·¨·µ»ØµÄObjectÊÇ²»ÊÇÍ¬Ò»¸ö
+		 * è¿™ä¸ªæ–¹æ³•å°±æ˜¯æ¯”è¾ƒä¸€ä¸‹å®¹å™¨ä¸­é¡µé¢å’ŒinstantiateItemæ–¹æ³•è¿”å›çš„Objectæ˜¯ä¸æ˜¯åŒä¸€ä¸ª
 		 * 
 		 * @param arg0
-		 *            ViewPagerÖĞµÄÒ»¸öÒ³Ãæ
+		 *            ViewPagerä¸­çš„ä¸€ä¸ªé¡µé¢
 		 * @param arg1
-		 *            instantiateItem·½·¨·µ»ØµÄ¶ÔÏó
+		 *            instantiateItemæ–¹æ³•è¿”å›çš„å¯¹è±¡
 		 */
 		@Override
 		public boolean isViewFromObject(View arg0, Object arg1) {

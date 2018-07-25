@@ -19,10 +19,10 @@ public class FtpImage {
 		client.connect("183.62.138.31", 2020);
 		client.login("ju918", "yunsen1230.");
 
-		String remotePathTmp = "/upload/phone/" + "//" + directoryname;//Ô¶³ÌÂ·¾¶
+		String remotePathTmp = "/upload/phone/" + "//" + directoryname;//è¿œç¨‹è·¯å¾„
 
 		try {
-			client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+			client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 		} catch (Exception e) {
                 e.printStackTrace();
 		} finally {

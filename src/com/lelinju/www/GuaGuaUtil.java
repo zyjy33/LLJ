@@ -17,7 +17,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.widget.TextView;
 /**
- * ¹ØÓÚ¹Î¹Î¿¨µÄ»¬¶¯²Ù×÷
+ * å…³äºåˆ®åˆ®å¡çš„æ»‘åŠ¨æ“ä½œ
  * @author cloor
  *
  */
@@ -68,13 +68,13 @@ public class GuaGuaUtil extends TextView {
 		mPath = new Path();
 		mBitmapPaint = new Paint();
 		mPaint = new Paint();
-		mPaint.setAntiAlias(true);// ¿¹¾â³İ
-		mPaint.setDither(true);// µİÉ«
+		mPaint.setAntiAlias(true);// æŠ—é”¯é½¿
+		mPaint.setDither(true);// é€’è‰²
 		mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
 		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setStrokeJoin(Paint.Join.ROUND); // Ç°Ô²½Ç
-		mPaint.setStrokeCap(Paint.Cap.ROUND); // ºóÔ²½Ç
-		mPaint.setStrokeWidth(mStrokeWidth); // ±Ê¿í
+		mPaint.setStrokeJoin(Paint.Join.ROUND); // å‰åœ†è§’
+		mPaint.setStrokeCap(Paint.Cap.ROUND); // ååœ†è§’
+		mPaint.setStrokeWidth(mStrokeWidth); // ç¬”å®½
 		mBitmap = Bitmap.createBitmap(W, H, Config.ARGB_8888);
 		mCanvas = new Canvas(mBitmap);
 		mCanvas.drawColor(mMaskColor);
@@ -148,35 +148,35 @@ public class GuaGuaUtil extends TextView {
 		return super.onTouchEvent(event);
 	}
 
-	// ÊÖÖ¸µãÏÂÆÁÄ»Ê±µ÷ÓÃ
+	// æ‰‹æŒ‡ç‚¹ä¸‹å±å¹•æ—¶è°ƒç”¨
 	private void touchDown(MotionEvent event) {
 		caculate = false;
-		// ÖØÖÃ»æÖÆÂ·Ïß£¬¼´Òş²ØÖ®Ç°»æÖÆµÄ¹ì¼£
+		// é‡ç½®ç»˜åˆ¶è·¯çº¿ï¼Œå³éšè—ä¹‹å‰ç»˜åˆ¶çš„è½¨è¿¹
 		mPath.reset();
 		float x = event.getX();
 		float y = event.getY();
 		mX = x;
 		mY = y;
-		// mPath»æÖÆµÄ»æÖÆÆğµã
+		// mPathç»˜åˆ¶çš„ç»˜åˆ¶èµ·ç‚¹
 		mPath.moveTo(x, y);
 	}
-	// ÊÖÖ¸ÔÚÆÁÄ»ÉÏ»¬¶¯Ê±µ÷ÓÃ
+	// æ‰‹æŒ‡åœ¨å±å¹•ä¸Šæ»‘åŠ¨æ—¶è°ƒç”¨
 	private boolean touchMove(MotionEvent event) {
 		caculate = false;
 		final float x = event.getX();
 		final float y = event.getY();
 		final float previousX = mX;
 		final float previousY = mY;
-		// ÉèÖÃ±´Èû¶ûÇúÏßµÄ²Ù×÷µãÎªÆğµãºÍÖÕµãµÄÒ»°ë
+		// è®¾ç½®è´å¡å°”æ›²çº¿çš„æ“ä½œç‚¹ä¸ºèµ·ç‚¹å’Œç»ˆç‚¹çš„ä¸€åŠ
 		float cX = (x + previousX) / 2;
 		float cY = (y + previousY) / 2;
 		final float dx = Math.abs(x - previousX);
 		final float dy = Math.abs(y - previousY);
 		boolean move = false;
 		if (dx >= MV || dy >= MV) {
-			// ¶ş´Î±´Èû¶û£¬ÊµÏÖÆ½»¬ÇúÏß£»cX, cYÎª²Ù×÷µã x,yÎªÖÕµã
+			// äºŒæ¬¡è´å¡å°”ï¼Œå®ç°å¹³æ»‘æ›²çº¿ï¼›cX, cYä¸ºæ“ä½œç‚¹ x,yä¸ºç»ˆç‚¹
 			mPath.quadTo(cX, cY, x, y);
-			// µÚ¶ş´ÎÖ´ĞĞÊ±£¬µÚÒ»´Î½áÊøµ÷ÓÃµÄ×ø±êÖµ½«×÷ÎªµÚ¶ş´Îµ÷ÓÃµÄ³õÊ¼×ø±êÖµ
+			// ç¬¬äºŒæ¬¡æ‰§è¡Œæ—¶ï¼Œç¬¬ä¸€æ¬¡ç»“æŸè°ƒç”¨çš„åæ ‡å€¼å°†ä½œä¸ºç¬¬äºŒæ¬¡è°ƒç”¨çš„åˆå§‹åæ ‡å€¼
 			mX = x;
 			mY = y;
 			move = true;
@@ -193,14 +193,14 @@ public class GuaGuaUtil extends TextView {
 		public void run() {
 			while (mRun) {
 				SystemClock.sleep(100);
-				// ÊÕµ½¼ÆËãÃüÁî£¬Á¢¼´¿ªÊ¼¼ÆËã
+				// æ”¶åˆ°è®¡ç®—å‘½ä»¤ï¼Œç«‹å³å¼€å§‹è®¡ç®—
 				if (caculate) {
 					caculate = false;
 					int w = mWidth;
 					int h = mHeight;
 					float wipeArea = 0;
 					float totalArea = w * h;
-					// ¼ÆËãºÄÊ±100ºÁÃë×óÓÒ
+					// è®¡ç®—è€—æ—¶100æ¯«ç§’å·¦å³
 					Bitmap bitmap = mBitmap;
 					if (mPixels == null) {
 						mPixels = new int[w * h];
@@ -217,7 +217,7 @@ public class GuaGuaUtil extends TextView {
 					if (wipeArea > 0 && totalArea > 0) {
 						int percent = (int) (wipeArea * 100 / totalArea);
 						if(percent>=5){
-							//mHandlerµÄË³Ğò
+							//mHandlerçš„é¡ºåº
 							Message msg = mHandler.obtainMessage();
 							msg.what = 0;
 							parentHandler.sendEmptyMessage(-1);
@@ -243,7 +243,7 @@ public class GuaGuaUtil extends TextView {
 				mCanvas.drawColor(Color.TRANSPARENT,PorterDuff.Mode.CLEAR);
 				invalidate();
 				if (mWipeListener != null) {
-					//-1´ú±íÍê³ÉÁË³é½±¶¯×÷
+					//-1ä»£è¡¨å®Œæˆäº†æŠ½å¥–åŠ¨ä½œ
 						mWipeListener.onWipe(-1);
 				}
 				break;

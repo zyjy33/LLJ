@@ -28,9 +28,9 @@ public class QuCantuanAdapter extends BaseAdapter {
     public static String foreman_id,foreman_name,tuan_id;
 	java.util.Date now;
 	java.util.Date date;
-	private MyCount count;//¶¨Ê±Àà¶ÔÏó 
+	private MyCount count;//å®šæ—¶ç±»å¯¹è±¡ 
 	private long current_time = 0;
-	private long time = 0;//ºÁÃëÎªµ¥Î»
+	private long time = 0;//æ¯«ç§’ä¸ºå•ä½
 	TextView tv_time;
 	LinearLayout ll_time;
 	ViewHolder holder;
@@ -87,7 +87,7 @@ public class QuCantuanAdapter extends BaseAdapter {
 			if (id.equals(tuan_id)) {
 				int zongshu = Integer.parseInt(listll.get(i).getPeople());
 				String tuanshu = String.valueOf(zongshu - list.get(position).getGroupon_item_member());
-				tv_renshu.setText("»¹²î"+tuanshu+"ÈË³ÉÍÅ"); 
+				tv_renshu.setText("è¿˜å·®"+tuanshu+"äººæˆå›¢"); 
 			}
 		}
 		String user_name = list.get(position).getForeman_name();
@@ -121,7 +121,7 @@ public class QuCantuanAdapter extends BaseAdapter {
 			System.out.println("1-------------"+time);
 			count = new MyCount(time, 1000);
 			System.out.println("2-------------"+count);
-			count.start();//¿ªÊ¼¼ÆÊ± 
+			count.start();//å¼€å§‹è®¡æ—¶ 
 			
 			
 //			Message msg = new Message();
@@ -133,7 +133,7 @@ public class QuCantuanAdapter extends BaseAdapter {
 //			long hour= JuTuanGouXqActivity.hour;
 //			long min= JuTuanGouXqActivity.min;
 //			long s= JuTuanGouXqActivity.s;
-//			tv_time.setText("Ê£ÓàÊ±¼ä: "+day+"Ìì" + hour + "Ğ¡Ê±" + min + "·Ö" + s+"Ãë"); 
+//			tv_time.setText("å‰©ä½™æ—¶é—´: "+day+"å¤©" + hour + "å°æ—¶" + min + "åˆ†" + s+"ç§’"); 
 //		}
 		
 	    tv_qucantuan.setOnClickListener(new OnClickListener() {
@@ -153,34 +153,34 @@ public class QuCantuanAdapter extends BaseAdapter {
 		return convertView;
 	}
 	
-	//»ñÈ¡µ±Ç°Ê±¼ä
+	//è·å–å½“å‰æ—¶é—´
 //		private long getCurrentTime() { 
 //			return current_time; 
 //		}
 		
-	//ÊµÏÖ¼ÆÊ±¹¦ÄÜµÄÀà 
+	//å®ç°è®¡æ—¶åŠŸèƒ½çš„ç±» 
 		class MyCount extends MyCountdownTimer { 
 
 			public MyCount(long millisInFuture, long countDownInterval) { 
 				super(millisInFuture, countDownInterval); 
-//				holder.tv_time.setText("Ê£ÓàÊ±¼ä:"); 
+//				holder.tv_time.setText("å‰©ä½™æ—¶é—´:"); 
 				current_time = millisInFuture;
 				System.out.println("current_time-------------"+current_time);
 				   long day=current_time/(24*60*60*1000);
 				   long hour=(current_time/(60*60*1000)-day*24);
 				   long min=((current_time/(60*1000))-day*24*60-hour*60);
 				   long s=(current_time/1000-day*24*60*60-hour*60*60-min*60);
-//				   System.out.println(""+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
-//				   tv_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + hour + ":" + min + ":" + s); 
-				   holder.tv_time.setText("Ê£ÓàÊ±¼ä: "+day+"Ìì" + hour + "Ğ¡Ê±" + min + "·Ö" + s+"Ãë"); 
+//				   System.out.println(""+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
+//				   tv_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + hour + ":" + min + ":" + s); 
+				   holder.tv_time.setText("å‰©ä½™æ—¶é—´: "+day+"å¤©" + hour + "å°æ—¶" + min + "åˆ†" + s+"ç§’"); 
 			} 
 			@Override 
 			public void onFinish() {
-				//Ã½Ìå¶ÔÏó 
+				//åª’ä½“å¯¹è±¡ 
 //				final MediaPlayer media = MediaPlayer.create(MainActivity.this, R.raw.alarm); 
-				//¶Ô»°¿ò¶ÔÏó 
+				//å¯¹è¯æ¡†å¯¹è±¡ 
 //				final AlertDialog mydialog = new AlertDialog.Builder(MainActivity.this).setMessage( 
-//						"Ê±¼äµ½£¡").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener(){ 
+//						"æ—¶é—´åˆ°ï¼").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener(){ 
 	//
 //							@Override 
 //							public void onClick(DialogInterface dialog, int which) { 
@@ -191,7 +191,7 @@ public class QuCantuanAdapter extends BaseAdapter {
 //								btn_start.setEnabled(true); 
 //							} 
 //						}).create(); 
-//				mydialog.show();//²¥·Å½áÊøºóÏÔÊ¾¶Ô»°¿ò 
+//				mydialog.show();//æ’­æ”¾ç»“æŸåæ˜¾ç¤ºå¯¹è¯æ¡† 
 //				tv_time.setText(""); 
 //				ll_time.setVisibility(View.GONE);
 				
@@ -200,14 +200,14 @@ public class QuCantuanAdapter extends BaseAdapter {
 //				msg.obj = list;
 				handler.sendMessage(msg);
 //				try { 
-//					media.prepare(); //×¼±¸²¥·ÅÒôÀÖ 
+//					media.prepare(); //å‡†å¤‡æ’­æ”¾éŸ³ä¹ 
 //				} catch (IllegalStateException e) { 
 //					e.printStackTrace(); 
 //				} catch (Exception e) { 
 //					e.printStackTrace(); 
 //				} 
-//				media.start();//²¥·ÅÒôÀÖ 
-//				media.setOnCompletionListener(new OnCompletionListener() {//²¥·Å½áÊøºó»á»°¿òÏûÊ§£¬ÖØÖÃ°´Å¥×´Ì¬ 
+//				media.start();//æ’­æ”¾éŸ³ä¹ 
+//				media.setOnCompletionListener(new OnCompletionListener() {//æ’­æ”¾ç»“æŸåä¼šè¯æ¡†æ¶ˆå¤±ï¼Œé‡ç½®æŒ‰é’®çŠ¶æ€ 
 //					@Override 
 //					public void onCompletion(MediaPlayer mp) { 
 //						mydialog.hide(); 
@@ -218,7 +218,7 @@ public class QuCantuanAdapter extends BaseAdapter {
 //				}); 
 			} 
 			
-			//¸üĞÂÊ£ÓàÊ±¼ä 
+			//æ›´æ–°å‰©ä½™æ—¶é—´ 
 			@Override 
 			public void onTick(long millisUntilFinished, int percent) {
 				current_time = millisUntilFinished;
@@ -228,20 +228,20 @@ public class QuCantuanAdapter extends BaseAdapter {
 				   long hour=(current_time/(60*60*1000)-day*24);
 				   long min=((current_time/(60*1000))-day*24*60-hour*60);
 				   long s=(current_time/1000-day*24*60*60-hour*60*60-min*60);
-				   System.out.println(""+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
-//				   tv_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + hour + ":" + min + ":" + s); 
+				   System.out.println(""+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
+//				   tv_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + hour + ":" + min + ":" + s); 
 //				   for (int i = 0; i < list.size(); i++) {
-					   holder.tv_time.setText("Ê£ÓàÊ±¼ä: "+day+"Ìì" + hour + "Ğ¡Ê±" + min + "·Ö" + s+"Ãë"); 
+					   holder.tv_time.setText("å‰©ä½™æ—¶é—´: "+day+"å¤©" + hour + "å°æ—¶" + min + "åˆ†" + s+"ç§’"); 
 //				  }
 			} 
 		} 
 		private class ViewHolder{
 			private TextView tv_time;
-			/** Ğ¡Ê± **/
+			/** å°æ—¶ **/
 			private TextView tv_hour;
-			/** ·ÖÖÓ **/
+			/** åˆ†é’Ÿ **/
 			private TextView tv_minute;
-			/** Ãë **/
+			/** ç§’ **/
 			private TextView tv_second;		
 		}
 	

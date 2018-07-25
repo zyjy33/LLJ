@@ -80,7 +80,7 @@ public class MyShopingCartAdapter extends BaseAdapter {
 		return position;
 	}
 	
-	   // ³õÊ¼»¯ ÉèÖÃËùÓĞcheckbox¶¼ÎªÎ´Ñ¡Ôñ  
+	   // åˆå§‹åŒ– è®¾ç½®æ‰€æœ‰checkboxéƒ½ä¸ºæœªé€‰æ‹©  
     public void init() {  
         isSelected = new HashMap<Integer, Boolean>();  
         for (int i = 0; i < list.size(); i++) {  
@@ -107,27 +107,27 @@ public class MyShopingCartAdapter extends BaseAdapter {
 			holder.btn_add = (ImageButton) convertView.findViewById(R.id.img_btn_add);
 			holder.tv_money = (TextView) convertView.findViewById(R.id.tv_money);
 			holder.shopcart_item_check = (CheckBox) convertView.findViewById(R.id.shopcart_item_check);
-			// ¹ØÓÚÊıÁ¿
-			holder.market_information_seps_add = (TextView) convertView.findViewById(R.id.market_information_seps_add);//Ôö¼Ó
-			holder.market_information_seps_del = (TextView) convertView.findViewById(R.id.market_information_seps_del);//¼õÉÙ
-			holder.market_information_seps_num = (TextView) convertView.findViewById(R.id.market_information_seps_num);//¸öÊı
+			// å…³äºæ•°é‡
+			holder.market_information_seps_add = (TextView) convertView.findViewById(R.id.market_information_seps_add);//å¢åŠ 
+			holder.market_information_seps_del = (TextView) convertView.findViewById(R.id.market_information_seps_del);//å‡å°‘
+			holder.market_information_seps_num = (TextView) convertView.findViewById(R.id.market_information_seps_num);//ä¸ªæ•°
 //			holder.market_information_seps_num.setText("1");
 			convertView.setTag(holder);
 		} else {
 			holder = (ShopCartViewHolder) convertView.getTag();
 		}
 		
-		System.out.println("ÊÇÊ²Ã´111111111111111111111111111==========="+position);
+		System.out.println("æ˜¯ä»€ä¹ˆ111111111111111111111111111==========="+position);
 		final boolean ai = list.get(position).isCheck();
-//		System.out.println("ÊÇÊ²Ã´000==========="+ai.isCheck());
-		System.out.println("ÊÇÊ²Ã´00022==========="+list.get(position).isCheck);
+//		System.out.println("æ˜¯ä»€ä¹ˆ000==========="+ai.isCheck());
+		System.out.println("æ˜¯ä»€ä¹ˆ00022==========="+list.get(position).isCheck);
 		ShopCartData zhou = list.get(position);
-		System.out.println("ÊÇÊ²Ã´==========="+list.size());
+		System.out.println("æ˜¯ä»€ä¹ˆ==========="+list.size());
 //		holder.tv_warename.setText(ai.getTitle());
-//		holder.tv_color.setText("£¤" + ai.getSell_price());
+//		holder.tv_color.setText("ï¿¥" + ai.getSell_price());
 		holder.tv_warename.setText(list.get(position).getTitle());
-		holder.tv_color.setText("£¤" + list.get(position).getSell_price());
-		holder.tv_size.setText("£¤" + list.get(position).getMarket_price());
+		holder.tv_color.setText("ï¿¥" + list.get(position).getSell_price());
+		holder.tv_size.setText("ï¿¥" + list.get(position).getMarket_price());
 		holder.et_number.setText(list.get(position).getQuantity()+ "");
 		System.out.println("7================"+ list.get(position).sell_price);
 		System.out.println("8================"+ list.get(position).quantity);
@@ -139,9 +139,9 @@ public class MyShopingCartAdapter extends BaseAdapter {
 			String price = list.get(i).sell_price;
 			int number = list.get(i).getQuantity();
 			BigDecimal   c   =   new   BigDecimal(Double.parseDouble(price)*number);
-			//±£Áô2Î»Ğ¡Êı
+			//ä¿ç•™2ä½å°æ•°
 			double   total_c_ll   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-			System.out.println("¼Û¸ñÊÇ¶àÉÙ0============="+total_c);
+			System.out.println("ä»·æ ¼æ˜¯å¤šå°‘0============="+total_c);
 			a += total_c_ll;
 		}
 		
@@ -150,7 +150,7 @@ public class MyShopingCartAdapter extends BaseAdapter {
 //		message2.obj = total_c;
 		handler.sendMessage(message);
 		total_c = Double.toString(a);
-		System.out.println("===×Ü¼Æ======="+a);
+		System.out.println("===æ€»è®¡======="+a);
 		
 //		holder.btn_order_cancle.setOnClickListener(new OnClickListener() {
 //
@@ -174,11 +174,11 @@ public class MyShopingCartAdapter extends BaseAdapter {
 //		});
 		
 //		if (ai.isCheck()) {
-//			System.out.println("ÊÇÊ²Ã´1===========");
+//			System.out.println("æ˜¯ä»€ä¹ˆ1===========");
 //			holder.shopcart_item_check.setChecked(true);
 //		} else {
 //			holder.shopcart_item_check.setChecked(false);
-//			System.out.println("ÊÇÊ²Ã´2===========");
+//			System.out.println("æ˜¯ä»€ä¹ˆ2===========");
 //		}
 		
 //		holder.shopcart_item_check.setChecked(isSelected.get(position));  
@@ -191,13 +191,13 @@ public class MyShopingCartAdapter extends BaseAdapter {
 				
 //				final ShopCartData ai = list.get(position);
 //				ShopCartData zhou = list.get(position);
-//				System.out.println("ÊÇÊ²Ã´==========="+zhou);
-				System.out.println("ÊÇÊ²Ã´111111111111111111111111111==========="+position);
+//				System.out.println("æ˜¯ä»€ä¹ˆ==========="+zhou);
+				System.out.println("æ˜¯ä»€ä¹ˆ111111111111111111111111111==========="+position);
 				boolean isCheck = ai;
-//				System.out.println("ÊÇÊ²Ã´0==========="+isCheck);
+//				System.out.println("æ˜¯ä»€ä¹ˆ0==========="+isCheck);
 //				holder.shopcart_item_check.setChecked(true);
 				
-				System.out.println("ÊÇÊ²Ã´1==========="+holder.shopcart_item_check.isChecked());
+				System.out.println("æ˜¯ä»€ä¹ˆ1==========="+holder.shopcart_item_check.isChecked());
 				
 //				ai.setCheck(!isCheck);
 				if (holder.shopcart_item_check.isChecked() == false) {
@@ -206,21 +206,21 @@ public class MyShopingCartAdapter extends BaseAdapter {
 
 					cart_id = list.get(position).getId();
 //					int id = Integer.parseInt(cart_id);
-					System.out.println("ÊÇÊ²Ã´1==========="+holder.shopcart_item_check.isChecked());
-					System.out.println("ÊÇÊ²Ã´11==========="+cart_id);
+					System.out.println("æ˜¯ä»€ä¹ˆ1==========="+holder.shopcart_item_check.isChecked());
+					System.out.println("æ˜¯ä»€ä¹ˆ11==========="+cart_id);
 //					list_id.add(cart_id);
 					list_id.remove(cart_id);
 //				}else  if(isCheck == true) {
 				}else if (holder.shopcart_item_check.isChecked() == true){
 					
 					cart_id = list.get(position).getId();
-					System.out.println("ÊÇÊ²Ã´2==========="+holder.shopcart_item_check.isChecked());
-					System.out.println("ÊÇÊ²Ã´22==========="+cart_id);
+					System.out.println("æ˜¯ä»€ä¹ˆ2==========="+holder.shopcart_item_check.isChecked());
+					System.out.println("æ˜¯ä»€ä¹ˆ22==========="+cart_id);
 					list_id.add(cart_id);
 				}
-//				 System.out.println("ÊÇÊ²Ã´1==========="+list_id.size());
+//				 System.out.println("æ˜¯ä»€ä¹ˆ1==========="+list_id.size());
 				 for(int i=0;i<list_id.size();i++){
-					 System.out.println("=====²âÊÔ´ğ°¸1======================="+list_id.get(i));
+					 System.out.println("=====æµ‹è¯•ç­”æ¡ˆ1======================="+list_id.get(i));
 			     } 
 				
 			}
@@ -254,7 +254,7 @@ public class MyShopingCartAdapter extends BaseAdapter {
 ////				}else if (statuo == false){
 ////					statuo = true;
 ////				}
-//				Toast.makeText(context, "µã»÷ÁË", 100).show();
+//				Toast.makeText(context, "ç‚¹å‡»äº†", 100).show();
 //
 ////				Message msg = new Message();
 ////				msg.what = 2;
@@ -284,7 +284,7 @@ public class MyShopingCartAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				changeAdd(position);
 
-				// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+				// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 				cartData = wareDao.findResult();
 				Message message2 = new Message();
 				message2.what = 200;
@@ -299,7 +299,7 @@ public class MyShopingCartAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				changeReduce(position);
 
-				// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+				// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 				cartData = wareDao.findResult();
 				Message message2 = new Message();
 				message2.what = 200;
@@ -329,16 +329,16 @@ public class MyShopingCartAdapter extends BaseAdapter {
 		String price = list.get(index).sell_price;
 		int number = list.get(index).getQuantity();
 		BigDecimal   c   =   new   BigDecimal(Double.parseDouble(price)*number);
-		//±£Áô2Î»Ğ¡Êı
+		//ä¿ç•™2ä½å°æ•°
 		double   total_c_ll   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 		total_c = Double.toString(total_c_ll);
-		System.out.println("¼Û¸ñÊÇ¶àÉÙ============="+total_c);
+		System.out.println("ä»·æ ¼æ˜¯å¤šå°‘============="+total_c);
 		String cart_id = list.get(index).getId();
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/cart_goods_update?cart_id="+cart_id+"&user_id="+19+"&quantity="+number+"",new AsyncHttpResponseHandler() {
 			@Override
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
-//				System.out.println("==========================·ÃÎÊ½Ó¿Ú³É¹¦£¡"+arg1);
+//				System.out.println("==========================è®¿é—®æ¥å£æˆåŠŸï¼"+arg1);
 				super.onSuccess(arg0, arg1);
 			}
 			
@@ -359,22 +359,22 @@ public class MyShopingCartAdapter extends BaseAdapter {
 			String price = list.get(index).sell_price;
 			int number = list.get(index).getQuantity();
 			BigDecimal   c   =   new   BigDecimal(Double.parseDouble(price)*number);
-			//±£Áô2Î»Ğ¡Êı
+			//ä¿ç•™2ä½å°æ•°
 			double   total_c_ll   =   c.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
 			total_c = Double.toString(total_c_ll);
-			System.out.println("¼Û¸ñÊÇ¶àÉÙ1============="+total_c);
+			System.out.println("ä»·æ ¼æ˜¯å¤šå°‘1============="+total_c);
 			String cart_id = list.get(index).getId();
 			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/cart_goods_update?cart_id="+cart_id+"&user_id="+19+"&quantity="+number+"",new AsyncHttpResponseHandler() {
 				@Override
 				public void onSuccess(int arg0, String arg1) {
 					// TODO Auto-generated method stub
-//					System.out.println("==========================2·ÃÎÊ½Ó¿Ú³É¹¦£¡"+arg1);
+//					System.out.println("==========================2è®¿é—®æ¥å£æˆåŠŸï¼"+arg1);
 					super.onSuccess(arg0, arg1);
 				}
 				
 			}, context);
 		} else {
-			Toast.makeText(context, "²»ÄÜÔÙ¼õÁË", 200).show();
+			Toast.makeText(context, "ä¸èƒ½å†å‡äº†", 200).show();
 		}
 		
 		
@@ -397,16 +397,16 @@ public class MyShopingCartAdapter extends BaseAdapter {
 ////					String quantity = list.get(position).getQuantity()+1;
 ////					int numll = Integer.parseInt(quantity);
 //					int numll = num+1;
-//					System.out.println("Êı×ÖÊÇ¶àÉÙ1==="+numll);
+//					System.out.println("æ•°å­—æ˜¯å¤šå°‘1==="+numll);
 //					
 //					String price = list.get(position).getSell_price();
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ11============="+price);
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘11============="+price);
 //					BigDecimal   c   =   new   BigDecimal(Double.parseDouble(price)*numll);
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ12============="+c);
-//					//±£Áô2Î»Ğ¡Êı
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘12============="+c);
+//					//ä¿ç•™2ä½å°æ•°
 //					double   total_c_ll   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 //					String total_c = Double.toString(total_c_ll);
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ============="+total_c);
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘============="+total_c);
 //					
 //				} catch (Exception e) {
 //					// TODO: handle exception
@@ -415,7 +415,7 @@ public class MyShopingCartAdapter extends BaseAdapter {
 //			}
 //		});
 		
-		//²úÆ·¼õÉÙ
+		//äº§å“å‡å°‘
 //	holder.market_information_seps_del.setOnClickListener(new View.OnClickListener() {
 //
 //			@Override
@@ -427,17 +427,17 @@ public class MyShopingCartAdapter extends BaseAdapter {
 //				if (num != 1) {
 //					holder.market_information_seps_num.setText(String.valueOf(num - 1));
 //					int numll = num-1;
-//					System.out.println("Êı×ÖÊÇ¶àÉÙ2==="+numll);
+//					System.out.println("æ•°å­—æ˜¯å¤šå°‘2==="+numll);
 //					String price = list.get(position).getSell_price();
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ21============="+price);
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘21============="+price);
 //					BigDecimal   c   =   new   BigDecimal(Double.parseDouble(price)*numll);
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ22============="+c);
-//					//±£Áô2Î»Ğ¡Êı
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘22============="+c);
+//					//ä¿ç•™2ä½å°æ•°
 //					double   total_c_ll   =   c.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
 //					String total_c = Double.toString(total_c_ll);
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ============="+total_c);
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘============="+total_c);
 //				} else {
-//					Toast.makeText(context, "²»ÄÜÔÙ¼õÁË", 200).show();
+//					Toast.makeText(context, "ä¸èƒ½å†å‡äº†", 200).show();
 //				}
 //				} catch (Exception e) {
 //					// TODO: handle exception

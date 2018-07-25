@@ -62,8 +62,8 @@ public class XiuGaiDizhiAdapter extends BaseAdapter {
 				.findViewById(R.id.tv_ware_total);
 
 //		tv_name.setText(list.get(position).proName);
-//		tv_price.setText("£§" + list.get(position).retailPrice);
-//		tv_total.setText(" ’≤ÿ»À∆¯      " + list.get(position).collectTotal);
+//		tv_price.setText("Ôø•" + list.get(position).retailPrice);
+//		tv_total.setText("Êî∂Ëóè‰∫∫Ê∞î      " + list.get(position).collectTotal);
 //		loader.displayImage(
 //				RealmName.REALM_NAME + "/admin/"
 //						+ list.get(position).proFaceImg, image);

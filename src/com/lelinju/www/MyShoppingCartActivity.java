@@ -66,7 +66,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 //	private static List list_id = new ArrayList();
 	int shopping_id;
 	private int ID;
-	private int checkNum; // ¼ÇÂ¼Ñ¡ÖĞµÄÌõÄ¿ÊıÁ¿
+	private int checkNum; // è®°å½•é€‰ä¸­çš„æ¡ç›®æ•°é‡
 	String id;
 	private SharedPreferences spPreferences;
 	String user_name,user_id;
@@ -90,19 +90,19 @@ public class MyShoppingCartActivity extends BaseActivity {
 		loadWeather();
 		setTotalCost();
 		
-		// È«Ñ¡°´Å¥µÄ»Øµ÷½Ó¿Ú
+		// å…¨é€‰æŒ‰é’®çš„å›è°ƒæ¥å£
 //		shopcart_item_check.setOnClickListener(new OnClickListener() {
 //			@Override
 //			public void onClick(View v) {
-//				// ±éÀúlistµÄ³¤¶È£¬½«MyAdapterÖĞµÄmapÖµÈ«²¿ÉèÎªtrue
-//				Toast.makeText(MyShoppingCartActivity.this,"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
-//				System.out.println("ÖµÊÇ¶àÉÙ11==============="+list_ll.size());
+//				// éå†listçš„é•¿åº¦ï¼Œå°†MyAdapterä¸­çš„mapå€¼å…¨éƒ¨è®¾ä¸ºtrue
+//				Toast.makeText(MyShoppingCartActivity.this,"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
+//				System.out.println("å€¼æ˜¯å¤šå°‘11==============="+list_ll.size());
 //				for (int i = 0; i < list_ll.size(); i++) {
 //					MyShopingCartllAdapter.getIsSelected().put(i, true);
 //				}
-//				// ÊıÁ¿ÉèÎªlistµÄ³¤¶È
+//				// æ•°é‡è®¾ä¸ºlistçš„é•¿åº¦
 //				checkNum = list_ll.size();
-//				// Ë¢ĞÂlistviewºÍTextViewµÄÏÔÊ¾
+//				// åˆ·æ–°listviewå’ŒTextViewçš„æ˜¾ç¤º
 //				dataChanged();
 //			}
 //		});
@@ -124,7 +124,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 ////					intent.putExtra("obj", carts);
 ////					startActivity(intent);
 //				}else {
-//					Toast.makeText(MyShoppingCartActivity.this,"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+//					Toast.makeText(MyShoppingCartActivity.this,"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 //				}
 				
 				loadgouwuche();
@@ -151,7 +151,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
 								String status = jsonObject.getString("status");
-								System.out.println("¹ºÎïÇåµ¥================"+arg1);
+								System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 								String info = jsonObject.getString("info");
 //								 status1 = true;
 								if (status.equals("y")) {
@@ -171,7 +171,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 								        	str.append(s+",");
 								        }
 								        str.delete(str.lastIndexOf(","),str.length()); 
-								        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
+								        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
 								        
 								        
 //									Toast.makeText(getActivity(), info, 200).show();
@@ -192,7 +192,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 						@Override
 						public void onFailure(Throwable arg0, String arg1) {
 							// TODO Auto-generated method stub
-							System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+							System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 							System.out.println("========================="+arg0);
 							System.out.println("=========================="+arg1);
 							super.onFailure(arg0, arg1);
@@ -207,12 +207,12 @@ public class MyShoppingCartActivity extends BaseActivity {
 			}
 	}
 	
-	// Ë¢ĞÂlistviewºÍTextViewµÄÏÔÊ¾
+	// åˆ·æ–°listviewå’ŒTextViewçš„æ˜¾ç¤º
 		private void dataChanged() {
-			// Í¨ÖªlistViewË¢ĞÂ
+			// é€šçŸ¥listViewåˆ·æ–°
 			adapter.notifyDataSetChanged();
-			// TextViewÏÔÊ¾×îĞÂµÄÑ¡ÖĞÊıÄ¿
-			btn_sittle_account.setText("ÒÑÑ¡ÖĞ" + checkNum + "Ïî");
+			// TextViewæ˜¾ç¤ºæœ€æ–°çš„é€‰ä¸­æ•°ç›®
+			btn_sittle_account.setText("å·²é€‰ä¸­" + checkNum + "é¡¹");
 		};
 	public void setTotalCost(){
 //		tv_shanchu.setOnClickListener(new OnClickListener() {
@@ -227,7 +227,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 	}
 	
 	/**
-	 * ³õÊ¼»¯¿Ø¼şÀà±ğ
+	 * åˆå§‹åŒ–æ§ä»¶ç±»åˆ«
 	 */
 	private void ininate( ) {
 		list_none = (LinearLayout)findViewById(R.id.list_none);
@@ -251,7 +251,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 //			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 //					int arg2, long arg3) {
 //				// TODO Auto-generated method stub
-//				Toast.makeText(MyShoppingCartActivity.this,"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+//				Toast.makeText(MyShoppingCartActivity.this,"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 ////				ID = Integer.parseInt(list_ll.get(arg2).getId());
 ////				dialog(ID);
 //				return false;
@@ -277,26 +277,26 @@ public class MyShoppingCartActivity extends BaseActivity {
 				list_shop_cart.setChoiceMode(ListView.CHOICE_MODE_SINGLE);  
 				System.out.println("111111================"+list_id.size());
 				 if (list_ll.size() != 0) {
-						btn_sittle_account.setText("È¥½áËã(" + list_ll.size() + ")");
+						btn_sittle_account.setText("å»ç»“ç®—(" + list_ll.size() + ")");
 					}else {
-						btn_sittle_account.setText("È¥½áËã");
+						btn_sittle_account.setText("å»ç»“ç®—");
 					}
 				 
 				 
-				// °ó¶¨listViewµÄ¼àÌıÆ÷
+				// ç»‘å®šlistViewçš„ç›‘å¬å™¨
 //				list_shop_cart.setOnItemClickListener(new OnItemClickListener() {
 //							@Override
 //							public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 //									long arg3) {
 //								try {
 //									
-//								// È¡µÃViewHolder¶ÔÏó£¬ÕâÑù¾ÍÊ¡È¥ÁËÍ¨¹ı²ã²ãµÄfindViewByIdÈ¥ÊµÀı»¯ÎÒÃÇĞèÒªµÄcbÊµÀıµÄ²½Öè
+//								// å–å¾—ViewHolderå¯¹è±¡ï¼Œè¿™æ ·å°±çœå»äº†é€šè¿‡å±‚å±‚çš„findViewByIdå»å®ä¾‹åŒ–æˆ‘ä»¬éœ€è¦çš„cbå®ä¾‹çš„æ­¥éª¤
 //								ViewHolder holder = (ViewHolder) arg1.getTag();
-//								// ¸Ä±äCheckBoxµÄ×´Ì¬
+//								// æ”¹å˜CheckBoxçš„çŠ¶æ€
 //								holder.cb.toggle();
-//								// ½«CheckBoxµÄÑ¡ÖĞ×´¿ö¼ÇÂ¼ÏÂÀ´
+//								// å°†CheckBoxçš„é€‰ä¸­çŠ¶å†µè®°å½•ä¸‹æ¥
 //								MyShopingCartllAdapter.getIsSelected().put(arg2, holder.cb.isChecked());
-//								// µ÷ÕûÑ¡¶¨ÌõÄ¿
+//								// è°ƒæ•´é€‰å®šæ¡ç›®
 //								if (holder.cb.isChecked() == true) {
 ////									checkNum++;
 //									String cart_id = list_ll.get(arg2).getId();
@@ -306,8 +306,8 @@ public class MyShoppingCartActivity extends BaseActivity {
 ////									checkNum--;
 //									System.out.println("2222================"+list_ll.size());
 //								}
-//								// ÓÃTextViewÏÔÊ¾
-////								tv_show.setText("ÒÑÑ¡ÖĞ" + checkNum + "Ïî");
+//								// ç”¨TextViewæ˜¾ç¤º
+////								tv_show.setText("å·²é€‰ä¸­" + checkNum + "é¡¹");
 //								} catch (Exception e) {
 //									// TODO: handle exception
 //									e.printStackTrace();
@@ -323,7 +323,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 			case 200:
 				try {
 				String total_c = MyShopingCartllAdapter.total_c;
-				tv_endmoney.setText("£¤" + total_c);
+				tv_endmoney.setText("ï¿¥" + total_c);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -339,9 +339,9 @@ public class MyShoppingCartActivity extends BaseActivity {
 					shopping_id = MyShopingCartllAdapter.id;
 					System.out.println("2222================"+shopping_id);
 //					if (id>0) {
-						btn_sittle_account.setText("È¥½áËã(" + shopping_id + ")");
+						btn_sittle_account.setText("å»ç»“ç®—(" + shopping_id + ")");
 //					}else {
-//						Toast.makeText(MyShoppingCartActivity.this,"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+//						Toast.makeText(MyShoppingCartActivity.this,"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 //					}
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -352,7 +352,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 			case 1:
 				try {
 				String total_cll = MyShopingCartllAdapter.total_c;
-				tv_endmoney.setText("£¤" + total_cll);
+				tv_endmoney.setText("ï¿¥" + total_cll);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -361,7 +361,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 			case 3:
 				try {
 //				String[] orderid = (String[]) msg.obj;
-//				System.out.println("Êı×éÖµ11=================="+orderid);
+//				System.out.println("æ•°ç»„å€¼11=================="+orderid);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -375,7 +375,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 	};
 	
 	/**
-	 * »ñÈ¡¹ºÎï³µÁĞ±íÊı¾İ
+	 * è·å–è´­ç‰©è½¦åˆ—è¡¨æ•°æ®
 	 */
 	private void loadWeather() {
 		list_ll = new ArrayList<ShopCartData>();
@@ -384,7 +384,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 		System.out.println("1==================" + user_id);
 		if (!user_id.equals("")) {
 		
-		System.out.println("½á¹ûÄØ1=============="+id);
+		System.out.println("ç»“æœå‘¢1=============="+id);
 //		if (id!= null) {
 			
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_shopping_cart?pageSize=10&pageIndex=1&user_id="+user_id+""
@@ -425,7 +425,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 //								for (int j = 0; j < geshu; j++) {
 //									sum +=geshu;
 //								}
-								System.out.println("×Ü¶î================"+sum);
+								System.out.println("æ€»é¢================"+sum);
 								list_ll.add(dm);
 //								list_ll.add(data);
 							}
@@ -433,7 +433,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 							
 							System.out.println("2================"+list_ll.size());
 							String zhou = dm.getSell_price();
-//							tv_endmoney.setText("£¤" + zhou);
+//							tv_endmoney.setText("ï¿¥" + zhou);
 							handler.sendEmptyMessage(0);
 							progress.CloseProgress();
 							}else {
@@ -441,7 +441,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 								adapter = new MyShopingCartllAdapter(list_ll, MyShoppingCartActivity.this, handler);
 								list_shop_cart.setAdapter(adapter);
 								adapter.notifyDataSetChanged();
-								Toast.makeText(MyShoppingCartActivity.this, "¹ºÎï³µÔİÎŞÊı¾İ", 200).show();
+								Toast.makeText(MyShoppingCartActivity.this, "è´­ç‰©è½¦æš‚æ— æ•°æ®", 200).show();
 							}
 						} catch (JSONException e) {
 							// TODO Auto-generated catch block
@@ -457,9 +457,9 @@ public class MyShoppingCartActivity extends BaseActivity {
 
 	protected void dialog(final int ID) {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -467,7 +467,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 //				final String str = RealmName.REALM_NAME
 //						+ "/mi/receiveOrderInfo.ashx?act=DeleteOneUserCollectInfo&yth="
 //						+ yth + "&ProductItemId=" + ID + "&key=" + key;
-//				Log.v("data1", "É¾³ı:" + strUrl);
+//				Log.v("data1", "åˆ é™¤:" + strUrl);
 //				progress.CreateProgress();
 //				new Thread() {
 //					public void run() {
@@ -483,7 +483,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -495,9 +495,9 @@ public class MyShoppingCartActivity extends BaseActivity {
 	}
 	protected void dialog(final int index, final int ID) {
 		AlertDialog.Builder builder = new Builder(MyShoppingCartActivity.this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 //				if (adapter != null) {
@@ -509,7 +509,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 							+ "&cart_id=" + ID;
 					AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(),MyShoppingCartActivity.this);
 
-					// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+					// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 //					data = wareDao.findResult();
 //					Message message = new Message();
 //					message.what = 200;
@@ -525,7 +525,7 @@ public class MyShoppingCartActivity extends BaseActivity {
 //				}
 			}
 		});
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
@@ -544,14 +544,14 @@ public class MyShoppingCartActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

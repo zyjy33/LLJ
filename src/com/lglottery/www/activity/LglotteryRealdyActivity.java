@@ -33,7 +33,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 /**
- * ¸¶¿î
+ * ä»˜æ¬¾
  * @author cloor
  *
  */
@@ -52,9 +52,9 @@ public class LglotteryRealdyActivity extends BaseActivity {
 		public void dispatchMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case 0:
-				// ¸üĞÂÓà¶îĞÅÏ¢
+				// æ›´æ–°ä½™é¢ä¿¡æ¯
 				balance = Double.parseDouble(personUtil
-						.getValue("PassTicketBalance"));// Ê¹ÓÃµÄÊÇÏÖ½ğÈ¯
+						.getValue("PassTicketBalance"));// ä½¿ç”¨çš„æ˜¯ç°é‡‘åˆ¸
 				jinbi = Double.parseDouble(personUtil.getValue("credits"));
 				readly_xjq.setText(getString(R.string.readly_xjq, balance));
 				readly_jd.setText(getString(R.string.readly_jd, jinbi));
@@ -66,7 +66,7 @@ public class LglotteryRealdyActivity extends BaseActivity {
 	};
 
 	/**
-	 * ¹ØÓÚÊı¾İµÄ³õÊ¼»¯
+	 * å…³äºæ•°æ®çš„åˆå§‹åŒ–
 	 */
 	private void init() {
 		sharedUtils = new SharedUtils(getApplicationContext(),
@@ -78,7 +78,7 @@ public class LglotteryRealdyActivity extends BaseActivity {
 		lglottery_realdy_tip = (TextView) findViewById(R.id.lglottery_realdy_tip);
 		lottery_pay = (Button) findViewById(R.id.lottery_pay);
 		switch (bean.getTag()) {
-		// 0´ú±í´ú½ğÈ¯£¬1´ú±í½ğ¶¹
+		// 0ä»£è¡¨ä»£é‡‘åˆ¸ï¼Œ1ä»£è¡¨é‡‘è±†
 		case 0:
 			lglottery_realdy_tip.setText(getString(R.string.readly_tip_d,
 					bean.getBalance()));
@@ -101,7 +101,7 @@ public class LglotteryRealdyActivity extends BaseActivity {
 	}
 
 	/**
-	 * ¹¹ÔìÊı¾İ¼¯ºÏ
+	 * æ„é€ æ•°æ®é›†åˆ
 	 * 
 	 * @param entry
 	 * @return
@@ -119,7 +119,7 @@ public class LglotteryRealdyActivity extends BaseActivity {
 	}
 
 	/**
-	 * Ö§¸¶¶©µ¥
+	 * æ”¯ä»˜è®¢å•
 	 */
 	private OnClickListener clickListener = new OnClickListener() {
 		@Override
@@ -128,7 +128,7 @@ public class LglotteryRealdyActivity extends BaseActivity {
 			switch (arg0.getId()) {
 			case R.id.lottery_pay:
 				if (pay_balance + pay_jinbi != 50.0) {
-					Toast.makeText(getApplicationContext(), "ÕË»§½ğ¶îÎŞ·¨´ïµ½¿Û³ıµÄ½ğ¶î",
+					Toast.makeText(getApplicationContext(), "è´¦æˆ·é‡‘é¢æ— æ³•è¾¾åˆ°æ‰£é™¤çš„é‡‘é¢",
 							200).show();
 				} else {
 					RequestParams params = new RequestParams();
@@ -140,12 +140,12 @@ public class LglotteryRealdyActivity extends BaseActivity {
 							.iterator()));
 					switch (bean.getTag()) {
 					case 0:
-						// ´ú½ğÈ¯
+						// ä»£é‡‘åˆ¸
 						params.put("GameGroupCostshopPassTicket",
 								String.valueOf(bean.getBalance()));
 						break;
 					case 1:
-						// ½ğ¶¹
+						// é‡‘è±†
 						params.put("GameGroupCostCredit",
 								String.valueOf(bean.getJinbi()));
 						break;
@@ -212,14 +212,14 @@ public class LglotteryRealdyActivity extends BaseActivity {
 		}
 	};
 	/**
-	 * ´ú½ğÈ¯ºÍ½ğ±ÒµÄÊÂ¼ş¼àÌı
+	 * ä»£é‡‘åˆ¸å’Œé‡‘å¸çš„äº‹ä»¶ç›‘å¬
 	 */
 	private CompoundButton.OnCheckedChangeListener changeListener = new CompoundButton.OnCheckedChangeListener() {
 		@Override
 		public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
 			switch (arg0.getId()) {
 			case R.id.readly_xjq_btn:
-				// ´ú½ğÈ¯
+				// ä»£é‡‘åˆ¸
 				if (arg1) {
 					changeBalance();
 
@@ -227,15 +227,15 @@ public class LglotteryRealdyActivity extends BaseActivity {
 					pay_balance = 0;
 					readly_xjq.setText(getString(R.string.readly_xjq, balance));
 					if (readly_jd_btn.isChecked()) {
-						// Èç¹û½ğ¶¹ÊÇÑ¡ÖĞµÄ×´Ì¬£¬ÄÇÃ´ÔÙ´Î¸üĞÂÑ¡ÖĞ×´Ì¬
+						// å¦‚æœé‡‘è±†æ˜¯é€‰ä¸­çš„çŠ¶æ€ï¼Œé‚£ä¹ˆå†æ¬¡æ›´æ–°é€‰ä¸­çŠ¶æ€
 						changeJindou();
 					}
 				}
-				WLog.v("µã»÷ÓÅ»İÈ¯Ö®ºó  ½ğ±Ò:" + jinbi + "ÓÅ»İÈ¯:" + balance + "Ö§¸¶½ğ±Ò:"
-						+ pay_jinbi + "Ö§¸¶ÓÅ»İÈ¯:" + pay_balance);
+				WLog.v("ç‚¹å‡»ä¼˜æƒ åˆ¸ä¹‹å  é‡‘å¸:" + jinbi + "ä¼˜æƒ åˆ¸:" + balance + "æ”¯ä»˜é‡‘å¸:"
+						+ pay_jinbi + "æ”¯ä»˜ä¼˜æƒ åˆ¸:" + pay_balance);
 				break;
 			case R.id.readly_jd_btn:
-				// ½ğ¶¹
+				// é‡‘è±†
 				if (arg1) {
 					changeJindou();
 
@@ -243,14 +243,14 @@ public class LglotteryRealdyActivity extends BaseActivity {
 					pay_jinbi = 0;
 					readly_jd.setText(getString(R.string.readly_jd, jinbi));
 					if (!readly_xjq_btn.isChecked()) {
-						readly_xjq_btn.setClickable(true);// »Ö¸´ÓÅ»İÈ¯°´Å¥¿Éµã»÷
+						readly_xjq_btn.setClickable(true);// æ¢å¤ä¼˜æƒ åˆ¸æŒ‰é’®å¯ç‚¹å‡»
 					} else {
 						readly_xjq_btn.setClickable(true);
 						changeBalance();
 					}
 				}
-				WLog.v("µã»÷½ğ±ÒÖ®ºó  ½ğ±Ò:" + jinbi + "ÓÅ»İÈ¯:" + balance + "Ö§¸¶½ğ±Ò:"
-						+ pay_jinbi + "Ö§¸¶ÓÅ»İÈ¯:" + pay_balance);
+				WLog.v("ç‚¹å‡»é‡‘å¸ä¹‹å  é‡‘å¸:" + jinbi + "ä¼˜æƒ åˆ¸:" + balance + "æ”¯ä»˜é‡‘å¸:"
+						+ pay_jinbi + "æ”¯ä»˜ä¼˜æƒ åˆ¸:" + pay_balance);
 				break;
 			default:
 				break;
@@ -259,12 +259,12 @@ public class LglotteryRealdyActivity extends BaseActivity {
 	};
 
 	/**
-	 * ´ú½ğÈ¯µÄ±ä»¯
+	 * ä»£é‡‘åˆ¸çš„å˜åŒ–
 	 */
 	private void changeBalance() {
 		double balance_temp = PAY - pay_jinbi;
 		if (balance > balance_temp) {
-			// Èç¹ûƒ»İÈ¯´óì¶Ö§¸¶½ğî~
+			// å¦‚æœå„ªæƒ åˆ¸å¤§æ–¼æ”¯ä»˜é‡‘é¡
 			pay_balance = balance_temp;
 			readly_xjq.setText(getString(R.string.readly_xjq_y, balance_temp,
 					balance - balance_temp));
@@ -275,20 +275,20 @@ public class LglotteryRealdyActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½ğ¶¹µÄ×ƒ»¯
+	 * é‡‘è±†çš„è®ŠåŒ–
 	 */
 	private void changeJindou() {
 		if (jinbi > PAY) {
-			// Èç¹û½ğ±Ò´óÓÚĞèÖ§¸¶µÄ½ğ¶î£¬ÄÇÃ´ÓÅÏÈ¿Û³ı½ğ¶¹
+			// å¦‚æœé‡‘å¸å¤§äºéœ€æ”¯ä»˜çš„é‡‘é¢ï¼Œé‚£ä¹ˆä¼˜å…ˆæ‰£é™¤é‡‘è±†
 			pay_jinbi = PAY;
 			readly_jd
 					.setText(getString(R.string.readly_jd_y, PAY, jinbi - PAY));
 			readly_xjq.setText(getString(R.string.readly_xjq, balance));
 			readly_xjq_btn.setChecked(false);
-			readly_xjq_btn.setClickable(false);// ÓÅ»İÈ¯°´Å¥²»¿Éµã»÷
+			readly_xjq_btn.setClickable(false);// ä¼˜æƒ åˆ¸æŒ‰é’®ä¸å¯ç‚¹å‡»
 		} else {
-			readly_xjq_btn.setClickable(true);// »Ö¸´ÓÅ»İÈ¯°´Å¥¿Éµã»÷
-			// ²é¿´ÓÅ»İÈ¯ÊÇ·ñµã»÷
+			readly_xjq_btn.setClickable(true);// æ¢å¤ä¼˜æƒ åˆ¸æŒ‰é’®å¯ç‚¹å‡»
+			// æŸ¥çœ‹ä¼˜æƒ åˆ¸æ˜¯å¦ç‚¹å‡»
 			pay_jinbi = jinbi;
 			readly_jd.setText(getString(R.string.readly_jd_y, pay_jinbi, 0));
 			if (readly_xjq_btn.isChecked()) {
@@ -313,7 +313,7 @@ public class LglotteryRealdyActivity extends BaseActivity {
 	}
 
 	/**
-	 * ³õÊ¼»¯¸öÈËĞÅÏ¢
+	 * åˆå§‹åŒ–ä¸ªäººä¿¡æ¯
 	 */
 	private void init_personal() {
 		Map<String, String> params = new HashMap<String, String>();
@@ -346,9 +346,9 @@ public class LglotteryRealdyActivity extends BaseActivity {
 								handler.sendEmptyMessage(0);
 
 							} else {
-								// ±íÊ¾ÓĞ´íÎó
+								// è¡¨ç¤ºæœ‰é”™è¯¯
 								Toast.makeText(getApplicationContext(),
-										"Éí·İÑéÖ¤¹ıÆÚ£¬ÇëÖØĞÂµÇÂ¼!", 200).show();
+										"èº«ä»½éªŒè¯è¿‡æœŸï¼Œè¯·é‡æ–°ç™»å½•!", 200).show();
 								sharedUtils.clear();
 								AppManager.getAppManager().finishActivity();
 							}

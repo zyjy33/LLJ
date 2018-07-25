@@ -8,7 +8,7 @@ import android.view.Window;
 import com.hengyushop.demo.at.BaseActivity;
 import com.lelinju.www.R;
 /**
- * …Ã∆∑œÍ«È
+ *
  * @author Administrator
  *
  */

@@ -4,7 +4,7 @@ import com.example.taobaohead.Myapplication;
 
 public class Utils {
 	/**
-	 * ½«dip×ª³Épx
+	 * å°†dipè½¬æˆpx
 	 * 
 	 * @param dpValue
 	 * @return

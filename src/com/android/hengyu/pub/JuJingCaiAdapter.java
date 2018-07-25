@@ -78,26 +78,26 @@ public class JuJingCaiAdapter extends BaseAdapter {
 		}
 
 		/**
-		 * Àà±ğÑ¡Ïî
+		 * ç±»åˆ«é€‰é¡¹
 		 */
 		try {
 			// System.out.println("List======================"+List.size());
-			System.out.println("ÁĞ±í±êÌâ-----------------------------------title-----------"+List.get(position).getTitle());
+			System.out.println("åˆ—è¡¨æ ‡é¢˜-----------------------------------title-----------"+List.get(position).getTitle());
 			
 			 System.out.println("List======================"+List.get(position).getCategory_id());
-			if (List.get(position).getCategory_id().equals("1703")) {//¾Û¾«²Ê
+			if (List.get(position).getCategory_id().equals("1703")) {//èšç²¾å½©
 				holder.iv_zhuti.setBackgroundResource(R.drawable.jujingcai);
 			}else if (List.get(position).getCategory_id().equals("1702")) {
 				holder.iv_zhuti.setBackgroundResource(R.drawable.jutuan);
-			}else if (List.get(position).getCategory_id().equals("1704")) {//¾ÛÍÅ
+			}else if (List.get(position).getCategory_id().equals("1704")) {//èšå›¢
 				holder.iv_zhuti.setBackgroundResource(R.drawable.just);
 			}
-			System.out.println("¸öÊı1======================" + position);
+			System.out.println("ä¸ªæ•°1======================" + position);
 			holder.tv_titel.setText(List.get(position).getTitle());
-			holder.tv_price.setText("£¤" + List.get(position).getPrice());
-			holder.tv_groupon_price.setText("£¤"+ List.get(position).getSell_price());
-			holder.tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
-			holder.tv_tuan.setText(List.get(position).getPeople() + "ÈËÍÅ");
+			holder.tv_price.setText("ï¿¥" + List.get(position).getPrice());
+			holder.tv_groupon_price.setText("ï¿¥"+ List.get(position).getSell_price());
+			holder.tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
+			holder.tv_tuan.setText(List.get(position).getPeople() + "äººå›¢");
 			mAq.id(holder.img).image(RealmName.REALM_NAME_HTTP+ List.get(position).getImg_url());
 			
 //			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -121,7 +121,7 @@ public class JuJingCaiAdapter extends BaseAdapter {
 //				   System.out.println("end_time-------------"+end_time);
 //					System.out.println("time-------------"+time);
 //					if (end_time > time) {
-//						holder.tv_anniu.setText("È¥¿ªÍÅ");
+//						holder.tv_anniu.setText("å»å¼€å›¢");
 ////						holder.tv_anniu.setOnClickListener(new OnClickListener() {
 ////
 ////							@Override
@@ -143,10 +143,10 @@ public class JuJingCaiAdapter extends BaseAdapter {
 ////								}
 ////							}
 ////						});
-//						System.out.println("1-------Á¢¼´²ÎÓë------");
+//						System.out.println("1-------ç«‹å³å‚ä¸------");
 //					}else {
-//						System.out.println("2-----ÒÑ½áÊø--------");
-//						holder.tv_anniu.setText("ÒÑ½áÊø");
+//						System.out.println("2-----å·²ç»“æŸ--------");
+//						holder.tv_anniu.setText("å·²ç»“æŸ");
 //					}
 //				} catch (Exception e) {
 //					// TODO: handle exception

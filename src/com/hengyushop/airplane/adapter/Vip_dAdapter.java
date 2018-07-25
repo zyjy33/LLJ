@@ -85,8 +85,8 @@ public class Vip_dAdapter extends BaseAdapter {
 		holder.view1.setText(d.getName());
 		holder.des.setText(d.getDes());
 		holder.view2.setText("");
-		holder.jiage.setText(" £¤"+d.getPrice());
-		String str = "ËÍ"+d.getBao()+"ºì°ü";
+		holder.jiage.setText(" ï¿¥"+d.getPrice());
+		String str = "é€"+d.getBao()+"çº¢åŒ…";
 		SpannableStringBuilder style=new SpannableStringBuilder(str);
 	    style.setSpan(new ForegroundColorSpan(Color.RED),0,1,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 		holder.hongbao.setText(style);

@@ -87,9 +87,9 @@ public class DianZiPiaoActivity extends BaseActivity {
 		TextView tv_feiyong = (TextView) findViewById(R.id.tv_feiyong);
 		TextView tv_name = (TextView) findViewById(R.id.tv_name);
 		if (ZhongAnMinShenXqActivity.retailPrice.equals("0.0")) {
-			tv_feiyong.setText("∑—”√£∫£§"+"√‚∑—");
+			tv_feiyong.setText("Ë¥πÁî®ÔºöÔø•"+"ÂÖçË¥π");
 		}else {
-			tv_feiyong.setText("∑—”√£∫£§"+ZhongAnMinShenXqActivity.retailPrice);
+			tv_feiyong.setText("Ë¥πÁî®ÔºöÔø•"+ZhongAnMinShenXqActivity.retailPrice);
 		}
 //		tv_name.setText(BaoMinTiShiActivity.real_name+"("+BaoMinTiShiActivity.user_name+")");
 		tv_name.setText(real_name+"("+user_name+")");
@@ -99,8 +99,8 @@ public class DianZiPiaoActivity extends BaseActivity {
 		TextView tv_time = (TextView) findViewById(R.id.tv_time);
 		
 		tv_ware_name.setText(getIntent().getStringExtra("hd_title"));
-		tv_time.setText(" ±º‰£∫"+getIntent().getStringExtra("start_time")+"--"+getIntent().getStringExtra("end_time"));
-		tv_dizhi.setText("µÿµ„£∫"+getIntent().getStringExtra("address"));
+		tv_time.setText("Êó∂Èó¥Ôºö"+getIntent().getStringExtra("start_time")+"--"+getIntent().getStringExtra("end_time"));
+		tv_dizhi.setText("Âú∞ÁÇπÔºö"+getIntent().getStringExtra("address"));
 		
 		ImageView img_ware = (ImageView) findViewById(R.id.img_ware);
 		img_ware.setBackgroundResource(R.drawable.hd_reweiam);

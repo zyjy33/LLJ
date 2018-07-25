@@ -78,7 +78,7 @@ public class JDLayoutAdapter extends BaseAdapter {
 		holder.item1.setText(list.get(index).getName());
 		holder.item2.setText(list.get(index).getScenSum());
 		holder.item3.setText(list.get(index).getAmountAdv());
-		holder.item4.setText(list.get(index).getAmount()+"Ôª");
+		holder.item4.setText(list.get(index).getAmount()+"å…ƒ");
 	
 		
 			System.out.println("lat:"+lat+"----lon:"+log);
@@ -87,11 +87,11 @@ public class JDLayoutAdapter extends BaseAdapter {
 					Double.parseDouble(list.get(index).getLat()),
 					Double.parseDouble(list.get(index).getLon()),
 					lat, log);
-			System.out.println("µÃµ½µÄÊý¾Ý:"+jl);
+			System.out.println("å¾—åˆ°çš„æ•°æ®:"+jl);
 			if(jl>1000){
-				holder.item5.setText(String.valueOf(Math.floor(jl/1000))+"¹«Àï");
+				holder.item5.setText(String.valueOf(Math.floor(jl/1000))+"å…¬é‡Œ");
 			}else {
-				holder.item5.setText(String.valueOf(jl)+"Ã×");
+				holder.item5.setText(String.valueOf(jl)+"ç±³");
 			}
 			
 		} catch (NumberFormatException e) {

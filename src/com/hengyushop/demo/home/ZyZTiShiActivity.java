@@ -22,7 +22,7 @@ import com.lelinju.www.JulsActivity;
 import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 /**
- * ÌáÊ¾°ó¶¨ÊÖ»úºÅ
+ * æç¤ºç»‘å®šæ‰‹æœºå·
  * @author 
  *
  */
@@ -56,8 +56,8 @@ public class ZyZTiShiActivity extends Activity implements OnClickListener{
 		Button ji_xu = (Button) findViewById(R.id.ji_xu);
 		Button ji_ls = (Button) findViewById(R.id.ji_ls);
 		
-		if (getIntent().getStringExtra("drawn").contains("ºÜÒÅº¶")) {
-			ji_ls.setText("¼ÌĞø²ÎÓë");
+		if (getIntent().getStringExtra("drawn").contains("å¾ˆé—æ†¾")) {
+			ji_ls.setText("ç»§ç»­å‚ä¸");
 		}
 		
 		lglottery_pop_closed.setOnClickListener(new OnClickListener() {
@@ -74,7 +74,7 @@ public class ZyZTiShiActivity extends Activity implements OnClickListener{
 			public void onClick(View arg0) {
 //				Intent intent = new Intent(ZyZTiShiActivity.this,JulsActivity.class);
 //				startActivity(intent);
-				if (getIntent().getStringExtra("drawn").contains("ºÜÒÅº¶")) {
+				if (getIntent().getStringExtra("drawn").contains("å¾ˆé—æ†¾")) {
 					finish();
 				}else {
 					getjiangxiang(); 
@@ -106,7 +106,7 @@ public class ZyZTiShiActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * ±£´æĞÒÔË½±ĞÒ½±Ïî(×ªÒ»×ª)
+	 * ä¿å­˜å¹¸è¿å¥–å¹¸å¥–é¡¹(è½¬ä¸€è½¬)
 	 */
 	private void getjiangxiang() {
 			SharedPreferences spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
@@ -116,11 +116,11 @@ public class ZyZTiShiActivity extends Activity implements OnClickListener{
 			String id = getIntent().getStringExtra("id");
 			String strUrlone = RealmName.REALM_NAME_LL + 
 					"/add_article_activity_award?user_id="+user_id+"&user_name="+user_name+"&award_id="+id+"&sign="+login_sign+"";
-			System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+strUrlone);
+			System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -143,15 +143,15 @@ public class ZyZTiShiActivity extends Activity implements OnClickListener{
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, ZyZTiShiActivity.this);
 			
 	}
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -159,7 +159,7 @@ public class ZyZTiShiActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.btnConfirm://È¡Ïû
+		case R.id.btnConfirm://å–æ¶ˆ
 			finish();
 			break;
 		case R.id.btnCancle://

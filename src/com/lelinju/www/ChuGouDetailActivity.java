@@ -47,12 +47,12 @@ public class ChuGouDetailActivity extends BaseActivity{
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case 2:
-					// ÔÚ´Ëµ¯³öÑ¡Ôñ¿ò
+					// åœ¨æ­¤å¼¹å‡ºé€‰æ‹©æ¡†
 					System.out.println("???");
-					// Ìø×ªµ½¸¶¿îÒ³Ãæ
+					// è·³è½¬åˆ°ä»˜æ¬¾é¡µé¢
 					if (banks != null && banks.size() != 0) {
-						// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-						System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+						// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+						System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 						// initPopupWindow1();
 						// showPopupWindow1(btn_OK);
 						Intent intent = new Intent(ChuGouDetailActivity.this,
@@ -65,7 +65,7 @@ public class ChuGouDetailActivity extends BaseActivity{
 						intent.putExtras(bundle);
 						startActivity(intent);
 					} else {
-						// ±íÊ¾Ê×´ÎÖ§¸¶
+						// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 						Intent intent = new Intent(ChuGouDetailActivity.this,
 								PayActivity.class);
 						Bundle bundle = new Bundle();
@@ -170,7 +170,7 @@ public class ChuGouDetailActivity extends BaseActivity{
 										item.setLastId("-1");
 										item.setType("-1");
 										banks.add(item);
-										bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+										bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 									}
 								Message message = new Message();
 								message.what = 2;

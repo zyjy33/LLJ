@@ -117,7 +117,7 @@ public class ZhiFuFangShiActivity extends BaseActivity implements OnClickListene
 		}
 	};
 	/**
-	 * ÅäËÍ·½Ê½
+	 * é…é€æ–¹å¼
 	 */
 	private void loadWeather() {
 		AsyncHttp.get(RealmName.REALM_NAME_LL + "/get_express_list?top=5"
@@ -126,7 +126,7 @@ public class ZhiFuFangShiActivity extends BaseActivity implements OnClickListene
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("Êä³öËùÓĞÆ´ÍÅ»î¶¯ÁĞ±í========="+arg1);
+				System.out.println("è¾“å‡ºæ‰€æœ‰æ‹¼å›¢æ´»åŠ¨åˆ—è¡¨========="+arg1);
 				try {
 					list = new ArrayList<JuTuanGouData>();
 					

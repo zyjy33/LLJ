@@ -67,7 +67,7 @@ public class WideChildAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(final int position, View view, ViewGroup arg2) {
-		// System.out.println(users.size()+"Ó^œÒ"+users.get(arg0).getImg());
+		// System.out.println(users.size()+"È†≠ÂÉè"+users.get(arg0).getImg());
 		final ViewHolder holder;
 		if (view == null || view.getTag(R.drawable.ic_launcher + position) == null) {
 			holder = new ViewHolder();

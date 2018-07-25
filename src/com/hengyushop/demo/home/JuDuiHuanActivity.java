@@ -69,7 +69,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_juhuihuan_tetle);//activity_juhuihuan_tetle
-		//ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+		//åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //      Thread.setDefaultUncaughtExceptionHandler(this);
 		progress = new DialogProgress(this);
 		Initialize();
@@ -87,7 +87,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 	}
 //	public void uncaughtException(Thread arg0, Throwable arg1) {
 //		// TODO Auto-generated method stub
-//		 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//		 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //        Log.i("AAA", "uncaughtException   " + arg1);
 //	}
 	private void Initialize() {
@@ -126,7 +126,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 	}
 	
 	/**
-	 * µÚÒ»¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬ä¸€ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -135,7 +135,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 		RUN_METHOD = 1;
 		list = new ArrayList<JuTuanGouData>();
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 0;
 			list = new ArrayList<JuTuanGouData>();
 		}
@@ -147,7 +147,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ111"+arg1);
+								System.out.println("=====================äºŒçº§å€¼111"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -215,7 +215,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 	private void loadguanggao() {
 		try {
 			
-		//¹ã¸æ¹ö¶¯	
+		//å¹¿å‘Šæ»šåŠ¨	
 		AsyncHttp.get(RealmName.REALM_NAME_LL
 				+ "/get_adbanner_list?advert_id=12",
 				new AsyncHttpResponseHandler() {
@@ -288,7 +288,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 			switch (msg.what) {
 			case 0:
 //				myadapter.putData(lists);
-				System.out.println("=====================2ÕâÀï"+list.size());
+				System.out.println("=====================2è¿™é‡Œ"+list.size());
 				
 				jdhadapter = new JuduihuanAdaper(list, JuDuiHuanActivity.this,imageLoader);
 				myGridView.setAdapter(jdhadapter);
@@ -334,7 +334,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 	};
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -352,7 +352,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -371,7 +371,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 		}
 	};
 	
-	//ÉÌ¼ÒÁĞ±í
+	//å•†å®¶åˆ—è¡¨
 //	private void loadCate(){
 //		progress.CreateProgress();
 //		AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_category_list?" +
@@ -388,7 +388,7 @@ public class JuDuiHuanActivity extends BaseActivity{
 //	ArrayList<ArrayList<WareData>> lists = null;
 //	public void parse(String st) {
 //		try {
-//			System.out.println("Öµ=========="+st);
+//			System.out.println("å€¼=========="+st);
 //			list = new ArrayList<EnterpriseData>();
 //			JSONObject jsonObject = new JSONObject(st);
 //			JSONArray jsonArray = jsonObject.getJSONArray("data");

@@ -60,7 +60,7 @@ public class MyAssetsAdapter extends BaseAdapter {
 //			convertView = LinearLayout.inflate(context,R.layout.listitem_xsgy, null);
 			convertView = LinearLayout.inflate(context,R.layout.listitem_myasste, null);
 		}
-		System.out.println("=====================����ֵ16");
+		System.out.println("=====================二级值16");
 //		TextView tv_user_name = (TextView) convertView.findViewById(R.id.tv_user_name);
 		TextView tv_income = (TextView) convertView.findViewById(R.id.tv_income);
 		TextView tv_add_time = (TextView) convertView.findViewById(R.id.tv_add_time);
@@ -69,34 +69,34 @@ public class MyAssetsAdapter extends BaseAdapter {
 		
 		if (MyAssetsActivity.type.equals("1")) {
 			if (list.get(position).income.equals("0.00")){
-				tv_income.setText("-"+list.get(position).expense+"Ԫ");
+				tv_income.setText("-"+list.get(position).expense+"元");
 			}else if (!list.get(position).income.equals("0.00")){
-				tv_income.setText("+"+list.get(position).income+"Ԫ");
+				tv_income.setText("+"+list.get(position).income+"元");
 			}
 		}else if (MyAssetsActivity.type.equals("4")) {
 			if (list.get(position).income.equals("0.00")){
-				tv_income.setText("-"+list.get(position).expense+"Ԫ");
+				tv_income.setText("-"+list.get(position).expense+"元");
 			}else if (!list.get(position).income.equals("0.00")){
-				tv_income.setText("+"+list.get(position).income+"Ԫ");
+				tv_income.setText("+"+list.get(position).income+"元");
 			}
 		}else if (MyAssetsActivity.type.equals("2")) {
 			if (list.get(position).income.equals("0.00")){
-				tv_income.setText("-"+list.get(position).expense+"��");
+				tv_income.setText("-"+list.get(position).expense+"个");
 			}else if (!list.get(position).income.equals("0.00")){
-				tv_income.setText("+"+list.get(position).income+"��");
+				tv_income.setText("+"+list.get(position).income+"个");
 			}
 		}else if (MyAssetsActivity.type.equals("3")) {
 			if (list.get(position).income.equals("0.00")){
-				tv_income.setText("-"+list.get(position).expense+"Ԫ");
+				tv_income.setText("-"+list.get(position).expense+"元");
 			}else if (!list.get(position).income.equals("0.00")){
-				tv_income.setText("+"+list.get(position).income+"Ԫ");
+				tv_income.setText("+"+list.get(position).income+"元");
 			}
 		}
 		
 		
 		tv_remark.setText(list.get(position).remark);
 //		tv_user_name.setText(list.get(position).user_name);
-//		tv_income.setText("+"+list.get(position).income+"Ԫ");
+//		tv_income.setText("+"+list.get(position).income+"元");
 		tv_add_time.setText(list.get(position).add_time);
  
 

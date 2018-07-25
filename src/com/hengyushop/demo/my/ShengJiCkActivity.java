@@ -73,7 +73,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
- * Éı¼¶Îª´´¿Í
+ * å‡çº§ä¸ºåˆ›å®¢
  * 
  * @author Administrator
  * 
@@ -87,7 +87,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	String user_name, user_id;
 	private DialogProgress progress;
 //	public static Handler handler;
-	String dizhi = "Ñ¡ÔñµØÖ·";
+	String dizhi = "é€‰æ‹©åœ°å€";
 	private String cityTxt,cityTxt1,cityTxt2,cityTxt3;
 	protected static final int CHOOSE_PICTURE = 0;
 	protected static final int TAKE_PICTURE = 1;
@@ -99,8 +99,8 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
     private String tupian2 = "";
     private String identity_card_a,identity_card_b;
     private String sheng_zhi,shi_zhi,qu_zhi;
-    private LocationManager locationManager;// Î»ÖÃ¹ÜÀíÀà
-	private String provider;// Î»ÖÃÌá¹©Æ÷
+    private LocationManager locationManager;// ä½ç½®ç®¡ç†ç±»
+	private String provider;// ä½ç½®æä¾›å™¨
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public static String jingdu,weidu;
 	public static String address,path,time,yth,province,city,area,lng,lat,imagePath;
@@ -210,7 +210,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÉı¼¶»ñÈ¡ÓÃ»§ĞÅÏ¢
+	 * åˆ¤æ–­æ˜¯å¦å‡çº§è·å–ç”¨æˆ·ä¿¡æ¯
 	 */
 	public void userpanduan(){
 		progress.CreateProgress();
@@ -222,7 +222,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						if (status.equals("y")) {
-							System.out.println("ÅĞ¶ÏÊÇ·ñÉı¼¶================================="+arg1);
+							System.out.println("åˆ¤æ–­æ˜¯å¦å‡çº§================================="+arg1);
 							JSONObject obj = object.getJSONObject("data");
 							bean = new UserSenJiBean();
 							bean.contact = obj.getString("contact");
@@ -255,16 +255,16 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 							 
 							 
 //					        if (iv_personal_icon1.getDrawable() == null) {  
-//					            Toast.makeText(ShengJiCkActivity.this, "Í¼Æ¬¼ÓÔØÊ§°Ü", Toast.LENGTH_SHORT).show();  
+//					            Toast.makeText(ShengJiCkActivity.this, "å›¾ç‰‡åŠ è½½å¤±è´¥", Toast.LENGTH_SHORT).show();  
 //					            iv_personal_icon1.setImageDrawable(getResources().getDrawable(R.drawable.zams_tp));  
 //					        }else {
-//					        	 Toast.makeText(ShengJiCkActivity.this, "Í¼Æ¬¼ÓÔØ³É¹¦", Toast.LENGTH_SHORT).show();  
+//					        	 Toast.makeText(ShengJiCkActivity.this, "å›¾ç‰‡åŠ è½½æˆåŠŸ", Toast.LENGTH_SHORT).show();  
 //							}
 							 
 							edt_contact.setText(bean.contact);
 //							edt_mobile.setText(bean.mobile);
 							edt_identity_card.setText(bean.idcard);
-//							String dizhi = bean.province +"¡¢"+ bean.city +"¡¢"+ bean.area;
+//							String dizhi = bean.province +"ã€"+ bean.city +"ã€"+ bean.area;
 //							tv_city.setText(dizhi);
 							edt_dizhi.setText(bean.address);
 							
@@ -313,7 +313,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * »ñÈ¡Ê¡·İ
+	 * è·å–çœä»½
 	 */
 	private void getdizhishen() {
 		// TODO Auto-generated method stub
@@ -381,7 +381,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 		
 	}
 	/**
-	 * »ñÈ¡³ÇÊĞ
+	 * è·å–åŸå¸‚
 	 */
 	private void getdizhishi(String code) {
 		// TODO Auto-generated method stub
@@ -453,7 +453,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * »ñÈ¡µØÇø
+	 * è·å–åœ°åŒº
 	 */
 	private void gedizhidiqu(String code) {
 		// TODO Auto-generated method stub
@@ -689,13 +689,13 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 					ShengJiCkActivity.this).builder()
 					// .setTitle(tv_chengshi.getText().toString())
 					.setTitle(dizhi.toString()).setView(view)
-					.setNegativeButton("È¡Ïû", new OnClickListener() {
+					.setNegativeButton("å–æ¶ˆ", new OnClickListener() {
 						@Override
 						public void onClick(View v) {
 
 						}
 					});
-			dialog1.setPositiveButton("È·¶¨", new OnClickListener() {
+			dialog1.setPositiveButton("ç¡®å®š", new OnClickListener() {
 				@Override
 				public void onClick(View v) {
 					// Toast.makeText(getApplicationContext(), cityTxt,
@@ -772,32 +772,32 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 				System.out.println("jingdu3================================="+jingdu+"/"+weidu);
 				
 //				if (sheng != null) {
-					 String dizhi_heji = sheng+"¡¢"+shi+"¡¢"+xian;
-					 address = dizhi_heji+"¡¢"+xqdz;
+					 String dizhi_heji = sheng+"ã€"+shi+"ã€"+xian;
+					 address = dizhi_heji+"ã€"+xqdz;
 					 System.out.println("================address=="+address);
 //				}	
 			
 				System.out.println("shen---------------"+sheng+"++"+xqdz);
 			if (contact.equals("")) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÊäÈëĞÕÃû", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·è¾“å…¥å§“å", 100).show();
 			} else if (mobile.equals("")) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÊäÈëÊÖ»úºÅÂë", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·è¾“å…¥æ‰‹æœºå·ç ", 100).show();
 			} else if (mobile.length() > 11) {
-				Toast.makeText(ShengJiCkActivity.this, "ÊÖ»úºÅÂëÉÙÓÚ11Î»", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "æ‰‹æœºå·ç å°‘äº11ä½", 100).show();
 			} else if (identity_card.equals("")) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÊäÈëÉí·İÖ¤ºÅ", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·è¾“å…¥èº«ä»½è¯å·", 100).show();
 			} else if (identity_card.length() < 18) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÊäÈëÕıÈ·µÄÉí·İÖ¤ºÅ", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·è¾“å…¥æ­£ç¡®çš„èº«ä»½è¯å·", 100).show();
 //			} else if (identity_card_a.equals("")) {
 			} else if (identity_card_a == null) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÉÏ´«Éí·İÖ¤ÕıÃæÕÕÆ¬", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·ä¸Šä¼ èº«ä»½è¯æ­£é¢ç…§ç‰‡", 100).show();
 //			} else if (identity_card_b.equals("")) {
 			} else if (identity_card_b == null) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÉÏ´«Éí·İÖ¤·´ÃæÕÕÆ¬", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·ä¸Šä¼ èº«ä»½è¯åé¢ç…§ç‰‡", 100).show();
 //			} else if (sheng.equals("")) {
-//				Toast.makeText(ShengJiCkActivity.this, "ÇëÊäÈë¾­ÏúµØÖ·", 100).show();
+//				Toast.makeText(ShengJiCkActivity.this, "è¯·è¾“å…¥ç»é”€åœ°å€", 100).show();
 			} else if (xqdz.equals("")) {
-				Toast.makeText(ShengJiCkActivity.this, "ÇëÊäÈëÏêÏ¸½ÖµÀµØÖ·", 100).show();
+				Toast.makeText(ShengJiCkActivity.this, "è¯·è¾“å…¥è¯¦ç»†è¡—é“åœ°å€", 100).show();
 			}else{
 				
 				String str = xian;
@@ -815,7 +815,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 //						"&city="+city+ "&area="+area+"&address=" + xqdz + "&lng="+lng+"&lat="+lat+"";
 //				        System.out.println("=================002==" + strUrlone);
 //			       }else {  
-//					if (sheng.contains("ĞÂ½®")) {
+//					if (sheng.contains("æ–°ç–†")) {
 					        strUrlone = RealmName.REALM_NAME_LL
 							+ "/user_upgrade_sales?user_id="+ user_id+ "&user_name="+ user_name+ 
 							"&recommend_name="+tuijianren+""
@@ -868,7 +868,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 						public void onFailure(Throwable arg0, String arg1) {
 							// TODO Auto-generated method stub
 							super.onFailure(arg0, arg1);
-							Toast.makeText(ShengJiCkActivity.this,"Òì³£", 200).show();
+							Toast.makeText(ShengJiCkActivity.this,"å¼‚å¸¸", 200).show();
 						}
 						
 					}, null);
@@ -880,7 +880,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 				}
 
 //				}else {
-//					Toast.makeText(MobilePhoneActivity.this, "ÊÖ»úºÅÂë²»ÕıÈ·", 200).show();
+//					Toast.makeText(MobilePhoneActivity.this, "æ‰‹æœºå·ç ä¸æ­£ç¡®", 200).show();
 //				}
 			}
 			
@@ -898,9 +898,9 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	public final static int CONSULT_DOC_PICTURE = 1000;
 	public final static int CONSULT_DOC_CAMERA = 1001;
 
-	private static final int PHOTO_REQUEST_CAMERA = 10;// ÅÄÕÕ
-	private static final int PHOTO_REQUEST_GALLERY = 11;// ´ÓÏà²áÖĞÑ¡Ôñ
-	private static final int PHOTO_REQUEST_CUT = 12;// ²Ã¼ô
+	private static final int PHOTO_REQUEST_CAMERA = 10;// æ‹ç…§
+	private static final int PHOTO_REQUEST_GALLERY = 11;// ä»ç›¸å†Œä¸­é€‰æ‹©
+	private static final int PHOTO_REQUEST_CUT = 12;// è£å‰ª
 
 	private static final String PHOTO_FILE_NAME = "temp_photo.jpg";
 
@@ -911,56 +911,56 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	private ProgressDialog pd;
 	private Bitmap bmp;
 	/**
-	 * ÏÔÊ¾ĞŞ¸ÄÍ·ÏñµÄ¶Ô»°¿ò
+	 * æ˜¾ç¤ºä¿®æ”¹å¤´åƒçš„å¯¹è¯æ¡†
 	 */
 	protected void showChoosePicDialog() {
-		CharSequence[] items = { "ÊÖ»úÏà²á", "ÊÖ»úÅÄÕÕ" };//"²é¿´Í·Ïñ", 
-		new AlertDialog.Builder(ShengJiCkActivity.this).setTitle("ÉÏ´«ÕÕÆ¬")
+		CharSequence[] items = { "æ‰‹æœºç›¸å†Œ", "æ‰‹æœºæ‹ç…§" };//"æŸ¥çœ‹å¤´åƒ", 
+		new AlertDialog.Builder(ShengJiCkActivity.this).setTitle("ä¸Šä¼ ç…§ç‰‡")
 				.setItems(items, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,
 							int which) {
 						if (which == SELECT_PICTURE) {
 							Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-							// ÅĞ¶Ï´æ´¢¿¨ÊÇ·ñ¿ÉÒÔÓÃ£¬¿ÉÓÃ½øĞĞ´æ´¢
+							// åˆ¤æ–­å­˜å‚¨å¡æ˜¯å¦å¯ä»¥ç”¨ï¼Œå¯ç”¨è¿›è¡Œå­˜å‚¨
 							if (hasSdcard()) {
 								intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(new File(
 												Environment.getExternalStorageDirectory(),PHOTO_FILE_NAME)));
 							}
 							startActivityForResult(intent,PHOTO_REQUEST_CAMERA);
-							System.out.println("SELECT_PICTURE------------1-------Ïà²á--------"+SELECT_PICTURE);
+							System.out.println("SELECT_PICTURE------------1-------ç›¸å†Œ--------"+SELECT_PICTURE);
 						} else if (which == SELECT_CAMERA) {
-							System.out.println("SELECT_CAMERA-------------2----------ÅÄÕÕ----"+SELECT_CAMERA);
+							System.out.println("SELECT_CAMERA-------------2----------æ‹ç…§----"+SELECT_CAMERA);
 						} else if (which == SELECT_SCAN) {
 							Intent intent = new Intent(Intent.ACTION_PICK);
 							intent.setType("image/*");
 							startActivityForResult(intent,PHOTO_REQUEST_GALLERY);
-							System.out.println("SELECT_SCAN----------------4-----²é¿´Í·Ïñ------"+SELECT_SCAN);
+							System.out.println("SELECT_SCAN----------------4-----æŸ¥çœ‹å¤´åƒ------"+SELECT_SCAN);
 						}
 
 					}
 				}).create().show();
 		
 //		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//		builder.setTitle("ÉèÖÃÍ·Ïñ");
-//		String[] items = { "Ñ¡Ôñ±¾µØÕÕÆ¬", "ÅÄÕÕ" };
-//		builder.setNegativeButton("È¡Ïû", null);
+//		builder.setTitle("è®¾ç½®å¤´åƒ");
+//		String[] items = { "é€‰æ‹©æœ¬åœ°ç…§ç‰‡", "æ‹ç…§" };
+//		builder.setNegativeButton("å–æ¶ˆ", null);
 //		builder.setItems(items, new DialogInterface.OnClickListener() {
 //
 //			@Override
 //			public void onClick(DialogInterface dialog, int which) {
 //				switch (which) {
-//				case CHOOSE_PICTURE: // Ñ¡Ôñ±¾µØÕÕÆ¬
+//				case CHOOSE_PICTURE: // é€‰æ‹©æœ¬åœ°ç…§ç‰‡
 //					Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
-//					System.out.println("±¾µØÕÕÆ¬-----------------"+openAlbumIntent);
+//					System.out.println("æœ¬åœ°ç…§ç‰‡-----------------"+openAlbumIntent);
 //					openAlbumIntent.setType("image/*");
 //					startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
 //					break;
-//				case TAKE_PICTURE: // ÅÄÕÕ
+//				case TAKE_PICTURE: // æ‹ç…§
 //					Intent openCameraIntent = new Intent(
 //							MediaStore.ACTION_IMAGE_CAPTURE);
 //					tempUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "image.jpg"));
-//					System.out.println("ÅÄÕÕ================"+tempUri);
-//					// Ö¸¶¨ÕÕÆ¬±£´æÂ·¾¶£¨SD¿¨£©£¬image.jpgÎªÒ»¸öÁÙÊ±ÎÄ¼ş£¬Ã¿´ÎÅÄÕÕºóÕâ¸öÍ¼Æ¬¶¼»á±»Ìæ»»
+//					System.out.println("æ‹ç…§================"+tempUri);
+//					// æŒ‡å®šç…§ç‰‡ä¿å­˜è·¯å¾„ï¼ˆSDå¡ï¼‰ï¼Œimage.jpgä¸ºä¸€ä¸ªä¸´æ—¶æ–‡ä»¶ï¼Œæ¯æ¬¡æ‹ç…§åè¿™ä¸ªå›¾ç‰‡éƒ½ä¼šè¢«æ›¿æ¢
 //					openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
 //					startActivityForResult(openCameraIntent, TAKE_PICTURE);
 //					
@@ -975,7 +975,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * ÊÇ·ñÓĞsd¿¨
+	 * æ˜¯å¦æœ‰sdå¡
 	 * 
 	 * @return
 	 */
@@ -992,27 +992,27 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (resultCode == Activity.RESULT_OK) {
-			if (requestCode == PHOTO_REQUEST_GALLERY) {// Í¼¿â
+			if (requestCode == PHOTO_REQUEST_GALLERY) {// å›¾åº“
 				if (data == null) {
 					return;
 				}
 				Uri uri = data.getData();
-				System.out.println("Í¼Æ¬µÄÖµ=========uri========"+uri);
+				System.out.println("å›¾ç‰‡çš„å€¼=========uri========"+uri);
 				crop(uri);
-			} else if (requestCode == PHOTO_REQUEST_CAMERA) {// ÅÄÕÕ
+			} else if (requestCode == PHOTO_REQUEST_CAMERA) {// æ‹ç…§
 
 				if (hasSdcard()) {
 					file = new File(Environment.getExternalStorageDirectory(),PHOTO_FILE_NAME);
 					crop(Uri.fromFile(file));
-					System.out.println("Í¼Æ¬µÄÖµ=========file========"+file);
+					System.out.println("å›¾ç‰‡çš„å€¼=========file========"+file);
 				} else {
-//					Toast.makeText(this, "Î´ÕÒµ½´æ´¢¿¨£¬ÎŞ·¨´æ´¢ÕÕÆ¬£¡", 0).show();
+//					Toast.makeText(this, "æœªæ‰¾åˆ°å­˜å‚¨å¡ï¼Œæ— æ³•å­˜å‚¨ç…§ç‰‡ï¼", 0).show();
 				}
-			} else if (requestCode == PHOTO_REQUEST_CUT) {// ²Ã¼ô
+			} else if (requestCode == PHOTO_REQUEST_CUT) {// è£å‰ª
 				try {
 					bmp = data.getParcelableExtra("data");
-					System.out.println("Í¼Æ¬µÄÖµ1================="+bmp);
-					System.out.println("Í¼Æ¬µÄÖµ2================="+tempUri);
+					System.out.println("å›¾ç‰‡çš„å€¼1================="+bmp);
+					System.out.println("å›¾ç‰‡çš„å€¼2================="+tempUri);
 					if (!bmp.equals("")) {
 					if (zhaopian == 1) {
 						iv_personal_icon.setImageBitmap(bmp);
@@ -1021,8 +1021,8 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 					}
 					
 					File tempFile = BitmapUtils.saveBitmapFile(bmp,PHOTO_FILE_NAME);
-					System.out.println("Í¼Æ¬µÄÖµ1================="+bmp);
-					System.out.println("Í¼Æ¬µÄÖµ2================="+tempFile);
+					System.out.println("å›¾ç‰‡çš„å€¼1================="+bmp);
+					System.out.println("å›¾ç‰‡çš„å€¼2================="+tempFile);
 					try {
 						imagePath = Utils.savePhoto(bmp, Environment.getExternalStorageDirectory().getAbsolutePath(), 
 								String.valueOf(System.currentTimeMillis()));
@@ -1039,7 +1039,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 									SimpleDateFormat f = new SimpleDateFormat("yyyyMMddHHmmssSSS");  
 					                time = f.format(new Date());  
 					                yth = MainFragmentContent4.yth;
-					                String remotePathTmp = "phone/" + "" + yth +"";//Â·¾¶
+					                String remotePathTmp = "phone/" + "" + yth +"";//è·¯å¾„
 									System.out.println("========================"+remotePathTmp);
 									if (zhaopian == 1) {
 										tupian1 = "/upload/phone/" + yth + "/"+ time + ".jpg";
@@ -1049,7 +1049,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 									System.out.println("tupian1------------1--------------"+tupian1);
 									System.out.println("tupian2------------2--------------"+tupian2);
 									try {
-										client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+										client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 									} catch (Exception e) {
 							                e.printStackTrace();
 									} finally {
@@ -1079,12 +1079,12 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 
 
 								} catch (IllegalStateException e) {
-									e.printStackTrace();//·Ç·¨×´Ì¬Òì³£
+									e.printStackTrace();//éæ³•çŠ¶æ€å¼‚å¸¸
 								}
 								catch (FTPIllegalReplyException e) {
-									e.printStackTrace();//·Ç·¨»Ø¸´Òì³£
+									e.printStackTrace();//éæ³•å›å¤å¼‚å¸¸
 								} catch (FTPException e) {
-									e.printStackTrace();//Òì³£
+									e.printStackTrace();//å¼‚å¸¸
 								} catch (IOException e) {
 									e.printStackTrace();
 								}
@@ -1106,7 +1106,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	}
 
 	/**
-	 * ¼ôÇĞÍ¼Æ¬
+	 * å‰ªåˆ‡å›¾ç‰‡
 	 * 
 	 * @function:
 	 * @author:yl
@@ -1114,20 +1114,20 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	 * @param uri
 	 */
 	private void crop(Uri uri) {
-		// ²Ã¼ôÍ¼Æ¬ÒâÍ¼
+		// è£å‰ªå›¾ç‰‡æ„å›¾
 		Intent intent = new Intent("com.android.camera.action.CROP");
 		intent.setDataAndType(uri, "image/*");
 		intent.putExtra("crop", "true");
-		// ²Ã¼ô¿òµÄ±ÈÀı£¬1£º1
+		// è£å‰ªæ¡†çš„æ¯”ä¾‹ï¼Œ1ï¼š1
 		intent.putExtra("aspectX", 1);
 		intent.putExtra("aspectY", 1);
-		// ²Ã¼ôºóÊä³öÍ¼Æ¬µÄ³ß´ç´óĞ¡
+		// è£å‰ªåè¾“å‡ºå›¾ç‰‡çš„å°ºå¯¸å¤§å°
 		intent.putExtra("outputX", 250);
 		intent.putExtra("outputY", 250);
-		// Í¼Æ¬¸ñÊ½
+		// å›¾ç‰‡æ ¼å¼
 		intent.putExtra("outputFormat", "JPEG");
-		intent.putExtra("noFaceDetection", true);// È¡ÏûÈËÁ³Ê¶±ğ
-		intent.putExtra("return-data", true);// true:²»·µ»Øuri£¬false£º·µ»Øuri
+		intent.putExtra("noFaceDetection", true);// å–æ¶ˆäººè„¸è¯†åˆ«
+		intent.putExtra("return-data", true);// true:ä¸è¿”å›uriï¼Œfalseï¼šè¿”å›uri
 		startActivityForResult(intent, PHOTO_REQUEST_CUT);
 	}
 	
@@ -1135,19 +1135,19 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 //	@Override
 //	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 //		super.onActivityResult(requestCode, resultCode, data);
-//		if (resultCode == RESULT_OK) { // Èç¹û·µ»ØÂëÊÇ¿ÉÒÔÓÃµÄ
+//		if (resultCode == RESULT_OK) { // å¦‚æœè¿”å›ç æ˜¯å¯ä»¥ç”¨çš„
 //			switch (requestCode) {
-//			//ÅÄÕÕ
+//			//æ‹ç…§
 //			case TAKE_PICTURE:
-//				startPhotoZoom(tempUri); // ¿ªÊ¼¶ÔÍ¼Æ¬½øĞĞ²Ã¼ô´¦Àí
+//				startPhotoZoom(tempUri); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 //				break;
-//			//ÉÏ´«Í¼Æ¬	
+//			//ä¸Šä¼ å›¾ç‰‡	
 //			case CHOOSE_PICTURE:
-//				startPhotoZoom(data.getData()); // ¿ªÊ¼¶ÔÍ¼Æ¬½øĞĞ²Ã¼ô´¦Àí
+//				startPhotoZoom(data.getData()); // å¼€å§‹å¯¹å›¾ç‰‡è¿›è¡Œè£å‰ªå¤„ç†
 //				break;
 //			case CROP_SMALL_PICTURE:
 //				if (data != null) {
-//					setImageToView(data); // ÈÃ¸Õ²ÅÑ¡Ôñ²Ã¼ôµÃµ½µÄÍ¼Æ¬ÏÔÊ¾ÔÚ½çÃæÉÏ
+//					setImageToView(data); // è®©åˆšæ‰é€‰æ‹©è£å‰ªå¾—åˆ°çš„å›¾ç‰‡æ˜¾ç¤ºåœ¨ç•Œé¢ä¸Š
 //				}
 //				break;
 //			}
@@ -1155,7 +1155,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 //	}
 
 	/**
-	 * ²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ
+	 * è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°
 	 * 
 	 * @param uri
 	 */
@@ -1164,15 +1164,15 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 //			Log.i("tag", "The uri is not exist.");
 //		}
 //		tempUri = uri;
-////		System.out.println("²Ã¼ôÍ¼Æ¬·½·¨ÊµÏÖ================"+tempUri);
+////		System.out.println("è£å‰ªå›¾ç‰‡æ–¹æ³•å®ç°================"+tempUri);
 //		Intent intent = new Intent("com.android.camera.action.CROP");
 //		intent.setDataAndType(uri, "image/*");
-//		// ÉèÖÃ²Ã¼ô
+//		// è®¾ç½®è£å‰ª
 //		intent.putExtra("crop", "true");
-//		// aspectX aspectY ÊÇ¿í¸ßµÄ±ÈÀı
+//		// aspectX aspectY æ˜¯å®½é«˜çš„æ¯”ä¾‹
 //		intent.putExtra("aspectX", 1);
 //		intent.putExtra("aspectY", 1);
-//		// outputX outputY ÊÇ²Ã¼ôÍ¼Æ¬¿í¸ß
+//		// outputX outputY æ˜¯è£å‰ªå›¾ç‰‡å®½é«˜
 //		intent.putExtra("outputX", 300);
 //		intent.putExtra("outputY", 300);
 //		intent.putExtra("return-data", true);
@@ -1180,7 +1180,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 //	}
 //	
 //	public void saveBitmapFile(Bitmap bitmap){
-//        File file=new File("/mnt/sdcard/pic/01.jpg");//½«Òª±£´æÍ¼Æ¬µÄÂ·¾¶
+//        File file=new File("/mnt/sdcard/pic/01.jpg");//å°†è¦ä¿å­˜å›¾ç‰‡çš„è·¯å¾„
 //        try {
 //                BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file));
 //                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
@@ -1193,7 +1193,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 //}
  
 	/**
-	 * ±£´æ²Ã¼ôÖ®ºóµÄÍ¼Æ¬Êı¾İ
+	 * ä¿å­˜è£å‰ªä¹‹åçš„å›¾ç‰‡æ•°æ®
 	 * 
 	 * @param
 	 * 
@@ -1203,9 +1203,9 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 		Bundle extras = data.getExtras();
 		Bitmap photo = extras.getParcelable("data");
 		if (extras != null) {
-//			photo = Utils.toRoundBitmap(photo, tempUri); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
-			System.out.println("Í¼Æ¬µÄÖµ1================="+photo);
-			System.out.println("Í¼Æ¬µÄÖµ2================="+tempUri);
+//			photo = Utils.toRoundBitmap(photo, tempUri); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
+			System.out.println("å›¾ç‰‡çš„å€¼1================="+photo);
+			System.out.println("å›¾ç‰‡çš„å€¼2================="+tempUri);
 			if (!photo.equals("")) {
 			if (zhaopian == 1) {
 				iv_personal_icon.setImageBitmap(photo);
@@ -1219,22 +1219,22 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 				
 				System.out.println("imagePath======================="+imagePath);
 				
-//				// ÕâÀï¿ªÊ¼µÄµÚ¶ş²¿·Ö£¬»ñÈ¡Í¼Æ¬µÄÂ·¾¶£º
+//				// è¿™é‡Œå¼€å§‹çš„ç¬¬äºŒéƒ¨åˆ†ï¼Œè·å–å›¾ç‰‡çš„è·¯å¾„ï¼š
 //				String[] proj = { MediaStore.Images.Media.DATA };
 //				System.out.println("proj======================="+proj);
 //				
-//				// ºÃÏñÊÇandroid¶àÃ½ÌåÊı¾İ¿âµÄ·â×°½Ó¿Ú£¬¾ßÌåµÄ¿´AndroidÎÄµµ
+//				// å¥½åƒæ˜¯androidå¤šåª’ä½“æ•°æ®åº“çš„å°è£…æ¥å£ï¼Œå…·ä½“çš„çœ‹Androidæ–‡æ¡£
 //				Cursor cursor = this.managedQuery(tempUri, proj,null, null, null);
 //				System.out.println("cursor========================"+cursor);
 //				
-//				// °´ÎÒ¸öÈËÀí½â Õâ¸öÊÇ»ñµÃÓÃ»§Ñ¡ÔñµÄÍ¼Æ¬µÄË÷ÒıÖµ
+//				// æŒ‰æˆ‘ä¸ªäººç†è§£ è¿™ä¸ªæ˜¯è·å¾—ç”¨æˆ·é€‰æ‹©çš„å›¾ç‰‡çš„ç´¢å¼•å€¼
 //				int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
 //				System.out.println("column_index========================"+column_index);
 //				
-//				// ½«¹â±êÒÆÖÁ¿ªÍ· £¬Õâ¸öºÜÖØÒª£¬²»Ğ¡ĞÄºÜÈİÒ×ÒıÆğÔ½½ç
+//				// å°†å…‰æ ‡ç§»è‡³å¼€å¤´ ï¼Œè¿™ä¸ªå¾ˆé‡è¦ï¼Œä¸å°å¿ƒå¾ˆå®¹æ˜“å¼•èµ·è¶Šç•Œ
 //				cursor.moveToFirst();
 //				
-//				// ×îºó¸ù¾İË÷ÒıÖµ»ñÈ¡Í¼Æ¬Â·¾¶
+//				// æœ€åæ ¹æ®ç´¢å¼•å€¼è·å–å›¾ç‰‡è·¯å¾„
 //				path = cursor.getString(column_index);
 //				System.out.println("path========================"+path);
 				
@@ -1247,11 +1247,11 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 							SimpleDateFormat f = new SimpleDateFormat("yyyyMMddHHmmssSSS");  
 			                time = f.format(new Date());  
 			                yth = MainFragmentContent4.yth;
-			                String remotePathTmp = "phone/" + "" + yth +"";//Â·¾¶
+			                String remotePathTmp = "phone/" + "" + yth +"";//è·¯å¾„
 							System.out.println("========================"+remotePathTmp);
 							
 							try {
-								client.createDirectory(remotePathTmp);//¿Í»§¶Ë´´½¨Ä¿Â¼
+								client.createDirectory(remotePathTmp);//å®¢æˆ·ç«¯åˆ›å»ºç›®å½•
 							} catch (Exception e) {
 					                e.printStackTrace();
 							} finally {
@@ -1281,12 +1281,12 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 							System.out.println("tupian2------------2--------------"+tupian2);
 
 						} catch (IllegalStateException e) {
-							e.printStackTrace();//·Ç·¨×´Ì¬Òì³£
+							e.printStackTrace();//éæ³•çŠ¶æ€å¼‚å¸¸
 						}
 						catch (FTPIllegalReplyException e) {
-							e.printStackTrace();//·Ç·¨»Ø¸´Òì³£
+							e.printStackTrace();//éæ³•å›å¤å¼‚å¸¸
 						} catch (FTPException e) {
-							e.printStackTrace();//Òì³£
+							e.printStackTrace();//å¼‚å¸¸
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
@@ -1305,28 +1305,28 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 	}
 
 //	private void uploadPic(Bitmap bitmap) {
-//		// ÉÏ´«ÖÁ·şÎñÆ÷
-//		// ... ¿ÉÒÔÔÚÕâÀï°ÑBitmap×ª»»³Éfile£¬È»ºóµÃµ½fileµÄurl£¬×öÎÄ¼şÉÏ´«²Ù×÷
-//		// ×¢ÒâÕâÀïµÃµ½µÄÍ¼Æ¬ÒÑ¾­ÊÇÔ²ĞÎÍ¼Æ¬ÁË
-//		// bitmapÊÇÃ»ÓĞ×ö¸öÔ²ĞÎ´¦ÀíµÄ£¬µ«ÒÑ¾­±»²Ã¼ôÁË
+//		// ä¸Šä¼ è‡³æœåŠ¡å™¨
+//		// ... å¯ä»¥åœ¨è¿™é‡ŒæŠŠBitmapè½¬æ¢æˆfileï¼Œç„¶åå¾—åˆ°fileçš„urlï¼Œåšæ–‡ä»¶ä¸Šä¼ æ“ä½œ
+//		// æ³¨æ„è¿™é‡Œå¾—åˆ°çš„å›¾ç‰‡å·²ç»æ˜¯åœ†å½¢å›¾ç‰‡äº†
+//		// bitmapæ˜¯æ²¡æœ‰åšä¸ªåœ†å½¢å¤„ç†çš„ï¼Œä½†å·²ç»è¢«è£å‰ªäº†
 //		System.out.println("bitmap================"+bitmap);
 //		String imagePath = Utils.savePhoto(bitmap, Environment.getExternalStorageDirectory().getAbsolutePath(), String.valueOf(System.currentTimeMillis()));
 //		if (zhaopian  == 1) {
 ////			tupian1 = imagePath;
-//			System.out.println("Í¼Æ¬imagePath================"+imagePath);
+//			System.out.println("å›¾ç‰‡imagePath================"+imagePath);
 //		}else if (zhaopian  == 2){
 ////			tupian2 = imagePath;
 //		}
 //		Log.e("imagePath", imagePath+"");
 //		
 //		if(imagePath != null){
-//			// ÄÃ×ÅimagePathÉÏ´«ÁË
+//			// æ‹¿ç€imagePathä¸Šä¼ äº†
 //			// ...
 //		}
 //	}
 	
 	/**
-	 * Ñ¡Ôñ³ÇÊĞ
+	 * é€‰æ‹©åŸå¸‚
 	 * @return
 	 */
 	private View dialogm() {
@@ -1343,19 +1343,19 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 				.findViewById(R.id.wheelcity_city);
 		city.setVisibleItems(0);
 
-		// µØÇøÑ¡Ôñ
+		// åœ°åŒºé€‰æ‹©
 		final WheelView ccity = (WheelView) contentView
 				.findViewById(R.id.wheelcity_ccity);
-		ccity.setVisibleItems(0);// ²»ÏŞ³ÇÊĞ
+		ccity.setVisibleItems(0);// ä¸é™åŸå¸‚
 
 		country.addChangingListener(new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				updateCities(city, cities, newValue);
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt1 = AddressData.PROVINCES[country.getCurrentItem()];
@@ -1367,10 +1367,10 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 				updatecCities(ccity, ccities, country.getCurrentItem(),
 						newValue);
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt2 = AddressData.CITIES[country.getCurrentItem()][city
@@ -1381,10 +1381,10 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 		ccity.addChangingListener(new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				cityTxt = AddressData.PROVINCES[country.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.CITIES[country.getCurrentItem()][city
 								.getCurrentItem()]
-						+ "¡¢"
+						+ "ã€"
 						+ AddressData.COUNTIES[country.getCurrentItem()][city
 								.getCurrentItem()][ccity.getCurrentItem()];
 				cityTxt3 = AddressData.COUNTIES[country.getCurrentItem()][city
@@ -1392,7 +1392,7 @@ public class ShengJiCkActivity extends BaseActivity implements OnClickListener {
 			}
 		});
 
-		country.setCurrentItem(1);// ÉèÖÃ±±¾©
+		country.setCurrentItem(1);// è®¾ç½®åŒ—äº¬
 		city.setCurrentItem(1);
 		ccity.setCurrentItem(1);
 		return contentView;

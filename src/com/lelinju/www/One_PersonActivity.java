@@ -97,8 +97,8 @@ public class One_PersonActivity extends BaseActivity {
 		order_item0.setChecked(true);
 
 		/*
-		 * mi/getData.ashx?act=GetMyLuckYiYuanGameSerialList&yth=µ±Ç°µÇÂ½ÈËµÄºãÓşºÅ
-		 * ·µ»Ø×Ö¶Î£ºHaveTatalJuGouMa±íÊ¾¡°¸ÃÆÚ¸ÃÉÌÆ·£¬Äã×Ü¹ºÂò»ñµÃÁË¼¸´Î¾Û¿¨ºÅ¡±
+		 * mi/getData.ashx?act=GetMyLuckYiYuanGameSerialList&yth=å½“å‰ç™»é™†äººçš„æ’èª‰å·
+		 * è¿”å›å­—æ®µï¼šHaveTatalJuGouMaè¡¨ç¤ºâ€œè¯¥æœŸè¯¥å•†å“ï¼Œä½ æ€»è´­ä¹°è·å¾—äº†å‡ æ¬¡èšå¡å·â€
 		 */
 		WareDao wareDao = new WareDao(One_PersonActivity.this);
 		UserRegisterData registerData = wareDao.findIsLoginHengyuCode();

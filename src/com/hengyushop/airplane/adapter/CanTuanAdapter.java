@@ -75,7 +75,7 @@ public class CanTuanAdapter extends BaseAdapter {
 //		ImageView iv = BaseViewHolder.get(convertView, R.id.iv_item);
 		
 		System.out.println("position===================="+position);
-		tv_renshu.setText("»¹²î"+list.get(position).getQuantity()+"ÈË³ÉÍÅ"); 
+		tv_renshu.setText("è¿˜å·®"+list.get(position).getQuantity()+"äººæˆå›¢"); 
 		System.out.println("position===================="+list.get(position).getQuantity());
 		System.out.println("position===================="+list.get(position).getUser_name());
 		String user_name = list.get(position).getUser_name();

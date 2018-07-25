@@ -71,12 +71,12 @@ public class FlyCangAdapter extends BaseAdapter {
 			holder = (ViewHolder) view.getTag();
 		}
 		final FlyCangItem item = listCangItems.get(index);
-		holder.fly_cang2.setText("ÍË¸ÄÇ©");
+		holder.fly_cang2.setText("é€€æ”¹ç­¾");
 		holder.fly_cang1.setText(item.getSeatMsg()
 				+ (item.getSeatStatus().equals("A") ? ">9" : item
 						.getSeatStatus()));
-		holder.fly_cang3.setText("£¤" + item.getParPrice());
-		holder.fly_cang4.setText("(" + item.getDiscount() + "ÕÛ)");
+		holder.fly_cang3.setText("ï¿¥" + item.getParPrice());
+		holder.fly_cang4.setText("(" + item.getDiscount() + "æŠ˜)");
 		holder.fly_cang5.setOnClickListener(new OnClickListener() {
 
 			@Override

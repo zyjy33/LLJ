@@ -63,14 +63,14 @@ public class MyJutuanMxAdapter extends BaseAdapter {
 		String real_name = list.get(position).getForeman_name();//
 		System.out.println("real_name====================="+real_name);
 		if (!real_name.equals("")) {
-			tv_name.setText(real_name+"£¨"+list.get(position).getForeman_name()+")");
+			tv_name.setText(real_name+"ï¼ˆ"+list.get(position).getForeman_name()+")");
 		}else {
-			tv_name.setText("ÄäÃûÓÃ»§£¨"+list.get(position).getForeman_name()+")");
+			tv_name.setText("åŒ¿åç”¨æˆ·ï¼ˆ"+list.get(position).getForeman_name()+")");
 		}
 		
 //		if (real_name.equals("")){
 //			System.out.println("real_name11====================="+real_name);
-//			tv_name.setText("ÄäÃûÓÃ»§£¨"+list.get(position).mobile+")");
+//			tv_name.setText("åŒ¿åç”¨æˆ·ï¼ˆ"+list.get(position).mobile+")");
 //		}
 
 		return convertView;

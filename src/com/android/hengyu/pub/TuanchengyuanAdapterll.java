@@ -50,7 +50,7 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 	String img_url;
 	Bitmap bitMap_tx;
 	String data_tx;
-//	private XCRoundImageViewByXfermode circleImageView;//Ô²ĞÎÍ¼Æ¬
+//	private XCRoundImageViewByXfermode circleImageView;//åœ†å½¢å›¾ç‰‡
 //	public TuanchengyuanAdapter(ArrayList<JuTuanGouData> list, ArrayList datadz,Context context) {// List<Integer> list_num, ArrayList datadz,
 		public TuanchengyuanAdapterll(ArrayList datadz2,Context context) {
 		this.context = context;
@@ -95,7 +95,7 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 //			circleImageView.setVisibility(View.VISIBLE);
 //			image.setVisibility(View.GONE);
 			data_tx = (String) datadz2.get(position);
-			img_url = "http://mobile.lelinju.shop/templates/mobile/images/leader-user.png";//Ä¬ÈÏÍ¼Æ¬
+			img_url = "http://mobile.lelinju.shop/templates/mobile/images/leader-user.png";//é»˜è®¤å›¾ç‰‡
 			if (data_tx.contains("http")) {
 				img_url = (String) datadz2.get(position);
 	       } else if(data_tx.contains("upload")){
@@ -118,7 +118,7 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 //		String data_tx = "http://wx.qlogo.cn/mmopen/Zw5SzXToEzuCtHFRb2IVVZemJzJx4cLibMpDIE2y4kA1lgPfbhe2rO851s5G72B2U1Wz6cGe8Eb7B4AbtibiaUaSRBeH1XqqMiam/0";
 //		String data_tx = (String) datadz2.get(position);
 //		Bitmap bitmap = BitUtil.stringtoBitmap(data_tx);
-//		bitmap = Utils.toRoundBitmap(bitmap, null); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+//		bitmap = Utils.toRoundBitmap(bitmap, null); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //		image.setImageBitmap(bitmap);
 		
 //		System.out.println("================="+RealmName.REALM_NAME_HTTP+datadz2.get(position));
@@ -135,7 +135,7 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 //////				ll_touxiang.setVisibility(View.VISIBLE);
 //////			    networkImage.setVisibility(View.GONE);
 //////				Bitmap bitmap = BitUtil.stringtoBitmap(data_tx);
-//////				bitmap = Utils.toRoundBitmap(bitmap, null); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+//////				bitmap = Utils.toRoundBitmap(bitmap, null); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //////				image.setImageBitmap(bitmap);
 ////				
 ////				mImageLoader = initImageLoader(context, mImageLoader, "test");
@@ -156,7 +156,7 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 ////				ll_touxiang.setVisibility(View.VISIBLE);
 ////			    networkImage.setVisibility(View.GONE);
 ////				Bitmap bitmap = BitUtil.stringtoBitmap(data_tx);
-////				bitmap = Utils.toRoundBitmap(bitmap, null); // Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+////				bitmap = Utils.toRoundBitmap(bitmap, null); // è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 ////				image.setImageBitmap(bitmap);
 //				
 //				mImageLoader = initImageLoader(context, mImageLoader, "test");
@@ -190,8 +190,8 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 //					String img_url2 = "http://183.62.138.31:1010/upload/phone/113875199/20170217164544307.jpg";
 					String img_url2 = RealmName.REALM_NAME_HTTP +(String) datadz2.get(num);
 					System.out.println("img_url2=====1========="+img_url2);
-					Bitmap bmp = GetImgUtil.getImage(img_url);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-					bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					Bitmap bmp = GetImgUtil.getImage(img_url);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+					bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 					System.out.println("bitMap1=============="+bitMap_tx);
 //					image.setImageBitmap(bitMap_tx);
 				} catch (Exception e) {
@@ -202,13 +202,13 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 		
 		
 		/**
-		 * ³õÊ¼»¯Í¼Æ¬ÏÂÔØÆ÷£¬Í¼Æ¬»º´æµØÖ·<i>("/Android/data/[app_package_name]/cache/dirName")</i>
+		 * åˆå§‹åŒ–å›¾ç‰‡ä¸‹è½½å™¨ï¼Œå›¾ç‰‡ç¼“å­˜åœ°å€<i>("/Android/data/[app_package_name]/cache/dirName")</i>
 		 */
 		public ImageLoader initImageLoader(Context context,
 				ImageLoader imageLoader, String dirName) {
 			imageLoader = ImageLoader.getInstance();
 			if (imageLoader.isInited()) {
-				// ÖØĞÂ³õÊ¼»¯ImageLoaderÊ±,ĞèÒªÊÍ·Å×ÊÔ´.
+				// é‡æ–°åˆå§‹åŒ–ImageLoaderæ—¶,éœ€è¦é‡Šæ”¾èµ„æº.
 				imageLoader.destroy();
 			}
 			imageLoader.init(initImageLoaderConfig(context, dirName));
@@ -216,10 +216,10 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 		}
 		
 		/**
-		 * ÅäÖÃÍ¼Æ¬ÏÂÔØÆ÷
+		 * é…ç½®å›¾ç‰‡ä¸‹è½½å™¨
 		 * 
 		 * @param dirName
-		 *            ÎÄ¼şÃû
+		 *            æ–‡ä»¶å
 		 */
 		private ImageLoaderConfiguration initImageLoaderConfig(
 				Context context, String dirName) {
@@ -251,34 +251,34 @@ public class TuanchengyuanAdapterll extends BaseAdapter {
 		/**
 	    *
 	    * @param x
-	    *            Í¼ÏñµÄ¿í¶È
+	    *            å›¾åƒçš„å®½åº¦
 	    * @param y
-	    *            Í¼ÏñµÄ¸ß¶È
+	    *            å›¾åƒçš„é«˜åº¦
 	    * @param image
-	    *            Ô´Í¼Æ¬
+	    *            æºå›¾ç‰‡
 	    * @param outerRadiusRat
-	    *            Ô²½ÇµÄ´óĞ¡
-	    * @return Ô²½ÇÍ¼Æ¬
+	    *            åœ†è§’çš„å¤§å°
+	    * @return åœ†è§’å›¾ç‰‡
 	    */
 	   Bitmap createFramedPhoto(int x, int y, Bitmap image, float outerRadiusRat) {
-	       // ¸ù¾İÔ´ÎÄ¼şĞÂ½¨Ò»¸ödarwable¶ÔÏó
+	       // æ ¹æ®æºæ–‡ä»¶æ–°å»ºä¸€ä¸ªdarwableå¯¹è±¡
 	       Drawable imageDrawable = new BitmapDrawable(image);
 
-	       // ĞÂ½¨Ò»¸öĞÂµÄÊä³öÍ¼Æ¬
+	       // æ–°å»ºä¸€ä¸ªæ–°çš„è¾“å‡ºå›¾ç‰‡
 	       Bitmap output = Bitmap.createBitmap(x, y, Bitmap.Config.ARGB_8888);
 	       Canvas canvas = new Canvas(output);
 
-	       // ĞÂ½¨Ò»¸ö¾ØĞÎ
+	       // æ–°å»ºä¸€ä¸ªçŸ©å½¢
 	       RectF outerRect = new RectF(50, 50, x, y);
 
-	       // ²úÉúÒ»¸öºìÉ«µÄÔ²½Ç¾ØĞÎ
+	       // äº§ç”Ÿä¸€ä¸ªçº¢è‰²çš„åœ†è§’çŸ©å½¢
 	       Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	       paint.setColor(Color.RED);
 	       paint.setStyle(Paint.Style.STROKE);
 	       paint.setStrokeWidth(3);
 	       canvas.drawRoundRect(outerRect, outerRadiusRat, outerRadiusRat, paint);
 
-	       // ½«Ô´Í¼Æ¬»æÖÆµ½Õâ¸öÔ²½Ç¾ØĞÎÉÏ
+	       // å°†æºå›¾ç‰‡ç»˜åˆ¶åˆ°è¿™ä¸ªåœ†è§’çŸ©å½¢ä¸Š
 //	       paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
 	       imageDrawable.setBounds(0, 0, x, y);
 	       canvas.saveLayer(outerRect, paint, Canvas.ALL_SAVE_FLAG);

@@ -65,7 +65,7 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 /**
  * 
- * Ãæ¶ÔÃæ·ÖÏí
+ * é¢å¯¹é¢åˆ†äº«
  * 
  * @author Administrator
  * 
@@ -94,9 +94,9 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 	private DialogProgress progress;
 	String erweima = "";
 	RoundImageView networkImage,imv_user_photo;
-	Bitmap bitmap;// ¶şÎ¬ÂëÖĞ¼äÍ¼Æ¬
-	private int iv_halfWidth = 20;// ÏÔÊ¾ÖĞ¼äÍ¼Æ¬µÄ¿í¶ÈµÄÒ»°ë
-	Bitmap mBitmap;// ¶şÎ¬ÂëÍ¼Æ¬;
+	Bitmap bitmap;// äºŒç»´ç ä¸­é—´å›¾ç‰‡
+	private int iv_halfWidth = 20;// æ˜¾ç¤ºä¸­é—´å›¾ç‰‡çš„å®½åº¦çš„ä¸€åŠ
+	Bitmap mBitmap;// äºŒç»´ç å›¾ç‰‡;
 	Bitmap bitmap_tx,bitmap_touxiang;
 	String avatar = "";
 	String touxiang = "";
@@ -161,7 +161,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 			public void dispatchMessage(Message msg) {
 				switch (msg.what) {
 				case 1:
-//					bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ 
+//					bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜ 
 					finish();
 		            break;
 
@@ -179,7 +179,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 		super.onResume();
 	}
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 		
@@ -258,7 +258,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 			cursor2.setVisibility(View.VISIBLE);
 			ll_buju1.setVisibility(View.GONE);
 			ll_user_buju.setVisibility(View.VISIBLE);
-//			Toast.makeText(MainDuiMianPromoteActivity.this, "ÔİÎŞÈÕ³£µ÷Àí", 200).show();
+//			Toast.makeText(MainDuiMianPromoteActivity.this, "æš‚æ— æ—¥å¸¸è°ƒç†", 200).show();
 			intren();
 			break;
 		case R.id.btn_fenxiang:
@@ -368,13 +368,13 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 			System.out.println("bitmap_tx============="+bitmap_tx);
 			LogoConfig logoConfig = new LogoConfig();
 			bitmap = logoConfig.modifyLogo(BitmapFactory.decodeResource(getResources(),R.drawable.white_bg),bitmap_tx);
-			// Ëõ·ÅÍ¼Æ¬£¬ÓÃµ½¾ØÕóÈ¥×ö
+			// ç¼©æ”¾å›¾ç‰‡ï¼Œç”¨åˆ°çŸ©é˜µå»åš
 			Matrix matrix = new Matrix();
 			float sx = (float) 2 * iv_halfWidth / bitmap.getWidth();
 			float sy = (float) 2 * iv_halfWidth / bitmap.getHeight();
 			matrix.setScale(sx, sy);
 			System.out.println("bitmap============="+bitmap);
-			// Éú³ÉËõ·ÅºóµÄÍ¼Æ¬
+			// ç”Ÿæˆç¼©æ”¾åçš„å›¾ç‰‡
 			bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
 					bitmap.getHeight(), matrix, false);
 
@@ -468,9 +468,9 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 //					String img_url2 = "http://183.62.138.31:1010/upload/phone/113875199/20170217164544307.jpg";
 					String img_url2 = RealmName.REALM_NAME_HTTP +avatar;
 					System.out.println("img_url2=============="+img_url2);
-					Bitmap bmp = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
+					Bitmap bmp = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
 					bitMap_ewm_tx = bmp;
-					bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 					System.out.println("bitMap1=============="+bitMap_tx);
 				} catch (Exception e) {
 					Log.i("ggggg", e.getMessage());
@@ -484,8 +484,8 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 //				try {
 //					String img_url2 = RealmName.REALM_NAME_HTTP +avatar;
 //					System.out.println("img_url2=============="+img_url2);
-//					bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//					Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+//					bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//					Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //					touxiang = BitUtil.bitmaptoString(bitMap_tx);
 //					System.out.println("touxiang=============="+touxiang);
 //					System.out.println("bitmap_touxiang=============="+bitmap_touxiang);
@@ -497,7 +497,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 //		};
 		
 		/**
-		 * Î¢ĞÅ·ÖÏíÍ¼Æ¬
+		 * å¾®ä¿¡åˆ†äº«å›¾ç‰‡
 		 * 
 		 * @param text
 		 */
@@ -505,29 +505,29 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 	         try {
 //	        	 if (bitMap_tx != null) {
 	        	 
-	        	  // Í¼Æ¬ºÏ³É-»­²¼ ÏÈÈ¥»­A ÔÙÈ¥»­B
+	        	  // å›¾ç‰‡åˆæˆ-ç”»å¸ƒ å…ˆå»ç”»A å†å»ç”»B
 	 			String zhuti_tp = getIntent().getStringExtra("num");
 	 			System.out.println("zhuti_tp========"+zhuti_tp);
 	 			System.out.println("bitmap_fx0=============="+bitmap_fx);
 	 			if (zhuti_tp != null) {
-//	 				bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  	
+//	 				bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  	
 	 				if (zhuti_tp.equals("1")) {
 //	 					String fx_tp2 = spPreferences.getString("fx_tp2", "");
 //	 					bitmap_fx = BitUtil.stringtoBitmap(fx_tp2);
-//	 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
+//	 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
 	 				   InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao1); 
 					     BitmapFactory.Options options=new BitmapFactory.Options(); 
 					     options.inJustDecodeBounds = false; 
-					     options.inSampleSize = 1;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+					     options.inSampleSize = 1;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 					     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
 					     zhou();
 	 				}else if (zhuti_tp.equals("2")){
 	 					try {
-//	 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao2); // bitmapÎªÖ»¶ÁµÄ
+//	 					bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao2); // bitmapä¸ºåªè¯»çš„
 	 						 InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao2); 
 	 					     BitmapFactory.Options options=new BitmapFactory.Options(); 
 	 					     options.inJustDecodeBounds = false; 
-	 					     options.inSampleSize = 2;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+	 					     options.inSampleSize = 2;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 	 					     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
 	 					     zhoull();	
 	 					} catch (Exception e) {
@@ -536,12 +536,12 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 						}
 	 				}
 	 			} else {
-//	 				bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapÎªÖ»¶ÁµÄ
+//	 				bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao1); // bitmapä¸ºåªè¯»çš„
 //	 				yuanban();
 	 				     InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao1); 
 					     BitmapFactory.Options options=new BitmapFactory.Options(); 
 					     options.inJustDecodeBounds = false; 
-					     options.inSampleSize = 1;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+					     options.inSampleSize = 1;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 					     bitmap_fx =BitmapFactory.decodeStream(is,null,options); 
 					     zhou();
 	 			}
@@ -571,9 +571,9 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 		        paint.setColor(Color.BLACK);
 		        canvas.drawBitmap(bitmap_fx, new Matrix(), paint);
 		        System.out.println("bitmap_fx2=============="+bitmap_fx);
-		        bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  
+		        bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  
 		       
-		       //Í·Ïñ
+		       //å¤´åƒ
 //		       String touxiang = getIntent().getStringExtra("touxiang");
 //		       System.out.println("touxiang=============="+touxiang);
 		       if (bitMap_tx == null) {
@@ -591,16 +591,16 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 //		        bitMap2 = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_tx);
 		        int width2 = bitMap2.getWidth();
 		        int height2 = bitMap2.getHeight();
-		        // ÉèÖÃÏëÒªµÄ´óĞ¡
+		        // è®¾ç½®æƒ³è¦çš„å¤§å°
 		        int newWidth2= 180;
 		        int newHeight2 = 180;
-		        // ¼ÆËãËõ·Å±ÈÀı
+		        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 		        float scaleWidth2 = ((float) newWidth2) / width2;
 		        float scaleHeight2 = ((float) newHeight2) / height2;
-		        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+		        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 		        Matrix matrix2 = new Matrix();
 		        matrix2.postScale(scaleWidth2, scaleHeight2);
-		        // µÃµ½ĞÂµÄÍ¼Æ¬
+		        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 		        bitMap2 = Bitmap.createBitmap(bitMap2, 0, 0, width2, height2, matrix2, true);
 		        canvas.drawBitmap(bitMap2, 290, 180, null);
 		    	  } catch (Exception e) {
@@ -611,22 +611,22 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				
 			   }
 		        
-		        //¶şÎ¬Âë
+		        //äºŒç»´ç 
 //		        erweima = getIntent().getStringExtra("erweima");
 		        System.out.println("erweima=================================="+erweima);
 				Bitmap bitMap = BitUtil.stringtoBitmap(erweima);
 		        int width = bitMap.getWidth();
 		        int height = bitMap.getHeight();
-//	 	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+//	 	        // è®¾ç½®æƒ³è¦çš„å¤§å°
 	 	        int newWidth = 270;
 	 	        int newHeight = 270;
-		        // ¼ÆËãËõ·Å±ÈÀı
+		        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 		        float scaleWidth = ((float) newWidth) / width;
 		        float scaleHeight = ((float) newHeight) / height;
-		        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+		        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 		        Matrix matrix = new Matrix();
 		        matrix.postScale(scaleWidth, scaleHeight);
-		        // µÃµ½ĞÂµÄÍ¼Æ¬
+		        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 		        bitMap = Bitmap.createBitmap(bitMap, 0, 0, width, height, matrix, true);
 		        canvas.drawBitmap(bitMap, 240, 935, null);
 		        
@@ -644,7 +644,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				
 				Bitmap thumbBmp = Bitmap.createScaledBitmap(alterBitmap, THUMB_SIZE, THUMB_SIZE, true);
 				alterBitmap.recycle();
-				msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // ÉèÖÃËõÂÔÍ¼
+				msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // è®¾ç½®ç¼©ç•¥å›¾
 				
 				SendMessageToWX.Req req = new SendMessageToWX.Req();
 				
@@ -654,7 +654,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				req.scene = SendMessageToWX.Req.WXSceneSession;
 				boolean flag = api.sendReq(req);
 
-				System.out.println("Î¢ĞÅ×¢²á" + flag);
+				System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 				
 		}
 		
@@ -668,9 +668,9 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 		        paint.setColor(Color.BLACK);
 		        canvas.drawBitmap(bitmap_fx, new Matrix(), paint);
 		        System.out.println("bitmap_fx2=============="+bitmap_fx);
-		        bitmap_fx.recycle();  //»ØÊÕÍ¼Æ¬ËùÕ¼µÄÄÚ´æ  
+		        bitmap_fx.recycle();  //å›æ”¶å›¾ç‰‡æ‰€å çš„å†…å­˜  
 		       
-		       //Í·Ïñ
+		       //å¤´åƒ
 		       if (bitMap_tx == null) {
 		    	     bitMap2 = BitmapFactory.decodeResource(getResources(),R.drawable.llj_app);
 		       }else {
@@ -681,16 +681,16 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 		    	   try {
 		        int width2 = bitMap2.getWidth();
 		        int height2 = bitMap2.getHeight();
-		        // ÉèÖÃÏëÒªµÄ´óĞ¡
+		        // è®¾ç½®æƒ³è¦çš„å¤§å°
 		        int newWidth2= 140;
 		        int newHeight2 = 140;
-		        // ¼ÆËãËõ·Å±ÈÀı
+		        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 		        float scaleWidth2 = ((float) newWidth2) / width2;
 		        float scaleHeight2 = ((float) newHeight2) / height2;
-		        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+		        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 		        Matrix matrix2 = new Matrix();
 		        matrix2.postScale(scaleWidth2, scaleHeight2);
-		        // µÃµ½ĞÂµÄÍ¼Æ¬
+		        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 		        bitMap2 = Bitmap.createBitmap(bitMap2, 0, 0, width2, height2, matrix2, true);
 		        canvas.drawBitmap(bitMap2, 200, 120, null);
 		    	  } catch (Exception e) {
@@ -701,21 +701,21 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				
 			   }
 		        
-		        //¶şÎ¬Âë
+		        //äºŒç»´ç 
 //		        erweima = getIntent().getStringExtra("erweima");
 				Bitmap bitMap = BitUtil.stringtoBitmap(erweima);
 		        int width = bitMap.getWidth();
 		        int height = bitMap.getHeight();
-//	 	        // ÉèÖÃÏëÒªµÄ´óĞ¡
+//	 	        // è®¾ç½®æƒ³è¦çš„å¤§å°
 	 	        int newWidth = 200;
 	 	        int newHeight = 200;
-		        // ¼ÆËãËõ·Å±ÈÀı
+		        // è®¡ç®—ç¼©æ”¾æ¯”ä¾‹
 		        float scaleWidth = ((float) newWidth) / width;
 		        float scaleHeight = ((float) newHeight) / height;
-		        // È¡µÃÏëÒªËõ·ÅµÄmatrix²ÎÊı
+		        // å–å¾—æƒ³è¦ç¼©æ”¾çš„matrixå‚æ•°
 		        Matrix matrix = new Matrix();
 		        matrix.postScale(scaleWidth, scaleHeight);
-		        // µÃµ½ĞÂµÄÍ¼Æ¬
+		        // å¾—åˆ°æ–°çš„å›¾ç‰‡
 		        bitMap = Bitmap.createBitmap(bitMap, 0, 0, width, height, matrix, true);
 		        canvas.drawBitmap(bitMap, 170, 670, null);
 		        
@@ -732,7 +732,7 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				//import com.lglottery.www.http.Util;
 				Bitmap thumbBmp = Bitmap.createScaledBitmap(alterBitmap, THUMB_SIZE, THUMB_SIZE, true);
 				alterBitmap.recycle();
-				msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // ÉèÖÃËõÂÔÍ¼
+				msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // è®¾ç½®ç¼©ç•¥å›¾
 				
 				SendMessageToWX.Req req = new SendMessageToWX.Req();
 				req.transaction = buildTransaction("webpage");
@@ -740,46 +740,46 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				req.scene = SendMessageToWX.Req.WXSceneSession;
 				boolean flag = api.sendReq(req);
 
-				System.out.println("Î¢ĞÅ×¢²á" + flag);
+				System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 		}
 	/**
-	 * ¸ù¾İ×Ö·û´®Éú³É¶şÎ¬Âë
+	 * æ ¹æ®å­—ç¬¦ä¸²ç”ŸæˆäºŒç»´ç 
 	 * 
 	 * @param s
 	 * @return
 	 * @throws WriterException
 	 */
 	private Bitmap createBitmap(String str) throws WriterException {
-		// Éú³É¶øÎª¾ØÕó£¬±àÂëÊÇÖ¸¶¨´óĞ¡£¬²»ÒªÉú³ÉÁËÍ¼Æ¬ÔÚ½øĞĞËõ·Å£¬ÕâÑù»áµ¼ÖÂÄ£ºıÊ¶±ğÊ§°Ü£¬¾ÍÊÇÉ¨ÃèÊ§°ÜÁË¡£
+		// ç”Ÿæˆè€Œä¸ºçŸ©é˜µï¼Œç¼–ç æ˜¯æŒ‡å®šå¤§å°ï¼Œä¸è¦ç”Ÿæˆäº†å›¾ç‰‡åœ¨è¿›è¡Œç¼©æ”¾ï¼Œè¿™æ ·ä¼šå¯¼è‡´æ¨¡ç³Šè¯†åˆ«å¤±è´¥ï¼Œå°±æ˜¯æ‰«æå¤±è´¥äº†ã€‚
 		BitMatrix mBitMatrix = new MultiFormatWriter().encode(str,
-				BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-±àÂë¸ñÊ½
-		// ¶şÎ¬¾ØÕóµÄ¿í¸ß
+				BarcodeFormat.QR_CODE, 300, 300);// BarcodeFormat.QR_CODE-ç¼–ç æ ¼å¼
+		// äºŒç»´çŸ©é˜µçš„å®½é«˜
 		int w = mBitMatrix.getWidth();
 		int h = mBitMatrix.getHeight();
 
-		// Í·ÏñµÄ¿í¶È
+		// å¤´åƒçš„å®½åº¦
 		int halfw = w / 2;
 		int halfh = h / 2;
-		// ×¼±¸»­¶şÎ¬Âë£¬°Ñ¶şÎ¬¾ØÕó×ª»»ÎªÒ»Î¬Êı×é£¬Ò»Ö±ºá×Å»­
-		int[] pixels = new int[w * h];// Êı×é³¤¶È¾ÍÊÇ¾ØÕóµÄÃæ»ıÖµ
+		// å‡†å¤‡ç”»äºŒç»´ç ï¼ŒæŠŠäºŒç»´çŸ©é˜µè½¬æ¢ä¸ºä¸€ç»´æ•°ç»„ï¼Œä¸€ç›´æ¨ªç€ç”»
+		int[] pixels = new int[w * h];// æ•°ç»„é•¿åº¦å°±æ˜¯çŸ©é˜µçš„é¢ç§¯å€¼
 		for (int y = 0; y < h; y++) {
 			int outputOffset = y * w;
 			for (int x = 0; x < w; x++) {
-				// »­Ò»¸öÆÕÍ¨µÄ¶şÎ¬Âë
-				// if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+				// ç”»ä¸€ä¸ªæ™®é€šçš„äºŒç»´ç 
+				// if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 				// pixels[outputOffset + x] = 0xff000000;
 				// } else {
 				// pixels[outputOffset + x] = 0xffffffff;
 				// }
 
-				// »­Ò»¸öÓĞÍ¼Æ¬µÄ¶şÎ¬ÂëÍ¼Æ¬
+				// ç”»ä¸€ä¸ªæœ‰å›¾ç‰‡çš„äºŒç»´ç å›¾ç‰‡
 				if (x > (halfw - iv_halfWidth) && x < (halfw + iv_halfWidth)
 						&& y > (halfh - iv_halfWidth)
-						&& y < (halfh + iv_halfWidth)) {// ÖĞ¼äÍ¼Æ¬µÄÇøÓò
+						&& y < (halfh + iv_halfWidth)) {// ä¸­é—´å›¾ç‰‡çš„åŒºåŸŸ
 					pixels[outputOffset + x] = bitmap.getPixel(x - halfw
-							+ iv_halfWidth, y - halfh + iv_halfWidth);// ÕâÀï»­Í¼Ö®ºó»áºÜÃ÷ÏÔµÄÏÔÊ¾³öÀ´
+							+ iv_halfWidth, y - halfh + iv_halfWidth);// è¿™é‡Œç”»å›¾ä¹‹åä¼šå¾ˆæ˜æ˜¾çš„æ˜¾ç¤ºå‡ºæ¥
 				} else {
-					if (mBitMatrix.get(x, y)) {// ±íÊ¾¶şÎ¬¾ØÕóÓĞÖµ£¬¶ÔÓ¦»­Ò»¸öºÚµã
+					if (mBitMatrix.get(x, y)) {// è¡¨ç¤ºäºŒç»´çŸ©é˜µæœ‰å€¼ï¼Œå¯¹åº”ç”»ä¸€ä¸ªé»‘ç‚¹
 						pixels[outputOffset + x] = 0xff000000;
 					} else {
 						pixels[outputOffset + x] = 0xffffffff;
@@ -787,20 +787,20 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 				}
 			}
 		}
-		Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// ´´½¨Ò»¸ö300*300bitmap
-		bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// ÏñËØµã¡¢ÆğÊ¼µã¡¢¿í¶È¡¢ÆäÆğÊ¼ÏñËØ¡¢¿í¡¢¸ß
+		Bitmap bitmap = Bitmap.createBitmap(w, h, Config.ARGB_8888);// åˆ›å»ºä¸€ä¸ª300*300bitmap
+		bitmap.setPixels(pixels, 0, w, 0, 0, w, h);// åƒç´ ç‚¹ã€èµ·å§‹ç‚¹ã€å®½åº¦ã€å…¶èµ·å§‹åƒç´ ã€å®½ã€é«˜
 		return bitmap;
 
 	}
 	
 	/**
-	 * ³õÊ¼»¯Í¼Æ¬ÏÂÔØÆ÷£¬Í¼Æ¬»º´æµØÖ·<i>("/Android/data/[app_package_name]/cache/dirName")</i>
+	 * åˆå§‹åŒ–å›¾ç‰‡ä¸‹è½½å™¨ï¼Œå›¾ç‰‡ç¼“å­˜åœ°å€<i>("/Android/data/[app_package_name]/cache/dirName")</i>
 	 */
 	public ImageLoader initImageLoader(Context context,
 			ImageLoader imageLoader, String dirName) {
 		imageLoader = ImageLoader.getInstance();
 		if (imageLoader.isInited()) {
-			// ÖØĞÂ³õÊ¼»¯ImageLoaderÊ±,ĞèÒªÊÍ·Å×ÊÔ´.
+			// é‡æ–°åˆå§‹åŒ–ImageLoaderæ—¶,éœ€è¦é‡Šæ”¾èµ„æº.
 			imageLoader.destroy();
 		}
 		imageLoader.init(initImageLoaderConfig(context, dirName));
@@ -808,10 +808,10 @@ public class MainDuiMianPromoteActivity extends BaseActivity implements OnClickL
 	}
 	
 	/**
-	 * ÅäÖÃÍ¼Æ¬ÏÂÔØÆ÷
+	 * é…ç½®å›¾ç‰‡ä¸‹è½½å™¨
 	 * 
 	 * @param dirName
-	 *            ÎÄ¼şÃû
+	 *            æ–‡ä»¶å
 	 */
 	private ImageLoaderConfiguration initImageLoaderConfig(
 			Context context, String dirName) {

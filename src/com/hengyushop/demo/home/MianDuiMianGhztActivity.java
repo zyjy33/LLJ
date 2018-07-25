@@ -21,7 +21,7 @@ import com.hengyushop.demo.at.BaseActivity;
 import com.lelinju.www.R;
 
 /**
- * Ãæ¶ÔÃæ¸ü»»º£±¨
+ * é¢å¯¹é¢æ›´æ¢æµ·æŠ¥
  * 
  * @author Administrator
  * 
@@ -53,14 +53,14 @@ public class MianDuiMianGhztActivity extends BaseActivity implements
 	public void intren() {
 		try {
 			Bitmap bitmap_dihua = BitmapFactory.decodeResource(getResources(), R.drawable.dihua);
-//			Bitmap bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao2); // bitmapÎªÖ»¶ÁµÄ
+//			Bitmap bitmap_fx = BitmapFactory.decodeResource(getResources(),R.drawable.ysj_haibao2); // bitmapä¸ºåªè¯»çš„
 //			fx_tp2 = BitUtil.bitmaptoString(bitmap_fx);
 			System.out.println("fx_tp2=============="+bitmap_dihua);
 			iv_qr_image1 = (ImageView) findViewById(R.id.iv_qr_image1);
 //			InputStream is = this.getResources().openRawResource(R.drawable.ysj_haibao1); 
 //		     BitmapFactory.Options options=new BitmapFactory.Options(); 
 //		     options.inJustDecodeBounds = false; 
-//		     options.inSampleSize = 5;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+//		     options.inSampleSize = 5;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 //		     Bitmap bitmap_fx1 =BitmapFactory.decodeStream(is,null,options); 
 //		     iv_qr_image1.setImageBitmap(bitmap_fx1);
 			iv_qr_image1.setBackgroundResource(R.drawable.ysj_hb1);
@@ -68,7 +68,7 @@ public class MianDuiMianGhztActivity extends BaseActivity implements
 //			InputStream is1 = this.getResources().openRawResource(R.drawable.ysj_haibao2); 
 //		     BitmapFactory.Options options1=new BitmapFactory.Options(); 
 //		     options.inJustDecodeBounds = false; 
-//		     options.inSampleSize = 5;   //width£¬hightÉèÎªÔ­À´µÄÊ®·ÖÒ»
+//		     options.inSampleSize = 5;   //widthï¼Œhightè®¾ä¸ºåŸæ¥çš„ååˆ†ä¸€
 //		     Bitmap bitmap_fx2 =BitmapFactory.decodeStream(is1,null,options1); 
 //		     iv_qr_image2.setImageBitmap(bitmap_fx2);
     		iv_qr_image2.setBackgroundResource(R.drawable.ysj_hb2);

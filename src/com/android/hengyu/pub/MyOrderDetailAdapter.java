@@ -65,7 +65,7 @@ public class MyOrderDetailAdapter extends BaseAdapter {
 				RealmName.REALM_NAME + "/admin/"
 						+ list.get(position).proFaceImg, img_ware);
 		tv_name.setText(list.get(position).Name);
-		tv_price.setText("гд" + list.get(position).Price);
+		tv_price.setText("я┐е" + list.get(position).Price);
 		tv_number.setText(list.get(position).Count);
 
 		return convertView;

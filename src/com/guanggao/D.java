@@ -10,7 +10,7 @@ public class D extends BaseActivity{
 	protected void onCreate(android.os.Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.guanggao);
-		//来电监听，获取系统服务“TELEPHONY_SERVICE
+		//鏉ョ數鐩戝惉锛岃幏鍙栫郴缁熸湇鍔♀�淭ELEPHONY_SERVICE
 	    /*TelephonyManager telM = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);  
 		telM.listen(new TelListener(this), PhoneStateListener.LISTEN_CALL_STATE);*/
 		

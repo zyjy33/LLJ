@@ -115,7 +115,7 @@ public class JuTouTiaoActivity extends BaseActivity {
 				"&top=10&strwhere=";
 		
 		
-		System.out.println(" ’≤ÿ"+strUrl);
+		System.out.println("Êî∂Ëóè"+strUrl);
 		AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 			@Override
 			public void onSuccess(int arg0, String arg1) {

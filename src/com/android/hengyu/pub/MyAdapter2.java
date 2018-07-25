@@ -76,7 +76,7 @@ public class MyAdapter2 extends BaseAdapter {
 		}
 		
 //		holder.img.setImageResource(dataList.get(position));
-//		holder.text.setText("µÚ" + position + "Ïî");
+//		holder.text.setText("ç¬¬" + position + "é¡¹");
 //		clickTempll = position;
 		 
 		 try {
@@ -84,7 +84,7 @@ public class MyAdapter2 extends BaseAdapter {
 			 
 			 
 			 
-		 System.out.println("¸öÊı1======================"+position);
+		 System.out.println("ä¸ªæ•°1======================"+position);
 //		 String weizhi = list2.get(position);
 		if (position == 0) {
 			holder.img.setImageResource(R.drawable.jujc);
@@ -98,7 +98,7 @@ public class MyAdapter2 extends BaseAdapter {
 		}
 		if (position == 3) {
 			holder.img.setImageResource(R.drawable.yyjb2);
-			 holder.text.setText("Ò»Ôª¾Û±Ò");
+			 holder.text.setText("ä¸€å…ƒèšå¸");
 		}
 		
 //        ImageLoader imageLoader=ImageLoader.getInstance();

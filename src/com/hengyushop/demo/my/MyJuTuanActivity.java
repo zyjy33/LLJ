@@ -45,7 +45,7 @@ import com.lelinju.www.R;
 
 /**
  * 
- * ÎÒµÄ¾ÛÍÅ
+ * æˆ‘çš„èšå›¢
  * 
  * @author Administrator
  * 
@@ -99,32 +99,32 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onResume();
 		try {
-			System.out.println("×´Ì¬==============" + zhuangtai);
-			//Óà¶îÖ§¸¶¸üĞÂ
+			System.out.println("çŠ¶æ€==============" + zhuangtai);
+			//ä½™é¢æ”¯ä»˜æ›´æ–°
 			if (teby == true) {
 //				userloginqm();
 //				finish();
 			}
 			
-			//Î¢ĞÅÖ§¸¶³É¹¦ºó¹Ø±Õ´Ë½çÃæ
+			//å¾®ä¿¡æ”¯ä»˜æˆåŠŸåå…³é—­æ­¤ç•Œé¢
 //			if (zhuangtai == true) {
 //				userloginqm();
 //			}
 			
 			String type = getIntent().getStringExtra("num");
 			if (type.equals("1")) {
-				textView1.setText("¶©µ¥¹ÜÀí");
+				textView1.setText("è®¢å•ç®¡ç†");
 			}
 			else 
 			if (type.equals("2")) {
-				textView1.setText("ÎÒµÄ¾Û¶Ò»»");
+				textView1.setText("æˆ‘çš„èšå…‘æ¢");
 			}
 			else
 				if (type.equals("3")) {
-				textView1.setText("ÎÒµÄ¾ÛÍÅ");
+				textView1.setText("æˆ‘çš„èšå›¢");
 			}
 		
-		//ÅĞ¶Ï×´Ì¬µ½½çÃæ
+		//åˆ¤æ–­çŠ¶æ€åˆ°ç•Œé¢
 		String status = getIntent().getStringExtra("status");
 		if (status != null) {
 			if (status.equals("0")) {
@@ -164,7 +164,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 
@@ -214,7 +214,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 		case R.id.index_item0:
 //			List<Double> list0 = MyOrderllAdapter.list_monney;
 //			if (list0.size() > 0) {
-//				list0.clear();//ÏêÇé×Ü¼ÛÁĞ±íÇå¿Õ
+//				list0.clear();//è¯¦æƒ…æ€»ä»·åˆ—è¡¨æ¸…ç©º
 //			}
 			item1();
 			list = new ArrayList<MyOrderData>();
@@ -227,7 +227,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 		case R.id.index_item1:
 //			List<Double> list1 = MyOrderllAdapter.list_monney;
 //			if (list1.size() > 0) {
-//				list1.clear();//ÏêÇé×Ü¼ÛÁĞ±íÇå¿Õ
+//				list1.clear();//è¯¦æƒ…æ€»ä»·åˆ—è¡¨æ¸…ç©º
 //			}
 			item2();
 			list = new ArrayList<MyOrderData>();
@@ -240,7 +240,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 		case R.id.index_item2:
 //			List<Double> list2 = MyOrderllAdapter.list_monney;
 //			if (list2.size() > 0) {
-//				list2.clear();//ÏêÇé×Ü¼ÛÁĞ±íÇå¿Õ
+//				list2.clear();//è¯¦æƒ…æ€»ä»·åˆ—è¡¨æ¸…ç©º
 //			}
 			item3();
 			list = new ArrayList<MyOrderData>();
@@ -253,7 +253,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 		case R.id.index_item3:
 //			List<Double> list3 = MyOrderllAdapter.list_monney;
 //			if (list3.size() > 0) {
-//				list3.clear();//ÏêÇé×Ü¼ÛÁĞ±íÇå¿Õ
+//				list3.clear();//è¯¦æƒ…æ€»ä»·åˆ—è¡¨æ¸…ç©º
 //			}
 			item4();
 			list = new ArrayList<MyOrderData>();
@@ -264,7 +264,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 		case R.id.index_item4:
 //			List<Double> list4 = MyOrderllAdapter.list_monney;
 //			if (list4.size() > 0) {
-//				list4.clear();//ÏêÇé×Ü¼ÛÁĞ±íÇå¿Õ
+//				list4.clear();//è¯¦æƒ…æ€»ä»·åˆ—è¡¨æ¸…ç©º
 //			}
 			item5();
 			list = new ArrayList<MyOrderData>();
@@ -315,7 +315,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	
 
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -333,7 +333,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	};
 
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -365,7 +365,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	};
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int CURRENT_NUM = 1;
 	private final int VIEW_NUM = 10;
@@ -373,7 +373,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 //		progress.CreateProgress();
 		RUN_METHOD = 1;
 		if (flag) {
-			// ¼ÆÊıºÍÈİÆ÷ÇåÁã
+			// è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			list = new ArrayList<MyOrderData>();
 //			System.out.println("=========list11============"+list.size());
@@ -388,7 +388,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=========Êı¾İ½Ó¿Ú============"+arg1);
+								System.out.println("=========æ•°æ®æ¥å£============"+arg1);
 								try {
 								
 								JSONObject object = new JSONObject(arg1);
@@ -451,7 +451,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 									if (list.size() == 0) {
 										no_data_no.setVisibility(View.VISIBLE);
 									}else {
-										Toast.makeText(MyJuTuanActivity.this, "Ã»ÓĞ¶©µ¥ÁË", 200).show();
+										Toast.makeText(MyJuTuanActivity.this, "æ²¡æœ‰è®¢å•äº†", 200).show();
 									}
 								}
 								
@@ -509,14 +509,14 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 //									// TODO Auto-generated method stub
 //									switch (resID) {
 //									case R.id.item0:
-//										// Óà¶îÖ§¸¶
+//										// ä½™é¢æ”¯ä»˜
 //										break;
 //									case R.id.item1:
 //										break;
-//									case R.id.item2:// Ö§¸¶±¦
+//									case R.id.item2:// æ”¯ä»˜å®
 //										loadzhidu(order_no);
 //										break;
-//									case R.id.item3:// Î¢ĞÅ
+//									case R.id.item3:// å¾®ä¿¡
 //										break;
 //									case R.id.item4:
 //
@@ -529,29 +529,29 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 //							}, cancelListener, null);
 				  
 	            break;
-			case 5://Ö§¸¶±¦
+			case 5://æ”¯ä»˜å®
 				PayResult payResult = new PayResult((String) msg.obj);
 
-				// Ö§¸¶±¦·µ»Ø´Ë´ÎÖ§¸¶½á¹û¼°¼ÓÇ©£¬½¨Òé¶ÔÖ§¸¶±¦Ç©ÃûĞÅÏ¢ÄÃÇ©Ô¼Ê±Ö§¸¶±¦Ìá¹©µÄ¹«Ô¿×öÑéÇ©
+				// æ”¯ä»˜å®è¿”å›æ­¤æ¬¡æ”¯ä»˜ç»“æœåŠåŠ ç­¾ï¼Œå»ºè®®å¯¹æ”¯ä»˜å®ç­¾åä¿¡æ¯æ‹¿ç­¾çº¦æ—¶æ”¯ä»˜å®æä¾›çš„å…¬é’¥åšéªŒç­¾
 				String resultInfo = payResult.getResult();
 
 				String resultStatus = payResult.getResultStatus();
 				System.out.println(resultInfo + "---" + resultStatus);
-				// ÅĞ¶ÏresultStatus Îª¡°9000¡±Ôò´ú±íÖ§¸¶³É¹¦£¬¾ßÌå×´Ì¬Âë´ú±íº¬Òå¿É²Î¿¼½Ó¿ÚÎÄµµ
+				// åˆ¤æ–­resultStatus ä¸ºâ€œ9000â€åˆ™ä»£è¡¨æ”¯ä»˜æˆåŠŸï¼Œå…·ä½“çŠ¶æ€ç ä»£è¡¨å«ä¹‰å¯å‚è€ƒæ¥å£æ–‡æ¡£
 				if (TextUtils.equals(resultStatus, "9000")) {
-					Toast.makeText(MyJuTuanActivity.this, "Ö§¸¶³É¹¦",
+					Toast.makeText(MyJuTuanActivity.this, "æ”¯ä»˜æˆåŠŸ",
 							Toast.LENGTH_SHORT).show();
 					userloginqm();
 				} else {
-					// ÅĞ¶ÏresultStatus Îª·Ç¡°9000¡±Ôò´ú±í¿ÉÄÜÖ§¸¶Ê§°Ü
-					// ¡°8000¡±´ú±íÖ§¸¶½á¹ûÒòÎªÖ§¸¶ÇşµÀÔ­Òò»òÕßÏµÍ³Ô­Òò»¹ÔÚµÈ´ıÖ§¸¶½á¹ûÈ·ÈÏ£¬×îÖÕ½»Ò×ÊÇ·ñ³É¹¦ÒÔ·şÎñ¶ËÒì²½Í¨ÖªÎª×¼£¨Ğ¡¸ÅÂÊ×´Ì¬£©
+					// åˆ¤æ–­resultStatus ä¸ºéâ€œ9000â€åˆ™ä»£è¡¨å¯èƒ½æ”¯ä»˜å¤±è´¥
+					// â€œ8000â€ä»£è¡¨æ”¯ä»˜ç»“æœå› ä¸ºæ”¯ä»˜æ¸ é“åŸå› æˆ–è€…ç³»ç»ŸåŸå› è¿˜åœ¨ç­‰å¾…æ”¯ä»˜ç»“æœç¡®è®¤ï¼Œæœ€ç»ˆäº¤æ˜“æ˜¯å¦æˆåŠŸä»¥æœåŠ¡ç«¯å¼‚æ­¥é€šçŸ¥ä¸ºå‡†ï¼ˆå°æ¦‚ç‡çŠ¶æ€ï¼‰
 					if (TextUtils.equals(resultStatus, "8000")) {
-						Toast.makeText(MyJuTuanActivity.this, "Ö§¸¶½á¹ûÈ·ÈÏÖĞ",
+						Toast.makeText(MyJuTuanActivity.this, "æ”¯ä»˜ç»“æœç¡®è®¤ä¸­",
 								Toast.LENGTH_SHORT).show();
 
 					} else {
-						// ÆäËûÖµ¾Í¿ÉÒÔÅĞ¶ÏÎªÖ§¸¶Ê§°Ü£¬°üÀ¨ÓÃ»§Ö÷¶¯È¡ÏûÖ§¸¶£¬»òÕßÏµÍ³·µ»ØµÄ´íÎó
-						Toast.makeText(MyJuTuanActivity.this, "Ö§¸¶Ê§°Ü",
+						// å…¶ä»–å€¼å°±å¯ä»¥åˆ¤æ–­ä¸ºæ”¯ä»˜å¤±è´¥ï¼ŒåŒ…æ‹¬ç”¨æˆ·ä¸»åŠ¨å–æ¶ˆæ”¯ä»˜ï¼Œæˆ–è€…ç³»ç»Ÿè¿”å›çš„é”™è¯¯
+						Toast.makeText(MyJuTuanActivity.this, "æ”¯ä»˜å¤±è´¥",
 								Toast.LENGTH_SHORT).show();
 
 						
@@ -574,9 +574,9 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	};
 	protected void dialog2() {
 		AlertDialog.Builder builder = new Builder(MyJuTuanActivity.this);
-		builder.setMessage("ÊÇ·ñÈ·¶¨È¡Ïû¶©µ¥?");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ˜¯å¦ç¡®å®šå–æ¶ˆè®¢å•?");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -584,7 +584,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -597,9 +597,9 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	
 	protected void dialog3() {
 		AlertDialog.Builder builder = new Builder(MyJuTuanActivity.this);
-		builder.setMessage("ÊÇ·ñÈ·¶¨É¾³ı¶©µ¥?");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ˜¯å¦ç¡®å®šåˆ é™¤è®¢å•?");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -607,7 +607,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -620,7 +620,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 
 
 	/**
-	 * È·ÈÏ¸¶¿î
+	 * ç¡®è®¤ä»˜æ¬¾
 	 * @param order_no 
 	 * @param payment_id 
 	 */
@@ -639,7 +639,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("È·ÈÏ¸¶¿î================================="+arg1);
+							System.out.println("ç¡®è®¤ä»˜æ¬¾================================="+arg1);
 							  String status = object.getString("status");
 							    String info = object.getString("info");
 							    if (status.equals("y")) {
@@ -661,7 +661,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * È¡Ïû¶©µ¥
+	 * å–æ¶ˆè®¢å•
 	 * @param order_no 
 	 * @param payment_id 
 	 */
@@ -680,7 +680,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("È¡Ïû¶©µ¥================================="+arg1);
+							System.out.println("å–æ¶ˆè®¢å•================================="+arg1);
 							  String status = object.getString("status");
 							    String info = object.getString("info");
 							    if (status.equals("y")) {
@@ -704,7 +704,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * É¾³ı¶©µ¥
+	 * åˆ é™¤è®¢å•
 	 * @param order_no 
 	 * @param payment_id 
 	 */
@@ -723,7 +723,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("È¡Ïû¶©µ¥================================="+arg1);
+							System.out.println("å–æ¶ˆè®¢å•================================="+arg1);
 							  String status = object.getString("status");
 							    String info = object.getString("info");
 							    if (status.equals("y")) {
@@ -748,7 +748,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	
 
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 */
 	private void userloginqm() {
 		try{
@@ -784,7 +784,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 	}
 	
 	/**
-	 * ¸üĞÂ¶©µ¥
+	 * æ›´æ–°è®¢å•
 	 * @param login_sign 
 	 * @param payment_id 
 	 */
@@ -803,7 +803,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("¸üĞÂ¶©µ¥================================="+arg1);
+							System.out.println("æ›´æ–°è®¢å•================================="+arg1);
 							  String status = object.getString("status");
 							    String info = object.getString("info");
 							    if (status.equals("y")) {
@@ -849,7 +849,7 @@ public class MyJuTuanActivity extends BaseActivity implements OnClickListener {
 						super.onFailure(arg0, arg1);
 						System.out.println("11================================="+arg0);
 						System.out.println("22================================="+arg1);
-						Toast.makeText(MyJuTuanActivity.this, "¸üĞÂ¶©µ¥ÍøÂç³¬Ê±Òì³£", 200).show();
+						Toast.makeText(MyJuTuanActivity.this, "æ›´æ–°è®¢å•ç½‘ç»œè¶…æ—¶å¼‚å¸¸", 200).show();
 					}
 
 				}, null);

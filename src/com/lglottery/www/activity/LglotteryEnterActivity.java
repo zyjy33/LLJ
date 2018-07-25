@@ -24,9 +24,9 @@ public class LglotteryEnterActivity extends BaseActivity {
 	private Lglottery_Item item;
 //	private int doll = 0;
 	private Bundle bundle ;
-	private int tag = -1;//0代表代金券，1代表金豆
+	private int tag = -1;//0浠ｈ〃浠ｉ噾鍒革紝1浠ｈ〃閲戣眴
 	/**
-	 * 组件的创建和生成
+	 * 缁勪欢鐨勫垱寤哄拰鐢熸垚
 	 */
 	private void init() {
 		lglottery_enter_rg = (RadioGroup) findViewById(R.id.lglottery_enter_rg);
@@ -48,7 +48,7 @@ public class LglotteryEnterActivity extends BaseActivity {
 	}
 
 	/**
-	 * 事件监听
+	 * 浜嬩欢鐩戝惉
 	 */
 	private OnClickListener clickListener = new OnClickListener() {
 		@Override
@@ -81,7 +81,7 @@ public class LglotteryEnterActivity extends BaseActivity {
 		}
 	};
 	/**
-	 * 关于复合组件按钮
+	 * 鍏充簬澶嶅悎缁勪欢鎸夐挳
 	 */
 	private OnCheckedChangeListener changeListener = new OnCheckedChangeListener() {
 		@Override

@@ -61,7 +61,7 @@ public class PostMainActivity extends BaseActivity {
 	}
 
 	/**
-	 * 建立链接
+	 * 寤虹珛閾炬帴
 	 */
 	private void connect() {
 		Map<String, String> params = new HashMap<String, String>();
@@ -80,7 +80,7 @@ public class PostMainActivity extends BaseActivity {
 	}
 
 	/**
-	 * 解析数据
+	 * 瑙ｆ瀽鏁版嵁
 	 * 
 	 * @param result
 	 */

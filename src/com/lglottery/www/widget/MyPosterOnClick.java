@@ -1,6 +1,6 @@
 package com.lglottery.www.widget;
 
-/**Í¼Æ¬Õ¹Ê¾¿Ø¼ş¡¾MyPosterView¡¿µã»÷¼àÌı */
+/**å›¾ç‰‡å±•ç¤ºæ§ä»¶ã€MyPosterViewã€‘ç‚¹å‡»ç›‘å¬ */
 public interface MyPosterOnClick 
 {
 	public void onMyclick(int position);

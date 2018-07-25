@@ -1,6 +1,6 @@
 package com.ctrip.openapi.java.base;
 
-// Http  Ù–‘
+
 public class HttpRequestProperty 
 {
 	private String name;

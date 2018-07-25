@@ -20,7 +20,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 
 /**
- * @Description:gridviewµÄAdapter
+ * @Description:gridviewçš„Adapter
  * @author http://blog.csdn.net/finddreams
  */
 public class JuTuanAdapter extends BaseAdapter {
@@ -82,9 +82,9 @@ public class JuTuanAdapter extends BaseAdapter {
 //			clickTemp = 0;
 //		}
 		
-		tv.setText(list.get(position).getPeople()+"ÈË³ÉÍÅ"); 
+		tv.setText(list.get(position).getPeople()+"äººæˆå›¢"); 
 //		
-		tv2.setText("¾ÛÍÅ¼Û£¤"+list.get(position).getPrice()); 
+		tv2.setText("èšå›¢ä»·ï¿¥"+list.get(position).getPrice()); 
 		
 		if (clickTemp == position) {
 			convertView.setBackgroundResource(R.drawable.bg_red_3_5_tuangoujia);//zangfutiaoli 

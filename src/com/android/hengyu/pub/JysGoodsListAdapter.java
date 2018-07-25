@@ -73,7 +73,7 @@ public class JysGoodsListAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		//*******************************************************************************
 			
-		//µ⁄“ª÷÷∑Ω∑®
+		//Á¨¨‰∏ÄÁßçÊñπÊ≥ï
 		View inflate = inflater.inflate(R.layout.tuijian_yunshangju_time, null);
 		ListView listView = (ListView) inflate.findViewById(R.id.expandedListView1);
 		try {
@@ -84,7 +84,7 @@ public class JysGoodsListAdapter extends BaseAdapter {
 		tv_zhuti.setText(lists.get(position).name);
 		
 //		int zhou = lists.get(position).user_id;
-//		System.out.println("ID÷µ====================="+zhou);
+//		System.out.println("IDÂÄº====================="+zhou);
 //		loadCatell(zhou);
 		
 		} catch (Exception e) {
@@ -141,7 +141,7 @@ public class JysGoodsListAdapter extends BaseAdapter {
 				
 				tv_name.setText(lists_ll.get(position).title);
 				tv_category_title.setText(lists_ll.get(position).category_title);
-				System.out.println("=====================Œª÷√"+position);
+				System.out.println("=====================‰ΩçÁΩÆ"+position);
 //				if (position == 0) {
 					loader.displayImage(
 							RealmName.REALM_NAME_HTTP
@@ -188,10 +188,10 @@ public class JysGoodsListAdapter extends BaseAdapter {
 		
 	}
 	
-	//…Ã∆∑¡–±Ì
+	//ÂïÜÂìÅÂàóË°®
 //	private void loadCatell(int user_id){
 //		try {
-//			System.out.println("∂˛º∂÷µ333333====================="+user_id);
+//			System.out.println("‰∫åÁ∫ßÂÄº333333====================="+user_id);
 //		AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_article_top_list?" +
 //                "channel_name=goods&top=3&strwhere=user_id="+user_id+"", new AsyncHttpResponseHandler(){
 //			@Override
@@ -199,7 +199,7 @@ public class JysGoodsListAdapter extends BaseAdapter {
 //				// TODO Auto-generated method stub
 //				super.onSuccess(arg0, arg1);
 //				try {
-//					System.out.println("÷µ2=========="+arg1);
+//					System.out.println("ÂÄº2=========="+arg1);
 //					    list_2 = new ArrayList<shangpingListData>();
 //						JSONObject jsonObject = new JSONObject(arg1);
 //						JSONArray jsonArray = jsonObject.getJSONArray("data");

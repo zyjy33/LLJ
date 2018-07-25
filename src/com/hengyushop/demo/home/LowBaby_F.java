@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * ¹ºÎï³µ½çÃæÖĞµÄ½µ¼Û±¦±´½çÃæ
+ * è´­ç‰©è½¦ç•Œé¢ä¸­çš„é™ä»·å®è´ç•Œé¢
  * @author http://yecaoly.taobao.com
  *
  */

@@ -14,7 +14,7 @@ import android.view.Window;
 import android.widget.TabHost;
 import android.widget.TextView;
 /**
- * ÍÆ¼ö
+ * æ¨è
  * @author Administrator
  *
  */

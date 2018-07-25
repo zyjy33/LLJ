@@ -19,7 +19,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 
 /**
- * @Description:gridviewµÄAdapter
+ * @Description:gridviewçš„Adapter
  * @author http://blog.csdn.net/finddreams
  */
 public class SpcsAdapterll extends BaseAdapter {

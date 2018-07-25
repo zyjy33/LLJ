@@ -123,7 +123,7 @@ public class TrainInformationActivity extends BaseActivity {
 			child.setV8(childHead8);
 			child.setV9(childHead9);
 			bean.setChild(child);
-			// Ê±¿Ì
+			// æ—¶åˆ»
 			ArrayList<TrainInfoChild> childs = new ArrayList<TrainInfoChild>();
 			JSONArray itemArray = childObject.getJSONArray("item");
 			int itemLen = itemArray.length();

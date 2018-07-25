@@ -77,16 +77,16 @@ public class JuTuanGou2Adapter extends BaseAdapter {
 		 try {
 //		  System.out.println("List======================"+List.size());
 			 
-		 System.out.println("¸öÊı1======================"+position);
+		 System.out.println("ä¸ªæ•°1======================"+position);
 		
         ImageLoader imageLoader=ImageLoader.getInstance();
         imageLoader.displayImage((String) RealmName.REALM_NAME_HTTP+List.get(position).getImg_url(),holder.img);
 		
 		  holder.tv_titel.setText(List.get(position).getTitle());
-		  holder.tv_price.setText("£¤"+List.get(position).getPrice());
-		  holder.tv_groupon_price.setText("µ¥Âò¼Û£¤"+List.get(position).getGroupon_price());
-		  holder.tv_groupon_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
-		  holder.tv_tuan.setText(List.get(position).getPeople()+"ÈËÍÅ");
+		  holder.tv_price.setText("ï¿¥"+List.get(position).getPrice());
+		  holder.tv_groupon_price.setText("å•ä¹°ä»·ï¿¥"+List.get(position).getGroupon_price());
+		  holder.tv_groupon_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
+		  holder.tv_tuan.setText(List.get(position).getPeople()+"äººå›¢");
 //		  holder.tv_anniu.setText(List.get(position).title);
 		  System.out.println("List.get(position).getTitle()======================"+List.get(position).getTitle());
 		 } catch (Exception e) {

@@ -44,11 +44,11 @@ public class ComboDetalActivity extends BaseActivity {
 			case 0:
 				title.setText(detailDomain.getTitle());
 				describe.setText(detailDomain.getDescription());
-				current_price.setText(detailDomain.getCurrent_price() + "Ôª");
-				list_price.setText(detailDomain.getList_price() + "Ôª");
+				current_price.setText(detailDomain.getCurrent_price() + "å…ƒ");
+				list_price.setText(detailDomain.getList_price() + "å…ƒ");
 				imageLoader.displayImage(detailDomain.getImage_url(),
 						combo_detail_img);
-				is_seals.setText("ÒÑÊÛ" + detailDomain.getPurchase_count());
+				is_seals.setText("å·²å”®" + detailDomain.getPurchase_count());
 				if (detailDomain.getIs_required().equals("1")) {
 					is_req.setVisibility(View.VISIBLE);
 				} else {

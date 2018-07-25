@@ -55,19 +55,19 @@ public class One_JiexiaoActivity extends BaseActivity{
 		img_layout = (LinearLayout) findViewById(R.id.img_layout);
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		int widthPixels = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		int widthPixels = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		market_information_images = (MyPosterView) findViewById(R.id.market_information_images);
 		market_information_title = (TextView) findViewById(R.id.market_information_title);
 		tv_ware_market_money = (TextView) findViewById(R.id.tv_ware_market_money);
 		item7 = (TextView) findViewById(R.id.item7);
 		item8 = (TextView) findViewById(R.id.item8);
 		item9 = (TextView) findViewById(R.id.item9);
-		//¼ÆËãÆÚÊı
+		//è®¡ç®—æœŸæ•°
 		old_one.removeAllViews();
 		int old_Number = Integer.parseInt(getIntent().getStringExtra("LuckDrawBatchOrderNumber"));
 		for(int i=old_Number;i>0;i--){
 			TextView textView = new TextView(getApplicationContext());
-			textView.setText("µÚ"+i+"ÆÚ");
+			textView.setText("ç¬¬"+i+"æœŸ");
 			textView.setPadding(7, 5, 7, 5);
 			textView.setTextSize(17);
 			old_one.addView(textView);
@@ -123,10 +123,10 @@ public class One_JiexiaoActivity extends BaseActivity{
 		params.put("yth", "");
 		params.put("productItemId", getIntent().getStringExtra("id"));
 		params.put("luckDrawBatchOrderNumber", "1");
-		//mi/getdata.ashx?act=GetLuckYiYuanJuGouAnnounceRecords&yth=test»òÎª¿Õ&ProductItemId=1
+		//mi/getdata.ashx?act=GetLuckYiYuanJuGouAnnounceRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1
 		*/
-		//mi/getdata.ashx?act=GetLuckReleaseRecords&yth=test»òÎª¿Õ&ProductItemId=1&LuckDrawBatchOrderNumber=ÒÑ½áÊøµÄ³é½±
-		//mi/getdata.ashx?act=GetLuckYiYuanJuGouAnnounceRecords&yth=test»òÎª¿Õ&ProductItemId=1
+		//mi/getdata.ashx?act=GetLuckReleaseRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1&LuckDrawBatchOrderNumber=å·²ç»“æŸçš„æŠ½å¥–
+		//mi/getdata.ashx?act=GetLuckYiYuanJuGouAnnounceRecords&yth=testæˆ–ä¸ºç©º&ProductItemId=1
 		AsyncHttp.post_1(RealmName.REALM_NAME+"/mi/getdata.ashx", params, new AsyncHttpResponseHandler(){
 			
 
@@ -187,7 +187,7 @@ public class One_JiexiaoActivity extends BaseActivity{
 				proName = object.getString("proName");
 				marketPrice = object.getString("marketPrice");
 				proFaceImg = object.getString("proFaceImg");
-				System.out.println("Í¼Æ¬µØÖ·:" + proFaceImg);
+				System.out.println("å›¾ç‰‡åœ°å€:" + proFaceImg);
 				proInverseImg = object.getString("proInverseImg");
 				proDoDetailImg = object.getString("proDoDetailImg");
 				proDesignImg = object.getString("proDesignImg");
@@ -238,7 +238,7 @@ public class One_JiexiaoActivity extends BaseActivity{
 				item8.setText(NeedGameUserNum);
 				item10.setProgress((int)(Double.parseDouble(HasJoinedNum)/Double.parseDouble(NeedGameUserNum)*100));
 				item9.setText(""+(Integer.parseInt(NeedGameUserNum)-Integer.parseInt(HasJoinedNum)));
-				tv_ware_market_money.setText("£¤" + marketPrice);
+				tv_ware_market_money.setText("ï¿¥" + marketPrice);
 				
 				break;
 			default:

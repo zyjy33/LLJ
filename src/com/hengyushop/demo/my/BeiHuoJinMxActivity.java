@@ -49,7 +49,7 @@ import com.lelinju.www.UserLoginActivity;
 
 /**
  * 
- * ±¸»õ½ğÃ÷Ï¸
+ * å¤‡è´§é‡‘æ˜ç»†
  * 
  * @author Administrator
  * 
@@ -87,7 +87,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 	}
 
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 
@@ -140,7 +140,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 	}
 
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -158,7 +158,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 	};
 
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -193,7 +193,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 			switch (msg.what) {
 			case 0:
 				try {
-				System.out.println("=====================¶ş¼¶Öµ14---"+ list.size());
+				System.out.println("=====================äºŒçº§å€¼14---"+ list.size());
 //				list = (ArrayList<MyAssetsBean>) msg.obj;
 				adapter.putData(list);
 //				adapter = new MyAssetsAdapter(list, BeiHuoJinMxActivity.this,imageLoader);
@@ -213,7 +213,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 	};
 
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 //	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -222,7 +222,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 	private void load_list(boolean flag, String fund_id) {
 //		RUN_METHOD = 1;
 		if (flag) {
-			// ¼ÆÊıºÍÈİÆ÷ÇåÁã
+			// è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			list = new ArrayList<MyAssetsBean>();
 		}
@@ -237,7 +237,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 					public void onSuccess(int arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====================¶ş¼¶Öµ1" + arg1);
+						System.out.println("=====================äºŒçº§å€¼1" + arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");
@@ -283,12 +283,12 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 	}
 
 	/**
-	 * µÚ2¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬2ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 * @param fund_id 
 	 */
 	private void load_list2(boolean flag, String fund_id) {
 		if (flag) {
-			// ¼ÆÊıºÍÈİÆ÷ÇåÁã
+			// è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			System.out.println("=====================flag==" + flag);
 			CURRENT_NUM = 0;
 			list = new ArrayList<MyAssetsBean>();
@@ -301,7 +301,7 @@ public class BeiHuoJinMxActivity extends BaseActivity implements OnClickListener
 					public void onSuccess(int arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====================¶ş¼¶Öµ2" + arg1);
+						System.out.println("=====================äºŒçº§å€¼2" + arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");

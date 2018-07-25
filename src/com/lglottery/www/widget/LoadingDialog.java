@@ -11,14 +11,14 @@ import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 
 /**
- * ×Ô¶¨ÒåµÄIPHONEÑùÊ½µÄ¶Ô»°¿ò
+ * è‡ªå®šä¹‰çš„IPHONEæ ·å¼çš„å¯¹è¯æ¡†
  * */
 public class LoadingDialog {
-	private Dialog dialog;// ¶Ô»°¿ò
+	private Dialog dialog;// å¯¹è¯æ¡†
 	private LinearLayout layout;
 
 	/**
-	 * ¹¹Ôì¶Ô»°¿òÊı¾İ
+	 * æ„é€ å¯¹è¯æ¡†æ•°æ®
 	 */
 	public LoadingDialog(Context context) {
 		dialog = new Dialog(context, R.style.spinnerdialog);
@@ -29,7 +29,7 @@ public class LoadingDialog {
 	}
 
 	/**
-	 * ·â×°ÁËµÄµã»÷ÊÂ¼ş£¬¿É±£Ö¤´«¹ıÀ´µÄµã»÷ÊÂ¼şÕı³£ÔËĞĞ£¬²¢ÇÒµÃ¹Ø±Õ´°¿Ú
+	 * å°è£…äº†çš„ç‚¹å‡»äº‹ä»¶ï¼Œå¯ä¿è¯ä¼ è¿‡æ¥çš„ç‚¹å‡»äº‹ä»¶æ­£å¸¸è¿è¡Œï¼Œå¹¶ä¸”å¾—å…³é—­çª—å£
 	 * */
 	public OnClickListener getLinstener(OnClickListener linstener) {
 		final OnClickListener linstener2 = linstener;

@@ -109,7 +109,7 @@ public class RechargeMobileActivity extends BaseActivity {
 			case 10:
 				sp_mobile_money.setSelection(0);
 				progress.CloseProgress();
-				Toast.makeText(getApplicationContext(), "³äÖµÊ§°Ü,Çë¼ì²é³äÖµĞÅÏ¢.", 200)
+				Toast.makeText(getApplicationContext(), "å……å€¼å¤±è´¥,è¯·æ£€æŸ¥å……å€¼ä¿¡æ¯.", 200)
 						.show();
 				break;
 			case 20:
@@ -123,8 +123,8 @@ public class RechargeMobileActivity extends BaseActivity {
 				break;
 			case 0:
 				if (banks != null && banks.size() != 0) {
-					// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-					System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+					// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+					System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 					// initPopupWindow1();
 					// showPopupWindow1(btn_OK);
 					Intent intent = new Intent(RechargeMobileActivity.this,
@@ -137,7 +137,7 @@ public class RechargeMobileActivity extends BaseActivity {
 					intent.putExtras(bundle);
 					startActivity(intent);
 				} else {
-					// ±íÊ¾Ê×´ÎÖ§¸¶
+					// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 					Intent intent = new Intent(RechargeMobileActivity.this,
 							PayActivity.class);
 					Bundle bundle = new Bundle();
@@ -148,7 +148,7 @@ public class RechargeMobileActivity extends BaseActivity {
 					// initPopupWindow();
 					// showPopupWindow(btn_OK);
 				}
-				// ÔÚÏßÖ§¸¶
+				// åœ¨çº¿æ”¯ä»˜
 				// initPopupWindow();
 				// showPopupWindow(aliays);
 				break;
@@ -156,8 +156,8 @@ public class RechargeMobileActivity extends BaseActivity {
 				ali_pay();
 				break;
 			case 5:
-					System.out.println("Î¢ĞÅÖ§¸¶");
-					//Î¢ĞÅÖ§¸¶
+					System.out.println("å¾®ä¿¡æ”¯ä»˜");
+					//å¾®ä¿¡æ”¯ä»˜
 					boolean isPaySupported = api.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
 					if(isPaySupported){ 
 							PayReq req = new PayReq();
@@ -168,10 +168,10 @@ public class RechargeMobileActivity extends BaseActivity {
 							req.timeStamp		= timestamp;
 							req.packageValue	= package_;
 							req.sign			= sign;
-							// ÔÚÖ§¸¶Ö®Ç°£¬Èç¹ûÓ¦ÓÃÃ»ÓĞ×¢²áµ½Î¢ĞÅ£¬Ó¦¸ÃÏÈµ÷ÓÃIWXMsg.registerApp½«Ó¦ÓÃ×¢²áµ½Î¢ĞÅ
+							// åœ¨æ”¯ä»˜ä¹‹å‰ï¼Œå¦‚æœåº”ç”¨æ²¡æœ‰æ³¨å†Œåˆ°å¾®ä¿¡ï¼Œåº”è¯¥å…ˆè°ƒç”¨IWXMsg.registerAppå°†åº”ç”¨æ³¨å†Œåˆ°å¾®ä¿¡
 							api.registerApp(Constants.APP_ID);
 							boolean flag = api.sendReq(req);
-							System.out.println("Ö§¸¶"+flag);
+							System.out.println("æ”¯ä»˜"+flag);
 					}else {
 						
 					}
@@ -190,76 +190,76 @@ public class RechargeMobileActivity extends BaseActivity {
 	}
 
 	/**
-	 * get the sign type we use. »ñÈ¡Ç©Ãû·½Ê½
+	 * get the sign type we use. è·å–ç­¾åæ–¹å¼
 	 * 
 	 */
 	public String getSignType() {
 		return "sign_type=\"RSA\"";
 	}
 	public String getOrderInfo(String subject, String body, String dingdan) {
-		// Ç©Ô¼ºÏ×÷ÕßÉí·İID
+		// ç­¾çº¦åˆä½œè€…èº«ä»½ID
 		String orderInfo = "partner=" + "\"" + Common.PARTNER + "\"";
 
-		// Ç©Ô¼Âô¼ÒÖ§¸¶±¦ÕËºÅ
+		// ç­¾çº¦å–å®¶æ”¯ä»˜å®è´¦å·
 		orderInfo += "&seller_id=" + "\"" + Common.SELLER + "\"";
 
-		// ÉÌ»§ÍøÕ¾Î¨Ò»¶©µ¥ºÅ
+		// å•†æˆ·ç½‘ç«™å”¯ä¸€è®¢å•å·
 		orderInfo += "&out_trade_no=" + "\"" + dingdan + "\"";
 
-		// ÉÌÆ·Ãû³Æ
+		// å•†å“åç§°
 		orderInfo += "&subject=" + "\"" + subject + "\"";
 
-		// ÉÌÆ·ÏêÇé
+		// å•†å“è¯¦æƒ…
 		orderInfo += "&body=" + "\"" + body + "\"";
 
-		// ÉÌÆ·½ğ¶î
+		// å•†å“é‡‘é¢
 //		orderInfo += "&total_fee=" + "\"" + mobile_money + "\"";
 		orderInfo += "&total_fee=" + "\"" + mobile_money + "\"";
-		// ·şÎñÆ÷Òì²½Í¨ÖªÒ³ÃæÂ·¾¶
+		// æœåŠ¡å™¨å¼‚æ­¥é€šçŸ¥é¡µé¢è·¯å¾„
 //		orderInfo += "&notify_url=" + "\"" + RealmName.REALM_NAME
 //				+ "/taobao/alipay_notify_url.aspx" + "\"";
 			orderInfo += "&notify_url=" + "\"" +  "http://183.62.138.31:1636/taobao/alipay_notify_url.aspx" + "\"";
-		// ·şÎñ½Ó¿ÚÃû³Æ£¬ ¹Ì¶¨Öµ
+		// æœåŠ¡æ¥å£åç§°ï¼Œ å›ºå®šå€¼
 		orderInfo += "&service=\"mobile.securitypay.pay\"";
 
-		// Ö§¸¶ÀàĞÍ£¬ ¹Ì¶¨Öµ
+		// æ”¯ä»˜ç±»å‹ï¼Œ å›ºå®šå€¼
 		orderInfo += "&payment_type=\"1\"";
 
-		// ²ÎÊı±àÂë£¬ ¹Ì¶¨Öµ
+		// å‚æ•°ç¼–ç ï¼Œ å›ºå®šå€¼
 		orderInfo += "&_input_charset=\"utf-8\"";
 
-		// ÉèÖÃÎ´¸¶¿î½»Ò×µÄ³¬Ê±Ê±¼ä
-		// Ä¬ÈÏ30·ÖÖÓ£¬Ò»µ©³¬Ê±£¬¸Ã±Ê½»Ò×¾Í»á×Ô¶¯±»¹Ø±Õ¡£
-		// È¡Öµ·¶Î§£º1m¡«15d¡£
-		// m-·ÖÖÓ£¬h-Ğ¡Ê±£¬d-Ìì£¬1c-µ±Ìì£¨ÎŞÂÛ½»Ò×ºÎÊ±´´½¨£¬¶¼ÔÚ0µã¹Ø±Õ£©¡£
-		// ¸Ã²ÎÊıÊıÖµ²»½ÓÊÜĞ¡Êıµã£¬Èç1.5h£¬¿É×ª»»Îª90m¡£
+		// è®¾ç½®æœªä»˜æ¬¾äº¤æ˜“çš„è¶…æ—¶æ—¶é—´
+		// é»˜è®¤30åˆ†é’Ÿï¼Œä¸€æ—¦è¶…æ—¶ï¼Œè¯¥ç¬”äº¤æ˜“å°±ä¼šè‡ªåŠ¨è¢«å…³é—­ã€‚
+		// å–å€¼èŒƒå›´ï¼š1mï½15dã€‚
+		// m-åˆ†é’Ÿï¼Œh-å°æ—¶ï¼Œd-å¤©ï¼Œ1c-å½“å¤©ï¼ˆæ— è®ºäº¤æ˜“ä½•æ—¶åˆ›å»ºï¼Œéƒ½åœ¨0ç‚¹å…³é—­ï¼‰ã€‚
+		// è¯¥å‚æ•°æ•°å€¼ä¸æ¥å—å°æ•°ç‚¹ï¼Œå¦‚1.5hï¼Œå¯è½¬æ¢ä¸º90mã€‚
 		orderInfo += "&it_b_pay=\"30m\"";
 
-		// extern_tokenÎª¾­¹ı¿ìµÇÊÚÈ¨»ñÈ¡µ½µÄalipay_open_id,´øÉÏ´Ë²ÎÊıÓÃ»§½«Ê¹ÓÃÊÚÈ¨µÄÕË»§½øĞĞÖ§¸¶
+		// extern_tokenä¸ºç»è¿‡å¿«ç™»æˆæƒè·å–åˆ°çš„alipay_open_id,å¸¦ä¸Šæ­¤å‚æ•°ç”¨æˆ·å°†ä½¿ç”¨æˆæƒçš„è´¦æˆ·è¿›è¡Œæ”¯ä»˜
 		// orderInfo += "&extern_token=" + "\"" + extern_token + "\"";
 
-		// Ö§¸¶±¦´¦ÀíÍêÇëÇóºó£¬µ±Ç°Ò³ÃæÌø×ªµ½ÉÌ»§Ö¸¶¨Ò³ÃæµÄÂ·¾¶£¬¿É¿Õ
+		// æ”¯ä»˜å®å¤„ç†å®Œè¯·æ±‚åï¼Œå½“å‰é¡µé¢è·³è½¬åˆ°å•†æˆ·æŒ‡å®šé¡µé¢çš„è·¯å¾„ï¼Œå¯ç©º
 		// orderInfo += "&return_url=\"m.alipay.com\"";
 
-		// µ÷ÓÃÒøĞĞ¿¨Ö§¸¶£¬ĞèÅäÖÃ´Ë²ÎÊı£¬²ÎÓëÇ©Ãû£¬ ¹Ì¶¨Öµ £¨ĞèÒªÇ©Ô¼¡¶ÎŞÏßÒøĞĞ¿¨¿ì½İÖ§¸¶¡·²ÅÄÜÊ¹ÓÃ£©
+		// è°ƒç”¨é“¶è¡Œå¡æ”¯ä»˜ï¼Œéœ€é…ç½®æ­¤å‚æ•°ï¼Œå‚ä¸ç­¾åï¼Œ å›ºå®šå€¼ ï¼ˆéœ€è¦ç­¾çº¦ã€Šæ— çº¿é“¶è¡Œå¡å¿«æ·æ”¯ä»˜ã€‹æ‰èƒ½ä½¿ç”¨ï¼‰
 		// orderInfo += "&paymethod=\"expressGateway\"";
 
 		return orderInfo;
 	}
 	private void ali_pay() {
 		//
-		String orderInfo = getOrderInfo("ÔÆÉÌ¾Û", "»°·Ñ³äÖµ", trade_no);
+		String orderInfo = getOrderInfo("äº‘å•†èš", "è¯è´¹å……å€¼", trade_no);
 
-		// ¶Ô¶©µ¥×öRSA Ç©Ãû
+		// å¯¹è®¢å•åšRSA ç­¾å
 		String sign = sign(orderInfo);
 		try {
-			// ½öĞè¶Ôsign ×öURL±àÂë
+			// ä»…éœ€å¯¹sign åšURLç¼–ç 
 			sign = URLEncoder.encode(sign, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 
-		// ÍêÕûµÄ·ûºÏÖ§¸¶±¦²ÎÊı¹æ·¶µÄ¶©µ¥ĞÅÏ¢
+		// å®Œæ•´çš„ç¬¦åˆæ”¯ä»˜å®å‚æ•°è§„èŒƒçš„è®¢å•ä¿¡æ¯
 		final String payInfo = orderInfo + "&sign=\"" + sign + "\"&"
 				+ getSignType();
 
@@ -267,9 +267,9 @@ public class RechargeMobileActivity extends BaseActivity {
 
 			@Override
 			public void run() {
-				// ¹¹ÔìPayTask ¶ÔÏó
+				// æ„é€ PayTask å¯¹è±¡
 				PayTask alipay = new PayTask(RechargeMobileActivity.this);
-				// µ÷ÓÃÖ§¸¶½Ó¿Ú£¬»ñÈ¡Ö§¸¶½á¹û
+				// è°ƒç”¨æ”¯ä»˜æ¥å£ï¼Œè·å–æ”¯ä»˜ç»“æœ
 				String result = alipay.pay(payInfo);
 				Message msg = new Message();
 				msg.what = 5;
@@ -278,7 +278,7 @@ public class RechargeMobileActivity extends BaseActivity {
 			}
 		};
 
-		// ±ØĞëÒì²½µ÷ÓÃ
+		// å¿…é¡»å¼‚æ­¥è°ƒç”¨
 		Thread payThread = new Thread(payRunnable);
 		payThread.start();
 	}
@@ -294,13 +294,13 @@ public class RechargeMobileActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.WRAP_CONTENT,
 				LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.no_color));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -336,12 +336,12 @@ public class RechargeMobileActivity extends BaseActivity {
 	}
 
 	// 01 07 13 17 22 29
-	// À¶Çò£º03
+	// è“çƒï¼š03
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -355,7 +355,7 @@ public class RechargeMobileActivity extends BaseActivity {
 	}
 	private Button tongxunlu;
 	/**
-	 * Í¨Ñ¶Â¼µÄĞÅÏ¢»Øµ÷
+	 * é€šè®¯å½•çš„ä¿¡æ¯å›è°ƒ
 	 */
 	private OnClickListener clickListener = new OnClickListener() {
 
@@ -383,13 +383,13 @@ public class RechargeMobileActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.white));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -418,7 +418,7 @@ public class RechargeMobileActivity extends BaseActivity {
 			}
 		});
 	}
-	// ²éÑ¯ÁªÏµÈË
+	// æŸ¥è¯¢è”ç³»äºº
 	private ArrayList<ContentValues> listPerson;
 	private class MyAsyncQueryHandler extends AsyncQueryHandler {
 
@@ -442,7 +442,7 @@ public class RechargeMobileActivity extends BaseActivity {
 					String sortKey = cursor.getString(3);
 					if (number.startsWith("+86")) {
 						cv.put(NAME, name);
-						cv.put(NUMBER, number.substring(3)); // È¥µô+86
+						cv.put(NUMBER, number.substring(3)); // å»æ‰+86
 						cv.put(SORT_KEY, sortKey);
 					} else {
 						cv.put(NAME, name);
@@ -464,7 +464,7 @@ public class RechargeMobileActivity extends BaseActivity {
 
 	}
 	private void start() {
-		// µã»÷µ½Í¨Ñ¶Â¼µÄÊ±ºò¾Í¿ªÊ¼²éÑ¯¹«¹²ÀàÄ¿ÏÂÃæµÄĞÅÏ¢
+		// ç‚¹å‡»åˆ°é€šè®¯å½•çš„æ—¶å€™å°±å¼€å§‹æŸ¥è¯¢å…¬å…±ç±»ç›®ä¸‹é¢çš„ä¿¡æ¯
 		Uri uri = Uri.parse("content://com.android.contacts/data/phones");
 		String[] projection = { "_id", "display_name", "data1", "sort_key" };
 		asyncQuery = new MyAsyncQueryHandler(getContentResolver());
@@ -478,13 +478,13 @@ public class RechargeMobileActivity extends BaseActivity {
 	private AsyncQueryHandler asyncQuery;
 	private static final String NAME = "name", NUMBER = "number",
 			SORT_KEY = "sort_key";
-	private HashMap<String, Integer> alphaIndexer;// ´æ·Å´æÔÚµÄººÓïÆ´ÒôÊ××ÖÄ¸ºÍÓëÖ®¶ÔÓ¦µÄÁĞ±íÎ»ÖÃ
-	private String[] sections;// ´æ·Å´æÔÚµÄººÓïÆ´ÒôÊ××ÖÄ¸
+	private HashMap<String, Integer> alphaIndexer;// å­˜æ”¾å­˜åœ¨çš„æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯å’Œä¸ä¹‹å¯¹åº”çš„åˆ—è¡¨ä½ç½®
+	private String[] sections;// å­˜æ”¾å­˜åœ¨çš„æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
 	private Handler handler2;
 	private OverlayThread overlayThread;
 	private IWXAPI api;
-	// ³õÊ¼»¯ººÓïÆ´ÒôÊ××ÖÄ¸µ¯³öÌáÊ¾¿ò
-	// ¿ØÖÆÊÖ»úºÍÏÔÊ¾µÄÇé¿ö
+	// åˆå§‹åŒ–æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯å¼¹å‡ºæç¤ºæ¡†
+	// æ§åˆ¶æ‰‹æœºå’Œæ˜¾ç¤ºçš„æƒ…å†µ
 	private void initOverlay() {
 		LayoutInflater inflater = LayoutInflater.from(this);
 		overlay = (TextView) inflater.inflate(R.layout.yihua_con_overlay, null);
@@ -510,7 +510,7 @@ public class RechargeMobileActivity extends BaseActivity {
 				overlay.setText(sections[position]);
 				overlay.setVisibility(View.VISIBLE);
 				handler2.removeCallbacks(overlayThread);
-				// ÑÓ³ÙÒ»ÃëºóÖ´ĞĞ£¬ÈÃoverlayÎª²»¿É¼û
+				// å»¶è¿Ÿä¸€ç§’åæ‰§è¡Œï¼Œè®©overlayä¸ºä¸å¯è§
 				handler2.postDelayed(overlayThread, 1500);
 			}
 		}
@@ -527,9 +527,9 @@ public class RechargeMobileActivity extends BaseActivity {
 			sections = new String[list.size()];
 
 			for (int i = 0; i < list.size(); i++) {
-				// µ±Ç°ººÓïÆ´ÒôÊ××ÖÄ¸
+				// å½“å‰æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
 				String currentStr = getAlpha(list.get(i).getAsString(SORT_KEY));
-				// ÉÏÒ»¸öººÓïÆ´ÒôÊ××ÖÄ¸£¬Èç¹û²»´æÔÚÎª¡° ¡±
+				// ä¸Šä¸€ä¸ªæ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯ï¼Œå¦‚æœä¸å­˜åœ¨ä¸ºâ€œ â€
 				String previewStr = (i - 1) >= 0 ? getAlpha(list.get(i - 1)
 						.getAsString(SORT_KEY)) : " ";
 				if (!previewStr.equals(currentStr)) {
@@ -592,7 +592,7 @@ public class RechargeMobileActivity extends BaseActivity {
 		}
 
 	}
-	// ÉèÖÃoverlay²»¿É¼û
+	// è®¾ç½®overlayä¸å¯è§
 	private class OverlayThread implements Runnable {
 
 		@Override
@@ -602,7 +602,7 @@ public class RechargeMobileActivity extends BaseActivity {
 
 	}
 
-	// »ñµÃººÓïÆ´ÒôÊ××ÖÄ¸
+	// è·å¾—æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
 	private String getAlpha(String str) {
 		if (str == null) {
 			return "#";
@@ -613,7 +613,7 @@ public class RechargeMobileActivity extends BaseActivity {
 		}
 
 		char c = str.trim().substring(0, 1).charAt(0);
-		// ÕıÔò±í´ïÊ½£¬ÅĞ¶ÏÊ××ÖÄ¸ÊÇ·ñÊÇÓ¢ÎÄ×ÖÄ¸
+		// æ­£åˆ™è¡¨è¾¾å¼ï¼Œåˆ¤æ–­é¦–å­—æ¯æ˜¯å¦æ˜¯è‹±æ–‡å­—æ¯
 		Pattern pattern = Pattern.compile("^[A-Za-z]+$");
 		if (pattern.matcher(c + "").matches()) {
 			return (c + "").toUpperCase();
@@ -625,8 +625,8 @@ public class RechargeMobileActivity extends BaseActivity {
 	private void showPopupWindow1(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -695,7 +695,7 @@ public class RechargeMobileActivity extends BaseActivity {
 				// TODO Auto-generated method stub
 				type="5";
 //				warn();
-				Toast.makeText(getApplicationContext(), "´ı½ÓÈë", 200).show();
+				Toast.makeText(getApplicationContext(), "å¾…æ¥å…¥", 200).show();
 			}
 		});
 		
@@ -706,10 +706,10 @@ public class RechargeMobileActivity extends BaseActivity {
 		tv_price = (TextView) findViewById(R.id.tv_price);
 		tv_mobilenumber = (TextView) findViewById(R.id.tv_mobilenumber);
 		sp_mobile_money = (Spinner) findViewById(R.id.sp_mobile_money);
-		sp_mobile_money.setPrompt("ÇëÑ¡Ôñ³äÖµ½ğ¶î");
+		sp_mobile_money.setPrompt("è¯·é€‰æ‹©å……å€¼é‡‘é¢");
 		ll_information = (LinearLayout) findViewById(R.id.ll_information);
 		ll_information.setVisibility(View.GONE);
-		// µÃµ½ÊäÈëµÄµç»°ºÅÂëÎÄ±¾¿òÀïÃæµÄÄÚÈİ
+		// å¾—åˆ°è¾“å…¥çš„ç”µè¯å·ç æ–‡æœ¬æ¡†é‡Œé¢çš„å†…å®¹
 		et_number.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -733,7 +733,7 @@ public class RechargeMobileActivity extends BaseActivity {
 	}
 
 	private void SpinnerData() {
-		String[] str2 = new String[] { "ÇëÑ¡Ôñ³äÖµ½ğ¶î", "30Ôª", "50Ôª", "100Ôª" };
+		String[] str2 = new String[] { "è¯·é€‰æ‹©å……å€¼é‡‘é¢", "30å…ƒ", "50å…ƒ", "100å…ƒ" };
 		sp_money = new ArrayList<String>();
 		for (int i = 0; i < str2.length; i++) {
 			sp_money.add(str2[i]);
@@ -747,12 +747,12 @@ public class RechargeMobileActivity extends BaseActivity {
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				money = sp_money.get(arg2);
-				if (!money.equals("ÇëÑ¡Ôñ³äÖµ½ğ¶î")) {
+				if (!money.equals("è¯·é€‰æ‹©å……å€¼é‡‘é¢")) {
 					mobile_number = et_number.getText().toString();
 					if ("".equals(mobile_number)
 							 ) {
-						// ¸ø³ö´íÎóÌáÊ¾
-						et_number.setError("ÄúÊäÈëµÄÊÖ»úºÅÂë£¨¶Î£©ÓĞÎó!");
+						// ç»™å‡ºé”™è¯¯æç¤º
+						et_number.setError("æ‚¨è¾“å…¥çš„æ‰‹æœºå·ç ï¼ˆæ®µï¼‰æœ‰è¯¯!");
 						et_number.requestFocus();
 						et_number.setText("");
 						sp_mobile_money.setSelection(0);
@@ -833,35 +833,35 @@ public class RechargeMobileActivity extends BaseActivity {
 	}
 	private String partner_id,prepayid,noncestr,timestamp,package_,sign;
 	private void warn() {
-		if (mobile_number == null || money.equals("ÇëÑ¡Ôñ³äÖµ½ğ¶î")) {
+		if (mobile_number == null || money.equals("è¯·é€‰æ‹©å……å€¼é‡‘é¢")) {
 
-			Toast.makeText(RechargeMobileActivity.this, "ÇëÌîĞ´ÄúËùĞè³äÖµµÄĞÅÏ¢Ó´!",
+			Toast.makeText(RechargeMobileActivity.this, "è¯·å¡«å†™æ‚¨æ‰€éœ€å……å€¼çš„ä¿¡æ¯å“Ÿ!",
 					Toast.LENGTH_LONG).show();
 		} else {
 			if (mobile_number.length() == 0) {
-				Toast.makeText(RechargeMobileActivity.this, "ÇëÌîĞ´ÄúËùĞè³äÖµµÄĞÅÏ¢Ó´!",
+				Toast.makeText(RechargeMobileActivity.this, "è¯·å¡«å†™æ‚¨æ‰€éœ€å……å€¼çš„ä¿¡æ¯å“Ÿ!",
 						Toast.LENGTH_LONG).show();
 			} else {
 				if ("".equals(mobile_number) || mobile_number.length() < 11) {
-					// ¸ø³ö´íÎóÌáÊ¾
-					et_number.setError("ÄúÊäÈëµÄÊÖ»úºÅÂë£¨¶Î£©ÓĞÎó£¡");
+					// ç»™å‡ºé”™è¯¯æç¤º
+					et_number.setError("æ‚¨è¾“å…¥çš„æ‰‹æœºå·ç ï¼ˆæ®µï¼‰æœ‰è¯¯ï¼");
 					et_number.requestFocus();
-					// ½«ÏÔÊ¾²éÑ¯½á¹ûµÄTextViewÇå¿Õ
+					// å°†æ˜¾ç¤ºæŸ¥è¯¢ç»“æœçš„TextViewæ¸…ç©º
 					et_number.setText("");
 					return;
 				} else {
 					if (type.equals("-1")) {
-						Toast.makeText(getApplicationContext(), "ÇëÍêÉÆ±ØÒªĞÅÏ¢!", 200)
+						Toast.makeText(getApplicationContext(), "è¯·å®Œå–„å¿…è¦ä¿¡æ¯!", 200)
 								.show();
 					} else if (type.equals("2")) {
-						//Ö§¸¶±¦
+						//æ”¯ä»˜å®
 
-						// ÔÚÏßÖ§¸¶
+						// åœ¨çº¿æ”¯ä»˜
 						RequestParams params = new RequestParams();
 						params.put("mobile", mobile_number);
 						params.put("fee", mobile_money);
 						params.put("yth", yth);
-						System.out.println("»°·Ñ");
+						System.out.println("è¯è´¹");
 //						http://www.ju918.com/mi/umphandler.ashx?act=payReqShortCut_HuaFei&mobile=13316989009&fee=30&yth=114514799
 						AsyncHttp
 								.post(RealmName.REALM_NAME
@@ -892,12 +892,12 @@ public class RechargeMobileActivity extends BaseActivity {
 						// AsyncHttp.post(url, params, handler, con);
 					
 					}else if (type.equals("1")) {
-						// ÔÚÏßÖ§¸¶
+						// åœ¨çº¿æ”¯ä»˜
 						RequestParams params = new RequestParams();
 						params.put("mobile", mobile_number);
 						params.put("fee", mobile_money);
 						params.put("yth", yth);
-						System.out.println("»°·Ñ");
+						System.out.println("è¯è´¹");
 //						http://www.ju918.com/mi/umphandler.ashx?act=payReqShortCut_HuaFei&mobile=13316989009&fee=30&yth=114514799
 						AsyncHttp
 								.post(RealmName.REALM_NAME
@@ -950,7 +950,7 @@ public class RechargeMobileActivity extends BaseActivity {
 														item.setLastId("-1");
 														item.setType("-1");
 														banks.add(item);
-														bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+														bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 													}
 													handler.sendEmptyMessage(0);
 												} catch (JSONException e) {
@@ -963,14 +963,14 @@ public class RechargeMobileActivity extends BaseActivity {
 
 						// AsyncHttp.post(url, params, handler, con);
 					} else if(TextUtils.equals("5", type)){
-						//Ö§¸¶±¦
+						//æ”¯ä»˜å®
 
-						// ÔÚÏßÖ§¸¶
+						// åœ¨çº¿æ”¯ä»˜
 						RequestParams params = new RequestParams();
 						params.put("mobile", mobile_number);
 						params.put("fee", mobile_money);
 						params.put("yth", yth);
-						System.out.println("»°·Ñ");
+						System.out.println("è¯è´¹");
 //						http://www.ju918.com/mi/umphandler.ashx?act=payReqShortCut_HuaFei&mobile=13316989009&fee=30&yth=114514799
 						AsyncHttp
 								.post(RealmName.REALM_NAME
@@ -987,7 +987,7 @@ public class RechargeMobileActivity extends BaseActivity {
 													JSONObject object = new JSONObject(
 															arg1);
 
-													//Î¢ĞÅ´¦Àí
+													//å¾®ä¿¡å¤„ç†
 //													  appid = object.getString("appid");
 													  partner_id = object.getString("mch_id");
 													  prepayid = object.getString("prepay_id"); 
@@ -1046,14 +1046,14 @@ public class RechargeMobileActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(
 					findViewById(R.id.recharge_mobile_calls), Gravity.BOTTOM,
 					0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 }

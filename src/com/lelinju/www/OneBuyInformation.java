@@ -70,14 +70,14 @@ public class OneBuyInformation extends BaseActivity{
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case -1:
-				Toast.makeText(getApplicationContext(), "Ìí¼ÓÊ§°Ü", 200).show();
+				Toast.makeText(getApplicationContext(), "æ·»åŠ å¤±è´¥", 200).show();
 				break;
 			case 1:
-				Toast.makeText(getApplicationContext(), "³É¹¦¼ÓÈë¹ºÎï³µ", 200).show();
+				Toast.makeText(getApplicationContext(), "æˆåŠŸåŠ å…¥è´­ç‰©è½¦", 200).show();
 				break;
 			case 0:
-				tv_hengyu_money.setText("£¤" + retailPrice);
-				tv_market_money.setText("£¤" + marketPrice);
+				tv_hengyu_money.setText("ï¿¥" + retailPrice);
+				tv_market_money.setText("ï¿¥" + marketPrice);
 				//
 				market_information_title.setText(proName + "");
 				market_information_tip.setText(proTip);
@@ -92,12 +92,12 @@ public class OneBuyInformation extends BaseActivity{
 				ll_style.removeAllViews();
 				addMyLine((RadioData[]) msg.obj, ll_style);
 				
-				//¼ÆËãÆÚÊı
+				//è®¡ç®—æœŸæ•°
 				old_one.removeAllViews();
 				int old_Number = Integer.parseInt(LuckDrawBatchOrderNumber);
 				for(int i=old_Number;i>0;i--){
 					TextView textView = new TextView(getApplicationContext());
-					textView.setText("µÚ"+i+"ÆÚ");
+					textView.setText("ç¬¬"+i+"æœŸ");
 					textView.setPadding(7, 5, 7, 5);
 					textView.setTextSize(17);
 					old_one.addView(textView);
@@ -111,7 +111,7 @@ public class OneBuyInformation extends BaseActivity{
 							intent.putExtra("id",  getIntent().getStringExtra("id"));
 							intent.putExtra("LuckDrawBatchOrderNumber", String.valueOf(Integer.parseInt(LuckDrawBatchOrderNumber)-1));
 							intent.putExtra("idex", idex+"");
-							System.out.println("ÆÚÊı£º"+idex+"---"+getIntent().getStringExtra("id"));
+							System.out.println("æœŸæ•°ï¼š"+idex+"---"+getIntent().getStringExtra("id"));
 							startActivity(intent);
 							
 						}
@@ -172,14 +172,14 @@ public class OneBuyInformation extends BaseActivity{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				System.out.println("µã»÷");
+				System.out.println("ç‚¹å‡»");
 				Intent intent = new Intent(OneBuyInformation.this,ShoppingCart1Activity.class);
 				startActivity(intent);
 			}
 		});
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		int widthPixels = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		int widthPixels = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		images_layout.setLayoutParams(new FrameLayout.LayoutParams(widthPixels, widthPixels));
 		tv_ware_market_jifen = (TextView) findViewById(R.id.tv_ware_market_jifen);
 		tv_market_money = (TextView) findViewById(R.id.tv_ware_market_money);
@@ -193,7 +193,7 @@ public class OneBuyInformation extends BaseActivity{
 			params.put("yth", "test");
 			params.put("key", "test");
 			params.put("productItemType", "6");
-			System.out.println("ÏêÏ¸:"+getIntent().getStringExtra("id"));
+			System.out.println("è¯¦ç»†:"+getIntent().getStringExtra("id"));
 			params.put("productItemId", getIntent().getStringExtra("id"));
 			AsyncHttp.post_1(strUrl, params,
 					new AsyncHttpResponseHandler() {
@@ -254,15 +254,15 @@ public class OneBuyInformation extends BaseActivity{
 		}
 	}
 	/**
-	 * Á¢¼´¹ºÂò
+	 * ç«‹å³è´­ä¹°
 	 */
 	private void addNow() {
 		List<UserRegisterData> username = wareDao.findisLogin();
 		Log.v("number", username.size() + "");
 		if (username.size() != 0) {
-			if (style_name.size() >= 2) { // µ±ÉÌÆ·Ö»ÓĞÁ½ÌõÊôĞÔÊ±
+			if (style_name.size() >= 2) { // å½“å•†å“åªæœ‰ä¸¤æ¡å±æ€§æ—¶
 				if (propits[0] == null || propits[1] == null) {
-					Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200)
+					Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200)
 							.show();
 				} else {
 					stylename1 = style_name.get(0).toString();
@@ -270,12 +270,12 @@ public class OneBuyInformation extends BaseActivity{
 					stylenature1 = propits[0].toString();
 					stylenature2 = propits[1].toString();
 				}
-				}else if (style_name.size() == 0) { // µ±ÉÌÆ·Ã»ÓĞÊôĞÔÊ±
+				}else if (style_name.size() == 0) { // å½“å•†å“æ²¡æœ‰å±æ€§æ—¶
 					stylename1 = "";
 					stylename2 = "";
 					stylenature1 = "";
 					stylenature2 = "";
-				}else if (style_name.size() == 1) { // µ±ÉÌÆ·Ã»ÓĞÊôĞÔÊ±
+				}else if (style_name.size() == 1) { // å½“å•†å“æ²¡æœ‰å±æ€§æ—¶
 					stylename1 = style_name.get(0).toString();
 					stylename2 = "";
 					stylenature1 = propits[0].toString();
@@ -325,7 +325,7 @@ public class OneBuyInformation extends BaseActivity{
 		textViews = null;
 		root.removeAllViews();
 		if (item != null && item.length > 0) {
-			// ±£Ö¤Êı¾İÍêÕû
+			// ä¿è¯æ•°æ®å®Œæ•´
 			LinearLayout parentLayout = new LinearLayout(
 					getApplicationContext());
 			parentLayout.setOrientation(LinearLayout.VERTICAL);
@@ -335,7 +335,7 @@ public class OneBuyInformation extends BaseActivity{
 			}
 			listButtons = new ArrayList<RadioButton[]>();
 			int len = item.length;
-			System.out.println("³¤¶È" + len);
+			System.out.println("é•¿åº¦" + len);
 			groups = new RadioGroup[len];
 			propits = new String[len];
 			textViews = new TextView[len];
@@ -437,9 +437,9 @@ public class OneBuyInformation extends BaseActivity{
 		List<UserRegisterData> username = wareDao.findisLogin();
 		Log.v("number", username.size() + "");
 		if (username.size() != 0) {
-			if (style_name.size() >= 2) { // µ±ÉÌÆ·Ö»ÓĞÁ½ÌõÊôĞÔÊ±
+			if (style_name.size() >= 2) { // å½“å•†å“åªæœ‰ä¸¤æ¡å±æ€§æ—¶
 				if (propits[0] == null || propits[1] == null) {
-					Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200)
+					Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200)
 							.show();
 				} else {
 					stylename1 = style_name.get(0).toString();
@@ -509,7 +509,7 @@ public class OneBuyInformation extends BaseActivity{
 														JSONObject object = new JSONObject(
 																arg1);
 														System.out
-																.println("ÏúÊÛÊôĞÔ2"
+																.println("é”€å”®å±æ€§2"
 																		+ str2);
 														int status = object
 																.getInt("status");
@@ -552,7 +552,7 @@ public class OneBuyInformation extends BaseActivity{
 					}
 				}
 
-			} else if (style_name.size() == 0) { // µ±ÉÌÆ·Ã»ÓĞÊôĞÔÊ±
+			} else if (style_name.size() == 0) { // å½“å•†å“æ²¡æœ‰å±æ€§æ—¶
 				ShopCartData shopData = wareDao.findNoStyle(productItemId + "");
 				int number = shopData.getNumber();
 				String orderid = shopData.getOrderid() + "";
@@ -641,9 +641,9 @@ public class OneBuyInformation extends BaseActivity{
 						}
 					}.start();
 				}
-			} else if (style_name.size() == 1) { // µ±ÉÌÆ·Ö»ÓĞÒ»ÌõÊôĞÔÊ±
+			} else if (style_name.size() == 1) { // å½“å•†å“åªæœ‰ä¸€æ¡å±æ€§æ—¶
 				if (propits[0] == null) {
-					Toast.makeText(getApplicationContext(), "ÇëÑ¡ÔñÉÌÆ·µÄÊôĞÔ", 200)
+					Toast.makeText(getApplicationContext(), "è¯·é€‰æ‹©å•†å“çš„å±æ€§", 200)
 							.show();
 				} else {
 					stylename1 = style_name.get(0).toString();
@@ -662,7 +662,7 @@ public class OneBuyInformation extends BaseActivity{
 								+ "&ProductOrderItemId=" + orderid
 								+ "&productCount=" + (number + 1)
 								+ "&totalProductPrice=" + retailPrice;
-						System.out.println("ÏúÊÛÊôĞÔ1" + str5);
+						System.out.println("é”€å”®å±æ€§1" + str5);
 
 						AsyncHttp.get(str5, new AsyncHttpResponseHandler() {
 							@Override
@@ -780,7 +780,7 @@ public class OneBuyInformation extends BaseActivity{
 					retailPrice = object.getString("retailPrice");
 				} else {
 					if (getIntent().getStringExtra("tag").equals("0")) {
-						// Áã¼ÛÉÌ³Ç
+						// é›¶ä»·å•†åŸ
 						retailPrice = "0";
 					} else if (getIntent().getStringExtra("tag").equals("1")) {
 						retailPrice = "1";
@@ -793,7 +793,7 @@ public class OneBuyInformation extends BaseActivity{
 
 				marketPrice = object.getString("marketPrice");
 				proFaceImg = object.getString("proFaceImg");
-				System.out.println("Í¼Æ¬µØÖ·:" + proFaceImg);
+				System.out.println("å›¾ç‰‡åœ°å€:" + proFaceImg);
 				proInverseImg = object.getString("proInverseImg");
 				proDoDetailImg = object.getString("proDoDetailImg");
 				proDesignImg = object.getString("proDesignImg");
@@ -820,12 +820,12 @@ public class OneBuyInformation extends BaseActivity{
 								.getString("AvailableIntegral"));
 					}
 				}
-				// AvailableIntegral = 2;//²âÊÔ
+				// AvailableIntegral = 2;//æµ‹è¯•
 				JSONArray jsonArray2 = object.getJSONArray("sellPropertyName");
 				System.out.println("jsonArray2" + jsonArray2.length());
 				advrt = new RadioData[jsonArray2.length()];
 				style_name = new ArrayList<String>();
-				System.out.println("ÊôĞÔ" + jsonArray2.length());
+				System.out.println("å±æ€§" + jsonArray2.length());
 				for (int j = 0; j < jsonArray2.length(); j++) {
 					RadioData data = new RadioData();
 					JSONObject object2 = jsonArray2.getJSONObject(j);

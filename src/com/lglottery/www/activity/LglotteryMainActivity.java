@@ -90,7 +90,7 @@ public class LglotteryMainActivity extends BaseActivity {
 				try {
 					if (maps.get("1").size() == 2 && maps.get("2").size() == 2
 							&& maps.get("3").size() == 2) {
-						// Êı¾İÔÚÕâÀï
+						// æ•°æ®åœ¨è¿™é‡Œ
 						bean.setMaps(maps);
 						Intent realdyIntent = new Intent(
 								LglotteryMainActivity.this,
@@ -99,20 +99,20 @@ public class LglotteryMainActivity extends BaseActivity {
 						realdyIntent.putExtras(bundle);
 						startActivity(realdyIntent);
 					} else {
-						Toast.makeText(getApplicationContext(), "Çë´ÓABCÖĞ¸÷Ñ¡2·İ",
+						Toast.makeText(getApplicationContext(), "è¯·ä»ABCä¸­å„é€‰2ä»½",
 								200).show();
 					}
 				} catch (NullPointerException e) {
-					Toast.makeText(getApplicationContext(), "Çë´ÓABCÖĞ¸÷Ñ¡2·İ", 200)
+					Toast.makeText(getApplicationContext(), "è¯·ä»ABCä¸­å„é€‰2ä»½", 200)
 							.show();
 					e.printStackTrace();
 				}
 
 				/*
-				 * //×¢ÊÍµôÒÔÇ°µÄ¿Û½ğ±ÒµÄ·½Ê½ initPopupWindow();
+				 * //æ³¨é‡Šæ‰ä»¥å‰çš„æ‰£é‡‘å¸çš„æ–¹å¼ initPopupWindow();
 				 * showPopupWindow(lglottery_main_content); try {
-				 * System.out.println(maps.size() + "µÄ³¤¶È");
-				 * System.out.println(maps.get("1").size() + "µÄéL¶È"); } catch
+				 * System.out.println(maps.size() + "çš„é•¿åº¦");
+				 * System.out.println(maps.get("1").size() + "çš„é•·åº¦"); } catch
 				 * (NullPointerException e) { // TODO: handle exception }
 				 */
 				/*
@@ -126,14 +126,14 @@ public class LglotteryMainActivity extends BaseActivity {
 	};
 
 	/**
-	 * ÄÃÈ¡½±Æ·
+	 * æ‹¿å–å¥–å“
 	 * 
 	 * @param typeId
 	 */
 	private void connect(String typeId) {
 		// LotteryGameGroupId=1&LotteryGameTypeId=3&yth=lemon123
 		RequestParams params = new RequestParams();
-		WLog.v("ÕâÀïĞèÒªĞŞ¸Ä" + bean.getId());
+		WLog.v("è¿™é‡Œéœ€è¦ä¿®æ”¹" + bean.getId());
 		params.put("LotteryGameGroupId", bean.getId());
 		params.put("LotteryGameTypeId", typeId);
 		params.put("yth", sharedUtils.getStringValue("yth"));
@@ -290,13 +290,13 @@ public class LglotteryMainActivity extends BaseActivity {
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -309,8 +309,8 @@ public class LglotteryMainActivity extends BaseActivity {
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			// int[] location = new int[2];
 			// view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);

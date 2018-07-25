@@ -25,7 +25,7 @@ import com.lelinju.www.R;
 import com.lelinju.www.R.id;
 import com.lelinju.www.R.layout;
 /**
- * ÎÒµÄ¶©µ¥
+ * æˆ‘çš„è®¢å•
  * 
  * @author Administrator
  * 
@@ -83,7 +83,7 @@ public class MyOrderXqAdapter extends BaseAdapter {
 		TextView tv_name;//
 		TextView tv_addview;//
 		TextView tv_order_bh;//
-		TextView shanchu;//É¾³ı
+		TextView shanchu;//åˆ é™¤
 		TextView tv_order_cjsj;
 		TextView tv_order_fksj,tv_order_chengjiao_time;
 		TextView tv_heji;
@@ -118,12 +118,12 @@ public class MyOrderXqAdapter extends BaseAdapter {
 		holder.tv_order_cjsj = (TextView) convertView.findViewById(R.id.tv_order_cjsj);//
 		holder.tv_order_fksj = (TextView) convertView.findViewById(R.id.tv_order_fksj);//
 		holder.tv_order_chengjiao_time = (TextView) convertView.findViewById(R.id.tv_order_chengjiao_time);//
-		holder.shanchu = (TextView) convertView.findViewById(R.id.tv_shanche);// É¾³ı
+		holder.shanchu = (TextView) convertView.findViewById(R.id.tv_shanche);// åˆ é™¤
 		holder.tv_yunfei = (TextView) convertView.findViewById(R.id.tv_yunfei);//
-		holder.tv_name.setText("ÊÕ»õÈË: "+list.get(position).getAccept_name());//
-		holder.tv_haoma.setText("µç»°ºÅÂë: "+list.get(position).getMobile());//
-		holder.tv_addview.setText("ÊÕ»õµØÖ·: "+list.get(position).getProvince()+"¡¢"+list.get(position).getCity()+"¡¢ "+
-		list.get(position).getArea()+"¡¢"+list.get(position).getAddress());
+		holder.tv_name.setText("æ”¶è´§äºº: "+list.get(position).getAccept_name());//
+		holder.tv_haoma.setText("ç”µè¯å·ç : "+list.get(position).getMobile());//
+		holder.tv_addview.setText("æ”¶è´§åœ°å€: "+list.get(position).getProvince()+"ã€"+list.get(position).getCity()+"ã€ "+
+		list.get(position).getArea()+"ã€"+list.get(position).getAddress());
 		holder.tv_sj_name.setText(list.get(position).getCompany_name());
 		holder.tv_order_bh.setText(list.get(position).getOrder_no());//
 		holder.tv_order_cjsj.setText(list.get(position).getAdd_time());
@@ -133,21 +133,21 @@ public class MyOrderXqAdapter extends BaseAdapter {
 		if (yunfei.equals("0.0")) {
 			holder.tv_yunfei.setVisibility(View.GONE);
 		}else {
-		holder.tv_yunfei.setText("(º¬ÔË·Ñ£¤"+list.get(position).getExpress_fee()+")");
+		holder.tv_yunfei.setText("(å«è¿è´¹ï¿¥"+list.get(position).getExpress_fee()+")");
 		}
 		
 		try {	
 		String status = list.get(position).getPayment_status();
-//				System.out.println("¶©µ¥ÏêÇéstatus============="+status);
+//				System.out.println("è®¢å•è¯¦æƒ…status============="+status);
 		if (status != null) {
 //		if (status.equals("1")) {
-////			holder.tv_kukuang.setText("È·ÈÏ¸¶¿î");
+////			holder.tv_kukuang.setText("ç¡®è®¤ä»˜æ¬¾");
 //			holder.tv_kukuang.setVisibility(View.VISIBLE);
 //			holder.shanchu.setVisibility(View.VISIBLE);
-////			holder.tv_zhuangtai.setText("Âò¼ÒÎ´¸¶¿î");
+////			holder.tv_zhuangtai.setText("ä¹°å®¶æœªä»˜æ¬¾");
 //		}
 		
-			//Ö§¸¶Ê±¼ä	
+			//æ”¯ä»˜æ—¶é—´	
 //			if (list.get(position).getPayment_time()!=null) {
 				if (!list.get(position).getPayment_time().equals("null")) {
 					holder.tv_order_fksj.setText(list.get(position).getPayment_time());//
@@ -155,7 +155,7 @@ public class MyOrderXqAdapter extends BaseAdapter {
 				}
 //			} 
 			
-			//Íê³ÉÊ±¼ä
+			//å®Œæˆæ—¶é—´
 //			if (list.get(position).getComplete_time()!= null) {
 				if (!list.get(position).getComplete_time().equals("null")) {
 					holder.tv_order_chengjiao_time.setText(list.get(position).getComplete_time());
@@ -185,10 +185,10 @@ public class MyOrderXqAdapter extends BaseAdapter {
 			holder.lv_dingdanxq = (LinearLayout) vi.findViewById(R.id.lv_dingdanxq);
 			
 			holder.tv_goods_title.setText(list.get(position).getList().get(i).getGoods_title());
-			holder.tv_market_price.setText("ÊĞ³¡¼Û:£¤"+list.get(position).getList().get(i).getMarket_price());
-//			holder.real_price.setText("¼Û¸ñ:£¤"+list.get(position).getList().get(i).getReal_price());
+			holder.tv_market_price.setText("å¸‚åœºä»·:ï¿¥"+list.get(position).getList().get(i).getMarket_price());
+//			holder.real_price.setText("ä»·æ ¼:ï¿¥"+list.get(position).getList().get(i).getReal_price());
 			holder.quantity.setText("x"+list.get(position).getList().get(i).getQuantity());
-			holder.tv_market_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
+			holder.tv_market_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 //			ImageLoader imageLoader=ImageLoader.getInstance();
 //			imageLoader.displayImage(RealmName.REALM_NAME_HTTP + list.get(position).getList().get(i).getImg_url(), holder.tupian);
 			mAq.id(holder.tupian).image(RealmName.REALM_NAME_HTTP+list.get(position).getList().get(i).getImg_url());
@@ -200,11 +200,11 @@ public class MyOrderXqAdapter extends BaseAdapter {
 //					String price = list.get(w).getList().get(i).getSell_price();
 //					int number = list.get(w).getList().get(i).getQuantity();
 //					BigDecimal   c   =   new   BigDecimal(Double.parseDouble(price)*number);
-//					//±£Áô2Î»Ğ¡Êı
+//					//ä¿ç•™2ä½å°æ•°
 //					double   total_c_ll   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-////					System.out.println("¼Û¸ñÊÇ¶àÉÙ0============="+total_c);
+////					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘0============="+total_c);
 //					a += total_c_ll;
-//					System.out.println("¼Û¸ñÊÇ¶àÉÙ============="+a);
+//					System.out.println("ä»·æ ¼æ˜¯å¤šå°‘============="+a);
 //					list_monney.add(a);
 ////					System.out.println("list_monney============="+list_monney.size());
 //				}
@@ -213,11 +213,11 @@ public class MyOrderXqAdapter extends BaseAdapter {
 				
 				int number = list.get(position).getList().get(i).getQuantity();
 				BigDecimal   c   =   new   BigDecimal(Double.parseDouble(list.get(position).getList().get(i).getSell_price())/number);
-//				//±£Áô2Î»Ğ¡Êı
+//				//ä¿ç•™2ä½å°æ•°
 				double   sell_price   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-				holder.real_price.setText("¼Û¸ñ:£¤"+sell_price);
+				holder.real_price.setText("ä»·æ ¼:ï¿¥"+sell_price);
 				
-				holder.tv_zongjia.setText("£¤"+list.get(position).getList().get(i).getSell_price());// 
+				holder.tv_zongjia.setText("ï¿¥"+list.get(position).getList().get(i).getSell_price());// 
 				
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -236,12 +236,12 @@ public class MyOrderXqAdapter extends BaseAdapter {
 		System.out.println("kedi_honbao============="+kedi_honbao);
 		if (kedi_honbao.equals("0.0")) {
 		}else {
-		holder.tv_hongbao.setText("-£¤"+kedi_honbao);
+		holder.tv_hongbao.setText("-ï¿¥"+kedi_honbao);
 		}
 		
 		
 //		Double sum1 = 0d;
-//		for(Double a:list_monney)//¸öÊıÊı×é
+//		for(Double a:list_monney)//ä¸ªæ•°æ•°ç»„
 //		{
 //		    sum1 += a;
 ////		    System.out.println("sum1============="+sum1);
@@ -254,7 +254,7 @@ public class MyOrderXqAdapter extends BaseAdapter {
 			heji_zongjia = list.get(position).getPayable_amount(); 
 			System.out.println("heji_zongjia============="+heji_zongjia);
 		    holder.tv_heji = (TextView) convertView.findViewById(R.id.tv_heji);
-		    holder.tv_heji.setText("ºÏ¼Æ:£¤"+heji_zongjia); 
+		    holder.tv_heji.setText("åˆè®¡:ï¿¥"+heji_zongjia); 
 		  
 		 
 		 

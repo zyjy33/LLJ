@@ -65,7 +65,7 @@ public class HotelSelectResultActivity extends BaseActivity {
 
 							});
 					int length = lists.size();
-					total.setText("¹²" + length + "¼Ò");
+					total.setText("å…±" + length + "å®¶");
 				} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
 				}
@@ -110,7 +110,7 @@ public class HotelSelectResultActivity extends BaseActivity {
 								&& "HotelStarRate".equals(parser
 										.getAttributeValue(null, "Provider"))) {
 							String s = parser.getAttributeValue(null, "Rating");
-							item.setStart(s.equals("0") ? "ÎŞ" : s);
+							item.setStart(s.equals("0") ? "æ— " : s);
 						}
 						if ("Position".equals(parser.getName())) {
 							item.setWeidu(parser.getAttributeValue(null,
@@ -121,7 +121,7 @@ public class HotelSelectResultActivity extends BaseActivity {
 					}
 					break;
 				case XmlPullParser.END_TAG:
-					if ("Property".equals(parser.getName())) {// ÅĞ¶Ï½áÊø±êÇ©ÔªËØÊÇ·ñÊÇbook
+					if ("Property".equals(parser.getName())) {// åˆ¤æ–­ç»“æŸæ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯book
 
 						hotelItems.add(item);
 						item = null;
@@ -165,7 +165,7 @@ public class HotelSelectResultActivity extends BaseActivity {
 	}
 
 	/**
-	 * ¹ØÓÚ·ÃÎÊ²é¿´¾ÆµêĞÅÏ¢µÄÊı¾İ½Ó¿Ú
+	 * å…³äºè®¿é—®æŸ¥çœ‹é…’åº—ä¿¡æ¯çš„æ•°æ®æ¥å£
 	 */
 	private void loadHotel() {
 		new Thread(new Runnable() {
@@ -176,7 +176,7 @@ public class HotelSelectResultActivity extends BaseActivity {
 				Bundle bundle = getIntent().getExtras();
 				String city = bundle.getString("city");
 				HttpAccessAdapter httpAdapter = new HttpAccessAdapter();
-				String request = httpAdapter.createHotelRequestXml(city, "ººÍ¥");
+				String request = httpAdapter.createHotelRequestXml(city, "æ±‰åº­");
 				String hotelUrl = "http://openapi.ctrip.com/Hotel/OTA_HotelSearch.asmx?wsdl";
 				// String url =
 				// "http://crmint.dev.sh.ctriptravel.com/Hotel/OTA_Ping.asmx?wsdl";

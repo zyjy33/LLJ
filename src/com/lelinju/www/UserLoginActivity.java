@@ -64,8 +64,8 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 	public static QQAuth mQQAuth;
 	private UserInfo mInfo;
 	private Tencent mTencent;
-	private final String APP_ID = "1105810330";// ²âÊÔÊ±Ê¹ÓÃ£¬ÕæÕı·¢²¼µÄÊ±ºòÒª»»³É×Ô¼ºµÄAPP_ID
-//	private final String APP_ID = "222222";// ²âÊÔÊ±Ê¹ÓÃ£¬ÕæÕı·¢²¼µÄÊ±ºòÒª»»³É×Ô¼ºµÄAPP_ID
+	private final String APP_ID = "1105810330";// æµ‹è¯•æ—¶ä½¿ç”¨ï¼ŒçœŸæ­£å‘å¸ƒçš„æ—¶å€™è¦æ¢æˆè‡ªå·±çš„APP_ID
+//	private final String APP_ID = "222222";// æµ‹è¯•æ—¶ä½¿ç”¨ï¼ŒçœŸæ­£å‘å¸ƒçš„æ—¶å€™è¦æ¢æˆè‡ªå·±çš„APP_ID
 	public static Bitmap bitmap;
 	public static String oauth_name = "";
 	public static boolean panduan = false;
@@ -89,7 +89,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 		spPreferences_login = getSharedPreferences("longuserset_login", MODE_PRIVATE);
 		try {
 			progress = new DialogProgress(UserLoginActivity.this);
-			//µ¯³ö¿ò·µ»Øtrue¹Ø±Õ
+			//å¼¹å‡ºæ¡†è¿”å›trueå…³é—­
 //			if (UserLoginWayActivity.jiemian == true) {
 //				UserLoginWayActivity.jiemian = false;
 //				finish();
@@ -124,7 +124,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 //			SharedPreferences spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 //			user_name = spPreferences.getString("user_name", "");
 			fanhui_type = true;
-			wx_fanhui = true;//·ÖÏíÎ¢ĞÅ·µ»ØAPP
+			wx_fanhui = true;//åˆ†äº«å¾®ä¿¡è¿”å›APP
 			
 			if (zhuangtai == false) {
 				updata();
@@ -135,7 +135,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 				panduan_tishi = true;
 				oauth_name = "weixin";
 				System.out.println("2------------------"+WX_CODE);
-//				Toast.makeText(this, "Î¢ĞÅcodeÎª"+WX_CODE+"/", 1000).show();
+//				Toast.makeText(this, "å¾®ä¿¡codeä¸º"+WX_CODE+"/", 1000).show();
 				SharedPreferences spPreferences_tishi = getSharedPreferences("longuserset_tishi", MODE_PRIVATE);
 				String qq = spPreferences_tishi.getString("qq", "");
 				if (!qq.equals("")) {
@@ -179,8 +179,8 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 				System.out.println("======11============="+accessTokenUrl);
 				AsyncHttp.get(accessTokenUrl, new AsyncHttpResponseHandler() {
 					public void onSuccess(int arg0, String arg1) {
-						System.out.println("======Êä³ö1============="+arg1);
-//						Toast.makeText(MainUserLoginActivity.this, "Êı¾İÎª+"+arg1, 400).show();
+						System.out.println("======è¾“å‡º1============="+arg1);
+//						Toast.makeText(MainUserLoginActivity.this, "æ•°æ®ä¸º+"+arg1, 400).show();
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String access_token = object.getString("access_token");
@@ -199,7 +199,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 			}
 		}
 	    /**
-	     * Î¢ĞÅµÇÂ¼
+	     * å¾®ä¿¡ç™»å½•
 	     * @param ACCESS_TOKEN
 	     * @param openid
 	     */
@@ -210,8 +210,8 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 				System.out.println("======22============="+accessTokenUrl);
 				AsyncHttp.get(accessTokenUrl, new AsyncHttpResponseHandler() {
 					public void onSuccess(int arg0, String arg1) {
-						System.out.println("======Êä³ö2============="+arg1);
-//						Toast.makeText(UserLoginActivity.this, "Êı¾İ2Îª+"+arg1, 400).show();
+						System.out.println("======è¾“å‡º2============="+arg1);
+//						Toast.makeText(UserLoginActivity.this, "æ•°æ®2ä¸º+"+arg1, 400).show();
 						try {
 							JSONObject object = new JSONObject(arg1);
 							nickname = object.getString("nickname");
@@ -309,7 +309,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.btn_login://Î¢ĞÅµÇÂ¼
+		case R.id.btn_login://å¾®ä¿¡ç™»å½•
 //			Intent intent = new Intent(UserLoginActivity.this,MainUserLoginActivity.class);
 //			startActivity(intent);
 			isWXLogin = true;
@@ -318,7 +318,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 			req.state = "wechat_sdk_demo";
 			mWxApi.sendReq(req);
 			break;
-		case R.id.img_qq_login://QQµÇÂ¼
+		case R.id.img_qq_login://QQç™»å½•
 			try {
 //		    onClickLogin();	
 //			Intent intent = new Intent(UserLoginActivity.this,QQLoginActivity.class);
@@ -389,7 +389,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-////			Util.showResultDialog(UserLoginActivity.this, response.toString(),"µÇÂ¼³É¹¦");
+////			Util.showResultDialog(UserLoginActivity.this, response.toString(),"ç™»å½•æˆåŠŸ");
 ////			
 //			doComplete((JSONObject) response);
 //		}
@@ -406,7 +406,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 //
 //		@Override
 //		public void onCancel() {
-////			Util.toastMessage(UserLoginActivity.this, "ÓÃ»§È¡Ïû");//onCancel: 
+////			Util.toastMessage(UserLoginActivity.this, "ç”¨æˆ·å–æ¶ˆ");//onCancel: 
 //			Util.dismissDialog();
 //		}
 //	}
@@ -508,14 +508,14 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 	private void updata() {
 		try {
 			/**
-			 * °æ±¾2
+			 * ç‰ˆæœ¬2
 			 */
 			AsyncHttp.get(strUr2, new AsyncHttpResponseHandler() {
 				@Override
 				public void onSuccess(int arg0, String arg1) {
 					
 					super.onSuccess(arg0, arg1);
-					System.out.println("Ê×Ò³°æ±¾=============="+arg1);
+					System.out.println("é¦–é¡µç‰ˆæœ¬=============="+arg1);
 					try{
 					JSONObject jsonObject = new JSONObject(arg1);
 					JSONObject jsob = jsonObject.getJSONObject("data");
@@ -524,19 +524,19 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 					String file_path = jsob.getString("file_path");
 					String id = jsob.getString("id");
 					URL = RealmName.REALM_NAME_HTTP + file_path;
-					System.out.println("Ê×Ò³°æ±¾URL=============="+URL);
+					System.out.println("é¦–é¡µç‰ˆæœ¬URL=============="+URL);
 					String c_version = getAppVersionName(getApplicationContext()).trim().replaceAll("\\.", "");
-					float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//·şÎñÆ÷
-					float client_version = Float.parseFloat(c_version);//µ±Ç°
+					float server_version = Float.parseFloat(file_version.replaceAll("\\.", ""));//æœåŠ¡å™¨
+					float client_version = Float.parseFloat(c_version);//å½“å‰
 					
-					System.out.println("·şÎñÆ÷:"+ server_version+"/µ±Ç°:" + client_version);
+					System.out.println("æœåŠ¡å™¨:"+ server_version+"/å½“å‰:" + client_version);
 					if (server_version > client_version) {
-//						Toast.makeText(MainFragment.this, "ÌáÊ¾¸üĞÂ", 200).show();
+//						Toast.makeText(MainFragment.this, "æç¤ºæ›´æ–°", 200).show();
 						Message message = new Message();
 						message.what = 0;
 						handler.sendMessage(message);
 					}
-//					Toast.makeText(MainFragment.this, "Ã»ÓĞÌáÊ¾¸üĞÂ", 200).show();
+//					Toast.makeText(MainFragment.this, "æ²¡æœ‰æç¤ºæ›´æ–°", 200).show();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -552,13 +552,13 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 
 	public static File getFileFromServer(String path, ProgressDialog pd)
 			throws Exception {
-		// Èç¹ûÏàµÈµÄ»°±íÊ¾µ±Ç°µÄsdcard¹ÒÔØÔÚÊÖ»úÉÏ²¢ÇÒÊÇ¿ÉÓÃµÄ
+		// å¦‚æœç›¸ç­‰çš„è¯è¡¨ç¤ºå½“å‰çš„sdcardæŒ‚è½½åœ¨æ‰‹æœºä¸Šå¹¶ä¸”æ˜¯å¯ç”¨çš„
 		if (Environment.getExternalStorageState().equals(
 				Environment.MEDIA_MOUNTED)) {
 			URL url = new URL(path);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setConnectTimeout(5000);
-			// »ñÈ¡µ½ÎÄ¼şµÄ´óĞ¡
+			// è·å–åˆ°æ–‡ä»¶çš„å¤§å°
 			pd.setMax(conn.getContentLength());
 			InputStream is = conn.getInputStream();
 			File file = new File(Environment.getExternalStorageDirectory(),
@@ -571,7 +571,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 			while ((len = bis.read(buffer)) != -1) {
 				fos.write(buffer, 0, len);
 				total += len;
-				// »ñÈ¡µ±Ç°ÏÂÔØÁ¿
+				// è·å–å½“å‰ä¸‹è½½é‡
 				pd.setProgress(total);
 			}
 			fos.close();
@@ -584,10 +584,10 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 	}
 
 	protected void downLoadApk() {
-		final ProgressDialog pd; // ½ø¶ÈÌõ¶Ô»°¿ò
+		final ProgressDialog pd; // è¿›åº¦æ¡å¯¹è¯æ¡†
 		pd = new ProgressDialog(UserLoginActivity.this);
 		pd.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		pd.setMessage("ÕıÔÚÏÂÔØ¸üĞÂ");
+		pd.setMessage("æ­£åœ¨ä¸‹è½½æ›´æ–°");
 		pd.setCanceledOnTouchOutside(true);
 		pd.setProgressNumberFormat(null);
 		zhuangtai = true;
@@ -599,7 +599,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 					File file = getFileFromServer(URL, pd);
 					sleep(3000);
 					installApk(file);
-					pd.dismiss(); // ½áÊøµô½ø¶ÈÌõ¶Ô»°¿ò
+					pd.dismiss(); // ç»“æŸæ‰è¿›åº¦æ¡å¯¹è¯æ¡†
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -607,41 +607,41 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 		}.start();
 	}
 	
-	// °²×°apk
+	// å®‰è£…apk
 	protected void installApk(File file) {
 		MainFragmentActivity.zhuangtai = false;
 		UserLoginActivity.zhuangtai = false;
 		PersonCenterActivity.zhuangtai = false;
 		Intent intent = new Intent();
-		// Ö´ĞĞ¶¯×÷
+		// æ‰§è¡ŒåŠ¨ä½œ
 		intent.setAction(Intent.ACTION_VIEW);
-		// Ö´ĞĞµÄÊı¾İÀàĞÍ
+		// æ‰§è¡Œçš„æ•°æ®ç±»å‹
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");// ±àÕß°´£º´Ë´¦AndroidÓ¦Îªandroid£¬·ñÔòÔì³É°²×°²»ÁË
+		intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");// ç¼–è€…æŒ‰ï¼šæ­¤å¤„Androidåº”ä¸ºandroidï¼Œå¦åˆ™é€ æˆå®‰è£…ä¸äº†
 		UserLoginActivity.this.startActivity(intent);
 	}
 
-	// ³ÌĞò°æ±¾¸üĞÂ
+	// ç¨‹åºç‰ˆæœ¬æ›´æ–°
 	private void dialog() {
 
 		AlertDialog.Builder builder = new Builder(UserLoginActivity.this);
 //		builder.setMessage(updatainfo);
-		builder.setMessage("¼ì²éµ½×îĞÂ°æ±¾£¬ÊÇ·ñÒª¸üĞÂ£¡");
-		builder.setTitle("ÌáÊ¾:ĞÂ°æ±¾");
-		builder.setPositiveButton("¸üĞÂ", new DialogInterface.OnClickListener() {
+		builder.setMessage("æ£€æŸ¥åˆ°æœ€æ–°ç‰ˆæœ¬ï¼Œæ˜¯å¦è¦æ›´æ–°ï¼");
+		builder.setTitle("æç¤º:æ–°ç‰ˆæœ¬");
+		builder.setPositiveButton("æ›´æ–°", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				System.out.println("MainFragmentActivity.zhuangtai------------------"+MainFragmentActivity.zhuangtai);
 				System.out.println("UserLoginActivity.zhuangtai------------------"+UserLoginActivity.zhuangtai);
 				if (MainFragmentActivity.zhuangtai == true) {
-					Toast.makeText(UserLoginActivity.this, "ÕıÔÚÏÂÔØ...", 200).show();
+					Toast.makeText(UserLoginActivity.this, "æ­£åœ¨ä¸‹è½½...", 200).show();
 					dialog.dismiss();
 				}else if (UserLoginActivity.zhuangtai == true) {
-					Toast.makeText(UserLoginActivity.this, "ÕıÔÚÏÂÔØ...", 200).show();
+					Toast.makeText(UserLoginActivity.this, "æ­£åœ¨ä¸‹è½½...", 200).show();
 					dialog.dismiss();
 				}else if (PersonCenterActivity.zhuangtai == true) {
-					Toast.makeText(UserLoginActivity.this, "ÕıÔÚÏÂÔØ...", 200).show();
+					Toast.makeText(UserLoginActivity.this, "æ­£åœ¨ä¸‹è½½...", 200).show();
 					dialog.dismiss();
 				}else {
 					final String filePath = Environment.getExternalStorageDirectory() + "/ss";
@@ -650,7 +650,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 				}
 			}
 		});
-		builder.setNegativeButton("ÒÔºóÔÙËµ",
+		builder.setNegativeButton("ä»¥åå†è¯´",
 				new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -660,7 +660,7 @@ public class UserLoginActivity extends BaseActivity implements OnClickListener {
 		builder.create().show();
 	}
 	
-	// »ñÈ¡µ±Ç°³ÌĞòµÄ°æ±¾ĞÅÏ¢
+	// è·å–å½“å‰ç¨‹åºçš„ç‰ˆæœ¬ä¿¡æ¯
 	public static String getAppVersionName(Context context) {
 		String versionName = "";
 		try {

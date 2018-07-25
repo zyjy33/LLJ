@@ -40,7 +40,7 @@ public class Utils {
 				fileOutputStream = new FileOutputStream(photoFile);
 				if (photoBitmap != null) {
 					if (photoBitmap.compress(Bitmap.CompressFormat.PNG, 100,
-							fileOutputStream)) { // ×ª»»Íê³É
+							fileOutputStream)) { // è½¬æ¢å®Œæˆ
 						localPath = photoFile.getPath();
 						fileOutputStream.flush();
 					}
@@ -68,10 +68,10 @@ public class Utils {
 	}
 
 	/**
-	 * ×ª»»Í¼Æ¬³ÉÔ²ĞÎ
+	 * è½¬æ¢å›¾ç‰‡æˆåœ†å½¢
 	 * 
 	 * @param bitmap
-	 *            ´«ÈëBitmap¶ÔÏó
+	 *            ä¼ å…¥Bitmapå¯¹è±¡
 	 * @param tempUri
 	 * @return
 	 */
@@ -116,18 +116,18 @@ public class Utils {
 				(int) dst_right, (int) dst_bottom);
 		final RectF rectF = new RectF(dst);
 
-		paint.setAntiAlias(true);// ÉèÖÃ»­±ÊÎŞ¾â³İ
+		paint.setAntiAlias(true);// è®¾ç½®ç”»ç¬”æ— é”¯é½¿
 
-		canvas.drawARGB(0, 0, 0, 0); // Ìî³äÕû¸öCanvas
+		canvas.drawARGB(0, 0, 0, 0); // å¡«å……æ•´ä¸ªCanvas
 		paint.setColor(color);
 
-		// ÒÔÏÂÓĞÁ½ÖÖ·½·¨»­Ô²,drawRounRectºÍdrawCircle
+		// ä»¥ä¸‹æœ‰ä¸¤ç§æ–¹æ³•ç”»åœ†,drawRounRectå’ŒdrawCircle
 		// canvas.drawRoundRect(rectF, roundPx, roundPx, paint);//
-		// »­Ô²½Ç¾ØĞÎ£¬µÚÒ»¸ö²ÎÊıÎªÍ¼ĞÎÏÔÊ¾ÇøÓò£¬µÚ¶ş¸ö²ÎÊıºÍµÚÈı¸ö²ÎÊı·Ö±ğÊÇË®Æ½Ô²½Ç°ë¾¶ºÍ´¹Ö±Ô²½Ç°ë¾¶¡£
+		// ç”»åœ†è§’çŸ©å½¢ï¼Œç¬¬ä¸€ä¸ªå‚æ•°ä¸ºå›¾å½¢æ˜¾ç¤ºåŒºåŸŸï¼Œç¬¬äºŒä¸ªå‚æ•°å’Œç¬¬ä¸‰ä¸ªå‚æ•°åˆ†åˆ«æ˜¯æ°´å¹³åœ†è§’åŠå¾„å’Œå‚ç›´åœ†è§’åŠå¾„ã€‚
 		canvas.drawCircle(roundPx, roundPx, roundPx, paint);
 
-		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));// ÉèÖÃÁ½ÕÅÍ¼Æ¬Ïà½»Ê±µÄÄ£Ê½,²Î¿¼http://trylovecatch.iteye.com/blog/1189452
-		canvas.drawBitmap(bitmap, src, dst, paint); // ÒÔMode.SRC_INÄ£Ê½ºÏ²¢bitmapºÍÒÑ¾­drawÁËµÄCircle
+		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));// è®¾ç½®ä¸¤å¼ å›¾ç‰‡ç›¸äº¤æ—¶çš„æ¨¡å¼,å‚è€ƒhttp://trylovecatch.iteye.com/blog/1189452
+		canvas.drawBitmap(bitmap, src, dst, paint); // ä»¥Mode.SRC_INæ¨¡å¼åˆå¹¶bitmapå’Œå·²ç»drawäº†çš„Circle
 
 		return output;
 	}

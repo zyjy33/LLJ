@@ -67,7 +67,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 	}
 	private void initdata() {
 		tv_timu = (TextView) findViewById(R.id.textView1);
-		tv_timu.setText("ÍÆ¹ã´«²¥");
+		tv_timu.setText("æ¨å¹¿ä¼ æ’­");
 		listView = (ListView) findViewById(R.id.new_list);
 		tv_shangyiti = (TextView) findViewById(R.id.tv_shangyiti);
 		tv_shangyitill = (TextView) findViewById(R.id.tv_shangyitill);
@@ -91,7 +91,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 	}
 	
 	
-	//ÉÌÆ·ÁĞ±í
+	//å•†å“åˆ—è¡¨
 		private void loadCate(String exam_id2){
 			
 			AsyncHttp.get(RealmName.REALM_NAME_LL+"/get_test_exam_model?" +
@@ -156,7 +156,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 	
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list(String exam_id) {
 		System.out.println("==len==================="+len);
@@ -167,7 +167,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+//								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -209,7 +209,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 									}
 									
 									tv_ware_name.setText(title);
-									if (datatype.contains("¶àÑ¡Ìâ")) {
+									if (datatype.contains("å¤šé€‰é¢˜")) {
 										handler.sendEmptyMessage(0);
 									}else {
 										
@@ -226,7 +226,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.tv_shangyiti:
-			System.out.println("=====================¶ş¼¶Öµ=="+len);
+			System.out.println("=====================äºŒçº§å€¼=="+len);
 			System.out.println("=====================list_id.size()=="+list_id.size());
 			HashMap<Integer, Boolean> map1 = MyListViewAdapter.getIsSelected();
 			System.out.println("=====map.size()================"+map1.size());
@@ -239,15 +239,15 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 				}
 			}
 			MyListViewAdapter.getIsSelected().get("");
-//			Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 //			list_name.remove(str1);
 //			StringBuffer str2 = new StringBuffer();
 //	        for(String s:list_name){
 //	        	str2.append(s+",");
 //	        }
 //	        str2.delete(str2.lastIndexOf(","),str2.length()); 
-//	        System.out.println("idÆ´½ÓÖ®ºó---------------"+str2);
-//			Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str2 + "", Toast.LENGTH_SHORT).show();
+//	        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str2);
+//			Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str2 + "", Toast.LENGTH_SHORT).show();
 			
 			len -= 1;
 			if (list_id.size() > len) {
@@ -258,7 +258,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 			
 			break;
 		case R.id.tv_xiayiti_ll:
-			if (datatype.contains("¶àÑ¡Ìâ")) {
+			if (datatype.contains("å¤šé€‰é¢˜")) {
 				
 			
 			groups = new ArrayList<Group>();  
@@ -273,10 +273,10 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 				}
 			}
 			if (str1.equals("")) {
-				Toast.makeText(getApplicationContext(),"ÇëÑ¡Ôñ´ğ°¸", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),"è¯·é€‰æ‹©ç­”æ¡ˆ", Toast.LENGTH_SHORT).show();
 			}else {
 			MyListViewAdapter.getIsSelected().get("");
-//			Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 			list_name.add(str1);
 			
 //			StringBuffer str = new StringBuffer();
@@ -284,8 +284,8 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 //	        	str.append(s+",");
 //	        }
 //	        str.delete(str.lastIndexOf(","),str.length()); 
-//	        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
-//	        Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str + "", Toast.LENGTH_SHORT).show();
+//	        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
+//	        Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str + "", Toast.LENGTH_SHORT).show();
 	        
 			if (list_id.size() > len) {
 				len += 1;
@@ -310,7 +310,7 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 	}
 	
 	/**
-	 * ¼ÆËã×Ü¼Û¸ñµÄ·½·¨
+	 * è®¡ç®—æ€»ä»·æ ¼çš„æ–¹æ³•
 	 * */
 	public void myPrice() {
 		HashMap<Integer, Boolean> map = MyListViewAdapter.getIsSelected();
@@ -325,10 +325,10 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
 		}
 		
 		if (str1.equals("")) {
-			Toast.makeText(getApplicationContext(),"Äú»¹Î´Ñ¡Ôñ´ğ°¸", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(),"æ‚¨è¿˜æœªé€‰æ‹©ç­”æ¡ˆ", Toast.LENGTH_SHORT).show();
 		}else {
 		MyListViewAdapter.getIsSelected().get("");
-		Toast.makeText(getApplicationContext(),"ÒÑÑ¡ÖĞÁË" + str1 + "", Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(),"å·²é€‰ä¸­äº†" + str1 + "", Toast.LENGTH_SHORT).show();
 		list_name.add(str1);
 		System.out.println("=====list_name.size()================"+list_name.size());
 		StringBuffer str = new StringBuffer();
@@ -336,22 +336,22 @@ public class JuFaFaXunaZheActivityll extends BaseActivity implements OnClickList
         	str.append(s+",");
         }
         str.delete(str.lastIndexOf(","),str.length()); 
-        System.out.println("idÆ´½ÓÖ®ºó---------------"+str);
+        System.out.println("idæ‹¼æ¥ä¹‹å---------------"+str);
 		}
 		
 	}
 	
 	/**
-	 * listviewµÄitemµÄÑ¡ÔñµÄ·½·¨
+	 * listviewçš„itemçš„é€‰æ‹©çš„æ–¹æ³•
 	 * */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		// È¡µÃViewHolder¶ÔÏó£¬ÕâÑù¾ÍÊ¡È¥ÁËÍ¨¹ı²ã²ãµÄfindViewByIdÈ¥ÊµÀı»¯ÎÒÃÇĞèÒªµÄcbÊµÀıµÄ²½Öè
+		// å–å¾—ViewHolderå¯¹è±¡ï¼Œè¿™æ ·å°±çœå»äº†é€šè¿‡å±‚å±‚çš„findViewByIdå»å®ä¾‹åŒ–æˆ‘ä»¬éœ€è¦çš„cbå®ä¾‹çš„æ­¥éª¤
 		ViewHolder holder = (ViewHolder) view.getTag();
-		// ¸Ä±äCheckBoxµÄ×´Ì¬
+		// æ”¹å˜CheckBoxçš„çŠ¶æ€
 		holder.cb.toggle();
-		// ½«CheckBoxµÄÑ¡ÖĞ×´¿ö¼ÇÂ¼ÏÂÀ´
+		// å°†CheckBoxçš„é€‰ä¸­çŠ¶å†µè®°å½•ä¸‹æ¥
 		MyListViewAdapter.getIsSelected().put(position, holder.cb.isChecked());
 
 	}

@@ -16,7 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 
 /**
- * @Description:gridview的Adapter
+ * @Description:gridview鐨凙dapter
  * @author http://blog.csdn.net/finddreams
  */
 public class MyGridAdapter extends BaseAdapter {
@@ -77,18 +77,18 @@ public class MyGridAdapter extends BaseAdapter {
 //		System.out.println("=====4====================="+position);
 		
 //		if (position == 0) {
-//			tv.setText("全部"); 
+//			tv.setText("鍏ㄩ儴"); 
 //		}
 		
 		tv.setText((String) data2.get(position)); 
 		
 		
 		if (clickTemp == position) {
-			System.out.println("====红色====================="+clickTemp);
+			System.out.println("====绾㈣壊====================="+clickTemp);
 			convertView.setBackgroundResource(R.drawable.julegou_xuankuang);//julegou_xuankuang 
 			tv.setTextColor(Color.RED);
 		} else {
-			System.out.println("====灰色====================="+clickTemp);
+			System.out.println("====鐏拌壊====================="+clickTemp);
 //			convertView.setBackgroundColor(Color.TRANSPARENT);
 //			convertView.setBackgroundResource(R.drawable.zangfutiaoli);//julegou_xuankuang 
 			tv.setTextColor(Color.GRAY);

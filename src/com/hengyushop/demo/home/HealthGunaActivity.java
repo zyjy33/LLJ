@@ -39,7 +39,7 @@ import com.lelinju.www.R;
 
 /**
  * 
- * ½¡¿µ¹İ
+ * å¥åº·é¦†
  * 
  * @author Administrator
  * 
@@ -77,7 +77,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 	}
 
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	private void Initialize() {
 
@@ -125,7 +125,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 			cursor1.setVisibility(View.INVISIBLE);
 			cursor2.setVisibility(View.VISIBLE);
 			ll_buju1.setVisibility(View.GONE);
-			Toast.makeText(HealthGunaActivity.this, "ÔİÎŞÈÕ³£µ÷Àí", 200).show();
+			Toast.makeText(HealthGunaActivity.this, "æš‚æ— æ—¥å¸¸è°ƒç†", 200).show();
 			break;
 
 		default:
@@ -185,7 +185,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 	};
 
 	/**
-	 * ÁĞ±íÊı¾İ½âÎö
+	 * åˆ—è¡¨æ•°æ®è§£æ
 	 */
 
 	private void load_gridview() {
@@ -198,7 +198,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 					public void onSuccess(int arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====================¶ş¼¶Öµ1" + arg1);
+						System.out.println("=====================äºŒçº§å€¼1" + arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");
@@ -212,10 +212,10 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 									data_ll.id = json.getString("id");
 									data_ll.title = json.getString("title");
 									data_ll.icon_url = json.getString("icon_url");
-									data_ll.summary = json.getString("summary");//×Ü½á
-									data_ll.proposal = json.getString("proposal");//Éú»î½¨Òé
-									data_ll.cause = json.getString("cause");//ĞÎ³ÉÔ­Òò
-									data_ll.doctor = json.getString("doctor");//ºÎÊ±¾ÍÒ½
+									data_ll.summary = json.getString("summary");//æ€»ç»“
+									data_ll.proposal = json.getString("proposal");//ç”Ÿæ´»å»ºè®®
+									data_ll.cause = json.getString("cause");//å½¢æˆåŸå› 
+									data_ll.doctor = json.getString("doctor");//ä½•æ—¶å°±åŒ»
 									list.add(data_ll);
 								}
 							} else {
@@ -236,7 +236,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 	
 	
 	/**
-	 * ½âÎöÁĞ±íÊı¾İ
+	 * è§£æåˆ—è¡¨æ•°æ®
 	 */
 	private void loadzhengzhuang() {
 		list_l = new ArrayList<GuigeBean>();
@@ -247,7 +247,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 					public void onSuccess(int arg0,String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("=====¹æ¸ñÊı¾İ====================="+arg1);
+						System.out.println("=====è§„æ ¼æ•°æ®====================="+arg1);
 						
 						try {
 							JSONObject object = new JSONObject(arg1);
@@ -256,7 +256,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 								JSONObject obj= jobt.getJSONObject(i);
 								
 								String child = obj.getString("child");
-								System.out.println("=====1Öµ====================="+child);
+								System.out.println("=====1å€¼====================="+child);
 								if (child.length() > 0) {
 //								JSONArray jaArray = obj.getJSONArray(child);
 								JSONArray jaArray = new JSONArray(child);
@@ -272,9 +272,9 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 					    		mb.setTitle(obt.getString("title"));
 					    		mb.setIcon_url(obt.getString("icon_url"));
 					    		mb.summary = obt.getString("summary");
-					    		mb.proposal = obt.getString("proposal");//Éú»î½¨Òé
-					    		mb.cause = obt.getString("cause");//ĞÎ³ÉÔ­Òò
-					    		mb.doctor = obt.getString("doctor");//ºÎÊ±¾ÍÒ½
+					    		mb.proposal = obt.getString("proposal");//ç”Ÿæ´»å»ºè®®
+					    		mb.cause = obt.getString("cause");//å½¢æˆåŸå› 
+					    		mb.doctor = obt.getString("doctor");//ä½•æ—¶å°±åŒ»
 //					    		list_l.add(mb);
 					    		md.getList().add(mb);
 					    		JSONArray ja = obt.getJSONArray("articles");
@@ -317,7 +317,7 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
 	}
 
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -325,18 +325,18 @@ public class HealthGunaActivity extends BaseActivity implements OnClickListener 
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     }
 }

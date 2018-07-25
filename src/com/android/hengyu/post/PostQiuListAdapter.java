@@ -56,7 +56,7 @@ public class PostQiuListAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) view.getTag();
 		}
-		holder.sd.setText(list.get(position).getAge() + "ÀÍ");
+		holder.sd.setText(list.get(position).getAge() + "Â≤Å");
 		holder.v1.setText(list.get(position).getUsername());
 		holder.v2.setText(list.get(position).getResumeTitle());
 		holder.v3.setText(list.get(position).getEducation_tmp());

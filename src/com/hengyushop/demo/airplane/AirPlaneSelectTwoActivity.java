@@ -49,18 +49,18 @@ public class AirPlaneSelectTwoActivity extends BaseActivity {
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case 1:
-				System.out.println("Êı¾İÓĞÂğ");
-				// ·É»úÆ±²éÑ¯Íê³É
+				System.out.println("æ•°æ®æœ‰å—");
+				// é£æœºç¥¨æŸ¥è¯¢å®Œæˆ
 				ArrayList<FlyResult> list = (ArrayList<FlyResult>) msg.obj;
 				FlyResultAdapter adapter = new FlyResultAdapter(
 						getApplicationContext(), list, handler);
 				mListView.setAdapter(adapter);
 				air_tag.setText(stand.getTime() + "   " + stand.getFly_city()
 						+ "-" + stand.getArr_city());
-				air_num.setText("(¹²" + list.size() + "¸ö½á¹û)");
+				air_num.setText("(å…±" + list.size() + "ä¸ªç»“æœ)");
 				break;
 			case 2:
-				// µ¯³öĞÅÏ¢À¸
+				// å¼¹å‡ºä¿¡æ¯æ 
 				// mi/FlightTicket.ashx?imei=11&act=GetSeatWithPriceAndCommisionItems&bossUid=111&seatItems_SerialCode=1&flightNo=HO1276
 				Bundle bundle = new Bundle();
 				bundle.putSerializable("fly_cang", (Serializable) msg.obj);
@@ -123,7 +123,7 @@ public class AirPlaneSelectTwoActivity extends BaseActivity {
 		setContentView(R.layout.airplane_select_two);
 		air_tag = (TextView) findViewById(R.id.air_tag);
 		air_num = (TextView) findViewById(R.id.air_num);
-		mListView = (ListView) findViewById(R.id.Bookbox_explistview); // ¿ÉÀ©Õ¹listView
+		mListView = (ListView) findViewById(R.id.Bookbox_explistview); // å¯æ‰©å±•listView
 		stand = (AirStand) getIntent().getExtras().getSerializable("bean");
 		if (stand != null) {
 
@@ -133,7 +133,7 @@ public class AirPlaneSelectTwoActivity extends BaseActivity {
 
 	}
 
-	// ³õÊ¼»¯·É»úÁĞ±í
+	// åˆå§‹åŒ–é£æœºåˆ—è¡¨
 	private void init(AirStand stand) {
 		/*
 		 * Map<String, String> map = new HashMap<String, String>(); //
@@ -167,7 +167,7 @@ public class AirPlaneSelectTwoActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½âÎö·É»úÆ±
+	 * è§£æé£æœºç¥¨
 	 * 
 	 * @param arg1
 	 */
@@ -178,8 +178,8 @@ public class AirPlaneSelectTwoActivity extends BaseActivity {
 			JSONObject jsonObject = new JSONObject(arg1);
 			ArrayList<FlyResult> lists = new ArrayList<FlyResult>();
 			if (jsonObject.getInt("status") == 0) {
-				// ·ÃÎÊÊ§°Ü
-				Toast.makeText(getApplicationContext(), "·ÃÎÊÒì³£", 200).show();
+				// è®¿é—®å¤±è´¥
+				Toast.makeText(getApplicationContext(), "è®¿é—®å¼‚å¸¸", 200).show();
 			} else {
 				JSONArray jsonArray = jsonObject.getJSONArray("Data");
 				int len = jsonArray.length();

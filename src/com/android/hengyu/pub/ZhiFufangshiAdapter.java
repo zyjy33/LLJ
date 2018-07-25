@@ -70,7 +70,7 @@ public class ZhiFufangshiAdapter extends BaseAdapter {
 		}
 		
 //		holder.img.setImageResource(dataList.get(position));
-//		holder.text.setText("µ⁄" + position + "œÓ");
+//		holder.text.setText("Á¨¨" + position + "È°π");
 //		clickTempll = position;
 		 
 		 try {
@@ -84,10 +84,10 @@ public class ZhiFufangshiAdapter extends BaseAdapter {
 			 
 			 int monney = List.get(position).getExpress_fee();
 			 if (monney == 0) {
-				 holder.text.setText(List.get(position).getTitle()+"("+"√‚” "+")");
+				 holder.text.setText(List.get(position).getTitle()+"("+"ÂÖçÈÇÆ"+")");
 			 }else {
 				 String price = String.valueOf(monney);
-				 holder.text.setText(List.get(position).getTitle()+"("+"£§"+price+")");
+				 holder.text.setText(List.get(position).getTitle()+"("+"Ôø•"+price+")");
 			}
 //				if (clickTemp == position) {
 //					holder.img.setBackgroundResource(R.drawable.ck_login);

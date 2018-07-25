@@ -56,7 +56,7 @@ public class AirPlaneTicketInfromationActivity extends BaseActivity {
 	}
 
 	/**
-	 * Éú³É×é¼ş¶ÔÏó
+	 * ç”Ÿæˆç»„ä»¶å¯¹è±¡
 	 */
 	private void init(FlyResult bean) {
 		check_ok = (Button) findViewById(R.id.check_ok);
@@ -76,9 +76,9 @@ public class AirPlaneTicketInfromationActivity extends BaseActivity {
 		fly_detail_tp = (TextView) findViewById(R.id.fly_detail_tp);
 		fly_detail_qz = (TextView) findViewById(R.id.fly_detail_qz);
 		loadBase(bean);
-		fly_detail_price.setText("£¤" + bean.getPrice());
-		fly_detail_bx.setText("£¤" + bean.getInsurance());
-		fly_detail_ry.setText("£¤" + bean.getAudletAirportTax() + "/" + "£¤"
+		fly_detail_price.setText("ï¿¥" + bean.getPrice());
+		fly_detail_bx.setText("ï¿¥" + bean.getInsurance());
+		fly_detail_ry.setText("ï¿¥" + bean.getAudletAirportTax() + "/" + "ï¿¥"
 				+ bean.getAudletFuelTax());
 		CityDB db0 = new CityDB(getApplicationContext());
 		CityDB db2 = new CityDB(getApplicationContext());
@@ -94,18 +94,18 @@ public class AirPlaneTicketInfromationActivity extends BaseActivity {
 		try {
 			Date d0 = dateFormat0.parse(bean.getFirstTime());
 			Date d1 = dateFormat0.parse(bean.getEndTime());
-			long between = (d1.getTime() - d0.getTime()) / 1000;// ³ıÒÔ1000ÊÇÎªÁË×ª»»³ÉÃë
+			long between = (d1.getTime() - d0.getTime()) / 1000;// é™¤ä»¥1000æ˜¯ä¸ºäº†è½¬æ¢æˆç§’
 			long day1 = between / (24 * 3600);
 			long hour1 = between % (24 * 3600) / 3600;
 			long minute1 = between % 3600 / 60;
-			fly_detail_all.setText("" + day1 + "Ìì" + hour1 + "Ğ¡Ê±" + minute1
-					+ "·Ö");
+			fly_detail_all.setText("" + day1 + "å¤©" + hour1 + "å°æ—¶" + minute1
+					+ "åˆ†");
 		} catch (java.text.ParseException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
-		String[] weekDays = { "ĞÇÆÚÈÕ", "ĞÇÆÚÒ»", "ĞÇÆÚ¶ş", "ĞÇÆÚÈı", "ĞÇÆÚËÄ", "ĞÇÆÚÎå", "ĞÇÆÚÁù" };
+		String[] weekDays = { "æ˜ŸæœŸæ—¥", "æ˜ŸæœŸä¸€", "æ˜ŸæœŸäºŒ", "æ˜ŸæœŸä¸‰", "æ˜ŸæœŸå››", "æ˜ŸæœŸäº”", "æ˜ŸæœŸå…­" };
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 		Date d = null;
@@ -125,7 +125,7 @@ public class AirPlaneTicketInfromationActivity extends BaseActivity {
 		fly_detail_canl.setText(bean.getDate() + " " + weekDays[w - 1]);
 		CityDB db = new CityDB(getApplicationContext());
 		CityDB db1 = new CityDB(getApplicationContext());
-		fly_detail_local.setText(db.getCinBySam(bean.getOrgCity()) + "¨D"
+		fly_detail_local.setText(db.getCinBySam(bean.getOrgCity()) + "â€•"
 				+ db1.getCinBySam(bean.getDstCity()));
 
 	}
@@ -137,7 +137,7 @@ public class AirPlaneTicketInfromationActivity extends BaseActivity {
 			// TODO Auto-generated method stub
 			switch (v.getId()) {
 			case R.id.check_ok:
-				// È·ÈÏĞÅÏ¢ÎŞÎó
+				// ç¡®è®¤ä¿¡æ¯æ— è¯¯
 				Intent intent = new Intent(
 						AirPlaneTicketInfromationActivity.this,
 						AirOrderSendActivity.class);
@@ -154,7 +154,7 @@ public class AirPlaneTicketInfromationActivity extends BaseActivity {
 	};
 
 	/**
-	 * ¼ÓÔØĞÅÏ¢
+	 * åŠ è½½ä¿¡æ¯
 	 */
 	private void loadBase(FlyResult bean) {
 		RequestParams params = new RequestParams();

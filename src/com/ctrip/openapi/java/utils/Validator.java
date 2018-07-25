@@ -3,124 +3,124 @@ package com.ctrip.openapi.java.utils;
 import java.util.regex.Pattern;
 
 /**
- * Ğ£ÑéÆ÷£ºÀûÓÃÕıÔò±í´ïÊ½Ğ£ÑéÓÊÏä¡¢ÊÖ»úºÅµÈ
+ * æ ¡éªŒå™¨ï¼šåˆ©ç”¨æ­£åˆ™è¡¨è¾¾å¼æ ¡éªŒé‚®ç®±ã€æ‰‹æœºå·ç­‰
  * @author Mr.duan
  */
 public class Validator {
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤ÓÃ»§Ãû(²»°üº¬ÖĞÎÄºÍÌØÊâ×Ö·û)Èç¹ûÓÃ»§ÃûÊ¹ÓÃÊÖ»úºÅÂë»òÓÊÏä Ôò½áºÏÊÖ»úºÅÑéÖ¤ºÍÓÊÏäÑéÖ¤
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯ç”¨æˆ·å(ä¸åŒ…å«ä¸­æ–‡å’Œç‰¹æ®Šå­—ç¬¦)å¦‚æœç”¨æˆ·åä½¿ç”¨æ‰‹æœºå·ç æˆ–é‚®ç®± åˆ™ç»“åˆæ‰‹æœºå·éªŒè¯å’Œé‚®ç®±éªŒè¯
      */
     public static final String REGEX_USERNAME = "^[a-zA-Z]\\w{5,17}$";
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤ÃÜÂë(²»°üº¬ÌØÊâ×Ö·û)
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯å¯†ç (ä¸åŒ…å«ç‰¹æ®Šå­—ç¬¦)
      */
     public static final String REGEX_PASSWORD = "^[a-zA-Z0-9]{6,16}$";
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤ÊÖ»úºÅ
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯æ‰‹æœºå·
      */
 //    public static final String REGEX_MOBILE = "^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
     public static final String REGEX_MOBILE = "^((13[0-9])|(15[^4])|(18[0,1,2,3,5-9])|(17[0-9])|(147))\\d{8}$";  
     
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤ÓÊÏä
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯é‚®ç®±
      */
     public static final String REGEX_EMAIL = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤ºº×Ö(1-9¸öºº×Ö)  {1,9} ×Ô¶¨ÒåÇø¼ä
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯æ±‰å­—(1-9ä¸ªæ±‰å­—)  {1,9} è‡ªå®šä¹‰åŒºé—´
      */
     public static final String REGEX_CHINESE = "^[\u4e00-\u9fa5]{1,9}$";
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤Éí·İÖ¤
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯èº«ä»½è¯
      */
     public static final String REGEX_ID_CARD = "(\\d{14}[0-9a-zA-Z])|(\\d{17}[0-9a-zA-Z])";
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤URL
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯URL
      */
     public static final String REGEX_URL = "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?";
  
     /**
-     * ÕıÔò±í´ïÊ½:ÑéÖ¤IPµØÖ· 
+     * æ­£åˆ™è¡¨è¾¾å¼:éªŒè¯IPåœ°å€ 
      */
     public static final String REGEX_IP_ADDR = "(2[5][0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})";
  
     /**
-     * Ğ£ÑéÓÃ»§Ãû
+     * æ ¡éªŒç”¨æˆ·å
      * 
      * @param username
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isUserName(String username) {
         return Pattern.matches(REGEX_USERNAME, username);
     }
  
     /**
-     * Ğ£ÑéÃÜÂë
+     * æ ¡éªŒå¯†ç 
      * 
      * @param password
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isPassword(String password) {
         return Pattern.matches(REGEX_PASSWORD, password);
     }
  
     /**
-     * Ğ£ÑéÊÖ»úºÅ
+     * æ ¡éªŒæ‰‹æœºå·
      * 
      * @param mobile
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isMobile(String mobile) {
         return Pattern.matches(REGEX_MOBILE, mobile);
     }
  
     /**
-     * Ğ£ÑéÓÊÏä
+     * æ ¡éªŒé‚®ç®±
      * 
      * @param email
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isEmail(String email) {
         return Pattern.matches(REGEX_EMAIL, email);
     }
  
     /**
-     * Ğ£Ñéºº×Ö
+     * æ ¡éªŒæ±‰å­—
      * 
      * @param chinese
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isChinese(String chinese) {
         return Pattern.matches(REGEX_CHINESE, chinese);
     }
  
     /**
-     * Ğ£ÑéÉí·İÖ¤
+     * æ ¡éªŒèº«ä»½è¯
      * 
      * @param idCard
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isIDCard(String idCard) {
         return Pattern.matches(REGEX_ID_CARD, idCard);
     }
  
     /**
-     * Ğ£ÑéURL
+     * æ ¡éªŒURL
      * 
      * @param url
-     * @return Ğ£ÑéÍ¨¹ı·µ»Øtrue£¬·ñÔò·µ»Øfalse
+     * @return æ ¡éªŒé€šè¿‡è¿”å›trueï¼Œå¦åˆ™è¿”å›false
      */
     public static boolean isUrl(String url) {
         return Pattern.matches(REGEX_URL, url);
     }
  
     /**
-     * Ğ£ÑéIPµØÖ·
+     * æ ¡éªŒIPåœ°å€
      * 
      * @param ipAddress
      * @return

@@ -44,7 +44,7 @@ public class LgLotteryLoginActivity extends BaseActivity {
 						"pwd",
 						HttpUtils.MD5(HttpUtils.MD5(domain.getPassWord())
 								+ domain.getRnd()));
-				WLog.v("ÓĞ");
+				WLog.v("æœ‰");
 				AsyncHttp.post(U.LOTTERY_LOGIN, params,
 						new AsyncHttpResponseHandler() {
 							public void onSuccess(int arg0, String arg1) {
@@ -63,7 +63,7 @@ public class LgLotteryLoginActivity extends BaseActivity {
 										sharedUtils.setStringValue("phone",
 												jsonObject.getString("phone"));
 										Toast.makeText(getApplicationContext(),
-												"µÇÂ¼³É¹¦!", 100).show();
+												"ç™»å½•æˆåŠŸ!", 100).show();
 										AppManager.getAppManager()
 												.finishActivity();
 									}
@@ -117,9 +117,9 @@ public class LgLotteryLoginActivity extends BaseActivity {
 									}
 
 								} else {
-									// ±íÊ¾ÓĞ´íÎó
+									// è¡¨ç¤ºæœ‰é”™è¯¯
 									Toast.makeText(getApplicationContext(),
-											"Éí·İÑéÖ¤¹ıÆÚ£¬ÇëÖØĞÂµÇÂ¼!", 200).show();
+											"èº«ä»½éªŒè¯è¿‡æœŸï¼Œè¯·é‡æ–°ç™»å½•!", 200).show();
 									sharedUtils.clear();
 									AppManager.getAppManager().finishActivity();
 								}
@@ -145,7 +145,7 @@ public class LgLotteryLoginActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½M¼şµÄ³õÊ¼»¯
+	 * çµ„ä»¶çš„åˆå§‹åŒ–
 	 */
 	private void init() {
 		personUtil = new SharedUtils(getApplicationContext(),
@@ -161,7 +161,7 @@ public class LgLotteryLoginActivity extends BaseActivity {
 	private void login(final String userName ,final String passWord){
 	 
 		if (userName.length() != 0 && passWord.length() != 0) {
-			// ¿ÉÒÔÁªÍø
+			// å¯ä»¥è”ç½‘
 			RequestParams params = new RequestParams();
 			WLog.v(userName + "//" + passWord);
 			params.put("yth", userName);
@@ -194,12 +194,12 @@ public class LgLotteryLoginActivity extends BaseActivity {
 						};
 					}, getApplicationContext());
 		} else {
-			Toast.makeText(getApplicationContext(), "Çë¼ì²éµÇÂ¼ĞÅÏ¢", 200)
+			Toast.makeText(getApplicationContext(), "è¯·æ£€æŸ¥ç™»å½•ä¿¡æ¯", 200)
 					.show();
 		}
 	}
 	/**
-	 * µÇÂ¼ÊÂ¼ş
+	 * ç™»å½•äº‹ä»¶
 	 */
 
 	@Override

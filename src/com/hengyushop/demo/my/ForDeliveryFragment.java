@@ -30,7 +30,7 @@ import com.hengyushop.entity.OrderBean;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.lelinju.www.R;
 /**
- * ´ı·¢»õ
+ * å¾…å‘è´§
  * @author Administrator
  *
  */
@@ -86,7 +86,7 @@ public class ForDeliveryFragment extends Fragment implements OnClickListener{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=========´ı·¢»õ============"+arg1);
+								System.out.println("=========å¾…å‘è´§============"+arg1);
 								try {
 								JSONObject object = new JSONObject(arg1);
 								String status = object.getString("status");

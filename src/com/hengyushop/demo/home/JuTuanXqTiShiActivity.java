@@ -31,7 +31,7 @@ import com.lelinju.www.R;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
 /**
- * ÌáÊ¾°ó¶¨ÊÖ»úºÅ
+ * æç¤ºç»‘å®šæ‰‹æœºå·
  * @author 
  *
  */
@@ -79,9 +79,9 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 //		market_information_pop_shopcart = (Button) findViewById(R.id.market_information_pop_shopcart);
 //		market_information_pop_buy = (Button) findViewById(R.id.market_information_pop_buy);
 //		if (WareInformationActivity.fangshi == 1) {
-//			market_information_pop_shopcart.setText("È·ÈÏ");
+//			market_information_pop_shopcart.setText("ç¡®è®¤");
 //		}
-//		// ¹ØÓÚÊıÁ¿
+//		// å…³äºæ•°é‡
 //		TextView market_information_seps_add = (TextView) layout.findViewById(R.id.market_information_seps_add);
 //		TextView market_information_seps_del = (TextView) layout.findViewById(R.id.market_information_seps_del);
 //		market_information_seps_num = (TextView) layout.findViewById(R.id.market_information_seps_num);
@@ -94,7 +94,7 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 //		imageLoader.displayImage(RealmName.REALM_NAME_HTTP + WareInformationActivity.proFaceImg,market_information_sep_ico);
 //		
 //		market_information_sep_name.setText(WareInformationActivity.proName);
-//		market_information_sep_price.setText("£¤" + WareInformationActivity.retailPrice);
+//		market_information_sep_price.setText("ï¿¥" + WareInformationActivity.retailPrice);
 //		
 //		try {
 //		market_information_seps_add.setOnClickListener(new OnClickListener() {
@@ -112,7 +112,7 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 //			e.printStackTrace();
 //		}
 //		
-//		//²úÆ·¼õÉÙ
+//		//äº§å“å‡å°‘
 //		market_information_seps_del.setOnClickListener(new OnClickListener() {
 //
 //			@Override
@@ -123,7 +123,7 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 //				if (num != 1) {
 //					market_information_seps_num.setText(String.valueOf(num - 1));
 //				} else {
-//					Toast.makeText(context, "²»ÄÜÔÙ¼õÁË", 200).show();
+//					Toast.makeText(context, "ä¸èƒ½å†å‡äº†", 200).show();
 //				}
 //			}
 //		});
@@ -139,7 +139,7 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -147,10 +147,10 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 		
 		intent = new Intent();
 		switch (v.getId()) {
-		case R.id.iv_guanxi://È¡Ïû
+		case R.id.iv_guanxi://å–æ¶ˆ
 			finish();
 			break;
-		case R.id.iv_fanhui://·µ»Ø
+		case R.id.iv_fanhui://è¿”å›
 			finish();
 			break;
 	    
@@ -161,7 +161,7 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 	
 	
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 	private void getuseraddress() {
 		user_name = spPreferences.getString("user", "");
@@ -175,7 +175,7 @@ public class JuTuanXqTiShiActivity extends Activity implements OnClickListener{
 				super.onSuccess(arg0, arg1);
 				try {
 					JSONObject jsonObject = new JSONObject(arg1);
-					System.out.println("Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·================" + arg1);
+					System.out.println("è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€================" + arg1);
 					String status = jsonObject.getString("status");
 					if (status.equals("y")) {
 						try {

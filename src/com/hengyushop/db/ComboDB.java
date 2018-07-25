@@ -20,7 +20,7 @@ public class ComboDB {
 	}
 
 	/**
-	 * µÃµ½ÀàĞÍµÄ´óÀà
+	 * å¾—åˆ°ç±»å‹çš„å¤§ç±»
 	 * 
 	 * @return
 	 */
@@ -38,7 +38,7 @@ public class ComboDB {
 		return domains;
 	}
 	/**
-	 * µÃµ½ÀàĞÍµÄĞ¡Àà
+	 * å¾—åˆ°ç±»å‹çš„å°ç±»
 	 */
 	public ArrayList<CategoryDomain> getCategoryDomainsChilds(String parentID) {
 		ArrayList<CategoryDomain> domains = new ArrayList<CategoryDomain>();
@@ -56,7 +56,7 @@ public class ComboDB {
 	}
 
 	/**
-	 * ²éÕÒ¹ØÓÚ³ÇÊĞÇøÓò
+	 * æŸ¥æ‰¾å…³äºåŸå¸‚åŒºåŸŸ
 	 */
 	public ArrayList<DistrictsDomain> getDistrictsDomains(String cityId) {
 		ArrayList<DistrictsDomain> districts = new ArrayList<DistrictsDomain>();
@@ -73,7 +73,7 @@ public class ComboDB {
 		return districts;
 	}
 	/**
-	 * ²éÕÒ¹ØÓÚ³ÇÊĞÏÂÃæµÄÇøÓò
+	 * æŸ¥æ‰¾å…³äºåŸå¸‚ä¸‹é¢çš„åŒºåŸŸ
 	 */
 	public ArrayList<DistrictsDomain> getDistrictsDomainsChilds(String id) {
 		ArrayList<DistrictsDomain> districts = new ArrayList<DistrictsDomain>();

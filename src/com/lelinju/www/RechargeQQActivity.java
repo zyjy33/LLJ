@@ -123,12 +123,12 @@ public class RechargeQQActivity extends BaseActivity implements OnClickListener 
 		tv_money = (TextView) findViewById(R.id.tv_money);
 		et_qq_number = (EditText) findViewById(R.id.et_qq_numner);
 		et_confrim_number = (EditText) findViewById(R.id.et_confrim_qq_number);
-		sp_qq_business.setPrompt("ÇëÑ¡Ôñ³äÖµÀàĞÍ");
-		sp_qq_money.setPrompt("ÇëÑ¡Ôñ³äÖµÊıÁ¿");
+		sp_qq_business.setPrompt("è¯·é€‰æ‹©å……å€¼ç±»å‹");
+		sp_qq_money.setPrompt("è¯·é€‰æ‹©å……å€¼æ•°é‡");
 		ll_information = (LinearLayout) findViewById(R.id.ll_information);
 		ll_information.setVisibility(View.GONE);
 
-		String[] str2 = new String[] { "ÇëÊäÈë³äÖµÊıÁ¿", "1", "2", "3", "4", "5", "6",
+		String[] str2 = new String[] { "è¯·è¾“å…¥å……å€¼æ•°é‡", "1", "2", "3", "4", "5", "6",
 				"7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17",
 				"18", "19", "20", "21", "22", "23", "24", };
 		qq_money = new ArrayList<String>();
@@ -149,7 +149,7 @@ public class RechargeQQActivity extends BaseActivity implements OnClickListener 
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
 				business = al_type.get(arg2);
-				if (!business.equals("ÇëÊäÈë³äÖµÀàĞÍ") && !number.equals("ÇëÊäÈë³äÖµÊıÁ¿")) {
+				if (!business.equals("è¯·è¾“å…¥å……å€¼ç±»å‹") && !number.equals("è¯·è¾“å…¥å……å€¼æ•°é‡")) {
 					getAllMoney();
 				}
 			}
@@ -167,7 +167,7 @@ public class RechargeQQActivity extends BaseActivity implements OnClickListener 
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
 				number = qq_money.get(arg2);
-				if (!number.equals("ÇëÊäÈë³äÖµÊıÁ¿") && !business.equals("ÇëÊäÈë³äÖµÀàĞÍ")) {
+				if (!number.equals("è¯·è¾“å…¥å……å€¼æ•°é‡") && !business.equals("è¯·è¾“å…¥å……å€¼ç±»å‹")) {
 					getAllMoney();
 				}
 			}
@@ -226,8 +226,8 @@ public class RechargeQQActivity extends BaseActivity implements OnClickListener 
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.btn_qq:
-			if (business.equals("ÇëÊäÈë³äÖµÀàĞÍ") || number.equals("ÇëÊäÈë³äÖµÊıÁ¿")) {
-				Toast.makeText(getApplicationContext(), "ÇëÊäÈë³äÖµĞÅÏ¢", 200).show();
+			if (business.equals("è¯·è¾“å…¥å……å€¼ç±»å‹") || number.equals("è¯·è¾“å…¥å……å€¼æ•°é‡")) {
+				Toast.makeText(getApplicationContext(), "è¯·è¾“å…¥å……å€¼ä¿¡æ¯", 200).show();
 			} else {
 				qq_number = et_qq_number.getText().toString();
 				confrim_number = et_confrim_number.getText().toString();
@@ -251,10 +251,10 @@ public class RechargeQQActivity extends BaseActivity implements OnClickListener 
 							finish();
 						}
 					} else {
-						et_confrim_number.setError("Á½´ÎQQºÅÂëÊäÈë²»Ò»ÖÂ");
+						et_confrim_number.setError("ä¸¤æ¬¡QQå·ç è¾“å…¥ä¸ä¸€è‡´");
 					}
 				} else {
-					Toast.makeText(getApplicationContext(), "ÇëÊäÈëQQºÅÂë", 200)
+					Toast.makeText(getApplicationContext(), "è¯·è¾“å…¥QQå·ç ", 200)
 							.show();
 				}
 
@@ -276,13 +276,13 @@ public class RechargeQQActivity extends BaseActivity implements OnClickListener 
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.recharge_qq),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 }

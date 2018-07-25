@@ -171,7 +171,7 @@ public class JuyunshanglistAdapter extends BaseAdapter {
         	str1.append(s+",");
         }
         str1.delete(str1.lastIndexOf(","),str1.length()); 
-        System.out.println("1Æ´½ÓÖ®ºó---------------"+str1);
+        System.out.println("1æ‹¼æ¥ä¹‹å---------------"+str1);
        
        for(String u : list_zhi){  
        System.out.println("list_zhi---------------"+u);

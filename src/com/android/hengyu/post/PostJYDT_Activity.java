@@ -16,7 +16,7 @@ import com.lelinju.www.R;
 
 public class PostJYDT_Activity extends BaseActivity {
 	/**
-	 * 声明组件对象
+	 * 澹版槑缁勪欢瀵硅薄
 	 */
 	private ListView post_list;
 	private Button post_jydt_back;
@@ -35,7 +35,7 @@ public class PostJYDT_Activity extends BaseActivity {
 	};
 
 	/**
-	 * 组件创建
+	 * 缁勪欢鍒涘缓
 	 */
 	@SuppressWarnings("unchecked")
 	private void init() {

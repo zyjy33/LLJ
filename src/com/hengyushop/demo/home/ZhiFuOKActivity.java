@@ -18,7 +18,7 @@ import com.lelinju.www.MyOrderConfrimActivity;
 import com.lelinju.www.R;
 
 /**
- * Ö§¸¶³É¹¦
+ * æ”¯ä»˜æˆåŠŸ
  * 
  * @author Administrator
  * 
@@ -114,7 +114,7 @@ public class ZhiFuOKActivity extends BaseActivity implements OnClickListener{
 			textView3.setText(province+city+area+user_address);
 			textView4.setText(recharge_no);
 			textView5.setText(datetime);
-			textView6.setText("£¤"+sell_price);
+			textView6.setText("ï¿¥"+sell_price);
 			
 		iv_fanhui = (ImageView) findViewById(R.id.iv_fanhui);
 		iv_fanhui.setOnClickListener(this);

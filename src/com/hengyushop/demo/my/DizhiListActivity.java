@@ -146,12 +146,12 @@ public class DizhiListActivity extends BaseActivity {
 	}
 
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 	private void getuseraddress() {
 		progress.CreateProgress();
 		String user_name = spPreferences.getString("user", "");
-		System.out.println("½á¹ûÄØ1=============="+user_name);
+		System.out.println("ç»“æœå‘¢1=============="+user_name);
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_user_shopping_address?user_name="+user_name+""
 				,new AsyncHttpResponseHandler() {
 					@Override
@@ -199,9 +199,9 @@ public class DizhiListActivity extends BaseActivity {
 
 	protected void dialog(final int ID) {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -209,7 +209,7 @@ public class DizhiListActivity extends BaseActivity {
 				System.out.println("1111===================="+user_id);
 				final String str = RealmName.REALM_NAME_LL
 						+ "/delete_user_shopping_address?user_id="+user_id+"&id=" + ID + "";
-				Log.v("data1", "É¾³ı:" + strUrl);
+				Log.v("data1", "åˆ é™¤:" + strUrl);
 				progress.CreateProgress();
 				AsyncHttp.get(str, new AsyncHttpResponseHandler(){
 					@Override
@@ -234,7 +234,7 @@ public class DizhiListActivity extends BaseActivity {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -255,14 +255,14 @@ public class DizhiListActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

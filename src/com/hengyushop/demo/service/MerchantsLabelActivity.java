@@ -26,8 +26,8 @@ public class MerchantsLabelActivity extends Activity implements OnClickListener{
 	private final List<Tag> mTags = new ArrayList<Tag>();
 	private final List<Tag> mTags2 = new ArrayList<Tag>();
 	private final List<String> list = new ArrayList<String>();
-	private final String[] titles = { "Æû³µ", "²ÍÒû", "¿ªÍøµê", "ÉãÓ°",
-			"·ş×°´îÅä", "ÊÖ¹¤ÖÆ×÷","ÉÌ³Ç", "¼õ·Ê", "ÑøÀÏ·şÎñ", "°´Ä¦", "³´¹É","µç×ÓÉÌÎñ" };
+	private final String[] titles = { "æ±½è½¦", "é¤é¥®", "å¼€ç½‘åº—", "æ‘„å½±",
+			"æœè£…æ­é…", "æ‰‹å·¥åˆ¶ä½œ","å•†åŸ", "å‡è‚¥", "å…»è€æœåŠ¡", "æŒ‰æ‘©", "ç‚’è‚¡","ç”µå­å•†åŠ¡" };
 	public static String str="";
   int dark=0xffffff;
   Button button;
@@ -64,11 +64,11 @@ public class MerchantsLabelActivity extends Activity implements OnClickListener{
 //				if(tag.getOr()==true){
 //					tag.setOr(false);
 ////					tagView.setBackgroundResource(R.drawable.tag_checked_normal);
-//					Toast.makeText(getApplicationContext(),"ÄúÈ¡ÏûÁË"+tagView.getText().toString(), 2000).show();	
+//					Toast.makeText(getApplicationContext(),"æ‚¨å–æ¶ˆäº†"+tagView.getText().toString(), 2000).show();	
 //				}else{
 					
 					if (mTags2.size() >= 3) {
-						Toast.makeText(getApplicationContext(),"×î¶àÑ¡Èı¸ö", 2000).show();
+						Toast.makeText(getApplicationContext(),"æœ€å¤šé€‰ä¸‰ä¸ª", 2000).show();
 //						mTags2.clear();
 					}else {
 						tag_shanchu.setVisibility(View.VISIBLE);
@@ -103,13 +103,13 @@ public class MerchantsLabelActivity extends Activity implements OnClickListener{
 		
 		
         tv_queren.setOnClickListener(new OnClickListener() {
-			//tagµÄÃû×Ö×Ö·û´®
+			//tagçš„åå­—å­—ç¬¦ä¸²
 //			String str="";
 			String strId="";
 			@Override
 			public void onClick(View arg0) {
 				if (mTags2.size() == 0) {
-					Toast.makeText(getApplicationContext(),"ÇëÑ¡ÔñÉÌ¼Ò±êÇ©", 2000).show();	
+					Toast.makeText(getApplicationContext(),"è¯·é€‰æ‹©å•†å®¶æ ‡ç­¾", 2000).show();	
 				}else {
 				for (int i = 0; i < mTags2.size(); i++) {
 					Tag tag=mTags2.get(i);
@@ -130,7 +130,7 @@ public class MerchantsLabelActivity extends Activity implements OnClickListener{
 					}
 				}
 				System.out.println("mTags2-------22----"+mTags2.size());
-//				Toast.makeText(getApplicationContext(),str+"---ËüÃÇµÄidÊÇ"+strId, 2000).show();	
+//				Toast.makeText(getApplicationContext(),str+"---å®ƒä»¬çš„idæ˜¯"+strId, 2000).show();	
 //				Toast.makeText(getApplicationContext(),strId, 2000).show();	
 				
 //				str="";
@@ -155,6 +155,6 @@ public class MerchantsLabelActivity extends Activity implements OnClickListener{
 
 	@Override
 	public void onClick(View arg0) {
-		Toast.makeText(this, "µãÁË", 2000).show();
+		Toast.makeText(this, "ç‚¹äº†", 2000).show();
 	}
 }

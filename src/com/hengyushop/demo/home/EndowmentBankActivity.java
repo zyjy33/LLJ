@@ -38,7 +38,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 import com.lelinju.www.UserLoginActivity;
 /**
- * ÑøÀÏÒøĞĞ
+ * å…»è€é“¶è¡Œ
  * @author Administrator
  *
  */
@@ -80,7 +80,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 	}
 //	public void uncaughtException(Thread arg0, Throwable arg1) {
 //		// TODO Auto-generated method stub
-//		 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//		 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //        Log.i("AAA", "uncaughtException   " + arg1);
 //	}
 	@Override
@@ -121,7 +121,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * ÑøÀÏÒøĞĞÓà¶î
+	 * å…»è€é“¶è¡Œä½™é¢
 	 */
 	private void loadyue() {
 		String user_name = spPreferences.getString("user", "");
@@ -132,7 +132,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 		AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 			public void onSuccess(int arg0, String arg1) {
 				try {
-					System.out.println("======Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+					System.out.println("======è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
 					if (status.equals("y")) {
@@ -147,7 +147,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 					data.point = obj.getString("point");
 					data.group_id = obj.getString("group_id");
 					pensions = data.pension;
-					tv_ylyhye.setText(data.pension+"Ôª");//ÑøÀÏÒøĞĞÓà¶î
+					tv_ylyhye.setText(data.pension+"å…ƒ");//å…»è€é“¶è¡Œä½™é¢
 					list1.add(data);
 					}else {
 						
@@ -164,7 +164,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 	}
 	
 	/**
-	 * ±¾ÔÂÏû·ÑÑøÀÏ½ğ
+	 * æœ¬æœˆæ¶ˆè´¹å…»è€é‡‘
 	 */
 	private void loadxfylj() {
 		String user_name = spPreferences.getString("user", "");
@@ -177,7 +177,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 		AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 			public void onSuccess(int arg0, String arg1) {
 				try {
-					System.out.println("======Êä³ö11============="+arg1);
+					System.out.println("======è¾“å‡º11============="+arg1);
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
 					if (status.equals("y")) {
@@ -185,7 +185,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 					YlyhData data = new YlyhData();
 					data.pensions = obj.getString("pensions");
 					pensions_yue = data.pensions;
-					tv_xfylj.setText(data.pensions+"Ôª");//±¾ÔÂÏû·ÑÑøÀÏ½ğ
+					tv_xfylj.setText(data.pensions+"å…ƒ");//æœ¬æœˆæ¶ˆè´¹å…»è€é‡‘
 					list.add(data);
 					} else {
 						
@@ -201,7 +201,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 		}
 	}
 	/**
-	 * ÑøÀÏÒøĞĞÊÕÒæÂÊ
+	 * å…»è€é“¶è¡Œæ”¶ç›Šç‡
 	 */
 	private void loadlilv() {
 		String user_id = spPreferences.getString("user_id", "");
@@ -212,7 +212,7 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 		AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 			public void onSuccess(int arg0, String arg1) {
 				try {
-					System.out.println("======Êä³ö22============="+arg1);
+					System.out.println("======è¾“å‡º22============="+arg1);
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
 					if (status.equals("y")) {
@@ -235,8 +235,8 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 						BigDecimal   pen1   =   new   BigDecimal(Double.parseDouble(zhou));  
 						double   ye1   =   pen1.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();  
 						
-						tv_snyly.setText(String.valueOf(ye1)+"Ôª");
-//						tv_snyly.setText(list2.get(9).pensions.substring(0,6)+"Ôª");//
+						tv_snyly.setText(String.valueOf(ye1)+"å…ƒ");
+//						tv_snyly.setText(list2.get(9).pensions.substring(0,6)+"å…ƒ");//
 //					}
 					
 					} catch (Exception e) {
@@ -258,13 +258,13 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 	private void loadguanggao() {
 		try {
 			
-		//¹ã¸æ¹ö¶¯	
+		//å¹¿å‘Šæ»šåŠ¨	
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_adbanner_list?advert_id=14",
 				new AsyncHttpResponseHandler() {
 					@Override
 					public void onSuccess(int arg0, String arg1) {
 						super.onSuccess(arg0, arg1);
-						System.out.println("======Êä³ö33============="+arg1);
+						System.out.println("======è¾“å‡º33============="+arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							JSONArray array = object.getJSONArray("data");
@@ -290,8 +290,8 @@ public class EndowmentBankActivity extends BaseActivity implements OnClickListen
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						System.out.println("======Êä³ö112============="+arg0);
-						System.out.println("======Êä³ö113============="+arg1);
+						System.out.println("======è¾“å‡º112============="+arg0);
+						System.out.println("======è¾“å‡º113============="+arg1);
 					}
 
 				}, null);

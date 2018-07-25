@@ -15,12 +15,12 @@ import java.util.zip.GZIPInputStream;
 import com.ctrip.openapi.java.utils.ConfigData;
 import com.ctrip.openapi.java.utils.SignatureUtils;
 
-// Http·ÃÎÊÆ÷
+// Httpè®¿é—®å™¨
 public class HttpAccessAdapter {
-	// HttpÇëÇó¾²Ì¬ĞÅÏ¢
+	// Httpè¯·æ±‚é™æ€ä¿¡æ¯
 	private ArrayList<HttpRequestProperty> StaticHttpRequestProperty = LoadStaticHttpRequestProperties();
 
-	// ·¢ËÍÖ¸¶¨µÄÇëÇóµ½Ö¸¶¨µÄURLÉÏ
+	// å‘é€æŒ‡å®šçš„è¯·æ±‚åˆ°æŒ‡å®šçš„URLä¸Š
 	public String SendRequestToUrl(String requestContent, String urlString,
 			String paraName) {
 		InputStream errorStream = null;
@@ -108,7 +108,7 @@ public class HttpAccessAdapter {
 		return "";
 	}
 
-	// ½«SoapÍâ¿ÇÌí¼Óµ½ÇëÇóÌåÉÏ
+	// å°†Soapå¤–å£³æ·»åŠ åˆ°è¯·æ±‚ä½“ä¸Š
 	private String AddSoapShell(
 	/* String parameterName, */String patameterValue) throws Exception {
 		BufferedReader bufferedReader = null;
@@ -125,9 +125,9 @@ public class HttpAccessAdapter {
 			String result = soapShellStringBuilder.toString();
 			return result.replaceAll("string", patameterValue);
 		} catch (FileNotFoundException e) {
-			throw new SdkSystemException("ÎŞ·¨ÕÒµ½ÇëÇóÄ£°åÎÄ¼ş");
+			throw new SdkSystemException("æ— æ³•æ‰¾åˆ°è¯·æ±‚æ¨¡æ¿æ–‡ä»¶");
 		} catch (IOException e) {
-			throw new SdkSystemException("ÎŞ·¨¶ÁÈ¡ÇëÇóÄ£°åÎÄ¼ş");
+			throw new SdkSystemException("æ— æ³•è¯»å–è¯·æ±‚æ¨¡æ¿æ–‡ä»¶");
 		} finally {
 			if (bufferedReader != null) {
 				try {
@@ -138,7 +138,7 @@ public class HttpAccessAdapter {
 		}
 	}
 
-	// É¾³ıSoapÍâ¿ÇĞÅÏ¢
+	// åˆ é™¤Soapå¤–å£³ä¿¡æ¯
 	private String RemoveSoapShell(String source) {
 		String result = "";
 		int indexElementBegin = source.indexOf("<RequestResult>");
@@ -151,21 +151,21 @@ public class HttpAccessAdapter {
 		return result;
 	}
 
-	// ½«xmlÎÄµµ×ª»»Îª¿É´«ÊäµÄ×Ö·û´®
+	// å°†xmlæ–‡æ¡£è½¬æ¢ä¸ºå¯ä¼ è¾“çš„å­—ç¬¦ä¸²
 	private static String XMLToString(String source) {
 		String result = source.replaceAll("<", "&lt;");
 		result = result.replaceAll(">", "&gt;");
 		return result;
 	}
 
-	// ½«·µ»ØµÄ×Ö·û´®×ª»»Îª¿É·´ĞòÁĞ»¯XMLÎÄ±¾
+	// å°†è¿”å›çš„å­—ç¬¦ä¸²è½¬æ¢ä¸ºå¯ååºåˆ—åŒ–XMLæ–‡æœ¬
 	private String StringToXML(String source) {
 		String result = source.replaceAll("&lt;", "<");
 		result = result.replaceAll("&gt;", ">");
 		return result;
 	}
 
-	// ¼ÓÔØ¾²Ì¬ĞÅÏ¢
+	// åŠ è½½é™æ€ä¿¡æ¯
 	private ArrayList<HttpRequestProperty> LoadStaticHttpRequestProperties() {
 		ArrayList<HttpRequestProperty> staticHttpRequestProperty = new ArrayList<HttpRequestProperty>();
 		// staticHttpRequestProperty.add(new HttpRequestProperty("Host",
@@ -183,10 +183,10 @@ public class HttpAccessAdapter {
 	public static void main(String[] args) {
 
 		// String request =
-		// "<Request><Header AllianceID=\"1\" SID=\"1\" TimeStamp=\"1352265056449\" Signature=\"E7C13030A4763015A3F7BA5C32613FCF\" RequestType=\"OTA_Ping\" AsyncRequest=\"false\" Timeout=\"0\" MessagePriority=\"3\"/><HotelRequest><RequestBody xmlns:ns=\"http://www.opentravel.org/OTA/2003/05\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><ns:OTA_PingRQ><ns:EchoData>ÁªÍ¨²âÊÔ</ns:EchoData></ns:OTA_PingRQ></RequestBody></HotelRequest></Request>";
+		// "<Request><Header AllianceID=\"1\" SID=\"1\" TimeStamp=\"1352265056449\" Signature=\"E7C13030A4763015A3F7BA5C32613FCF\" RequestType=\"OTA_Ping\" AsyncRequest=\"false\" Timeout=\"0\" MessagePriority=\"3\"/><HotelRequest><RequestBody xmlns:ns=\"http://www.opentravel.org/OTA/2003/05\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><ns:OTA_PingRQ><ns:EchoData>è”é€šæµ‹è¯•</ns:EchoData></ns:OTA_PingRQ></RequestBody></HotelRequest></Request>";
 		String city = "2";
 		String request = new HttpAccessAdapter().createHotelRequestXml(city,
-				"ººÍ¥");
+				"æ±‰åº­");
 		String url = "http://openapi.ctrip.com/Hotel/OTA_HotelSearch.asmx?wsdl";
 		// String url =
 		// "http://crmint.dev.sh.ctriptravel.com/Hotel/OTA_Ping.asmx?wsdl";
@@ -199,7 +199,7 @@ public class HttpAccessAdapter {
 	}
 
 	/**
-	 * ¹¹Ôì·ÃÎÊ¾ÆµêµÄÊı¾İ
+	 * æ„é€ è®¿é—®é…’åº—çš„æ•°æ®
 	 * 
 	 * @param city
 	 * @return
@@ -240,7 +240,7 @@ public class HttpAccessAdapter {
 	}
 
 	/**
-	 * ¹¹Ôì·ÃÎÊ¾Æµê¼Û¸ñµÄÊı¾İ
+	 * æ„é€ è®¿é—®é…’åº—ä»·æ ¼çš„æ•°æ®
 	 * 
 	 * @param city
 	 * @return
@@ -281,7 +281,7 @@ public class HttpAccessAdapter {
 	}
 
 	/**
-	 * ¹¹Ôì·ÃÎÊ¾ÆµêµÄÊı¾İ
+	 * æ„é€ è®¿é—®é…’åº—çš„æ•°æ®
 	 * 
 	 * @param city
 	 * @return
@@ -322,7 +322,7 @@ public class HttpAccessAdapter {
 	}
 
 	/**
-	 * ¹¹Ôì·ÃÎÊ¾ÆµêµÄÊı¾İ
+	 * æ„é€ è®¿é—®é…’åº—çš„æ•°æ®
 	 * 
 	 * @param city
 	 * @return

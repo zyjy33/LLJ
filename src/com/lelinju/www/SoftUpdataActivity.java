@@ -63,7 +63,7 @@ public class SoftUpdataActivity extends BaseActivity {
 
 	private void setImage() {
 		// TODO Auto-generated method stub
-		// Ê¹ÓÃintentµ÷ÓÃÏµÍ³Ìá¹©µÄÏà²á¹¦ÄÜ£¬Ê¹ÓÃstartActivityForResultÊÇÎªÁË»ñÈ¡ÓÃ»§Ñ¡ÔñµÄÍ¼Æ¬
+		// ä½¿ç”¨intentè°ƒç”¨ç³»ç»Ÿæä¾›çš„ç›¸å†ŒåŠŸèƒ½ï¼Œä½¿ç”¨startActivityForResultæ˜¯ä¸ºäº†è·å–ç”¨æˆ·é€‰æ‹©çš„å›¾ç‰‡
 		Intent getAlbum = new Intent(Intent.ACTION_GET_CONTENT);
 		getAlbum.setType(IMAGE_TYPE);
 		startActivityForResult(getAlbum, IMAGE_CODE);
@@ -72,31 +72,31 @@ public class SoftUpdataActivity extends BaseActivity {
 	@SuppressWarnings("deprecation")
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-		if (resultCode != RESULT_OK) { // ´Ë´¦µÄ RESULT_OK ÊÇÏµÍ³×Ô¶¨ÒåµÃÒ»¸ö³£Á¿
+		if (resultCode != RESULT_OK) { // æ­¤å¤„çš„ RESULT_OK æ˜¯ç³»ç»Ÿè‡ªå®šä¹‰å¾—ä¸€ä¸ªå¸¸é‡
 			Log.e("TAG->onresult", "ActivityResult resultCode error");
 			return;
 		}
 		Bitmap bm = null;
-		// Íâ½çµÄ³ÌĞò·ÃÎÊContentProviderËùÌá¹©Êı¾İ ¿ÉÒÔÍ¨¹ıContentResolver½Ó¿Ú
+		// å¤–ç•Œçš„ç¨‹åºè®¿é—®ContentProvideræ‰€æä¾›æ•°æ® å¯ä»¥é€šè¿‡ContentResolveræ¥å£
 		ContentResolver resolver = getContentResolver();
-		// ´Ë´¦µÄÓÃÓÚÅĞ¶Ï½ÓÊÕµÄActivityÊÇ²»ÊÇÄãÏëÒªµÄÄÇ¸ö
+		// æ­¤å¤„çš„ç”¨äºåˆ¤æ–­æ¥æ”¶çš„Activityæ˜¯ä¸æ˜¯ä½ æƒ³è¦çš„é‚£ä¸ª
 		if (requestCode == IMAGE_CODE) {
 			try {
-				Uri originalUri = data.getData(); // »ñµÃÍ¼Æ¬µÄuri
+				Uri originalUri = data.getData(); // è·å¾—å›¾ç‰‡çš„uri
 				bm = MediaStore.Images.Media.getBitmap(resolver, originalUri);
-				// ÏÔµÃµ½bitmapÍ¼Æ¬
+				// æ˜¾å¾—åˆ°bitmapå›¾ç‰‡
 				// img_head.setImageBitmap(bm);
-				// ÕâÀï¿ªÊ¼µÄµÚ¶ş²¿·Ö£¬»ñÈ¡Í¼Æ¬µÄÂ·¾¶£º
+				// è¿™é‡Œå¼€å§‹çš„ç¬¬äºŒéƒ¨åˆ†ï¼Œè·å–å›¾ç‰‡çš„è·¯å¾„ï¼š
 				String[] proj = { MediaStore.Images.Media.DATA };
-				// ºÃÏñÊÇandroid¶àÃ½ÌåÊı¾İ¿âµÄ·â×°½Ó¿Ú£¬¾ßÌåµÄ¿´AndroidÎÄµµ
+				// å¥½åƒæ˜¯androidå¤šåª’ä½“æ•°æ®åº“çš„å°è£…æ¥å£ï¼Œå…·ä½“çš„çœ‹Androidæ–‡æ¡£
 				Cursor cursor = managedQuery(originalUri, proj, null, null,
 						null);
-				// °´ÎÒ¸öÈËÀí½â Õâ¸öÊÇ»ñµÃÓÃ»§Ñ¡ÔñµÄÍ¼Æ¬µÄË÷ÒıÖµ
+				// æŒ‰æˆ‘ä¸ªäººç†è§£ è¿™ä¸ªæ˜¯è·å¾—ç”¨æˆ·é€‰æ‹©çš„å›¾ç‰‡çš„ç´¢å¼•å€¼
 				int column_index = cursor
 						.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-				// ½«¹â±êÒÆÖÁ¿ªÍ· £¬Õâ¸öºÜÖØÒª£¬²»Ğ¡ĞÄºÜÈİÒ×ÒıÆğÔ½½ç
+				// å°†å…‰æ ‡ç§»è‡³å¼€å¤´ ï¼Œè¿™ä¸ªå¾ˆé‡è¦ï¼Œä¸å°å¿ƒå¾ˆå®¹æ˜“å¼•èµ·è¶Šç•Œ
 				cursor.moveToFirst();
-				// ×îºó¸ù¾İË÷ÒıÖµ»ñÈ¡Í¼Æ¬Â·¾¶
+				// æœ€åæ ¹æ®ç´¢å¼•å€¼è·å–å›¾ç‰‡è·¯å¾„
 				path = cursor.getString(column_index);
 
 				new Thread() {
@@ -104,7 +104,7 @@ public class SoftUpdataActivity extends BaseActivity {
 
 						SimpleDateFormat formatter = new SimpleDateFormat(
 								"yyyyMMddHHmmssSSS");
-						Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+						Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 						// fileName = formatter.format(curDate);
 
 						try {
@@ -135,7 +135,7 @@ public class SoftUpdataActivity extends BaseActivity {
 						image_url = imgUrl;
 						AsyncHttp.get(strUrl, new AsyncHttpResponseHandler() {
 							public void onSuccess(int arg0, String arg1) {
-								updata_ico.setText("ÉÏ´«Íê³É");
+								updata_ico.setText("ä¸Šä¼ å®Œæˆ");
 
 							};
 						}, getApplicationContext());
@@ -156,8 +156,8 @@ public class SoftUpdataActivity extends BaseActivity {
 	private Handler handler = new Handler() {
 		public void dispatchMessage(Message msg) {
 			if (banks != null && banks.size() != 0) {
-				// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-				System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+				// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+				System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 				// initPopupWindow1();
 				// showPopupWindow1(btn_OK);
 				Intent intent = new Intent(SoftUpdataActivity.this,
@@ -171,7 +171,7 @@ public class SoftUpdataActivity extends BaseActivity {
 				startActivity(intent);
 				AppManager.getAppManager().finishActivity();
 			} else {
-				// ±íÊ¾Ê×´ÎÖ§¸¶
+				// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 				Intent intent = new Intent(SoftUpdataActivity.this,
 						PayActivity.class);
 				Bundle bundle = new Bundle();
@@ -192,7 +192,7 @@ public class SoftUpdataActivity extends BaseActivity {
 		text1 = (EditText) findViewById(R.id.text11);
 		text2 = (EditText) findViewById(R.id.text22);
 		price = (TextView) findViewById(R.id.price);
-		price.setText(getIntent().getStringExtra("price")+"Ôª");
+		price.setText(getIntent().getStringExtra("price")+"å…ƒ");
 		v1 = (TextView) findViewById(R.id.text1);
 		v2 = (TextView) findViewById(R.id.text2);
 		v3 = (TextView) findViewById(R.id.text3);
@@ -212,12 +212,12 @@ public class SoftUpdataActivity extends BaseActivity {
 		yth = registerData.getHengyuCode();
 		key = registerData.getUserkey();
 		if (yth == null) {
-			NewDataToast.makeText(getApplicationContext(), "ÓÃ»§Î´µÇÂ¼", false, 0).show();
+			NewDataToast.makeText(getApplicationContext(), "ç”¨æˆ·æœªç™»å½•", false, 0).show();
 			AppManager.getAppManager().finishActivity();
 		}else {
 			SharedUtils utils = new SharedUtils(getApplicationContext(), "shouyi");
 			if(utils.getStringValue("IsVipPrivilege").equals("1")){
-				NewDataToast.makeText(getApplicationContext(), "ÎŞĞèÔÙ´ÎÉı¼¶", false, 0).show();
+				NewDataToast.makeText(getApplicationContext(), "æ— éœ€å†æ¬¡å‡çº§", false, 0).show();
 				AppManager.getAppManager().finishActivity();
 			}
 		}
@@ -234,7 +234,7 @@ public class SoftUpdataActivity extends BaseActivity {
 			public void onClick(View arg0) {
 
 				if (INDEX == 2) {
-					// ÔÚÕâÀï½øĞĞÊı¾İµÄÌá½»
+					// åœ¨è¿™é‡Œè¿›è¡Œæ•°æ®çš„æäº¤
 					String name = text1.getText().toString();
 					String card_id = text2.getText().toString();
 					String pass_1 = pass1.getText().toString();
@@ -307,7 +307,7 @@ public class SoftUpdataActivity extends BaseActivity {
 														item.setLastId("-1");
 														item.setType("-1");
 														banks.add(item);
-														bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+														bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 													}
 													handler.sendEmptyMessage(0);
 												} catch (JSONException e) {
@@ -321,11 +321,11 @@ public class SoftUpdataActivity extends BaseActivity {
 					 
 				} else if (INDEX == 1) {
 					 if (!(pass1.getText().toString().length()<20&&pass1.getText().toString().length()>=8)) {
-						 NewDataToast.makeText(getApplicationContext(), "ÃÜÂëÔÚ8-20Î»Ö®¼ä", false, 0).show();
+						 NewDataToast.makeText(getApplicationContext(), "å¯†ç åœ¨8-20ä½ä¹‹é—´", false, 0).show();
 					}else if (!(pass2.getText().toString().length()<20&&pass2.getText().toString().length()>=8)) {
-						NewDataToast.makeText(getApplicationContext(), "ÃÜÂëÔÚ8-20Î»Ö®¼ä", false, 0).show();
+						NewDataToast.makeText(getApplicationContext(), "å¯†ç åœ¨8-20ä½ä¹‹é—´", false, 0).show();
 					}else if (!pass1.getText().toString().equals(pass2.getText().toString())) {
-						Toast.makeText(getApplicationContext(), "Á½´Î½»Ò×ÃÜÂë²»Ò»ÖÂ",
+						Toast.makeText(getApplicationContext(), "ä¸¤æ¬¡äº¤æ˜“å¯†ç ä¸ä¸€è‡´",
 								200).show();
 					}else {
 						INDEX = INDEX + 1;

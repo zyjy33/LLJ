@@ -98,7 +98,7 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 				NewDataToast.makeText(getApplicationContext(), strmsg,false, 0).show();
 				break;
 			case 2:
-				NewDataToast.makeText(getApplicationContext(), "ÑéÖ¤ÂëÒÑ·¢ËÍ",false, 0).show();
+				NewDataToast.makeText(getApplicationContext(), "éªŒè¯ç å·²å‘é€",false, 0).show();
 				new Thread() {
 					public void run() {
 						for (int i = 120; i >= 0; i--) {
@@ -124,11 +124,11 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 				break;
 			case 3:
 				
-				NewDataToast.makeText(getApplicationContext(), "ÑéÖ¤ÂëÒÑÏÂ·¢",false, 0).show();
+				NewDataToast.makeText(getApplicationContext(), "éªŒè¯ç å·²ä¸‹å‘",false, 0).show();
 				break;
 			case 4:
 				get_yz.setEnabled(true);
-				get_yz.setText("»ñÈ¡ÑéÖ¤Âë");
+				get_yz.setText("è·å–éªŒè¯ç ");
 				break;
 			case 5:
 				get_yz.setEnabled(false);
@@ -167,9 +167,9 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 		case R.id.get_yz:
 			phone = userphone.getText().toString().trim();
 			if (phone.equals("")) {
-				Toast.makeText(MobilePhoneActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(MobilePhoneActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}else if (phone.length() < 11 ) {
-				Toast.makeText(MobilePhoneActivity.this, "ÊÖ»úºÅÂëÉÙÓÚ11Î»", 200).show();
+				Toast.makeText(MobilePhoneActivity.this, "æ‰‹æœºå·ç å°‘äº11ä½", 200).show();
 			}else {
 				if(Validator.isMobile(phone)){
 //			phone = userphone.getText().toString().trim();
@@ -198,7 +198,7 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 							}
 						}, getApplicationContext());
 				} else {
-					Toast.makeText(MobilePhoneActivity.this, "ÊÖ»úºÅÂë²»ÕıÈ·", 200).show();
+					Toast.makeText(MobilePhoneActivity.this, "æ‰‹æœºå·ç ä¸æ­£ç¡®", 200).show();
 				}
 				
 			}
@@ -218,13 +218,13 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 			System.out.println("1=================="+yz);
 			System.out.println("2=================="+yanzhengma);
 			if (phone.equals("")) {
-				Toast.makeText(MobilePhoneActivity.this, "ÊÖ»úºÅÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(MobilePhoneActivity.this, "æ‰‹æœºå·ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}else if (phone.length() < 11 ) {
-				Toast.makeText(MobilePhoneActivity.this, "ÊÖ»úºÅÂëÉÙÓÚ11Î»", 200).show();
+				Toast.makeText(MobilePhoneActivity.this, "æ‰‹æœºå·ç å°‘äº11ä½", 200).show();
 			}else if (yz.equals("")) {
-				Toast.makeText(MobilePhoneActivity.this, "ÑéÖ¤Âë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(MobilePhoneActivity.this, "éªŒè¯ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}else if (pwd.equals("")) {
-				Toast.makeText(MobilePhoneActivity.this, "ÃÜÂë²»ÄÜÎª¿Õ", 200).show();
+				Toast.makeText(MobilePhoneActivity.this, "å¯†ç ä¸èƒ½ä¸ºç©º", 200).show();
 			}else {
 				
 				try {
@@ -301,9 +301,9 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 								}
 								System.out.println("headimgurl=========2======="+headimgurl);
 								if (sex.equals("1")) {
-									sex = "ÄĞ";
+									sex = "ç”·";
 								}else {
-									sex = "Å®";
+									sex = "å¥³";
 								}
 								
 								SharedPreferences spPreferences_ptye = getSharedPreferences("longuserset_ptye", MODE_PRIVATE);
@@ -342,7 +342,7 @@ public class MobilePhoneActivity extends BaseActivity implements OnClickListener
 										"&sex="+sex+"&avatar="+headimgurl+"&province="+province+"&city="+city+"&country="+country+"&oauth_name="+oauth_name+"" +
 												"&oauth_unionid="+unionid+"&oauth_openid="+oauth_openid+"";
 								
-								System.out.println("×¢²á" + strUrl);
+								System.out.println("æ³¨å†Œ" + strUrl);
 								
 								AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 									@Override

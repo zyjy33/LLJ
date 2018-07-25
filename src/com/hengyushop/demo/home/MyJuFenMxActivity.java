@@ -87,7 +87,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 	}
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -105,7 +105,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -150,7 +150,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 		};
 	};
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int RUN_METHOD = -1;
 	private int CURRENT_NUM = 1;
@@ -159,7 +159,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 		RUN_METHOD = 1;
 		list = new ArrayList<MyJuFenData>();
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 0;
 			list = new ArrayList<MyJuFenData>();
 		}
@@ -171,7 +171,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									 String status = jsonObject.getString("status");
@@ -185,7 +185,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 //										data.sales_name = object.getString("sales_name");
 										data.login_sign = object.getString("login_sign");
 										String user_id = data.login_sign;//
-										System.out.println("¶ş¼¶Öµ2====================="+user_id);
+										System.out.println("äºŒçº§å€¼2====================="+user_id);
 										list.add(data);
 									}
 									Message msg = new Message();
@@ -208,12 +208,12 @@ public class MyJuFenMxActivity extends BaseActivity {
 						}, null);
 	}
 	/**
-	 * µÚ2¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬2ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private void load_list2(boolean flag) {
 		list = new ArrayList<MyJuFenData>();
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 0;
 			list = new ArrayList<MyJuFenData>();
 		}
@@ -224,7 +224,7 @@ public class MyJuFenMxActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									 String status = jsonObject.getString("status");

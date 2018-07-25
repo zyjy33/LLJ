@@ -64,7 +64,7 @@ public class SouSuoSpActivity extends BaseActivity {
 		progress = new DialogProgress(SouSuoSpActivity.this);
 //		progress.CreateProgress();
 		TextView textView1 = (TextView) findViewById(R.id.textView1);
-		textView1.setText("ÀÖÁÚÉú»î");
+		textView1.setText("ä¹é‚»ç”Ÿæ´»");
 		initdata();
 		
 		lists = new ArrayList<SpListData>();
@@ -146,7 +146,7 @@ public class SouSuoSpActivity extends BaseActivity {
 	}
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -164,7 +164,7 @@ public class SouSuoSpActivity extends BaseActivity {
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -189,7 +189,7 @@ public class SouSuoSpActivity extends BaseActivity {
 	};
 	
 	/**
-	 * µÚ1¸öÁĞ±íÊı¾İ½âÎö
+	 * ç¬¬1ä¸ªåˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int CURRENT_NUM = 1;
 	private final int VIEW_NUM = 10;
@@ -197,7 +197,7 @@ public class SouSuoSpActivity extends BaseActivity {
 		try {
 			
 		if(flag){
-			//¼ÆÊıºÍÈİÆ÷ÇåÁã
+			//è®¡æ•°å’Œå®¹å™¨æ¸…é›¶
 			CURRENT_NUM = 1;
 			lists = new ArrayList<SpListData>();
 		}
@@ -209,7 +209,7 @@ public class SouSuoSpActivity extends BaseActivity {
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-								System.out.println("=====================¶ş¼¶Öµ1"+arg1);
+								System.out.println("=====================äºŒçº§å€¼1"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");

@@ -88,9 +88,9 @@ public class QiuDetailActivity extends BaseActivity {
 										.getString("StartJobTime");
 								String temp2 = object1.getString("EndJobTime");
 								String tempTime1 = HttpUtils.getSimpleTime(
-										temp1, "yyyyÄêMMÔÂ");
+										temp1, "yyyyå¹´MMæœˆ");
 								String tempTime2 = HttpUtils.getSimpleTime(
-										temp2, "yyyyÄêMMÔÂ");
+										temp2, "yyyyå¹´MMæœˆ");
 								v10.setText(tempTime1 + "-" + tempTime2);
 								v11.setText(object1
 										.getString("MonthlySalary_tmp"));
@@ -112,9 +112,9 @@ public class QiuDetailActivity extends BaseActivity {
 								String temp2 = object2
 										.getString("EndSchoolTime");
 								String tempTime1 = HttpUtils.getSimpleTime(
-										temp1, "yyyyÄêMMÔÂ");
+										temp1, "yyyyå¹´MMæœˆ");
 								String tempTime2 = HttpUtils.getSimpleTime(
-										temp2, "yyyyÄêMMÔÂ");
+										temp2, "yyyyå¹´MMæœˆ");
 								v15.setText(tempTime1 + "-" + tempTime2);
 								v16.setText(object2.getString("SchoolName"));
 								v17.setText(object2.getString("Specialty"));

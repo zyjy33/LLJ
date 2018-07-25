@@ -51,7 +51,7 @@ public class OneBuyActivity extends BaseActivity{
 		pa_scroll  = (PagerScrollView) findViewById(R.id.pa_scroll);
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
-		widthPixels = dm.widthPixels;// ¿í¶Èheight = dm.heightPixels ;
+		widthPixels = dm.widthPixels;// å®½åº¦height = dm.heightPixels ;
 		init();
 	};
 	private LinearLayout one_buy_viewpager;
@@ -77,7 +77,7 @@ public class OneBuyActivity extends BaseActivity{
 		
 		
 		Map<String, String> params = new HashMap<String, String>();
-		//mi/getdata.ashx?act=GetLuckYiYuanGameAllNewResult&yth=test»òÎª¿Õ&topNum=1
+		//mi/getdata.ashx?act=GetLuckYiYuanGameAllNewResult&yth=testæˆ–ä¸ºç©º&topNum=1
 		params.put("act", "GetLuckYiYuanGameAllNewResult");
 		params.put("yth", "");
 		params.put("topNum", "3");
@@ -165,7 +165,7 @@ public class OneBuyActivity extends BaseActivity{
 		});
 	}
 	/*
-	 *»ñµÃÊı¾İ
+	 *è·å¾—æ•°æ®
 	 */
 	private void onload(){
 		///mi/getdata.ashx?act=LuckYiYuanGameItems&yth=admin

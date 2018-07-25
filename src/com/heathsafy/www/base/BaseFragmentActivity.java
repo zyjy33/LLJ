@@ -4,13 +4,13 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 /**
- * ·â×°Activity
+ * å°è£…Activity
  * */
 public abstract class BaseFragmentActivity extends FragmentActivity {
 	protected  ImageLoader imageLoader = ImageLoader.getInstance();
 
 	/**
-	 * ¸ÄĞ´¸¸Àà·½·¨£¬ºáÊúÆÁ×ª»»²»ÖØĞÂ¿ªÊ¼activityÉúÃüÖÜÆÚ
+	 * æ”¹å†™çˆ¶ç±»æ–¹æ³•ï¼Œæ¨ªç«–å±è½¬æ¢ä¸é‡æ–°å¼€å§‹activityç”Ÿå‘½å‘¨æœŸ
 	 * */
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
@@ -21,9 +21,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		/**
-		 * 4.0µÄÊ±ºò»»»ØÀ´
+		 * 4.0çš„æ—¶å€™æ¢å›æ¥
 		 */
-		// Ìí¼ÓActivityµ½¶ÑÕ»
+		// æ·»åŠ Activityåˆ°å †æ ˆ
 		AppManager.getAppManager().addActivity(this);
 		init();
 
@@ -37,18 +37,18 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 	}
 
 	/**
-	 * ÉèÖÃÈ«ÆÁ
+	 * è®¾ç½®å…¨å±
 	 */
 
 	/**
-	 * ÖØÖÃ
+	 * é‡ç½®
 	 */
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		// getWindow().getDecorView().setSystemUiVisibility(View.GONE);
 		/**
-		 * ÉèÖÃÎªºáÆÁ
+		 * è®¾ç½®ä¸ºæ¨ªå±
 		 */
 
 		super.onResume();
@@ -58,7 +58,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		// ½áÊøActivity&´Ó¶ÑÕ»ÖĞÒÆ³ı
+		// ç»“æŸActivity&ä»å †æ ˆä¸­ç§»é™¤
 		AppManager.getAppManager().finishActivity(this);
 	}
 

@@ -62,7 +62,7 @@ import com.lelinju.www.WareInformationActivity;
 
 /**
  * 
- * ÔÆÉÌ¾Û
+ * äº‘å•†èš
  * @author Administrator
  * 
  */
@@ -113,25 +113,25 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 	private TextView tv_tuanshu_ll,tv_anniu1,tv_anniu2;
 	private long minute = 0; 
 	private long second = 0; 
-	private long time = 0;//ºÁÃëÎªµ¥Î»
+	private long time = 0;//æ¯«ç§’ä¸ºå•ä½
 	private long current_time = 0;
-	private long interval = 10*1000;//Ã¿´ÎÔö¼Ó»ò¼õÉÙµÄ¶î¶ÈÎª10Ãë
-	private MyCount count;//¶¨Ê±Àà¶ÔÏó 
+	private long interval = 10*1000;//æ¯æ¬¡å¢åŠ æˆ–å‡å°‘çš„é¢åº¦ä¸º10ç§’
+	private MyCount count;//å®šæ—¶ç±»å¯¹è±¡ 
 	java.util.Date now_1;
 	java.util.Date date_1;
-	/**½ØÖÁÊ±¼äÊı¾İÔ´**/
+	/**æˆªè‡³æ—¶é—´æ•°æ®æº**/
 	private List<Date> listData;
-    /**µ±Ç°Ê±¼ä**/
+    /**å½“å‰æ—¶é—´**/
     private long time_Current;
-	/**ListView¿Ø¼ş**/
+	/**ListViewæ§ä»¶**/
 	private ListView listView;
 	
     long hourl,min,s,zongxs;
-	 /**ÊÊÅäÆ÷**/
+	 /**é€‚é…å™¨**/
 	private MyCountAdapter myCountAdapter;
 		java.util.Date now;
 		java.util.Date date;
-		//ÕâÀïºÜÖØÒª£¬Ê¹ÓÃHandlerµÄÑÓÊ±Ğ§¹û£¬Ã¿¸ôÒ»ÃëË¢ĞÂÒ»ÏÂÊÊÅäÆ÷£¬ÒÔ´Ë²úÉúµ¹¼ÆÊ±Ğ§¹û
+		//è¿™é‡Œå¾ˆé‡è¦ï¼Œä½¿ç”¨Handlerçš„å»¶æ—¶æ•ˆæœï¼Œæ¯éš”ä¸€ç§’åˆ·æ–°ä¸€ä¸‹é€‚é…å™¨ï¼Œä»¥æ­¤äº§ç”Ÿå€’è®¡æ—¶æ•ˆæœ
 	    private Handler handler_timeCurrent = new Handler(){
 	        @Override
 	        public void handleMessage(Message msg) {
@@ -151,33 +151,33 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			String datall;
 			String nickname = "";
 		public static int fangshi = 0;
-		public static boolean type_xq = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-		public static boolean type_spec_item = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-		public static int spec_text_list = 0;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª0
+		public static boolean type_xq = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+		public static boolean type_spec_item = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+		public static int spec_text_list = 0;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º0
 		
 		@Override
 		public void onResume() {
 			// TODO Auto-generated method stub
 			super.onResume();
-			JuTuanGouXqActivity.type_xq = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-			JuTuanGouXqActivity.type_spec_item = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
+			JuTuanGouXqActivity.type_xq = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+			JuTuanGouXqActivity.type_spec_item = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
 			JuTuanGouXqActivity.fx_canshu = "";
-			WareInformationActivity.fangshi = 0;//·µ»Ø0²»ÅĞ¶ÏÎªÉÌÆ·ÏêÇé
-			WareInformationActivity.spec_text_list = 0;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª0
-			WareInformationActivity.taocan_type = false;//ÅĞ¶ÏÉÌÆ·Ì×²Í¼Û¸ñ
+			WareInformationActivity.fangshi = 0;//è¿”å›0ä¸åˆ¤æ–­ä¸ºå•†å“è¯¦æƒ…
+			WareInformationActivity.spec_text_list = 0;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º0
+			WareInformationActivity.taocan_type = false;//åˆ¤æ–­å•†å“å¥—é¤ä»·æ ¼
 			
 //			spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 //			user_name_phone = spPreferences.getString("user", "");
 //			user_id = spPreferences.getString("user_id", "");
 //			user_name = spPreferences.getString("user_name", "");
-//			type = getIntent().getStringExtra("type");//¾Û¾«²Ê×´Ì¬
+//			type = getIntent().getStringExtra("type");//èšç²¾å½©çŠ¶æ€
 			
 			System.out.println("user_name_phone================"+user_name_phone);
 			
 			if (JuTuanConfrimActivity.fanhui_type == true){
 				JuTuanConfrimActivity.fanhui_type = false;
 				String groupon_id = getIntent().getStringExtra("id");
-				System.out.println("groupon_id=====2=====¾Û¾«²Ê=========="+groupon_id);
+				System.out.println("groupon_id=====2=====èšç²¾å½©=========="+groupon_id);
 				loadWeatherxq(groupon_id);
 			}
 			
@@ -190,14 +190,14 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_jutuangou_title);//activity_jutuangou_title activity_jutuangou_xq
 		progress = new DialogProgress(JuJingCaiXqActivity.this);
-//		JuTuanGouXqActivity.type_xq = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-//		JuTuanGouXqActivity.type_spec_item = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
+//		JuTuanGouXqActivity.type_xq = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+//		JuTuanGouXqActivity.type_spec_item = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
 	    fx_canshu = getIntent().getStringExtra("fx_shuzi");
 		spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 		user_name_phone = spPreferences.getString("user", "");
 		user_id = spPreferences.getString("user_id", "");
 		user_name = spPreferences.getString("user_name", "");
-//		type = getIntent().getStringExtra("type");//¾Û¾«²Ê×´Ì¬
+//		type = getIntent().getStringExtra("type");//èšç²¾å½©çŠ¶æ€
 		try {
 		
 			
@@ -207,7 +207,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		intren();
 		        
 		String groupon_id = getIntent().getStringExtra("id");
-		System.out.println("groupon_id=====2=====¾Û¾«²Ê=========="+groupon_id);
+		System.out.println("groupon_id=====2=====èšç²¾å½©=========="+groupon_id);
 		loadWeatherxq(groupon_id);
 		
 //		Button fanhui = (Button) findViewById(R.id.fanhui);
@@ -308,7 +308,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		}
 	}
 	
-	//·ÀÖ¹µ±Ç°Activity½áÊøÒÔºó,   handlerÒÀÈ»¼ÌĞøÑ­»·ÀË·Ñ×ÊÔ´
+	//é˜²æ­¢å½“å‰Activityç»“æŸä»¥å,   handlerä¾ç„¶ç»§ç»­å¾ªç¯æµªè´¹èµ„æº
 	@Override
 	protected void onDestroy() {
 		handler_timeCurrent.removeCallbacksAndMessages(null);
@@ -316,7 +316,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 	}
 	
 	/**
-	 * ¿Ø¼ş³õÊ¼»¯
+	 * æ§ä»¶åˆå§‹åŒ–
 	 */
 	public void intren() {
 		try {
@@ -383,11 +383,11 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 				tuangoujia = JuTuanAdapter.tuangoujia;
 				tuanshu = JuTuanAdapter.tuanshu;
 //				String tuangoujia = (String) msg.obj;
-				tv_tuangoujia.setText("£¤"+tuangoujia);
-				tv_tuanshu.setText(tuanshu+"ÈËÍÅ");
+				tv_tuangoujia.setText("ï¿¥"+tuangoujia);
+				tv_tuanshu.setText(tuanshu+"äººå›¢");
 				break;
 			case 1:
-//				System.out.println("list¸öÊıÊÇ¶àÉÙ===================="+list.size());
+//				System.out.println("listä¸ªæ•°æ˜¯å¤šå°‘===================="+list.size());
 				arrayadapter = new JuTuanAdapter(list,getApplicationContext(),handler);
 				list_tuanjia.setAdapter(arrayadapter);
 				setListViewHeightBasedOnChildren(list_tuanjia);  
@@ -396,7 +396,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 //		            	 flag = false;
 //		            	 String id = listll.get(arg2).getId();
-//		            	 System.out.println("=====µÚ¶ş²ãÊı¾İ1====================="+INDX);
+//		            	 System.out.println("=====ç¬¬äºŒå±‚æ•°æ®1====================="+INDX);
 		            	 arrayadapter.setSeclection(arg2);
 		            	 arrayadapter.notifyDataSetChanged();
 		            }
@@ -405,7 +405,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 				break;
 			case 2:
 				try {
-				System.out.println("list¸öÊıÊÇ¶àÉÙ2===================="+list_ll.size());
+				System.out.println("listä¸ªæ•°æ˜¯å¤šå°‘2===================="+list_ll.size());
 				if(list_ll.size() == 0){
 					iv_view.setVisibility(View.GONE);
 				}else{
@@ -443,7 +443,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 					e.printStackTrace();
 				}
 				break;
-//			case 3://Æ´ÍÅ·ÖÏí
+//			case 3://æ‹¼å›¢åˆ†äº«
 //				break;	
               case 4:
 				try {
@@ -462,7 +462,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //  					new_list.setVisibility(View.GONE);
   					iv_view.setVisibility(View.GONE);
   				break;
-//              case 6://²ÎÍÅ·ÖÏí
+//              case 6://å‚å›¢åˆ†äº«
 //				break;
       		case 7:
       			 ct_id = (String) msg.obj;
@@ -481,7 +481,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 	
 
 	/**
-	 * Êä³öÄÚÈİÏêÇé
+	 * è¾“å‡ºå†…å®¹è¯¦æƒ…
 	 * @param groupon_id 
 	 * @param category_id 
 	 */
@@ -512,7 +512,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("Êä³öÄÚÈİÏêÇé========="+arg1);
+				System.out.println("è¾“å‡ºå†…å®¹è¯¦æƒ…========="+arg1);
 				try {
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
@@ -668,19 +668,19 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //								groupon_item_people = data.getActivity_people();
 								ct_tuanshu = String.valueOf(data.getActivity_people()- data.getActivity_member());
 								list_ll.add(data);
-								//ÅĞ¶Ïµ±Ç°ÓÃ»§¿ªÍÅ¾ÍÖ´ĞĞ
+								//åˆ¤æ–­å½“å‰ç”¨æˆ·å¼€å›¢å°±æ‰§è¡Œ
 								if (user_id.equals(data.getForeman_id())) {
 									timer_time = data.getTimer_time();
 									String yq_people = String.valueOf(data.getActivity_people()- data.getActivity_member());
 									 System.out.println("yq_people---------------------"+yq_people);
-									tv_yq_cantuan.setText("Ö§¸¶¿ªÍÅ²¢ÑûÇë"+yq_people+"ÈË²ÎÍÅ£¬ÈËÊı²»×ã×Ô¶¯ÍË¿î");
-									tv_kaituan_ts.setText("ÄúÒÑ¾­·¢ÆğÍÅ¹º£¬Äú¿ÉÒÔ·ÖÏíÑûÇëºÃÓÑ²ÎÍÅ");
+									tv_yq_cantuan.setText("æ”¯ä»˜å¼€å›¢å¹¶é‚€è¯·"+yq_people+"äººå‚å›¢ï¼Œäººæ•°ä¸è¶³è‡ªåŠ¨é€€æ¬¾");
+									tv_kaituan_ts.setText("æ‚¨å·²ç»å‘èµ·å›¢è´­ï¼Œæ‚¨å¯ä»¥åˆ†äº«é‚€è¯·å¥½å‹å‚å›¢");
 									tv_tuanshu_ll.setText(yq_people);
 									ll_qu_kaituan.setVisibility(View.VISIBLE);
 									
 									
 									new_list.setVisibility(View.GONE);
-									getCantuantime();//»ñÈ¡¿ªÍÅµÄµ¹¼ÆÊ±
+									getCantuantime();//è·å–å¼€å›¢çš„å€’è®¡æ—¶
 //									groupon_item_member(groupon_no);
 //									handler.sendEmptyMessage(2);
 								}
@@ -710,7 +710,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 						}
 					intrendata();
 					handler.sendEmptyMessage(1);
-					webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+data.article_id+".html");//ÉÌÆ·½éÉÜ
+					webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+data.article_id+".html");//å•†å“ä»‹ç»
 					progress.CloseProgress();
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
@@ -721,17 +721,17 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		}, null);
 	}
 	/**
-	 * »ñÈ¡Öµµ½¿Ø¼ş
+	 * è·å–å€¼åˆ°æ§ä»¶
 	 */
 	public void intrendata() {
 		try {
         ImageLoader imLoader = ImageLoader.getInstance();
         System.out.println("---------------------"+data.getImg_url());
         imLoader.displayImage(RealmName.REALM_NAME_HTTP+data.getImg_url(), iv_img);
-        imLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+        imLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 //      mAq.id(iv_img).image(RealmName.REALM_NAME_HTTP+data.getImg_url());
         tv_hd_time.setVisibility(View.VISIBLE);
-        tv_hd_time.setText("»î¶¯Ê±¼ä£º "+data.getStart_time()+" ~ "+data.end_time);
+        tv_hd_time.setText("æ´»åŠ¨æ—¶é—´ï¼š "+data.getStart_time()+" ~ "+data.end_time);
         System.out.println("data.activity_rule====================="+data.activity_rule);
         if (data.activity_rule.equals("null")) {
         	 tv_pt_gz.setVisibility(View.GONE);
@@ -742,14 +742,14 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		}
 		
 		tv_titel.setText(data.getTitle());
-		tv_price.setText("Ô­¼Û£º"+data.getSell_price());
+		tv_price.setText("åŸä»·ï¼š"+data.getSell_price());
 //		tv_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
-		tv_yuanjia.setText("£¤"+data.getSell_price());
-		tv_tuangoujia.setText("£¤"+data.getPrice());
-		tv_tuanshu.setText(data.getPeople()+"ÈËÍÅ");
+		tv_yuanjia.setText("ï¿¥"+data.getSell_price());
+		tv_tuangoujia.setText("ï¿¥"+data.getPrice());
+		tv_tuanshu.setText(data.getPeople()+"äººå›¢");
 		
 		tv_price.getPaint().setFlags(
-				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // ÉèÖÃÊĞ³¡¼ÛÎÄ×ÖµÄÖĞ»®Ïß
+				Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG); // è®¾ç½®å¸‚åœºä»·æ–‡å­—çš„ä¸­åˆ’çº¿
 		
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -760,7 +760,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //	ArrayList list_data1,list_data2;
 		
 		/**
-		 * Êä³öÍÅ³ÉÔ±
+		 * è¾“å‡ºå›¢æˆå‘˜
 		 * @param groupon_id
 		 */
 		private void groupon_item_member(String groupon_no) {
@@ -771,7 +771,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 				public void onSuccess(int arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onSuccess(arg0, arg1);
-					System.out.println("=======Êä³öÍÅ³ÉÔ±================================"+arg1);
+					System.out.println("=======è¾“å‡ºå›¢æˆå‘˜================================"+arg1);
 					try {
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
@@ -835,7 +835,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //				list_data2 = new ArrayList();
 //			ll_qu_kaituan.setVisibility(View.VISIBLE);
 //			new_list.setVisibility(View.GONE);
-//			System.out.println("=====================Ä£Äâ²âÊÔ===============");
+//			System.out.println("=====================æ¨¡æ‹Ÿæµ‹è¯•===============");
 //			// TODO Auto-generated method stub
 //			String data_tx = "http://wx.qlogo.cn/mmopen/Zw5SzXToEzuCtHFRb2IVVZemJzJx4cLibMpDIE2y4kA1lgPfbhe2rO851s5G72B2U1Wz6cGe8Eb7B4AbtibiaUaSRBeH1XqqMiam/0";
 ////			if (data_tx.contains("http")) {
@@ -879,8 +879,8 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //						String img_url2 = "http://183.62.138.31:1010/upload/phone/113875199/20170217164544307.jpg";
 						String img_url2 = RealmName.REALM_NAME_HTTP + "/upload/phone/113875199/20170217164544307.jpg";
 						System.out.println("img_url2=============="+img_url2);
-						Bitmap bmp = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//						Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+						Bitmap bmp = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//						Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //						System.out.println("bitMap_tx=============="+bitMap_tx);
 						System.out.println("bmp=============="+bmp);
 						list_data2.add(bmp);
@@ -891,7 +891,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			};
 		
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -899,18 +899,18 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     }   
 
@@ -924,10 +924,10 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			break;
 		case R.id.webview:
 //			loadWeather();
-//			webview.loadUrl("http://183.62.138.31:1010/mobile/goods/conent-"+data.article_id+".html");//ÉÌÆ·½éÉÜ
-			webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+data.article_id+".html");//ÉÌÆ·½éÉÜ
+//			webview.loadUrl("http://183.62.138.31:1010/mobile/goods/conent-"+data.article_id+".html");//å•†å“ä»‹ç»
+			webview.loadUrl(RealmName.REALM_NAME_WEB+"/mobile/goods/conent-"+data.article_id+".html");//å•†å“ä»‹ç»
 			break;
-		case R.id.tv_anniu1://»áÔ±¿ªÍÅÑûÇë·ÖÏí
+		case R.id.tv_anniu1://ä¼šå‘˜å¼€å›¢é‚€è¯·åˆ†äº«
 			  System.out.println("=====1======"+ct_id);
 				if (UserLoginActivity.wx_fanhui == false) {
 					Intent intent = new Intent(JuJingCaiXqActivity.this,UserLoginActivity.class);
@@ -943,12 +943,12 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 				startActivity(intentll);
 				}
 			break;
-		case R.id.ll_dianping://ÊÕ²Ø
+		case R.id.ll_dianping://æ”¶è—
 //			progress.CreateProgress();
 //			spPreferences = getSharedPreferences("longuserset", MODE_PRIVATE);
 //			String user_name = spPreferences.getString("user", "");
 //			String user_id = spPreferences.getString("user_id", "");
-			System.out.println("user_name_phone=======ÊÕ²Ø========="+user_name_phone);
+			System.out.println("user_name_phone=======æ”¶è—========="+user_name_phone);
 			System.out.println("nickname========"+nickname);
 			if (!nickname.equals("")) {
 				if (!user_name_phone.equals("")) {
@@ -961,7 +961,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 							super.onSuccess(arg0, arg1);
 							try {
 								JSONObject jsonObject = new JSONObject(arg1);
-								System.out.println("ÊÕ²Ø================"+arg1);
+								System.out.println("æ”¶è—================"+arg1);
 								String status = jsonObject.getString("status");
 								String info = jsonObject.getString("info");
 								if (status.equals("y")) {
@@ -996,7 +996,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject jsonObject = new JSONObject(arg1);
-							System.out.println("ÊÕ²Ø================"+arg1);
+							System.out.println("æ”¶è—================"+arg1);
 							String status = jsonObject.getString("status");
 							String info = jsonObject.getString("info");
 							if (status.equals("y")) {
@@ -1026,14 +1026,14 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			
 			}
 			break;
-		case R.id.ll_lijigoumai://Á¢¼´¹ºÂò
+		case R.id.ll_lijigoumai://ç«‹å³è´­ä¹°
 //			Intent intent = new Intent(JuJingCaiXqActivity.this, JuTuanXqTiShiActivity.class);
 //			startActivity(intent);
 			fangshi = 3;
-			type_xq = true;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-			type_spec_item = false;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔÏÔÊ¾
+			type_xq = true;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+			type_spec_item = false;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§æ˜¾ç¤º
 //			JuJingCaiXqActivity.type_spec_item = false;
-			spec_text_list = 2;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª2
+			spec_text_list = 2;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º2
 			CommomConfrim.showSheet(JuJingCaiXqActivity.this, new onDeleteSelect() {
 				@Override
 				public void onClick(String resID) {
@@ -1063,11 +1063,11 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //			}
 //			}
 			break;
-		case R.id.ll_tuangou://ÍÅ¹º
+		case R.id.ll_tuangou://å›¢è´­
 			fangshi = 4;
-			type_xq = true;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔ²»ÏÔÊ¾
-			type_spec_item = true;//¾ÛÍÅÏêÇéÏúÊÛÊôĞÔÏÔÊ¾
-			spec_text_list = 2;//ÏúÊÛÌ×²ÍÅĞ¶ÏÎª2
+			type_xq = true;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§ä¸æ˜¾ç¤º
+			type_spec_item = true;//èšå›¢è¯¦æƒ…é”€å”®å±æ€§æ˜¾ç¤º
+			spec_text_list = 2;//é”€å”®å¥—é¤åˆ¤æ–­ä¸º2
 			CommomConfrim.showSheet(JuJingCaiXqActivity.this, new onDeleteSelect() {
 				@Override
 				public void onClick(String resID) {
@@ -1088,7 +1088,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //					System.out.println("choujiang===================="+choujiang);
 //					if (choujiang != null) {
 ////						zhuangtai = "110";
-//						intent.putExtra("type_wx","type_wx");//Ö§¸¶·½Ê½
+//						intent.putExtra("type_wx","type_wx");//æ”¯ä»˜æ–¹å¼
 //					}
 //					String groupon_id = getIntent().getStringExtra("id");
 //					System.out.println("zhuangtai================"+zhuangtai);
@@ -1113,8 +1113,8 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //					intent.putExtra("groupon_no", groupon_no);
 //					intent.putExtra("100", zhuangtai);
 //					intent.putExtra("stare", "2");
-//					intent.putExtra("type","1");//¾Û¾«²Ê×´Ì¬
-//					intent.putExtra("jiekou","1");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+//					intent.putExtra("type","1");//èšç²¾å½©çŠ¶æ€
+//					intent.putExtra("jiekou","1");//èšç²¾å½©æ¥å£çŠ¶æ€
 //					intent.putExtra("fx_shuzi","groupon");
 //					startActivity(intent);
 //				} else {
@@ -1132,7 +1132,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //			System.out.println("choujiang===================="+choujiang);
 ////			if (choujiang != null) {
 //////				zhuangtai = "110";
-////				intent.putExtra("type_wx","type_wx");//Ö§¸¶·½Ê½
+////				intent.putExtra("type_wx","type_wx");//æ”¯ä»˜æ–¹å¼
 ////			}
 ////			System.out.println("zhuangtai================================="+zhuangtai);
 //			String groupon_id = getIntent().getStringExtra("id");
@@ -1161,10 +1161,10 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 ////			intent.putExtra("id",groupon_id);
 ////			intent.putExtra("100", zhuangtai);
 //			intent.putExtra("stare", "2");
-//			intent.putExtra("type","1");//¾Û¾«²Ê×´Ì¬
-//			intent.putExtra("jiekou","1");//¾Û¾«²Ê½Ó¿Ú×´Ì¬
+//			intent.putExtra("type","1");//èšç²¾å½©çŠ¶æ€
+//			intent.putExtra("jiekou","1");//èšç²¾å½©æ¥å£çŠ¶æ€
 //			intent.putExtra("fx_shuzi","groupon");
-//		 	intent.putExtra("type_wx","type_wx");//Ö§¸¶·½Ê½
+//		 	intent.putExtra("type_wx","type_wx");//æ”¯ä»˜æ–¹å¼
 //			startActivity(intent);
 			
 				} catch (Exception e) {
@@ -1185,10 +1185,10 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 	
 	
       /**
-       * »ñÈ¡¿ªÍÅµÄµ¹¼ÆÊ±	
+       * è·å–å¼€å›¢çš„å€’è®¡æ—¶	
        */
       public void getCantuantime() {
-    	  System.out.println("»ñÈ¡¿ªÍÅµÄµ¹¼ÆÊ±----------");
+    	  System.out.println("è·å–å¼€å›¢çš„å€’è®¡æ—¶----------");
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.println("timer_time-------------"+timer_time);
 		System.out.println("datetime-------------"+datetime);
@@ -1219,14 +1219,14 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
            long xiaoshi = day*24;
 		   zongxs = xiaoshi;
 		   System.out.println("----------"+xiaoshi+"--"+zongxs);
-		   System.out.println(""+day+"Ìì"+hourl+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
+		   System.out.println(""+day+"å¤©"+hourl+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
 		   
 		    time = (zongxs * 3600 + min * 60 + s) * 1000; 
 		    
 			System.out.println("time--------------"+time);
 			count = new MyCount(time, 1000);
 			System.out.println("2-------------"+count);
-			count.start();//¿ªÊ¼¼ÆÊ± 
+			count.start();//å¼€å§‹è®¡æ—¶ 
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -1236,7 +1236,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 
 
 	/**
-	 * ¹ºÎïÇåµ¥
+	 * è´­ç‰©æ¸…å•
 	 */
 //	private void loadgouwuche() {
 //		try {
@@ -1251,7 +1251,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //							try {
 //								JSONObject jsonObject = new JSONObject(arg1);
 //								String status = jsonObject.getString("status");
-//								System.out.println("¹ºÎïÇåµ¥================"+arg1);
+//								System.out.println("è´­ç‰©æ¸…å•================"+arg1);
 //								String info = jsonObject.getString("info");
 //								if (status.equals("y")) {
 //									progress.CloseProgress();
@@ -1261,7 +1261,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 ////									Toast.makeText(JuTuanGouXqActivity.this, info, 200).show();
 //										Intent intent=new Intent(JuJingCaiXqActivity.this, JuTuanConfrimActivity.class);
 ////										if (choujiang != null) {
-////											intent.putExtra("type_wx","type_wx");//Ö§¸¶·½Ê½
+////											intent.putExtra("type_wx","type_wx");//æ”¯ä»˜æ–¹å¼
 ////										}
 //										
 //										intent.putExtra("shopping_ids",id);
@@ -1283,7 +1283,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //						@Override
 //						public void onFailure(Throwable arg0, String arg1) {
 //							// TODO Auto-generated method stub
-//							System.out.println("==========================·ÃÎÊ½Ó¿ÚÊ§°Ü£¡");
+//							System.out.println("==========================è®¿é—®æ¥å£å¤±è´¥ï¼");
 //							System.out.println("========================="+arg0);
 //							System.out.println("=========================="+arg1);
 //							super.onFailure(arg0, arg1);
@@ -1353,7 +1353,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //					System.out.println("people_ct-------------"+people_ct);
 //					tv_tuanshu_ll.setText(people);
 					
-//					getCantuantime();//»ñÈ¡¿ªÍÅµÄµ¹¼ÆÊ±
+//					getCantuantime();//è·å–å¼€å›¢çš„å€’è®¡æ—¶
 					
 					Message msg = new Message();
 					msg.what = 8;
@@ -1379,7 +1379,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			
 //			updateTextView( now.getTime()-time_Current, holder);
 			
-			//»ñÈ¡¶©µ¥id·ÖÏí
+			//è·å–è®¢å•idåˆ†äº«
 			if (user_id.equals(list_ll.get(position).getForeman_id())) {
 				Message msg = new Message();
 				msg.what = 7;
@@ -1392,7 +1392,7 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		}
 		
 		/****
-		 * Ë¢ĞÂµ¹¼ÆÊ±¿Ø¼ş
+		 * åˆ·æ–°å€’è®¡æ—¶æ§ä»¶
 		 */
 //		public void updateTextView(long times_remain,ViewHolder hoder) {
 //			
@@ -1409,23 +1409,23 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 //			   long hour=(current_time/(60*60*1000)-day*24);
 //			   long min=((current_time/(60*1000))-day*24*60-hour*60);
 //			   long s=(current_time/1000-day*24*60*60-hour*60*60-min*60);
-////			   System.out.println(""+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
-//			hoder.tv_time.setText("Ê£ÓàÊ±¼ä: "+day+"Ìì" + hour + "Ğ¡Ê±" + min + "·Ö" + s+"Ãë"); 
+////			   System.out.println(""+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
+//			hoder.tv_time.setText("å‰©ä½™æ—¶é—´: "+day+"å¤©" + hour + "å°æ—¶" + min + "åˆ†" + s+"ç§’"); 
 //		}
 		
 		private class ViewHolder{
-			/** Ğ¡Ê± **/
+			/** å°æ—¶ **/
 			private TextView tv_time;
-			/** Ğ¡Ê± **/
+			/** å°æ—¶ **/
 			private TextView tv_hour;
-			/** ·ÖÖÓ **/
+			/** åˆ†é’Ÿ **/
 			private TextView tv_minute;
-			/** Ãë **/
+			/** ç§’ **/
 			private TextView tv_second;		
 		}
 	}
 	
-	//¿ªÍÅÊµÏÖ¼ÆÊ±¹¦ÄÜµÄÀà 
+	//å¼€å›¢å®ç°è®¡æ—¶åŠŸèƒ½çš„ç±» 
 	class MyCount extends MyCountdownTimer { 
 
 		public MyCount(long millisInFuture, long countDownInterval) { 
@@ -1434,15 +1434,15 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 		
 		@Override 
 		public void onFinish() { 
-			//Ã½Ìå¶ÔÏó 
-			txt_time.setText("´ËÍÅÒÑ½áÊø"); 
+			//åª’ä½“å¯¹è±¡ 
+			txt_time.setText("æ­¤å›¢å·²ç»“æŸ"); 
 //			ll_qu_kaituan.setVisibility(View.GONE);
 //			ll_qu_kaituan.setBackgroundResource(R.drawable.bg_ccc_3_5_bg); 
 			tv_anniu1.setVisibility(View.GONE);
 			tv_anniu2.setVisibility(View.VISIBLE);
 		} 
 		
-		//¸üĞÂÊ£ÓàÊ±¼ä 
+		//æ›´æ–°å‰©ä½™æ—¶é—´ 
 		@Override 
 		public void onTick(long millisUntilFinished, int percent) {
 			current_time = millisUntilFinished;
@@ -1452,9 +1452,9 @@ public class JuJingCaiXqActivity extends BaseActivity implements OnClickListener
 			   long min=((current_time/(60*1000))-day*24*60-hour*60);
 			   long s=(current_time/1000-day*24*60*60-hour*60*60-min*60);
 			   
-//			   System.out.println(""+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë");
-//			   txt_time.setText("Ê£ÓàÊ±¼ä: "+day+":" + hour + ":" + min + ":" + s); 
-			   txt_time.setText("Ê£Óà: "+day+"Ìì"+hour+"Ğ¡Ê±"+min+"·Ö"+s+"Ãë"); 
+//			   System.out.println(""+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’");
+//			   txt_time.setText("å‰©ä½™æ—¶é—´: "+day+":" + hour + ":" + min + ":" + s); 
+			   txt_time.setText("å‰©ä½™: "+day+"å¤©"+hour+"å°æ—¶"+min+"åˆ†"+s+"ç§’"); 
 		} 
 	} 
 	

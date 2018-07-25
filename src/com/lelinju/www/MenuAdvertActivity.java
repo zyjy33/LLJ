@@ -119,7 +119,7 @@ public class MenuAdvertActivity extends BaseActivity {
 //
 //					String st = new HttpUtils().convertStreamToString(ip,
 //							"utf-8").trim();
-//					// ½âÎöst
+//					// è§£æst
 //				
 //				} catch (Exception e) {
 //					e.printStackTrace();
@@ -129,7 +129,7 @@ public class MenuAdvertActivity extends BaseActivity {
 	}
 
 	/**
-	 * ½âÎöÊı¾İ·µ»ØµÄĞÅÏ¢
+	 * è§£ææ•°æ®è¿”å›çš„ä¿¡æ¯
 	 * 
 	 * @param result
 	 */
@@ -184,7 +184,7 @@ public class MenuAdvertActivity extends BaseActivity {
 	}
 
 	/**
-	 * ³õÊ¼»¯Êı¾İ
+	 * åˆå§‹åŒ–æ•°æ®
 	 */
 	private void init() {
 		name = (TextView) findViewById(R.id.name);

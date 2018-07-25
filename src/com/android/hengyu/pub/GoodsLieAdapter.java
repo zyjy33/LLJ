@@ -70,8 +70,8 @@ public class GoodsLieAdapter extends BaseAdapter {
 //		TextView tv_total = (TextView) convertView.findViewById(R.id.tv_ware_total);
 
 //		tv_name.setText(list.get(position).proName);
-//		tv_price.setText("£§" + list.get(position).retailPrice);
-//		tv_total.setText(" ’≤ÿ»À∆¯      " + list.get(position).collectTotal);
+//		tv_price.setText("Ôø•" + list.get(position).retailPrice);
+//		tv_total.setText("Êî∂Ëóè‰∫∫Ê∞î      " + list.get(position).collectTotal);
 		
 		tv_name.setText((String)data1.get(position));
 		aQuery.id(image).image(RealmName.REALM_NAME_HTTP+(String)data2.get(position));

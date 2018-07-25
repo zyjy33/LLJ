@@ -62,7 +62,7 @@ public class AirPlaneSelectActivity extends BaseActivity implements
 				intent.putExtras(bundle);
 				startActivity(intent);
 			} else {
-				Toast.makeText(getApplicationContext(), "«ÎºÏ≤È≤È—Ø–≈œ¢", 200).show();
+				Toast.makeText(getApplicationContext(), "ËØ∑Ê£ÄÊü•Êü•ËØ¢‰ø°ÊÅØ", 200).show();
 			}
 
 			break;
@@ -86,7 +86,7 @@ public class AirPlaneSelectActivity extends BaseActivity implements
 			theDialog = new AlertDialog.Builder(AirPlaneSelectActivity.this)
 
 					.setView(dialogView)
-					.setNeutralButton("—°÷–",
+					.setNeutralButton("ÈÄâ‰∏≠",
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(

@@ -54,13 +54,13 @@ public class TrainPersonActivity extends BaseActivity {
 				switch (msg.arg1) {
 				case 0:
 					if (map.containsKey(key.getTrainUserContactID())) {
-						System.out.println("É¾µô´æÔÚÏî");
+						System.out.println("åˆ æŽ‰å­˜åœ¨é¡¹");
 						map.remove(key.getTrainUserContactID());
 					}
 					break;
 				case 1:
 					if (!map.containsKey(key.getTrainUserContactID())) {
-						System.out.println("Ôö¼ÓÐÂÊýÖµ");
+						System.out.println("å¢žåŠ æ–°æ•°å€¼");
 						map.put(key.getTrainUserContactID(), key);
 					}
 					break;
@@ -69,7 +69,7 @@ public class TrainPersonActivity extends BaseActivity {
 				}
 				Iterator<String> i = map.keySet().iterator();
 				while (i.hasNext()) {
-					System.out.println("mapµÄÖµ" + i.next());
+					System.out.println("mapçš„å€¼" + i.next());
 
 				}
 
@@ -122,7 +122,7 @@ public class TrainPersonActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onResume();
 		if (yth == null) {
-			Toast.makeText(getApplicationContext(), "Î´µÇÂ¼!", 200).show();
+			Toast.makeText(getApplicationContext(), "æœªç™»å½•!", 200).show();
 
 		} else {
 			RequestParams params = new RequestParams();

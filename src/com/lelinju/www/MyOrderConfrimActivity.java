@@ -64,7 +64,7 @@ import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 /**
- * ¶©µ¥È·ÈÏ
+ * è®¢å•ç¡®è®¤
  * @author Administrator
  *
  */
@@ -149,10 +149,10 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		login_sign = spPreferences.getString("login_sign", "");
 		dzongjia = 0;
 		cashing_packet = 0;
-//		System.out.println("dzongjiadeÖµÎªÁã================"+dzongjia);
-//		System.out.println("cashing_packetÖµÎªÁã================"+cashing_packet);
+//		System.out.println("dzongjiadeå€¼ä¸ºé›¶================"+dzongjia);
+//		System.out.println("cashing_packetå€¼ä¸ºé›¶================"+cashing_packet);
 		
-		//»ñÈ¡µØÖ·
+		//è·å–åœ°å€
 		user_accept_name = getIntent().getStringExtra("user_accept_name");
 		System.out.println("name==============" + user_accept_name);
 		if (user_accept_name != null) {
@@ -162,8 +162,8 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			  user_address = getIntent().getStringExtra("user_address");
 			  user_mobile = getIntent().getStringExtra("user_mobile");
 			  
-			tv_user_name.setText("ÊÕ»õÈË£º" + user_accept_name);
-			tv_user_address.setText("µØÖ·£º"+province + "¡¢"+city+ "¡¢"+area+ "¡¢" + user_address);
+			tv_user_name.setText("æ”¶è´§äººï¼š" + user_accept_name);
+			tv_user_address.setText("åœ°å€ï¼š"+province + "ã€"+city+ "ã€"+area+ "ã€" + user_address);
 			tv_user_phone.setText(user_mobile);
 		}
 		else {
@@ -171,20 +171,20 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		}
 		
 		System.out.println("teby==============" + teby);
-		//Óà¶îÖ§¸¶³É¹¦ºó¸üĞÂ¶©µ¥
+		//ä½™é¢æ”¯ä»˜æˆåŠŸåæ›´æ–°è®¢å•
 		if (teby == true) {
 //			userloginqm();
 			teby = false;
 			finish();
 		}
 		
-		//Î¢ĞÅÖ§¸¶³É¹¦ºó¹Ø±Õ´Ë½çÃæ
+		//å¾®ä¿¡æ”¯ä»˜æˆåŠŸåå…³é—­æ­¤ç•Œé¢
 		if (flag == true) {
 			userloginqm();
 //			finish();
 		}
 		
-		//Óà¶îÖ§¸¶È¡Ïû¹Ø±Õ´Ë½çÃæ
+		//ä½™é¢æ”¯ä»˜å–æ¶ˆå…³é—­æ­¤ç•Œé¢
 		if (TishiCarArchivesActivity.yue_zhuangtai != null) {
 			TishiCarArchivesActivity.yue_zhuangtai = null;
 			finish();
@@ -193,7 +193,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		
 		try {
 
-			// Á¢¼´¹ºÂò
+			// ç«‹å³è´­ä¹°
 			img_ware = (ImageView) findViewById(R.id.img_ware);
 			tv_warename = (TextView) findViewById(R.id.tv_ware_name);
 			tv_color = (TextView) findViewById(R.id.tv_color);
@@ -215,17 +215,17 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //					tv_size.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
 //					String groupon_price = getIntent().getStringExtra("groupon_price");
 //					String price = getIntent().getStringExtra("price");
-//					tv_color.setText( "£¤" + price);
-//					tv_size.setText( "£¤" + groupon_price);
-//					tv_1.setText("¼Û¸ñ:");
-//					tv_2.setText("ÍÅ¹º¼Û:");
+//					tv_color.setText( "ï¿¥" + price);
+//					tv_size.setText( "ï¿¥" + groupon_price);
+//					tv_1.setText("ä»·æ ¼:");
+//					tv_2.setText("å›¢è´­ä»·:");
 //				} else {
 //					dzongjia = Double.parseDouble(getIntent().getStringExtra("groupon_price"));
 //					tv_size.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
 //					String groupon_price = getIntent().getStringExtra("groupon_price");
-//					tv_color.setText( "£¤" + groupon_price);//ÍÅ¹º¼Û
+//					tv_color.setText( "ï¿¥" + groupon_price);//å›¢è´­ä»·
 //					String price = getIntent().getStringExtra("price");
-//					tv_size.setText( "£¤" + price);
+//					tv_size.setText( "ï¿¥" + price);
 //				}
 //				rl_hongbao.setVisibility(View.GONE);
 //				ll_ljgm.setVisibility(View.VISIBLE);
@@ -235,18 +235,18 @@ public class MyOrderConfrimActivity extends BaseActivity {
 ////				dzongjia = Double.parseDouble(getIntent().getStringExtra("groupon_price"));
 ////				dzongjia = Double.parseDouble(getIntent().getStringExtra("price"));
 ////				String groupon_price = getIntent().getStringExtra("groupon_price");
-////				tv_color.setText( "£¤" + groupon_price);//ÍÅ¹º¼Û
+////				tv_color.setText( "ï¿¥" + groupon_price);//å›¢è´­ä»·
 ////				String price = getIntent().getStringExtra("price");
-////				tv_size.setText( "£¤" + price);
+////				tv_size.setText( "ï¿¥" + price);
 ////				tv_color.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
 //				tv_warename.setText(title);
-////				heji.setText("ºÏ¼Æ:" + "£¤" +  retailPrice);
+////				heji.setText("åˆè®¡:" + "ï¿¥" +  retailPrice);
 //				loadWeather();
 //			} else 
 			
 //			String jdh_title = WareInformationActivity.title_jduihuan;
 //			System.out.println("jdh_title================"+jdh_title);
-//				//¾Û¶Ò»»
+//				//èšå…‘æ¢
 //				if (jdh_title != null) {
 //				ll_ljgm.setVisibility(View.VISIBLE);
 //				rl_hongbao.setVisibility(View.GONE);
@@ -255,17 +255,17 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //				dzongjia = Double.parseDouble(WareInformationActivity.retailPrice);
 ////				String goods_price = WareInformationActivity.retailPrice;
 //				mAq.id(img_ware).image(RealmName.REALM_NAME_HTTP + WareInformationActivity.proInverseImg);
-//				tv_color.setText(jubi);//ÀÖ¶¹
+//				tv_color.setText(jubi);//ä¹è±†
 ////				if (!goods_price.equals("0.0")) {
-////					tv_size.setText(goods_price);//¼Û¸ñ
-////					tv_2.setText( "¼Û¸ñ:£¤");
+////					tv_size.setText(goods_price);//ä»·æ ¼
+////					tv_2.setText( "ä»·æ ¼:ï¿¥");
 ////				}else {
-//					tv_size.setText(WareInformationActivity.price);//ÊĞ³¡¼Û
+//					tv_size.setText(WareInformationActivity.price);//å¸‚åœºä»·
 //					tv_size.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);
-//					tv_2.setText( "ÊĞ³¡¼Û:£¤");
+//					tv_2.setText( "å¸‚åœºä»·:ï¿¥");
 ////				}
 //				tv_warename.setText(jdh_title);
-//				tv_1.setText("ÀÖ¶¹:");
+//				tv_1.setText("ä¹è±†:");
 //				
 //				loadWeather();
 //			}else{
@@ -315,7 +315,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	
 	
 	/**
-	 * »ñÈ¡ÓÃ»§ºì°ü
+	 * è·å–ç”¨æˆ·çº¢åŒ…
 	 * @param user_name 
 	 */
 	private void getuserhongbao(String user_name) {
@@ -324,7 +324,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 				public void onSuccess(int arg0, String arg1) {
 					try {
 						JSONObject object = new JSONObject(arg1);
-						System.out.println("»ñÈ¡ºì°üÖµ================" + arg1);
+						System.out.println("è·å–çº¢åŒ…å€¼================" + arg1);
 						String status = object.getString("status");
 						JSONObject obj = object.getJSONObject("data");
 						if (status.equals("y")) {
@@ -348,7 +348,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		
 		
 		 /**
-		  * ÅĞ¶ÏÊÇ·ñÊ¹ÓÃºì°ü
+		  * åˆ¤æ–­æ˜¯å¦ä½¿ç”¨çº¢åŒ…
 		  */
 		 sb.SetOnChangedListener(new OnChangedListener()
 	        {
@@ -363,31 +363,31 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		            	System.out.println("cashing_packet================"+cashing_packet);
 	            		try {
 							if (hongbao.equals("0.0")) {
-									tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+									tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
                             }else if (kedi_hongbao.equals("0.0")) {
-								tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+								tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
                             }else if (dzongjia == cashing_packet) {
         						heji.setVisibility(View.GONE);
 //        						dzongjia = 0.0;
-        						tv_hongbao.setText("¿ÉÓÃ"+cashing_packet+"Ôªºì°üµÖ"+cashing_packet+"Ôª");
+        						tv_hongbao.setText("å¯ç”¨"+cashing_packet+"å…ƒçº¢åŒ…æŠµ"+cashing_packet+"å…ƒ");
 	            	}else if (packet >= cashing_packet) {
 						BigDecimal  w   =   new   BigDecimal(dzongjia-cashing_packet);
 						dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-						heji.setText("ºÏ¼Æ:" + dzongjia);
-						tv_hongbao.setText("¿ÉÓÃ"+cashing_packet+"Ôªºì°üµÖ"+cashing_packet+"Ôª");
+						heji.setText("åˆè®¡:" + dzongjia);
+						tv_hongbao.setText("å¯ç”¨"+cashing_packet+"å…ƒçº¢åŒ…æŠµ"+cashing_packet+"å…ƒ");
 					}else if (packet <= cashing_packet) {
 						BigDecimal  w   =   new   BigDecimal(dzongjia-packet);
 						dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-						heji.setText("ºÏ¼Æ:" + dzongjia);
-						tv_hongbao.setText("¿ÉÓÃ"+packet+"Ôªºì°üµÖ"+packet+"Ôª");
-//						tv_hongbao.setText("¿ÉÓÃ"+hongbao+"Ôªºì°ü");
+						heji.setText("åˆè®¡:" + dzongjia);
+						tv_hongbao.setText("å¯ç”¨"+packet+"å…ƒçº¢åŒ…æŠµ"+packet+"å…ƒ");
+//						tv_hongbao.setText("å¯ç”¨"+hongbao+"å…ƒçº¢åŒ…");
 					}	
 	            		} catch (Exception e) {
 							// TODO: handle exception
 	            			e.printStackTrace();
 						}
 	            		kou_hongbao = 1;
-	            		hongbao_tety =  isCheck;//Ñ¡Ôñºì°ü×´Ì¬ÏÂ
+	            		hongbao_tety =  isCheck;//é€‰æ‹©çº¢åŒ…çŠ¶æ€ä¸‹
 				  }else if (isCheck == false){
 						System.out.println("1================"+false);
 //						 sb.setCheck(true);
@@ -395,42 +395,42 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						System.out.println("packet================"+packet);
 					   	System.out.println("cashing_packet================"+cashing_packet);
 						if (hongbao.equals("0.0")) {
-							tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+							tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
 						} else if (kedi_hongbao.equals("0.0")) {
-							tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+							tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
                         }else if (dzongjia == cashing_packet) {
     						heji.setVisibility(View.GONE);
 //    						dzongjia = 0.0;
-    						tv_hongbao.setText("¿ÉÓÃ"+cashing_packet+"Ôªºì°üµÖ"+cashing_packet+"Ôª");
+    						tv_hongbao.setText("å¯ç”¨"+cashing_packet+"å…ƒçº¢åŒ…æŠµ"+cashing_packet+"å…ƒ");
 						} else if (packet >= cashing_packet) {
 //							BigDecimal w = new BigDecimal(Double.parseDouble(retailPrice) + cashing_packet);
 //							retailPrice = Double.toString(w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue());
-//							heji.setText("ºÏ¼Æ:" + retailPrice);
+//							heji.setText("åˆè®¡:" + retailPrice);
 							BigDecimal w = new BigDecimal(dzongjia + cashing_packet);
 							dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-							heji.setText("ºÏ¼Æ:" + dzongjia);
-							tv_hongbao.setText("¿ÉÓÃ" + cashing_packet + "Ôªºì°üµÖ"+ cashing_packet + "Ôª");
+							heji.setText("åˆè®¡:" + dzongjia);
+							tv_hongbao.setText("å¯ç”¨" + cashing_packet + "å…ƒçº¢åŒ…æŠµ"+ cashing_packet + "å…ƒ");
 
 						} else if (packet <= cashing_packet) {
 							BigDecimal  w   =   new   BigDecimal(dzongjia+packet);
 							dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 							System.out.println("dzongjia11================"+dzongjia);
-							heji.setText("ºÏ¼Æ:" + dzongjia);
-							tv_hongbao.setText("¿ÉÓÃ"+packet+"Ôªºì°üµÖ"+packet+"Ôª");
-//							tv_hongbao.setText("¿ÉÓÃ" + hongbao + "Ôªºì°ü");
+							heji.setText("åˆè®¡:" + dzongjia);
+							tv_hongbao.setText("å¯ç”¨"+packet+"å…ƒçº¢åŒ…æŠµ"+packet+"å…ƒ");
+//							tv_hongbao.setText("å¯ç”¨" + hongbao + "å…ƒçº¢åŒ…");
 						}
 
-						hongbao_tety =  isCheck;//²»Ñ¡Ôñºì°ü×´Ì¬ÏÂ
+						hongbao_tety =  isCheck;//ä¸é€‰æ‹©çº¢åŒ…çŠ¶æ€ä¸‹
 						kou_hongbao = 0;
 					}
 	            }
 	        });
 		 
-		 System.out.println("ÉèÖÃ×´Ì¬================"+hongbao_tety);//ÉèÖÃÄ¬ÈÏµÖ¿Ûºì°üÏÂÉèÖÃ×´Ì¬Îª hongbao_tety = true
+		 System.out.println("è®¾ç½®çŠ¶æ€================"+hongbao_tety);//è®¾ç½®é»˜è®¤æŠµæ‰£çº¢åŒ…ä¸‹è®¾ç½®çŠ¶æ€ä¸º hongbao_tety = true
 		 try {
 			
 		 /**
-		  * Ñ¡Ôñºì°ü×´Ì¬ÏÂ
+		  * é€‰æ‹©çº¢åŒ…çŠ¶æ€ä¸‹
 		  */
 		 if (hongbao_tety == true) {
 			  	System.out.println("dzongjia3================"+dzongjia);
@@ -438,34 +438,34 @@ public class MyOrderConfrimActivity extends BaseActivity {
             	System.out.println("packet================"+packet);
             	System.out.println("cashing_packet================"+cashing_packet);
 			 if (hongbao.equals("0.0")) {
-					tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+					tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
 				} else if (kedi_hongbao.equals("0.0")) {
-					tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+					tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
                 }else if (dzongjia == cashing_packet) {
  						heji.setVisibility(View.GONE);
 // 						dzongjia = 0.0;
- 						tv_hongbao.setText("¿ÉÓÃ"+cashing_packet+"Ôªºì°üµÖ"+cashing_packet+"Ôª");
+ 						tv_hongbao.setText("å¯ç”¨"+cashing_packet+"å…ƒçº¢åŒ…æŠµ"+cashing_packet+"å…ƒ");
 //				} else {
 //			    BigDecimal  w   =   new   BigDecimal(dzongjia-cashing_packet);
 //			    dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
-//				heji.setText("ºÏ¼Æ:" + dzongjia);
+//				heji.setText("åˆè®¡:" + dzongjia);
 //				}
 				}else if (packet >= cashing_packet) {
 					BigDecimal  w   =   new   BigDecimal(dzongjia-cashing_packet);
 					dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 					System.out.println("dzongjia11=========1======="+dzongjia);
 					heji.setVisibility(View.VISIBLE);
-					heji.setText("ºÏ¼Æ:" + dzongjia);
-					tv_hongbao.setText("¿ÉÓÃ"+cashing_packet+"Ôªºì°üµÖ"+cashing_packet+"Ôª");
+					heji.setText("åˆè®¡:" + dzongjia);
+					tv_hongbao.setText("å¯ç”¨"+cashing_packet+"å…ƒçº¢åŒ…æŠµ"+cashing_packet+"å…ƒ");
 				}else if (packet <= cashing_packet) {
 					BigDecimal  w   =   new   BigDecimal(dzongjia-packet);
 					dzongjia = w.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 					System.out.println("dzongjia11=========2======="+dzongjia);
 					heji.setVisibility(View.VISIBLE);
-					heji.setText("ºÏ¼Æ:" + dzongjia);
-					tv_hongbao.setText("¿ÉÓÃ"+packet+"Ôªºì°üµÖ"+packet+"Ôª");
+					heji.setText("åˆè®¡:" + dzongjia);
+					tv_hongbao.setText("å¯ç”¨"+packet+"å…ƒçº¢åŒ…æŠµ"+packet+"å…ƒ");
 				}
-			    kou_hongbao = 1;//²»µÍºì°ü
+			    kou_hongbao = 1;//ä¸ä½çº¢åŒ…
 		 }
 		 
 		 } catch (Exception e) {
@@ -477,8 +477,8 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	
 //	@Override
 //	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		// ÔÚÕâÀï½øĞĞ²éÑ¯µØÖ·µÄ²Ù×÷
-//		// Toast.makeText(getApplicationContext(), "²éÑ¯µØÖ·ÁªÍø²Ù×÷",200).show();
+//		// åœ¨è¿™é‡Œè¿›è¡ŒæŸ¥è¯¢åœ°å€çš„æ“ä½œ
+//		// Toast.makeText(getApplicationContext(), "æŸ¥è¯¢åœ°å€è”ç½‘æ“ä½œ",200).show();
 //		// handler.sendEmptyMessage(4);
 //		if (resultCode == 100) {
 //			layout0.setVisibility(View.VISIBLE);
@@ -492,7 +492,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //			String user_address = dt.user_address;
 //			System.out.println("checkedAddressId==================" + name);
 //
-//			 tv_user_name.setText("ÊÕ»õÈË:"+name);
+//			 tv_user_name.setText("æ”¶è´§äºº:"+name);
 //			 tv_user_address.setText(user_area+" "+user_address);
 //			 tv_user_phone.setText(user_mobile);
 //			 
@@ -531,9 +531,9 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			yu_pay_c2 = (CheckBox) findViewById(R.id.yu_pay_c2);
 			
 //			retailPrice = getIntent().getStringExtra("total_cll");
-//			System.out.println("ºÏ¼Æ----------------"+retailPrice);
+//			System.out.println("åˆè®¡----------------"+retailPrice);
 //			if (retailPrice != null) {
-//				heji.setText("ºÏ¼Æ:" + retailPrice);
+//				heji.setText("åˆè®¡:" + retailPrice);
 //			}
 
 			ImageView iv_fanhui = (ImageView) findViewById(R.id.iv_fanhui);
@@ -548,7 +548,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			});
 			
 			/**
-			 * Ö§¸¶·½Ê½
+			 * æ”¯ä»˜æ–¹å¼
 			 */
 			ll_zhifufs.setOnClickListener(new OnClickListener() {
 
@@ -556,7 +556,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 				public void onClick(View arg0) {
 //					BigDecimal   a   =   new   BigDecimal(Double.parseDouble(retailPrice)-express_fee);
 //					retailPrice = Double.toString(a.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue());
-//					System.out.println("Ö§¸¶·½Ê½retailPrice====================="+retailPrice);
+//					System.out.println("æ”¯ä»˜æ–¹å¼retailPrice====================="+retailPrice);
 					Intent intent = new Intent(MyOrderConfrimActivity.this,ZhiFuFangShiActivity.class);
 					intent.putExtra("order_confrim", "order_confrim");// 
 					startActivity(intent);
@@ -564,7 +564,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			});
 
 			/**
-			 * ÊÕ»õµØÖ·ÁĞ±í
+			 * æ”¶è´§åœ°å€åˆ—è¡¨
 			 */
 			layout0.setOnClickListener(new OnClickListener() {
 
@@ -573,7 +573,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					String buy_no = getIntent().getStringExtra("buy_no");
 					System.out.println("buy_no=====================" + buy_no);
 					Intent intent = new Intent(MyOrderConfrimActivity.this,AddressManagerActivity.class);
-					intent.putExtra("order_confrim", "order_confrim");// ±êÊ¾
+					intent.putExtra("order_confrim", "order_confrim");// æ ‡ç¤º
 					intent.putExtra("buy_no", buy_no);
 					intent.putExtra("jutuan_type", "2");
 					intent.putExtra("jdh_type", getIntent().getStringExtra("jdh_type"));
@@ -584,7 +584,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			});
 
 			/**
-			 * Ìí¼ÓÊÕ»õµØÖ·
+			 * æ·»åŠ æ”¶è´§åœ°å€
 			 */
 			layout1.setOnClickListener(new OnClickListener() {
 
@@ -604,7 +604,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		}
 		
 		/**
-		 * Î¢ĞÅÖ§¸¶
+		 * å¾®ä¿¡æ”¯ä»˜
 		 */
         yu_pay_c0.setOnClickListener(new OnClickListener() {
 			
@@ -615,7 +615,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					yu_pay_c2.setChecked(false);
 				yu_pay_c0.setChecked(true);
 				type = "5";
-				System.out.println("type======Î¢ĞÅÖ§¸¶========" + type);
+				System.out.println("type======å¾®ä¿¡æ”¯ä»˜========" + type);
 			}
 		});
 		yu_pay0.setOnClickListener(new OnClickListener() {
@@ -623,16 +623,16 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-					//µã»÷ÉèÖÃÊÇ·ñÎªµã»÷×´Ì¬
+					//ç‚¹å‡»è®¾ç½®æ˜¯å¦ä¸ºç‚¹å‡»çŠ¶æ€
 					yu_pay_c1.setChecked(false);
 					yu_pay_c2.setChecked(false);
 				yu_pay_c0.setChecked(true);
 				type = "5";
-				System.out.println("type======Î¢ĞÅÖ§¸¶========" + type);
+				System.out.println("type======å¾®ä¿¡æ”¯ä»˜========" + type);
 			}
 		});
 		/**
-		 * Ö§¸¶±¦Ö§¸¶
+		 * æ”¯ä»˜å®æ”¯ä»˜
 		 */
 		yu_pay_c1.setOnClickListener(new OnClickListener() {
 			
@@ -643,7 +643,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					yu_pay_c2.setChecked(false);
 				yu_pay_c1.setChecked(true);
 				type = "3";
-				System.out.println("type======Ö§¸¶±¦Ö§¸¶========" + type);
+				System.out.println("type======æ”¯ä»˜å®æ”¯ä»˜========" + type);
 			}
 		});
 		yu_pay1.setOnClickListener(new OnClickListener() {
@@ -655,11 +655,11 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					yu_pay_c2.setChecked(false);
 				yu_pay_c1.setChecked(true);
 				type = "3";
-				System.out.println("type======Ö§¸¶±¦Ö§¸¶========" + type);
+				System.out.println("type======æ”¯ä»˜å®æ”¯ä»˜========" + type);
 			}
 		});
 		/**
-		 * Óà¶îÖ§¸¶
+		 * ä½™é¢æ”¯ä»˜
 		 */
 	    yu_pay_c2.setOnClickListener(new OnClickListener() {
 			
@@ -670,7 +670,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					yu_pay_c1.setChecked(false);
 				yu_pay_c2.setChecked(true);
 				type = "2";
-				System.out.println("type======Óà¶îÖ§¸¶========" + type);
+				System.out.println("type======ä½™é¢æ”¯ä»˜========" + type);
 			}
 		});
 		yu_pay2.setOnClickListener(new OnClickListener() {
@@ -682,14 +682,14 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					yu_pay_c1.setChecked(false);
 				yu_pay_c2.setChecked(true);
 				type = "2";
-				System.out.println("type======Óà¶îÖ§¸¶========" + type);
+				System.out.println("type======ä½™é¢æ”¯ä»˜========" + type);
 			}
 		});
 		
 		
 
 		/**
-		 * ½áËã·½Ê½
+		 * ç»“ç®—æ–¹å¼
 		 */
 		confrim_btn.setOnClickListener(new OnClickListener() {
 
@@ -698,16 +698,16 @@ public class MyOrderConfrimActivity extends BaseActivity {
 				// TODO Auto-generated method stub
 				System.out.println("name======11========" + user_accept_name);
 				if (user_accept_name == null) {
-					Toast.makeText(MyOrderConfrimActivity.this, "Äú»¹Î´Ìí¼ÓÊÕ»õµØÖ·",Toast.LENGTH_SHORT).show();
+					Toast.makeText(MyOrderConfrimActivity.this, "æ‚¨è¿˜æœªæ·»åŠ æ”¶è´§åœ°å€",Toast.LENGTH_SHORT).show();
 				}else {
-					System.out.println("type======½áËã·½Ê½========" + type);
+					System.out.println("type======ç»“ç®—æ–¹å¼========" + type);
 					loadusertijiao(type,kou_hongbao);
 //					try {
 ////					String price = getIntent().getStringExtra("price");
 ////					System.out.println("price==============" + price);
 //					if (dzongjia == 0.0) {
 ////					if (price.equals("0")) {
-//						//Óà¶îÖ§¸¶
+//						//ä½™é¢æ”¯ä»˜
 //						type = "2";
 //						jubi_type = "1";
 ////						loadJuDuiHuan(type);
@@ -723,7 +723,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //								// TODO Auto-generated method stub
 //								switch (resID) {
 //								case R.id.item0:
-//									// Óà¶îÖ§¸¶
+//									// ä½™é¢æ”¯ä»˜
 //									type = "2";
 ////									String yue = getIntent().getStringExtra("100");
 ////									String jdh_yue = getIntent().getStringExtra("200");
@@ -741,11 +741,11 @@ public class MyOrderConfrimActivity extends BaseActivity {
 ////									}else {
 //										loadusertijiao(type,kou_hongbao);
 ////									}
-////									Toast.makeText(MyOrderConfrimActivity.this, "¹¦ÄÜÕıÔÚÍêÉÆ",Toast.LENGTH_SHORT).show();
+////									Toast.makeText(MyOrderConfrimActivity.this, "åŠŸèƒ½æ­£åœ¨å®Œå–„",Toast.LENGTH_SHORT).show();
 //									break;
 //								case R.id.item1:
 //									break;
-//								case R.id.item2:// Ö§¸¶±¦
+//								case R.id.item2:// æ”¯ä»˜å®
 //									type = "3";
 ////									String zhifubao = getIntent().getStringExtra("100");
 ////									String jdh_zhifubao = getIntent().getStringExtra("200");
@@ -765,7 +765,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //										loadusertijiao(type,kou_hongbao);
 ////									}
 //									break;
-//								case R.id.item3:// Î¢ĞÅ
+//								case R.id.item3:// å¾®ä¿¡
 //									type = "5";
 ////									String weixin = getIntent().getStringExtra("100");
 ////									String zhifubao_weixin = getIntent().getStringExtra("200");
@@ -812,7 +812,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 */
 	private void userloginqm() {
 		try{
@@ -847,7 +847,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	
 	
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 //	private void getuseraddress2() {
 //		try {
@@ -864,7 +864,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //				super.onSuccess(arg0, arg1);
 //				try {
 //					JSONObject jsonObject = new JSONObject(arg1);
-//					System.out.println("Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·========1========" + arg1);
+//					System.out.println("è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€========1========" + arg1);
 //					String status = jsonObject.getString("status");
 //					if (status.equals("y")) {
 //						JSONObject jsot = jsonObject.getJSONObject("data");
@@ -877,9 +877,9 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //						user_mobile = jsot.getString("user_mobile");
 //						user_address = jsot.getString("user_address");
 //						user_accept_name = user_dizhiname;
-//						tv_user_name.setText("ÊÕ»õÈË£º" + user_accept_name);
-////						tv_user_address.setText(area + "¡¢" + user_address);
-//						tv_user_address.setText("µØÖ·£º"+province + "¡¢"+city+ "¡¢"+area+ "¡¢" + user_address);
+//						tv_user_name.setText("æ”¶è´§äººï¼š" + user_accept_name);
+////						tv_user_address.setText(area + "ã€" + user_address);
+//						tv_user_address.setText("åœ°å€ï¼š"+province + "ã€"+city+ "ã€"+area+ "ã€" + user_address);
 //						tv_user_phone.setText(user_mobile);
 //
 //						SharedPreferences spPreferences = getSharedPreferences("user_dizhixinxi", MODE_PRIVATE);
@@ -916,7 +916,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //
 //	}
 	/**
-	 * Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·
+	 * è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€
 	 */
 	boolean dizhi_type = false;
 	private void getuseraddress2() {
@@ -935,7 +935,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 				super.onSuccess(arg0, arg1);
 				try {
 					JSONObject jsonObject = new JSONObject(arg1);
-					System.out.println("Êä³öÓÃ»§Ä¬ÈÏÊÕ»õµØÖ·================" + arg1);
+					System.out.println("è¾“å‡ºç”¨æˆ·é»˜è®¤æ”¶è´§åœ°å€================" + arg1);
 					String status = jsonObject.getString("status");
 					if (status.equals("y")) {
 //						JSONObject jsot = jsonObject.getJSONObject("data");
@@ -953,15 +953,15 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						user_accept_name = user_dizhiname;
 						int is_default = jsot.getInt("is_default");
 						if (is_default == 1) {
-							tv_user_name.setText("ÊÕ»õÈË£º" + user_accept_name);
-							tv_user_address.setText("µØÖ·£º" + province + "¡¢"+city+ "¡¢"+area+ "¡¢" + user_address);
+							tv_user_name.setText("æ”¶è´§äººï¼š" + user_accept_name);
+							tv_user_address.setText("åœ°å€ï¼š" + province + "ã€"+city+ "ã€"+area+ "ã€" + user_address);
 							tv_user_phone.setText(user_mobile);
 							dizhi_type = true;
 						}
 						}
 						if (dizhi_type == false) {
-							tv_user_name.setText("ÊÕ»õÈË£º" + user_accept_name);
-							tv_user_address.setText("µØÖ·£º" + province + "¡¢"+city+ "¡¢"+area+ "¡¢" + user_address);
+							tv_user_name.setText("æ”¶è´§äººï¼š" + user_accept_name);
+							tv_user_address.setText("åœ°å€ï¼š" + province + "ã€"+city+ "ã€"+area+ "ã€" + user_address);
 							tv_user_phone.setText(user_mobile);
 						}
 						
@@ -1002,7 +1002,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 
 	/**
-	 * »ñÈ¡¹ºµ¥ÎïĞÅÏ¢
+	 * è·å–è´­å•ç‰©ä¿¡æ¯
 	 */
 	private int CURRENT_NUM = 1;
 	private final int VIEW_NUM = 10;
@@ -1016,7 +1016,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 					public void onSuccess(int arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onSuccess(arg0, arg1);
-						System.out.println("»ñÈ¡¹ºµ¥ÎïĞÅÏ¢=====================" + arg1);
+						System.out.println("è·å–è´­å•ç‰©ä¿¡æ¯=====================" + arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");
@@ -1041,9 +1041,9 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //									data.quantity = json.getInt("quantity");
 									data.setQuantity(json.getInt("quantity"));
 									data.img_url = json.getString("img_url");
-									//ÉÌÆ·¼Û¸ñ
+									//å•†å“ä»·æ ¼
 									BigDecimal   c   =   new   BigDecimal(Double.parseDouble(data.sell_price)*data.quantity);
-									//±£Áô2Î»Ğ¡Êı
+									//ä¿ç•™2ä½å°æ•°
 									double   total_c_ll   =   c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 									a += total_c_ll;
 									System.out.println("a---------------"+a);
@@ -1053,9 +1053,9 @@ public class MyOrderConfrimActivity extends BaseActivity {
 									
 									retailPrice = Double.toString(dzongjia);
 									
-									//ºì°ü½ğ¶î
+									//çº¢åŒ…é‡‘é¢
 									BigDecimal   e   =   new   BigDecimal(data.cashing_packet*data.quantity);
-									//±£Áô2Î»Ğ¡Êı
+									//ä¿ç•™2ä½å°æ•°
 									double   total_c   =   e.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 									di_hongbao += total_c;
 									
@@ -1067,22 +1067,22 @@ public class MyOrderConfrimActivity extends BaseActivity {
 								}
 								
 								try {
-								//ÅĞ¶Ïºì°üÊÇ·ñ	
+								//åˆ¤æ–­çº¢åŒ…æ˜¯å¦	
 									hongbao = String.valueOf(packet);
 									kedi_hongbao = String.valueOf(cashing_packet);
-									System.out.println("¿ÉÓÃºì°ü---------------"+packet);
-									System.out.println("¿ÉµÖºì°ü---------------"+cashing_packet);
+									System.out.println("å¯ç”¨çº¢åŒ…---------------"+packet);
+									System.out.println("å¯æŠµçº¢åŒ…---------------"+cashing_packet);
 									if (hongbao.equals("0.0")) {
-											tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+											tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
 		                            }else if (kedi_hongbao.equals("0.0")) {
-										tv_hongbao.setText("²»¿ÉÒÔÊ¹ÓÃºì°ü");
+										tv_hongbao.setText("ä¸å¯ä»¥ä½¿ç”¨çº¢åŒ…");
                                 }else if (packet > cashing_packet) {
 //                                	sb.setCheck(true);
-									tv_hongbao.setText("¿ÉÓÃ"+cashing_packet+"Ôªºì°üµÖ"+cashing_packet+"Ôª");
+									tv_hongbao.setText("å¯ç”¨"+cashing_packet+"å…ƒçº¢åŒ…æŠµ"+cashing_packet+"å…ƒ");
 								}else if (packet < cashing_packet) {
 //									sb.setCheck(true);
-//									tv_hongbao.setText("¿ÉÓÃ"+packet+"Ôªºì°ü");
-									tv_hongbao.setText("¿ÉÓÃ"+packet+"Ôªºì°üµÖ"+packet+"Ôª");
+//									tv_hongbao.setText("å¯ç”¨"+packet+"å…ƒçº¢åŒ…");
+									tv_hongbao.setText("å¯ç”¨"+packet+"å…ƒçº¢åŒ…æŠµ"+packet+"å…ƒ");
 								}
                                 System.out.println("dzongjia---------------"+dzongjia);
 								} catch (Exception e) {
@@ -1101,21 +1101,21 @@ public class MyOrderConfrimActivity extends BaseActivity {
 											rl_hongbao.setVisibility(View.GONE);
 											jubi = data.exchange_point;
 //											BigDecimal c = new BigDecimal(Double.parseDouble(data.exchange_price)*data.quantity);
-//											//±£Áô2Î»Ğ¡Êı
+//											//ä¿ç•™2ä½å°æ•°
 //											dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 											dzongjia = Double.parseDouble(data.exchange_price);
 											mAq.id(img_ware).image(RealmName.REALM_NAME_HTTP + data.img_url);
-											tv_color.setText(jubi);//¾Û±Ò
+											tv_color.setText(jubi);//èšå¸
 											tv_color.setVisibility(View.GONE);
-											tv_size.setText(jubi+"ÀÖ¶¹"+"+"+dzongjia+"Ôª");//¼Û¸ñ
-											tv_2.setText( "ÀÖ¶¹¶Ò»»:");
+											tv_size.setText(jubi+"ä¹è±†"+"+"+dzongjia+"å…ƒ");//ä»·æ ¼
+											tv_2.setText( "ä¹è±†å…‘æ¢:");
 											tv_warename.setText(data.title);
-											tv_1.setText("ÀÖ¶¹:");
+											tv_1.setText("ä¹è±†:");
 											tv_1.setVisibility(View.GONE);
-											System.out.println("type======Óà¶îÖ§¸¶========" + type);
+											System.out.println("type======ä½™é¢æ”¯ä»˜========" + type);
 											if (dzongjia == 0.0) {
-												type = "2";//Ìá½»Óà¶îÖ§¸¶·½Ê½
-												jubi_type = "1";//¾Û±ÒÌáÊ¾
+												type = "2";//æäº¤ä½™é¢æ”¯ä»˜æ–¹å¼
+												jubi_type = "1";//èšå¸æç¤º
 												ll_buju_zhifu_2.setVisibility(View.VISIBLE);
 												yu_pay_c2.setChecked(true);
 											}else {
@@ -1146,7 +1146,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 	
 	/**
-	 * ÅäËÍ·½Ê½
+	 * é…é€æ–¹å¼
 	 */
 	private void loadWeather() {
 		AsyncHttp.get(RealmName.REALM_NAME_LL + "/get_express_list?top=5"
@@ -1155,7 +1155,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			public void onSuccess(int arg0, String arg1) {
 				// TODO Auto-generated method stub
 				super.onSuccess(arg0, arg1);
-				System.out.println("ÅäËÍ·½Ê½ÁĞ±í========="+arg1);
+				System.out.println("é…é€æ–¹å¼åˆ—è¡¨========="+arg1);
 				try {
 					list_zf = new ArrayList<JuTuanGouData>();
 					progress.CloseProgress();
@@ -1174,32 +1174,32 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						}
 						
 						try {
-//								System.out.println("ºÏ¼Æ1----------------"+retailPrice);
-//								System.out.println("ºÏ¼Æ1dzongjia----------------"+dzongjia);
+//								System.out.println("åˆè®¡1----------------"+retailPrice);
+//								System.out.println("åˆè®¡1dzongjia----------------"+dzongjia);
 								ZhiFuFangShi = ZhiFuFangShiActivity.title;
 								express_id = ZhiFuFangShiActivity.express_id;
 								express_fee = ZhiFuFangShiActivity.express_fee;
 								if (ZhiFuFangShi!= null) {
 									if (express_fee == 0) {
-										tv_zhifu.setText(ZhiFuFangShi+"(ÃâÓÊ)");
+										tv_zhifu.setText(ZhiFuFangShi+"(å…é‚®)");
 										if (jubi != null) {
 											if (dzongjia>0) {
-												heji.setText("ºÏ¼Æ:" +" ÀÖ¶¹"+jubi+" + "+"£¤"+ dzongjia);
+												heji.setText("åˆè®¡:" +" ä¹è±†"+jubi+" + "+"ï¿¥"+ dzongjia);
 											}else {
-											heji.setText("ºÏ¼Æ:" +" ÀÖ¶¹"+jubi);
+											heji.setText("åˆè®¡:" +" ä¹è±†"+jubi);
 											}
 										}else {
-											heji.setText("ºÏ¼Æ:" +" £¤"+ dzongjia);
+											heji.setText("åˆè®¡:" +" ï¿¥"+ dzongjia);
 										}
 									}else {
 										 String price = String.valueOf(express_fee);
-										tv_zhifu.setText(ZhiFuFangShi+"("+"£¤"+price+")");
+										tv_zhifu.setText(ZhiFuFangShi+"("+"ï¿¥"+price+")");
 										BigDecimal   c   =   new   BigDecimal(dzongjia+express_fee);
 										dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 										if (jubi != null) {
-											heji.setText("ºÏ¼Æ:" +" ÀÖ¶¹"+jubi+" + "+"£¤"+ dzongjia);
+											heji.setText("åˆè®¡:" +" ä¹è±†"+jubi+" + "+"ï¿¥"+ dzongjia);
 										}else {
-											heji.setText("ºÏ¼Æ:" +" £¤"+ dzongjia);
+											heji.setText("åˆè®¡:" +" ï¿¥"+ dzongjia);
 										}
 									}
 //									ZhiFuFangShiActivity.title = null;
@@ -1210,30 +1210,30 @@ public class MyOrderConfrimActivity extends BaseActivity {
 									express_id = list_zf.get(0).getId();
 									express_fee = list_zf.get(0).getExpress_fee();
 									if (express_fee == 0) {
-										tv_zhifu.setText(ZhiFuFangShi+"(ÃâÓÊ)");
+										tv_zhifu.setText(ZhiFuFangShi+"(å…é‚®)");
 										if (jubi != null) {
 											if (dzongjia>0) {
-												heji.setText("ºÏ¼Æ:" +" ÀÖ¶¹"+jubi+" + "+"£¤"+dzongjia);
+												heji.setText("åˆè®¡:" +" ä¹è±†"+jubi+" + "+"ï¿¥"+dzongjia);
 											}else {
-											heji.setText("ºÏ¼Æ:" +" ÀÖ¶¹"+jubi);
+											heji.setText("åˆè®¡:" +" ä¹è±†"+jubi);
 											}
 										}else {
-											heji.setText("ºÏ¼Æ:" +" £¤"+ dzongjia);
+											heji.setText("åˆè®¡:" +" ï¿¥"+ dzongjia);
 										}
 									}else {
 										String price = String.valueOf(express_fee);
-										tv_zhifu.setText(ZhiFuFangShi+"("+"£¤"+price+")");
+										tv_zhifu.setText(ZhiFuFangShi+"("+"ï¿¥"+price+")");
 										BigDecimal   c   =   new   BigDecimal(dzongjia+express_fee);
 										dzongjia = c.setScale(2,BigDecimal.ROUND_HALF_UP).doubleValue();
 										if (jubi != null) {
-											heji.setText("ºÏ¼Æ:" +" ÀÖ¶¹"+jubi+" + "+"£¤"+ dzongjia);
+											heji.setText("åˆè®¡:" +" ä¹è±†"+jubi+" + "+"ï¿¥"+ dzongjia);
 										} else {
-											heji.setText("ºÏ¼Æ:" +" £¤"+  dzongjia);
+											heji.setText("åˆè®¡:" +" ï¿¥"+  dzongjia);
 										}
 									}
 								}
-//								System.out.println("ºÏ¼Æ2----------------"+retailPrice);
-//								System.out.println("ºÏ¼Æ2dzongjia----------------"+dzongjia);
+//								System.out.println("åˆè®¡2----------------"+retailPrice);
+//								System.out.println("åˆè®¡2dzongjia----------------"+dzongjia);
 						
 						 gethongbao();
 						 
@@ -1255,7 +1255,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 
 	/**
-	 * Ìá½»ÓÃ»§¶©µ¥  
+	 * æäº¤ç”¨æˆ·è®¢å•  
 	 * @param payment_id 
 	 * @param kou_hongbao 
 	 */
@@ -1267,9 +1267,9 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			System.out.println("jiekou_type_ysj=====================" + jiekou_type_ysj);
 		 	if (jiekou_type_ysj.equals("1")) {
 //		 		WareInformationActivity.jdh_type = "";
-		 		jiekou_type = "add_order_point";//ÉÌÆ·Ìá½»¶©µ¥
+		 		jiekou_type = "add_order_point";//å•†å“æäº¤è®¢å•
 			}else{
-				jiekou_type = "order_save";//Ìá½»¶Ò»»¶©µ¥
+				jiekou_type = "order_save";//æäº¤å…‘æ¢è®¢å•
 			}
 		 	String buy_no = getIntent().getStringExtra("buy_no");
 			System.out.println("buy_no=====================" + buy_no);
@@ -1283,7 +1283,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("Ìá½»ÓÃ»§¶©µ¥ ================================="+arg1);
+							System.out.println("æäº¤ç”¨æˆ·è®¢å• ================================="+arg1);
 							try {
 								
 							  String status = object.getString("status");
@@ -1342,7 +1342,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 	
 	/**
-	 * Ìá½»¾Û¶Ò»»¶©µ¥  
+	 * æäº¤èšå…‘æ¢è®¢å•  
 	 * @param payment_id 
 	 * @param kou_hongbao 
 	 */
@@ -1359,7 +1359,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //						super.onSuccess(arg0, arg1);
 //						try {
 //							JSONObject object = new JSONObject(arg1);
-//							System.out.println("Ìá½»¾Û¶Ò»»¶©µ¥ ================================="+arg1);
+//							System.out.println("æäº¤èšå…‘æ¢è®¢å• ================================="+arg1);
 //								
 //							  String status = object.getString("status");
 //							    String info = object.getString("info");
@@ -1380,7 +1380,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //										intent.putExtra("order_no",recharge_no);
 //										intent.putExtra("jubi",jubi_type);
 //										startActivity(intent);
-////										Toast.makeText(MyOrderConfrimActivity.this, "ÔİÊ±²»ÄÜ¶Ò»»", 200).show();
+////										Toast.makeText(MyOrderConfrimActivity.this, "æš‚æ—¶ä¸èƒ½å…‘æ¢", 200).show();
 //									}
 ////									handler.sendEmptyMessage(0);
 //							    }else {
@@ -1398,7 +1398,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //	}
 	
 	/**
-	 * Ìá½»ÍÅ¹º¶©µ¥  
+	 * æäº¤å›¢è´­è®¢å•  
 	 * @param payment_id 
 	 * @param kou_hongbao 
 	 */
@@ -1417,7 +1417,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //						super.onSuccess(arg0, arg1);
 //						try {
 //							JSONObject object = new JSONObject(arg1);
-//							System.out.println("Ìá½»ÍÅ¹º¶©µ¥================================="+arg1);
+//							System.out.println("æäº¤å›¢è´­è®¢å•================================="+arg1);
 //							  String status = object.getString("status");
 //							    String info = object.getString("info");
 //							    if (status.equals("y")) {
@@ -1456,7 +1456,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //	}
 	
 	/**
-	 * Ìá½»³é½±¶©µ¥  
+	 * æäº¤æŠ½å¥–è®¢å•  
 	 * @param payment_id 
 	 * @param kou_hongbao 
 	 */
@@ -1476,7 +1476,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 //						super.onSuccess(arg0, arg1);
 //						try {
 //							JSONObject object = new JSONObject(arg1);
-//							System.out.println("Ìá½»³é½±¶©µ¥ ================================="+arg1);
+//							System.out.println("æäº¤æŠ½å¥–è®¢å• ================================="+arg1);
 //								
 //							  String status = object.getString("status");
 //							    String info = object.getString("info");
@@ -1547,10 +1547,10 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			case 1:
 				ali_pay();
 				break;
-			case 2://Î¢ĞÅÖ§¸¶
+			case 2://å¾®ä¿¡æ”¯ä»˜
 				try {
 				boolean isPaySupported = api.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
-//				Toast.makeText(MyOrderConfrimActivity.this, "»ñÈ¡¶©µ¥ÖĞ...", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(MyOrderConfrimActivity.this, "è·å–è®¢å•ä¸­...", Toast.LENGTH_SHORT).show();
 				String zhou = String.valueOf(isPaySupported);
 //				Toast.makeText(MyOrderConfrimActivity.this, zhou, Toast.LENGTH_SHORT).show();
 				if(isPaySupported){ 
@@ -1564,21 +1564,21 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						req.packageValue	= package_;
 						req.sign			= sign;//-3
 						
-						// ÔÚÖ§¸¶Ö®Ç°£¬Èç¹ûÓ¦ÓÃÃ»ÓĞ×¢²áµ½Î¢ĞÅ£¬Ó¦¸ÃÏÈµ÷ÓÃIWXMsg.registerApp½«Ó¦ÓÃ×¢²áµ½Î¢ĞÅ
+						// åœ¨æ”¯ä»˜ä¹‹å‰ï¼Œå¦‚æœåº”ç”¨æ²¡æœ‰æ³¨å†Œåˆ°å¾®ä¿¡ï¼Œåº”è¯¥å…ˆè°ƒç”¨IWXMsg.registerAppå°†åº”ç”¨æ³¨å†Œåˆ°å¾®ä¿¡
 						api.registerApp(Constants.APP_ID);
 //						api.sendReq(req);
 						flag = api.sendReq(req);
-						System.out.println("Ö§¸¶"+flag);
+						System.out.println("æ”¯ä»˜"+flag);
 						
 //						finish();
-//						Toast.makeText(MyOrderConfrimActivity.this, "Ö§¸¶true", Toast.LENGTH_SHORT).show();
+//						Toast.makeText(MyOrderConfrimActivity.this, "æ”¯ä»˜true", Toast.LENGTH_SHORT).show();
 						
 					} catch (Exception e) {
 						// TODO: handle exception
 						e.printStackTrace();
 					}
 				}else {
-					  Toast.makeText(MyOrderConfrimActivity.this,"Ö§¸¶Ê§°Ü",Toast.LENGTH_SHORT).show();
+					  Toast.makeText(MyOrderConfrimActivity.this,"æ”¯ä»˜å¤±è´¥",Toast.LENGTH_SHORT).show();
 					  finish();
 				}
 				} catch (Exception e) {
@@ -1587,30 +1587,30 @@ public class MyOrderConfrimActivity extends BaseActivity {
 				}
 				
 				break;
-			case 5://Ö§¸¶±¦
+			case 5://æ”¯ä»˜å®
 				PayResult payResult = new PayResult((String) msg.obj);
 
-				// Ö§¸¶±¦·µ»Ø´Ë´ÎÖ§¸¶½á¹û¼°¼ÓÇ©£¬½¨Òé¶ÔÖ§¸¶±¦Ç©ÃûĞÅÏ¢ÄÃÇ©Ô¼Ê±Ö§¸¶±¦Ìá¹©µÄ¹«Ô¿×öÑéÇ©
+				// æ”¯ä»˜å®è¿”å›æ­¤æ¬¡æ”¯ä»˜ç»“æœåŠåŠ ç­¾ï¼Œå»ºè®®å¯¹æ”¯ä»˜å®ç­¾åä¿¡æ¯æ‹¿ç­¾çº¦æ—¶æ”¯ä»˜å®æä¾›çš„å…¬é’¥åšéªŒç­¾
 				String resultInfo = payResult.getResult();
 
 				String resultStatus = payResult.getResultStatus();
 				System.out.println(resultInfo + "---" + resultStatus);
-				// ÅĞ¶ÏresultStatus Îª¡°9000¡±Ôò´ú±íÖ§¸¶³É¹¦£¬¾ßÌå×´Ì¬Âë´ú±íº¬Òå¿É²Î¿¼½Ó¿ÚÎÄµµ
+				// åˆ¤æ–­resultStatus ä¸ºâ€œ9000â€åˆ™ä»£è¡¨æ”¯ä»˜æˆåŠŸï¼Œå…·ä½“çŠ¶æ€ç ä»£è¡¨å«ä¹‰å¯å‚è€ƒæ¥å£æ–‡æ¡£
 				if (TextUtils.equals(resultStatus, "9000")) {
-					Toast.makeText(MyOrderConfrimActivity.this, "Ö§¸¶³É¹¦",Toast.LENGTH_SHORT).show();
+					Toast.makeText(MyOrderConfrimActivity.this, "æ”¯ä»˜æˆåŠŸ",Toast.LENGTH_SHORT).show();
 					userloginqm();
 //					finish();
 				} else {
-					// ÅĞ¶ÏresultStatus Îª·Ç¡°9000¡±Ôò´ú±í¿ÉÄÜÖ§¸¶Ê§°Ü
-					// ¡°8000¡±´ú±íÖ§¸¶½á¹ûÒòÎªÖ§¸¶ÇşµÀÔ­Òò»òÕßÏµÍ³Ô­Òò»¹ÔÚµÈ´ıÖ§¸¶½á¹ûÈ·ÈÏ£¬×îÖÕ½»Ò×ÊÇ·ñ³É¹¦ÒÔ·şÎñ¶ËÒì²½Í¨ÖªÎª×¼£¨Ğ¡¸ÅÂÊ×´Ì¬£©
+					// åˆ¤æ–­resultStatus ä¸ºéâ€œ9000â€åˆ™ä»£è¡¨å¯èƒ½æ”¯ä»˜å¤±è´¥
+					// â€œ8000â€ä»£è¡¨æ”¯ä»˜ç»“æœå› ä¸ºæ”¯ä»˜æ¸ é“åŸå› æˆ–è€…ç³»ç»ŸåŸå› è¿˜åœ¨ç­‰å¾…æ”¯ä»˜ç»“æœç¡®è®¤ï¼Œæœ€ç»ˆäº¤æ˜“æ˜¯å¦æˆåŠŸä»¥æœåŠ¡ç«¯å¼‚æ­¥é€šçŸ¥ä¸ºå‡†ï¼ˆå°æ¦‚ç‡çŠ¶æ€ï¼‰
 					if (TextUtils.equals(resultStatus, "8000")) {
-						Toast.makeText(MyOrderConfrimActivity.this, "Ö§¸¶½á¹ûÈ·ÈÏÖĞ",
+						Toast.makeText(MyOrderConfrimActivity.this, "æ”¯ä»˜ç»“æœç¡®è®¤ä¸­",
 								Toast.LENGTH_SHORT).show();
 						finish();
 
 					} else {
-						// ÆäËûÖµ¾Í¿ÉÒÔÅĞ¶ÏÎªÖ§¸¶Ê§°Ü£¬°üÀ¨ÓÃ»§Ö÷¶¯È¡ÏûÖ§¸¶£¬»òÕßÏµÍ³·µ»ØµÄ´íÎó
-						Toast.makeText(MyOrderConfrimActivity.this, "Ö§¸¶Ê§°Ü",Toast.LENGTH_SHORT).show();
+						// å…¶ä»–å€¼å°±å¯ä»¥åˆ¤æ–­ä¸ºæ”¯ä»˜å¤±è´¥ï¼ŒåŒ…æ‹¬ç”¨æˆ·ä¸»åŠ¨å–æ¶ˆæ”¯ä»˜ï¼Œæˆ–è€…ç³»ç»Ÿè¿”å›çš„é”™è¯¯
+						Toast.makeText(MyOrderConfrimActivity.this, "æ”¯ä»˜å¤±è´¥",Toast.LENGTH_SHORT).show();
 						finish();
 					}
 				}
@@ -1624,7 +1624,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 
 	
 	/**
-	 * ¶©µ¥¸üĞÂÖ§¸¶ 
+	 * è®¢å•æ›´æ–°æ”¯ä»˜ 
 	 * @param login_sign 
 	 * @param payment_id 
 	 */
@@ -1640,7 +1640,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						super.onSuccess(arg0, arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
-							System.out.println("¸üĞÂ¶©µ¥================================="+arg1);
+							System.out.println("æ›´æ–°è®¢å•================================="+arg1);
 							  String status = object.getString("status");
 							    String info = object.getString("info");
 							    if (status.equals("y")) {
@@ -1691,7 +1691,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 						super.onFailure(arg0, arg1);
 						System.out.println("11================================="+arg0);
 						System.out.println("22================================="+arg1);
-						Toast.makeText(MyOrderConfrimActivity.this, "ÍøÂç³¬Ê±Òì³£", 200).show();
+						Toast.makeText(MyOrderConfrimActivity.this, "ç½‘ç»œè¶…æ—¶å¼‚å¸¸", 200).show();
 					}
 
 				}, null);
@@ -1703,7 +1703,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 	
 	/**
-	 * Ö§¸¶±¦
+	 * æ”¯ä»˜å®
 	 * @param total_amount 
 	 * @param payment_id 
 	 */
@@ -1753,14 +1753,14 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	
 	
 	/**
-	 *  Î¢ĞÅÖ§¸¶
+	 *  å¾®ä¿¡æ”¯ä»˜
 	 * @param total_amount 
 	 * @param payment_id 
 	 */
 	private void loadweixinzf2(String recharge_no2, String total_amount) {
 		try {
 			recharge_no	= recharge_no2;
-//		System.out.println("×Ü½ğ¶î==================="+retailPrice);	
+//		System.out.println("æ€»é‡‘é¢==================="+retailPrice);	
 		System.out.println("total_amount=================="+total_amount);
 		 String monney_ll = String.valueOf(Double.parseDouble(total_amount) *100);
 		 System.out.println("monney_ll=================="+monney_ll);
@@ -1811,7 +1811,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 	
 	/**
-	 * Óà¶îÖ§¸¶
+	 * ä½™é¢æ”¯ä»˜
 	 * @param payment_id 
 	 */
 //	private void loadYue(String recharge_no) {
@@ -1853,27 +1853,27 @@ public class MyOrderConfrimActivity extends BaseActivity {
 		try {
 			
 		//
-		String orderInfo = getOrderInfo("ÔÆÉÌ¾ÛÉÌÆ·", "ÉÌÆ·ÃèÊö", recharge_no);
+		String orderInfo = getOrderInfo("äº‘å•†èšå•†å“", "å•†å“æè¿°", recharge_no);
 
-		// ¶Ô¶©µ¥×öRSA Ç©Ãû
+		// å¯¹è®¢å•åšRSA ç­¾å
 		String sign = sign(orderInfo);
 		try {
-			// ½öĞè¶Ôsign ×öURL±àÂë
+			// ä»…éœ€å¯¹sign åšURLç¼–ç 
 			sign = URLEncoder.encode(sign, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 
-		// ÍêÕûµÄ·ûºÏÖ§¸¶±¦²ÎÊı¹æ·¶µÄ¶©µ¥ĞÅÏ¢
+		// å®Œæ•´çš„ç¬¦åˆæ”¯ä»˜å®å‚æ•°è§„èŒƒçš„è®¢å•ä¿¡æ¯
 		final String payInfo = orderInfo + "&sign=\"" + sign + "\"&"+ getSignType();
 
 		Runnable payRunnable = new Runnable() {
 
 			@Override
 			public void run() {
-				// ¹¹ÔìPayTask ¶ÔÏó
+				// æ„é€ PayTask å¯¹è±¡
 				PayTask alipay = new PayTask(MyOrderConfrimActivity.this);
-				// µ÷ÓÃÖ§¸¶½Ó¿Ú£¬»ñÈ¡Ö§¸¶½á¹û
+				// è°ƒç”¨æ”¯ä»˜æ¥å£ï¼Œè·å–æ”¯ä»˜ç»“æœ
 				String result = alipay.pay(payInfo);
 				Message msg = new Message();
 				msg.what = 5;
@@ -1882,7 +1882,7 @@ public class MyOrderConfrimActivity extends BaseActivity {
 			}
 		};
 
-		// ±ØĞëÒì²½µ÷ÓÃ
+		// å¿…é¡»å¼‚æ­¥è°ƒç”¨
 		Thread payThread = new Thread(payRunnable);
 		payThread.start();
 		
@@ -1894,73 +1894,73 @@ public class MyOrderConfrimActivity extends BaseActivity {
 	}
 	
 	/**
-	 * sign the order info. ¶Ô¶©µ¥ĞÅÏ¢½øĞĞÇ©Ãû
+	 * sign the order info. å¯¹è®¢å•ä¿¡æ¯è¿›è¡Œç­¾å
 	 * 
 	 * @param content
-	 *            ´ıÇ©Ãû¶©µ¥ĞÅÏ¢
+	 *            å¾…ç­¾åè®¢å•ä¿¡æ¯
 	 */
 	public String sign(String content) {
 		return SignUtils.sign(content, Common.RSA_PRIVATE);
 	}
 
 	/**
-	 * get the sign type we use. »ñÈ¡Ç©Ãû·½Ê½
+	 * get the sign type we use. è·å–ç­¾åæ–¹å¼
 	 * 
 	 */
 	public String getSignType() {
 		return "sign_type=\"RSA\"";
 	}
 	/**
-	 * create the order info. ´´½¨¶©µ¥ĞÅÏ¢
+	 * create the order info. åˆ›å»ºè®¢å•ä¿¡æ¯
 	 * 
 	 */
 	public String getOrderInfo(String subject, String body, String dingdan) {
-		// Ç©Ô¼ºÏ×÷ÕßÉí·İID
+		// ç­¾çº¦åˆä½œè€…èº«ä»½ID
 		String orderInfo = "partner=" + "\"" + Common.PARTNER + "\"";
 
-		// Ç©Ô¼Âô¼ÒÖ§¸¶±¦ÕËºÅ
+		// ç­¾çº¦å–å®¶æ”¯ä»˜å®è´¦å·
 		orderInfo += "&seller_id=" + "\"" + Common.SELLER + "\"";
 
-		// ÉÌ»§ÍøÕ¾Î¨Ò»¶©µ¥ºÅ
+		// å•†æˆ·ç½‘ç«™å”¯ä¸€è®¢å•å·
 		orderInfo += "&out_trade_no=" + "\"" + dingdan + "\"";
 
-		// ÉÌÆ·Ãû³Æ
+		// å•†å“åç§°
 		orderInfo += "&subject=" + "\"" + subject + "\"";
 
-		// ÉÌÆ·ÏêÇé
+		// å•†å“è¯¦æƒ…
 		orderInfo += "&body=" + "\"" + body + "\"";
 
-		// ÉÌÆ·½ğ¶î
+		// å•†å“é‡‘é¢
 		orderInfo += "&total_fee=" + "\"" + total_fee + "\"";
 //		orderInfo += "&total_fee=" + "\"" + 0.01 + "\"";
 		
-		// ·şÎñÆ÷Òì²½Í¨ÖªÒ³ÃæÂ·¾¶
+		// æœåŠ¡å™¨å¼‚æ­¥é€šçŸ¥é¡µé¢è·¯å¾„
 		orderInfo += "&notify_url=" + "\"" +  notify_url + "\"";
 		System.out.println("======notify_url============="+notify_url);
 		
-		// ·şÎñ½Ó¿ÚÃû³Æ£¬ ¹Ì¶¨Öµ
+		// æœåŠ¡æ¥å£åç§°ï¼Œ å›ºå®šå€¼
 		orderInfo += "&service=\"mobile.securitypay.pay\"";
 
-		// Ö§¸¶ÀàĞÍ£¬ ¹Ì¶¨Öµ
+		// æ”¯ä»˜ç±»å‹ï¼Œ å›ºå®šå€¼
 		orderInfo += "&payment_type=\"1\"";
 
-		// ²ÎÊı±àÂë£¬ ¹Ì¶¨Öµ
+		// å‚æ•°ç¼–ç ï¼Œ å›ºå®šå€¼
 		orderInfo += "&_input_charset=\"utf-8\"";
 
-		// ÉèÖÃÎ´¸¶¿î½»Ò×µÄ³¬Ê±Ê±¼ä
-		// Ä¬ÈÏ30·ÖÖÓ£¬Ò»µ©³¬Ê±£¬¸Ã±Ê½»Ò×¾Í»á×Ô¶¯±»¹Ø±Õ¡£
-		// È¡Öµ·¶Î§£º1m¡«15d¡£
-		// m-·ÖÖÓ£¬h-Ğ¡Ê±£¬d-Ìì£¬1c-µ±Ìì£¨ÎŞÂÛ½»Ò×ºÎÊ±´´½¨£¬¶¼ÔÚ0µã¹Ø±Õ£©¡£
-		// ¸Ã²ÎÊıÊıÖµ²»½ÓÊÜĞ¡Êıµã£¬Èç1.5h£¬¿É×ª»»Îª90m¡£
+		// è®¾ç½®æœªä»˜æ¬¾äº¤æ˜“çš„è¶…æ—¶æ—¶é—´
+		// é»˜è®¤30åˆ†é’Ÿï¼Œä¸€æ—¦è¶…æ—¶ï¼Œè¯¥ç¬”äº¤æ˜“å°±ä¼šè‡ªåŠ¨è¢«å…³é—­ã€‚
+		// å–å€¼èŒƒå›´ï¼š1mï½15dã€‚
+		// m-åˆ†é’Ÿï¼Œh-å°æ—¶ï¼Œd-å¤©ï¼Œ1c-å½“å¤©ï¼ˆæ— è®ºäº¤æ˜“ä½•æ—¶åˆ›å»ºï¼Œéƒ½åœ¨0ç‚¹å…³é—­ï¼‰ã€‚
+		// è¯¥å‚æ•°æ•°å€¼ä¸æ¥å—å°æ•°ç‚¹ï¼Œå¦‚1.5hï¼Œå¯è½¬æ¢ä¸º90mã€‚
 		orderInfo += "&it_b_pay=\"30m\"";
 
-		// extern_tokenÎª¾­¹ı¿ìµÇÊÚÈ¨»ñÈ¡µ½µÄalipay_open_id,´øÉÏ´Ë²ÎÊıÓÃ»§½«Ê¹ÓÃÊÚÈ¨µÄÕË»§½øĞĞÖ§¸¶
+		// extern_tokenä¸ºç»è¿‡å¿«ç™»æˆæƒè·å–åˆ°çš„alipay_open_id,å¸¦ä¸Šæ­¤å‚æ•°ç”¨æˆ·å°†ä½¿ç”¨æˆæƒçš„è´¦æˆ·è¿›è¡Œæ”¯ä»˜
 		// orderInfo += "&extern_token=" + "\"" + extern_token + "\"";
 
-		// Ö§¸¶±¦´¦ÀíÍêÇëÇóºó£¬µ±Ç°Ò³ÃæÌø×ªµ½ÉÌ»§Ö¸¶¨Ò³ÃæµÄÂ·¾¶£¬¿É¿Õ
+		// æ”¯ä»˜å®å¤„ç†å®Œè¯·æ±‚åï¼Œå½“å‰é¡µé¢è·³è½¬åˆ°å•†æˆ·æŒ‡å®šé¡µé¢çš„è·¯å¾„ï¼Œå¯ç©º
 		// orderInfo += "&return_url=\"m.alipay.com\"";
 
-		// µ÷ÓÃÒøĞĞ¿¨Ö§¸¶£¬ĞèÅäÖÃ´Ë²ÎÊı£¬²ÎÓëÇ©Ãû£¬ ¹Ì¶¨Öµ £¨ĞèÒªÇ©Ô¼¡¶ÎŞÏßÒøĞĞ¿¨¿ì½İÖ§¸¶¡·²ÅÄÜÊ¹ÓÃ£©
+		// è°ƒç”¨é“¶è¡Œå¡æ”¯ä»˜ï¼Œéœ€é…ç½®æ­¤å‚æ•°ï¼Œå‚ä¸ç­¾åï¼Œ å›ºå®šå€¼ ï¼ˆéœ€è¦ç­¾çº¦ã€Šæ— çº¿é“¶è¡Œå¡å¿«æ·æ”¯ä»˜ã€‹æ‰èƒ½ä½¿ç”¨ï¼‰
 		// orderInfo += "&paymethod=\"expressGateway\"";
 		System.out.println(orderInfo);
 		return orderInfo;

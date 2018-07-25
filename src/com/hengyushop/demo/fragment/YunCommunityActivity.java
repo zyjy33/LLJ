@@ -40,7 +40,7 @@ import com.lelinju.www.UserLoginActivity;
 //import com.hengyushop.airplane.adapter.MyShopingCartllAdapter.ViewHolder;
 /**\
  * 
- * ÔÆÉçÈº
+ * äº‘ç¤¾ç¾¤
  * @author Administrator
  *
  */
@@ -67,7 +67,7 @@ public class YunCommunityActivity extends Fragment {
 	private static List list_id = new ArrayList();
 	int shopping_id;
 	private int ID;
-	private int checkNum; // ¼ÇÂ¼Ñ¡ÖĞµÄÌõÄ¿ÊıÁ¿
+	private int checkNum; // è®°å½•é€‰ä¸­çš„æ¡ç›®æ•°é‡
 //    public static Handler handler;
 	
 	
@@ -86,12 +86,12 @@ public class YunCommunityActivity extends Fragment {
 
 	}
 	
-	// Ë¢ĞÂlistviewºÍTextViewµÄÏÔÊ¾
+	// åˆ·æ–°listviewå’ŒTextViewçš„æ˜¾ç¤º
 		private void dataChanged() {
-			// Í¨ÖªlistViewË¢ĞÂ
+			// é€šçŸ¥listViewåˆ·æ–°
 			adapter.notifyDataSetChanged();
-			// TextViewÏÔÊ¾×îĞÂµÄÑ¡ÖĞÊıÄ¿
-			btn_sittle_account.setText("ÒÑÑ¡ÖĞ" + checkNum + "Ïî");
+			// TextViewæ˜¾ç¤ºæœ€æ–°çš„é€‰ä¸­æ•°ç›®
+			btn_sittle_account.setText("å·²é€‰ä¸­" + checkNum + "é¡¹");
 		};
 	public void setTotalCost(){
 //		tv_shanchu.setOnClickListener(new OnClickListener() {
@@ -106,7 +106,7 @@ public class YunCommunityActivity extends Fragment {
 	}
 	
 	/**
-	 * ³õÊ¼»¯¿Ø¼şÀà±ğ
+	 * åˆå§‹åŒ–æ§ä»¶ç±»åˆ«
 	 */
 	private void ininate(View layout) {
 		list_none = (LinearLayout)layout.findViewById(R.id.list_none);
@@ -130,7 +130,7 @@ public class YunCommunityActivity extends Fragment {
 //			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 //					int arg2, long arg3) {
 //				// TODO Auto-generated method stub
-//				Toast.makeText(getActivity(),"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+//				Toast.makeText(getActivity(),"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 ////				ID = Integer.parseInt(list_ll.get(arg2).getId());
 ////				dialog(ID);
 //				return false;
@@ -151,7 +151,7 @@ public class YunCommunityActivity extends Fragment {
 			case 200:
 				try {
 				String total_c = MyShopingCartllAdapter.total_c;
-				tv_endmoney.setText("£¤" + total_c);
+				tv_endmoney.setText("ï¿¥" + total_c);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -163,9 +163,9 @@ public class YunCommunityActivity extends Fragment {
 					shopping_id = MyShopingCartllAdapter.id;
 					System.out.println("2222================"+shopping_id);
 					if (shopping_id>0) {
-						btn_sittle_account.setText("È¥½áËã(" + shopping_id + ")");
+						btn_sittle_account.setText("å»ç»“ç®—(" + shopping_id + ")");
 					}else {
-						Toast.makeText(getActivity(),"Çë¹´Ñ¡ÒªÏÂµ¥µÄÉÌÆ·", 200).show();
+						Toast.makeText(getActivity(),"è¯·å‹¾é€‰è¦ä¸‹å•çš„å•†å“", 200).show();
 					}
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -176,7 +176,7 @@ public class YunCommunityActivity extends Fragment {
 			case 1:
 				try {
 				String total_cll = MyShopingCartllAdapter.total_c;
-				tv_endmoney.setText("£¤" + total_cll);
+				tv_endmoney.setText("ï¿¥" + total_cll);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -185,7 +185,7 @@ public class YunCommunityActivity extends Fragment {
 			case 3:
 				try {
 //				String[] orderid = (String[]) msg.obj;
-//				System.out.println("Êı×éÖµ11=================="+orderid);
+//				System.out.println("æ•°ç»„å€¼11=================="+orderid);
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -204,7 +204,7 @@ public class YunCommunityActivity extends Fragment {
 	};
 	
 	/**
-	 * »ñÈ¡¹ºÎï³µÁĞ±íÊı¾İ
+	 * è·å–è´­ç‰©è½¦åˆ—è¡¨æ•°æ®
 	 */
 	private void loadWeather() {
 		list_ll = new ArrayList<ShopCartData>();
@@ -246,14 +246,14 @@ public class YunCommunityActivity extends Fragment {
 //								for (int j = 0; j < geshu; j++) {
 //									sum +=geshu;
 //								}
-								System.out.println("×Ü¶î================"+sum);
+								System.out.println("æ€»é¢================"+sum);
 								list_ll.add(dm);
 //								list_ll.add(data);
 							}
 							
 							System.out.println("2================"+list_ll.size());
 							String zhou = dm.getSell_price();
-//							tv_endmoney.setText("£¤" + zhou);
+//							tv_endmoney.setText("ï¿¥" + zhou);
 							handler.sendEmptyMessage(0);
 							progress.CloseProgress();
 						} catch (JSONException e) {
@@ -269,9 +269,9 @@ public class YunCommunityActivity extends Fragment {
 
 	protected void dialog(final int index, final int ID) {
 		AlertDialog.Builder builder = new Builder(getActivity());
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 //				if (adapter != null) {
@@ -283,13 +283,13 @@ public class YunCommunityActivity extends Fragment {
 							+ "&cart_id=" + ID;
 					AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(),getActivity());
 
-					// ÉÌÆ·ÊıÁ¿»òÕßÀàĞÍ¸Ä±ä Ë¢ĞÂ¼ÆÊıÒ³Ãæ
+					// å•†å“æ•°é‡æˆ–è€…ç±»å‹æ”¹å˜ åˆ·æ–°è®¡æ•°é¡µé¢
 //					data = wareDao.findResult();
 //					Message message = new Message();
 //					message.what = 200;
 //					message.obj = data;
 //					handler.sendMessage(message);
-					Toast.makeText(getActivity(), "É¾³ı³É¹¦", 200).show();
+					Toast.makeText(getActivity(), "åˆ é™¤æˆåŠŸ", 200).show();
 					dialog.dismiss();
 //					loadWeather();
 					
@@ -299,7 +299,7 @@ public class YunCommunityActivity extends Fragment {
 //				}
 			}
 		});
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();

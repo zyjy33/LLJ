@@ -34,7 +34,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.lelinju.www.R;
 import com.lelinju.www.UserLoginActivity;
 /**
- * ÑøÀÏÒøĞĞÃ÷Ï¸
+ * å…»è€é“¶è¡Œæ˜ç»†
  * @author Administrator
  *
  */
@@ -67,9 +67,9 @@ public class EndowmentBankMxActivity extends BaseActivity implements OnClickList
 		tv_ylyhye = (TextView) findViewById(R.id.tv_yljye);
 		String pensions = getIntent().getStringExtra("pensions");
 		String pensions_yue = getIntent().getStringExtra("pensions_yue");
-		tv_xfylj.setText(pensions_yue+"Ôª");//±¾ÔÂÏû·ÑÑøÀÏ½ğ
-		tv_xfylj2.setText(pensions_yue+"Ôª");//ĞÂÍ¶ÈëÑøÀÏ½ğ
-		tv_ylyhye.setText(pensions+"Ôª");
+		tv_xfylj.setText(pensions_yue+"å…ƒ");//æœ¬æœˆæ¶ˆè´¹å…»è€é‡‘
+		tv_xfylj2.setText(pensions_yue+"å…ƒ");//æ–°æŠ•å…¥å…»è€é‡‘
+		tv_ylyhye.setText(pensions+"å…ƒ");
 		System.out.println("=========="+pensions);
 		
 		tv_yljye1 = (TextView) findViewById(R.id.tv_yljye1);
@@ -174,7 +174,7 @@ public class EndowmentBankMxActivity extends BaseActivity implements OnClickList
 	}
 	
 	/**
-	 * ÑøÀÏÒøĞĞÓà¶î
+	 * å…»è€é“¶è¡Œä½™é¢
 	 */
 	private void loadyue() {
 		String user_name = spPreferences.getString("user", "");
@@ -183,7 +183,7 @@ public class EndowmentBankMxActivity extends BaseActivity implements OnClickList
 		AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 			public void onSuccess(int arg0, String arg1) {
 				try {
-					System.out.println("======Êä³öÓÃ»§×ÊÁÏ============="+arg1);
+					System.out.println("======è¾“å‡ºç”¨æˆ·èµ„æ–™============="+arg1);
 					JSONObject object = new JSONObject(arg1);
 					String status = object.getString("status");
 					if (status.equals("y")) {
@@ -198,7 +198,7 @@ public class EndowmentBankMxActivity extends BaseActivity implements OnClickList
 					data.point = obj.getString("point");
 					data.group_id = obj.getString("group_id");
 					
-					tv_ylyhye.setText(data.pension);//ÑøÀÏÒøĞĞÓà¶î
+					tv_ylyhye.setText(data.pension);//å…»è€é“¶è¡Œä½™é¢
 					
 					}else {
 						

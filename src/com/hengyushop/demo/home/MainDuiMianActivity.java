@@ -32,9 +32,9 @@ import com.hengyushop.demo.at.BaseActivity;
 import com.lelinju.www.R;
 
 /**
- * Ãæ¶ÔÃæÍÆ¹ã
+ * é¢å¯¹é¢æ¨å¹¿
  * 
- * ÔÆÉÌ¾Û
+ * äº‘å•†èš
  * @author Administrator
  * 
  */
@@ -94,9 +94,9 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
 		btn_data.setOnClickListener(this);
 		
 		list = new ArrayList<String>();
-//		list.add("ÎÒÊÇĞ¡Ã÷");
-//		list.add("ÎÒÊÇĞ¡ÕÅ");
-//		list.add("ÎÒÊÇĞ¡º£");
+//		list.add("æˆ‘æ˜¯å°æ˜");
+//		list.add("æˆ‘æ˜¯å°å¼ ");
+//		list.add("æˆ‘æ˜¯å°æµ·");
 		lv = (ListView) findViewById(R.id.myList);
 		adapter = new TestAdapter(list, this);
 		lv.setAdapter(adapter);
@@ -111,9 +111,9 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
 				//https://www.pgyer.com/ZnX8
 				
 				if (TextUtils.isEmpty(haoma)) {
-					Toast.makeText(MainDuiMianActivity.this, "ÇëÊäÈëÊÖ»úºÅ", 200).show();
+					Toast.makeText(MainDuiMianActivity.this, "è¯·è¾“å…¥æ‰‹æœºå·", 200).show();
 				}else if (haoma.length() < 11 ) {
-					Toast.makeText(MainDuiMianActivity.this, "ÊÖ»úºÅÉÙÓÚ11Î»", 200).show();
+					Toast.makeText(MainDuiMianActivity.this, "æ‰‹æœºå·å°‘äº11ä½", 200).show();
 				}else {	
 					
 					Bitmap _Bitmap;
@@ -122,8 +122,8 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
 						String id = spPreferences.getString("user_id", "");
 						
 						System.out.println("============="+haoma);
-						list.add(haoma); //Ìí¼ÓĞÂÊı¾İ ¸Ä±äList¼¯ºÏ
-						adapter.list = list;  //½«¸Ä±äºóµÄList¼¯ºÏ¸³¸øAdapterÖĞµÄ¼¯ºÏ
+						list.add(haoma); //æ·»åŠ æ–°æ•°æ® æ”¹å˜Listé›†åˆ
+						adapter.list = list;  //å°†æ”¹å˜åçš„Listé›†åˆèµ‹ç»™Adapterä¸­çš„é›†åˆ
 						
 				        StringBuffer str = new StringBuffer();
 				        for(String s:list){
@@ -151,21 +151,21 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
 								int gs = list.size();
 								String geshu = String.valueOf(gs);
 								tv_geshu.setText(geshu);
-								btn_data.setText("+¼ÌĞøÌí¼Ó");
+								btn_data.setText("+ç»§ç»­æ·»åŠ ");
 							}
 							
 						mEditText.setText("");
 //						setListViewHeightBasedOnChildren(lv);
-						adapter.notifyDataSetChanged(); //µ÷ÓÃnotifyDataSetChanged·½·¨
+						adapter.notifyDataSetChanged(); //è°ƒç”¨notifyDataSetChangedæ–¹æ³•
 					} catch (Exception e) {
 						// TODO: handle exception
 						e.printStackTrace();
 					}
 						
 //					} catch (WriterException e) {
-////						showToast("Òì³£");
+////						showToast("å¼‚å¸¸");
 //						e.printStackTrace();
-//						Toast.makeText(MainDuiMianActivity.this, "Òì³£", 200).show();
+//						Toast.makeText(MainDuiMianActivity.this, "å¼‚å¸¸", 200).show();
 //					}
 						
 				}
@@ -271,7 +271,7 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
 								mImageView1.setVisibility(View.VISIBLE);
 								mImageView2.setVisibility(View.VISIBLE);
 								mImageView.setVisibility(View.GONE);
-								btn_data.setText("ÇëÌí¼Ó");
+								btn_data.setText("è¯·æ·»åŠ ");
 							}
 							} catch (Exception e) {
 								// TODO: handle exception
@@ -293,7 +293,7 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
 	}
 	
 	public static void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -301,18 +301,18 @@ public class MainDuiMianActivity extends BaseActivity implements OnClickListener
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     } 
 }

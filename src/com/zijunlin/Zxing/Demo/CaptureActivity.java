@@ -61,7 +61,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		//³õÊ¼»¯ CameraManager
+		//åˆå§‹åŒ– CameraManager
 		CameraManager.init(getApplication());
 
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
@@ -98,7 +98,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÉı¼¶
+	 * åˆ¤æ–­æ˜¯å¦å‡çº§
 	 * @param login_sign 
 	 */
 	public void userpanduan(){
@@ -134,10 +134,10 @@ public class CaptureActivity extends BaseActivity implements Callback {
 									chuangke = "2";
 								}
 							 
-//							agencygroupid  ´úÀí
-//							storegroupid   ²Ö³¬
-//							shopsgroupid   ÃÅµê
-//							salesgroupid   ÒµÎñÔ±
+//							agencygroupid  ä»£ç†
+//							storegroupid   ä»“è¶…
+//							shopsgroupid   é—¨åº—
+//							salesgroupid   ä¸šåŠ¡å‘˜
 						}else{
 							
 						}
@@ -228,7 +228,7 @@ public class CaptureActivity extends BaseActivity implements Callback {
 		 System.out.println("======group_id============"+group_id);
 		 System.out.println("======chuangke============"+chuangke);
 		if (chuangke.equals("1")) {
-			Toast.makeText(CaptureActivity.this, "ÒÑÉı¼¶Îª´´¿Í", 200).show();
+			Toast.makeText(CaptureActivity.this, "å·²å‡çº§ä¸ºåˆ›å®¢", 200).show();
 			finish();
 		}else if (chuangke.equals("2")){
 			Intent intent4 = new Intent(CaptureActivity.this,ShengJiCkActivity.class);

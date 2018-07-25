@@ -87,16 +87,16 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 		   				try {
 							
 //		   				start_layout.setVisibility(View.VISIBLE);
-//		   				start.setText("ÔÙ¹ÎÒ»´Î");
+//		   				start.setText("å†åˆ®ä¸€æ¬¡");
 //		   				result.setText(TuiGuang2Activity.drawn);
 //		   				View layout = inflater.inflate(R.layout.activity_guayigua, null);
-//		   				drawn = "¹§Ï²Äú,³éÖĞ2µÈ½±";
+//		   				drawn = "æ­å–œæ‚¨,æŠ½ä¸­2ç­‰å¥–";
 		   				Intent intent = new Intent(GuaYiGuaActivity.this,ZyZTiShiActivity.class);
 //	   					intent.putExtra("drawn", TuiGuang2Activity.drawn);//
 //	   					intent.putExtra("id", TuiGuang2Activity.id);//
 	   					intent.putExtra("drawn", drawn);//
 	   					intent.putExtra("id", id);//
-	   					intent.putExtra("quxiao", "È¡Ïû");
+	   					intent.putExtra("quxiao", "å–æ¶ˆ");
 	   					startActivity(intent);
 	   					getintner2();
 		   				} catch (Exception e) {
@@ -118,7 +118,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 //				if (jifen >= 100) {
 //					start_layout.setVisibility(View.GONE);
 //				}else {
-//					Toast.makeText(GuaYiGuaActivity.this, "Äú»¹²»¹»100»ı·Ö", 200).show();
+//					Toast.makeText(GuaYiGuaActivity.this, "æ‚¨è¿˜ä¸å¤Ÿ100ç§¯åˆ†", 200).show();
 //				}
 //			}
 //		});
@@ -195,7 +195,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 	
 	
 	/**
-	 * µã»÷´¥·¢ÊÂ¼ş
+	 * ç‚¹å‡»è§¦å‘äº‹ä»¶
 	 */
 	@Override
 	public void onClick(View v) {
@@ -209,7 +209,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 			initPopupWindow();
 			showPopupWindow(gua_jiang);
 			break;
-		case R.id.iv_fanhui://È¡Ïû
+		case R.id.iv_fanhui://å–æ¶ˆ
 			 finish();
 			break;
 		default:
@@ -225,12 +225,12 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,
 				LayoutParams.MATCH_PARENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(R.color.ban_louming));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -260,8 +260,8 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 	private void showPopupWindow(View view) {
 		if (!mPopupWindow.isShowing()) {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -269,7 +269,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 	}
 	
 	/**
-	 * »ñÈ¡µÇÂ¼Ç©Ãû
+	 * è·å–ç™»å½•ç­¾å
 	 * @param order_no 
 	 */
 	private void userloginqm() {
@@ -279,7 +279,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-//						System.out.println("µÇÂ¼Ç©Ãû==================="+arg1);
+//						System.out.println("ç™»å½•ç­¾å==================="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						if (status.equals("y")) {
@@ -302,7 +302,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 	}
 	
 	/**
-	 * Êä³öÄÚÈİ
+	 * è¾“å‡ºå†…å®¹
 	 */
 	private void getguizhe() {
 //		list = new ArrayList<XsgyListData>();
@@ -310,7 +310,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ÁĞ±í============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–åˆ—è¡¨============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -333,15 +333,15 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			},getApplicationContext());
 			
 	}
 	
 	/**
-	 * Êä³ö¹ÎÒ»¹Î½±
+	 * è¾“å‡ºåˆ®ä¸€åˆ®å¥–
 	 * @param login_sign 
 	 */
 	ArrayList list_data2;
@@ -354,11 +354,11 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 //			String login_sign = getIntent().getStringExtra("login_sign");
 			String strUrlone = RealmName.REALM_NAME_LL + 
 					"/get_article_activity_award?user_id="+user_id+"&user_name="+user_name+"&article_id=10495&sign="+login_sign+"";
-//			System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+strUrlone);
+//			System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -393,7 +393,7 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 						}else{
 							Toast.makeText(GuaYiGuaActivity.this, info, 200).show();
 						}
-						System.out.println("======Êä³ö³é½±ĞÒ½±Ïî=======id======"+id);
+						System.out.println("======è¾“å‡ºæŠ½å¥–å¹¸å¥–é¡¹=======id======"+id);
 						
 						
 					} catch (JSONException e) {
@@ -406,24 +406,24 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, GuaYiGuaActivity.this);
 			
 	}
 	
 	/**
-	 * Êä³ö¹ÎÒ»¹Î½±ÏêÇé
+	 * è¾“å‡ºåˆ®ä¸€åˆ®å¥–è¯¦æƒ…
 	 */
 	private void getjiangxiangxq() {
 		list = new ArrayList<XsgyListData>();
 		String strUrlone = RealmName.REALM_NAME_LL + "/get_article_model?id=10495";
-//			System.out.println("======Êä³ö³é½±ÏêÇé============="+strUrlone);
+//			System.out.println("======è¾“å‡ºæŠ½å¥–è¯¦æƒ…============="+strUrlone);
 			AsyncHttp.get(strUrlone, new AsyncHttpResponseHandler() {
 				public void onSuccess(int arg0, String arg1) {
 					try {
-						System.out.println("======Êä³ö³é½±ÏêÇé============="+arg1);
+						System.out.println("======è¾“å‡ºæŠ½å¥–è¯¦æƒ…============="+arg1);
 						JSONObject object = new JSONObject(arg1);
 						String status = object.getString("status");
 						String info = object.getString("info");
@@ -466,8 +466,8 @@ public class GuaYiGuaActivity extends Activity implements OnClickListener
 				public void onFailure(Throwable arg0, String arg1) {
 					// TODO Auto-generated method stub
 					super.onFailure(arg0, arg1);
-					System.out.println("======·ÃÎÊ½Ó¿ÚÊ§°Ü============="+arg1);
-//					Toast.makeText(ZhuanYiZhuanActivity.this, "·ÃÎÊ½Ó¿ÚÊ§°Ü", 200).show();
+					System.out.println("======è®¿é—®æ¥å£å¤±è´¥============="+arg1);
+//					Toast.makeText(ZhuanYiZhuanActivity.this, "è®¿é—®æ¥å£å¤±è´¥", 200).show();
 				}
 			}, GuaYiGuaActivity.this);
 	}

@@ -20,7 +20,7 @@ import com.hengyushop.entity.XiangqingData;
 import com.lelinju.www.R;
 
 /**
- * 规格参数
+ * 瑙勬牸鍙傛暟
  * 
  */
 public class GoodsGgcsListAdapter extends BaseAdapter {

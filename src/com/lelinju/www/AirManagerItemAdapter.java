@@ -78,13 +78,13 @@ public class AirManagerItemAdapter extends BaseAdapter {
 		CityDB db1 = new CityDB(context);
 		holder.v3.setText(db1.getJicBySam(list.get(index).getOrgCity()));
 		holder.v4.setText(list.get(index).getDepTime().substring(0, 2)+":"+list.get(index).getDepTime().substring(2));
-		holder.v5.setText("£¤"+list.get(index).getPrice());
+		holder.v5.setText("ï¿¥"+list.get(index).getPrice());
 		CityDB db2 = new CityDB(context);
 		holder.v6.setText(db2.getJicBySam(list.get(index).getDstCity()));
 		holder.v7.setText(list.get(index).getArrTime().substring(0, 2)+":"+list.get(index).getArrTime().substring(2));
 		String tag = list.get(index).getTag();
 		if (tag.equals("1")) {
-			holder.v8.setText("µÈ´ı¸¶¿î");
+			holder.v8.setText("ç­‰å¾…ä»˜æ¬¾");
 			holder.v8.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -97,9 +97,9 @@ public class AirManagerItemAdapter extends BaseAdapter {
 				}
 			});
 		} else if (tag.equals("2")) {
-			holder.v8.setText("µÈ´ı¸¶¿î");
+			holder.v8.setText("ç­‰å¾…ä»˜æ¬¾");
 		} else if (tag.equals("3")) {
-			holder.v8.setText("ÒÑ·¢»õ");
+			holder.v8.setText("å·²å‘è´§");
 		}
 
 	 

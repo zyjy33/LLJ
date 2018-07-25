@@ -61,8 +61,8 @@ public class MyOrderInfromationAdapter extends BaseAdapter {
 		ImageView im = (ImageView) convertView.findViewById(R.id.im_im);
 		imageLoader.displayImage(
 				RealmName.REALM_NAME + "/admin/" + list.get(position).image, im);
-		co.setText("¹²" + list.get(position).count + "¼şÉÌÆ·");
-		pr.setText("£¤" + list.get(position).Price);
+		co.setText("å…±" + list.get(position).count + "ä»¶å•†å“");
+		pr.setText("ï¿¥" + list.get(position).Price);
 		na.setText(list.get(position).proName);
 		return convertView;
 	}

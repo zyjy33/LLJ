@@ -150,8 +150,8 @@ public class CollectWareActivity extends BaseActivity {
 		params.put("strwhere", "");
 		params.put("orderby", "");
 		
-		System.out.println("ÊÕ²Ø"+strUrl);
-		System.out.println("ÊÕ²Ø1"+params);
+		System.out.println("æ”¶è—"+strUrl);
+		System.out.println("æ”¶è—1"+params);
 //		AsyncHttp.post_1(strUrl, params, new AsyncHttpResponseHandler(){
 		AsyncHttp.get(strUrl, new AsyncHttpResponseHandler(){
 			@Override
@@ -199,9 +199,9 @@ public class CollectWareActivity extends BaseActivity {
 
 	protected void dialog(final int ID) {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -213,7 +213,7 @@ public class CollectWareActivity extends BaseActivity {
 				System.out.println("1111===================="+user_id);
 				final String str = RealmName.REALM_NAME_LL
 						+ "/user_favorite_delete?user_id="+user_id+"&id=" + ID + "";
-				Log.v("data1", "É¾³ı:" + strUrl);
+				Log.v("data1", "åˆ é™¤:" + strUrl);
 				progress.CreateProgress();
 //				AsyncHttp.get(str, new AsyncHttpResponseHandler(){
 //				}, getApplicationContext());
@@ -238,7 +238,7 @@ public class CollectWareActivity extends BaseActivity {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -259,14 +259,14 @@ public class CollectWareActivity extends BaseActivity {
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu.showAtLocation(findViewById(R.id.layout),
 					Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖĞ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

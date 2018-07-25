@@ -31,7 +31,7 @@ public class ComboOtherAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ×°ÔØÊı¾İ
+	 * è£…è½½æ•°æ®
 	 */
 	public void putLists(ArrayList<ComboOtherItem> items) {
 		this.items = items;
@@ -75,8 +75,8 @@ public class ComboOtherAdapter extends BaseAdapter {
 			holder = (ViewHolder) view.getTag(R.drawable.icon + index);
 		}
 		holder.text1.setText(items.get(index).getText1());
-		holder.text2.setText(items.get(index).getText2()+"Ôª");
-		holder.text3.setText(items.get(index).getText3()+"Ôª");
+		holder.text2.setText(items.get(index).getText2()+"å…ƒ");
+		holder.text3.setText(items.get(index).getText3()+"å…ƒ");
 		return view;
 	}
 

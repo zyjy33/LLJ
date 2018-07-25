@@ -73,7 +73,7 @@ public class ManagerOrderAdapter extends BaseAdapter {
 		holder.v3.setText(lists.get(arg0).getToStation());
 		holder.v4.setText(lists.get(arg0).getArriveTime());
 		if (lists.get(arg0).getOrderTag().equals("1")) {
-			holder.v5.setText("¼ÌĞø¸¶¿î");
+			holder.v5.setText("ç»§ç»­ä»˜æ¬¾");
 			holder.v5.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -86,20 +86,20 @@ public class ManagerOrderAdapter extends BaseAdapter {
 				}
 			});
 		} else if (lists.get(arg0).getOrderTag().equals("2")) {
-			holder.v5.setText("Ö§¸¶³É¹¦");
+			holder.v5.setText("æ”¯ä»˜æˆåŠŸ");
 		} else if (lists.get(arg0).getOrderTag().equals("3")) {
-			holder.v5.setText("ÒÑ³öÆ±");
+			holder.v5.setText("å·²å‡ºç¥¨");
 
 		} else if (lists.get(arg0).getOrderTag().equals("4")) {
-			holder.v5.setText("ÒÑÍË¿î");
+			holder.v5.setText("å·²é€€æ¬¾");
 
 		} else if (lists.get(arg0).getOrderTag().equals("5")) {
-			holder.v5.setText("¶©µ¥Ê§Ğ§");
+			holder.v5.setText("è®¢å•å¤±æ•ˆ");
 
 		}
 		holder.v6.setText(lists.get(arg0).getCheci());
 		holder.v7.setText(lists.get(arg0).getOrderTime());
-		holder.v8.setText("£¤"+lists.get(arg0).getPrice());
+		holder.v8.setText("ï¿¥"+lists.get(arg0).getPrice());
 		return view;
 	}
 

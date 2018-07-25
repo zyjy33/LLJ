@@ -8,9 +8,9 @@ import android.os.Message;
 public abstract class MyCountdownTimer {
 
 	private static final int MSG_RUN = 1;
-	private long mCountdownInterval;// ¶¨Ê±¼ä¸ô£¬ÒÔºÁÃë¼Æ
-	private long mTotalTime;// ¶¨Ê±Ê±¼ä
-	private long mRemainTime;// Ê£ÓàÊ±¼ä
+	private long mCountdownInterval;// å®šæ—¶é—´éš”ï¼Œä»¥æ¯«ç§’è®¡
+	private long mTotalTime;// å®šæ—¶æ—¶é—´
+	private long mRemainTime;// å‰©ä½™æ—¶é—´
 
 	public MyCountdownTimer(long millisInFuture, long countDownInterval) {
 		mTotalTime = millisInFuture;
@@ -22,34 +22,34 @@ public abstract class MyCountdownTimer {
 
 	public abstract void onTick(long millisUntilFinished, int percent);
 
-	// È¡Ïû¼ÆÊ±
+	// å–æ¶ˆè®¡æ—¶
 	public final void cancel() {
 		mHandler.removeMessages(MSG_RUN);
 	}
 
-	// ÖØĞÂ¿ªÊ¼¼ÆÊ±
+	// é‡æ–°å¼€å§‹è®¡æ—¶
 	public final void resume() {
 		mHandler.sendMessageAtFrontOfQueue(mHandler.obtainMessage(MSG_RUN));
 	}
 
-	// ÔİÍ£¼ÆÊ±
+	// æš‚åœè®¡æ—¶
 	public final void pause() {
 		mHandler.removeMessages(MSG_RUN);
 	}
 
-	// ¿ªÊ¼¼ÆÊ±
+	// å¼€å§‹è®¡æ—¶
 	public synchronized final MyCountdownTimer start() {
-		if (mRemainTime <= 0) {// ¼ÆÊ±½áÊøºó·µ»Ø
+		if (mRemainTime <= 0) {// è®¡æ—¶ç»“æŸåè¿”å›
 			onFinish();
 			return this;
 		}
-		// ÉèÖÃ¼ÆÊ±¼ä¸ô
+		// è®¾ç½®è®¡æ—¶é—´éš”
 		mHandler.sendMessageDelayed(mHandler.obtainMessage(MSG_RUN),
 				mCountdownInterval);
 		return this;
 	}
 
-	// Í¨¹ıhandler¸üĞÂandroid UI£¬ÏÔÊ¾¶¨Ê±Ê±¼ä
+	// é€šè¿‡handleræ›´æ–°android UIï¼Œæ˜¾ç¤ºå®šæ—¶æ—¶é—´
 	private Handler mHandler = new Handler() {
 
 		public void handleMessage(Message msg) {

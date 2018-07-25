@@ -38,7 +38,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
- * ÉêÇë³ÉÎªÉÌ¼Ò
+ * ç”³è¯·æˆä¸ºå•†å®¶
  * 
  * @author Administrator
  * 
@@ -58,17 +58,17 @@ OnPageChangeListener{
 	 String ad_url;
 	 Bitmap bitmap_tx,bitmap_touxiang;
 	 ImageView iv;
-	// Òıµ¼Í¼Æ¬×ÊÔ´
+	// å¼•å¯¼å›¾ç‰‡èµ„æº
 	 private static final int[] pics = { R.drawable.sj_sq1};
 //	 private static final int[] pics = { R.drawable.sj_sq1, R.drawable.pic1};
 //		R.drawable.pic4,R.drawable.pic5
 //		,R.drawable.pic6,R.drawable.pic7,R.drawable.pic8};
 
-		// µ×²¿Ğ¡µãÍ¼Æ¬
+		// åº•éƒ¨å°ç‚¹å›¾ç‰‡
 
 		private ImageView[] dots;
 
-		// ¼ÇÂ¼µ±Ç°Ñ¡ÖĞÎ»ÖÃ
+		// è®°å½•å½“å‰é€‰ä¸­ä½ç½®
 
 		private int currentIndex;
 
@@ -138,7 +138,7 @@ OnPageChangeListener{
         ImageView iv_anniu5 = (ImageView) findViewById(R.id.iv_anniu5);
 		dots = new ImageView[pics.length];
 
-		// Ñ­»·È¡µÃĞ¡µãÍ¼Æ¬
+		// å¾ªç¯å–å¾—å°ç‚¹å›¾ç‰‡
 
 		for (int i = 0; i < pics.length; i++) {
 
@@ -158,21 +158,21 @@ OnPageChangeListener{
 			if (i == 4) {
 				iv_anniu5.setVisibility(View.VISIBLE);
 			}
-			// µÃµ½Ò»¸öLinearLayoutÏÂÃæµÄÃ¿Ò»¸ö×ÓÔªËØ
+			// å¾—åˆ°ä¸€ä¸ªLinearLayoutä¸‹é¢çš„æ¯ä¸€ä¸ªå­å…ƒç´ 
 
 			dots[i] = (ImageView) ss.getChildAt(i);
 
-			dots[i].setEnabled(true);// ¶¼ÉèÎª»ÒÉ«
+			dots[i].setEnabled(true);// éƒ½è®¾ä¸ºç°è‰²
 
 			dots[i].setOnClickListener(this);
 
-			dots[i].setTag(i);// ÉèÖÃÎ»ÖÃtag£¬·½±ãÈ¡³öÓëµ±Ç°Î»ÖÃ¶ÔÓ¦
+			dots[i].setTag(i);// è®¾ç½®ä½ç½®tagï¼Œæ–¹ä¾¿å–å‡ºä¸å½“å‰ä½ç½®å¯¹åº”
 
 		}
 
 		currentIndex = 0;
 
-		dots[currentIndex].setEnabled(false);// ÉèÖÃÎª°×É«£¬¼´Ñ¡ÖĞ×´Ì¬
+		dots[currentIndex].setEnabled(false);// è®¾ç½®ä¸ºç™½è‰²ï¼Œå³é€‰ä¸­çŠ¶æ€
 
 	}
 
@@ -208,7 +208,7 @@ OnPageChangeListener{
 
 	}
 
-	// µ±»¬¶¯×´Ì¬¸Ä±äÊ±µ÷ÓÃ
+	// å½“æ»‘åŠ¨çŠ¶æ€æ”¹å˜æ—¶è°ƒç”¨
 
 	public void onPageScrollStateChanged(int arg0) {
 
@@ -216,7 +216,7 @@ OnPageChangeListener{
 
 	}
 
-	// µ±µ±Ç°Ò³Ãæ±»»¬¶¯Ê±µ÷ÓÃ
+	// å½“å½“å‰é¡µé¢è¢«æ»‘åŠ¨æ—¶è°ƒç”¨
 
 	public void onPageScrolled(int arg0, float arg1, int arg2) {
 
@@ -224,11 +224,11 @@ OnPageChangeListener{
 
 	}
 
-	// µ±ĞÂµÄÒ³Ãæ±»Ñ¡ÖĞÊ±µ÷ÓÃ
+	// å½“æ–°çš„é¡µé¢è¢«é€‰ä¸­æ—¶è°ƒç”¨
 
 	public void onPageSelected(int arg0) {
 
-		// ÉèÖÃµ×²¿Ğ¡µãÑ¡ÖĞ×´Ì¬
+		// è®¾ç½®åº•éƒ¨å°ç‚¹é€‰ä¸­çŠ¶æ€
 
 		setCurDot(arg0);
 
@@ -253,7 +253,7 @@ OnPageChangeListener{
 
 	public class ViewPagerAdapter extends PagerAdapter {
 
-		// ½çÃæÁĞ±í
+		// ç•Œé¢åˆ—è¡¨
 
 		private List<View> views;
 
@@ -263,7 +263,7 @@ OnPageChangeListener{
 
 		}
 
-		// Ïú»Ùarg1Î»ÖÃµÄ½çÃæ
+		// é”€æ¯arg1ä½ç½®çš„ç•Œé¢
 
 		@Override
 		public void destroyItem(View arg0, int arg1, Object arg2) {
@@ -278,7 +278,7 @@ OnPageChangeListener{
 
 		}
 
-		// »ñµÃµ±Ç°½çÃæÊı
+		// è·å¾—å½“å‰ç•Œé¢æ•°
 
 		@Override
 		public int getCount() {
@@ -295,7 +295,7 @@ OnPageChangeListener{
 
 		}
 
-		// ³õÊ¼»¯arg1Î»ÖÃµÄ½çÃæ
+		// åˆå§‹åŒ–arg1ä½ç½®çš„ç•Œé¢
 
 		@Override
 		public Object instantiateItem(View arg0, int arg1) {
@@ -306,7 +306,7 @@ OnPageChangeListener{
 
 		}
 
-		// ÅĞ¶ÏÊÇ·ñÓÉ¶ÔÏóÉú³É½çÃæ
+		// åˆ¤æ–­æ˜¯å¦ç”±å¯¹è±¡ç”Ÿæˆç•Œé¢
 
 		@Override
 		public boolean isViewFromObject(View arg0, Object arg1) {
@@ -343,13 +343,13 @@ OnPageChangeListener{
 	private void loadguanggao() {
 		try {
 			list=new ArrayList<String>(); 
-		//¹ã¸æ¹ö¶¯	
+		//å¹¿å‘Šæ»šåŠ¨	
 		AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_adbanner_list?advert_id=1017",
 				new AsyncHttpResponseHandler() {
 					@Override
 					public void onSuccess(int arg0, String arg1) {
 						super.onSuccess(arg0, arg1);
-						System.out.println("======Êä³ö33============="+arg1);
+						System.out.println("======è¾“å‡º33============="+arg1);
 						try {
 							JSONObject object = new JSONObject(arg1);
 							String status = object.getString("status");
@@ -366,7 +366,7 @@ OnPageChangeListener{
 								ad_url = ada.getAd_url();
 //							    ImageLoader imageLoader=ImageLoader.getInstance();
 //							    imageLoader.displayImage(RealmName.REALM_NAME_HTTP + ad_url, ling_tip);
-//							    imageLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+//							    imageLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 								images.add(ada);
 								list.add(ad_url);
 //								new Thread(getPicByUrl2).start();
@@ -386,8 +386,8 @@ OnPageChangeListener{
 					public void onFailure(Throwable arg0, String arg1) {
 						// TODO Auto-generated method stub
 						super.onFailure(arg0, arg1);
-						System.out.println("======Êä³ö1============="+arg0);
-						System.out.println("======Êä³ö2============="+arg1);
+						System.out.println("======è¾“å‡º1============="+arg0);
+						System.out.println("======è¾“å‡º2============="+arg1);
 					}
 
 				}, null);
@@ -408,18 +408,18 @@ OnPageChangeListener{
 				LinearLayout.LayoutParams.MATCH_PARENT);
 try {
 	
-    // ½«ArrayList<Integer>×ª»¯³Éint[]Êı×é  
-    ArrayList<Integer> tmpList1 = new ArrayList<Integer>();// Õâ¸ö±ØĞëÓĞ£¬ÒòÎªÈİÆ÷Àà²»½ÓÊÜ»ù±¾ÀàĞÍ£¬Ö»½ÓÊÜ¶ÔÏóµÄÒıÓÃ  
+    // å°†ArrayList<Integer>è½¬åŒ–æˆint[]æ•°ç»„  
+    ArrayList<Integer> tmpList1 = new ArrayList<Integer>();// è¿™ä¸ªå¿…é¡»æœ‰ï¼Œå› ä¸ºå®¹å™¨ç±»ä¸æ¥å—åŸºæœ¬ç±»å‹ï¼Œåªæ¥å—å¯¹è±¡çš„å¼•ç”¨  
     int num = 2;  
     tmpList1.add(new Integer(num));  
     tmpList1.add(new Integer(2));  
     tmpList1.add(new Integer(num + 1));  
 
-    // ´´½¨Êı×é  
+    // åˆ›å»ºæ•°ç»„  
 //    String tmpInteger1[] = new String[list.size()];  
 //    String tmpInt1[] = new String[list.size()];  
 //    list.toArray(tmpInteger1);  
-//    // ¸³ÖµÊä³ö  
+//    // èµ‹å€¼è¾“å‡º  
 //    for (int i = 0; i < tmpInteger1.length; i++) {  
 //        tmpInt1[i] = tmpInteger1[i];  
 //        System.out.print("==========================================="+tmpInt1[i] + " ");  
@@ -427,9 +427,9 @@ try {
     
     
 //		 List<String> list=new ArrayList<String>();  
-//	        list.add("ÍõÀû»¢");  
-//	        list.add("ÕÅÈı");  
-//	        list.add("ÀîËÄ"); 
+//	        list.add("ç‹åˆ©è™");  
+//	        list.add("å¼ ä¸‰");  
+//	        list.add("æå››"); 
 	        //http://ju918.com/upload/201706/06/201706061608344247.jpg
 //	        list.add("http://ju918.com/upload/201706/06/201706061608344247.jpg");  
 //	        list.add("http://ju918.com/upload/201706/06/201706061608344247.jpg");  
@@ -442,7 +442,7 @@ try {
 //	            System.out.println("-------------------"+pics[i]);  
 //	        }  
 	        
-		// ³õÊ¼»¯Òıµ¼Í¼Æ¬ÁĞ±í
+		// åˆå§‹åŒ–å¼•å¯¼å›¾ç‰‡åˆ—è¡¨
 
 		for (int i = 0; i < pics.length; i++) {
 
@@ -455,7 +455,7 @@ try {
 //			iv.setBackgroundResource(R.drawable.sj_sq1);
 //		    ImageLoader imageLoader=ImageLoader.getInstance();
 //		    imageLoader.displayImage(RealmName.REALM_NAME_HTTP + pics[i], iv);
-//		    imageLoader.clearMemoryCache();//Çå³ıÄÚ´æ»º´æ
+//		    imageLoader.clearMemoryCache();//æ¸…é™¤å†…å­˜ç¼“å­˜
 //			mAq.id(iv).image(RealmName.REALM_NAME_HTTP + pics[i]);
 			views.add(iv);
 
@@ -480,11 +480,11 @@ try {
 
 		vp.setAdapter(vpAdapter);
 
-		// °ó¶¨»Øµ÷
+		// ç»‘å®šå›è°ƒ
 
 		vp.setOnPageChangeListener(this);
 
-		// ³õÊ¼»¯µ×²¿Ğ¡µã
+		// åˆå§‹åŒ–åº•éƒ¨å°ç‚¹
 
 		initDots();
 	}
@@ -495,8 +495,8 @@ try {
 //			try {
 //				String img_url2 = RealmName.REALM_NAME_HTTP +ad_url;
 //				System.out.println("img_url2=============="+img_url2);
-//				bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-////				Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+//				bitmap_touxiang = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+////				Bitmap	bitMap_tx = Utils.toRoundBitmap(bitmap_touxiang,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 ////				touxiang = BitUtil.bitmaptoString(bitMap_tx);
 //				System.out.println("bitmap_touxiang=============="+bitmap_touxiang);
 //				if (list.size() > 0) {

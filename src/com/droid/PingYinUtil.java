@@ -13,7 +13,7 @@ import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombi
 public class PingYinUtil {
 
 	/**
-	 * ½«×Ö·û´®ÖĞµÄÖĞÎÄ×ª»¯ÎªÆ´Òô,ÆäËû×Ö·û²»±ä
+	 * å°†å­—ç¬¦ä¸²ä¸­çš„ä¸­æ–‡è½¬åŒ–ä¸ºæ‹¼éŸ³,å…¶ä»–å­—ç¬¦ä¸å˜
 	 */
 	public static String getPingYin(String inputString) {
 		HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();

@@ -291,13 +291,13 @@ public class PostWorkListActivity extends BaseActivity {
 						+ JobCategoryId);
 		work_price = (Spinner) findViewById(R.id.work_price);
 		price = new ArrayList<String>();
-		price.add("≤ªœﬁ");
-		price.add("√Ê“È");
-		price.add("2000‘™“‘œ¬");
+		price.add("‰∏çÈôê");
+		price.add("Èù¢ËÆÆ");
+		price.add("2000ÂÖÉ‰ª•‰∏ã");
 		price.add("2000-5000");
 		price.add("5000-7000");
 		price.add("7000-10000");
-		price.add("100000“‘…œ");
+		price.add("100000‰ª•‰∏ä");
 		priceValue = new ArrayList<String>();
 		priceValue.add("");
 		priceValue.add("0");
@@ -327,7 +327,7 @@ public class PostWorkListActivity extends BaseActivity {
 		provinceAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		// advert_order_province.setAdapter(provinceAdapter);
-		// ≥« –
+		// ÂüéÂ∏Ç
 		/*
 		 * city = new CityDB(getApplicationContext()) .getProvince(
 		 * "select name from city where provinceId =(select code from province where name='"
@@ -343,7 +343,7 @@ public class PostWorkListActivity extends BaseActivity {
 		cityAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		advert_order_city.setAdapter(cityAdapter);
-		// µÿ«¯
+		// Âú∞Âå∫
 		area = new CityDB(getApplicationContext()).getProvinceW(
 				"select name from area where cityId =(select code from city where name='"
 						+ city.get(0) + "')", true);
@@ -352,7 +352,7 @@ public class PostWorkListActivity extends BaseActivity {
 		areaAdapter
 				.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 		advert_order_area.setAdapter(areaAdapter);
-		//  ¬º˛
+		// ‰∫ã‰ª∂
 
 	}
 }

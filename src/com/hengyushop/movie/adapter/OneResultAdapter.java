@@ -59,7 +59,7 @@ public class OneResultAdapter extends BaseAdapter {
 			viewHolder.item1 = (TextView) convertView.findViewById(R.id.item1);
 			viewHolder.item2 = (TextView) convertView.findViewById(R.id.item2);
 			viewHolder.item0 = (TextView) convertView.findViewById(R.id.item0);
-			 //Ìí¼Óµ½ĞÂµÄ½çÃæ
+			 //æ·»åŠ åˆ°æ–°çš„ç•Œé¢
 			convertView.setTag(viewHolder);
 
 		} else {

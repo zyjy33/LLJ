@@ -49,7 +49,7 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
 /**
- * ·ÖÏí
+ * åˆ†äº«
  * 
  * @author Administrator
  * 
@@ -105,7 +105,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 				}
 			});	
 			
-			// ĞÂÀË
+			// æ–°æµª
 			img_btn_tencent.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -115,7 +115,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 				}
 			});
 
-			// Î¢ĞÅ
+			// å¾®ä¿¡
 			btn_wechat.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -124,7 +124,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 					con(16, 1);
 				}
 			});
-			// ÅóÓÑÈ¦
+			// æœ‹å‹åœˆ
 			btn_wx_friend.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -135,7 +135,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 				}
 			});
 			
-			// ¶ÌĞÅ
+			// çŸ­ä¿¡
 			btn_sms.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -178,10 +178,10 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 			}
 			System.out.println("unionid==========" + unionid);
 			
-			String sp_id = getIntent().getStringExtra("sp_id");//ÉÌÆ··ÖÏí
-			String pt_id = getIntent().getStringExtra("pt_id");//Æ´ÍÅ·ÖÏí
-			String ct_id = getIntent().getStringExtra("ct_id");//²ÎÍÅ·ÖÏí
-			String list_id = getIntent().getStringExtra("list_id");//ĞÂÎÅ·ÖÏí
+			String sp_id = getIntent().getStringExtra("sp_id");//å•†å“åˆ†äº«
+			String pt_id = getIntent().getStringExtra("pt_id");//æ‹¼å›¢åˆ†äº«
+			String ct_id = getIntent().getStringExtra("ct_id");//å‚å›¢åˆ†äº«
+			String list_id = getIntent().getStringExtra("list_id");//æ–°é—»åˆ†äº«
 //			String img_url = getIntent().getStringExtra("img_url");
 			System.out.println("unionid==========" + unionid);
 			System.out.println("sp_id==========" + sp_id);
@@ -199,12 +199,12 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 			subtitle = getIntent().getStringExtra("subtitle");
 			System.out.println("title==========" + title);
 			System.out.println("subtitle==========" + subtitle);
-			if (sp_id != null) {//ÉÌÆ··ÖÏí
+			if (sp_id != null) {//å•†å“åˆ†äº«
 //				title = getIntent().getStringExtra("title");
 //				String subtitle = getIntent().getStringExtra("subtitle");
 				String data_sp = subtitle + RealmName.REALM_NAME_HTTP+"/goods/show-" + sp_id + ".html?cid="+company_id+"&unionid="+unionid+"&shareid="+user_id+"&from=android";
 				
-				System.out.println("·ÖÏí11======================" + data_sp);
+				System.out.println("åˆ†äº«11======================" + data_sp);
 //				softshareWxChat(data_sp);
 				if (index == 16) {
 					System.out.println("==========" + 16);
@@ -213,9 +213,9 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 					System.out.println("==========" + 17);
 					softshareWxFriend(data_sp);
 				}
-			}else if (pt_id != null) {//Æ´ÍÅ·ÖÏí
+			}else if (pt_id != null) {//æ‹¼å›¢åˆ†äº«
 				String data_pt = subtitle + RealmName.REALM_NAME_HTTP+"/"+fx_shuzi+"/show-"+pt_id+".html?cid="+company_id+"&unionid="+unionid+"&shareid="+user_id+"&from=android";
-				System.out.println("·ÖÏí22======================" + data_pt);
+				System.out.println("åˆ†äº«22======================" + data_pt);
 				if (index == 16) {
 					System.out.println("==========" + 16);
 					softshareWxChat(data_pt);
@@ -223,9 +223,9 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 					System.out.println("==========" + 17);
 					softshareWxFriend(data_pt);
 				}
-			}else if (ct_id != null) {//²ÎÍÅ·ÖÏí
+			}else if (ct_id != null) {//å‚å›¢åˆ†äº«
 				String data_ct = subtitle + RealmName.REALM_NAME_HTTP+"/"+fx_shuzi+"/join-"+ct_id+".html?cid="+company_id+"&unionid="+unionid+"&shareid="+user_id+"&from=android";
-				System.out.println("·ÖÏí33======================" + data_ct);
+				System.out.println("åˆ†äº«33======================" + data_ct);
 				if (index == 16) {
 					System.out.println("==========" + 16);
 					softshareWxChat(data_ct);
@@ -233,9 +233,9 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 					System.out.println("==========" + 17);
 					softshareWxFriend(data_ct);
 				}
-			}else if (list_id != null) {//ĞÂÎÅ·ÖÏí
+			}else if (list_id != null) {//æ–°é—»åˆ†äº«
 				String data_ct = subtitle + RealmName.REALM_NAME_HTTP + "/mobile/news/conent-"+list_id+".html?unionid="+unionid+"&shareid="+user_id+"&from=android";
-				System.out.println("·ÖÏí44======================" + data_ct);
+				System.out.println("åˆ†äº«44======================" + data_ct);
 				if (index == 16) {
 					System.out.println("==========" + 16);
 					softshareWxChat(data_ct);
@@ -253,13 +253,13 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 
 	
 	/**
-	 * Î¢ĞÅ·ÖÏí
+	 * å¾®ä¿¡åˆ†äº«
 	 * 
 	 * @param text
 	 */
 	private void softshareWxChat(String text) {
          
-//		    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ysj_haibao1);//ÓÃÕâ¸öbmp¾Í¿ÉÒÔÌø³ö·ÖÏí½çÃæ
+//		    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ysj_haibao1);//ç”¨è¿™ä¸ªbmpå°±å¯ä»¥è·³å‡ºåˆ†äº«ç•Œé¢
 //		    WXImageObject imgObj = new WXImageObject(bmp);
 //
 //		    WXMediaMessage msg = new WXMediaMessage();
@@ -267,7 +267,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 //
 //		    Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
 //		    bmp.recycle();
-//		    msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // ÉèÖÃËõÂÔÍ¼
+//		    msg.thumbData = Util.bmpToByteArray(thumbBmp, true);  // è®¾ç½®ç¼©ç•¥å›¾
 		    
 		String temp[] = text.split("http");
 		api = WXAPIFactory.createWXAPI(DBFengXiangActivity.this, Constants.APP_ID,false);
@@ -278,7 +278,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 		
 		
 		WXMediaMessage msg = new WXMediaMessage(webpage);
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.title = title;
 		msg.description = temp[0];//Bitmap
 		System.out.println("thumb=============="+thumb);
@@ -286,7 +286,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 		System.out.println("img_url==========" + img_url);
 		if (img_url.equals("")) {
 		Bitmap thumb = BitmapFactory.decodeResource(DBFengXiangActivity.this.getResources(),R.drawable.llj_fx);
-		msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+		msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 //		msg.thumbData = bitmap2Bytes(thumb,32);
 		Log.e("zyjy","true");
 		}else {
@@ -298,13 +298,13 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 		req.scene = SendMessageToWX.Req.WXSceneSession;
 		boolean flag = api.sendReq(req);
 
-		System.out.println("Î¢ĞÅ×¢²á" + flag);
+		System.out.println("å¾®ä¿¡æ³¨å†Œ" + flag);
 		
 	}
 	
 		
 	/**
-	 * Î¢ĞÅ·ÖÏíÅóÓÑÈ¦
+	 * å¾®ä¿¡åˆ†äº«æœ‹å‹åœˆ
 	 * 
 	 * @param text
 	 */
@@ -316,14 +316,14 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 		webpage.webpageUrl = "http" + temp[1];
 		WXMediaMessage msg = new WXMediaMessage(webpage);
 		msg.title = title;
-//		msg.title = "ÎÒ·¢ÄãÒ»¸öÈí¼ş,¿´¿´ßÂ!";
+//		msg.title = "æˆ‘å‘ä½ ä¸€ä¸ªè½¯ä»¶,çœ‹çœ‹å‘—!";
 		msg.description = temp[0];
 		System.out.println("thumb=============="+thumb);
 		String img_url = getIntent().getStringExtra("img_url");
 		System.out.println("img_url==========" + img_url);
 		if (img_url.equals("")) {
 		Bitmap thumb = BitmapFactory.decodeResource(DBFengXiangActivity.this.getResources(),R.drawable.llj_fx);
-		msg.thumbData = Util.bmpToByteArray(thumb, true);// ÉèÖÃËõÂÔÍ¼
+		msg.thumbData = Util.bmpToByteArray(thumb, true);// è®¾ç½®ç¼©ç•¥å›¾
 //		msg.thumbData = bitmap2Bytes(thumb,32);
 		}else {
 		msg.thumbData = bitmap2Bytes(thumb,32);
@@ -334,7 +334,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 		req.scene = SendMessageToWX.Req.WXSceneTimeline;
 		boolean flag = api.sendReq(req);
 		System.out.println(flag + "-->" + msg.thumbData);
-		System.out.println("Î¢ĞÅ" + flag);
+		System.out.println("å¾®ä¿¡" + flag);
 	}
 	
 	private String buildTransaction(final String type) {
@@ -344,7 +344,7 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 	
 	
 	 /**
-     * Bitmap×ª»»³Ébyte[]²¢ÇÒ½øĞĞÑ¹Ëõ,Ñ¹Ëõµ½²»´óÓÚmaxkb
+     * Bitmapè½¬æ¢æˆbyte[]å¹¶ä¸”è¿›è¡Œå‹ç¼©,å‹ç¼©åˆ°ä¸å¤§äºmaxkb
      * @param bitmap
      * @param IMAGE_SIZE
      * @return
@@ -354,8 +354,8 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, output);
         int options = 100;
         while (output.toByteArray().length > maxkb&& options != 10) {
-            output.reset(); //Çå¿Õoutput
-            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//ÕâÀïÑ¹Ëõoptions%£¬°ÑÑ¹ËõºóµÄÊı¾İ´æ·Åµ½outputÖĞ
+            output.reset(); //æ¸…ç©ºoutput
+            bitmap.compress(Bitmap.CompressFormat.JPEG, options, output);//è¿™é‡Œå‹ç¼©options%ï¼ŒæŠŠå‹ç¼©åçš„æ•°æ®å­˜æ”¾åˆ°outputä¸­
             options -= 10;
         }
         return output.toByteArray();
@@ -372,8 +372,8 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 					System.out.println("img_url==========" + img_url);
 					String img_url2 = RealmName.REALM_NAME_HTTP + img_url;
 					System.out.println("img_url2=============="+img_url2);
-					thumb = GetImgUtil.getImage(img_url2);// BitmapFactory£ºÍ¼Æ¬¹¤³§£¡
-//					Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// Õâ¸öÊ±ºòµÄÍ¼Æ¬ÒÑ¾­±»´¦Àí³ÉÔ²ĞÎµÄÁË
+					thumb = GetImgUtil.getImage(img_url2);// BitmapFactoryï¼šå›¾ç‰‡å·¥å‚ï¼
+//					Bitmap bitMap_tx = Utils.toRoundBitmap(bmp,null);// è¿™ä¸ªæ—¶å€™çš„å›¾ç‰‡å·²ç»è¢«å¤„ç†æˆåœ†å½¢çš„äº†
 //					System.out.println("bitMap_tx=============="+bitMap_tx);
 					System.out.println("bmp=============="+thumb);
 					
@@ -417,13 +417,13 @@ public class DBFengXiangActivity extends BaseActivity implements OnClickListener
 	}
 	
 	/** 
-     * µÃµ½±¾µØ»òÕßÍøÂçÉÏµÄbitmap url - ÍøÂç»òÕß±¾µØÍ¼Æ¬µÄ¾ø¶ÔÂ·¾¶,±ÈÈç: 
+     * å¾—åˆ°æœ¬åœ°æˆ–è€…ç½‘ç»œä¸Šçš„bitmap url - ç½‘ç»œæˆ–è€…æœ¬åœ°å›¾ç‰‡çš„ç»å¯¹è·¯å¾„,æ¯”å¦‚: 
      *  
-     * A.ÍøÂçÂ·¾¶: url=&quot;http://blog.foreverlove.us/girl2.png&quot; ; 
+     * A.ç½‘ç»œè·¯å¾„: url=&quot;http://blog.foreverlove.us/girl2.png&quot; ; 
      *  
-     * B.±¾µØÂ·¾¶:url=&quot;file://mnt/sdcard/photo/image.png&quot;; 
+     * B.æœ¬åœ°è·¯å¾„:url=&quot;file://mnt/sdcard/photo/image.png&quot;; 
      *  
-     * C.Ö§³ÖµÄÍ¼Æ¬¸ñÊ½ ,png, jpg,bmp,gifµÈµÈ 
+     * C.æ”¯æŒçš„å›¾ç‰‡æ ¼å¼ ,png, jpg,bmp,gifç­‰ç­‰ 
      * 
      *  
      * @param url 

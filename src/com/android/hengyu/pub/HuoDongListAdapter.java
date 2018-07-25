@@ -68,12 +68,12 @@ public class HuoDongListAdapter extends BaseAdapter {
 		TextView tv_total = (TextView) convertView.findViewById(R.id.tv_ware_total);
 
 //		tv_name.setText(list.get(position).proName);
-//		tv_price.setText("£§" + list.get(position).retailPrice);
-//		tv_total.setText(" ’≤ÿ»À∆¯      " + list.get(position).collectTotal);
+//		tv_price.setText("Ôø•" + list.get(position).retailPrice);
+//		tv_total.setText("Êî∂Ëóè‰∫∫Ê∞î      " + list.get(position).collectTotal);
 		
 		tv_name.setText(list.get(position).title);
 		tv_conten.setText(list.get(position).category_title);
-		tv_ware_time.setText("ªÓ∂Ø ±º‰:"+list.get(position).add_time);
+		tv_ware_time.setText("Ê¥ªÂä®Êó∂Èó¥:"+list.get(position).add_time);
 //		loader.displayImage(RealmName.REALM_NAME_HTTP + list.get(position).img_url, image);
 		aQuery.id(image).image(RealmName.REALM_NAME_HTTP + list.get(position).img_url);
 

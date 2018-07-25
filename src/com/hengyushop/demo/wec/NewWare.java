@@ -125,12 +125,12 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	private boolean strue = false;
 	private boolean pailie = false;
 	private static SharedPreferences spPreferences;
-	private Button toTopBtn;// ·µ»Ø¶¥²¿µÄ°´Å¥
-	private boolean scrollFlag = false;// ±ê¼ÇÊÇ·ñ»¬¶¯
-	private int lastVisibleItemPosition = 0;// ±ê¼ÇÉÏ´Î»¬¶¯Î»ÖÃ
-	private ScrollView scrollView;// scrollViewÊı¾İÁĞ±í
-	private Button toTopBtn_1;// ·µ»Ø¶¥²¿µÄ°´Å¥
-	private int scrollY = 0;// ±ê¼ÇÉÏ´Î»¬¶¯Î»ÖÃ
+	private Button toTopBtn;// è¿”å›é¡¶éƒ¨çš„æŒ‰é’®
+	private boolean scrollFlag = false;// æ ‡è®°æ˜¯å¦æ»‘åŠ¨
+	private int lastVisibleItemPosition = 0;// æ ‡è®°ä¸Šæ¬¡æ»‘åŠ¨ä½ç½®
+	private ScrollView scrollView;// scrollViewæ•°æ®åˆ—è¡¨
+	private Button toTopBtn_1;// è¿”å›é¡¶éƒ¨çš„æŒ‰é’®
+	private int scrollY = 0;// æ ‡è®°ä¸Šæ¬¡æ»‘åŠ¨ä½ç½®
 	private View contentView;
 	private final String TAG="test";
 	private RelativeLayout rl_list_buju;
@@ -139,7 +139,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.new_ware);
-		 //ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+		 //åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //      Thread.setDefaultUncaughtExceptionHandler(this);
 //		radio_group = (RadioGroup) findViewById(R.id.radio_group);
 		new_list = (ListView) findViewById(R.id.new_list);
@@ -164,45 +164,45 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				public void onScrollStateChanged(AbsListView view, int scrollState) {
 					// TODO Auto-generated method stub
 					switch (scrollState) {
-					// µ±²»¹ö¶¯Ê±
-					case OnScrollListener.SCROLL_STATE_IDLE:// ÊÇµ±ÆÁÄ»Í£Ö¹¹ö¶¯Ê±
+					// å½“ä¸æ»šåŠ¨æ—¶
+					case OnScrollListener.SCROLL_STATE_IDLE:// æ˜¯å½“å±å¹•åœæ­¢æ»šåŠ¨æ—¶
 						scrollFlag = false;
-						// ÅĞ¶Ï¹ö¶¯µ½µ×²¿
+						// åˆ¤æ–­æ»šåŠ¨åˆ°åº•éƒ¨
 						if (new_list.getLastVisiblePosition() == (new_list
 								.getCount() - 1)) {
 							toTopBtn.setVisibility(View.VISIBLE);
 						}
-						// ÅĞ¶Ï¹ö¶¯µ½¶¥²¿
+						// åˆ¤æ–­æ»šåŠ¨åˆ°é¡¶éƒ¨
 						if (new_list.getFirstVisiblePosition() == 0) {
 							toTopBtn.setVisibility(View.GONE);
 						}
 
 						break;
-					case OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:// ¹ö¶¯Ê±
+					case OnScrollListener.SCROLL_STATE_TOUCH_SCROLL:// æ»šåŠ¨æ—¶
 						scrollFlag = true;
 						
 						
 						break;
-					case OnScrollListener.SCROLL_STATE_FLING:// ÊÇµ±ÓÃ»§ÓÉÓÚÖ®Ç°»®¶¯ÆÁÄ»²¢Ì§ÆğÊÖÖ¸£¬ÆÁÄ»²úÉú¹ßĞÔ»¬¶¯Ê±
+					case OnScrollListener.SCROLL_STATE_FLING:// æ˜¯å½“ç”¨æˆ·ç”±äºä¹‹å‰åˆ’åŠ¨å±å¹•å¹¶æŠ¬èµ·æ‰‹æŒ‡ï¼Œå±å¹•äº§ç”Ÿæƒ¯æ€§æ»‘åŠ¨æ—¶
 						scrollFlag = false;
 						break;
 					}
 				}
 
 				/**
-				 * firstVisibleItem£ºµ±Ç°ÄÜ¿´¼ûµÄµÚÒ»¸öÁĞ±íÏîID£¨´Ó0¿ªÊ¼£©
-				 * visibleItemCount£ºµ±Ç°ÄÜ¿´¼ûµÄÁĞ±íÏî¸öÊı£¨Ğ¡°ë¸öÒ²Ëã£© totalItemCount£ºÁĞ±íÏî¹²Êı
+				 * firstVisibleItemï¼šå½“å‰èƒ½çœ‹è§çš„ç¬¬ä¸€ä¸ªåˆ—è¡¨é¡¹IDï¼ˆä»0å¼€å§‹ï¼‰
+				 * visibleItemCountï¼šå½“å‰èƒ½çœ‹è§çš„åˆ—è¡¨é¡¹ä¸ªæ•°ï¼ˆå°åŠä¸ªä¹Ÿç®—ï¼‰ totalItemCountï¼šåˆ—è¡¨é¡¹å…±æ•°
 				 */
 				@Override
 				public void onScroll(AbsListView view, int firstVisibleItem,
 						int visibleItemCount, int totalItemCount) {
-					// µ±¿ªÊ¼»¬¶¯ÇÒListViewµ×²¿µÄYÖáµã³¬³öÆÁÄ»×î´ó·¶Î§Ê±£¬ÏÔÊ¾»òÒş²Ø¶¥²¿°´Å¥
+					// å½“å¼€å§‹æ»‘åŠ¨ä¸”ListViewåº•éƒ¨çš„Yè½´ç‚¹è¶…å‡ºå±å¹•æœ€å¤§èŒƒå›´æ—¶ï¼Œæ˜¾ç¤ºæˆ–éšè—é¡¶éƒ¨æŒ‰é’®
 					if (scrollFlag
 							&& ScreenUtil.getScreenViewBottomHeight(new_list) >= ScreenUtil
 									.getScreenHeight(NewWare.this)) {
-						if (firstVisibleItem > lastVisibleItemPosition) {// ÉÏ»¬
+						if (firstVisibleItem > lastVisibleItemPosition) {// ä¸Šæ»‘
 							toTopBtn.setVisibility(View.VISIBLE);
-						} else if (firstVisibleItem < lastVisibleItemPosition) {// ÏÂ»¬
+						} else if (firstVisibleItem < lastVisibleItemPosition) {// ä¸‹æ»‘
 							toTopBtn.setVisibility(View.GONE);
 						} else {
 							return;
@@ -221,7 +221,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 			toTopBtn_1.setOnClickListener(this);
 
 			//http://blog.csdn.net/jiangwei0910410003/article/details/17024287
-			/******************** ¼àÌıScrollView»¬¶¯Í£Ö¹ *****************************/
+			/******************** ç›‘å¬ScrollViewæ»‘åŠ¨åœæ­¢ *****************************/
 			scrollView.setOnTouchListener(new OnTouchListener() {
 				private int lastY = 0;
 				private int touchEventId = -9983761;
@@ -251,7 +251,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				}
 
 				/**
-				 * ScrollView Í£Ö¹
+				 * ScrollView åœæ­¢
 				 * 
 				 * @param view
 				 */
@@ -287,7 +287,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
                 // TODO Auto-generated method stub  
                 if(arg1 == EditorInfo.IME_ACTION_SEARCH)  
                 {  
-//                    Toast.makeText(getActivity(),"ºÇºÇ",Toast.LENGTH_SHORT).show();  
+//                    Toast.makeText(getActivity(),"å‘µå‘µ",Toast.LENGTH_SHORT).show();  
                     // search pressed and perform your functionality.  
     				Intent intent = new Intent(NewWare.this, SouSuoSpActivity.class);
     				String 	strwhere_zhi = tv1.getText().toString().trim(); 
@@ -378,7 +378,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		myadapter = new MySpListAdapter(lists,NewWare.this, imageLoader);
 		new_list.setAdapter(myadapter);
 		
-		System.out.println("=======±êÌâÖµ111=="+nobiaoti);
+		System.out.println("=======æ ‡é¢˜å€¼111=="+nobiaoti);
 		
 		loadWeather();
 		popupWindowMenu = new MyPopupWindowMenu(this);
@@ -399,7 +399,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	
 // 	public void uncaughtException(Thread arg0, Throwable arg1) {
 //		// TODO Auto-generated method stub
-//		 //ÔÚ´Ë´¦ÀíÒì³££¬ arg1¼´Îª²¶»ñµ½µÄÒì³£
+//		 //åœ¨æ­¤å¤„ç†å¼‚å¸¸ï¼Œ arg1å³ä¸ºæ•è·åˆ°çš„å¼‚å¸¸
 //        Log.i("AAA", "uncaughtException   " + arg1);
 //	}
 	@Override
@@ -422,7 +422,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				progress.CloseProgress();
 				myadapter.notifyDataSetChanged();
 //				setListViewHeightBasedOnChildren(new_list); 
-				System.out.println("=====================ÕâÀï=="+lists.size());
+				System.out.println("=====================è¿™é‡Œ=="+lists.size());
 				
 				new_list.setOnItemClickListener(new OnItemClickListener() {
 	                
@@ -440,7 +440,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				break;
 			case 1:
 				try{
-				System.out.println("=====================ÕâÀï2=="+lists.size());
+				System.out.println("=====================è¿™é‡Œ2=="+lists.size());
 				jdhadapter = new GoodsMyGridViewAdaper(lists, getApplicationContext());
 				gridView_list.setAdapter(jdhadapter);
 //				jdhadapter.putData(lists);
@@ -466,7 +466,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				INDX = list_lb.get(0).id;
 				quanbu = list_lb.get(0).id;
 		        	
-           	     System.out.println("=====1µÚ¶ş²ãdeÊı¾İ====================="+INDX);
+           	     System.out.println("=====1ç¬¬äºŒå±‚deæ•°æ®====================="+INDX);
 				AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_category_child_list?" +
 						"channel_name=goods&parent_id="+INDX+"",new AsyncHttpResponseHandler() {
 							@Override
@@ -485,7 +485,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		            	try{
 		            	 INDX = list_lb.get(arg2).id;
 		            	 quanbu = list_lb.get(arg2).id;
-		            	 System.out.println("=====2µÚ¶ş²ãdeÊı¾İ====================="+INDX);
+		            	 System.out.println("=====2ç¬¬äºŒå±‚deæ•°æ®====================="+INDX);
 		            	 
 		            	 lbadapter.setSeclection(arg2);
 		            	 lbadapter.notifyDataSetChanged();
@@ -494,7 +494,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		     			int id = spPreferences.getInt("id", 0);
 		            	 	System.out.println("strue===================="+strue);
 		                 if (arg2 != id) {
-		                	    //µÚÒ»´Îµ½½çÃæÑ¡ÔñµÚÒ»¸ö¶ş¼¶²Ëµ¥
+		                	    //ç¬¬ä¸€æ¬¡åˆ°ç•Œé¢é€‰æ‹©ç¬¬ä¸€ä¸ªäºŒçº§èœå•
 		                	    if(strue = false){
 		                	    	String parent_id = String.valueOf(list_lb.get(arg2).id);
 									String quanbu_id = String.valueOf(quanbu);
@@ -505,7 +505,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		                	    	strue = true;
 		                	    }else{
 		                    	num = 0;
-		                    	System.out.println("Î»ÖÃÎª0====================");
+		                    	System.out.println("ä½ç½®ä¸º0====================");
 				     			AsyncHttp.get(RealmName.REALM_NAME_LL+ "/get_category_child_list?" +
 										"channel_name=goods&parent_id="+INDX+"",new AsyncHttpResponseHandler() {
 											@Override
@@ -520,7 +520,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				     			
 							}else {
 								num = 1;
-								System.out.println("Î»ÖÃÎª1====================");
+								System.out.println("ä½ç½®ä¸º1====================");
 							}
 							int geshu = list_lb.get(arg2).id;
 							if(geshu!=0){
@@ -544,7 +544,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 								}
 							}else {
 //								num = 1;
-								Toast.makeText(NewWare.this, "ÎŞ×ÓÄ¿Â¼", 200).show();
+								Toast.makeText(NewWare.this, "æ— å­ç›®å½•", 200).show();
 							}
 							
 		            	} catch (Exception e) {
@@ -612,7 +612,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	private int RUN_METHOD = -1;
 	private void formatWeather(String result) {
 		try {
-			System.out.println("=======ÁĞ±íÊı¾İ=="+result);
+			System.out.println("=======åˆ—è¡¨æ•°æ®=="+result);
 			list_lb = new ArrayList<EnterpriseData>();
 			JSONObject object = new JSONObject(result);
 			JSONArray jsonArray = object.getJSONArray("data");
@@ -637,7 +637,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * µÚ¶ş¼¶²Ëµ¥
+	 * ç¬¬äºŒçº§èœå•
 	 */
 	private ArrayList data1,data2;
 	private void formatWeatherll(String result) {
@@ -645,7 +645,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		data2= new ArrayList();
 		listll = new ArrayList<WareDatall>();
 		try {
-			System.out.println("=====µÚ¶ş²ãÊı¾İ====================="+result);
+			System.out.println("=====ç¬¬äºŒå±‚æ•°æ®====================="+result);
 			JSONObject object = new JSONObject(result);
 			String status = object.getString("status");
 			if (status.equals("y")) {
@@ -653,7 +653,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 			
 			listll.add(0, null);
 			data1.add("001");
-			data2.add("È«²¿");
+			data2.add("å…¨éƒ¨");
     		for (int i = 0; i < jsonArray.length(); i++) {
     		JSONObject obj= jsonArray.getJSONObject(i);
     		dm = new WareDatall();
@@ -684,7 +684,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	              try{
 	            		String  title_id = (String) data1.get(arg2);
 	            		 INDX =  Integer.parseInt(title_id);
-	            		 System.out.println("=====µÚ¶ş²ãtitle_id====================="+title_id);
+	            		 System.out.println("=====ç¬¬äºŒå±‚title_id====================="+title_id);
 //	            		 System.out.println("=====quanbu====================="+quanbu);
 	            	 if (title_id.equals("001")) {
 	            		 load_list(quanbu, VIEW_NUM, true);
@@ -694,7 +694,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	            	 
 //	            	 String id = listll.get(arg2).getId();
 //	            	 INDX =  Integer.parseInt(id);
-//	            	 System.out.println("=====µÚ¶ş²ãÊı¾İ1====================="+INDX);
+//	            	 System.out.println("=====ç¬¬äºŒå±‚æ•°æ®1====================="+INDX);
 //	            	 load_list(INDX, true);
 	            	 System.out.println("=====arg2===================="+arg2);
 	            	 arrayadapter.setSeclection(arg2);
@@ -708,7 +708,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	        
             }else {
             	gridView.setVisibility(View.GONE);
-            	System.out.println("=====µÚ¶ş²ãÊı¾İ2====================="+INDX);
+            	System.out.println("=====ç¬¬äºŒå±‚æ•°æ®2====================="+INDX);
             	load_list(INDX, VIEW_NUM, true);
 			}
 			 
@@ -720,7 +720,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	
 	
 	/**
-	 * ÉÏÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸Šæ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnHeaderRefreshListener listHeadListener = new OnHeaderRefreshListener() {
 
@@ -738,7 +738,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	};
 	
 	/**
-	 * ÏÂÀ­ÁĞ±íË¢ĞÂ¼ÓÔØ
+	 * ä¸‹æ‹‰åˆ—è¡¨åˆ·æ–°åŠ è½½
 	 */
 	private OnFooterRefreshListener listFootListener = new OnFooterRefreshListener() {
 
@@ -764,7 +764,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	};
 	
 	/**
-	 * ÉÌÆ·ÁĞ±íÊı¾İ½âÎö
+	 * å•†å“åˆ—è¡¨æ•°æ®è§£æ
 	 */
 	private int CURRENT_NUM = 1;
 	private int VIEW_NUM = 10;
@@ -784,7 +784,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 							public void onSuccess(int arg0, String arg1) {
 								// TODO Auto-generated method stub
 								super.onSuccess(arg0, arg1);
-//								System.out.println("=====================Èı¼¶Öµ"+arg1);
+//								System.out.println("=====================ä¸‰çº§å€¼"+arg1);
 								try {
 									JSONObject jsonObject = new JSONObject(arg1);
 									String status = jsonObject.getString("status");
@@ -810,7 +810,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 									}
 									}else {
 										progress.CloseProgress();
-										Toast.makeText(NewWare.this, "Ã»ÓĞÉÌÆ·ÁË", 200).show();
+										Toast.makeText(NewWare.this, "æ²¡æœ‰å•†å“äº†", 200).show();
 									}
 									progress.CloseProgress();
 									if(len!=0){
@@ -845,7 +845,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * ÉÌÆ·ÁĞ±íÊı¾İ½âÎö2
+	 * å•†å“åˆ—è¡¨æ•°æ®è§£æ2
 	 */
 //	private void load_list2(int INDX,boolean flag) {
 ////		progress.CreateProgress();
@@ -862,7 +862,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 //							public void onSuccess(int arg0, String arg1) {
 //								// TODO Auto-generated method stub
 //								super.onSuccess(arg0, arg1);
-//								System.out.println("=====================Èı¼¶Öµ"+arg1);
+//								System.out.println("=====================ä¸‰çº§å€¼"+arg1);
 //								try {
 //									JSONObject jsonObject = new JSONObject(arg1);
 //									String status = jsonObject.getString("status");
@@ -888,7 +888,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 //									}
 //									}else {
 //										progress.CloseProgress();
-//										Toast.makeText(NewWare.this, "Ã»ÓĞÉÌÆ·ÁË", 200).show();
+//										Toast.makeText(NewWare.this, "æ²¡æœ‰å•†å“äº†", 200).show();
 //									}
 //									progress.CloseProgress();
 //									if(len!=0){
@@ -917,7 +917,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.top_btn:// µã»÷°´Å¥·µ»Øµ½ListViewµÄµÚÒ»Ïî
+		case R.id.top_btn:// ç‚¹å‡»æŒ‰é’®è¿”å›åˆ°ListViewçš„ç¬¬ä¸€é¡¹
 			setListViewPos(0);
 			break;
 		case R.id.top_btn_1:
@@ -933,7 +933,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 	}
 	
 	/**
-	 * ¹ö¶¯ListViewµ½Ö¸¶¨Î»ÖÃ
+	 * æ»šåŠ¨ListViewåˆ°æŒ‡å®šä½ç½®
 	 * 
 	 * @param pos
 	 */
@@ -945,7 +945,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		}
 	}
 	
-	//ºáÏò»¬¶¯ÊÊÅäÆ÷
+	//æ¨ªå‘æ»‘åŠ¨é€‚é…å™¨
 	public class MyAdapter extends BaseAdapter {
 
 		private Context mContext;
@@ -1006,9 +1006,9 @@ public class NewWare extends BaseActivity implements OnClickListener{
 			}else {
 				holder = (ViewHolder) convertView.getTag();
 			}
-			System.out.println("=====Î»ÖÃ====================="+position);
+			System.out.println("=====ä½ç½®====================="+position);
 //			holder.img.setImageResource(dataList.get(position));
-//			holder.text.setText("µÚ" + position + "Ïî");
+//			holder.text.setText("ç¬¬" + position + "é¡¹");
 			holder.text.setText(List_lb.get(position).title);
 			biaoti = list_lb.get(position).title.length();
 
@@ -1058,13 +1058,13 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
 				android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
 		// mPopupWindow.setBackgroundDrawable(new
-		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(
 				android.R.color.white));
 		mPopupWindow.setOutsideTouchable(true);
-		// ×Ô¶¨Òå¶¯»­
+		// è‡ªå®šä¹‰åŠ¨ç”»
 		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-		// Ê¹ÓÃÏµÍ³¶¯»­
+		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 		mPopupWindow.setAnimationStyle(android.R.style.Animation_Toast);
 		mPopupWindow.update();
 		mPopupWindow.setTouchable(true);
@@ -1074,11 +1074,11 @@ public class NewWare extends BaseActivity implements OnClickListener{
 //		View popView = mLayoutInflater.inflate(R.layout.market_information_sep_pop,null);
 //		mPopupWindow = new PopupWindow(popView, LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
 //		// mPopupWindow.setBackgroundDrawable(new
-//		// BitmapDrawable());//±ØĞëÉèÖÃbackground²ÅÄÜÏûÊ§
+//		// BitmapDrawable());//å¿…é¡»è®¾ç½®backgroundæ‰èƒ½æ¶ˆå¤±
 //		mPopupWindow.setBackgroundDrawable(getResources().getDrawable(R.color.ban_louming));
-//		// ×Ô¶¨Òå¶¯»­
+//		// è‡ªå®šä¹‰åŠ¨ç”»
 //		// mPopupWindow.setAnimationStyle(R.style.PopupAnimation);
-//		// Ê¹ÓÃÏµÍ³¶¯»­
+//		// ä½¿ç”¨ç³»ç»ŸåŠ¨ç”»
 //		mPopupWindow.setAnimationStyle(R.style.delete_pop_style);
 //		mPopupWindow.update();
 //		mPopupWindow.setTouchable(true);
@@ -1093,8 +1093,8 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		if (!mPopupWindow.isShowing()) {
 			try {
 			// mPopupWindow.showAsDropDown(view,0,0);
-			// µÚÒ»¸ö²ÎÊıÖ¸¶¨PopupWindowµÄÃªµãview£¬¼´ÒÀ¸½ÔÚÄÄ¸öviewÉÏ¡£
-			// µÚ¶ş¸ö²ÎÊıÖ¸¶¨ÆğÊ¼µãÎªparentµÄÓÒÏÂ½Ç£¬µÚÈı¸ö²ÎÊıÉèÖÃÒÔparentµÄÓÒÏÂ½ÇÎªÔ­µã£¬Ïò×ó¡¢ÉÏ¸÷Æ«ÒÆ10ÏñËØ¡£
+			// ç¬¬ä¸€ä¸ªå‚æ•°æŒ‡å®šPopupWindowçš„é”šç‚¹viewï¼Œå³ä¾é™„åœ¨å“ªä¸ªviewä¸Šã€‚
+			// ç¬¬äºŒä¸ªå‚æ•°æŒ‡å®šèµ·å§‹ç‚¹ä¸ºparentçš„å³ä¸‹è§’ï¼Œç¬¬ä¸‰ä¸ªå‚æ•°è®¾ç½®ä»¥parentçš„å³ä¸‹è§’ä¸ºåŸç‚¹ï¼Œå‘å·¦ã€ä¸Šå„åç§»10åƒç´ ã€‚
 			int[] location = new int[2];
 			view.getLocationOnScreen(location);
 			mPopupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -1107,13 +1107,13 @@ public class NewWare extends BaseActivity implements OnClickListener{
 		
 	}
 	
-    //ÉèÖÃºáÏòÏÔÊ¾µÄ¸öÊı
+    //è®¾ç½®æ¨ªå‘æ˜¾ç¤ºçš„ä¸ªæ•°
 	private void inter(){
 		try {
 			
-		int size = list_lb.size();//Êı¾İ×Ü³¤¶È
+		int size = list_lb.size();//æ•°æ®æ€»é•¿åº¦
 
-		//»ñµÃÆÁÄ»¿í¶È
+		//è·å¾—å±å¹•å®½åº¦
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		int windowWidth = metrics.widthPixels;
@@ -1124,13 +1124,13 @@ public class NewWare extends BaseActivity implements OnClickListener{
 			 itemWidth = windowWidth/3;
 		}
 
-		//»ñµÃÆÁÄ»¿í¶ÈÒ²¿ÉÒÔÕâÑùĞ´
-		//int itemWidth = getWindowManager().getDefaultDisplay().getWidth() / 5;//ÆÁÄ»ÏÔÊ¾Ä¬ÈÏÊıÁ¿
+		//è·å¾—å±å¹•å®½åº¦ä¹Ÿå¯ä»¥è¿™æ ·å†™
+		//int itemWidth = getWindowManager().getDefaultDisplay().getWidth() / 5;//å±å¹•æ˜¾ç¤ºé»˜è®¤æ•°é‡
 
-		int gridViewWidth = (int)(size * itemWidth);//linearLayoutµÄ×Ü¿í¶È
+		int gridViewWidth = (int)(size * itemWidth);//linearLayoutçš„æ€»å®½åº¦
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(gridViewWidth,LinearLayout.LayoutParams.MATCH_PARENT);
-		myGridView.setLayoutParams(params);//ÉèÖÃGridView²¼¾Ö²ÎÊı
-		myGridView.setNumColumns(size);//¶¯Ì¬ÉèÖÃGridViewÁĞÊı
+		myGridView.setLayoutParams(params);//è®¾ç½®GridViewå¸ƒå±€å‚æ•°
+		myGridView.setNumColumns(size);//åŠ¨æ€è®¾ç½®GridViewåˆ—æ•°
 		
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -1177,7 +1177,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 					lists.add(spList);
 				}
 				
-				System.out.println("=====================µÚÈı¸öÁĞ±í");
+				System.out.println("=====================ç¬¬ä¸‰ä¸ªåˆ—è¡¨");
 				}else {
 					progress.CloseProgress();
 					Toast.makeText(NewWare.this, info, 200).show();
@@ -1214,7 +1214,7 @@ public class NewWare extends BaseActivity implements OnClickListener{
 //	}
 	
 	public void setListViewHeightBasedOnChildren(ListView listView) {   
-        // »ñÈ¡ListView¶ÔÓ¦µÄAdapter   
+        // è·å–ListViewå¯¹åº”çš„Adapter   
         ListAdapter listAdapter = listView.getAdapter();   
         if (listAdapter == null) {   
             return;   
@@ -1222,29 +1222,29 @@ public class NewWare extends BaseActivity implements OnClickListener{
    
         int totalHeight = 0;   
         for (int i = 0, len = listAdapter.getCount(); i < len; i++) {   
-            // listAdapter.getCount()·µ»ØÊı¾İÏîµÄÊıÄ¿   
+            // listAdapter.getCount()è¿”å›æ•°æ®é¡¹çš„æ•°ç›®   
             View listItem = listAdapter.getView(i, null, listView);   
-            // ¼ÆËã×ÓÏîView µÄ¿í¸ß   
+            // è®¡ç®—å­é¡¹View çš„å®½é«˜   
             listItem.measure(0, 0);    
-            // Í³¼ÆËùÓĞ×ÓÏîµÄ×Ü¸ß¶È   
+            // ç»Ÿè®¡æ‰€æœ‰å­é¡¹çš„æ€»é«˜åº¦   
             totalHeight += listItem.getMeasuredHeight();    
         }   
    
         ViewGroup.LayoutParams params = listView.getLayoutParams();   
         params.height = totalHeight+ (listView.getDividerHeight() * (listAdapter.getCount() - 1));   
-        // listView.getDividerHeight()»ñÈ¡×ÓÏî¼ä·Ö¸ô·ûÕ¼ÓÃµÄ¸ß¶È   
-        // params.height×îºóµÃµ½Õû¸öListViewÍêÕûÏÔÊ¾ĞèÒªµÄ¸ß¶È   
+        // listView.getDividerHeight()è·å–å­é¡¹é—´åˆ†éš”ç¬¦å ç”¨çš„é«˜åº¦   
+        // params.heightæœ€åå¾—åˆ°æ•´ä¸ªListViewå®Œæ•´æ˜¾ç¤ºéœ€è¦çš„é«˜åº¦   
         listView.setLayoutParams(params);   
     }   
 	
 	/**
-	 * ScrollView µÄ¶¥²¿£¬µ×²¿ÅĞ¶Ï£º
+	 * ScrollView çš„é¡¶éƒ¨ï¼Œåº•éƒ¨åˆ¤æ–­ï¼š
 	 * http://www.trinea.cn/android/on-bottom-load-more-scrollview-impl/
 	 * 
-	 * ÆäÖĞgetChildAt±íÊ¾µÃµ½ScrollViewµÄchild View£¬ ÒòÎªScrollViewÖ»ÔÊĞíÒ»¸öchild
-	 * view£¬ËùÒÔcontentView.getMeasuredHeight()±íÊ¾µÃµ½×ÓViewµÄ¸ß¶È,
-	 * getScrollY()±íÊ¾µÃµ½yÖáµÄ¹ö¶¯¾àÀë£¬getHeight()ÎªscrollViewµÄ¸ß¶È¡£
-	 * µ±getScrollY()´ïµ½×î´óÊ±¼ÓÉÏscrollViewµÄ¸ß¶È¾ÍµÄ¾ÍµÈÓÚËüÄÚÈİµÄ¸ß¶ÈÁË°¡~
+	 * å…¶ä¸­getChildAtè¡¨ç¤ºå¾—åˆ°ScrollViewçš„child Viewï¼Œ å› ä¸ºScrollViewåªå…è®¸ä¸€ä¸ªchild
+	 * viewï¼Œæ‰€ä»¥contentView.getMeasuredHeight()è¡¨ç¤ºå¾—åˆ°å­Viewçš„é«˜åº¦,
+	 * getScrollY()è¡¨ç¤ºå¾—åˆ°yè½´çš„æ»šåŠ¨è·ç¦»ï¼ŒgetHeight()ä¸ºscrollViewçš„é«˜åº¦ã€‚
+	 * å½“getScrollY()è¾¾åˆ°æœ€å¤§æ—¶åŠ ä¸ŠscrollViewçš„é«˜åº¦å°±çš„å°±ç­‰äºå®ƒå†…å®¹çš„é«˜åº¦äº†å•Š~
 	 * 
 	 * @param pos
 	 */
@@ -1254,14 +1254,14 @@ public class NewWare extends BaseActivity implements OnClickListener{
 				.getScreenHeight(NewWare.this));
 		
 		
-		// µ×²¿ÅĞ¶Ï
+		// åº•éƒ¨åˆ¤æ–­
 		if (contentView != null
 				&& contentView.getMeasuredHeight() <= scrollView.getScrollY()
 						+ scrollView.getHeight()) {
 			toTopBtn_1.setVisibility(View.VISIBLE);
 			Log.i(TAG,"bottom");
 		}
-		// ¶¥²¿ÅĞ¶Ï
+		// é¡¶éƒ¨åˆ¤æ–­
 		else if (scrollView.getScrollY() == 0) {
 			
 			Log.i(TAG,"top");

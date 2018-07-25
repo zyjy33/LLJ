@@ -155,7 +155,7 @@ public class OrderConfrimActivity extends BaseActivity {
 			AppManager.getAppManager().finishActivity();
 		}
 		
-//		innidada();//ÔİÊ±×¢ÊÍ
+//		innidada();//æš‚æ—¶æ³¨é‡Š
 		
 		// endmoney = String.valueOf(Double.parseDouble(data.getEndmoney())-jf);
 		 
@@ -167,7 +167,7 @@ public class OrderConfrimActivity extends BaseActivity {
 //		phone = registerData.getPhone().toString();
 //		pwd = registerData.getPassword().toString();
 		System.out.println("============1");
-//		DOparse();//»ñÈ¡Ä¬ÈÏµØÖ·
+//		DOparse();//è·å–é»˜è®¤åœ°å€
 		System.out.println("============2");
 		TelephonyManager telephonyManager = (TelephonyManager) this
 				.getSystemService(Context.TELEPHONY_SERVICE);
@@ -192,8 +192,8 @@ public class OrderConfrimActivity extends BaseActivity {
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		// ÔÚÕâÀï½øĞĞ²éÑ¯µØÖ·µÄ²Ù×÷
-		// Toast.makeText(getApplicationContext(), "²éÑ¯µØÖ·ÁªÍø²Ù×÷",200).show();
+		// åœ¨è¿™é‡Œè¿›è¡ŒæŸ¥è¯¢åœ°å€çš„æ“ä½œ
+		// Toast.makeText(getApplicationContext(), "æŸ¥è¯¢åœ°å€è”ç½‘æ“ä½œ",200).show();
 //		handler.sendEmptyMessage(4);
 		 if(resultCode==100){
 			 layout0.setVisibility(View.VISIBLE);
@@ -201,7 +201,7 @@ public class OrderConfrimActivity extends BaseActivity {
 			 
 			 UserAddressData dt =  (UserAddressData) data.getSerializableExtra("data");
 			 checkedAddressId = dt.consigneeAddressId;
-				tv_user_name.setText("ÊÕ»õÈË:"+dt.consigneeUserName);
+				tv_user_name.setText("æ”¶è´§äºº:"+dt.consigneeUserName);
 				tv_user_address.setText(dt.consigneeAddressInfo);
 				tv_user_phone.setText(dt.phone);
 		 }
@@ -216,7 +216,7 @@ public class OrderConfrimActivity extends BaseActivity {
 			switch (msg.what) {
 			case -1:
 				 
-				//Á¢¼´¹ºÂòÏÂ¶©µ¥
+				//ç«‹å³è´­ä¹°ä¸‹è®¢å•
 				String orderid = (String) msg.obj;
 //				endmoney = getIntent().getStringExtra("retailPrice");
 				order_str = RealmName.REALM_NAME
@@ -230,18 +230,18 @@ public class OrderConfrimActivity extends BaseActivity {
 						+ "&buyPhoneVerificationCode=&PayType=" + type
 						+ "&ConsumptionCredits=" + jf;
 				yuePay();
-				//Óà¶îÖ§¸¶×´Ì¬
+				//ä½™é¢æ”¯ä»˜çŠ¶æ€
 				break;
 			case 0:
 				list = (ArrayList<UserAddressData>) msg.obj;
 				int size = list.size();
 				if(size!=0){
-					//ÓĞÊı¾İÈ¡µÚÒ»Ìõ
+					//æœ‰æ•°æ®å–ç¬¬ä¸€æ¡
 					UserAddressData data = list.get(0);
 					layout0.setVisibility(View.VISIBLE);
 					layout1.setVisibility(View.GONE);
 					checkedAddressId = data.consigneeAddressId;
-					tv_user_name.setText("ÊÕ»õÈË:"+data.consigneeUserName);
+					tv_user_name.setText("æ”¶è´§äºº:"+data.consigneeUserName);
 					tv_user_address.setText(data.consigneeAddressInfo);
 					tv_user_phone.setText(data.phone);
 					layout0.setOnClickListener(new OnClickListener() {
@@ -249,12 +249,12 @@ public class OrderConfrimActivity extends BaseActivity {
 						@Override
 						public void onClick(View arg0) {
 							Intent intent = new Intent(OrderConfrimActivity.this,AddressManagerActivity.class);
-							intent.putExtra("order_confrim", "order_confrim");//±êÊ¾
+							intent.putExtra("order_confrim", "order_confrim");//æ ‡ç¤º
 							startActivityForResult(intent, 100);
 						}
 					});
 				}else {
-					//ÉèÖÃ½çÃæµÄ¿ÉÏÖºÍÒş²ØÒòËØ
+					//è®¾ç½®ç•Œé¢çš„å¯ç°å’Œéšè—å› ç´ 
 					layout0.setVisibility(View.GONE);
 					layout1.setVisibility(View.VISIBLE);
 				}
@@ -268,11 +268,11 @@ public class OrderConfrimActivity extends BaseActivity {
 				break;
 			case 2:
 				if (TextUtils.equals("1", type)) {
-					// ÔÚ´Ëµ¯³öÑ¡Ôñ¿ò
-					// Ìø×ªµ½¸¶¿îÒ³Ãæ
+					// åœ¨æ­¤å¼¹å‡ºé€‰æ‹©æ¡†
+					// è·³è½¬åˆ°ä»˜æ¬¾é¡µé¢
 					if (banks != null && banks.size() != 0) {
-						// ±íÊ¾ÊÇµÚ¶ş´ÎÖ§¸¶
-						System.out.println("Ğ´µÚ¶ş´ÎÖ§¸¶");
+						// è¡¨ç¤ºæ˜¯ç¬¬äºŒæ¬¡æ”¯ä»˜
+						System.out.println("å†™ç¬¬äºŒæ¬¡æ”¯ä»˜");
 						// initPopupWindow1();
 						// showPopupWindow1(btn_OK);
 						Intent intent = new Intent(OrderConfrimActivity.this,
@@ -286,7 +286,7 @@ public class OrderConfrimActivity extends BaseActivity {
 						startActivityForResult(intent, 1);
 						
 					} else {
-						// ±íÊ¾Ê×´ÎÖ§¸¶
+						// è¡¨ç¤ºé¦–æ¬¡æ”¯ä»˜
 						Intent intent = new Intent(OrderConfrimActivity.this,
 								PayActivity.class);
 						Bundle bundle = new Bundle();
@@ -299,12 +299,12 @@ public class OrderConfrimActivity extends BaseActivity {
 					}
 
 				} else if (TextUtils.equals("2", type)) {
-					// Ö§¸¶±¦
+					// æ”¯ä»˜å®
 					ali_pay();
 
 				} else if(TextUtils.equals("5", type)){
-					System.out.println("Î¢ĞÅÖ§¸¶");
-					//Î¢ĞÅÖ§¸¶
+					System.out.println("å¾®ä¿¡æ”¯ä»˜");
+					//å¾®ä¿¡æ”¯ä»˜
 					
 				
 					boolean isPaySupported = api.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
@@ -317,10 +317,10 @@ public class OrderConfrimActivity extends BaseActivity {
 							req.timeStamp		= timestamp;
 							req.packageValue	= package_;
 							req.sign			= sign;
-							// ÔÚÖ§¸¶Ö®Ç°£¬Èç¹ûÓ¦ÓÃÃ»ÓĞ×¢²áµ½Î¢ĞÅ£¬Ó¦¸ÃÏÈµ÷ÓÃIWXMsg.registerApp½«Ó¦ÓÃ×¢²áµ½Î¢ĞÅ
+							// åœ¨æ”¯ä»˜ä¹‹å‰ï¼Œå¦‚æœåº”ç”¨æ²¡æœ‰æ³¨å†Œåˆ°å¾®ä¿¡ï¼Œåº”è¯¥å…ˆè°ƒç”¨IWXMsg.registerAppå°†åº”ç”¨æ³¨å†Œåˆ°å¾®ä¿¡
 							api.registerApp(Constants.APP_ID);
 							boolean flag = api.sendReq(req);
-							System.out.println("Ö§¸¶"+flag);
+							System.out.println("æ”¯ä»˜"+flag);
 					}else {
 						
 					}
@@ -350,25 +350,25 @@ public class OrderConfrimActivity extends BaseActivity {
 			case 5: {
 				PayResult payResult = new PayResult((String) msg.obj);
 
-				// Ö§¸¶±¦·µ»Ø´Ë´ÎÖ§¸¶½á¹û¼°¼ÓÇ©£¬½¨Òé¶ÔÖ§¸¶±¦Ç©ÃûĞÅÏ¢ÄÃÇ©Ô¼Ê±Ö§¸¶±¦Ìá¹©µÄ¹«Ô¿×öÑéÇ©
+				// æ”¯ä»˜å®è¿”å›æ­¤æ¬¡æ”¯ä»˜ç»“æœåŠåŠ ç­¾ï¼Œå»ºè®®å¯¹æ”¯ä»˜å®ç­¾åä¿¡æ¯æ‹¿ç­¾çº¦æ—¶æ”¯ä»˜å®æä¾›çš„å…¬é’¥åšéªŒç­¾
 				String resultInfo = payResult.getResult();
 
 				String resultStatus = payResult.getResultStatus();
 				System.out.println(resultInfo + "---" + resultStatus);
-				// ÅĞ¶ÏresultStatus Îª¡°9000¡±Ôò´ú±íÖ§¸¶³É¹¦£¬¾ßÌå×´Ì¬Âë´ú±íº¬Òå¿É²Î¿¼½Ó¿ÚÎÄµµ
+				// åˆ¤æ–­resultStatus ä¸ºâ€œ9000â€åˆ™ä»£è¡¨æ”¯ä»˜æˆåŠŸï¼Œå…·ä½“çŠ¶æ€ç ä»£è¡¨å«ä¹‰å¯å‚è€ƒæ¥å£æ–‡æ¡£
 				if (TextUtils.equals(resultStatus, "9000")) {
-					Toast.makeText(OrderConfrimActivity.this, "Ö§¸¶³É¹¦",
+					Toast.makeText(OrderConfrimActivity.this, "æ”¯ä»˜æˆåŠŸ",
 							Toast.LENGTH_SHORT).show();
 				} else {
-					// ÅĞ¶ÏresultStatus Îª·Ç¡°9000¡±Ôò´ú±í¿ÉÄÜÖ§¸¶Ê§°Ü
-					// ¡°8000¡±´ú±íÖ§¸¶½á¹ûÒòÎªÖ§¸¶ÇşµÀÔ­Òò»òÕßÏµÍ³Ô­Òò»¹ÔÚµÈ´ıÖ§¸¶½á¹ûÈ·ÈÏ£¬×îÖÕ½»Ò×ÊÇ·ñ³É¹¦ÒÔ·şÎñ¶ËÒì²½Í¨ÖªÎª×¼£¨Ğ¡¸ÅÂÊ×´Ì¬£©
+					// åˆ¤æ–­resultStatus ä¸ºéâ€œ9000â€åˆ™ä»£è¡¨å¯èƒ½æ”¯ä»˜å¤±è´¥
+					// â€œ8000â€ä»£è¡¨æ”¯ä»˜ç»“æœå› ä¸ºæ”¯ä»˜æ¸ é“åŸå› æˆ–è€…ç³»ç»ŸåŸå› è¿˜åœ¨ç­‰å¾…æ”¯ä»˜ç»“æœç¡®è®¤ï¼Œæœ€ç»ˆäº¤æ˜“æ˜¯å¦æˆåŠŸä»¥æœåŠ¡ç«¯å¼‚æ­¥é€šçŸ¥ä¸ºå‡†ï¼ˆå°æ¦‚ç‡çŠ¶æ€ï¼‰
 					if (TextUtils.equals(resultStatus, "8000")) {
-						Toast.makeText(OrderConfrimActivity.this, "Ö§¸¶½á¹ûÈ·ÈÏÖĞ",
+						Toast.makeText(OrderConfrimActivity.this, "æ”¯ä»˜ç»“æœç¡®è®¤ä¸­",
 								Toast.LENGTH_SHORT).show();
 
 					} else {
-						// ÆäËûÖµ¾Í¿ÉÒÔÅĞ¶ÏÎªÖ§¸¶Ê§°Ü£¬°üÀ¨ÓÃ»§Ö÷¶¯È¡ÏûÖ§¸¶£¬»òÕßÏµÍ³·µ»ØµÄ´íÎó
-						Toast.makeText(OrderConfrimActivity.this, "Ö§¸¶Ê§°Ü",
+						// å…¶ä»–å€¼å°±å¯ä»¥åˆ¤æ–­ä¸ºæ”¯ä»˜å¤±è´¥ï¼ŒåŒ…æ‹¬ç”¨æˆ·ä¸»åŠ¨å–æ¶ˆæ”¯ä»˜ï¼Œæˆ–è€…ç³»ç»Ÿè¿”å›çš„é”™è¯¯
+						Toast.makeText(OrderConfrimActivity.this, "æ”¯ä»˜å¤±è´¥",
 								Toast.LENGTH_SHORT).show();
 
 					}
@@ -376,7 +376,7 @@ public class OrderConfrimActivity extends BaseActivity {
 				break;
 			}
 			case 6: {
-				Toast.makeText(OrderConfrimActivity.this, "¼ì²é½á¹ûÎª£º" + msg.obj,
+				Toast.makeText(OrderConfrimActivity.this, "æ£€æŸ¥ç»“æœä¸ºï¼š" + msg.obj,
 						Toast.LENGTH_SHORT).show();
 				break;
 			}
@@ -436,17 +436,17 @@ public class OrderConfrimActivity extends BaseActivity {
 		return appSign;
 	}
 	/**
-	 * sign the order info. ¶Ô¶©µ¥ĞÅÏ¢½øĞĞÇ©Ãû
+	 * sign the order info. å¯¹è®¢å•ä¿¡æ¯è¿›è¡Œç­¾å
 	 * 
 	 * @param content
-	 *            ´ıÇ©Ãû¶©µ¥ĞÅÏ¢
+	 *            å¾…ç­¾åè®¢å•ä¿¡æ¯
 	 */
 	public String sign(String content) {
 		return SignUtils.sign(content, Common.RSA_PRIVATE);
 	}
 
 	/**
-	 * get the sign type we use. »ñÈ¡Ç©Ãû·½Ê½
+	 * get the sign type we use. è·å–ç­¾åæ–¹å¼
 	 * 
 	 */
 	public String getSignType() {
@@ -454,55 +454,55 @@ public class OrderConfrimActivity extends BaseActivity {
 	}
 
 	/**
-	 * create the order info. ´´½¨¶©µ¥ĞÅÏ¢
+	 * create the order info. åˆ›å»ºè®¢å•ä¿¡æ¯
 	 * 
 	 */
 	public String getOrderInfo(String subject, String body, String dingdan) {
-		// Ç©Ô¼ºÏ×÷ÕßÉí·İID
+		// ç­¾çº¦åˆä½œè€…èº«ä»½ID
 		String orderInfo = "partner=" + "\"" + Common.PARTNER + "\"";
 
-		// Ç©Ô¼Âô¼ÒÖ§¸¶±¦ÕËºÅ
+		// ç­¾çº¦å–å®¶æ”¯ä»˜å®è´¦å·
 		orderInfo += "&seller_id=" + "\"" + Common.SELLER + "\"";
 
-		// ÉÌ»§ÍøÕ¾Î¨Ò»¶©µ¥ºÅ
+		// å•†æˆ·ç½‘ç«™å”¯ä¸€è®¢å•å·
 		orderInfo += "&out_trade_no=" + "\"" + dingdan + "\"";
 
-		// ÉÌÆ·Ãû³Æ
+		// å•†å“åç§°
 		orderInfo += "&subject=" + "\"" + subject + "\"";
 
-		// ÉÌÆ·ÏêÇé
+		// å•†å“è¯¦æƒ…
 		orderInfo += "&body=" + "\"" + body + "\"";
 
-		// ÉÌÆ·½ğ¶î
+		// å•†å“é‡‘é¢
 		orderInfo += "&total_fee=" + "\"" + endmoney + "\"";
 		
-		// ·şÎñÆ÷Òì²½Í¨ÖªÒ³ÃæÂ·¾¶
+		// æœåŠ¡å™¨å¼‚æ­¥é€šçŸ¥é¡µé¢è·¯å¾„
 //		orderInfo += "&notify_url=" + "\"" + RealmName.REALM_NAME
 //				+ "/taobao/alipay_notify_url.aspx" + "\"";
 			orderInfo += "&notify_url=" + "\"" +  "http://183.62.138.31:1636/taobao/alipay_notify_url.aspx" + "\"";
-		// ·şÎñ½Ó¿ÚÃû³Æ£¬ ¹Ì¶¨Öµ
+		// æœåŠ¡æ¥å£åç§°ï¼Œ å›ºå®šå€¼
 		orderInfo += "&service=\"mobile.securitypay.pay\"";
 
-		// Ö§¸¶ÀàĞÍ£¬ ¹Ì¶¨Öµ
+		// æ”¯ä»˜ç±»å‹ï¼Œ å›ºå®šå€¼
 		orderInfo += "&payment_type=\"1\"";
 
-		// ²ÎÊı±àÂë£¬ ¹Ì¶¨Öµ
+		// å‚æ•°ç¼–ç ï¼Œ å›ºå®šå€¼
 		orderInfo += "&_input_charset=\"utf-8\"";
 
-		// ÉèÖÃÎ´¸¶¿î½»Ò×µÄ³¬Ê±Ê±¼ä
-		// Ä¬ÈÏ30·ÖÖÓ£¬Ò»µ©³¬Ê±£¬¸Ã±Ê½»Ò×¾Í»á×Ô¶¯±»¹Ø±Õ¡£
-		// È¡Öµ·¶Î§£º1m¡«15d¡£
-		// m-·ÖÖÓ£¬h-Ğ¡Ê±£¬d-Ìì£¬1c-µ±Ìì£¨ÎŞÂÛ½»Ò×ºÎÊ±´´½¨£¬¶¼ÔÚ0µã¹Ø±Õ£©¡£
-		// ¸Ã²ÎÊıÊıÖµ²»½ÓÊÜĞ¡Êıµã£¬Èç1.5h£¬¿É×ª»»Îª90m¡£
+		// è®¾ç½®æœªä»˜æ¬¾äº¤æ˜“çš„è¶…æ—¶æ—¶é—´
+		// é»˜è®¤30åˆ†é’Ÿï¼Œä¸€æ—¦è¶…æ—¶ï¼Œè¯¥ç¬”äº¤æ˜“å°±ä¼šè‡ªåŠ¨è¢«å…³é—­ã€‚
+		// å–å€¼èŒƒå›´ï¼š1mï½15dã€‚
+		// m-åˆ†é’Ÿï¼Œh-å°æ—¶ï¼Œd-å¤©ï¼Œ1c-å½“å¤©ï¼ˆæ— è®ºäº¤æ˜“ä½•æ—¶åˆ›å»ºï¼Œéƒ½åœ¨0ç‚¹å…³é—­ï¼‰ã€‚
+		// è¯¥å‚æ•°æ•°å€¼ä¸æ¥å—å°æ•°ç‚¹ï¼Œå¦‚1.5hï¼Œå¯è½¬æ¢ä¸º90mã€‚
 		orderInfo += "&it_b_pay=\"30m\"";
 
-		// extern_tokenÎª¾­¹ı¿ìµÇÊÚÈ¨»ñÈ¡µ½µÄalipay_open_id,´øÉÏ´Ë²ÎÊıÓÃ»§½«Ê¹ÓÃÊÚÈ¨µÄÕË»§½øĞĞÖ§¸¶
+		// extern_tokenä¸ºç»è¿‡å¿«ç™»æˆæƒè·å–åˆ°çš„alipay_open_id,å¸¦ä¸Šæ­¤å‚æ•°ç”¨æˆ·å°†ä½¿ç”¨æˆæƒçš„è´¦æˆ·è¿›è¡Œæ”¯ä»˜
 		// orderInfo += "&extern_token=" + "\"" + extern_token + "\"";
 
-		// Ö§¸¶±¦´¦ÀíÍêÇëÇóºó£¬µ±Ç°Ò³ÃæÌø×ªµ½ÉÌ»§Ö¸¶¨Ò³ÃæµÄÂ·¾¶£¬¿É¿Õ
+		// æ”¯ä»˜å®å¤„ç†å®Œè¯·æ±‚åï¼Œå½“å‰é¡µé¢è·³è½¬åˆ°å•†æˆ·æŒ‡å®šé¡µé¢çš„è·¯å¾„ï¼Œå¯ç©º
 		// orderInfo += "&return_url=\"m.alipay.com\"";
 
-		// µ÷ÓÃÒøĞĞ¿¨Ö§¸¶£¬ĞèÅäÖÃ´Ë²ÎÊı£¬²ÎÓëÇ©Ãû£¬ ¹Ì¶¨Öµ £¨ĞèÒªÇ©Ô¼¡¶ÎŞÏßÒøĞĞ¿¨¿ì½İÖ§¸¶¡·²ÅÄÜÊ¹ÓÃ£©
+		// è°ƒç”¨é“¶è¡Œå¡æ”¯ä»˜ï¼Œéœ€é…ç½®æ­¤å‚æ•°ï¼Œå‚ä¸ç­¾åï¼Œ å›ºå®šå€¼ ï¼ˆéœ€è¦ç­¾çº¦ã€Šæ— çº¿é“¶è¡Œå¡å¿«æ·æ”¯ä»˜ã€‹æ‰èƒ½ä½¿ç”¨ï¼‰
 		// orderInfo += "&paymethod=\"expressGateway\"";
 
 		return orderInfo;
@@ -510,18 +510,18 @@ public class OrderConfrimActivity extends BaseActivity {
 
 	private void ali_pay() {
 		//
-		String orderInfo = getOrderInfo("ÔÆÉÌ¾Û", "ÉÌÆ·ÃèÊö", orderSerialNumber);
+		String orderInfo = getOrderInfo("äº‘å•†èš", "å•†å“æè¿°", orderSerialNumber);
 
-		// ¶Ô¶©µ¥×öRSA Ç©Ãû
+		// å¯¹è®¢å•åšRSA ç­¾å
 		String sign = sign(orderInfo);
 		try {
-			// ½öĞè¶Ôsign ×öURL±àÂë
+			// ä»…éœ€å¯¹sign åšURLç¼–ç 
 			sign = URLEncoder.encode(sign, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 
-		// ÍêÕûµÄ·ûºÏÖ§¸¶±¦²ÎÊı¹æ·¶µÄ¶©µ¥ĞÅÏ¢
+		// å®Œæ•´çš„ç¬¦åˆæ”¯ä»˜å®å‚æ•°è§„èŒƒçš„è®¢å•ä¿¡æ¯
 		final String payInfo = orderInfo + "&sign=\"" + sign + "\"&"
 				+ getSignType();
 
@@ -529,9 +529,9 @@ public class OrderConfrimActivity extends BaseActivity {
 
 			@Override
 			public void run() {
-				// ¹¹ÔìPayTask ¶ÔÏó
+				// æ„é€ PayTask å¯¹è±¡
 				PayTask alipay = new PayTask(OrderConfrimActivity.this);
-				// µ÷ÓÃÖ§¸¶½Ó¿Ú£¬»ñÈ¡Ö§¸¶½á¹û
+				// è°ƒç”¨æ”¯ä»˜æ¥å£ï¼Œè·å–æ”¯ä»˜ç»“æœ
 				String result = alipay.pay(payInfo);
 				Message msg = new Message();
 				msg.what = 5;
@@ -540,12 +540,12 @@ public class OrderConfrimActivity extends BaseActivity {
 			}
 		};
 
-		// ±ØĞëÒì²½µ÷ÓÃ
+		// å¿…é¡»å¼‚æ­¥è°ƒç”¨
 		Thread payThread = new Thread(payRunnable);
 		payThread.start();
 	}
 	/**
-	 * ¼ÆËã×Ü¼Û
+	 * è®¡ç®—æ€»ä»·
 	 * @param carts
 	 * @return
 	 */
@@ -562,13 +562,13 @@ public class OrderConfrimActivity extends BaseActivity {
 			}
 		}
 		BigDecimal b = new BigDecimal(count);
-		// ±£Áô2Î»Ğ¡Êı
+		// ä¿ç•™2ä½å°æ•°
 		double targetDouble = b.setScale(2, BigDecimal.ROUND_HALF_UP)
 				.doubleValue();
 		return String.valueOf(targetDouble);
 	}
 	/**
-	 * ¹¹½¨ĞÂµÄ¹ºÎï³µ
+	 * æ„å»ºæ–°çš„è´­ç‰©è½¦
 	 * @param carts
 	 * @return
 	 */
@@ -616,7 +616,7 @@ public class OrderConfrimActivity extends BaseActivity {
 
 		  params.height = totalHeight
 		    + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-//		  ( (MarginLayoutParams)params).setMargins(10, 10, 10, 10); // ¿ÉÉ¾³ı
+//		  ( (MarginLayoutParams)params).setMargins(10, 10, 10, 10); // å¯åˆ é™¤
 
 		  listView.setLayoutParams(params);
 		 }
@@ -630,10 +630,10 @@ public class OrderConfrimActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 
 		if (checkedAddressId == 0) {
-			Toast.makeText(getApplicationContext(), "ÇëÍêÉÆ±ØÒªĞÅÏ¢!", 200).show();
+			Toast.makeText(getApplicationContext(), "è¯·å®Œå–„å¿…è¦ä¿¡æ¯!", 200).show();
 		} else {
 			if (type.equals("-1")) {
-				Toast.makeText(getApplicationContext(), "ÇëÍêÉÆ±ØÒªĞÅÏ¢!", 200).show();
+				Toast.makeText(getApplicationContext(), "è¯·å®Œå–„å¿…è¦ä¿¡æ¯!", 200).show();
 			} else {
 				order_str = RealmName.REALM_NAME
 						+ "/mi/receiveOrderInfo_business.ashx?" + "imei="
@@ -645,7 +645,7 @@ public class OrderConfrimActivity extends BaseActivity {
 						+ "&PayPassTickets=" + (endmoney==null?"0":endmoney)
 						+ "&buyPhoneVerificationCode=&PayType=" + type
 						+ "&ConsumptionCredits=" + jf;
-				Log.v("data1", "È¥½áËãµØÖ·:" + order_str);
+				Log.v("data1", "å»ç»“ç®—åœ°å€:" + order_str);
 				yuePay();
 
 			}
@@ -654,7 +654,7 @@ public class OrderConfrimActivity extends BaseActivity {
 
 	}
 	/**
-	 * Óà¶îÖ§¸¶
+	 * ä½™é¢æ”¯ä»˜
 	 */
 	private String partner_id,prepayid,noncestr,timestamp,package_,sign;
 	private void yuePay(){
@@ -718,14 +718,14 @@ public class OrderConfrimActivity extends BaseActivity {
 								item.setLastId("-1");
 								item.setType("-1");
 								banks.add(item);
-								bankNames[len] = "ĞÂÖ§¸¶·½Ê½";
+								bankNames[len] = "æ–°æ”¯ä»˜æ–¹å¼";
 							}
 						} else if (TextUtils.equals("2", type)) {
-							// ÕâÀïÊÇ´¦ÀíÖ§¸¶±¦ÊÂÇé
+							// è¿™é‡Œæ˜¯å¤„ç†æ”¯ä»˜å®äº‹æƒ…
 							orderSerialNumber = object
 									.getString("orderSerialNumber");
 						}else if (TextUtils.equals("5", type)) {
-							//Î¢ĞÅ´¦Àí
+							//å¾®ä¿¡å¤„ç†
 //							  appid = object.getString("appid");
 							  partner_id = object.getString("mch_id");
 							  prepayid = object.getString("prepay_id"); 
@@ -740,7 +740,7 @@ public class OrderConfrimActivity extends BaseActivity {
 									.getString("shopPassTicket");
 							orderSerialNumber = object
 									.getString("orderSerialNumber");
-							Log.v("data2", "¶©µ¥Á÷Ë®ºÅ:" + orderSerialNumber);
+							Log.v("data2", "è®¢å•æµæ°´å·:" + orderSerialNumber);
 						}
 						Message message = new Message();
 						message.what = 2;
@@ -774,17 +774,17 @@ public class OrderConfrimActivity extends BaseActivity {
 		confrim_btn = (Button) findViewById(R.id.confrim_btn);
 		heji = (TextView) findViewById(R.id.heji);
 		if(carts==null){
-			heji.setText("ºÏ¼Æ:"+getIntent().getStringExtra("retailPrice"));
+			heji.setText("åˆè®¡:"+getIntent().getStringExtra("retailPrice"));
 		}else {
 			 
 			
-			heji.setText("ºÏ¼Æ:"+countTotal(carts));
+			heji.setText("åˆè®¡:"+countTotal(carts));
 		}
 		if(getIntent().hasExtra("warename")){
-			//±íÊ¾Á¢¼´¹ºÎï
+			//è¡¨ç¤ºç«‹å³è´­ç‰©
 			ArrayList<ShopCarts> newcaCarts = new ArrayList<ShopCarts>();
 			ShopCarts c = new ShopCarts();
-			c.setName("¾ÛÀÖ¹º");
+			c.setName("èšä¹è´­");
 			ArrayList<ShopCartData> da = new ArrayList<ShopCartData>();
 			ShopCartData d = new ShopCartData();
 			d.imgurl = getIntent().getStringExtra("imgurl");
@@ -792,7 +792,7 @@ public class OrderConfrimActivity extends BaseActivity {
 			d.retailprice = getIntent().getStringExtra("retailPrice");
 			d.marketprice = getIntent().getStringExtra("marketPrice");
 			d.warename = getIntent().getStringExtra("warename");
-			heji.setText("ºÏ¼Æ:"+Double.parseDouble(d.retailprice)*d.number);
+			heji.setText("åˆè®¡:"+Double.parseDouble(d.retailprice)*d.number);
 			endmoney  =String.valueOf(Double.parseDouble(d.retailprice)*d.number);
 //					intent.putExtra("imgurl", proFaceImg);
 //			intent.putExtra("number", "1");
@@ -829,7 +829,7 @@ public class OrderConfrimActivity extends BaseActivity {
 						// TODO Auto-generated method stub
 						switch (resID) {
 						case R.id.item0:
-							//Óà¶îÖ§¸¶
+							//ä½™é¢æ”¯ä»˜
 							type = "0";
 							if(getIntent().hasExtra("isNow")){
 								 jf = getIntent().getIntExtra("AvailableIntegral", 0);
@@ -1052,7 +1052,7 @@ public class OrderConfrimActivity extends BaseActivity {
 								+ arg2);
 
 						new AlertDialog.Builder(OrderConfrimActivity.this)
-								.setTitle("±à¼­µØÖ·")
+								.setTitle("ç¼–è¾‘åœ°å€")
 								.setItems(R.array.select_dialog_items,
 										new DialogInterface.OnClickListener() {
 											@Override
@@ -1107,7 +1107,7 @@ public class OrderConfrimActivity extends BaseActivity {
 	}
 
 	/**
-	 * ²éÕÒµØÖ·ÁĞ±í
+	 * æŸ¥æ‰¾åœ°å€åˆ—è¡¨
 	 */
 	private void DOparse() {
 		try {
@@ -1149,9 +1149,9 @@ public class OrderConfrimActivity extends BaseActivity {
 
 	protected void dialog() {
 		AlertDialog.Builder builder = new Builder(this);
-		builder.setMessage("È·ÈÏÉ¾³ıÕâ¸öµØÖ·Âğ£¿");
-		builder.setTitle("ÌáÊ¾");
-		builder.setPositiveButton("È·ÈÏ", new DialogInterface.OnClickListener() {
+		builder.setMessage("ç¡®è®¤åˆ é™¤è¿™ä¸ªåœ°å€å—ï¼Ÿ");
+		builder.setTitle("æç¤º");
+		builder.setPositiveButton("ç¡®è®¤", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				try {
@@ -1164,7 +1164,7 @@ public class OrderConfrimActivity extends BaseActivity {
 			}
 		});
 
-		builder.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -1176,7 +1176,7 @@ public class OrderConfrimActivity extends BaseActivity {
 	}
 
 	/**
-	 * É¾³ıµØÖ·
+	 * åˆ é™¤åœ°å€
 	 * 
 	 * @param urlPath
 	 * @throws Exception

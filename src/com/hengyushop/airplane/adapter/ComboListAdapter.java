@@ -35,7 +35,7 @@ public class ComboListAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * װ������
+	 * 装载数据
 	 */
 	public void putLists(ArrayList<ComboListDomain> listDomains) {
 		this.listDomains = listDomains;
@@ -114,8 +114,8 @@ public class ComboListAdapter extends BaseAdapter {
 			// holder.item_vtag.setText(domains.get(index).getName());
 		
 			holder.current_price.setText(domains.get(i).getCurrent_price()
-					+ "Ԫ");
-			holder.list_price.setText(domains.get(i).getList_price() + "Ԫ");
+					+ "元");
+			holder.list_price.setText(domains.get(i).getList_price() + "元");
 			holder.item_vtag.setText(domains.get(i).getTitle());
 			this.imageLoader.displayImage(domains.get(i).getImage_url(),
 					holder.combo_image_item);
@@ -145,9 +145,9 @@ public class ComboListAdapter extends BaseAdapter {
 		 * holder.combo_title_item.setText(listDomains.get(index).getTitle());
 		 * holder
 		 * .current_price.setText(listDomains.get(index).getCurrent_price() +
-		 * "Ԫ");
+		 * "元");
 		 * holder.list_price.setText(listDomains.get(index).getList_price() +
-		 * "Ԫ");
+		 * "元");
 		 * 
 		 * this.imageLoader.displayImage(listDomains.get(index).getImage_url(),
 		 * holder.combo_image_item);

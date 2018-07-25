@@ -10,7 +10,7 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 /*
- * ×Ô¶¨ÒåTabHost£¬Ê¹tabÇĞ»»µÄÊ±ºòÓĞ¶¯»­Ğ§¹û
+ * è‡ªå®šä¹‰TabHostï¼Œä½¿tabåˆ‡æ¢çš„æ—¶å€™æœ‰åŠ¨ç”»æ•ˆæœ
  */
 public class CustomTabHost extends TabHost {
 	private Animation slideLeftIn;
@@ -18,7 +18,7 @@ public class CustomTabHost extends TabHost {
 	private Animation slideRightIn;
 	private Animation slideRightOut;
 
-	private int tabCount;//tabÒ³×ÜÊı
+	private int tabCount;//tabé¡µæ€»æ•°
 
 	public CustomTabHost(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -40,32 +40,32 @@ public class CustomTabHost extends TabHost {
 	
 	@Override
 	public void setCurrentTab(int index) {
-		//indexÎªÒªÇĞ»»µ½µÄtabÒ³Ë÷Òı£¬currentTabIndexÎªÏÖÔÚÒªµ±Ç°tabÒ³µÄË÷Òı
+		//indexä¸ºè¦åˆ‡æ¢åˆ°çš„tabé¡µç´¢å¼•ï¼ŒcurrentTabIndexä¸ºç°åœ¨è¦å½“å‰tabé¡µçš„ç´¢å¼•
 		int currentTabIndex = getCurrentTab();
 		
-		//ÉèÖÃµ±Ç°tabÒ³ÍË³öÊ±µÄ¶¯»­
-		if (null != getCurrentView()){//µÚÒ»´Î½øÈëMainActivityÊ±£¬getCurrentView()È¡µÃµÄÖµÎª¿Õ
-			if (currentTabIndex == (tabCount - 1) && index == 0) {//´¦Àí±ß½ç»¬¶¯
+		//è®¾ç½®å½“å‰tabé¡µé€€å‡ºæ—¶çš„åŠ¨ç”»
+		if (null != getCurrentView()){//ç¬¬ä¸€æ¬¡è¿›å…¥MainActivityæ—¶ï¼ŒgetCurrentView()å–å¾—çš„å€¼ä¸ºç©º
+			if (currentTabIndex == (tabCount - 1) && index == 0) {//å¤„ç†è¾¹ç•Œæ»‘åŠ¨
 				getCurrentView().startAnimation(slideLeftOut);
-			} else if (currentTabIndex == 0 && index == (tabCount - 1)) {//´¦Àí±ß½ç»¬¶¯
+			} else if (currentTabIndex == 0 && index == (tabCount - 1)) {//å¤„ç†è¾¹ç•Œæ»‘åŠ¨
 				getCurrentView().startAnimation(slideRightOut);
-			} else if (index > currentTabIndex) {//·Ç±ß½çÇé¿öÏÂ´ÓÓÒÍù×ófleep
+			} else if (index > currentTabIndex) {//éè¾¹ç•Œæƒ…å†µä¸‹ä»å³å¾€å·¦fleep
 				getCurrentView().startAnimation(slideLeftOut);
-			} else if (index < currentTabIndex) {//·Ç±ß½çÇé¿öÏÂ´Ó×óÍùÓÒfleep
+			} else if (index < currentTabIndex) {//éè¾¹ç•Œæƒ…å†µä¸‹ä»å·¦å¾€å³fleep
 				getCurrentView().startAnimation(slideRightOut);
 			}
 		}
 		
 		super.setCurrentTab(index);
 		
-		//ÉèÖÃ¼´½«ÏÔÊ¾µÄtabÒ³µÄ¶¯»­
-		if (currentTabIndex == (tabCount - 1) && index == 0){//´¦Àí±ß½ç»¬¶¯
+		//è®¾ç½®å³å°†æ˜¾ç¤ºçš„tabé¡µçš„åŠ¨ç”»
+		if (currentTabIndex == (tabCount - 1) && index == 0){//å¤„ç†è¾¹ç•Œæ»‘åŠ¨
 			getCurrentView().startAnimation(slideLeftIn);
-		} else if (currentTabIndex == 0 && index == (tabCount - 1)) {//´¦Àí±ß½ç»¬¶¯
+		} else if (currentTabIndex == 0 && index == (tabCount - 1)) {//å¤„ç†è¾¹ç•Œæ»‘åŠ¨
 			getCurrentView().startAnimation(slideRightIn);
-		} else if (index > currentTabIndex) {//·Ç±ß½çÇé¿öÏÂ´ÓÓÒÍù×ófleep
+		} else if (index > currentTabIndex) {//éè¾¹ç•Œæƒ…å†µä¸‹ä»å³å¾€å·¦fleep
 			getCurrentView().startAnimation(slideLeftIn);
-		} else if (index < currentTabIndex) {//·Ç±ß½çÇé¿öÏÂ´Ó×óÍùÓÒfleep
+		} else if (index < currentTabIndex) {//éè¾¹ç•Œæƒ…å†µä¸‹ä»å·¦å¾€å³fleep
 			getCurrentView().startAnimation(slideRightIn);
 		}
 	}

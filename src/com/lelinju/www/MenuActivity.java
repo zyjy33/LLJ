@@ -91,7 +91,7 @@ public class MenuActivity extends Fragment implements OnClickListener {
 		case R.id.img_tuan_three:
 			UserRegisterData data1 = wareDao.findByChat();
 			if(data1.getHengyuCode()==null){
-				Toast.makeText(getActivity(), "ÇëµÇÂ¼", 200).show();
+				Toast.makeText(getActivity(), "è¯·ç™»å½•", 200).show();
 			}else{
 //			String hengyucode1 = data1.getHengyuCode().toString();
 //			String password1 = data1.getPassword().toString();
@@ -137,7 +137,7 @@ public class MenuActivity extends Fragment implements OnClickListener {
 			startActivity(intent20);*/
 
 			break;
-		case R.id.img_micro_coal: // ½øÈëÁÄÌì½çÃæ
+		case R.id.img_micro_coal: // è¿›å…¥èŠå¤©ç•Œé¢
 
 			if (list.size() != 0) {
 				UserRegisterData data = wareDao.findByChat();
@@ -158,7 +158,7 @@ public class MenuActivity extends Fragment implements OnClickListener {
 					startActivity(intent);
 				} catch (ActivityNotFoundException e) {
 					e.printStackTrace();
-					// Èç¹û³ÌĞòÎ´°²×° Ìø¹ıÀ´°²×°ÎÄ¼ş
+					// å¦‚æœç¨‹åºæœªå®‰è£… è·³è¿‡æ¥å®‰è£…æ–‡ä»¶
 					if (copyApkFromAssets(getActivity(), "WellTalk.apk", Environment
 							.getExternalStorageDirectory().getAbsolutePath()
 							+ "/WellTalk.apk")) {
@@ -201,7 +201,7 @@ public class MenuActivity extends Fragment implements OnClickListener {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 
-				// Èç¹û³ÌĞòÎ´°²×° Ìø¹ıÀ´°²×°ÎÄ¼ş
+				// å¦‚æœç¨‹åºæœªå®‰è£… è·³è¿‡æ¥å®‰è£…æ–‡ä»¶
 				if (copyApkFromAssets(getActivity(), "jinsheng.apk",
 						Environment.getExternalStorageDirectory()
 								.getAbsolutePath() + "/jinsheng.apk")) {
@@ -217,9 +217,9 @@ public class MenuActivity extends Fragment implements OnClickListener {
 			}*/
 			
 			
-			Toast.makeText(getActivity(), "ÕıÔÚ¶Ô½ÓÖĞ£¬ºóĞø¿ª·Å",200).show();
+			Toast.makeText(getActivity(), "æ­£åœ¨å¯¹æ¥ä¸­ï¼Œåç»­å¼€æ”¾",200).show();
 			break;
-		case R.id.img_airplane://»úÆ±
+		case R.id.img_airplane://æœºç¥¨
 			Intent intent6 = new Intent(getActivity(),AirPlaneHomeActivity.class);
 			startActivity(intent6);
 			break;
@@ -227,7 +227,7 @@ public class MenuActivity extends Fragment implements OnClickListener {
 			/*Intent intent7 = new Intent(getActivity(),
 					LotteryMainActivity.class);
 			startActivity(intent7);*/
-			Toast.makeText(getActivity(), "ÕıÔÚ¶Ô½ÓÖĞ£¬ºóĞø¿ª·Å",200).show();
+			Toast.makeText(getActivity(), "æ­£åœ¨å¯¹æ¥ä¸­ï¼Œåç»­å¼€æ”¾",200).show();
 			break;
 		case R.id.img_wide:
 			Intent intent22 = new Intent(getActivity(),
@@ -259,7 +259,7 @@ public class MenuActivity extends Fragment implements OnClickListener {
 		}
 	}
 
-	// ½«°²×°µÄÁÄÌìÈí¼ş´æÖÁSD¿¨ÉÏÃæ
+	// å°†å®‰è£…çš„èŠå¤©è½¯ä»¶å­˜è‡³SDå¡ä¸Šé¢
 	public boolean copyApkFromAssets(Context context, String fileName,
 			String path) {
 		boolean copyIsFinish = false;

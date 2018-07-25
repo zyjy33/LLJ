@@ -69,12 +69,12 @@ public class MyJuFenMxAdapter extends BaseAdapter {
 		System.out.println("real_name====================="+real_name);
 		System.out.println("nick_name====================="+nick_name);
 		if (!real_name.equals("")) {
-			tv_name.setText(real_name+"£¨"+haoma+")");
+			tv_name.setText(real_name+"ï¼ˆ"+haoma+")");
 		}else if (!nick_name.equals("")) {
-			tv_name.setText(nick_name+"£¨"+haoma+")");
+			tv_name.setText(nick_name+"ï¼ˆ"+haoma+")");
 		}
 		else{
-			tv_name.setText("ÄäÃûÓÃ»§£¨"+haoma+")");
+			tv_name.setText("åŒ¿åç”¨æˆ·ï¼ˆ"+haoma+")");
 		}
 		
 		

@@ -67,7 +67,7 @@ public class OneBuyListAdapter extends BaseAdapter {
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		viewHolder.item1.setText(lists.get(arg0).getName()+"\t"+"¼ÛÖµ £¤:"+lists.get(arg0).getMarket());
+		viewHolder.item1.setText(lists.get(arg0).getName()+"\t"+"ä»·å€¼ ï¿¥:"+lists.get(arg0).getMarket());
 		viewHolder.item2.setProgress((int)(Double.parseDouble(lists.get(arg0).getJoinNum())/Double.parseDouble(lists.get(arg0).getNum())*1000));
 		imageLoader.displayImage(RealmName.REALM_NAME+"/admin/"+lists.get(arg0).getImg(),
 				viewHolder.item0);

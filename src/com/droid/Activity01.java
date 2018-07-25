@@ -51,14 +51,14 @@ public class Activity01 extends Activity implements OnScrollListener {
 	private ResultListAdapter resultListAdapter;
 	private ListView personList;
 	private ListView resultList;
-	private TextView overlay; // ¶Ô»°¿òÊ××ÖÄ¸textview
+	private TextView overlay; // å¯¹è¯æ¡†é¦–å­—æ¯textview
 	private MyLetterListView letterListView; // A-Z listview
-	private HashMap<String, Integer> alphaIndexer;// ´æ·Å´æÔÚµÄººÓïÆ´ÒôÊ××ÖÄ¸ºÍÓëÖ®¶ÔÓ¦µÄÁĞ±íÎ»ÖÃ
-	private String[] sections;// ´æ·Å´æÔÚµÄººÓïÆ´ÒôÊ××ÖÄ¸
+	private HashMap<String, Integer> alphaIndexer;// å­˜æ”¾å­˜åœ¨çš„æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯å’Œä¸ä¹‹å¯¹åº”çš„åˆ—è¡¨ä½ç½®
+	private String[] sections;// å­˜æ”¾å­˜åœ¨çš„æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
 	private Handler handler;
-	private OverlayThread overlayThread; // ÏÔÊ¾Ê××ÖÄ¸¶Ô»°¿ò
-	private ArrayList<City> allCity_lists; // ËùÓĞ³ÇÊĞÁĞ±í
-	private ArrayList<City> city_lists;// ³ÇÊĞÁĞ±í
+	private OverlayThread overlayThread; // æ˜¾ç¤ºé¦–å­—æ¯å¯¹è¯æ¡†
+	private ArrayList<City> allCity_lists; // æ‰€æœ‰åŸå¸‚åˆ—è¡¨
+	private ArrayList<City> city_lists;// åŸå¸‚åˆ—è¡¨
 	private ArrayList<City> city_hot;
 	private ArrayList<City> city_result;
 	private ArrayList<String> city_history;
@@ -68,8 +68,8 @@ public class Activity01 extends Activity implements OnScrollListener {
 	private LocationClient mLocationClient;
 	private MyLocationListener mMyLocationListener;
 
-	private String currentCity; // ÓÃÓÚ±£´æ¶¨Î»µ½µÄ³ÇÊĞ
-	private int locateProcess = 1; // ¼ÇÂ¼µ±Ç°¶¨Î»µÄ×´Ì¬ ÕıÔÚ¶¨Î»-¶¨Î»³É¹¦-¶¨Î»Ê§°Ü
+	private String currentCity; // ç”¨äºä¿å­˜å®šä½åˆ°çš„åŸå¸‚
+	private int locateProcess = 1; // è®°å½•å½“å‰å®šä½çš„çŠ¶æ€ æ­£åœ¨å®šä½-å®šä½æˆåŠŸ-å®šä½å¤±è´¥
 	private boolean isNeedFresh;
 
 	private DatabaseHelper helper;
@@ -79,8 +79,8 @@ public class Activity01 extends Activity implements OnScrollListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_city_main);
-		// Êı¾İ¿âÎÄ¼şÄ¿±ê´æ·ÅÂ·¾¶ÎªÏµÍ³Ä¬ÈÏÎ»ÖÃ£¬com.droid ÊÇÄãµÄ°üÃû
-		//private static String DB_PATH = "/data/data/com.zams.www/databases/";//ĞŞ¸ÄÎªµ±Ç°ÏîÄ¿µÄ°üÃû
+		// æ•°æ®åº“æ–‡ä»¶ç›®æ ‡å­˜æ”¾è·¯å¾„ä¸ºç³»ç»Ÿé»˜è®¤ä½ç½®ï¼Œcom.droid æ˜¯ä½ çš„åŒ…å
+		//private static String DB_PATH = "/data/data/com.zams.www/databases/";//ä¿®æ”¹ä¸ºå½“å‰é¡¹ç›®çš„åŒ…å
 		try {
 			ImageView iv_fanhui = (ImageView) findViewById(R.id.iv_fanhui);
 			iv_fanhui.setOnClickListener(new OnClickListener() {
@@ -214,64 +214,64 @@ public class Activity01 extends Activity implements OnScrollListener {
 	}
 
 	private void InitLocation() {
-		// ÉèÖÃ¶¨Î»²ÎÊı
+		// è®¾ç½®å®šä½å‚æ•°
 		LocationClientOption option = new LocationClientOption();
-		option.setCoorType("bd09ll"); // ÉèÖÃ×ø±êÀàĞÍ
-		option.setScanSpan(10000); // 10·ÖÖÓÉ¨Ãè1´Î
-		// ĞèÒªµØÖ·ĞÅÏ¢£¬ÉèÖÃÎªÆäËûÈÎºÎÖµ£¨stringÀàĞÍ£¬ÇÒ²»ÄÜÎªnull£©Ê±£¬¶¼±íÊ¾ÎŞµØÖ·ĞÅÏ¢¡£
+		option.setCoorType("bd09ll"); // è®¾ç½®åæ ‡ç±»å‹
+		option.setScanSpan(10000); // 10åˆ†é’Ÿæ‰«æ1æ¬¡
+		// éœ€è¦åœ°å€ä¿¡æ¯ï¼Œè®¾ç½®ä¸ºå…¶ä»–ä»»ä½•å€¼ï¼ˆstringç±»å‹ï¼Œä¸”ä¸èƒ½ä¸ºnullï¼‰æ—¶ï¼Œéƒ½è¡¨ç¤ºæ— åœ°å€ä¿¡æ¯ã€‚
 		option.setAddrType("all");
-		// ÉèÖÃÊÇ·ñ·µ»ØPOIµÄµç»°ºÍµØÖ·µÈÏêÏ¸ĞÅÏ¢¡£Ä¬ÈÏÖµÎªfalse£¬¼´²»·µ»ØPOIµÄµç»°ºÍµØÖ·ĞÅÏ¢¡£
+		// è®¾ç½®æ˜¯å¦è¿”å›POIçš„ç”µè¯å’Œåœ°å€ç­‰è¯¦ç»†ä¿¡æ¯ã€‚é»˜è®¤å€¼ä¸ºfalseï¼Œå³ä¸è¿”å›POIçš„ç”µè¯å’Œåœ°å€ä¿¡æ¯ã€‚
 		option.setPoiExtraInfo(true);
-		// ÉèÖÃ²úÆ·ÏßÃû³Æ¡£Ç¿ÁÒ½¨ÒéÄúÊ¹ÓÃ×Ô¶¨ÒåµÄ²úÆ·ÏßÃû³Æ£¬·½±ãÎÒÃÇÒÔºóÎªÄúÌá¹©¸ü¸ßĞ§×¼È·µÄ¶¨Î»·şÎñ¡£
-		option.setProdName("Í¨¹ıGPS¶¨Î»ÎÒµ±Ç°µÄÎ»ÖÃ");
-		// ½ûÓÃÆôÓÃ»º´æ¶¨Î»Êı¾İ
+		// è®¾ç½®äº§å“çº¿åç§°ã€‚å¼ºçƒˆå»ºè®®æ‚¨ä½¿ç”¨è‡ªå®šä¹‰çš„äº§å“çº¿åç§°ï¼Œæ–¹ä¾¿æˆ‘ä»¬ä»¥åä¸ºæ‚¨æä¾›æ›´é«˜æ•ˆå‡†ç¡®çš„å®šä½æœåŠ¡ã€‚
+		option.setProdName("é€šè¿‡GPSå®šä½æˆ‘å½“å‰çš„ä½ç½®");
+		// ç¦ç”¨å¯ç”¨ç¼“å­˜å®šä½æ•°æ®
 		option.disableCache(true);
-		// ÉèÖÃ×î¶à¿É·µ»ØµÄPOI¸öÊı£¬Ä¬ÈÏÖµÎª3¡£ÓÉÓÚPOI²éÑ¯±È½ÏºÄ·ÑÁ÷Á¿£¬ÉèÖÃ×î¶à·µ»ØµÄPOI¸öÊı£¬ÒÔ±ã½ÚÊ¡Á÷Á¿¡£
+		// è®¾ç½®æœ€å¤šå¯è¿”å›çš„POIä¸ªæ•°ï¼Œé»˜è®¤å€¼ä¸º3ã€‚ç”±äºPOIæŸ¥è¯¢æ¯”è¾ƒè€—è´¹æµé‡ï¼Œè®¾ç½®æœ€å¤šè¿”å›çš„POIä¸ªæ•°ï¼Œä»¥ä¾¿èŠ‚çœæµé‡ã€‚
 		option.setPoiNumber(3);
-		// ÉèÖÃ¶¨Î»·½Ê½µÄÓÅÏÈ¼¶¡£
-		// µ±gps¿ÉÓÃ£¬¶øÇÒ»ñÈ¡ÁË¶¨Î»½á¹ûÊ±£¬²»ÔÙ·¢ÆğÍøÂçÇëÇó£¬Ö±½Ó·µ»Ø¸øÓÃ»§×ø±ê¡£Õâ¸öÑ¡ÏîÊÊºÏÏ£ÍûµÃµ½×¼È·×ø±êÎ»ÖÃµÄÓÃ»§¡£Èç¹ûgps²»¿ÉÓÃ£¬ÔÙ·¢ÆğÍøÂçÇëÇó£¬½øĞĞ¶¨Î»¡£
+		// è®¾ç½®å®šä½æ–¹å¼çš„ä¼˜å…ˆçº§ã€‚
+		// å½“gpså¯ç”¨ï¼Œè€Œä¸”è·å–äº†å®šä½ç»“æœæ—¶ï¼Œä¸å†å‘èµ·ç½‘ç»œè¯·æ±‚ï¼Œç›´æ¥è¿”å›ç»™ç”¨æˆ·åæ ‡ã€‚è¿™ä¸ªé€‰é¡¹é€‚åˆå¸Œæœ›å¾—åˆ°å‡†ç¡®åæ ‡ä½ç½®çš„ç”¨æˆ·ã€‚å¦‚æœgpsä¸å¯ç”¨ï¼Œå†å‘èµ·ç½‘ç»œè¯·æ±‚ï¼Œè¿›è¡Œå®šä½ã€‚
 		option.setPriority(LocationClientOption.GpsFirst);
 		mLocationClient.setLocOption(option);
 	}
 
 	private void cityInit() {
-		City city = new City("¶¨Î»", "0"); // µ±Ç°¶¨Î»³ÇÊĞ
+		City city = new City("å®šä½", "0"); // å½“å‰å®šä½åŸå¸‚
 		allCity_lists.add(city);
-		city = new City("×î½ü", "1"); // ×î½ü·ÃÎÊµÄ³ÇÊĞ
+		city = new City("æœ€è¿‘", "1"); // æœ€è¿‘è®¿é—®çš„åŸå¸‚
 		allCity_lists.add(city);
-		city = new City("ÈÈÃÅ", "2"); // ÈÈÃÅ³ÇÊĞ
+		city = new City("çƒ­é—¨", "2"); // çƒ­é—¨åŸå¸‚
 		allCity_lists.add(city);
-		city = new City("È«²¿", "3"); // È«²¿³ÇÊĞ
+		city = new City("å…¨éƒ¨", "3"); // å…¨éƒ¨åŸå¸‚
 		allCity_lists.add(city);
 		city_lists = getCityList();
 		allCity_lists.addAll(city_lists);
 	}
 
 	/**
-	 * ÈÈÃÅ³ÇÊĞ
+	 * çƒ­é—¨åŸå¸‚
 	 */
 	public void hotCityInit() {
-		City city = new City("ÉÏº£", "2");
+		City city = new City("ä¸Šæµ·", "2");
 		city_hot.add(city);
-		city = new City("±±¾©", "2");
+		city = new City("åŒ—äº¬", "2");
 		city_hot.add(city);
-		city = new City("¹ãÖİ", "2");
+		city = new City("å¹¿å·", "2");
 		city_hot.add(city);
-		city = new City("ÉîÛÚ", "2");
+		city = new City("æ·±åœ³", "2");
 		city_hot.add(city);
-		city = new City("Îäºº", "2");
+		city = new City("æ­¦æ±‰", "2");
 		city_hot.add(city);
-		city = new City("Ìì½ò", "2");
+		city = new City("å¤©æ´¥", "2");
 		city_hot.add(city);
-		city = new City("Î÷°²", "2");
+		city = new City("è¥¿å®‰", "2");
 		city_hot.add(city);
-		city = new City("ÄÏ¾©", "2");
+		city = new City("å—äº¬", "2");
 		city_hot.add(city);
-		city = new City("º¼Öİ", "2");
+		city = new City("æ­å·", "2");
 		city_hot.add(city);
-		city = new City("³É¶¼", "2");
+		city = new City("æˆéƒ½", "2");
 		city_hot.add(city);
-		city = new City("ÖØÇì", "2");
+		city = new City("é‡åº†", "2");
 		city_hot.add(city);
 	}
 
@@ -333,7 +333,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 	}
 
 	/**
-	 * a-zÅÅĞò
+	 * a-zæ’åº
 	 */
 	@SuppressWarnings("rawtypes")
 	Comparator comparator = new Comparator<City>() {
@@ -357,7 +357,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 	}
 
 	/**
-	 * ÊµÏÖÊµÎ»»Øµ÷¼àÌı
+	 * å®ç°å®ä½å›è°ƒç›‘å¬
 	 */
 	public class MyLocationListener implements BDLocationListener {
 
@@ -369,14 +369,14 @@ public class Activity01 extends Activity implements OnScrollListener {
 			}
 			isNeedFresh = false;
 			if (arg0.getCity() == null) {
-				locateProcess = 3; // ¶¨Î»Ê§°Ü
+				locateProcess = 3; // å®šä½å¤±è´¥
 				personList.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
 				return;
 			}
 			currentCity = arg0.getCity().substring(0,
 					arg0.getCity().length() - 1);
-			locateProcess = 2; // ¶¨Î»³É¹¦
+			locateProcess = 2; // å®šä½æˆåŠŸ
 			personList.setAdapter(adapter);
 			adapter.notifyDataSetChanged();
 		}
@@ -450,9 +450,9 @@ public class Activity01 extends Activity implements OnScrollListener {
 			alphaIndexer = new HashMap<String, Integer>();
 			sections = new String[list.size()];
 			for (int i = 0; i < list.size(); i++) {
-				// µ±Ç°ººÓïÆ´ÒôÊ××ÖÄ¸
+				// å½“å‰æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
 				String currentStr = getAlpha(list.get(i).getPinyi());
-				// ÉÏÒ»¸öººÓïÆ´ÒôÊ××ÖÄ¸£¬Èç¹û²»´æÔÚÎª" "
+				// ä¸Šä¸€ä¸ªæ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯ï¼Œå¦‚æœä¸å­˜åœ¨ä¸º" "
 				String previewStr = (i - 1) >= 0 ? getAlpha(list.get(i - 1)
 						.getPinyi()) : " ";
 				if (!previewStr.equals(currentStr)) {
@@ -494,7 +494,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			final TextView city;
 			int viewType = getItemViewType(position);
-			if (viewType == 0) { // ¶¨Î»
+			if (viewType == 0) { // å®šä½
 				convertView = inflater.inflate(R.layout.frist_list_item, null);
 				TextView locateHint = (TextView) convertView
 						.findViewById(R.id.locateHint);
@@ -528,29 +528,29 @@ public class Activity01 extends Activity implements OnScrollListener {
 				
 				
 				ProgressBar pbLocate = (ProgressBar) convertView.findViewById(R.id.pbLocate);
-//				locateHint.setText("µ±Ç°¶¨Î»³ÇÊĞ");
+//				locateHint.setText("å½“å‰å®šä½åŸå¸‚");
 //				city.setVisibility(View.VISIBLE);
 //				city.setText(currentCity);
 //				mLocationClient.stop();
 //				pbLocate.setVisibility(View.GONE);
 				
-				if (locateProcess == 1) { // ÕıÔÚ¶¨Î»
-					locateHint.setText("ÕıÔÚ¶¨Î»");
+				if (locateProcess == 1) { // æ­£åœ¨å®šä½
+					locateHint.setText("æ­£åœ¨å®šä½");
 					city.setVisibility(View.GONE);
 					pbLocate.setVisibility(View.VISIBLE);
-				} else if (locateProcess == 2) { // ¶¨Î»³É¹¦
-					locateHint.setText("µ±Ç°¶¨Î»³ÇÊĞ");
+				} else if (locateProcess == 2) { // å®šä½æˆåŠŸ
+					locateHint.setText("å½“å‰å®šä½åŸå¸‚");
 					city.setVisibility(View.VISIBLE);
 					city.setText(currentCity);
 					mLocationClient.stop();
 					pbLocate.setVisibility(View.GONE);
 				} else if (locateProcess == 3) {
-					locateHint.setText("Î´¶¨Î»µ½³ÇÊĞ,ÇëÑ¡Ôñ");
+					locateHint.setText("æœªå®šä½åˆ°åŸå¸‚,è¯·é€‰æ‹©");
 					city.setVisibility(View.VISIBLE);
-					city.setText("ÖØĞÂÑ¡Ôñ");
+					city.setText("é‡æ–°é€‰æ‹©");
 					pbLocate.setVisibility(View.GONE);
 				}
-			} else if (viewType == 1) { // ×î½ü·ÃÎÊ³ÇÊĞ
+			} else if (viewType == 1) { // æœ€è¿‘è®¿é—®åŸå¸‚
 				try {
 					
 				convertView = inflater.inflate(R.layout.recent_city, null);
@@ -576,7 +576,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 				});
 				TextView recentHint = (TextView) convertView
 						.findViewById(R.id.recentHint);
-				recentHint.setText("×î½ü·ÃÎÊµÄ³ÇÊĞ");
+				recentHint.setText("æœ€è¿‘è®¿é—®çš„åŸå¸‚");
 				} catch (Exception e) {
 					// TODO: handle exception
 					e.printStackTrace();
@@ -606,7 +606,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 				hotCity.setAdapter(new HotCityAdapter(context, this.hotList));
 				TextView hotHint = (TextView) convertView
 						.findViewById(R.id.recentHint);
-				hotHint.setText("ÈÈÃÅ³ÇÊĞ");
+				hotHint.setText("çƒ­é—¨åŸå¸‚");
 			} else if (viewType == 3) {
 				convertView = inflater.inflate(R.layout.total_item, null);
 			} else {
@@ -638,8 +638,8 @@ public class Activity01 extends Activity implements OnScrollListener {
 		}
 
 		private class ViewHolder {
-			TextView alpha; // Ê××ÖÄ¸±êÌâ
-			TextView name; // ³ÇÊĞÃû×Ö
+			TextView alpha; // é¦–å­—æ¯æ ‡é¢˜
+			TextView name; // åŸå¸‚åå­—
 		}
 	}
 
@@ -721,7 +721,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 
 	private boolean mReady;
 
-	// ³õÊ¼»¯ººÓïÆ´ÒôÊ××ÖÄ¸µ¯³öÌáÊ¾¿ò
+	// åˆå§‹åŒ–æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯å¼¹å‡ºæç¤ºæ¡†
 	private void initOverlay() {
 		mReady = true;
 		LayoutInflater inflater = LayoutInflater.from(this);
@@ -752,13 +752,13 @@ public class Activity01 extends Activity implements OnScrollListener {
 				overlay.setText(s);
 				overlay.setVisibility(View.VISIBLE);
 				handler.removeCallbacks(overlayThread);
-				// ÑÓ³ÙÒ»ÃëºóÖ´ĞĞ£¬ÈÃoverlayÎª²»¿É¼û
+				// å»¶è¿Ÿä¸€ç§’åæ‰§è¡Œï¼Œè®©overlayä¸ºä¸å¯è§
 				handler.postDelayed(overlayThread, 1000);
 			}
 		}
 	}
 
-	// ÉèÖÃoverlay²»¿É¼û
+	// è®¾ç½®overlayä¸å¯è§
 	private class OverlayThread implements Runnable {
 		@Override
 		public void run() {
@@ -766,7 +766,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 		}
 	}
 
-	// »ñµÃººÓïÆ´ÒôÊ××ÖÄ¸
+	// è·å¾—æ±‰è¯­æ‹¼éŸ³é¦–å­—æ¯
 	private String getAlpha(String str) {
 		if (str == null) {
 			return "#";
@@ -775,18 +775,18 @@ public class Activity01 extends Activity implements OnScrollListener {
 			return "#";
 		}
 		char c = str.trim().substring(0, 1).charAt(0);
-		// ÕıÔò±í´ïÊ½£¬ÅĞ¶ÏÊ××ÖÄ¸ÊÇ·ñÊÇÓ¢ÎÄ×ÖÄ¸
+		// æ­£åˆ™è¡¨è¾¾å¼ï¼Œåˆ¤æ–­é¦–å­—æ¯æ˜¯å¦æ˜¯è‹±æ–‡å­—æ¯
 		Pattern pattern = Pattern.compile("^[A-Za-z]+$");
 		if (pattern.matcher(c + "").matches()) {
 			return (c + "").toUpperCase();
 		} else if (str.equals("0")) {
-			return "¶¨Î»";
+			return "å®šä½";
 		} else if (str.equals("1")) {
-			return "×î½ü";
+			return "æœ€è¿‘";
 		} else if (str.equals("2")) {
-			return "ÈÈÃÅ";
+			return "çƒ­é—¨";
 		} else if (str.equals("3")) {
-			return "È«²¿";
+			return "å…¨éƒ¨";
 		} else {
 			return "#";
 		}
@@ -820,7 +820,7 @@ public class Activity01 extends Activity implements OnScrollListener {
 			overlay.setText(text);
 			overlay.setVisibility(View.VISIBLE);
 			handler.removeCallbacks(overlayThread);
-			// ÑÓ³ÙÒ»ÃëºóÖ´ĞĞ£¬ÈÃoverlayÎª²»¿É¼û
+			// å»¶è¿Ÿä¸€ç§’åæ‰§è¡Œï¼Œè®©overlayä¸ºä¸å¯è§
 			handler.postDelayed(overlayThread, 1000);
 		}
 	}

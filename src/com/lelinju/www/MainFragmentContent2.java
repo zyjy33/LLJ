@@ -36,7 +36,7 @@ public class MainFragmentContent2 extends Fragment{
 		// TODO Auto-generated method stub
 		
 		View view = inflater.inflate(R.layout.activity_yun_service, null);
-		 //ÔÚ´Ëµ÷ÓÃÏÂÃæ·½·¨£¬²ÅÄÜ²¶»ñµ½Ïß³ÌÖĞµÄÒì³£
+		 //åœ¨æ­¤è°ƒç”¨ä¸‹é¢æ–¹æ³•ï¼Œæ‰èƒ½æ•è·åˆ°çº¿ç¨‹ä¸­çš„å¼‚å¸¸
 //		Thread.setDefaultUncaughtExceptionHandler(this);
 		progress = new DialogProgress(getActivity());
 		spPreferences = getActivity().getSharedPreferences("longuserset", Context.MODE_PRIVATE);
@@ -62,7 +62,7 @@ public class MainFragmentContent2 extends Fragment{
 	}
 	
 	/**
-	 * ³õÊ¼»¯¿Ø¼şÀà±ğ
+	 * åˆå§‹åŒ–æ§ä»¶ç±»åˆ«
 	 */
 	private void ininate(View layout) {
 		ck_xuanzhe = (CheckBox)layout.findViewById(R.id.ck_xuanzhe);
@@ -77,11 +77,11 @@ public void setTotalCost(){
 				// TODO Auto-generated method stub
 				if (ck_xuanzhe.isChecked()) {
 
-//					Toast.makeText(getActivity(), "µÇÂ¼³É¹¦1", 1000).show();
+//					Toast.makeText(getActivity(), "ç™»å½•æˆåŠŸ1", 1000).show();
 					getShowButton(); 
 				} else {
 					getNisabledButton(); 
-//					Toast.makeText(getActivity(), "µÇÂ¼³É¹¦2", 2000).show();
+//					Toast.makeText(getActivity(), "ç™»å½•æˆåŠŸ2", 2000).show();
 				}
 			}
 		});
@@ -113,7 +113,7 @@ public void setTotalCost(){
 	}
 	
 	/*
-	 * ²»¿ÉÓÃµÇÂ¼°´Å¥
+	 * ä¸å¯ç”¨ç™»å½•æŒ‰é’®
 	 */
 
 	public void getNisabledButton() {
@@ -122,7 +122,7 @@ public void setTotalCost(){
 	}
 	
 	/*
-	 * »Ö¸´µÇÂ¼°´Å¥
+	 * æ¢å¤ç™»å½•æŒ‰é’®
 	 */
 	public void getShowButton() {
 		btn_register.setClickable(true);

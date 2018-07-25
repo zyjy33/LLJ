@@ -34,11 +34,11 @@ public class OneNewActivity extends BaseActivity{
 		public void dispatchMessage(Message msg) {
 			switch (msg.what) {
 			case 1:
-				//»ñµÃÊı¾İ
+				//è·å¾—æ•°æ®
 				final ArrayList<OneNewBean> lists = (ArrayList<OneNewBean>) msg.obj;
 				OneNewAdapter adapter  = new OneNewAdapter(getApplicationContext(), lists, imageLoader);
 				one_new.setAdapter(adapter);
-				//¹ØÓÚ×îĞÂ½ÒÏşµÄÁĞ±íµã»÷ÊÂ¼ş
+				//å…³äºæœ€æ–°æ­æ™“çš„åˆ—è¡¨ç‚¹å‡»äº‹ä»¶
 				one_new.setOnItemClickListener(new OnItemClickListener() {
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
@@ -68,7 +68,7 @@ public class OneNewActivity extends BaseActivity{
 		item4 = (TextView) findViewById(R.id.item4);
 		item0 = (ImageView) findViewById(R.id.item0);
 		Map<String, String> params = new HashMap<String, String>();
-		//mi/getdata.ashx?act=GetLuckYiYuanGameAllNewResult&yth=test»òÎª¿Õ&topNum=1
+		//mi/getdata.ashx?act=GetLuckYiYuanGameAllNewResult&yth=testæˆ–ä¸ºç©º&topNum=1
 		params.put("act", "GetLuckYiYuanGameAllNewResult");
 		params.put("yth", "");
 		params.put("topNum", "");

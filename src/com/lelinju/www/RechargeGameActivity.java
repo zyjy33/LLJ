@@ -56,21 +56,21 @@ public class RechargeGameActivity extends BaseActivity implements OnClickListene
 	private void GameData() {
 		sp_game_name = (Spinner) findViewById(R.id.sp_game_name);
 		sp_game_money = (Spinner) findViewById(R.id.sp_game_money);
-		sp_game_name.setPrompt("ÇëÑ¡ÔñÓÎÏ·Ãû³Æ");
-		sp_game_money.setPrompt("ÇëÑ¡Ôñ³äÖµ½ð¶î");
+		sp_game_name.setPrompt("è¯·é€‰æ‹©æ¸¸æˆåç§°");
+		sp_game_money.setPrompt("è¯·é€‰æ‹©å……å€¼é‡‘é¢");
 
 		ll_information = (LinearLayout) findViewById(R.id.ll_information);
 		ll_information.setVisibility(View.GONE);
 
-		String[] str3 = new String[] { "ÃÎ»ÃÎ÷ÓÎ", "Ä§ÊÞÊÀ½ç", "ÓÀºãÖ®Ëþ", "Ææ¼£ÊÀ½ç", "Õ÷Í¾",
-				"ÈÈÑª´«Ææ", "´«ÆæÊÀ½ç", "´ó»°Î÷ÓÎ2", "´óÌÆºÀÏÀ", "ÌìÁú°Ë²¿", "ÍêÃÀÊÀ½ç", "Ä§Óò", "ÖïÏÉ2",
-				"ÃÎ»ÃÖïÏÉ", "½£Íø3", "ÈÈÑª½­ºþ", "ÎÊµÀ", "¾¢ÎèÍÅ", "ÍêÃÀ¹ú¼Ê", "½£ÏÀÊÀ½ç", "ÎäÁÖÍâ´«",
-				"½£ÇéÍøÂç°æ", "½£ÏÀÇéÔµ2", "·âÉñ°ñ", "QQ»ÃÏë", "ÅÝÅÝÌÃ", "Ã°ÏÕµº", "Ë®ä°Q´«", "²Êºçµº",
-				"½ÖÍ·ÀºÇò", "ÅÜÅÜ¿¨¶¡³µ", "Èý¹úÈºÓ¢´«", "¾ªÌì¶¯µØ", "³¬¼¶ÎèÕß", "ÃÎ»Ã¹ÅÁú", "ÃÎ»Ã¹ú¶È",
-				"ÌìÌÃ2", "·çÔÆ", "×¿Ô½Ö®½£", "»ªÏÄ2", "ÁªÖÚÊÀ½ç", "´ºÇïQ´«", "´«Ææ¹éÀ´", "ÐÂÓ¢ÐÛÄê´ú",
-				"ÐÅ³¤Ö®Ò°Íû", "ÈÈÎèÅÉ¶Ô", "³à±Ú", "´ó»°Î÷ÓÎÍâ´«", "SD¸Ò´ï", "´©Ô½»ðÏß", "QQ×ÔÓÉ»ÃÏë",
-				"QQÈý¹ú", "»ªÏÄ", "´«ÆæÍâ´«", "·âÉñ°ñ2", "Õ÷·þ", "ÕæÈý¹úÎÞË«", "¿Ú´üÎ÷ÓÎ", "µØÏÂ³ÇÓëÓÂÊ¿",
-				"ÐÇ³¾´«Ëµ", "Éñ¹í´«Ææ", "ÊÞÑª·ÐÌÚ", "ÊñÃÅ", "LUNA(Â¶ÄÈ)", "ÎÊµÀ" };
+		String[] str3 = new String[] { "æ¢¦å¹»è¥¿æ¸¸", "é­”å…½ä¸–ç•Œ", "æ°¸æ’ä¹‹å¡”", "å¥‡è¿¹ä¸–ç•Œ", "å¾é€”",
+				"çƒ­è¡€ä¼ å¥‡", "ä¼ å¥‡ä¸–ç•Œ", "å¤§è¯è¥¿æ¸¸2", "å¤§å”è±ªä¾ ", "å¤©é¾™å…«éƒ¨", "å®Œç¾Žä¸–ç•Œ", "é­”åŸŸ", "è¯›ä»™2",
+				"æ¢¦å¹»è¯›ä»™", "å‰‘ç½‘3", "çƒ­è¡€æ±Ÿæ¹–", "é—®é“", "åŠ²èˆžå›¢", "å®Œç¾Žå›½é™…", "å‰‘ä¾ ä¸–ç•Œ", "æ­¦æž—å¤–ä¼ ",
+				"å‰‘æƒ…ç½‘ç»œç‰ˆ", "å‰‘ä¾ æƒ…ç¼˜2", "å°ç¥žæ¦œ", "QQå¹»æƒ³", "æ³¡æ³¡å ‚", "å†’é™©å²›", "æ°´æµ’Qä¼ ", "å½©è™¹å²›",
+				"è¡—å¤´ç¯®çƒ", "è·‘è·‘å¡ä¸è½¦", "ä¸‰å›½ç¾¤è‹±ä¼ ", "æƒŠå¤©åŠ¨åœ°", "è¶…çº§èˆžè€…", "æ¢¦å¹»å¤é¾™", "æ¢¦å¹»å›½åº¦",
+				"å¤©å ‚2", "é£Žäº‘", "å“è¶Šä¹‹å‰‘", "åŽå¤2", "è”ä¼—ä¸–ç•Œ", "æ˜¥ç§‹Qä¼ ", "ä¼ å¥‡å½’æ¥", "æ–°è‹±é›„å¹´ä»£",
+				"ä¿¡é•¿ä¹‹é‡Žæœ›", "çƒ­èˆžæ´¾å¯¹", "èµ¤å£", "å¤§è¯è¥¿æ¸¸å¤–ä¼ ", "SDæ•¢è¾¾", "ç©¿è¶Šç«çº¿", "QQè‡ªç”±å¹»æƒ³",
+				"QQä¸‰å›½", "åŽå¤", "ä¼ å¥‡å¤–ä¼ ", "å°ç¥žæ¦œ2", "å¾æœ", "çœŸä¸‰å›½æ— åŒ", "å£è¢‹è¥¿æ¸¸", "åœ°ä¸‹åŸŽä¸Žå‹‡å£«",
+				"æ˜Ÿå°˜ä¼ è¯´", "ç¥žé¬¼ä¼ å¥‡", "å…½è¡€æ²¸è…¾", "èœ€é—¨", "LUNA(éœ²å¨œ)", "é—®é“" };
 		game_name = new ArrayList<String>();
 		for (int i = 0; i < str3.length; i++) {
 			game_name.add(str3[i]);
@@ -80,8 +80,8 @@ public class RechargeGameActivity extends BaseActivity implements OnClickListene
 		aa3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		sp_game_name.setAdapter(aa3);
 
-		String[] str4 = new String[] { "5Ôª", "10Ôª", "20Ôª", "30Ôª", "50Ôª",
-				"100Ôª", "150Ôª", "200Ôª" };
+		String[] str4 = new String[] { "5å…ƒ", "10å…ƒ", "20å…ƒ", "30å…ƒ", "50å…ƒ",
+				"100å…ƒ", "150å…ƒ", "200å…ƒ" };
 		game_money = new ArrayList<String>();
 		for (int i = 0; i < str4.length; i++) {
 			game_money.add(str4[i]);
@@ -147,15 +147,15 @@ public class RechargeGameActivity extends BaseActivity implements OnClickListene
 	public boolean onMenuOpened(int featureId, Menu menu) {
 
 		if (0 == popupWindowMenu.currentState && popupWindowMenu.isShowing()) {
-			popupWindowMenu.dismiss(); // ¶Ô»°¿òÏûÊ§
-			popupWindowMenu.currentState = 1; // ±ê¼Ç×´Ì¬£¬ÒÑÏûÊ§
+			popupWindowMenu.dismiss(); // å¯¹è¯æ¡†æ¶ˆå¤±
+			popupWindowMenu.currentState = 1; // æ ‡è®°çŠ¶æ€ï¼Œå·²æ¶ˆå¤±
 		} else {
 			popupWindowMenu
 					.showAtLocation(findViewById(R.id.recharge_game_card),
 							Gravity.BOTTOM, 0, 0);
-			popupWindowMenu.currentState = 0; // ±ê¼Ç×´Ì¬£¬ÏÔÊ¾ÖÐ
+			popupWindowMenu.currentState = 0; // æ ‡è®°çŠ¶æ€ï¼Œæ˜¾ç¤ºä¸­
 		}
-		return false; // true--ÏÔÊ¾ÏµÍ³×Ô´ø²Ëµ¥£»false--²»ÏÔÊ¾¡£
+		return false; // true--æ˜¾ç¤ºç³»ç»Ÿè‡ªå¸¦èœå•ï¼›false--ä¸æ˜¾ç¤ºã€‚
 	}
 
 }

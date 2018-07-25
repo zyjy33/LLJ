@@ -40,7 +40,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 	
 	@Override
 	public void onResp(BaseResp resp) {
-//		Toast.makeText(this, "调用onResp", 1).show();
+//		Toast.makeText(this, "璋冪敤onResp", 1).show();
 		System.out.println("------------------"+UserLoginActivity.isWXLogin);
 		switch(resp.errCode) {
 		
@@ -50,18 +50,18 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler{
 					SendAuth.Resp sendResp = (SendAuth.Resp) resp;
 					System.out.println("1------------------"+sendResp.code);
 					UserLoginActivity.WX_CODE = sendResp.code;
-//					Toast.makeText(this, "用户同意", Toast.LENGTH_LONG).show();
+//					Toast.makeText(this, "鐢ㄦ埛鍚屾剰", Toast.LENGTH_LONG).show();
 					finish();
 				}else{
-//					Toast.makeText(this, "用户同意", Toast.LENGTH_LONG).show();
+//					Toast.makeText(this, "鐢ㄦ埛鍚屾剰", Toast.LENGTH_LONG).show();
 				}
 				break;
 			case BaseResp.ErrCode.ERR_USER_CANCEL:
-//				Toast.makeText(this, "用户取消", Toast.LENGTH_LONG).show();
+//				Toast.makeText(this, "鐢ㄦ埛鍙栨秷", Toast.LENGTH_LONG).show();
 				UserLoginActivity.isWXLogin=false;
 				break;
 			case BaseResp.ErrCode.ERR_AUTH_DENIED:
-				Toast.makeText(this, "用户拒绝授权", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, "鐢ㄦ埛鎷掔粷鎺堟潈", Toast.LENGTH_LONG).show();
 				UserLoginActivity.isWXLogin=false;
 				break;
 			default:

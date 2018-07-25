@@ -36,7 +36,7 @@ public class DialogCang {
 	 * 
 	 * @author zhuchao
 	 */
-	private Dialog dialog;// ¶Ô»°¿ò
+	private Dialog dialog;// å¯¹è¯æ¡†
 	private Context context;
 	private Handler handler;
 	private CalendarView calendar;
@@ -164,7 +164,7 @@ public class DialogCang {
 	}
 
 	/**
-	 * ·¢ËÍÏûÏ¢
+	 * å‘é€æ¶ˆæ¯
 	 * 
 	 * @param MSG
 	 */

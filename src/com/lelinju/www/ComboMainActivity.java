@@ -36,7 +36,7 @@ public class ComboMainActivity extends BaseActivity {
 		item7.setOnClickListener(listener);
 	}
 	/**
-	 * 点击事件
+	 * 鐐瑰嚮浜嬩欢
 	 */
 	private OnClickListener listener = new OnClickListener() {
 		
@@ -51,22 +51,22 @@ public class ComboMainActivity extends BaseActivity {
 				break;
 			case R.id.main_item1:
 				Intent intent1 = new Intent(ComboMainActivity.this,ComboListActivity.class);
-				intent1.putExtra("tag", "美食");
+				intent1.putExtra("tag", "缇庨");
 				startActivity(intent1);
 				break;
 			case R.id.main_item2:
 				Intent intent2 = new Intent(ComboMainActivity.this,ComboListActivity.class);
-				intent2.putExtra("tag", "电影");
+				intent2.putExtra("tag", "鐢靛奖");
 				startActivity(intent2);
 				break;
 			case R.id.main_item3:
 				Intent intent3 = new Intent(ComboMainActivity.this,ComboListActivity.class);
-				intent3.putExtra("tag", "美食");
+				intent3.putExtra("tag", "缇庨");
 				startActivity(intent3);
 				break;
 			case R.id.main_item4:
 				Intent intent4 = new Intent(ComboMainActivity.this,ComboListActivity.class);
-				intent4.putExtra("tag", "酒店");
+				intent4.putExtra("tag", "閰掑簵");
 				startActivity(intent4);
 				break;
 			case R.id.main_item5:
@@ -76,12 +76,12 @@ public class ComboMainActivity extends BaseActivity {
 				break;
 			case R.id.main_item6:
 				Intent intent6 = new Intent(ComboMainActivity.this,ComboListActivity.class);
-				intent6.putExtra("tag", "丽人");
+				intent6.putExtra("tag", "涓戒汉");
 				startActivity(intent6);
 				break;
 			case R.id.main_item7:
 				Intent intent7 = new Intent(ComboMainActivity.this,ComboListActivity.class);
-				intent7.putExtra("tag", "景点门票");
+				intent7.putExtra("tag", "鏅偣闂ㄧエ");
 				startActivity(intent7);
 				break;
 			default:

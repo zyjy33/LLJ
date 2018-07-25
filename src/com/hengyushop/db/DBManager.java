@@ -17,7 +17,7 @@ public class DBManager {
 
 	private final int BUFFER_SIZE = 400000;
 
-	public static final String DB_NAME = "city.db"; // ±£´æµÄÊı¾İ¿âÎÄ¼şÃû
+	public static final String DB_NAME = "city.db"; // ä¿å­˜çš„æ•°æ®åº“æ–‡ä»¶å
 
 	public static final String PACKAGE_NAME = "com.ysj.www";
 
@@ -25,7 +25,7 @@ public class DBManager {
 
 	+ Environment.getDataDirectory().getAbsolutePath() + "/"
 
-	+ PACKAGE_NAME; // ÔÚÊÖ»úÀï´æ·ÅÊı¾İ¿âµÄÎ»ÖÃ
+	+ PACKAGE_NAME; // åœ¨æ‰‹æœºé‡Œå­˜æ”¾æ•°æ®åº“çš„ä½ç½®
 
 	private SQLiteDatabase database;
 
@@ -48,11 +48,11 @@ public class DBManager {
 		try {
 
 			if (!(new File(dbfile).exists())) {
-				// ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+				// åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 
 				InputStream is = this.context.getResources().openRawResource(
 
-				R.raw.city); // Óûµ¼ÈëµÄÊı¾İ¿â
+				R.raw.city); // æ¬²å¯¼å…¥çš„æ•°æ®åº“
 
 				FileOutputStream fos = new FileOutputStream(dbfile);
 

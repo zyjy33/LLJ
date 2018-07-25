@@ -19,7 +19,7 @@ import android.widget.CompoundButton;
 
 /**
  * @author kince
- * @category 模仿最美应用底部tagview
+ * @category 妯′豢鏈�缇庡簲鐢ㄥ簳閮╰agview
  * 
  */
 public class TagListView extends FlowLayout implements OnClickListener {
